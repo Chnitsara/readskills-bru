@@ -1,0 +1,184 @@
+/* ReadSkills BRU Custom Styles & Theme Palette */
+
+:root {
+  --primary-purple: #6B469B;
+  --primary-purple-dark: #3C2A58;
+  --primary-purple-light: #9B72CF;
+  --primary-purple-soft: #EADBFC;
+  --bg-lavender: #D4C2E6;
+  --bg-lavender-dark: #C9B5DD;
+  --accent-pink: #EC4899;
+  --text-dark: #332247;
+  --text-muted: #645579;
+}
+
+body {
+  font-family: 'Prompt', 'Poppins', sans-serif;
+  background-color: var(--bg-lavender);
+  color: var(--text-dark);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Snowfall Animation Canvas Background - Vibrant White Snowflakes */
+.snowfall-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.snowflake {
+  position: absolute;
+  top: -20px;
+  color: #FFFFFF;
+  opacity: 0.9;
+  user-select: none;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(186, 150, 225, 0.6);
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(15px);
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(-15px);
+    opacity: 0.2;
+  }
+}
+
+/* Login Screen Styling matching the screenshot */
+.login-screen-bg {
+  background-color: var(--bg-lavender);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.login-card-container {
+  background: #C4B1DB;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(60, 42, 88, 0.15);
+  border-radius: 2rem;
+  width: 100%;
+  max-width: 440px;
+  padding: 2.25rem 2rem;
+}
+
+.input-lavender {
+  background-color: #E2D5F0;
+  border: 1px solid #CDBADF;
+  color: #3C2A58;
+}
+
+.input-lavender::placeholder {
+  color: #836E9E;
+}
+
+.input-lavender:focus {
+  background-color: #FFFFFF;
+  border-color: #6B469B;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(107, 70, 155, 0.2);
+}
+
+.btn-purple-primary {
+  background-color: #654394;
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.btn-purple-primary:hover {
+  background-color: #53347C;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(83, 52, 124, 0.3);
+}
+
+.auth-tab-active {
+  background-color: #654394;
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(101, 67, 148, 0.25);
+}
+
+.auth-tab-inactive {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #53347C;
+  font-weight: 600;
+}
+
+.auth-tab-inactive:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Glass Card Styling for content pages */
+.glass-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px -5px rgba(60, 42, 88, 0.08);
+  transition: all 0.25s ease-in-out;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -4px rgba(60, 42, 88, 0.12);
+}
+
+.stage-tab-active {
+  background-color: #654394;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(101, 67, 148, 0.3);
+}
+
+.stage-tab-inactive {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: #53347C;
+}
+
+.stage-tab-inactive:hover {
+  background-color: #FFFFFF;
+}
+
+/* Audio Player Pulse Animation */
+.audio-playing {
+  animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(236, 72, 153, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(236, 72, 153, 0); }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #D4C2E6;
+}
+::-webkit-scrollbar-thumb {
+  background: #B399D4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9A7BC0;
+}
