@@ -40,6 +40,18 @@ class ReadSkillsApp {
     this.activeQuizAnswers = {};
     this.activeQuizResult = null;
 
+    // Unit 1 Graded Quiz State (4 Passages x 10 Questions = 40 Questions)
+    const savedScore = localStorage.getItem('bru_unit1_quiz_score');
+    this.unit1QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedScore ? parseInt(savedScore) : null
+    };
+
     this.speechSynth = window.speechSynthesis;
     this.isAudioPlaying = false;
     this.audioSpeed = parseFloat(localStorage.getItem('bru_audio_speed')) || 0.75;
@@ -559,18 +571,35 @@ class ReadSkillsApp {
   // 2. Reading Lessons View
   renderLessonsView() {
     const unit = ReadSkillsData.units.find(u => u.id === this.currentUnitId) || ReadSkillsData.units[0];
-    let currentTopic;
-    if (unit.steps) {
-      currentTopic = unit;
-    } else if (unit.stages) {
-      const stageData = unit.stages[this.currentStage] || unit.stages['preReading'] || Object.values(unit.stages)[0];
-      currentTopic = (stageData && stageData.topics && stageData.topics[this.currentTopicIndex]) || (stageData && stageData.topics && stageData.topics[0]) || unit;
-    } else {
-      currentTopic = unit;
+    
+    // Validate currentStage
+    if (!this.currentStage || !['preReading', 'whileReading', 'postReading'].includes(this.currentStage)) {
+      this.currentStage = 'preReading';
     }
 
-    if (this.currentActivityStep === 'quiz') {
-      this.currentActivityStep = 'practice';
+    // Ensure currentActivityStep belongs to the active stage
+    if (this.currentStage === 'preReading' && !['overview', 'learn'].includes(this.currentActivityStep)) {
+      this.currentActivityStep = 'overview';
+    } else if (this.currentStage === 'whileReading' && !['learn', 'example', 'practice'].includes(this.currentActivityStep)) {
+      this.currentActivityStep = 'learn';
+    } else if (this.currentStage === 'postReading' && this.currentActivityStep !== 'quiz') {
+      this.currentActivityStep = 'quiz';
+    }
+
+    let currentTopic;
+    if (unit.stages) {
+      const stageData = unit.stages[this.currentStage] || unit.stages['preReading'] || Object.values(unit.stages)[0];
+      if (stageData && stageData.steps) {
+        currentTopic = stageData;
+      } else if (stageData && stageData.topics) {
+        currentTopic = stageData.topics[this.currentTopicIndex] || stageData.topics[0] || stageData;
+      } else {
+        currentTopic = stageData || unit;
+      }
+    } else if (unit.steps) {
+      currentTopic = unit;
+    } else {
+      currentTopic = unit;
     }
 
     return `
@@ -602,44 +631,73 @@ class ReadSkillsApp {
           <p class="text-xs text-slate-700 leading-relaxed">${unit.description}</p>
         </div>
 
-        <!-- Activity Stepper Bar (4 Steps: Overview, Learn, Example, Practice) -->
-        <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar">
-          <div class="flex items-center justify-between max-w-2xl mx-auto text-xs font-medium min-w-[280px]">
-            
-            <button onclick="app.selectActivityStep('overview')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'overview' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'overview' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">1</div>
-              <span class="text-[11px] sm:text-xs">Overview</span>
-            </button>
-
-            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
-
-            <button onclick="app.selectActivityStep('learn')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'learn' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'learn' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">2</div>
-              <span class="text-[11px] sm:text-xs">Learn</span>
-            </button>
-
-            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
-
-            <button onclick="app.selectActivityStep('example')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'example' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'example' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">3</div>
-              <span class="text-[11px] sm:text-xs">Example</span>
-            </button>
-
-            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
-
-            <button onclick="app.selectActivityStep('practice')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'practice' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'practice' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">4</div>
-              <span class="text-[11px] sm:text-xs">Practice</span>
-            </button>
-
-          </div>
+        <!-- 3 Stage Tabs (Pre-Reading | While-Reading | Post-Reading) -->
+        <div class="flex items-center space-x-2 sm:space-x-3 border-b border-purple-200 pb-3 overflow-x-auto no-scrollbar">
+          <button onclick="app.selectStage('preReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'preReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="compass" class="w-4 h-4"></i>
+            <span>Pre-Reading Stage</span>
+          </button>
+          
+          <button onclick="app.selectStage('whileReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'whileReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="book-open-check" class="w-4 h-4"></i>
+            <span>While-Reading Stage</span>
+          </button>
+          
+          <button onclick="app.selectStage('postReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'postReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+            <span>Post-Reading Stage</span>
+          </button>
         </div>
+
+        <!-- Contextual Activity Stepper Bar (Approach a) -->
+        ${this.renderStepperBar()}
 
         <!-- Activity Step Content Body -->
         <div class="glass-card p-4 sm:p-6 md:p-8 min-h-[300px]">
           ${this.renderActivityStepContent(currentTopic)}
         </div>
 
+      </div>
+    `;
+  }
+
+  /* ------------------- Contextual Step Indicator Bar ------------------- */
+  renderStepperBar() {
+    const stage = this.currentStage;
+    let steps = [];
+
+    if (stage === 'preReading') {
+      steps = [
+        { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+        { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'กลยุทธ์ก่อนการอ่าน' }
+      ];
+    } else if (stage === 'whileReading') {
+      steps = [
+        { key: 'learn', num: 1, label: 'Learn (Part 2)', sub: 'ใจความสำคัญ & ประโยคหลัก' },
+        { key: 'example', num: 2, label: 'Example', sub: 'บทอ่านตัวอย่าง & คำศัพท์' },
+        { key: 'practice', num: 3, label: 'Practice', sub: 'แบบฝึกหัดทบทวน' }
+      ];
+    } else if (stage === 'postReading') {
+      steps = [
+        { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบวัดผล 4 บทความ' }
+      ];
+    }
+
+    return `
+      <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar">
+        <div class="flex items-center justify-center space-x-3 sm:space-x-8 max-w-2xl mx-auto text-xs font-medium">
+          ${steps.map((st, i) => {
+            const isActive = this.currentActivityStep === st.key;
+            return `
+              ${i > 0 ? '<div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>' : ''}
+              <button onclick="app.selectActivityStep('${st.key}')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${isActive ? 'text-purple-900 font-bold' : 'text-slate-500 hover:text-slate-800'}">
+                <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs transition ${isActive ? 'bg-purple-700 text-white ring-4 ring-purple-200 shadow-md font-bold' : 'bg-slate-200/80 text-slate-700 font-semibold'}">${st.num}</div>
+                <span class="text-[11px] sm:text-xs font-semibold whitespace-nowrap">${st.label}</span>
+                <span class="text-[9px] text-slate-400 hidden sm:block">${st.sub}</span>
+              </button>
+            `;
+          }).join('')}
+        </div>
       </div>
     `;
   }
@@ -835,7 +893,52 @@ class ReadSkillsApp {
 
   renderActivityStepContent(topic) {
     const s = topic.steps || topic;
-    const currentStep = (this.currentActivityStep === 'quiz') ? 'practice' : this.currentActivityStep;
+    const currentStep = this.currentActivityStep;
+
+    if (currentStep === 'quiz') {
+      if (this.currentUnitId === 1) {
+        return this.renderQuizStep();
+      }
+      const q = s.quiz;
+      if (q) {
+        return `
+          <div class="space-y-6">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <div>
+                <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
+                  <i data-lucide="check-circle" class="w-5 h-5 text-purple-700"></i>
+                  <span>Post-Reading Stage: Assessment Quiz</span>
+                </h4>
+                <p class="text-xs text-slate-500 mt-0.5">Test your reading comprehension and strategy mastery</p>
+              </div>
+              <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Unit ${this.currentUnitId} Post-Reading</span>
+            </div>
+
+            <div class="p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4">
+              <h5 class="text-sm font-bold text-slate-900">${q.question || 'Post-Reading Quiz Question'}</h5>
+              <div class="space-y-2">
+                ${(q.options || []).map((opt, idx) => `
+                  <button onclick="app.submitPracticeAnswer(${idx}, ${q.answer}, '${encodeURIComponent(q.explanation || '')}')" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
+                    <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">${String.fromCharCode(65 + idx)}</span>
+                    <span>${opt}</span>
+                  </button>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
+              <button onclick="app.selectStageAndStep('whileReading', 'practice')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                ⬅ Back: While-Reading Practice
+              </button>
+              <button onclick="app.selectStageAndStep('preReading', 'overview')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span>Review Unit from Start ↺</span>
+              </button>
+            </div>
+          </div>
+        `;
+      }
+    }
 
     if (s && s[currentStep] && typeof s[currentStep] === 'string' && s[currentStep].trim().startsWith('<div')) {
       setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
@@ -848,26 +951,28 @@ class ReadSkillsApp {
           <div class="space-y-4">
             <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
               <i data-lucide="info" class="w-5 h-5 text-purple-700"></i>
-              <span>Topic Overview: ${topic.title || topic.topic || ''}</span>
+              <span>Pre-Reading Stage Overview: ${topic.title || topic.topic || ''}</span>
             </h4>
             <p class="text-sm text-slate-700 leading-relaxed">${s.overview || 'Overview details.'}</p>
             <div class="bg-purple-100/80 p-4 rounded-xl text-xs text-purple-900 border border-purple-200">
-              💡 <strong>Instructional Objective:</strong> Students will master identifying key themes before reading.
+              💡 <strong>Instructional Objective:</strong> Master reading strategies and activate prior knowledge before reading.
             </div>
             <div class="pt-2">
-              <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer text-center">
-                Next Step: Learn ➔
+              <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
+                <span>Next Step: Learn (Part 1)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
         `;
 
       case 'learn':
+        const isPre = this.currentStage === 'preReading';
         return `
           <div class="space-y-6">
             <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
               <i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>
-              <span>Lesson Content & Audio Passage</span>
+              <span>${isPre ? 'Pre-Reading Strategies (Part 1)' : 'While-Reading Core Lesson (Part 2)'}</span>
             </h4>
             
             <p class="text-sm text-slate-700 leading-relaxed">${s.learn || ''}</p>
@@ -903,13 +1008,24 @@ class ReadSkillsApp {
             </div>
             ` : ''}
 
-            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
-              <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
-                ⬅ Back: Overview
-              </button>
-              <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center">
-                Next Step: Example ➔
-              </button>
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
+              ${isPre ? `
+                <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                  ⬅ Back: Overview
+                </button>
+                <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                  <span>Next: While-Reading Stage</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              ` : `
+                <button onclick="app.selectStageAndStep('preReading', 'learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                  ⬅ Back: Pre-Reading
+                </button>
+                <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                  <span>Next Step: Example</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              `}
             </div>
           </div>
         `;
@@ -924,12 +1040,13 @@ class ReadSkillsApp {
             <div class="bg-amber-50/90 border border-amber-200 p-4 sm:p-5 rounded-2xl text-slate-900 text-sm shadow-xs">
               ${this.formatAnnotatedExample(s.example)}
             </div>
-            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
               <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
                 ⬅ Back: Learn
               </button>
-              <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center">
-                Next Step: Practice ➔
+              <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Practice</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
@@ -954,13 +1071,13 @@ class ReadSkillsApp {
               `).join('')}
             </div>
 
-            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
               <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
                 ⬅ Back: Example
               </button>
-              <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-                <i data-lucide="check-check" class="w-4 h-4"></i>
-                <span>Review Overview ↺</span>
+              <button onclick="app.selectStageAndStep('postReading', 'quiz')" class="w-full sm:w-auto px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Post-Reading Quiz</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
@@ -970,21 +1087,44 @@ class ReadSkillsApp {
 
   selectUnit(id) {
     this.currentUnitId = id;
+    this.currentStage = 'preReading';
     this.currentTopicIndex = 0;
     this.currentActivityStep = 'overview';
     this.navigate('lessons');
   }
 
-  selectStage(stageKey) {
+  selectStage(stageKey, stepKey) {
     this.currentStage = stageKey;
     this.currentTopicIndex = 0;
-    this.currentActivityStep = 'overview';
+    if (stepKey) {
+      this.currentActivityStep = stepKey;
+    } else {
+      if (stageKey === 'preReading') {
+        this.currentActivityStep = 'overview';
+      } else if (stageKey === 'whileReading') {
+        this.currentActivityStep = 'learn';
+      } else if (stageKey === 'postReading') {
+        this.currentActivityStep = 'quiz';
+      } else {
+        this.currentActivityStep = 'overview';
+      }
+    }
     this.navigate('lessons');
+  }
+
+  selectStageAndStep(stageKey, stepKey) {
+    this.selectStage(stageKey, stepKey);
   }
 
   selectActivityStep(stepKey) {
-    if (stepKey === 'quiz') stepKey = 'practice';
     this.currentActivityStep = stepKey;
+    if (stepKey === 'overview' && this.currentStage !== 'preReading') {
+      this.currentStage = 'preReading';
+    } else if (stepKey === 'quiz' && this.currentStage !== 'postReading') {
+      this.currentStage = 'postReading';
+    } else if ((stepKey === 'example' || stepKey === 'practice') && this.currentStage !== 'whileReading') {
+      this.currentStage = 'whileReading';
+    }
     this.navigate('lessons');
   }
 
@@ -1011,6 +1151,437 @@ class ReadSkillsApp {
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+
+  switchExampleTab(tabIndex) {
+    const view1 = document.getElementById('example-view-1');
+    const view2 = document.getElementById('example-view-2');
+    const tab1 = document.getElementById('ex-tab-1');
+    const tab2 = document.getElementById('ex-tab-2');
+    if (!view1 || !view2 || !tab1 || !tab2) return;
+
+    if (tabIndex === 1) {
+      view1.classList.remove('hidden');
+      view2.classList.add('hidden');
+      tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+      tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+    } else {
+      view1.classList.add('hidden');
+      view2.classList.remove('hidden');
+      tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+      tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+    }
+    if (window.lucide) lucide.createIcons();
+    const target = document.getElementById('example-content-top');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  /* ------------------- Unit 1 Graded Quiz Engine (40 Questions) ------------------- */
+  renderQuizStep() {
+    setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
+    const quizData = ReadSkillsData.unit1Quiz;
+    if (!quizData) {
+      return '<div class="p-6 text-center text-slate-500">Quiz data not found.</div>';
+    }
+
+    const state = this.unit1QuizState;
+
+    // Completed Screen
+    if (state.isCompleted) {
+      const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
+      const percentage = Math.round((totalScore / 40) * 100);
+      const passed = percentage >= 70;
+
+      return `
+        <div class="max-w-2xl mx-auto space-y-6 text-center py-4">
+          <div class="w-20 h-20 mx-auto rounded-3xl ${passed ? 'bg-emerald-100 text-emerald-600' : 'bg-amber-100 text-amber-600'} flex items-center justify-center shadow-lg">
+            <i data-lucide="${passed ? 'trophy' : 'award'}" class="w-10 h-10"></i>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider ${passed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-3 py-1 rounded-full">
+              ${passed ? 'Practice Completed with Excellence! 🎉' : 'Practice Completed! 💪'}
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit 1 Practice Results (ผลคะแนนแบบฝึกหัด 40 ข้อ)</h3>
+            <p class="text-xs text-slate-600">คะแนนแบบฝึกหัดพัฒนาทักษะการอ่าน Unit 1 (ใจความสำคัญ 40 ข้อ)</p>
+          </div>
+
+          <!-- Total Score Pill -->
+          <div class="p-6 bg-gradient-to-br from-purple-50 via-white to-pink-50 rounded-3xl border border-purple-200 shadow-sm max-w-md mx-auto">
+            <div class="text-4xl sm:text-5xl font-black text-purple-900">${totalScore} <span class="text-xl sm:text-2xl text-purple-400">/ 40</span></div>
+            <div class="text-sm font-bold text-purple-700 mt-1">${percentage}% Accuracy Score</div>
+            <div class="mt-3 text-xs text-slate-600 leading-relaxed">
+              ${passed ? 'ยอดเยี่ยมมากครับ! คุณสามารถระบุใจความสำคัญ ประโยคหลัก รายละเอียดสนับสนุน และคำศัพท์ได้ถูกต้องแม่นยำตามเกณฑ์ CEFR A2' : 'ทำได้ดีครับ! ลองทบทวนข้อที่ตอบผิดและฝึกทำใหม่อีกครั้งเพื่อเสริมสร้างความมั่นใจก่อนไปบทถัดไป'}
+            </div>
+          </div>
+
+          <!-- Per-Passage Score Breakdown -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
+            ${quizData.passages.map((p, idx) => `
+              <div class="p-3.5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase">Passage ${idx + 1}</span>
+                <div class="text-xs font-bold text-slate-800 line-clamp-1">${p.title.split(':')[1] || p.title}</div>
+                <div class="text-base font-extrabold text-purple-900">${state.passageScores[idx]} / 10</div>
+              </div>
+            `).join('')}
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 border-t border-purple-100">
+            <button onclick="app.resetUnit1Quiz()" class="w-full sm:w-auto px-6 py-3 bg-slate-200/90 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-xs cursor-pointer transition flex items-center justify-center space-x-2">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>Retake Practice (ฝึกทำใหม่อีกครั้ง)</span>
+            </button>
+            <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-8 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-md flex items-center justify-center space-x-2">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>Review Unit 1 Lessons ➔</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    const currentPassage = quizData.passages[state.passageIndex] || quizData.passages[0];
+    const currentQ = currentPassage.questions[state.questionIndex] || currentPassage.questions[0];
+    const qGlobalNumber = (state.passageIndex * 10) + state.questionIndex + 1;
+    const progressPercent = Math.round((qGlobalNumber / 40) * 100);
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    const answeredState = state.answers[answerKey];
+
+    return `
+      <div class="space-y-6">
+        <!-- Top Quiz Header & Progress Tracker -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">Post-Reading Quiz (40 ข้อ)</span>
+              <span class="text-xs font-semibold text-slate-500">Passage ${state.passageIndex + 1} of 4</span>
+              <button onclick="app.selectStageAndStep('whileReading', 'practice')" class="text-[11px] text-purple-700 hover:text-purple-900 font-semibold cursor-pointer underline ml-2">⬅ Back to Practice</button>
+            </div>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 mt-0.5">${currentPassage.title}</h4>
+            <p class="text-xs text-slate-500">${currentPassage.thaiTitle}</p>
+          </div>
+
+          <div class="flex items-center space-x-3 self-start sm:self-auto">
+            <!-- Running Score Badge -->
+            <div class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl text-right">
+              <span class="text-[10px] text-purple-600 block font-semibold">Practice Score</span>
+              <span class="text-xs font-bold text-purple-900">${state.passageScores.reduce((a, b) => a + b, 0)} / 40</span>
+            </div>
+
+            <!-- Audio Player Button -->
+            <button onclick="app.playQuizPassageAudio(${state.passageIndex})" class="px-3 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shadow-sm" title="Listen to Passage Audio">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span class="hidden sm:inline">Listen</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="space-y-1">
+          <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500">
+            <span>Question ${state.questionIndex + 1} of 10 in this Passage</span>
+            <span class="text-purple-700 font-bold">Overall: Question ${qGlobalNumber} of 40 (${progressPercent}%)</span>
+          </div>
+          <div class="w-full bg-slate-200/80 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-500 h-2 rounded-full transition-all duration-300" style="width: ${progressPercent}%"></div>
+          </div>
+        </div>
+
+        <!-- Main Body: Two Column Layout on Desktop, Stacked on Mobile -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left: Passage Card (lg:col-span-6) -->
+          <div class="lg:col-span-6 bg-slate-900 text-slate-100 p-5 rounded-2xl space-y-3 shadow-lg border border-slate-800 sticky top-20">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-2">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
+                <span class="text-xs font-bold text-purple-300 uppercase tracking-wider">${currentPassage.genre}</span>
+              </div>
+              ${currentQ.type === 'highlight' && !answeredState ? `
+                <span class="text-[10px] bg-pink-500/20 text-pink-300 border border-pink-500/40 px-2 py-0.5 rounded animate-pulse">
+                  👆 Tap a sentence below to answer
+                </span>
+              ` : ''}
+            </div>
+
+            <!-- Sentences Display with Interactive Highlight Mode -->
+            <div class="text-sm font-serif leading-relaxed text-slate-200 space-y-1.5 max-h-[500px] overflow-y-auto pr-1">
+              ${currentPassage.sentences.map((sent, sIdx) => {
+                let sentClass = 'inline transition-colors duration-200 p-1 rounded ';
+                if (currentQ.type === 'highlight') {
+                  if (answeredState) {
+                    if (sIdx === currentQ.targetSentenceIndex) {
+                      sentClass += 'bg-emerald-500/30 text-emerald-200 border-b-2 border-emerald-400 font-medium ';
+                    } else if (answeredState.selected === sIdx && !answeredState.isCorrect) {
+                      sentClass += 'bg-rose-500/30 text-rose-200 border-b-2 border-rose-400 font-medium ';
+                    }
+                  } else {
+                    sentClass += 'hover:bg-purple-800/60 hover:text-white cursor-pointer border-b border-dashed border-purple-400/40 ';
+                  }
+                }
+                const clickHandler = (currentQ.type === 'highlight' && !answeredState) ? `onclick="app.answerQuizHighlight(${sIdx})"` : '';
+                return `<span class="${sentClass}" ${clickHandler}>${sent} </span>`;
+              }).join('')}
+            </div>
+            
+            <div class="text-[10px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
+              <span>Reading Length: ~${currentPassage.sentences.join(' ').split(' ').length} words</span>
+              <span>CEFR Target: A1-A2 Level</span>
+            </div>
+          </div>
+
+          <!-- Right: Interactive Question Card (lg:col-span-6) -->
+          <div class="lg:col-span-6 space-y-4">
+            <div class="bg-white p-5 rounded-2xl border border-purple-100 shadow-sm space-y-4">
+              
+              <!-- Question Type Tag -->
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                  currentQ.type === 'mc' ? 'bg-blue-100 text-blue-800' :
+                  currentQ.type === 'highlight' ? 'bg-pink-100 text-pink-800' : 'bg-amber-100 text-amber-800'
+                }">
+                  ${currentQ.type === 'mc' ? 'Multiple Choice' : currentQ.type === 'highlight' ? 'Sentence Selection / Highlight' : 'Fill-in-the-Blank'}
+                </span>
+                <span class="text-xs text-purple-700 font-bold">1 Point</span>
+              </div>
+
+              <!-- Question Prompt -->
+              <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                ${currentQ.prompt}
+              </h5>
+
+              <!-- Interactive Options according to Question Type -->
+              <div class="space-y-2.5">
+                ${this.renderQuizQuestionInputs(currentQ, answeredState, currentPassage)}
+              </div>
+
+              <!-- Immediate Feedback Card -->
+              ${answeredState ? `
+                <div class="p-4 rounded-xl border ${answeredState.isCorrect ? 'bg-emerald-50 border-emerald-200' : 'bg-rose-50 border-rose-200'} space-y-2 animate-in fade-in">
+                  <div class="flex items-center space-x-2">
+                    <div class="w-6 h-6 rounded-full flex items-center justify-center font-bold text-xs ${answeredState.isCorrect ? 'bg-emerald-200 text-emerald-800' : 'bg-rose-200 text-rose-800'}">
+                      ${answeredState.isCorrect ? '✓' : '✕'}
+                    </div>
+                    <span class="font-bold text-xs ${answeredState.isCorrect ? 'text-emerald-800' : 'text-rose-800'}">
+                      ${answeredState.isCorrect ? 'Correct Answer! (+1 Point)' : 'Incorrect — Keep going!'}
+                    </span>
+                  </div>
+                  <p class="text-xs text-slate-700 leading-relaxed pl-8">
+                    <strong>คำอธิบาย:</strong> ${currentQ.explanation}
+                  </p>
+                </div>
+              ` : ''}
+
+              <!-- Bottom Controls / Next Button -->
+              <div class="pt-2 flex items-center justify-between">
+                <div class="text-[11px] text-slate-400">
+                  ${answeredState ? 'Ready to proceed' : 'Select an answer to continue'}
+                </div>
+                ${answeredState ? `
+                  <button onclick="app.nextQuizQuestion()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
+                    <span>${qGlobalNumber === 40 ? 'Finish Practice & View Score 🏆' : (state.questionIndex === 9 ? 'Next Passage ➔' : 'Next Question ➔')}</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </button>
+                ` : ''}
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    `;
+  }
+
+  renderQuizQuestionInputs(q, answeredState, passage) {
+    if (q.type === 'mc') {
+      return q.options.map((opt, idx) => {
+        let btnClass = 'w-full text-left p-3.5 rounded-xl border transition text-xs font-medium flex items-center space-x-3 cursor-pointer ';
+        if (answeredState) {
+          if (idx === q.correctAnswer) {
+            btnClass += 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold shadow-xs';
+          } else if (idx === answeredState.selected) {
+            btnClass += 'bg-rose-50 border-rose-400 text-rose-950 font-bold';
+          } else {
+            btnClass += 'bg-slate-50/60 border-slate-200 text-slate-400 opacity-60 cursor-default';
+          }
+        } else {
+          btnClass += 'border-purple-200 hover:border-purple-600 hover:bg-purple-50/60 text-slate-800 bg-white';
+        }
+
+        const letter = String.fromCharCode(65 + idx);
+        const disabled = answeredState ? 'disabled' : '';
+        return `
+          <button onclick="app.answerQuizMC(${idx})" ${disabled} class="${btnClass}">
+            <span class="w-5 h-5 rounded-full ${answeredState && idx === q.correctAnswer ? 'bg-emerald-600 text-white' : (answeredState && idx === answeredState.selected ? 'bg-rose-600 text-white' : 'bg-purple-100 text-purple-800')} font-bold flex items-center justify-center text-[10px] shrink-0">
+              ${letter}
+            </span>
+            <span class="leading-relaxed">${opt}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    if (q.type === 'highlight') {
+      return `
+        <div class="space-y-2">
+          <p class="text-xs text-purple-900 bg-purple-50 p-2.5 rounded-lg border border-purple-100 flex items-center space-x-1.5">
+            <i data-lucide="hand" class="w-4 h-4 text-purple-700 shrink-0"></i>
+            <span>คลิกเลือกประโยคที่ถูกต้องในกล่องบทอ่านด้านซ้ายมือ หรือกดเลือกจากตัวเลือกด้านล่าง:</span>
+          </p>
+          <div class="space-y-1.5 max-h-[280px] overflow-y-auto pr-1">
+            ${passage.sentences.map((sent, sIdx) => {
+              let btnClass = 'w-full text-left p-2.5 rounded-xl border text-[11px] transition font-sans flex items-start space-x-2 ';
+              if (answeredState) {
+                if (sIdx === q.targetSentenceIndex) {
+                  btnClass += 'bg-emerald-50 border-emerald-500 text-emerald-950 font-bold';
+                } else if (sIdx === answeredState.selected) {
+                  btnClass += 'bg-rose-50 border-rose-400 text-rose-950 font-bold';
+                } else {
+                  btnClass += 'bg-slate-50/60 border-slate-200 text-slate-400 opacity-60 cursor-default';
+                }
+              } else {
+                btnClass += 'bg-white border-purple-100 hover:border-purple-500 hover:bg-purple-50/50 text-slate-700 cursor-pointer';
+              }
+              const disabled = answeredState ? 'disabled' : '';
+              return `
+                <button onclick="app.answerQuizHighlight(${sIdx})" ${disabled} class="${btnClass}">
+                  <span class="w-4 h-4 rounded-full bg-slate-200 text-slate-700 text-[9px] font-bold flex items-center justify-center shrink-0 mt-0.5">S${sIdx + 1}</span>
+                  <span class="line-clamp-2 leading-relaxed font-serif">${sent}</span>
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    if (q.type === 'fillBlank') {
+      return `
+        <div class="space-y-3">
+          <!-- Target Sentence Display with Highlighted Blank -->
+          <div class="p-3.5 bg-purple-50/90 rounded-xl border border-purple-200 text-xs font-serif leading-relaxed text-purple-950">
+            ${q.sentenceWithBlank.replace('[ _______ ]', `<span class="bg-amber-200 text-amber-950 font-bold px-2.5 py-0.5 rounded border border-amber-400 underline font-sans">${answeredState ? (answeredState.isCorrect ? q.correctWord : answeredState.selected) : '_______'}</span>`)}
+          </div>
+
+          <p class="text-xs text-slate-600 font-semibold">เลือกคำศัพท์ที่ถูกต้องที่สุด:</p>
+
+          <div class="grid grid-cols-2 gap-2">
+            ${q.choices.map((choice) => {
+              let btnClass = 'p-3 rounded-xl border text-center text-xs font-bold transition ';
+              if (answeredState) {
+                if (choice.trim().toLowerCase() === q.correctWord.trim().toLowerCase()) {
+                  btnClass += 'bg-emerald-600 text-white border-emerald-700 shadow-sm';
+                } else if (choice === answeredState.selected) {
+                  btnClass += 'bg-rose-600 text-white border-rose-700';
+                } else {
+                  btnClass += 'bg-slate-50 border-slate-200 text-slate-400 opacity-50 cursor-default';
+                }
+              } else {
+                btnClass += 'bg-white border-purple-200 hover:border-purple-600 hover:bg-purple-50 text-purple-900 cursor-pointer shadow-xs';
+              }
+              const disabled = answeredState ? 'disabled' : '';
+              return `
+                <button onclick="app.answerQuizFillBlank('${choice}')" ${disabled} class="${btnClass}">
+                  ${choice}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    return '';
+  }
+
+  answerQuizMC(choiceIndex) {
+    const state = this.unit1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const quizData = ReadSkillsData.unit1Quiz;
+    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = choiceIndex === currentQ.correctAnswer;
+
+    state.answers[answerKey] = { selected: choiceIndex, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate(this.currentView);
+  }
+
+  answerQuizHighlight(sentIndex) {
+    const state = this.unit1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const quizData = ReadSkillsData.unit1Quiz;
+    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = sentIndex === currentQ.targetSentenceIndex;
+
+    state.answers[answerKey] = { selected: sentIndex, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate(this.currentView);
+  }
+
+  answerQuizFillBlank(word) {
+    const state = this.unit1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const quizData = ReadSkillsData.unit1Quiz;
+    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = word.trim().toLowerCase() === currentQ.correctWord.trim().toLowerCase();
+
+    state.answers[answerKey] = { selected: word, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate(this.currentView);
+  }
+
+  nextQuizQuestion() {
+    const state = this.unit1QuizState;
+    if (state.questionIndex < 9) {
+      state.questionIndex++;
+    } else {
+      if (state.passageIndex < 3) {
+        state.passageIndex++;
+        state.questionIndex = 0;
+      } else {
+        state.isCompleted = true;
+        const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
+        localStorage.setItem('bru_unit1_quiz_score', totalScore);
+        state.lastScore = totalScore;
+      }
+    }
+    this.navigate(this.currentView);
+  }
+
+  resetUnit1Quiz() {
+    this.unit1QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: localStorage.getItem('bru_unit1_quiz_score') ? parseInt(localStorage.getItem('bru_unit1_quiz_score')) : null
+    };
+    this.navigate(this.currentView);
+  }
+
+  playQuizPassageAudio(pIndex) {
+    const quizData = ReadSkillsData.unit1Quiz;
+    if (!quizData || !quizData.passages[pIndex]) return;
+    const passage = quizData.passages[pIndex];
+    this.togglePassageAudio(encodeURIComponent(passage.audioText));
   }
 
   // 3. Reading Strategies View (6 Units, 8 Learning Steps per Unit)
@@ -2089,6 +2660,11 @@ class ReadSkillsApp {
 
   playUnit1Passage() {
     const text = "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately, boasting that no creature in the forest could ever outpace his lightning speed. When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed. I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway, he laughed smugly. Soon, the complacent Hare fell into a deep slumber, foolishly underestimating his rival. Meanwhile, the steadfast Tortoise pressed forward with silent determination. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize triumph. The enduring moral of the race proves that steady perseverance and humble consistency will consistently triumph over careless arrogance and complacent talent. Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless. Approaching the winner, he shook the Tortoise's hand with genuine humility, acknowledging that true greatness comes from quiet dedication rather than loud boasting. From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.";
+    this.togglePassageAudio(encodeURIComponent(text));
+  }
+
+  playUnit1Passage2() {
+    const text = "During a radiant summer afternoon, an industrious Ant worked tirelessly storing grain, while a frivolous Grasshopper sang carefree songs and mocked her constant toil. The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship. Instead of heeding the wise advice, the complacent Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's abundance would never run out. Week after week, the Ant practiced steadfast diligence, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant. When the harsh winter finally arrived with freezing blizzards, the impoverished Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth. The enduring wisdom of the season demonstrates that foresight, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared. Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain. Humbled by the generous gift, the reformed Grasshopper bowed with sincere humility, promising that every future summer would be devoted to responsible prudence alongside his music. From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.";
     this.togglePassageAudio(encodeURIComponent(text));
   }
 

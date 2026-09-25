@@ -31,8 +31,11 @@ window.ReadSkillsData = {
       scope: "Overview & Objectives, In-Depth Definitions & 4-Step Strategy, Long Passage & ~10 Vocabulary Words with Prediction Clues, Interactive Guided Practice",
       description: "Unit 1 • Course 2031103: Master identifying main ideas, topic sentences, exploring text features, vocabulary preview (~10 words), predicting, and reading The Tortoise and the Hare with immediate feedback.",
       cefr: "A1-A2",
-      steps: {
-        overview: `<div class="space-y-6">
+      stages: {
+        preReading: {
+          title: "Pre-Reading Stage",
+          steps: {
+            overview: `<div class="space-y-6">
           <!-- Header & Objectives -->
           <div class="space-y-3">
             <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
@@ -128,32 +131,20 @@ window.ReadSkillsData = {
         </div>`,
 
         learn: `<div class="space-y-6" id="learn-content-top">
-          <!-- Sub-Tab Switcher: Part 1 vs Part 2 -->
-          <div class="flex items-center space-x-2 sm:space-x-3 p-1.5 bg-purple-100/70 rounded-2xl border border-purple-200 overflow-x-auto no-scrollbar">
-            <button 
-              id="learn-tab-1"
-              type="button"
-              onclick="app.switchLearnPart('part1')" 
-              class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md shrink-0"
-            >
-              <i data-lucide="compass" class="w-4 h-4"></i>
-              <span>Part 1: Pre-Reading Strategies (กลยุทธ์ก่อนการอ่าน)</span>
-            </button>
-            <button 
-              id="learn-tab-2"
-              type="button"
-              onclick="app.switchLearnPart('part2')" 
-              class="px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200 shrink-0"
-            >
-              <i data-lucide="bookmark-check" class="w-4 h-4 text-purple-700"></i>
-              <span>Part 2: Main Idea & Topic Sentence (ใจความสำคัญและประโยคหลัก)</span>
-            </button>
+          <!-- Banner for Part 1: Pre-Reading Strategies -->
+          <div class="bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200">
+            <div class="flex items-center space-x-2 mb-1.5">
+              <span class="bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">Pre-Reading Stage</span>
+              <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full">Part 1: Strategies & Warm-Up</span>
+            </div>
+            <h3 class="text-base sm:text-lg font-bold text-slate-900">Pre-Reading Strategies (กลยุทธ์ก่อนการอ่าน)</h3>
+            <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+              เตรียมความพร้อมของสมองก่อนลงมืออ่านจริง: การสำรวจจุดเด่นของบทอ่าน (Text Features), การคาดเดาเนื้อเรื่อง (Predicting), การกระตุ้นความรู้เดิม (Prior Knowledge), และการดูคำศัพท์ล่วงหน้า (Vocabulary Preview)
+            </p>
           </div>
 
-          <!-- ====================================================================
-               PART 1: PRE-READING STRATEGIES
-               ==================================================================== -->
-          <div id="learn-part-1" class="space-y-6">
+          <!-- Content for Part 1 -->
+          <div class="space-y-6">
             <!-- 1. Pre-Reading คืออะไร และทำไมต้องทำก่อนอ่าน -->
             <div class="space-y-3">
               <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
@@ -407,28 +398,33 @@ window.ReadSkillsData = {
               <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
                 ⬅ Back: Overview
               </button>
-              <button onclick="app.switchLearnPart('part2')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
-                <span>Next: Part 2 (Main Idea & Topic Sentence)</span>
+              <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
+                <span>Next: While-Reading Stage (Learn Part 2)</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
               </button>
             </div>
           </div>
-
-          <!-- ====================================================================
-               PART 2: MAIN IDEA & TOPIC SENTENCE
-               ==================================================================== -->
-          <div id="learn-part-2" class="space-y-6 hidden">
-            <!-- Header for Part 2 -->
-            <div class="bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200">
-              <div class="flex items-center space-x-2 mb-1.5">
-                <span class="bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">Part 2: Core Lesson</span>
-                <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full">Unit 1 Focus</span>
+        </div>`
+          }
+        },
+        whileReading: {
+          title: "While-Reading Stage",
+          steps: {
+            learn: `<div class="space-y-6" id="learn-content-top">
+              <!-- Header for Part 2 -->
+              <div class="bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200">
+                <div class="flex items-center space-x-2 mb-1.5">
+                  <span class="bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">While-Reading Stage</span>
+                  <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full">Part 2: Core Lesson</span>
+                </div>
+                <h3 class="text-base sm:text-lg font-bold text-slate-900">Main Idea & Topic Sentence (ใจความสำคัญและประโยคหลัก)</h3>
+                <p class="text-xs text-slate-700 mt-1 leading-relaxed">
+                  เรียนรู้โครงสร้างหัวใจสำคัญของการอ่านภาษาอังกฤษ: การแยกแยะ 3 ระดับความคิด (Topic vs Main Idea vs Supporting Details), การหาตำแหน่ง Topic Sentence, และเทคนิคการสรุปใจความสำคัญแบบ Step-by-Step
+                </p>
               </div>
-              <h3 class="text-base sm:text-lg font-bold text-slate-900">Main Idea & Topic Sentence (ใจความสำคัญและประโยคหลัก)</h3>
-              <p class="text-xs text-slate-700 mt-1 leading-relaxed">
-                เรียนรู้โครงสร้างหัวใจสำคัญของการอ่านภาษาอังกฤษ: การแยกแยะ 3 ระดับความคิด (Topic vs Main Idea vs Supporting Details), การหาตำแหน่ง Topic Sentence, และเทคนิคการสรุปใจความสำคัญแบบ Step-by-Step
-              </p>
-            </div>
+
+              <!-- Content for Part 2 -->
+              <div class="space-y-6">
 
             <!-- A) Topic vs Main Idea vs Supporting Details (3 Levels in Depth + Everyday Examples) -->
             <div class="space-y-3">
@@ -770,9 +766,9 @@ window.ReadSkillsData = {
 
             <!-- Part 2 Bottom Navigation Buttons -->
             <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
-              <button onclick="app.switchLearnPart('part1')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5">
+              <button onclick="app.selectStageAndStep('preReading', 'learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5">
                 <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span>Back: Part 1 (Pre-Reading)</span>
+                <span>Back: Pre-Reading (Learn Part 1)</span>
               </button>
               <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
                 <span>Next Step: Example (Passage ยาว & คำศัพท์ 10 คำ)</span>
@@ -792,11 +788,29 @@ window.ReadSkillsData = {
               </h4>
               <p class="text-xs text-slate-500 mt-0.5">การนำทฤษฎีจากหน้า Learn มาประยุกต์ใช้วิเคราะห์บทอ่านจริงอย่างละเอียดลึกซึ้ง</p>
             </div>
-            <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full self-start sm:self-auto">Unit 1 Reading Model (~275 Words)</span>
+            <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full self-start sm:self-auto">Unit 1 Reading Model (2 Examples)</span>
           </div>
 
-          <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->
-          <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
+          <div id="example-content-top"></div>
+
+          <!-- Sub-Tab Switcher: Example 1 vs Example 2 -->
+          <div class="flex items-center space-x-2 border-b border-purple-200/80 pb-2">
+            <button id="ex-tab-1" onclick="app.switchExampleTab(1)" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md">
+              <i data-lucide="bookmark" class="w-4 h-4"></i>
+              <span>Example 1: The Tortoise & Hare</span>
+              <span class="text-[10px] bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded-full">Perseverance</span>
+            </button>
+            <button id="ex-tab-2" onclick="app.switchExampleTab(2)" class="px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200">
+              <i data-lucide="bookmark" class="w-4 h-4"></i>
+              <span>Example 2: The Ant & Grasshopper</span>
+              <span class="text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">Preparation</span>
+            </button>
+          </div>
+
+          <!-- Example 1 Container -->
+          <div id="example-view-1" class="space-y-6">
+            <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->
+            <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
               <div>
                 <span class="text-[10px] font-bold text-pink-400 uppercase tracking-wider">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า)</span>
@@ -1162,17 +1176,430 @@ window.ReadSkillsData = {
             </div>
           </div>
 
-          <!-- Bottom Navigation Buttons -->
+          <!-- Bottom Navigation Buttons for Example 1 -->
           <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
             <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
               ⬅ Back: Learn (ทฤษฎีใจความสำคัญ)
             </button>
-            <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-              <span>Next Step: Practice (แบบฝึกหัดพร้อมเฉลย)</span>
+            <button onclick="app.switchExampleTab(2)" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+              <span>Next: Example 2 (มดกับตั๊กแตน)</span>
               <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
-        </div>`,
+        </div>
+
+        <!-- Example 2 Container (The Ant and the Grasshopper) -->
+        <div id="example-view-2" class="space-y-6 hidden">
+          <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->
+          <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
+              <div>
+                <span class="text-[10px] font-bold text-pink-400 uppercase tracking-wider">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า - การมองการณ์ไกล vs ความประมาท)</span>
+                <h5 class="text-base font-bold text-white mt-0.5">The Ant and the Grasshopper: The Wisdom of Preparation</h5>
+              </div>
+              
+              <div class="flex items-center space-x-2">
+                <!-- Audio Speed Selector -->
+                <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
+                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
+                  <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
+                    <option value="0.65" class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
+                    <option value="0.75" selected class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
+                    <option value="0.85" class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
+                    <option value="1.0" class="bg-slate-900 text-white">1.0x (ปกติ)</option>
+                  </select>
+                </div>
+
+                <button onclick="app.playUnit1Passage2()" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer shadow-md">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                  <span>Listen Passage</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- 4-Paragraph Passage with Micro-Analysis -->
+            <div class="text-sm text-slate-200 leading-relaxed space-y-4 font-serif">
+              
+              <!-- Paragraph 1: Introduction & Topic Sentence -->
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">[Paragraph 1: Topic Sentence - Contrasting Behaviors in Summer]</span>
+                  <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans">Beginning Position</span>
+                </div>
+                <p class="leading-relaxed">
+                  <span class="highlighter-pen highlighter-green">During a radiant summer afternoon, an <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">industrious</span> Ant worked tirelessly storing grain, while a <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">frivolous</span> Grasshopper sang carefree songs and mocked her constant toil.</span>
+                  The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship.
+                </p>
+                <!-- Micro-Analysis: Why This Works -->
+                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2">
+                  <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-emerald-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคแรกทำหน้าที่เป็น <strong>Topic Sentence</strong> เพราะมีความกว้าง (General enough) ในการเปิดประเด็นเปรียบเทียบพฤติกรรมระหว่างตัวละครหลักทั้งสอง (มดผู้ขยัน vs ตั๊กแตนผู้รักสนุก) และปูพื้นฐานปมความขัดแย้งของเรื่องทันที ประโยคแวดล้อมที่ตามมาเป็นเพียงรายละเอียดสนับสนุนเกี่ยวกับการเตือนเรื่องสภาพอากาศ
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paragraph 2: Supporting Details -->
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-500 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-sky-400 uppercase tracking-wider block">[Paragraph 2: Supporting Details - Complacency vs Daily Diligence]</span>
+                  <span class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans">Major Detail</span>
+                </div>
+                <p class="leading-relaxed">
+                  <span class="highlighter-pen highlighter-blue">Instead of heeding the wise advice, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">complacent</span> Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">abundance</span> would never run out.</span>
+                  Week after week, the Ant practiced steadfast <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">diligence</span>, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant.
+                </p>
+                <!-- Micro-Analysis: Why This Works -->
+                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2">
+                  <i data-lucide="info" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-sky-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ข้อความที่ไฮไลต์เป็น <strong>Major Supporting Detail</strong> ที่ระบุพฤติกรรมความชะล่าใจเฉพาะเจาะจง (Specific action) ของตั๊กแตน ซึ่งทำหน้าที่เป็นข้อมูลสนับสนุนว่าเหตุใดตั๊กแตนจึงไม่ได้เตรียมพร้อมเมื่อฤดูหนาวมาถึง
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paragraph 3: Climax & Main Idea / Moral -->
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-rose-500 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block">[Paragraph 3: Climax & Stated Moral / Main Idea]</span>
+                  <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans">Concluding Position</span>
+                </div>
+                <p class="leading-relaxed">
+                  When the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">harsh</span> winter finally arrived with freezing blizzards, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">impoverished</span> Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth.
+                  <span class="highlighter-pen highlighter-pink">The enduring wisdom of the season demonstrates that <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">foresight</span>, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared.</span>
+                </p>
+                <!-- Micro-Analysis: Why This Works -->
+                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2">
+                  <i data-lucide="info" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-rose-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคสรุปจบนี้คือ <strong>Stated Main Idea</strong> ประจำบทเรียน ทำหน้าที่เป็น <strong>"ร่มคันใหญ่ (Umbrella Sentence)"</strong> ที่ครอบคลุมทั้งผลลัพธ์ของความรอบคอบในการเตรียมพร้อม และความหายนะของผู้ที่ละเลย โดยสรุปเป็นหลักคิดที่นำไปปรับใช้ได้จริง
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paragraph 4: Resolution & Character Reflection -->
+              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-500 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block">[Paragraph 4: Resolution / Reflection - The Moral Reinforced]</span>
+                  <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-sans">Character Growth</span>
+                </div>
+                <p class="leading-relaxed">
+                  Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain.
+                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Humbled by the generous gift, the reformed Grasshopper bowed with sincere <span class="text-purple-950 font-bold border-b border-dashed border-purple-900">humility</span>, promising that every future summer would be devoted to responsible <span class="text-purple-950 font-bold border-b border-dashed border-purple-900">prudence</span> alongside his music.</span>
+                  From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.
+                </p>
+                <!-- Micro-Analysis: Why This Works -->
+                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200 flex items-start space-x-2">
+                  <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
+                  <div>
+                    <strong class="text-amber-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ย่อหน้าที่ 4 ช่วย <strong>ตอกย้ำ Main Idea (Reinforcing the Theme)</strong> ผ่านการเปลี่ยนแปลงของตัวละคร (Character Growth) ตั๊กแตนไม่ได้แค่รอดชีวิต แต่เกิดการเรียนรู้ความถ่อมตนและความรอบคอบ ทำให้คติสอนใจนี้กลายเป็นบทเรียนชีวิตที่สมบูรณ์
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 2. คำศัพท์ 10 คำ ครบถ้วน พร้อมตัวอย่างประโยคบริบทใหม่ (10 Core Vocabulary Cards) -->
+          <div class="space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-purple-100 pb-2">
+              <h5 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
+                <span>คำศัพท์สำคัญ 10 คำ (10 Core Vocabulary Words in Context)</span>
+              </h5>
+              <span class="text-[11px] text-purple-800 font-medium bg-purple-50 px-2 py-0.5 rounded-md">ปรากฏครบทั้ง 10 คำในบทอ่าน + ตัวอย่างประโยคใหม่</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              <!-- Vocab 1: Industrious -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Industrious</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ɪnˈdʌs.tri.əs/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ขยันขันแข็ง, อุตสาหะ</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...an industrious Ant worked tirelessly storing grain..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> The industrious university students spent extra hours studying in the library.
+                </div>
+              </div>
+
+              <!-- Vocab 2: Frivolous -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Frivolous</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ˈfrɪv.əl.əs/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ไร้สาระ, ไม่จริงจัง, รักสนุก</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...while a frivolous Grasshopper sang carefree songs..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Spending your monthly savings on frivolous items can lead to financial trouble.
+                </div>
+              </div>
+
+              <!-- Vocab 3: Complacent -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Complacent</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/kəmˈpleɪ.sənt/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ชะล่าใจ, พึงพอใจจนประมาท</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...the complacent Grasshopper spent every sunny morning dancing..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Never become complacent after passing the midterm exam; continue reviewing daily.
+                </div>
+              </div>
+
+              <!-- Vocab 4: Abundance -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Abundance</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/əˈbʌn.dəns/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ความอุดมสมบูรณ์, ปริมาณมาก</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...convinced that nature's abundance would never run out."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Thailand enjoys an abundance of fresh fruits throughout the rainy season.
+                </div>
+              </div>
+
+              <!-- Vocab 5: Diligence -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Diligence</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ˈdɪl.ɪ.dʒəns/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ความขยันหมั่นเพียร, ความเอาใจใส่</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...the Ant practiced steadfast diligence, hauling heavy seeds..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Through continuous diligence and reading practice, he achieved a high English score.
+                </div>
+              </div>
+
+              <!-- Vocab 6: Harsh -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Harsh</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/hɑːʃ/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">รุนแรง, โหดร้าย, ทารุณ</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "When the harsh winter finally arrived with freezing blizzards..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> The climbers protected themselves against the harsh winds on the mountain peak.
+                </div>
+              </div>
+
+              <!-- Vocab 7: Impoverished -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Impoverished</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ɪmˈpɒv.ər.ɪʃt/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ตกระกำลำบาก, ขัดสน, ยากจนลง</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...the impoverished Grasshopper found himself shivering..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> The unexpected flood left many villagers impoverished until emergency aid arrived.
+                </div>
+              </div>
+
+              <!-- Vocab 8: Foresight -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Foresight</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ˈfɔː.saɪt/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">การมองการณ์ไกล, ความรอบคอบ</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...demonstrates that foresight, disciplined preparation..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Having the foresight to organize your study plan prevents stressful cramming.
+                </div>
+              </div>
+
+              <!-- Vocab 9: Humility -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Humility</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/hjuːˈmɪl.ə.ti/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ความถ่อมตน, ความนอบน้อม</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...the reformed Grasshopper bowed with sincere humility..."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> She received the student leadership award with genuine humility and grace.
+                </div>
+              </div>
+
+              <!-- Vocab 10: Prudence -->
+              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-bold text-purple-900 text-sm">Prudence</span>
+                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 font-mono">/ˈpruː.dəns/</div>
+                  <div class="text-xs font-bold text-pink-700 mt-1">ความรอบคอบ, ความสุขุมรอบคอบ</div>
+                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
+                    <strong class="text-slate-800">In Story:</strong> "...would be devoted to responsible prudence alongside his music."
+                  </div>
+                </div>
+                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
+                  <strong class="text-purple-950">Extra Context:</strong> Exercising financial prudence allows you to handle unexpected expenses easily.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 3. Clue & Strategy Breakdown Split into Before / After Reading -->
+          <div class="space-y-3">
+            <div class="flex items-center space-x-2 border-b border-purple-100 pb-2">
+              <i data-lucide="compass" class="w-4 h-4 text-purple-700"></i>
+              <h5 class="font-bold text-slate-900 text-sm">การแยกแยะร่องรอยกลยุทธ์: ก่อนอ่าน vs หลังอ่าน (Before & After Reading Breakdown)</h5>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+              <!-- Before Reading: Prediction Clues -->
+              <div class="p-4 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl border border-purple-200 space-y-2">
+                <div class="flex items-center space-x-2 text-purple-900 font-bold text-xs">
+                  <span class="w-5 h-5 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-[11px]">1</span>
+                  <span>BEFORE READING: ร่องรอยการคาดเดา (Predicting & Previewing)</span>
+                </div>
+                <ul class="space-y-1.5 text-slate-700 text-[11px] pl-2">
+                  <li>
+                    • <strong>Title Analysis:</strong> ชื่อเรื่อง <em>"The Ant and the Grasshopper: The Wisdom of Preparation"</em> บ่งชี้ทันทีว่าจะมีการเปรียบเทียบลักษณะนิสัยระหว่าง "มด" กับ "ตั๊กแตน" โดยมีแก่นเรื่องเกี่ยวกับคุณค่าของการเตรียมพร้อม
+                  </li>
+                  <li>
+                    • <strong>Background Knowledge:</strong> ผู้อ่านดึงความรู้เดิมว่ามดเป็นสัตว์ขยันเก็บอาหารในฤดูร้อน ส่วนตั๊กแตนมักชอบร้องเพลง จึงคาดเดาได้ว่าจะเกิดวิกฤตเมื่อฤดูกาลเปลี่ยนแปลงสู่ฤดูหนาว
+                  </li>
+                  <li>
+                    • <strong>Prediction Hypothesis:</strong> คาดการณ์ว่าฝ่ายที่เตรียมพร้อมจะรอดชีวิต ส่วนฝ่ายที่ละเลยจะพบความยากลำบาก และเรื่องจะสรุปด้วยคติสอนใจ
+                  </li>
+                </ul>
+              </div>
+
+              <!-- After Reading: Verification & Analysis -->
+              <div class="p-4 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 space-y-2">
+                <div class="flex items-center space-x-2 text-emerald-900 font-bold text-xs">
+                  <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-[11px]">2</span>
+                  <span>AFTER READING: ตรวจสอบและยืนยันโครงสร้าง (Verifying & Analyzing)</span>
+                </div>
+                <ul class="space-y-1.5 text-slate-700 text-[11px] pl-2">
+                  <li>
+                    • <strong>Locating Topic Sentence:</strong> ย่อหน้าที่ 1 ประโยคแรกเปิดประเด็นเปรียบเทียบพฤติกรรมของทั้งสองฝ่ายทันที สอดคล้องกับตำแหน่งต้นย่อหน้า
+                  </li>
+                  <li>
+                    • <strong>Checking Supporting Details:</strong> ย่อหน้าที่ 2 ให้ข้อมูลเหตุการณ์ที่ตั๊กแตนละเลยคำเตือนและเต้นรำอย่างชะล่าใจ ซึ่งเป็น Major Detail สนับสนุนปมปัญหา
+                  </li>
+                  <li>
+                    • <strong>Confirming Main Idea:</strong> ย่อหน้าที่ 3 สรุปคติธรรมอย่างชัดเจน (Stated Moral) ว่าการมองการณ์ไกลและความขยันปกป้องเราจากความยากลำบาก
+                  </li>
+                  <li>
+                    • <strong>Evaluating Character Growth:</strong> ย่อหน้าที่ 4 แสดงให้เห็นว่าตั๊กแตนสำนึกผิดและเปลี่ยนแปลงตนเอง (Character Growth) ทำให้ใจความสำคัญมีน้ำหนักสมบูรณ์
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4. Reflection Questions -->
+          <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-200 space-y-3 shadow-xs">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
+              <i data-lucide="help-circle" class="w-5 h-5 text-purple-700"></i>
+              <span>คำถามสะท้อนคิดเพื่อความเข้าใจระดับสูง (Deep Reading Reflection Questions)</span>
+            </div>
+            <p class="text-xs text-slate-600">
+              ลองฝึกคิดวิเคราะห์ตาม 3 ประเด็นต่อไปนี้ เพื่อฝึกฝนทักษะการอ่านวิเคราะห์ (Critical Reading) ตามมาตรฐาน CEFR A2:
+            </p>
+
+            <div class="space-y-2.5 text-xs">
+              <!-- Question 1 -->
+              <div class="p-3 bg-purple-50/70 rounded-xl border border-purple-100 space-y-1">
+                <p class="font-bold text-purple-950">
+                  1. "How do the contrasting actions of the Ant and the Grasshopper in paragraphs 1 and 2 directly support the moral stated in paragraph 3?"
+                </p>
+                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-purple-400">
+                  💡 <strong>แนวคิดวิเคราะห์:</strong> การกระทำที่ตรงข้ามกัน (มดเก็บอาหาร vs ตั๊กแตนเต้นรำ) ทำหน้าที่เป็นหลักฐานเชิงประจักษ์ (Empirical Evidence) ที่แสดงความสัมพันธ์แบบเหตุและผล (Cause & Effect) นำไปสู่บทสรุปว่าทำไมการเตรียมตัวล่วงหน้าจึงจำเป็น
+                </p>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="p-3 bg-pink-50/70 rounded-xl border border-pink-100 space-y-1">
+                <p class="font-bold text-pink-950">
+                  2. "Why is paragraph 4 (the Grasshopper's humility and promise of prudence) essential for demonstrating true character growth?"
+                </p>
+                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-pink-400">
+                  💡 <strong>แนวคิดวิเคราะห์:</strong> หากเรื่องจบที่ย่อหน้า 3 บทอ่านจะสะท้อนเพียงความล้มเหลว แต่ย่อหน้า 4 แสดงถึงการยอมรับความจริงและการเปลี่ยนแปลงพฤติกรรม (Character Growth) ทำให้คติธรรมกลายเป็นบทเรียนชีวิตที่มีความหวังและสมบูรณ์
+                </p>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="p-3 bg-amber-50/70 rounded-xl border border-amber-100 space-y-1">
+                <p class="font-bold text-amber-950">
+                  3. "For university students, what actions in academic life represent 'storing grain' versus 'singing frivolously'?"
+                </p>
+                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-amber-400">
+                  💡 <strong>แนวคิดวิเคราะห์:</strong> 'Storing grain' คือการอ่านหนังสือทบทวนบทเรียนและสะสมคำศัพท์เป็นประจำทุกสัปดาห์ ส่วน 'Singing frivolously' คือการผัดวันประกันพรุ่งและรออ่านคืนก่อนสอบ ซึ่งอาจทำให้ 'หนาวสั่น' เมื่อเจอข้อสอบจริง
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Navigation Buttons for Example 2 -->
+          <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
+            <button onclick="app.switchExampleTab(1)" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+              ⬅ Back: Example 1 (เต่ากับกระต่าย)
+            </button>
+            <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+              <span>Next Step: Practice (แบบฝึกหัด 40 ข้อ)</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>`,
 
         practice: `<div class="space-y-6">
           <div class="flex items-center justify-between border-b border-purple-100 pb-3">
@@ -1283,12 +1710,20 @@ window.ReadSkillsData = {
             <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
               ⬅ Back: Example
             </button>
-            <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-              <i data-lucide="check-check" class="w-4 h-4"></i>
-              <span>Review Overview ↺</span>
+            <button onclick="app.selectStageAndStep('postReading', 'quiz')" class="w-full sm:w-auto px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+              <span>Next Step: Post-Reading Quiz (แบบทดสอบ 40 ข้อ)</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </button>
           </div>
         </div>`
+          }
+        },
+        postReading: {
+          title: "Post-Reading Stage",
+          steps: {
+            quiz: true
+          }
+        }
       }
     },
 {
@@ -1302,90 +1737,36 @@ window.ReadSkillsData = {
       stages: {
         preReading: {
           title: "Pre-Reading Stage",
-          topics: [
-            {
-              id: "u2-pre-1",
-              title: "Identifying Signal Words",
-              thaiTitle: "การระบุคำสัญญาณบ่งชี้ความสัมพันธ์",
-              steps: {
-                overview: "Authors use transition words like 'firstly', 'because', and 'however' to connect ideas.",
-                learn: "Categorize signal words into addition, contrast, and cause-and-effect before analyzing the passage.",
-                passage: "Healthy study habits boost academic performance. For example, taking short breaks prevents mental fatigue. In addition, reviewing notes daily strengthens memory retention.",
-                audioText: "Healthy study habits boost academic performance. For example, taking short breaks prevents mental fatigue. In addition, reviewing notes daily strengthens memory retention.",
-                example: "'For example' introduces an illustration; 'In addition' introduces another supporting point.",
-                practice: {
-                  question: "Which transition word indicates a contrast between two ideas?",
-                  options: ["Furthermore", "In contrast", "Consequently", "For instance"],
-                  answer: 1,
-                  explanation: "'In contrast' clearly signals an opposing or differing concept."
-                },
-                quiz: {
-                  question: "What is the function of the phrase 'For example' in the passage?",
-                  options: ["To state the opposite", "To provide a supporting detail", "To conclude the article", "To introduce a question"],
-                  answer: 1,
-                  explanation: "It introduces a concrete instance supporting the main idea."
-                }
-              }
-            }
-          ]
+          steps: {
+            overview: "Authors use transition words like 'firstly', 'because', and 'however' to connect ideas.",
+            learn: "Categorize signal words into addition, contrast, and cause-and-effect before analyzing the passage."
+          }
         },
         whileReading: {
           title: "While-Reading Stage",
-          topics: [
-            {
-              id: "u2-while-1",
-              title: "Distinguishing Major vs. Minor Details",
-              thaiTitle: "การแยกแยะรายละเอียดหลักและรายละเอียดรอง",
-              steps: {
-                overview: "Major details explain the main idea directly, while minor details provide specific examples or stats.",
-                learn: "Look for broad supporting arguments (major) followed by names, dates, or measurements (minor).",
-                passage: "Sleep deprivation impairs cognitive function in three ways. First, it reduces attention span. Studies show tired students lose focus after just 15 minutes. Second, it disrupts emotional balance.",
-                audioText: "Sleep deprivation impairs cognitive function in three ways. First, it reduces attention span. Studies show tired students lose focus after just 15 minutes. Second, it disrupts emotional balance.",
-                example: "Major detail: 'First, it reduces attention span.' Minor detail: 'Studies show tired students lose focus after just 15 minutes.'",
-                practice: {
-                  question: "In the passage, 'Studies show tired students lose focus after 15 minutes' is a:",
-                  options: ["Main idea", "Minor supporting detail", "Major topic sentence", "Concluding statement"],
-                  answer: 1,
-                  explanation: "It gives specific evidence supporting the major point about reduced attention span."
-                },
-                quiz: {
-                  question: "Which question helps identify a major detail?",
-                  options: ["What font size is used?", "Why or how does this explain the main idea?", "Who published the book?", "How many pages are there?"],
-                  answer: 1,
-                  explanation: "Major details directly explain or demonstrate why the main idea is true."
-                }
-              }
+          steps: {
+            learn: "Look for broad supporting arguments (major) followed by names, dates, or measurements (minor).",
+            passage: "Sleep deprivation impairs cognitive function in three ways. First, it reduces attention span. Studies show tired students lose focus after just 15 minutes. Second, it disrupts emotional balance.",
+            audioText: "Sleep deprivation impairs cognitive function in three ways. First, it reduces attention span. Studies show tired students lose focus after just 15 minutes. Second, it disrupts emotional balance.",
+            example: "Major detail: 'First, it reduces attention span.' Minor detail: 'Studies show tired students lose focus after just 15 minutes.'",
+            practice: {
+              question: "In the passage, 'Studies show tired students lose focus after 15 minutes' is a:",
+              options: ["Main idea", "Minor supporting detail", "Major topic sentence", "Concluding statement"],
+              answer: 1,
+              explanation: "It gives specific evidence supporting the major point about reduced attention span."
             }
-          ]
+          }
         },
         postReading: {
           title: "Post-Reading Stage",
-          topics: [
-            {
-              id: "u2-post-1",
-              title: "Mapping Cause and Effect",
-              thaiTitle: "การทำผังความสัมพันธ์เหตุและผล",
-              steps: {
-                overview: "Organize text relationships using graphic organizers and cause-effect chains.",
-                learn: "Identify the cause (why something happened) and the effect (the outcome or result).",
-                passage: "Due to unprecedented global temperatures, polar ice sheets are melting rapidly. Consequently, sea levels are rising worldwide, threatening coastal communities.",
-                audioText: "Due to unprecedented global temperatures, polar ice sheets are melting rapidly. Consequently, sea levels are rising worldwide, threatening coastal communities.",
-                example: "Cause: Global temperatures rising -> Effect: Polar ice melts -> Secondary Effect: Sea levels rise.",
-                practice: {
-                  question: "In the passage, what is the cause of sea levels rising?",
-                  options: ["Coastal communities moving", "Polar ice sheets melting", "Building sea walls", "Cold winter storms"],
-                  answer: 1,
-                  explanation: "The melting ice sheets directly contribute to rising sea levels."
-                },
-                quiz: {
-                  question: "Which signal word indicates a result or effect in the passage?",
-                  options: ["Due to", "Consequently", "Threatening", "Global"],
-                  answer: 1,
-                  explanation: "'Consequently' introduces the logical consequence or effect."
-                }
-              }
+          steps: {
+            quiz: {
+              question: "Which signal word indicates a result or effect in the passage?",
+              options: ["Due to", "Consequently", "Threatening", "Global"],
+              answer: 1,
+              explanation: "'Consequently' introduces the logical consequence or effect."
             }
-          ]
+          }
         }
       }
     },
@@ -1400,95 +1781,41 @@ window.ReadSkillsData = {
       stages: {
         preReading: {
           title: "Pre-Reading Stage",
-          topics: [
-            {
-              id: "u3-pre-1",
-              title: "Types of Context Clues",
-              thaiTitle: "ประเภทของบริบทช่วยบอกความหมาย",
-              steps: {
-                overview: "Good readers use surrounding sentences to infer the meaning of unfamiliar vocabulary.",
-                learn: "There are four primary clue types: Definition, Synonym, Antonym, and Example.",
-                passage: "The entomologist, a scientist who studies insects, discovered three new beetle species in Khao Yai National Park.",
-                audioText: "The entomologist, a scientist who studies insects, discovered three new beetle species in Khao Yai National Park.",
-                example: "'a scientist who studies insects' is a direct definition clue between commas.",
-                practice: {
-                  question: "What type of context clue is used in: 'Unlike his gregarious brother, Mark was shy and quiet'?",
-                  options: ["Definition clue", "Antonym / Contrast clue", "Example clue", "Synonym clue"],
-                  answer: 1,
-                  explanation: "'Unlike' and 'shy and quiet' provide an antonym contrast to define 'gregarious' as sociable."
-                },
-                quiz: {
-                  question: "What does 'entomologist' mean in the passage?",
-                  options: ["A tree specialist", "A scientist who studies insects", "A park ranger", "A mountain climber"],
-                  answer: 1,
-                  explanation: "The text defines it explicitly: 'a scientist who studies insects'."
-                }
-              }
-            }
-          ]
+          steps: {
+            overview: "Good readers use surrounding sentences to infer the meaning of unfamiliar vocabulary.",
+            learn: "There are four primary clue types: Definition, Synonym, Antonym, and Example."
+          }
         },
         whileReading: {
           title: "While-Reading Stage",
-          topics: [
-            {
-              id: "u3-while-1",
-              title: "Decoding Words in Passages",
-              thaiTitle: "การถอดรหัสความหมายคำศัพท์ในบทอ่าน",
-              steps: {
-                overview: "Read past the unknown word and look at adjacent clauses to clarify meaning.",
-                learn: "Substitute candidate meanings into the sentence to check if the sentence makes logical sense.",
-                passage: "The arid desert landscape made farming nearly impossible, as the extremely dry soil received less than 50 millimeters of rain each year.",
-                audioText: "The arid desert landscape made farming nearly impossible, as the extremely dry soil received less than 50 millimeters of rain each year.",
-                example: "Clue 'extremely dry soil received less than 50 millimeters of rain' reveals that 'arid' means very dry.",
-                practice: {
-                  question: "What does 'arid' mean based on the passage context?",
-                  options: ["Fertile and green", "Extremely dry and barren", "Cold and snowy", "Mountainous"],
-                  answer: 1,
-                  explanation: "The text explains 'extremely dry soil received less than 50 millimeters of rain'."
-                },
-                quiz: {
-                  question: "Which strategy is most effective when encountering an unfamiliar word while reading?",
-                  options: [
-                    "Stop reading immediately and give up",
-                    "Analyze surrounding words and tone for clues",
-                    "Skip the entire paragraph",
-                    "Pronounce it backwards"
-                  ],
-                  answer: 1,
-                  explanation: "Analyzing context clues is the proven academic reading strategy."
-                }
-              }
+          steps: {
+            learn: "Substitute candidate meanings into the sentence to check if the sentence makes logical sense.",
+            passage: "The arid desert landscape made farming nearly impossible, as the extremely dry soil received less than 50 millimeters of rain each year.",
+            audioText: "The arid desert landscape made farming nearly impossible, as the extremely dry soil received less than 50 millimeters of rain each year.",
+            example: "Clue 'extremely dry soil received less than 50 millimeters of rain' reveals that 'arid' means very dry.",
+            practice: {
+              question: "What does 'arid' mean based on the passage context?",
+              options: ["Fertile and green", "Extremely dry and barren", "Cold and snowy", "Mountainous"],
+              answer: 1,
+              explanation: "The text explains 'extremely dry soil received less than 50 millimeters of rain'."
             }
-          ]
+          }
         },
         postReading: {
           title: "Post-Reading Stage",
-          topics: [
-            {
-              id: "u3-post-1",
-              title: "Vocabulary Consolidation & Application",
-              thaiTitle: "การทบทวนและประยุกต์ใช้คำศัพท์",
-              steps: {
-                overview: "Solidify learned words by creating personal definitions and using them in original sentences.",
-                learn: "Record new vocabulary in your personal reading log with part of speech and context sentence.",
-                passage: "By expanding lexical range, EFL learners at Buriram Rajabhat University communicate more accurately in academic discourse.",
-                audioText: "By expanding lexical range, EFL learners at Buriram Rajabhat University communicate more accurately in academic discourse.",
-                example: "'Lexical range' refers to vocabulary breadth; 'Discourse' means formal written or spoken communication.",
-                practice: {
-                  question: "In academic reading, 'lexical range' most closely refers to:",
-                  options: ["Grammar rules", "Vocabulary breadth and variety", "Reading speed", "Spelling accuracy"],
-                  answer: 1,
-                  explanation: "'Lexical' relates to the words or vocabulary of a language."
-                },
-                quiz: {
-                  question: "Why is keeping a reading vocabulary log beneficial?",
-                  options: ["It wastes study time", "It reinforces retention through active recall", "It replaces the textbook", "It slows down graduation"],
-                  answer: 1,
-                  explanation: "Active logging and reviewing reinforces long-term memory."
-                }
-              }
+          steps: {
+            quiz: {
+              question: "Which strategy is most effective when encountering an unfamiliar word while reading?",
+              options: [
+                "Stop reading immediately and give up",
+                "Analyze surrounding words and tone for clues",
+                "Skip the entire paragraph",
+                "Pronounce it backwards"
+              ],
+              answer: 1,
+              explanation: "Analyzing context clues is the proven academic reading strategy."
             }
-          ]
+          }
         }
       }
     },
@@ -1503,90 +1830,36 @@ window.ReadSkillsData = {
       stages: {
         preReading: {
           title: "Pre-Reading Stage",
-          topics: [
-            {
-              id: "u4-pre-1",
-              title: "Pronoun Antecedents & References",
-              thaiTitle: "คำสรรพนามและสิ่งที่ถูกอ้างถึง",
-              steps: {
-                overview: "Pronouns like 'it', 'they', 'this', and 'these' refer back to nouns mentioned earlier.",
-                learn: "Find the antecedent by matching number (singular/plural) and meaning in the previous sentence.",
-                passage: "Online learning platforms provide flexible schedules for university students. They enable learners to study at their own pace.",
-                audioText: "Online learning platforms provide flexible schedules for university students. They enable learners to study at their own pace.",
-                example: "'They' is plural and refers back to 'Online learning platforms'.",
-                practice: {
-                  question: "In the sentence above, what does the pronoun 'They' refer to?",
-                  options: ["Flexible schedules", "University students", "Online learning platforms", "Instructors"],
-                  answer: 2,
-                  explanation: "'They' refers to 'Online learning platforms', which perform the action of enabling learners."
-                },
-                quiz: {
-                  question: "Why do authors use pronouns instead of repeating full nouns?",
-                  options: ["To confuse readers", "To improve text flow and avoid repetition", "To make texts longer", "To hide information"],
-                  answer: 1,
-                  explanation: "Pronouns maintain coherence and smooth sentence flow without tedious repetition."
-                }
-              }
-            }
-          ]
+          steps: {
+            overview: "Pronouns like 'it', 'they', 'this', and 'these' refer back to nouns mentioned earlier.",
+            learn: "Find the antecedent by matching number (singular/plural) and meaning in the previous sentence."
+          }
         },
         whileReading: {
           title: "While-Reading Stage",
-          topics: [
-            {
-              id: "u4-while-1",
-              title: "Tracking Text Organizational Patterns",
-              thaiTitle: "การติดตามรูปแบบโครงสร้างข้อความ",
-              steps: {
-                overview: "Texts follow organizational patterns such as Chronological, Compare-Contrast, and Problem-Solution.",
-                learn: "Notice headings and transition words to predict where the author's argument is heading.",
-                passage: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
-                audioText: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
-                example: "Pattern: Problem ('Traffic congestion... air pollution') -> Solution ('introduced electric bus lanes...').",
-                practice: {
-                  question: "What organizational pattern does the passage follow?",
-                  options: ["Chronological / Timeline", "Problem and Solution", "Classification / Division", "Narrative Story"],
-                  answer: 1,
-                  explanation: "The text identifies a problem (traffic & pollution) and offers concrete solutions (bus lanes, bike paths)."
-                },
-                quiz: {
-                  question: "Which transition signals a Problem-Solution pattern?",
-                  options: ["To solve this issue", "Meanwhile", "In the 18th century", "Similarly"],
-                  answer: 0,
-                  explanation: "'To solve this issue' directly introduces the proposed solution."
-                }
-              }
+          steps: {
+            learn: "Notice headings and transition words to predict where the author's argument is heading.",
+            passage: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
+            audioText: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
+            example: "Pattern: Problem ('Traffic congestion... air pollution') -> Solution ('introduced electric bus lanes...').",
+            practice: {
+              question: "What organizational pattern does the passage follow?",
+              options: ["Chronological / Timeline", "Problem and Solution", "Classification / Division", "Narrative Story"],
+              answer: 1,
+              explanation: "The text identifies a problem (traffic & pollution) and offers concrete solutions (bus lanes, bike paths)."
             }
-          ]
+          }
         },
         postReading: {
           title: "Post-Reading Stage",
-          topics: [
-            {
-              id: "u4-post-1",
-              title: "Constructing Cohesive Summaries",
-              thaiTitle: "การเขียนสรุปความแบบเชื่อมโยง",
-              steps: {
-                overview: "Use appropriate transition words to write concise, logical summary paragraphs.",
-                learn: "Connect the problem, key interventions, and outcomes with words like 'therefore' and 'consequently'.",
-                passage: "Effective text organization guides readers through logical steps, resulting in deeper comprehension and better analytical retention.",
-                audioText: "Effective text organization guides readers through logical steps, resulting in deeper comprehension and better analytical retention.",
-                example: "Organization -> Logical steps -> Deeper comprehension.",
-                practice: {
-                  question: "Which connective best shows a cause-and-effect conclusion?",
-                  options: ["However", "As a result", "On the other hand", "Initially"],
-                  answer: 1,
-                  explanation: "'As a result' indicates that an effect or outcome follows."
-                },
-                quiz: {
-                  question: "What is the primary benefit of recognizing text structure?",
-                  options: ["It improves reading comprehension and retention", "It memorizes word spellings", "It counts syllables", "It writes code"],
-                  answer: 0,
-                  explanation: "Recognizing organization helps readers process and recall information systematically."
-                }
-              }
+          steps: {
+            quiz: {
+              question: "What is the primary benefit of recognizing text structure?",
+              options: ["It improves reading comprehension and retention", "It memorizes word spellings", "It counts syllables", "It writes code"],
+              answer: 0,
+              explanation: "Recognizing organization helps readers process and recall information systematically."
             }
-          ]
+          }
         }
       }
     },
@@ -1601,105 +1874,41 @@ window.ReadSkillsData = {
       stages: {
         preReading: {
           title: "Pre-Reading Stage",
-          topics: [
-            {
-              id: "u5-pre-1",
-              title: "What is a Valid Paraphrase?",
-              thaiTitle: "การถอดความที่ถูกต้องคืออะไร",
-              steps: {
-                overview: "Paraphrasing means restating an author's ideas in your own words while retaining the original meaning.",
-                learn: "Change sentence structure and use accurate synonyms without altering the factual core.",
-                passage: "The university library will be closed this weekend due to electrical maintenance.",
-                audioText: "The university library will be closed this weekend due to electrical maintenance.",
-                example: "Valid Paraphrase: 'Students cannot access the campus library on Saturday and Sunday because of power repairs.'",
-                practice: {
-                  question: "Which sentence is an accurate paraphrase of 'Smoking significantly increases the risk of heart disease'?",
-                  options: [
-                    "Heart disease causes people to smoke cigarettes",
-                    "Tobacco use notably raises the chances of cardiovascular illness",
-                    "Smoking cures heart problems in young adults",
-                    "Doctors encourage regular smoking"
-                  ],
-                  answer: 1,
-                  explanation: "It uses accurate synonyms (tobacco use, cardiovascular illness) while preserving the original meaning."
-                },
-                quiz: {
-                  question: "What is a common mistake when paraphrasing?",
-                  options: [
-                    "Changing sentence structure",
-                    "Altering the original author's meaning or inserting personal bias",
-                    "Using synonyms",
-                    "Keeping the summary concise"
-                  ],
-                  answer: 1,
-                  explanation: "A paraphrase must never change the original meaning or invent facts."
-                }
-              }
-            }
-          ]
+          steps: {
+            overview: "Paraphrasing means restating an author's ideas in your own words while retaining the original meaning.",
+            learn: "Change sentence structure and use accurate synonyms without altering the factual core."
+          }
         },
         whileReading: {
           title: "While-Reading Stage",
-          topics: [
-            {
-              id: "u5-while-1",
-              title: "Distinguishing Fact vs. Opinion",
-              thaiTitle: "การแยกแยะข้อเท็จจริงและข้อคิดเห็น",
-              steps: {
-                overview: "Facts can be objectively proven; opinions reflect personal feelings, beliefs, or subjective judgments.",
-                learn: "Look for value words like 'best', 'should', 'beautiful', or 'terrible' that signal opinions.",
-                passage: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
-                audioText: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
-                example: "Fact: 'established in 1971' (historical record). Opinion: 'most inspiring institution' ('In my view').",
-                practice: {
-                  question: "Which of the following statements is a FACT?",
-                  options: [
-                    "English is the most enjoyable subject to study",
-                    "Thailand's capital city is Bangkok",
-                    "Online tests are much better than paper tests",
-                    "Everyone should read two novels per week"
-                  ],
-                  answer: 1,
-                  explanation: "'Thailand's capital city is Bangkok' can be verified objectively as an established geographical fact."
-                },
-                quiz: {
-                  question: "Which phrase in a text signals that an OPINION is being stated?",
-                  options: ["According to official statistics", "In the author's opinion", "The research data shows", "Confirmed by measurements"],
-                  answer: 1,
-                  explanation: "'In the author's opinion' explicitly announces a subjective viewpoint."
-                }
-              }
+          steps: {
+            learn: "Look for value words like 'best', 'should', 'beautiful', or 'terrible' that signal opinions.",
+            passage: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
+            audioText: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
+            example: "Fact: 'established in 1971' (historical record). Opinion: 'most inspiring institution' ('In my view').",
+            practice: {
+              question: "Which of the following statements is a FACT?",
+              options: [
+                "English is the most enjoyable subject to study",
+                "Thailand's capital city is Bangkok",
+                "Online tests are much better than paper tests",
+                "Everyone should read two novels per week"
+              ],
+              answer: 1,
+              explanation: "'Thailand's capital city is Bangkok' can be verified objectively as an established geographical fact."
             }
-          ]
+          }
         },
         postReading: {
           title: "Post-Reading Stage",
-          topics: [
-            {
-              id: "u5-post-1",
-              title: "Inferring Author Tone & Perspective",
-              thaiTitle: "การอนุมานน้ำเสียงและมุมมองของผู้เขียน",
-              steps: {
-                overview: "Determine whether the author's tone is objective, critical, enthusiastic, or neutral.",
-                learn: "Examine word choice (connotation) and whether balanced counterarguments are presented.",
-                passage: "While artificial intelligence offers intriguing opportunities, educators must cautiously evaluate its impact on independent student reasoning.",
-                audioText: "While artificial intelligence offers intriguing opportunities, educators must cautiously evaluate its impact on independent student reasoning.",
-                example: "Tone: Cautious and analytical (balanced use of 'intriguing opportunities' and 'cautiously evaluate').",
-                practice: {
-                  question: "What is the author's tone toward AI in education in the passage?",
-                  options: ["Aggressively hostile", "Cautious and reflective", "Careless and disinterested", "Purely comical"],
-                  answer: 1,
-                  explanation: "The author advocates for careful evaluation rather than blind excitement or rejection."
-                },
-                quiz: {
-                  question: "What evidence reveals the tone of a reading passage?",
-                  options: ["The date of publication", "Word choices and stylistic attitudes", "The length of sentences", "The paper color"],
-                  answer: 1,
-                  explanation: "Connotative diction and stylistic nuances reveal the author's attitude."
-                }
-              }
+          steps: {
+            quiz: {
+              question: "Which phrase in a text signals that an OPINION is being stated?",
+              options: ["According to official statistics", "In the author's opinion", "The research data shows", "Confirmed by measurements"],
+              answer: 1,
+              explanation: "'In the author's opinion' explicitly announces a subjective viewpoint."
             }
-          ]
+          }
         }
       }
     },
@@ -1714,105 +1923,41 @@ window.ReadSkillsData = {
       stages: {
         preReading: {
           title: "Pre-Reading Stage",
-          topics: [
-            {
-              id: "u6-pre-1",
-              title: "Multi-Strategy Synthesis",
-              thaiTitle: "การสังเคราะห์กลยุทธ์การอ่านแบบองค์รวม",
-              steps: {
-                overview: "Skim and preview multi-paragraph academic texts before doing in-depth reading.",
-                learn: "Combine title preview, subheadings, and first-paragraph topic sentences to build a mental map.",
-                passage: "Renewable energy adoption across Southeast Asia has surged over the past decade. Solar and wind installations now account for substantial energy production.",
-                audioText: "Renewable energy adoption across Southeast Asia has surged over the past decade. Solar and wind installations now account for substantial energy production.",
-                example: "Pre-reading preview shows the text covers regional adoption and economic benefits of clean energy.",
-                practice: {
-                  question: "When approaching a multi-page academic article, what should you do first?",
-                  options: [
-                    "Read every single word from start to finish without stopping",
-                    "Preview title, abstract, headings, and concluding summary",
-                    "Translate every word with a dictionary",
-                    "Memorize the bibliography"
-                  ],
-                  answer: 1,
-                  explanation: "Previewing the abstract, headings, and summary provides a roadmap for comprehension."
-                },
-                quiz: {
-                  question: "What is the goal of synthesis in integrated reading?",
-                  options: ["Combining multiple ideas to form a comprehensive understanding", "Ignoring difficult vocabulary", "Memorizing sentence lengths", "Copying word-for-word"],
-                  answer: 0,
-                  explanation: "Synthesis combines diverse elements into a coherent whole."
-                }
-              }
-            }
-          ]
+          steps: {
+            overview: "Skim and preview multi-paragraph academic texts before doing in-depth reading.",
+            learn: "Combine title preview, subheadings, and first-paragraph topic sentences to build a mental map."
+          }
         },
         whileReading: {
           title: "While-Reading Stage",
-          topics: [
-            {
-              id: "u6-while-1",
-              title: "Critical Analysis of Academic Passages",
-              thaiTitle: "การวิเคราะห์เชิงวิพากษ์ในบทอ่านเชิงวิชาการ",
-              steps: {
-                overview: "Track supporting evidence, verify author credentials, and evaluate data points.",
-                learn: "Underline thesis statements, circle transition markers, and annotate margins with key takeaways.",
-                passage: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
-                audioText: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
-                example: "Claim: Software improves reading. Evidence: 28% score increase over 16 weeks in a longitudinal study.",
-                practice: {
-                  question: "What quantitative evidence is provided to support the effectiveness of reading software?",
-                  options: ["A 28% score improvement over 16 weeks", "A 50% decrease in study hours", "Only qualitative interviews", "Zero measured change"],
-                  answer: 0,
-                  explanation: "The text specifies a 28% increase over a 16-week period."
-                },
-                quiz: {
-                  question: "Why is evaluating evidence crucial in academic reading?",
-                  options: [
-                    "To determine whether conclusions are well-supported and valid",
-                    "To find typos in the text",
-                    "To reduce textbook costs",
-                    "To avoid taking exams"
-                  ],
-                  answer: 0,
-                  explanation: "Critical evaluation ensures the claims made by authors are empirically sound."
-                }
-              }
+          steps: {
+            learn: "Underline thesis statements, circle transition markers, and annotate margins with key takeaways.",
+            passage: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
+            audioText: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
+            example: "Claim: Software improves reading. Evidence: 28% score increase over 16 weeks in a longitudinal study.",
+            practice: {
+              question: "What quantitative evidence is provided to support the effectiveness of reading software?",
+              options: ["A 28% score improvement over 16 weeks", "A 50% decrease in study hours", "Only qualitative interviews", "Zero measured change"],
+              answer: 0,
+              explanation: "The text specifies a 28% increase over a 16-week period."
             }
-          ]
+          }
         },
         postReading: {
           title: "Post-Reading Stage",
-          topics: [
-            {
-              id: "u6-post-1",
-              title: "Synthesis, Evaluation & Reflection",
-              thaiTitle: "การสังเคราะห์ ประเมินค่า และสะท้อนคิด",
-              steps: {
-                overview: "Synthesize insights across passages and articulate reasoned conclusions.",
-                learn: "Formulate a final reflection connecting reading content with your EFL learning goals.",
-                passage: "By mastering explicit reading strategies, EFL learners develop lifelong analytical competence, opening doors to academic and professional success.",
-                audioText: "By mastering explicit reading strategies, EFL learners develop lifelong analytical competence, opening doors to academic and professional success.",
-                example: "Final Synthesis: Systematic strategy instruction fosters autonomous, proficient readers.",
-                practice: {
-                  question: "What is the ultimate objective of learning reading strategies at university?",
-                  options: [
-                    "To become an autonomous, analytical, and proficient lifelong reader",
-                    "To finish tests in five minutes",
-                    "To avoid reading books completely",
-                    "To translate every English sentence literally into Thai"
-                  ],
-                  answer: 0,
-                  explanation: "Strategies empower students to become independent and competent lifelong readers."
-                },
-                quiz: {
-                  question: "Which habit most reliably maintains high reading proficiency over time?",
-                  options: ["Consistent, deliberate reading practice across diverse genres", "Reading once a year before exams", "Memorizing word lists without reading", "Guessing all quiz answers"],
-                  answer: 0,
-                  explanation: "Consistent daily engagement with diverse authentic materials builds fluency."
-                }
-              }
+          steps: {
+            quiz: {
+              question: "What is the ultimate objective of learning reading strategies at university?",
+              options: [
+                "To become an autonomous, analytical, and proficient lifelong reader",
+                "To finish tests in five minutes",
+                "To avoid reading books completely",
+                "To translate every English sentence literally into Thai"
+              ],
+              answer: 0,
+              explanation: "Strategies empower students to become independent and competent lifelong readers."
             }
-          ]
+          }
         }
       }
     }
@@ -2904,6 +3049,496 @@ window.ReadSkillsData = {
             ],
             answer: 0,
             explanation: "Autonomous reading mastery occurs when learners flexibly orchestrate multiple strategies tailored to the text and purpose."
+          }
+        ]
+      }
+    ]
+  },
+
+  // Unit 1 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
+  unit1Quiz: {
+    title: "Unit 1 Graded Quiz: Main Ideas & Topic Sentences",
+    thaiTitle: "แบบทดสอบประเมินผลการเรียนรู้ Unit 1: ใจความสำคัญ (40 ข้อ)",
+    totalQuestions: 40,
+    passages: [
+      {
+        id: "quiz-p1",
+        title: "Passage 1: The Crow and the Pitcher",
+        thaiTitle: "บทอ่านที่ 1: อีกากับคนโทน้ำ (การแก้ปัญหาด้วยความพากเพียร)",
+        genre: "Classic Narrative Fable",
+        audioText: "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water. After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage. Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom. However, the pitcher's neck was extremely narrow, and his beak could not reach the refreshing liquid. Giving up would mean dying of thirst, but the steadfast bird refused to surrender to despair. Looking around the garden, he noticed a heap of small pebbles on the dry ground. One by one, with patient determination, the clever Crow picked up the stones and dropped them directly into the pitcher. As the heavy pebbles filled the vessel, the water slowly rose to the top rim. Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life.",
+        sentences: [
+          "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water.",
+          "After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage.",
+          "Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom.",
+          "However, the pitcher's neck was extremely narrow, and his beak could not reach the refreshing liquid.",
+          "Giving up would mean dying of thirst, but the steadfast bird refused to surrender to despair.",
+          "Looking around the garden, he noticed a heap of small pebbles on the dry ground.",
+          "One by one, with patient determination, the clever Crow picked up the stones and dropped them directly into the pitcher.",
+          "As the heavy pebbles filled the vessel, the water slowly rose to the top rim.",
+          "Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life."
+        ],
+        questions: [
+          {
+            id: 1,
+            type: "mc",
+            prompt: "What is the primary Topic (หัวข้อเรื่อง) of this passage?",
+            options: [
+              "Types of glass pitchers in ancient gardens",
+              "The clever problem-solving of a thirsty crow",
+              "How summer droughts affect wild birds",
+              "The physical weight of small garden pebbles"
+            ],
+            correctAnswer: 1,
+            explanation: "เรื่องนี้เน้นที่ความพยายามและการแก้ปัญหาอย่างชาญฉลาดของอีกาที่กระหายน้ำ จึงเป็น Topic ที่ถูกต้องที่สุด"
+          },
+          {
+            id: 2,
+            type: "highlight",
+            prompt: "Tap/Select the sentence that serves as the Concluding Topic Sentence / Stated Main Idea of the story (ประโยคใจความสำคัญท้ายเรื่อง).",
+            targetSentenceIndex: 8,
+            explanation: "ประโยคสุดท้าย (ประโยคที่ 9) ทำหน้าที่เป็น Stated Main Idea ที่รวบยอดคติธรรมเรื่องความเฉลียวฉลาดและความเพียรพยายามที่ทำให้อีการอดชีวิต"
+          },
+          {
+            id: 3,
+            type: "mc",
+            prompt: "What obstacle prevented the crow from drinking the water initially?",
+            options: [
+              "The water was contaminated with mud",
+              "The pitcher was guarded by an eagle",
+              "The pitcher's neck was too narrow for his beak",
+              "The water froze into solid ice"
+            ],
+            correctAnswer: 2,
+            explanation: "บทอ่านระบุชัดเจนในประโยคที่ 4 ว่าคอคนโทแคบมากจนจงอยปากเอื้อมไม่ถึงน้ำ"
+          },
+          {
+            id: 4,
+            type: "fillBlank",
+            prompt: "Choose the correct vocabulary word meaning 'firm, resolute, and refusing to surrender':",
+            sentenceWithBlank: "Giving up would mean dying of thirst, but the [ _______ ] bird refused to surrender to despair.",
+            choices: ["arrogant", "steadfast", "frivolous", "complacent"],
+            correctWord: "steadfast",
+            explanation: "'steadfast' หมายถึง มั่นคงแน่วแน่ ไม่ย่อท้อต่ออุปสรรค ซึ่งสอดคล้องกับพฤติกรรมของอีกา"
+          },
+          {
+            id: 5,
+            type: "mc",
+            prompt: "What role does sentence 6 ('Looking around the garden, he noticed a heap of small pebbles on the dry ground.') play?",
+            options: [
+              "It is the Main Idea of the story",
+              "It is a Major Supporting Detail that introduces the solution",
+              "It is a counterargument against the crow",
+              "It is a definition of garden tools"
+            ],
+            correctAnswer: 1,
+            explanation: "การสังเกตเห็นกองก้อนหินกรวดเป็น Major Supporting Detail ที่เป็นจุดเปลี่ยนสำคัญนำไปสู่วิธีการแก้ปัญหา"
+          },
+          {
+            id: 6,
+            type: "highlight",
+            prompt: "Tap/Select the sentence that describes the crow's central conflict or physical barrier in reaching the water.",
+            targetSentenceIndex: 3,
+            explanation: "ประโยคที่ 4 ('However, the pitcher's neck was extremely narrow...') ระบุปมปัญหาและอุปสรรคทางกายภาพที่อีกาเผชิญ"
+          },
+          {
+            id: 7,
+            type: "fillBlank",
+            prompt: "Complete the sentence with the key vocabulary word meaning 'continued steady effort':",
+            sentenceWithBlank: "Through calm ingenuity and tireless [ _______ ], the Crow quenched his thirst and saved his own life.",
+            choices: ["perseverance", "ridicule", "arrogance", "prudence"],
+            correctWord: "perseverance",
+            explanation: "'perseverance' หมายถึง ความเพียรพยายามอย่างไม่หยุดยั้ง เป็นคำศัพท์หัวใจของบทเรียนนี้"
+          },
+          {
+            id: 8,
+            type: "mc",
+            prompt: "What does the word 'quenched' mean in the phrase 'quenched his thirst'?",
+            options: [
+              "Ignored or forgot completely",
+              "Satisfied or relieved by drinking",
+              "Increased and intensified",
+              "Measured scientifically"
+            ],
+            correctAnswer: 1,
+            explanation: "'quench thirst' เป็นสำนวนหมายถึง ดับกระหาย หรือดื่มน้ำจนหายหิวน้ำ"
+          },
+          {
+            id: 9,
+            type: "mc",
+            prompt: "Which statement is an example of a 'TOO BROAD' (กว้างเกินไป) trap for this passage?",
+            options: [
+              "Animals are fascinating living organisms on planet Earth",
+              "The crow dropped small pebbles into a tall glass pitcher",
+              "Clever thinking and persistent effort help overcome difficult challenges",
+              "The neck of the pitcher was very narrow"
+            ],
+            correctAnswer: 0,
+            explanation: "'Animals are fascinating living organisms' เป็นกับดักประเภท Too Broad เพราะกว้างเกินไปจนไม่ระบุสาระสำคัญของเรื่องอีกา"
+          },
+          {
+            id: 10,
+            type: "highlight",
+            prompt: "Tap/Select the sentence demonstrating the crow taking patient, repetitive physical action to solve his problem.",
+            targetSentenceIndex: 6,
+            explanation: "ประโยคที่ 7 ('One by one, with patient determination, the clever Crow picked up the stones...') แสดงการลงมือทำอย่างเป็นขั้นตอนและอดทน"
+          }
+        ]
+      },
+      {
+        id: "quiz-p2",
+        title: "Passage 2: The Benefits of Regular Morning Exercise",
+        thaiTitle: "บทอ่านที่ 2: ประโยชน์ของการออกกำลังกายตอนเช้า (บทความเชิงข้อมูล)",
+        genre: "Expository / Health & Student Life",
+        audioText: "Starting each day with thirty minutes of light physical exercise provides immense benefits for university students. First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures. Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late. Second, regular morning activity helps regulate natural sleep cycles, allowing learners to fall asleep faster and enjoy deeper rest each night. In contrast, students who remain completely sedentary often struggle with chronic fatigue and academic stress. Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success. Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence.",
+        sentences: [
+          "Starting each day with thirty minutes of light physical exercise provides immense benefits for university students.",
+          "First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures.",
+          "Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late.",
+          "Second, regular morning activity helps regulate natural sleep cycles, allowing learners to fall asleep faster and enjoy deeper rest each night.",
+          "In contrast, students who remain completely sedentary often struggle with chronic fatigue and academic stress.",
+          "Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success.",
+          "Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence."
+        ],
+        questions: [
+          {
+            id: 11,
+            type: "mc",
+            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 2?",
+            options: [
+              "High-protein breakfast recipes for athletes",
+              "The benefits of morning physical exercise for university students",
+              "The history of modern Olympic sports",
+              "How professors evaluate lecture attendance"
+            ],
+            correctAnswer: 1,
+            explanation: "บทความทั้งหมดพูดถึงผลดีของการออกกำลังกายตอนเช้าสำหรับนักศึกษามหาวิทยาลัย"
+          },
+          {
+            id: 12,
+            type: "highlight",
+            prompt: "Tap/Select the Topic Sentence located at the BEGINNING of this passage.",
+            targetSentenceIndex: 0,
+            explanation: "ประโยคแรก (ประโยคที่ 1) คือ Topic Sentence ต้นย่อหน้าที่ประกาศประเด็นหลักเรื่องประโยชน์อันมหาศาลของการออกกำลังกายตอนเช้า"
+          },
+          {
+            id: 13,
+            type: "mc",
+            prompt: "What transition word in sentence 2 introduces the first major supporting detail?",
+            options: ["However", "First", "Therefore", "In contrast"],
+            correctAnswer: 1,
+            explanation: "คำว่า 'First' เป็นคำสัญญาณบอกลำดับ (Sequence/Addition) ที่แนะนำเหตุผลสนับสนุนข้อแรก"
+          },
+          {
+            id: 14,
+            type: "fillBlank",
+            prompt: "Fill in the blank with the vocabulary word meaning 'the mental strength to bounce back under pressure':",
+            sentenceWithBlank: "Finally, dedicating time to exercise every morning builds self-discipline and mental [ _______ ]...",
+            choices: ["resilience", "complacency", "arrogance", "fatigue"],
+            correctWord: "resilience",
+            explanation: "'resilience' หมายถึง ความยืดหยุ่นทางจิตใจหรือความสามารถในการฟื้นตัวเมื่อเผชิญแรงกดดัน"
+          },
+          {
+            id: 15,
+            type: "mc",
+            prompt: "According to the passage, what negative effect do 'sedentary' students often experience?",
+            options: [
+              "Loss of appetite during lunch",
+              "Chronic fatigue and academic stress",
+              "Inability to borrow library books",
+              "Sudden memory loss of childhood events"
+            ],
+            correctAnswer: 1,
+            explanation: "ประโยคที่ 5 ระบุตรงไปตรงมาว่า นักศึกษาที่ไม่ค่อยขยับตัวมักเผชิญภาวะเหนื่อยล้าเรื้อรังและความเครียดจากการเรียน"
+          },
+          {
+            id: 16,
+            type: "highlight",
+            prompt: "Tap/Select the sentence that introduces a DIRECT CONTRAST between active students and inactive students.",
+            targetSentenceIndex: 4,
+            explanation: "ประโยคที่ 5 ('In contrast, students who remain completely sedentary...') ใช้คำว่า In contrast เพื่อเปรียบเทียบข้อแตกต่างโดยตรง"
+          },
+          {
+            id: 17,
+            type: "mc",
+            prompt: "Which choice represents a 'Detail Trap (Too Narrow)' if chosen as the Main Idea?",
+            options: [
+              "Morning exercise benefits both physical wellness and academic performance",
+              "Exercise stimulates blood circulation and releases endorphins",
+              "Daily physical activity has no effect on sleep quality",
+              "University life involves attending morning lectures"
+            ],
+            correctAnswer: 1,
+            explanation: "การกระตุ้นการไหลเวียนเลือดและหลั่งเอนดอร์ฟินเป็นเพียงรายละเอียดทางชีววิทยาข้อเดียว (Detail Trap) ไม่ใช่ใจความสำคัญของทั้งบทความ"
+          },
+          {
+            id: 18,
+            type: "fillBlank",
+            prompt: "Complete the sentence with the word meaning 'absolutely necessary and extremely important':",
+            sentenceWithBlank: "Overall, incorporating moderate morning exercise into your daily routine is an [ _______ ] habit for achieving wellness.",
+            choices: ["essential", "frivolous", "arrogant", "harsh"],
+            correctWord: "essential",
+            explanation: "'essential' แปลว่า จำเป็นอย่างยิ่ง หรือขาดไม่ได้"
+          },
+          {
+            id: 19,
+            type: "highlight",
+            prompt: "Tap/Select the CONCLUDING sentence that restates the Main Idea at the very end of the passage.",
+            targetSentenceIndex: 6,
+            explanation: "ประโยคสุดท้าย (ประโยคที่ 7) ขึ้นต้นด้วย 'Overall' และสรุปย้ำ Main Idea ของบทความอย่างสมบูรณ์"
+          },
+          {
+            id: 20,
+            type: "mc",
+            prompt: "What does the word 'sedentary' mean in sentence 5?",
+            options: [
+              "Highly athletic and energetic",
+              "Inactive, sitting down much of the time",
+              "Sleeping outdoors in tents",
+              "Traveling frequently across provinces"
+            ],
+            correctAnswer: 1,
+            explanation: "'sedentary' หมายถึง มีพฤติกรรมเนือยนิ่ง หรือนั่งอยู่กับที่เป็นเวลานานโดยไม่ได้ออกกำลังกาย"
+          }
+        ]
+      },
+      {
+        id: "quiz-p3",
+        title: "Passage 3: The Shepherd Boy and the Wolf",
+        thaiTitle: "บทอ่านที่ 3: เด็กเลี้ยงแกะกับหมาป่า (ผลลัพธ์ของความไม่ซื่อสัตย์)",
+        genre: "Classic Narrative Fable",
+        audioText: "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest. Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers. Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock. The alarmed villagers dropped their tools and rushed up the hill to help, only to find the boastful boy laughing loudly at their panic. A few days later, the arrogant boy repeated the deceitful prank, once again mocking the foolish villagers who came running. However, on the following evening, an actual hungry wolf emerged from the shadows and attacked the terrified sheep. When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke. The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth.",
+        sentences: [
+          "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest.",
+          "Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers.",
+          "Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock.",
+          "The alarmed villagers dropped their tools and rushed up the hill to help, only to find the boastful boy laughing loudly at their panic.",
+          "A few days later, the arrogant boy repeated the deceitful prank, once again mocking the foolish villagers who came running.",
+          "However, on the following evening, an actual hungry wolf emerged from the shadows and attacked the terrified sheep.",
+          "When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke.",
+          "The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth."
+        ],
+        questions: [
+          {
+            id: 21,
+            type: "mc",
+            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 3?",
+            options: [
+              "Farming techniques in ancient European villages",
+              "The shepherd boy's deceitful pranks and their consequence",
+              "The hunting instincts of wild wolves in dark forests",
+              "How to weave wool sweaters from sheep"
+            ],
+            correctAnswer: 1,
+            explanation: "เนื้อเรื่องทั้งหมดมุ่งเน้นไปที่การแกล้งโกหกของเด็กเลี้ยงแกะและผลลัพธ์ที่ตามมาจากการกระทำนั้น"
+          },
+          {
+            id: 22,
+            type: "highlight",
+            prompt: "Tap/Select the Stated Moral / Main Idea sentence located at the END of the passage.",
+            targetSentenceIndex: 7,
+            explanation: "ประโยคสุดท้าย (ประโยคที่ 8) ทำหน้าที่เป็น Stated Moral สรุปข้อคิดสำคัญว่าคนโกหกเป็นอาจิณจะไม่ได้รับความเชื่อถือแม้ในยามที่พูดความจริง"
+          },
+          {
+            id: 23,
+            type: "fillBlank",
+            prompt: "In sentence 4, the boy is described as [ _______ ] because he loudly bragged and laughed at others' panic:",
+            sentenceWithBlank: "...only to find the [ _______ ] boy laughing loudly at their panic.",
+            choices: ["boastful", "humble", "industrious", "steadfast"],
+            correctWord: "boastful",
+            explanation: "'boastful' แปลว่า ขี้คุย ขี้อวด หรือชอบโอ้อวด"
+          },
+          {
+            id: 24,
+            type: "mc",
+            prompt: "Why did the villagers ignore the boy's cries when an actual wolf attacked?",
+            options: [
+              "They were away visiting another town",
+              "They believed it was merely another deceitful joke",
+              "They wanted the wolf to eat the sheep",
+              "They were sleeping deeply during the night"
+            ],
+            correctAnswer: 1,
+            explanation: "ชาวบ้านเพิกเฉยเพราะคิดว่าเป็นเพียงเรื่องโกหกหลอกเล่นอีกครั้งของเด็กเลี้ยงแกะ"
+          },
+          {
+            id: 25,
+            type: "highlight",
+            prompt: "Tap/Select the TURNING POINT sentence when real danger actually appeared.",
+            targetSentenceIndex: 5,
+            explanation: "ประโยคที่ 6 ('However, on the following evening, an actual hungry wolf emerged...') คือจุดเปลี่ยนที่หมาป่าตัวจริงปรากฏขึ้น"
+          },
+          {
+            id: 26,
+            type: "fillBlank",
+            prompt: "Fill in the blank with the vocabulary word meaning 'having an exaggerated sense of one's own superiority':",
+            sentenceWithBlank: "A few days later, the [ _______ ] boy repeated the deceitful prank, once again mocking the villagers.",
+            choices: ["arrogant", "diligent", "prudent", "modest"],
+            correctWord: "arrogant",
+            explanation: "'arrogant' หมายถึง หยิ่งยะโส หรืออวดดี"
+          },
+          {
+            id: 27,
+            type: "mc",
+            prompt: "What is the Main Idea of this fable?",
+            options: [
+              "Wolves prefer hunting sheep rather than birds in mountain forests",
+              "Repeated dishonesty causes people to lose trust in you completely",
+              "Herding sheep on a hillside is a tedious job for young teenagers",
+              "Villagers should run uphill without bringing farming tools"
+            ],
+            correctAnswer: 1,
+            explanation: "ใจความสำคัญคือ การโกหกซ้ำๆ ทำลายความไว้วางใจจนไม่มีใครเชื่อถืออีกต่อไป"
+          },
+          {
+            id: 28,
+            type: "highlight",
+            prompt: "Tap/Select the sentence explaining the boy's initial MOTIVE for playing the mischievous trick.",
+            targetSentenceIndex: 1,
+            explanation: "ประโยคที่ 2 ('Finding his daily duties dull and repetitive...') อธิบายแรงจูงใจว่าเขาเบื่อหน้าที่ประจำที่ซ้ำซากจึงอยากหาเรื่องสนุก"
+          },
+          {
+            id: 29,
+            type: "mc",
+            prompt: "What does the word 'deceitful' mean in the phrase 'deceitful prank'?",
+            options: [
+              "Honest and well-planned",
+              "Misleading, untruthful, and dishonest",
+              "Generous and community-oriented",
+              "Related to mathematical numbers"
+            ],
+            correctAnswer: 1,
+            explanation: "'deceitful' แปลว่า หลอกลวง ไม่ซื่อสัตย์ หรือมีเจตนาตบตาผู้อื่น"
+          },
+          {
+            id: 30,
+            type: "mc",
+            prompt: "If a student chooses 'The boy tended sheep on a hillside' as the Main Idea, what error did they make?",
+            options: [
+              "Too Broad trap",
+              "Too Narrow / Minor Detail trap",
+              "Correct interpretation",
+              "Irrelevant invented fact"
+            ],
+            correctAnswer: 1,
+            explanation: "การบอกว่าเด็กเลี้ยงแกะอยู่บนเนินเขาเป็นเพียง Minor Detail (ฉากหลังของเรื่อง) ซึ่งแคบเกินไปที่จะเป็น Main Idea"
+          }
+        ]
+      },
+      {
+        id: "quiz-p4",
+        title: "Passage 4: How Modern Public Libraries Are Evolving",
+        thaiTitle: "บทอ่านที่ 4: การปรับเปลี่ยนของห้องสมุดประชาชนยุคใหม่ (บทความเชิงสารคดีร่วมสมัย)",
+        genre: "Expository / Modern Society & Technology",
+        audioText: "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers. In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision. Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers. Furthermore, many modern urban libraries offer free coding workshops, 3D printing equipment, and professional development seminars to empower local residents. These innovative technological resources bridge the digital divide for underprivileged families who cannot afford expensive computers at home. Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society. By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education.",
+        sentences: [
+          "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers.",
+          "In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision.",
+          "Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers.",
+          "Furthermore, many modern urban libraries offer free coding workshops, 3D printing equipment, and professional development seminars to empower local residents.",
+          "These innovative technological resources bridge the digital divide for underprivileged families who cannot afford expensive computers at home.",
+          "Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society.",
+          "By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education."
+        ],
+        questions: [
+          {
+            id: 31,
+            type: "mc",
+            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 4?",
+            options: [
+              "The manufacturing process of 3D printers",
+              "The transformation of modern public libraries into digital community centers",
+              "The biographies of famous classical novelists",
+              "Monthly subscription fees for internet service providers"
+            ],
+            correctAnswer: 1,
+            explanation: "บทความมุ่งเน้นเรื่องการปรับโฉมของห้องสมุดประชาชนสู่ศูนย์กลางเทคโนโลยีเพื่อชุมชน"
+          },
+          {
+            id: 32,
+            type: "highlight",
+            prompt: "Tap/Select the Topic Sentence in sentence 1 stating the overall transformation of public libraries.",
+            targetSentenceIndex: 0,
+            explanation: "ประโยคแรก ('Across the globe, modern public libraries are transforming...') คือ Topic Sentence ที่แถลงประเด็นการเปลี่ยนแปลงใหญ่ของห้องสมุด"
+          },
+          {
+            id: 33,
+            type: "fillBlank",
+            prompt: "Fill in the blank with the vocabulary word meaning 'outdated or no longer in use because something newer exists':",
+            sentenceWithBlank: "Rather than becoming [ _______ ] in the internet age, public libraries have successfully adapted their core mission...",
+            choices: ["obsolete", "industrious", "arrogant", "steadfast"],
+            correctWord: "obsolete",
+            explanation: "'obsolete' หมายถึง ล้าสมัย หรือเลิกใช้ไปแล้วเพราะมีสิ่งใหม่มาแทนที่"
+          },
+          {
+            id: 34,
+            type: "mc",
+            prompt: "What transition phrase in sentence 3 signals the shift from historical libraries to contemporary ones?",
+            options: ["For instance", "Today, however", "In conclusion", "First of all"],
+            correctAnswer: 1,
+            explanation: "'Today, however' ทำหน้าที่เป็นคำเชื่อมบอกความขัดแย้ง (Contrast Transition) ระหว่างอดีตกับปัจจุบัน"
+          },
+          {
+            id: 35,
+            type: "highlight",
+            prompt: "Tap/Select the sentence explaining how libraries help UNDERPRIVILEGED FAMILIES access modern technology.",
+            targetSentenceIndex: 4,
+            explanation: "ประโยคที่ 5 ('These innovative technological resources bridge the digital divide for underprivileged families...') ระบุการช่วยเหลือครอบครัวที่ขาดแคลนทุนทรัพย์"
+          },
+          {
+            id: 36,
+            type: "fillBlank",
+            prompt: "Complete the sentence with the correct skill term mentioned in the text:",
+            sentenceWithBlank: "Furthermore, many modern urban libraries offer free [ _______ ] workshops, 3D printing equipment, and seminars.",
+            choices: ["coding", "hunting", "complacent", "swimming"],
+            correctWord: "coding",
+            explanation: "เนื้อเรื่องระบุว่าห้องสมุดมีเวิร์กช็อปสอน 'coding' (การเขียนโค้ดคอมพิวเตอร์) และอุปกรณ์พิมพ์ 3 มิติ"
+          },
+          {
+            id: 37,
+            type: "mc",
+            prompt: "What is the Main Idea of Passage 4?",
+            options: [
+              "Printed paper books will soon be completely prohibited worldwide",
+              "Libraries stay vital by adopting digital technology and community services for lifelong learning",
+              "3D printing machines are too expensive for ordinary citizens to purchase",
+              "Freelancers dislike using internet connections when working on campus"
+            ],
+            correctAnswer: 1,
+            explanation: "Main Idea คือ ห้องสมุดยังคงเป็นสถาบันสำคัญเพราะปรับตัวนำเทคโนโลยีดิจิทัลมาให้บริการการเรียนรู้ตลอดชีวิตแก่ประชาชน"
+          },
+          {
+            id: 38,
+            type: "highlight",
+            prompt: "Tap/Select the CONCLUDING sentence summarizing why community libraries remain vital institutions.",
+            targetSentenceIndex: 6,
+            explanation: "ประโยคสุดท้าย (ประโยคที่ 7) สรุปภาพรวมว่าห้องสมุดยังเป็นสถาบันที่มีชีวิตชีวาสำหรับการศึกษาและความเท่าเทียม"
+          },
+          {
+            id: 39,
+            type: "mc",
+            prompt: "What does the phrase 'bridge the digital divide' mean in sentence 5?",
+            options: [
+              "Build a physical concrete bridge for high-speed fiber cables",
+              "Reduce the gap between people who have digital access and those who do not",
+              "Separate engineering majors from humanities majors",
+              "Permanently delete all social media websites from library computers"
+            ],
+            correctAnswer: 1,
+            explanation: "'bridge the digital divide' หมายถึง การลดช่องว่างทางดิจิทัล เพื่อให้ทุกคนสามารถเข้าถึงเทคโนโลยีได้อย่างเท่าเทียม"
+          },
+          {
+            id: 40,
+            type: "mc",
+            prompt: "Which choice is a MINOR SUPPORTING DETAIL rather than the Main Idea?",
+            options: [
+              "Public libraries have adapted their core mission to meet modern societal needs",
+              "Libraries offer 3D printing equipment and free coding workshops",
+              "Modern libraries remain vital institutions for lifelong learning and equal opportunity",
+              "Libraries transformed from quiet book repositories into dynamic community centers"
+            ],
+            correctAnswer: 1,
+            explanation: "การเสนออุปกรณ์พิมพ์ 3 มิติและเวิร์กช็อปโค้ดดิ้งเป็นเพียงตัวอย่างย่อย (Minor Supporting Detail) สนับสนุนการบริการ"
           }
         ]
       }
