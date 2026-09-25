@@ -39,10 +39,16 @@ body {
   color: #FFFFFF;
   opacity: 0.9;
   user-select: none;
+  pointer-events: none;
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px rgba(186, 150, 225, 0.6);
   animation-name: fall;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
+}
+
+/* Ensure modal hides completely without breaking Tailwind responsive classes like hidden md:flex */
+#feedback-modal.hidden {
+  display: none !important;
 }
 
 @keyframes fall {
@@ -182,3 +188,102 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #9A7BC0;
 }
+
+/* ==========================================================================
+   Textbook Highlighter & Book Annotation Styles
+   ========================================================================== */
+
+.highlighter-pen {
+  display: inline;
+  padding: 0.12rem 0.4rem;
+  border-radius: 0.25rem;
+  font-family: inherit;
+  font-weight: 600;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  line-height: 1.6;
+}
+
+.highlighter-yellow {
+  background: linear-gradient(104deg, rgba(254, 240, 138, 0.45) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 50%, rgba(254, 240, 138, 0.95) 93%, rgba(254, 240, 138, 0.45) 98%);
+  border-bottom: 2px solid #eab308;
+  color: #1e293b;
+  box-shadow: 0 1px 2px rgba(234, 179, 8, 0.2);
+}
+
+.highlighter-green {
+  background: linear-gradient(104deg, rgba(167, 243, 208, 0.45) 0.9%, rgba(167, 243, 208, 0.95) 2.4%, rgba(167, 243, 208, 0.85) 50%, rgba(167, 243, 208, 0.95) 93%, rgba(167, 243, 208, 0.45) 98%);
+  border-bottom: 2px solid #10b981;
+  color: #064e3b;
+  box-shadow: 0 1px 2px rgba(16, 185, 129, 0.2);
+}
+
+.highlighter-blue {
+  background: linear-gradient(104deg, rgba(186, 230, 253, 0.45) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 50%, rgba(186, 230, 253, 0.95) 93%, rgba(186, 230, 253, 0.45) 98%);
+  border-bottom: 2px solid #0284c7;
+  color: #0c4a6e;
+  box-shadow: 0 1px 2px rgba(2, 132, 199, 0.2);
+}
+
+.highlighter-pink {
+  background: linear-gradient(104deg, rgba(254, 205, 211, 0.45) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 50%, rgba(254, 205, 211, 0.95) 93%, rgba(254, 205, 211, 0.45) 98%);
+  border-bottom: 2px solid #f43f5e;
+  color: #881337;
+  box-shadow: 0 1px 2px rgba(244, 63, 94, 0.2);
+}
+
+.highlighter-purple {
+  background: linear-gradient(104deg, rgba(233, 213, 255, 0.45) 0.9%, rgba(233, 213, 255, 0.95) 2.4%, rgba(233, 213, 255, 0.85) 50%, rgba(233, 213, 255, 0.95) 93%, rgba(233, 213, 255, 0.45) 98%);
+  border-bottom: 2px solid #a855f7;
+  color: #581c87;
+  box-shadow: 0 1px 2px rgba(168, 85, 247, 0.2);
+}
+
+.highlighter-orange {
+  background: linear-gradient(104deg, rgba(254, 215, 170, 0.45) 0.9%, rgba(254, 215, 170, 0.95) 2.4%, rgba(254, 215, 170, 0.85) 50%, rgba(254, 215, 170, 0.95) 93%, rgba(254, 215, 170, 0.45) 98%);
+  border-bottom: 2px solid #f97316;
+  color: #7c2d12;
+  box-shadow: 0 1px 2px rgba(249, 115, 22, 0.2);
+}
+
+.highlighter-teal {
+  background: linear-gradient(104deg, rgba(153, 246, 228, 0.45) 0.9%, rgba(153, 246, 228, 0.95) 2.4%, rgba(153, 246, 228, 0.85) 50%, rgba(153, 246, 228, 0.95) 93%, rgba(153, 246, 228, 0.45) 98%);
+  border-bottom: 2px solid #14b8a6;
+  color: #134e4a;
+  box-shadow: 0 1px 2px rgba(20, 184, 166, 0.2);
+}
+
+/* ==========================================================================
+   Mobile & Smartphone Optimization Utilities
+   ========================================================================== */
+
+/* Utility to hide scrollbar while keeping horizontal touch scroll smooth on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth touch scrolling */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Mobile tap feedback */
+@media (hover: none) {
+  button:active, a:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Mobile glass-card padding adjustments */
+@media (max-width: 640px) {
+  .glass-card {
+    border-radius: 1.15rem;
+  }
+}
+
+

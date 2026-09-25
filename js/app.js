@@ -14,7 +14,7 @@ class ReadSkillsApp {
     
     // Initial active user session
     this.user = {
-      name: localStorage.getItem('bru_user_name') || 'Somsak Jaidee',
+      name: (localStorage.getItem('bru_user_name') || 'Somsak Jaidee').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim(),
       email: localStorage.getItem('bru_user_email') || 'student@bru.ac.th',
       role: localStorage.getItem('bru_user_role') || 'student',
       onlineSeconds: parseInt(localStorage.getItem('bru_online_seconds')) || 18400
@@ -22,8 +22,8 @@ class ReadSkillsApp {
 
     // User accounts database stored in localStorage
     this.registeredUsers = JSON.parse(localStorage.getItem('bru_registered_users')) || [
-      { name: 'Somsak Jaidee (สมศักดิ์ ใจดี)', email: 'student@bru.ac.th', password: '123456', role: 'student' },
-      { name: 'Dr. Somchai (อาจารย์ผู้สอน)', email: 'teacher@bru.ac.th', password: '123456', role: 'instructor' }
+      { name: 'Somsak Jaidee', email: 'student@bru.ac.th', password: '123456', role: 'student' },
+      { name: 'Dr. Somchai', email: 'teacher@bru.ac.th', password: '123456', role: 'instructor' }
     ];
 
     this.currentUnitId = 1;
@@ -31,11 +31,18 @@ class ReadSkillsApp {
     this.currentTopicIndex = 0;
     this.currentActivityStep = 'overview';
     
-    this.currentStrategyId = 'strat-1';
+    // Module 2: Reading Strategies (6 Units, 8 Learning Steps per Unit)
+    this.currentStrategyUnit = 1;
     this.currentStrategyStepIndex = 0;
+
+    // Standalone Integrated Assessment Quiz State (Section D)
+    this.activeStandaloneQuizId = null;
+    this.activeQuizAnswers = {};
+    this.activeQuizResult = null;
 
     this.speechSynth = window.speechSynthesis;
     this.isAudioPlaying = false;
+    this.audioSpeed = parseFloat(localStorage.getItem('bru_audio_speed')) || 0.75;
 
     this.init();
   }
@@ -43,6 +50,14 @@ class ReadSkillsApp {
   init() {
     this.startOnlineTimer();
     this.createSnowfall();
+
+    // Close user dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+      const container = document.getElementById('user-profile-menu-container');
+      if (container && !container.contains(e.target)) {
+        this.closeUserMenu();
+      }
+    });
 
     if (this.isLoggedIn) {
       this.showAppLayout(true);
@@ -57,13 +72,16 @@ class ReadSkillsApp {
   showAppLayout(visible) {
     const header = document.getElementById('app-header');
     const footer = document.getElementById('app-footer');
+    const mobileNav = document.getElementById('mobile-bottom-nav');
 
     if (visible) {
       if (header) header.classList.remove('hidden');
       if (footer) footer.classList.remove('hidden');
+      if (mobileNav) mobileNav.classList.remove('hidden');
     } else {
       if (header) header.classList.add('hidden');
       if (footer) footer.classList.add('hidden');
+      if (mobileNav) mobileNav.classList.add('hidden');
     }
   }
 
@@ -97,10 +115,53 @@ class ReadSkillsApp {
   }
 
   updateUserDisplay() {
+    const englishName = (this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || 'Somsak Jaidee';
+    const initial = englishName.charAt(0).toUpperCase() || 'S';
+
     const nameElem = document.getElementById('user-display-name');
     if (nameElem) {
-      nameElem.innerText = `${this.user.name} (${this.user.role === 'instructor' ? 'Instructor' : 'Student'})`;
+      nameElem.innerText = englishName;
     }
+    const avatarElem = document.getElementById('user-avatar-initial');
+    if (avatarElem) {
+      avatarElem.innerText = initial;
+    }
+    const dropdownName = document.getElementById('dropdown-user-name');
+    if (dropdownName) {
+      dropdownName.innerText = englishName;
+    }
+    const dropdownAvatar = document.getElementById('dropdown-avatar-initial');
+    if (dropdownAvatar) {
+      dropdownAvatar.innerText = initial;
+    }
+    const dropdownEmail = document.getElementById('dropdown-user-email');
+    if (dropdownEmail) {
+      dropdownEmail.innerText = this.user.email || 'student@bru.ac.th';
+    }
+  }
+
+  toggleUserMenu(event) {
+    if (event) event.stopPropagation();
+    const dropdown = document.getElementById('user-dropdown-menu');
+    const chevron = document.getElementById('user-menu-chevron');
+    if (dropdown) {
+      const isClosed = dropdown.classList.contains('hidden');
+      if (isClosed) {
+        dropdown.classList.remove('hidden');
+        if (chevron) chevron.classList.add('rotate-180');
+        if (window.lucide) lucide.createIcons();
+      } else {
+        dropdown.classList.add('hidden');
+        if (chevron) chevron.classList.remove('rotate-180');
+      }
+    }
+  }
+
+  closeUserMenu() {
+    const dropdown = document.getElementById('user-dropdown-menu');
+    const chevron = document.getElementById('user-menu-chevron');
+    if (dropdown) dropdown.classList.add('hidden');
+    if (chevron) chevron.classList.remove('rotate-180');
   }
 
   /* ------------------- Authentication Renderer (Sign In / Sign Up) ------------------- */
@@ -119,13 +180,13 @@ class ReadSkillsApp {
         <!-- Top Pill Tag -->
         <div class="mb-4">
           <span class="px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest text-[#53347C] bg-[#CBB5E2] border border-[#BF9EDF] uppercase">
-            READSKILLS BRU &bull; EFL PROGRAM
+            READING SKILLS &bull; EFL PROGRAM
           </span>
         </div>
 
         <!-- Title & Subtitle -->
         <h1 class="text-3xl sm:text-4xl font-extrabold text-[#3C2A58] tracking-tight text-center mb-2">
-          English Reading<br />Strategies
+          English Reading<br />Skills
         </h1>
         
         <p class="text-xs sm:text-sm text-[#5D4978] text-center max-w-md leading-relaxed mb-8">
@@ -314,6 +375,7 @@ class ReadSkillsApp {
   }
 
   logout() {
+    this.closeUserMenu();
     this.isLoggedIn = false;
     localStorage.setItem('bru_is_logged_in', 'false');
     this.showAppLayout(false);
@@ -329,13 +391,24 @@ class ReadSkillsApp {
 
     this.currentView = viewName;
 
-    // Update active nav button styles
+    // Update active nav button styles (Desktop)
     document.querySelectorAll('.nav-btn').forEach(btn => {
       btn.classList.remove('bg-white', 'text-purple-900', 'font-bold');
     });
     const activeNav = document.getElementById(`nav-${viewName}`);
     if (activeNav) {
       activeNav.classList.add('bg-white', 'text-purple-900', 'font-bold');
+    }
+
+    // Update active nav button styles (Mobile Bottom Nav)
+    document.querySelectorAll('.m-nav-btn').forEach(btn => {
+      btn.classList.remove('text-purple-900', 'font-bold');
+      btn.classList.add('text-slate-500');
+    });
+    const activeMobileNav = document.getElementById(`m-nav-${viewName}`);
+    if (activeMobileNav) {
+      activeMobileNav.classList.remove('text-slate-500');
+      activeMobileNav.classList.add('text-purple-900', 'font-bold');
     }
 
     const container = document.getElementById('main-content');
@@ -372,27 +445,27 @@ class ReadSkillsApp {
   // 1. Dashboard View
   renderDashboard() {
     return `
-      <div class="space-y-8">
+      <div class="space-y-6 sm:space-y-8">
         <!-- Welcome Hero -->
-        <div class="glass-card p-8 bg-gradient-to-r from-purple-800 via-purple-700 to-pink-600 text-white rounded-3xl relative overflow-hidden shadow-xl">
+        <div class="glass-card p-5 sm:p-8 bg-gradient-to-r from-purple-800 via-purple-700 to-pink-600 text-white rounded-2xl sm:rounded-3xl relative overflow-hidden shadow-xl">
           <div class="relative z-10 max-w-2xl">
-            <span class="inline-block bg-white/20 backdrop-blur-md text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-3">
-              Buriram Rajabhat University Portal
+            <span class="inline-block bg-white/20 backdrop-blur-md text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 sm:mb-3">
+              Course 2031103: Introduction to English Reading Strategies &bull; BRU
             </span>
-            <h1 class="text-3xl sm:text-4xl font-bold tracking-tight mb-2">
-              Welcome back, ${this.user.name}! 👋
+            <h1 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
+              Welcome, ${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || 'Somsak Jaidee'}
             </h1>
-            <p class="text-purple-100 text-sm sm:text-base leading-relaxed mb-6">
-              Empowering better readers for brighter futures. Track your reading lessons, master 8-step strategies, and view online study reports.
+            <p class="text-purple-100 text-xs sm:text-base leading-relaxed mb-5 sm:mb-6">
+              A web-based learning application designed for English major students at Buriram Rajabhat University. Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics.
             </p>
 
-            <div class="flex flex-wrap gap-3">
-              <button onclick="app.navigate('lessons')" class="px-6 py-3 bg-white text-purple-900 font-bold rounded-xl hover:bg-purple-50 shadow-md transition flex items-center space-x-2 text-sm">
-                <i data-lucide="play-circle" class="w-5 h-5 text-purple-700"></i>
+            <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+              <button onclick="app.navigate('lessons')" class="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-purple-900 font-bold rounded-xl hover:bg-purple-50 shadow-md transition flex items-center justify-center space-x-2 text-xs sm:text-sm cursor-pointer">
+                <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-700"></i>
                 <span>Continue Lesson (Unit ${this.currentUnitId})</span>
               </button>
-              <button onclick="app.navigate('strategies')" class="px-6 py-3 bg-purple-900/60 hover:bg-purple-900 text-white font-semibold rounded-xl backdrop-blur-md transition flex items-center space-x-2 text-sm border border-purple-300/30">
-                <i data-lucide="lightbulb" class="w-5 h-5 text-amber-300"></i>
+              <button onclick="app.navigate('strategies')" class="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-purple-900/60 hover:bg-purple-900 text-white font-semibold rounded-xl backdrop-blur-md transition flex items-center justify-center space-x-2 text-xs sm:text-sm border border-purple-300/30 cursor-pointer">
+                <i data-lucide="lightbulb" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-300"></i>
                 <span>Explore Strategies</span>
               </button>
             </div>
@@ -405,47 +478,47 @@ class ReadSkillsApp {
         </div>
 
         <!-- 4 Core Navigation Cards matching Blueprint -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
-          <div onclick="app.navigate('lessons')" class="glass-card p-6 cursor-pointer border-t-4 border-purple-700">
-            <div class="w-12 h-12 bg-purple-100 text-purple-800 rounded-2xl flex items-center justify-center mb-4">
-              <i data-lucide="book-open" class="w-6 h-6"></i>
+          <div onclick="app.navigate('lessons')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-purple-700 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="book-open" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-1">Reading Lessons</h3>
-            <p class="text-xs text-purple-800 font-semibold mb-2">บทเรียนการอ่าน (Units 1–6)</p>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Lessons</h3>
+            <p class="text-[11px] sm:text-xs text-purple-800 font-semibold mb-1.5 sm:mb-2">บทเรียนการอ่าน (Units 1–6)</p>
             <p class="text-slate-600 text-xs leading-relaxed">
-              Structured reading lessons divided into 3 stages: Pre-Reading, While-Reading, and Post-Reading.
+              Structured reading lessons covering 4 key learning steps: Overview, Learn, Example, and Practice.
             </p>
           </div>
 
-          <div onclick="app.navigate('strategies')" class="glass-card p-6 cursor-pointer border-t-4 border-pink-500">
-            <div class="w-12 h-12 bg-pink-100 text-pink-700 rounded-2xl flex items-center justify-center mb-4">
-              <i data-lucide="clock" class="w-6 h-6"></i>
+          <div onclick="app.navigate('strategies')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-pink-500 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 text-pink-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-1">Reading Strategies</h3>
-            <p class="text-xs text-pink-700 font-semibold mb-2">กลยุทธ์การอ่าน (8 Steps Flow)</p>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Strategies</h3>
+            <p class="text-[11px] sm:text-xs text-pink-700 font-semibold mb-1.5 sm:mb-2">กลยุทธ์การอ่าน (6 Units &bull; 8 Steps)</p>
             <p class="text-slate-600 text-xs leading-relaxed">
-              Learn and apply reading strategies with clear definitions, examples, and short text applications.
+              Master 6 reading strategy units following an 8-step learning sequence from concept to quiz.
             </p>
           </div>
 
-          <div onclick="app.navigate('practice')" class="glass-card p-6 cursor-pointer border-t-4 border-amber-500">
-            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-4">
-              <i data-lucide="tv" class="w-6 h-6"></i>
+          <div onclick="app.navigate('practice')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-amber-500 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="tv" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-1">Practice & Quiz</h3>
-            <p class="text-xs text-amber-800 font-semibold mb-2">แบบฝึกหัดและแบบทดสอบ</p>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Practice & Quiz</h3>
+            <p class="text-[11px] sm:text-xs text-amber-800 font-semibold mb-1.5 sm:mb-2">แบบฝึกหัดและแบบทดสอบ</p>
             <p class="text-slate-600 text-xs leading-relaxed">
               Interactive games, unit quizzes, passage comprehension, and immediate feedback engine.
             </p>
           </div>
 
-          <div onclick="app.navigate('progress')" class="glass-card p-6 cursor-pointer border-t-4 border-emerald-600">
-            <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center mb-4">
-              <i data-lucide="bar-chart-3" class="w-6 h-6"></i>
+          <div onclick="app.navigate('progress')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-emerald-600 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
-            <h3 class="font-bold text-slate-900 text-lg mb-1">Learning Progress</h3>
-            <p class="text-xs text-emerald-800 font-semibold mb-2">ความก้าวหน้าในการเรียน</p>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Learning Progress</h3>
+            <p class="text-[11px] sm:text-xs text-emerald-800 font-semibold mb-1.5 sm:mb-2">ความก้าวหน้าในการเรียน</p>
             <p class="text-slate-600 text-xs leading-relaxed">
               Track online hours, completed units, quiz performance, and active usage statistics.
             </p>
@@ -454,13 +527,13 @@ class ReadSkillsApp {
         </div>
 
         <!-- Current Progress Summary Banner -->
-        <div class="glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div class="flex items-center space-x-4">
-            <div class="w-14 h-14 bg-purple-100 text-purple-800 rounded-2xl flex items-center justify-center font-bold text-xl border border-purple-200">
+        <div class="glass-card p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+          <div class="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl border border-purple-200 shrink-0">
               5/6
             </div>
             <div>
-              <h4 class="font-bold text-slate-900 text-base">Your Active Progress</h4>
+              <h4 class="font-bold text-slate-900 text-sm sm:text-base">Your Active Progress</h4>
               <p class="text-xs text-slate-600">Total Online Time: <strong class="text-purple-800 font-bold">${this.formatHoursText(this.user.onlineSeconds)}</strong></p>
             </div>
           </div>
@@ -470,12 +543,12 @@ class ReadSkillsApp {
               <span>Overall Completion</span>
               <span>83%</span>
             </div>
-            <div class="w-full bg-slate-200/80 h-3 rounded-full overflow-hidden">
+            <div class="w-full bg-slate-200/80 h-2.5 sm:h-3 rounded-full overflow-hidden">
               <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full" style="width: 83%"></div>
             </div>
           </div>
 
-          <button onclick="app.navigate('progress')" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition">
+          <button onclick="app.navigate('progress')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition cursor-pointer text-center">
             View Full Report
           </button>
         </div>
@@ -486,11 +559,19 @@ class ReadSkillsApp {
   // 2. Reading Lessons View
   renderLessonsView() {
     const unit = ReadSkillsData.units.find(u => u.id === this.currentUnitId) || ReadSkillsData.units[0];
-    const stageData = unit.stages[this.currentStage] || unit.stages['preReading'];
-    const currentTopic = stageData.topics[this.currentTopicIndex] || stageData.topics[0] || {
-      title: "Sample Topic",
-      steps: { overview: "Overview", learn: "Learn details", passage: "Sample text", audioText: "Sample text", example: "Example", practice: { question: "Q?", options: ["A"], answer: 0 } }
-    };
+    let currentTopic;
+    if (unit.steps) {
+      currentTopic = unit;
+    } else if (unit.stages) {
+      const stageData = unit.stages[this.currentStage] || unit.stages['preReading'] || Object.values(unit.stages)[0];
+      currentTopic = (stageData && stageData.topics && stageData.topics[this.currentTopicIndex]) || (stageData && stageData.topics && stageData.topics[0]) || unit;
+    } else {
+      currentTopic = unit;
+    }
+
+    if (this.currentActivityStep === 'quiz') {
+      this.currentActivityStep = 'practice';
+    }
 
     return `
       <div class="space-y-8">
@@ -498,13 +579,13 @@ class ReadSkillsApp {
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h2 class="text-2xl font-bold text-slate-900">Module 1: Reading Lessons (บทเรียนการอ่าน)</h2>
-            <p class="text-xs text-slate-600">Structured reading lessons based on Lesson Plans 1–6</p>
+            <p class="text-xs text-slate-600">Structured reading lessons based on Units 1–6</p>
           </div>
 
           <!-- Unit Selector Tabs -->
-          <div class="flex items-center space-x-2 overflow-x-auto pb-2 md:pb-0">
+          <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 touch-pan-x">
             ${ReadSkillsData.units.map(u => `
-              <button onclick="app.selectUnit(${u.id})" class="px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition ${this.currentUnitId === u.id ? 'bg-purple-700 text-white shadow-md' : 'bg-white/80 text-slate-700 hover:bg-white border border-purple-200'}">
+              <button onclick="app.selectUnit(${u.id})" class="px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${this.currentUnitId === u.id ? 'bg-purple-700 text-white shadow-md' : 'bg-white/80 text-slate-700 hover:bg-white border border-purple-200'}">
                 Unit ${u.id}
               </button>
             `).join('')}
@@ -512,75 +593,50 @@ class ReadSkillsApp {
         </div>
 
         <!-- Current Unit Information Card -->
-        <div class="glass-card p-6 bg-gradient-to-r from-purple-100/70 to-pink-100/70 border border-purple-200">
+        <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/70 to-pink-100/70 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">${unit.code}</span>
             <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr}</span>
           </div>
-          <h3 class="text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
           <p class="text-xs text-slate-700 leading-relaxed">${unit.description}</p>
         </div>
 
-        <!-- Stage Tabs (Pre-Reading | While-Reading | Post-Reading) -->
-        <div class="flex items-center space-x-3 border-b border-purple-200 pb-4">
-          <button onclick="app.selectStage('preReading')" class="px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 ${this.currentStage === 'preReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="compass" class="w-4 h-4"></i>
-            <span>Pre-Reading Stage</span>
-          </button>
-          
-          <button onclick="app.selectStage('whileReading')" class="px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 ${this.currentStage === 'whileReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="book-open-check" class="w-4 h-4"></i>
-            <span>While-Reading Stage</span>
-          </button>
-          
-          <button onclick="app.selectStage('postReading')" class="px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 ${this.currentStage === 'postReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-            <span>Post-Reading Stage</span>
-          </button>
-        </div>
-
-        <!-- Activity Stepper Bar -->
-        <div class="glass-card p-4">
-          <div class="flex items-center justify-between max-w-3xl mx-auto text-xs font-medium">
+        <!-- Activity Stepper Bar (4 Steps: Overview, Learn, Example, Practice) -->
+        <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar">
+          <div class="flex items-center justify-between max-w-2xl mx-auto text-xs font-medium min-w-[280px]">
             
-            <button onclick="app.selectActivityStep('overview')" class="flex flex-col items-center space-y-1 ${this.currentActivityStep === 'overview' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center ${this.currentActivityStep === 'overview' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">1</div>
-              <span>Overview</span>
+            <button onclick="app.selectActivityStep('overview')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'overview' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'overview' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">1</div>
+              <span class="text-[11px] sm:text-xs">Overview</span>
             </button>
 
-            <div class="h-0.5 w-12 bg-purple-200"></div>
+            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
 
-            <button onclick="app.selectActivityStep('learn')" class="flex flex-col items-center space-y-1 ${this.currentActivityStep === 'learn' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center ${this.currentActivityStep === 'learn' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">2</div>
-              <span>Learn</span>
+            <button onclick="app.selectActivityStep('learn')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'learn' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'learn' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">2</div>
+              <span class="text-[11px] sm:text-xs">Learn</span>
             </button>
 
-            <div class="h-0.5 w-12 bg-purple-200"></div>
+            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
 
-            <button onclick="app.selectActivityStep('example')" class="flex flex-col items-center space-y-1 ${this.currentActivityStep === 'example' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center ${this.currentActivityStep === 'example' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">3</div>
-              <span>Example</span>
+            <button onclick="app.selectActivityStep('example')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'example' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'example' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">3</div>
+              <span class="text-[11px] sm:text-xs">Example</span>
             </button>
 
-            <div class="h-0.5 w-12 bg-purple-200"></div>
+            <div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>
 
-            <button onclick="app.selectActivityStep('practice')" class="flex flex-col items-center space-y-1 ${this.currentActivityStep === 'practice' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center ${this.currentActivityStep === 'practice' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">4</div>
-              <span>Practice</span>
-            </button>
-
-            <div class="h-0.5 w-12 bg-purple-200"></div>
-
-            <button onclick="app.selectActivityStep('quiz')" class="flex flex-col items-center space-y-1 ${this.currentActivityStep === 'quiz' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
-              <div class="w-8 h-8 rounded-full flex items-center justify-center ${this.currentActivityStep === 'quiz' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">5</div>
-              <span>Quiz / Review</span>
+            <button onclick="app.selectActivityStep('practice')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${this.currentActivityStep === 'practice' ? 'text-purple-800 font-bold' : 'text-slate-500 hover:text-slate-700'}">
+              <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs ${this.currentActivityStep === 'practice' ? 'bg-purple-700 text-white ring-4 ring-purple-200' : 'bg-slate-200/80'}">4</div>
+              <span class="text-[11px] sm:text-xs">Practice</span>
             </button>
 
           </div>
         </div>
 
         <!-- Activity Step Content Body -->
-        <div class="glass-card p-8 min-h-[300px]">
+        <div class="glass-card p-4 sm:p-6 md:p-8 min-h-[300px]">
           ${this.renderActivityStepContent(currentTopic)}
         </div>
 
@@ -588,23 +644,221 @@ class ReadSkillsApp {
     `;
   }
 
+  formatAnnotatedExample(raw) {
+    if (!raw) return '<p class="text-slate-500 italic">No example provided.</p>';
+    if (typeof raw !== 'string') return raw;
+    if (raw.trim().startsWith('<div') || raw.trim().startsWith('<article') || raw.trim().startsWith('<table')) {
+      return raw;
+    }
+
+    setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
+
+    const rawLines = raw.split(/\r?\n/).map(l => l.trim()).filter(Boolean);
+    let title = '';
+    const items = [];
+
+    const getTagStyle = (tagName) => {
+      const t = (tagName || '').toLowerCase();
+      if (t.includes('topic') || t.includes('ts')) {
+        return {
+          icon: 'bookmark',
+          badge: 'bg-emerald-600 text-white',
+          border: 'border-l-4 border-emerald-500',
+          hlClass: 'highlighter-pen highlighter-green'
+        };
+      }
+      if (t.includes('supporting') || t.includes('sd') || t.includes('detail')) {
+        return {
+          icon: 'layers',
+          badge: 'bg-sky-600 text-white',
+          border: 'border-l-4 border-sky-500',
+          hlClass: 'highlighter-pen highlighter-blue'
+        };
+      }
+      if (t.includes('conclud') || t.includes('climax') || t.includes('moral')) {
+        return {
+          icon: 'flag',
+          badge: 'bg-rose-600 text-white',
+          border: 'border-l-4 border-rose-500',
+          hlClass: 'highlighter-pen highlighter-pink'
+        };
+      }
+      if (t.includes('head') || t.includes('title')) {
+        return {
+          icon: 'heading',
+          badge: 'bg-purple-600 text-white',
+          border: 'border-l-4 border-purple-500',
+          hlClass: 'highlighter-pen highlighter-purple'
+        };
+      }
+      if (t.includes('visual') || t.includes('photo') || t.includes('image')) {
+        return {
+          icon: 'image',
+          badge: 'bg-amber-600 text-white',
+          border: 'border-l-4 border-amber-500',
+          hlClass: 'highlighter-pen highlighter-orange'
+        };
+      }
+      if (t.includes('bold') || t.includes('word') || t.includes('vocab')) {
+        return {
+          icon: 'type',
+          badge: 'bg-teal-600 text-white',
+          border: 'border-l-4 border-teal-500',
+          hlClass: 'highlighter-pen highlighter-teal'
+        };
+      }
+      if (t.includes('predict') || t.includes('formulat')) {
+        return {
+          icon: 'sparkles',
+          badge: 'bg-indigo-600 text-white',
+          border: 'border-l-4 border-indigo-500',
+          hlClass: 'highlighter-pen highlighter-yellow'
+        };
+      }
+      if (t.includes('verif') || t.includes('confirm')) {
+        return {
+          icon: 'check-circle',
+          badge: 'bg-emerald-600 text-white',
+          border: 'border-l-4 border-emerald-500',
+          hlClass: 'highlighter-pen highlighter-green'
+        };
+      }
+      if (t.includes('excellent') || t.includes('score 4') || t.includes('good')) {
+        return {
+          icon: 'star',
+          badge: 'bg-emerald-700 text-white',
+          border: 'border-l-4 border-emerald-600',
+          hlClass: 'highlighter-pen highlighter-green'
+        };
+      }
+      if (t.includes('weak') || t.includes('score 1') || t.includes('flaw') || t.includes('error')) {
+        return {
+          icon: 'alert-triangle',
+          badge: 'bg-rose-600 text-white',
+          border: 'border-l-4 border-rose-500',
+          hlClass: 'highlighter-pen highlighter-pink'
+        };
+      }
+      return {
+        icon: 'tag',
+        badge: 'bg-purple-700 text-white',
+        border: 'border-l-4 border-purple-500',
+        hlClass: 'highlighter-pen highlighter-yellow'
+      };
+    };
+
+    rawLines.forEach((line, idx) => {
+      if (idx === 0 && (line.endsWith(':') || (!line.startsWith('•') && !line.startsWith('-') && !line.startsWith('[')))) {
+        title = line.replace(/:$/, '');
+        return;
+      }
+
+      let cleaned = line.replace(/^[•\-\*]\s*/, '').trim();
+      const tagMatch = cleaned.match(/^\[(.*?)\]:?\s*(.*)$/);
+
+      if (tagMatch) {
+        const tagName = tagMatch[1];
+        let body = tagMatch[2];
+        const style = getTagStyle(tagName);
+
+        let parenthetical = '';
+        const parenMatch = body.match(/\s*(\([A-Za-z0-9\s:;,\.\-—\/]+\))\s*$/);
+        if (parenMatch) {
+          parenthetical = parenMatch[1];
+          body = body.slice(0, parenMatch.index).trim();
+        }
+
+        let highlightedBody = body.replace(/'([^']+)'/g, `<span class="${style.hlClass}">“$1”</span>`);
+
+        items.push({
+          tagName,
+          style,
+          body: highlightedBody,
+          parenthetical
+        });
+      } else {
+        let inlineStyled = cleaned.replace(/\[(.*?)\]/g, (match, p1) => {
+          const s = getTagStyle(p1);
+          return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded ${s.badge} text-[11px] font-bold shadow-2xs mx-1"><i data-lucide="${s.icon}" class="w-3 h-3"></i>[${p1}]</span>`;
+        });
+        inlineStyled = inlineStyled.replace(/'([^']+)'/g, '<span class="highlighter-pen highlighter-yellow">“$1”</span>');
+        items.push({
+          tagName: null,
+          style: getTagStyle(''),
+          body: inlineStyled,
+          parenthetical: ''
+        });
+      }
+    });
+
+    return `
+      <div class="space-y-4">
+        ${title ? `
+          <div class="flex items-center justify-between pb-3 border-b border-amber-200/80">
+            <div class="flex items-center space-x-2 text-amber-950 font-bold text-sm">
+              <i data-lucide="highlighter" class="w-4 h-4 text-amber-700"></i>
+              <span>${title}</span>
+            </div>
+            <span class="inline-flex items-center gap-1 text-[11px] font-medium text-amber-800 bg-amber-200/60 px-2.5 py-0.5 rounded-full">
+              <i data-lucide="sparkles" class="w-3 h-3 text-amber-700"></i>
+              <span>Highlighter Notes</span>
+            </span>
+          </div>
+        ` : ''}
+
+        <div class="space-y-3">
+          ${items.map(item => `
+            <div class="p-3.5 bg-white/95 rounded-xl ${item.style.border} shadow-xs space-y-1.5 transition hover:shadow-sm">
+              ${item.tagName ? `
+                <div class="flex items-center space-x-2">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md ${item.style.badge} font-bold text-xs shadow-2xs tracking-wide">
+                    <i data-lucide="${item.style.icon}" class="w-3.5 h-3.5"></i>
+                    <span>[${item.tagName}]</span>
+                  </span>
+                </div>
+              ` : ''}
+              <div class="text-xs sm:text-sm text-slate-800 leading-relaxed font-sans pl-0.5">
+                ${item.body}
+              </div>
+              ${item.parenthetical ? `
+                <div class="text-[11px] text-slate-500 italic pl-1 flex items-center space-x-1 pt-0.5">
+                  <i data-lucide="info" class="w-3 h-3 text-slate-400 shrink-0"></i>
+                  <span>${item.parenthetical}</span>
+                </div>
+              ` : ''}
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    `;
+  }
+
   renderActivityStepContent(topic) {
-    const s = topic.steps || {};
-    switch (this.currentActivityStep) {
+    const s = topic.steps || topic;
+    const currentStep = (this.currentActivityStep === 'quiz') ? 'practice' : this.currentActivityStep;
+
+    if (s && s[currentStep] && typeof s[currentStep] === 'string' && s[currentStep].trim().startsWith('<div')) {
+      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
+      return s[currentStep];
+    }
+
+    switch (currentStep) {
       case 'overview':
         return `
           <div class="space-y-4">
             <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
               <i data-lucide="info" class="w-5 h-5 text-purple-700"></i>
-              <span>Topic Overview: ${topic.title}</span>
+              <span>Topic Overview: ${topic.title || topic.topic || ''}</span>
             </h4>
             <p class="text-sm text-slate-700 leading-relaxed">${s.overview || 'Overview details.'}</p>
             <div class="bg-purple-100/80 p-4 rounded-xl text-xs text-purple-900 border border-purple-200">
               💡 <strong>Instructional Objective:</strong> Students will master identifying key themes before reading.
             </div>
-            <button onclick="app.selectActivityStep('learn')" class="mt-4 px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition">
-              Next Step: Learn ➔
-            </button>
+            <div class="pt-2">
+              <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                Next Step: Learn ➔
+              </button>
+            </div>
           </div>
         `;
 
@@ -616,29 +870,44 @@ class ReadSkillsApp {
               <span>Lesson Content & Audio Passage</span>
             </h4>
             
-            <p class="text-sm text-slate-700 leading-relaxed">${s.learn}</p>
+            <p class="text-sm text-slate-700 leading-relaxed">${s.learn || ''}</p>
 
+            ${(s.passage || s.audioText) ? `
             <!-- Passage Box with Audio Player -->
-            <div class="bg-slate-900 text-slate-100 p-6 rounded-2xl space-y-4 relative shadow-lg">
-              <div class="flex items-center justify-between border-b border-slate-700 pb-3">
+            <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
                 <span class="text-xs font-semibold text-purple-300 uppercase tracking-wider">Reading Passage (Unit ${this.currentUnitId})</span>
                 
-                <button onclick="app.togglePassageAudio('${encodeURIComponent(s.audioText || s.passage)}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition ${this.isAudioPlaying ? 'audio-playing' : ''}">
-                  <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
-                  <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
-                </button>
+                <div class="flex items-center space-x-2">
+                  <!-- Audio Speed Control -->
+                  <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
+                    <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
+                    <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
+                      <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
+                      <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
+                      <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
+                      <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
+                    </select>
+                  </div>
+
+                  <button onclick="app.togglePassageAudio('${encodeURIComponent(s.audioText || s.passage || '')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                    <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
+                    <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
+                  </button>
+                </div>
               </div>
 
               <p class="text-sm italic leading-relaxed text-slate-200">
-                "${s.passage}"
+                "${s.passage || ''}"
               </p>
             </div>
+            ` : ''}
 
-            <div class="flex justify-between pt-4">
-              <button onclick="app.selectActivityStep('overview')" class="px-5 py-2 bg-slate-200/80 text-slate-700 font-semibold rounded-xl text-xs">
-                ⬅ Back
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                ⬅ Back: Overview
               </button>
-              <button onclick="app.selectActivityStep('example')" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs">
+              <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center">
                 Next Step: Example ➔
               </button>
             </div>
@@ -652,14 +921,14 @@ class ReadSkillsApp {
               <i data-lucide="sparkles" class="w-5 h-5 text-amber-600"></i>
               <span>Annotated Worked Example</span>
             </h4>
-            <div class="bg-amber-100/70 border border-amber-300 p-6 rounded-2xl text-slate-900 text-sm">
-              ${s.example || 'Example details.'}
+            <div class="bg-amber-50/90 border border-amber-200 p-4 sm:p-5 rounded-2xl text-slate-900 text-sm shadow-xs">
+              ${this.formatAnnotatedExample(s.example)}
             </div>
-            <div class="flex justify-between pt-4">
-              <button onclick="app.selectActivityStep('learn')" class="px-5 py-2 bg-slate-200/80 text-slate-700 font-semibold rounded-xl text-xs">
-                ⬅ Back
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                ⬅ Back: Learn
               </button>
-              <button onclick="app.selectActivityStep('practice')" class="px-6 py-2.5 bg-purple-700 text-white font-semibold rounded-xl text-xs">
+              <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center">
                 Next Step: Practice ➔
               </button>
             </div>
@@ -675,35 +944,24 @@ class ReadSkillsApp {
               <span>Guided Practice Exercise</span>
             </h4>
 
-            <p class="text-sm font-semibold text-slate-900">${prac.question}</p>
+            <p class="text-sm font-semibold text-slate-900">${prac.question || 'Practice Question'}</p>
 
             <div class="space-y-3">
-              ${prac.options.map((opt, idx) => `
-                <button onclick="app.submitPracticeAnswer(${idx}, ${prac.answer}, '${encodeURIComponent(prac.explanation)}')" class="w-full text-left p-4 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white transition text-sm font-medium">
+              ${(prac.options || []).map((opt, idx) => `
+                <button onclick="app.submitPracticeAnswer(${idx}, ${prac.answer}, '${encodeURIComponent(prac.explanation || '')}')" class="w-full text-left p-4 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white transition text-sm font-medium">
                   ${String.fromCharCode(65 + idx)}. ${opt}
                 </button>
               `).join('')}
             </div>
-          </div>
-        `;
 
-      case 'quiz':
-        const qz = s.quiz || { question: "Sample quiz?", options: ["Option 1", "Option 2"], answer: 0, explanation: "Details" };
-        return `
-          <div class="space-y-6">
-            <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
-              <i data-lucide="award" class="w-5 h-5 text-emerald-700"></i>
-              <span>Topic Quiz & Assessment</span>
-            </h4>
-
-            <p class="text-sm font-semibold text-slate-900">${qz.question}</p>
-
-            <div class="space-y-3">
-              ${qz.options.map((opt, idx) => `
-                <button onclick="app.submitQuizAnswer(${idx}, ${qz.answer}, '${encodeURIComponent(qz.explanation)}')" class="w-full text-left p-4 rounded-xl border border-purple-200 hover:border-emerald-600 hover:bg-white transition text-sm font-medium">
-                  ${String.fromCharCode(65 + idx)}. ${opt}
-                </button>
-              `).join('')}
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
+                ⬅ Back: Example
+              </button>
+              <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+                <span>Review Overview ↺</span>
+              </button>
             </div>
           </div>
         `;
@@ -725,165 +983,940 @@ class ReadSkillsApp {
   }
 
   selectActivityStep(stepKey) {
+    if (stepKey === 'quiz') stepKey = 'practice';
     this.currentActivityStep = stepKey;
     this.navigate('lessons');
   }
 
-  // 3. Reading Strategies View
+  switchLearnPart(partId) {
+    const p1 = document.getElementById('learn-part-1');
+    const p2 = document.getElementById('learn-part-2');
+    const tab1 = document.getElementById('learn-tab-1');
+    const tab2 = document.getElementById('learn-tab-2');
+    if (!p1 || !p2 || !tab1 || !tab2) return;
+    
+    if (partId === 'part1') {
+      p1.classList.remove('hidden');
+      p2.classList.add('hidden');
+      tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+      tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+    } else {
+      p1.classList.add('hidden');
+      p2.classList.remove('hidden');
+      tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+      tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+    }
+    if (window.lucide) lucide.createIcons();
+    const target = document.getElementById('learn-content-top');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  // 3. Reading Strategies View (6 Units, 8 Learning Steps per Unit)
+  // Aligned with Research Blueprint: Reading Strategies Module - Content Scope
   renderStrategiesView() {
-    const strat = ReadSkillsData.strategies.find(s => s.id === this.currentStrategyId) || ReadSkillsData.strategies[0];
-    const currentStep = strat.steps[this.currentStrategyStepIndex] || strat.steps[0];
+    const unit = ReadSkillsData.strategies.find(u => u.unitNumber === this.currentStrategyUnit) || ReadSkillsData.strategies[0];
+    const steps = unit.steps;
+    const currentStep = steps[this.currentStrategyStepIndex] || steps[0];
+
+    const stepIcons = [
+      'help-circle', // 1. What is the strategy?
+      'lightbulb',    // 2. Why use it?
+      'calendar',     // 3. When do I use it?
+      'settings',     // 4. How do I use it?
+      'file-text',    // 5. Worked Example
+      'user-check',   // 6. Guided Practice
+      'book-open',    // 7. Apply to a Short Text
+      'trophy'        // 8. Strategy Quiz
+    ];
 
     return `
       <div class="space-y-8">
-        <!-- Header -->
+        <!-- Header & Unit Selector (6 Units) -->
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
-            <h2 class="text-2xl font-bold text-slate-900">Module 2: Reading Strategies (กลยุทธ์การอ่าน)</h2>
-            <p class="text-xs text-slate-600">Interactive 8-Step Strategy Learning Flow</p>
+            <div class="flex items-center space-x-2">
+              <span class="w-7 h-7 rounded-lg bg-purple-700 text-white font-bold flex items-center justify-center text-xs">2</span>
+              <h2 class="text-2xl font-bold text-slate-900">Module 2: Reading Strategies (กลยุทธ์การอ่าน)</h2>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">Reading Strategies Module – Content Scope: 6 Units & 8-Step Learning Sequence</p>
           </div>
 
-          <!-- Strategy Tabs -->
-          <div class="flex items-center space-x-2">
-            ${ReadSkillsData.strategies.map(s => `
-              <button onclick="app.selectStrategy('${s.id}')" class="px-4 py-2 rounded-xl text-xs font-semibold transition ${this.currentStrategyId === s.id ? 'bg-pink-600 text-white shadow-md' : 'bg-white/80 text-slate-700 hover:bg-white border border-purple-200'}">
-                ${s.name}
+          <!-- Unit Selector Tabs (Unit 1 to Unit 6) -->
+          <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 touch-pan-x">
+            ${ReadSkillsData.strategies.map(u => `
+              <button 
+                onclick="app.selectStrategyUnit(${u.unitNumber})" 
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${this.currentStrategyUnit === u.unitNumber ? 'bg-purple-700 text-white shadow-md' : 'bg-white/85 text-slate-700 hover:bg-white border border-purple-200'}"
+              >
+                Unit ${u.unitNumber}
               </button>
             `).join('')}
           </div>
         </div>
 
-        <!-- Strategy 8-Step Progress Wizard Bar -->
-        <div class="glass-card p-6 overflow-x-auto">
-          <div class="flex items-center justify-between min-w-[700px] text-xs">
-            ${strat.steps.map((step, idx) => `
-              <div onclick="app.setStrategyStep(${idx})" class="flex flex-col items-center space-y-1 cursor-pointer transition ${this.currentStrategyStepIndex === idx ? 'text-pink-700 font-bold' : 'text-slate-500 hover:text-slate-800'}">
-                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold ${this.currentStrategyStepIndex === idx ? 'bg-pink-600 text-white ring-4 ring-pink-200' : 'bg-slate-200/80'}">
-                  ${idx + 1}
-                </div>
-                <span class="text-[10px] text-center max-w-[70px] truncate">${step.title.split('. ')[1] || step.title}</span>
-              </div>
-            `).join('')}
+        <!-- Unit Information Hero Card -->
+        <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/80 via-pink-100/60 to-purple-50/80 border border-purple-200">
+          <div class="flex items-center justify-between mb-2">
+            <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber}</span>
+            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr}</span>
+          </div>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
+          <p class="text-xs text-purple-800 font-semibold mb-1">
+            <strong>Scope (ขอบเขตเนื้อหา):</strong> ${unit.scope}
+          </p>
+        </div>
+
+        <!-- 8-Step Learning Sequence Stepper Bar (ลำดับการเรียนรู้ 8 ขั้น) -->
+        <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar touch-pan-x">
+          <div class="flex items-center justify-between min-w-[700px] max-w-5xl mx-auto text-xs font-medium">
+            ${steps.map((st, idx) => {
+              const isActive = this.currentStrategyStepIndex === idx;
+              const isPassed = this.currentStrategyStepIndex > idx;
+              return `
+                ${idx > 0 ? `<div class="h-0.5 flex-1 mx-1 ${isPassed ? 'bg-purple-600' : 'bg-purple-200'}"></div>` : ''}
+                <button 
+                  onclick="app.selectStrategyStep(${idx})" 
+                  class="flex flex-col items-center space-y-1.5 focus:outline-none cursor-pointer group shrink-0"
+                  title="${st.title} (${st.thaiTitle})"
+                >
+                  <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-2xl flex items-center justify-center transition shadow-sm ${isActive ? 'bg-purple-700 text-white ring-4 ring-purple-200 scale-105' : (isPassed ? 'bg-purple-600 text-white' : 'bg-white text-slate-500 border border-purple-200 group-hover:border-purple-400')}">
+                    <i data-lucide="${stepIcons[idx]}" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+                  </div>
+                  <div class="text-center">
+                    <p class="text-[10px] font-bold ${isActive ? 'text-purple-900' : (isPassed ? 'text-purple-700' : 'text-slate-500')} leading-tight">
+                      ${idx + 1}. ${st.title}
+                    </p>
+                    <span class="text-[9px] text-slate-400 font-normal">${st.thaiTitle}</span>
+                  </div>
+                </button>
+              `;
+            }).join('')}
           </div>
         </div>
 
-        <!-- Active Step Display Box -->
-        <div class="glass-card p-8 min-h-[350px]">
-          <span class="text-xs font-semibold text-pink-700 uppercase tracking-wider bg-pink-100/80 px-3 py-1 rounded-full">
-            Step ${this.currentStrategyStepIndex + 1} of 8
-          </span>
-
-          <h3 class="text-2xl font-bold text-slate-900 mt-3 mb-4">${currentStep.title}</h3>
-          
-          <div class="text-sm text-slate-800 leading-relaxed space-y-4">
-            <p>${currentStep.content}</p>
-
-            ${currentStep.annotated ? `
-              <div class="p-4 bg-purple-100/80 border-l-4 border-purple-700 text-purple-950 rounded-r-xl font-medium">
-                💡 Note: ${currentStep.annotated}
-              </div>
-            ` : ''}
-
-            ${currentStep.passage ? `
-              <div class="bg-slate-900 text-slate-100 p-6 rounded-2xl space-y-3 shadow-lg">
-                <div class="flex justify-between items-center border-b border-slate-700 pb-2">
-                  <span class="text-xs text-pink-300 font-semibold">Short Text Passage</span>
-                  <button onclick="app.togglePassageAudio('${encodeURIComponent(currentStep.audioText || currentStep.passage)}')" class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-md">
-                    🔊 Audio
-                  </button>
-                </div>
-                <p class="italic text-sm">"${currentStep.passage}"</p>
-              </div>
-            ` : ''}
-
-            ${currentStep.question ? `
-              <div class="mt-6 p-6 bg-white/70 border border-purple-200 rounded-2xl space-y-4">
-                <p class="font-semibold text-slate-900">${currentStep.question}</p>
-                <div class="space-y-2">
-                  ${currentStep.options.map((opt, idx) => `
-                    <button onclick="app.submitStrategyQuiz(${idx}, ${currentStep.answer}, '${encodeURIComponent(currentStep.explanation || 'Good job!')}')" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-pink-600 hover:bg-white transition text-xs font-medium">
-                      ${String.fromCharCode(65 + idx)}. ${opt}
-                    </button>
-                  `).join('')}
-                </div>
-              </div>
-            ` : ''}
-          </div>
-
-          <!-- Wizard Navigation Buttons -->
-          <div class="flex justify-between border-t border-purple-200 pt-6 mt-8">
-            <button onclick="app.prevStrategyStep()" ${this.currentStrategyStepIndex === 0 ? 'disabled class="opacity-40 cursor-not-allowed px-5 py-2.5 bg-slate-200/80 text-slate-500 rounded-xl text-xs font-semibold"' : 'class="px-5 py-2.5 bg-white/80 hover:bg-white text-slate-800 rounded-xl text-xs font-semibold transition"'}>
-              ⬅ Previous Step
-            </button>
-
-            <button onclick="app.nextStrategyStep()" ${this.currentStrategyStepIndex === 7 ? 'disabled class="opacity-40 cursor-not-allowed px-6 py-2.5 bg-pink-600 text-white rounded-xl text-xs font-semibold"' : 'class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white rounded-xl text-xs font-semibold transition shadow-md shadow-pink-200"'}>
-              Next Step ➔
-            </button>
-          </div>
+        <!-- 8-Step Activity Content Body -->
+        <div class="glass-card p-4 sm:p-6 md:p-8 min-h-[360px]">
+          ${this.renderStrategyStepBody(unit, currentStep)}
         </div>
+
       </div>
     `;
   }
 
-  selectStrategy(id) {
-    this.currentStrategyId = id;
-    this.currentStrategyStepIndex = 0;
-    this.navigate('strategies');
-  }
+  // Render individual step content based on the 8-step sequence
+  renderStrategyStepBody(unit, step) {
+    const sIdx = this.currentStrategyStepIndex;
+    const isFirst = sIdx === 0;
+    const isLast = sIdx === 7;
 
-  setStrategyStep(idx) {
-    this.currentStrategyStepIndex = idx;
-    this.navigate('strategies');
-  }
+    switch (step.stepNum) {
+      // 1. What is the strategy? (คืออะไร?)
+      case 1:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="help-circle" class="w-5 h-5 text-purple-700 shrink-0"></i>
+                <span>1. What is the strategy? (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 1 of 8</span>
+            </div>
 
-  prevStrategyStep() {
-    if (this.currentStrategyStepIndex > 0) {
-      this.currentStrategyStepIndex--;
-      this.navigate('strategies');
+            <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 text-sm text-slate-800 leading-relaxed space-y-2">
+              <strong class="text-purple-900 text-base block font-bold">${unit.title}</strong>
+              <p>${step.content}</p>
+            </div>
+
+            <div class="p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs text-purple-950 space-y-1">
+              <strong class="font-bold flex items-center space-x-1">
+                <i data-lucide="book-open" class="w-4 h-4 text-purple-700 shrink-0"></i>
+                <span>คำอธิบายภาษาไทย (Thai Explanation):</span>
+              </strong>
+              <p class="leading-relaxed">${step.thaiExplanation}</p>
+            </div>
+
+            <div class="flex justify-end pt-4">
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Why use it?</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 2. Why use it? (ทำไมต้องใช้?)
+      case 2:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="lightbulb" class="w-5 h-5 text-amber-500 shrink-0"></i>
+                <span>2. Why use it? (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-amber-100 text-amber-900 rounded-full shrink-0">Step 2 of 8</span>
+            </div>
+
+            <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 text-sm text-slate-800 leading-relaxed space-y-2">
+              <p>${step.content}</p>
+            </div>
+
+            <div class="p-4 bg-amber-50/80 border border-amber-200 rounded-2xl text-xs text-amber-950 space-y-1">
+              <strong class="font-bold flex items-center space-x-1">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                <span>ประโยชน์หลักและเหตุผลที่ต้องใช้ (Key Benefits):</span>
+              </strong>
+              <p class="leading-relaxed">${step.thaiExplanation}</p>
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: When do I use it?</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 3. When do I use it? (ใช้เมื่อไหร่?)
+      case 3:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="calendar" class="w-5 h-5 text-purple-700 shrink-0"></i>
+                <span>3. When do I use it? (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 3 of 8</span>
+            </div>
+
+            <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 text-sm text-slate-800 leading-relaxed space-y-2">
+              <p>${step.content}</p>
+            </div>
+
+            <div class="p-4 bg-purple-50/80 border border-purple-200 rounded-2xl text-xs text-purple-950 space-y-1">
+              <strong class="font-bold flex items-center space-x-1">
+                <i data-lucide="compass" class="w-4 h-4 text-purple-700 shrink-0"></i>
+                <span>สถานการณ์ที่เหมาะสมในการนำไปใช้:</span>
+              </strong>
+              <p class="leading-relaxed">${step.thaiExplanation}</p>
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: How do I use it?</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 4. How do I use it? (ใช้อย่างไร?)
+      case 4:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="settings" class="w-5 h-5 text-purple-700 shrink-0"></i>
+                <span>4. How do I use it? (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 4 of 8</span>
+            </div>
+
+            <p class="text-xs text-slate-600">${step.content}</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+              ${(step.checklist || []).map((item, idx) => `
+                <div class="p-4 bg-white rounded-2xl border border-purple-100 shadow-sm flex items-start space-x-3">
+                  <div class="w-6 h-6 rounded-lg bg-purple-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                    ${idx + 1}
+                  </div>
+                  <p class="text-xs text-slate-800 leading-relaxed">${item}</p>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Worked Example</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 5. Worked Example (ตัวอย่างการใช้)
+      case 5:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="file-text" class="w-5 h-5 text-amber-600 shrink-0"></i>
+                <span>5. Worked Example (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-amber-100 text-amber-900 rounded-full shrink-0">Step 5 of 8</span>
+            </div>
+
+            <div class="p-4 sm:p-5 bg-amber-50/70 border border-amber-200 rounded-2xl text-slate-900 text-sm space-y-2">
+              <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider block">Sample Text / Scenario</span>
+              <p class="leading-relaxed font-serif italic text-slate-800">"${step.content}"</p>
+            </div>
+
+            <div class="p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs text-purple-950 space-y-2">
+              <strong class="font-bold flex items-center space-x-1">
+                <i data-lucide="sparkles" class="w-4 h-4 text-purple-700 shrink-0"></i>
+                <span>การวิเคราะห์กลยุทธ์ (Strategy Breakdown):</span>
+              </strong>
+              <div>${this.formatAnnotatedExample(step.annotated || '')}</div>
+            </div>
+
+            ${step.takeaway ? `
+              <div class="p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-950 flex items-center space-x-2">
+                <i data-lucide="check-circle" class="w-4 h-4 text-emerald-700 shrink-0"></i>
+                <span><strong>Key Takeaway:</strong> ${step.takeaway}</span>
+              </div>
+            ` : ''}
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Guided Practice</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 6. Guided Practice (ฝึกปฏิบัติ)
+      case 6:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="user-check" class="w-5 h-5 text-purple-700 shrink-0"></i>
+                <span>6. Guided Practice (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 6 of 8</span>
+            </div>
+
+            <div class="p-4 bg-purple-50/60 rounded-xl text-xs text-purple-950 font-medium">
+              ${step.content}
+            </div>
+
+            <p class="text-sm font-bold text-slate-900">${step.question}</p>
+
+            <div class="space-y-2.5">
+              ${(step.options || []).map((opt, idx) => `
+                <button 
+                  onclick="app.submitPracticeAnswer(${idx}, ${step.answer}, '${encodeURIComponent(step.explanation)}')"
+                  class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
+                >
+                  <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
+                    ${String.fromCharCode(65 + idx)}
+                  </span>
+                  <span>${opt}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Apply to Short Text</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 7. Apply to a Short Text (นำไปใช้กับบทอ่านสั้น)
+      case 7:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-5 h-5 text-purple-700 shrink-0"></i>
+                <span>7. Apply to a Short Text (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 7 of 8</span>
+            </div>
+
+            <!-- Reading Passage Box with Audio Player -->
+            <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-pink-300 uppercase tracking-wider">${step.passageTitle || unit.title}</span>
+                
+                <div class="flex items-center space-x-2">
+                  <!-- Audio Speed Control -->
+                  <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
+                    <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
+                    <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
+                      <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
+                      <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
+                      <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
+                      <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
+                    </select>
+                  </div>
+
+                  <button onclick="app.togglePassageAudio('${encodeURIComponent(step.audioText || step.passage || 'Reading text')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                    <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
+                    <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
+                  </button>
+                </div>
+              </div>
+
+              <p class="text-sm italic leading-relaxed text-slate-200 font-serif">
+                "${step.passage}"
+              </p>
+            </div>
+
+            <!-- Task Card -->
+            <div class="p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs space-y-2">
+              <strong class="font-bold text-purple-950 flex items-center space-x-1">
+                <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-700 shrink-0"></i>
+                <span>Strategy Application Task:</span>
+              </strong>
+              <p class="text-slate-800">${step.taskQuestion}</p>
+              <div class="p-3 bg-white rounded-xl border border-purple-100 text-purple-900 font-semibold text-xs">
+                💡 <strong>Expected Application:</strong> ${step.taskAnswer}
+              </div>
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <span>Next Step: Strategy Quiz</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        `;
+
+      // 8. Strategy Quiz (แบบทดสอบ)
+      case 8:
+        return `
+          <div class="space-y-5">
+            <div class="flex items-center justify-between border-b border-purple-100 pb-3">
+              <h4 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+                <i data-lucide="trophy" class="w-5 h-5 text-emerald-600 shrink-0"></i>
+                <span>8. Strategy Quiz (${step.thaiTitle})</span>
+              </h4>
+              <span class="text-[11px] font-bold px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full shrink-0">Step 8 of 8 &bull; Checkpoint</span>
+            </div>
+
+            <p class="text-sm font-bold text-slate-900">${step.question}</p>
+
+            <div class="space-y-2.5">
+              ${(step.options || []).map((opt, idx) => `
+                <button 
+                  onclick="app.submitQuizAnswer(${idx}, ${step.answer}, '${encodeURIComponent(step.explanation)}')"
+                  class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-emerald-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
+                >
+                  <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
+                    ${String.fromCharCode(65 + idx)}
+                  </span>
+                  <span>${opt}</span>
+                </button>
+              `).join('')}
+            </div>
+
+            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
+              <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
+                ⬅ Back
+              </button>
+              <button onclick="app.selectStrategyStep(0)" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
+                <i data-lucide="check-check" class="w-4 h-4"></i>
+                <span>Review Completed 🎉</span>
+              </button>
+            </div>
+          </div>
+        `;
     }
+  }
+
+  /* ------------------- Strategy Navigation Handlers ------------------- */
+  selectStrategyUnit(unitNum) {
+    this.currentStrategyUnit = unitNum;
+    this.currentStrategyStepIndex = 0;
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+    this.navigate('strategies');
+  }
+
+  selectStrategyStep(stepIdx) {
+    this.currentStrategyStepIndex = stepIdx;
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+    this.navigate('strategies');
   }
 
   nextStrategyStep() {
     if (this.currentStrategyStepIndex < 7) {
       this.currentStrategyStepIndex++;
+      if (this.speechSynth) this.speechSynth.cancel();
+      this.isAudioPlaying = false;
       this.navigate('strategies');
     }
   }
 
-  // 4. Practice & Quiz View
+  prevStrategyStep() {
+    if (this.currentStrategyStepIndex > 0) {
+      this.currentStrategyStepIndex--;
+      if (this.speechSynth) this.speechSynth.cancel();
+      this.isAudioPlaying = false;
+      this.navigate('strategies');
+    }
+  }
+
+  // 4. Practice & Quiz View (Section D: Practice & Quiz)
   renderPracticeView() {
+    if (this.activeStandaloneQuizId) {
+      if (this.activeQuizResult) {
+        return this.renderStandaloneQuizResult();
+      }
+      return this.renderStandaloneQuizRunner();
+    }
+    return this.renderPracticeHub();
+  }
+
+  // Practice Hub (Hub listing games and 6 integrated standalone quizzes)
+  renderPracticeHub() {
+    const quizzes = ReadSkillsData.practiceOptions.quizzes;
+    const games = ReadSkillsData.practiceOptions.games;
+
     return `
       <div class="space-y-8">
         <div>
-          <h2 class="text-2xl font-bold text-slate-900">Practice & Quiz Hub (แบบฝึกหัดและแบบทดสอบ)</h2>
-          <p class="text-xs text-slate-600">Interactive games, unit quizzes, and realistic reading passage practice</p>
+          <h2 class="text-2xl font-bold text-slate-900">Module: Practice & Quiz (แบบฝึกหัดและแบบทดสอบ)</h2>
+          <p class="text-xs text-slate-600">Section D: Integrated assessments combining Reading Lessons and Reading Strategies (ควิชแยกเฉพาะรวม 2 เนื้อหา)</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="glass-card p-6 border-l-4 border-purple-700 space-y-4">
-            <div class="w-12 h-12 bg-purple-100 text-purple-800 rounded-2xl flex items-center justify-center">
-              <i data-lucide="gamepad-2" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-bold text-lg text-slate-900">Vocabulary & Speed Games</h3>
-            <p class="text-xs text-slate-600">Reinforce reading terms through fun timed challenges.</p>
-            <button onclick="alert('Starting Word Matcher Challenge Game!')" class="px-5 py-2.5 bg-purple-700 hover:bg-purple-800 text-white text-xs font-semibold rounded-xl transition">
-              Play Game 🎮
-            </button>
+        <!-- 1. Interactive Educational Games -->
+        <div>
+          <h3 class="text-base font-bold text-purple-900 mb-3 flex items-center space-x-2">
+            <i data-lucide="gamepad-2" class="w-5 h-5 text-purple-700"></i>
+            <span>Educational Reading Games (เกมการเรียนรู้คำศัพท์และความเร็ว)</span>
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            ${games.map((g, idx) => `
+              <div class="glass-card p-6 border-l-4 ${idx === 0 ? 'border-purple-700' : 'border-amber-500'} space-y-3">
+                <div class="flex items-center space-x-3">
+                  <div class="w-10 h-10 ${idx === 0 ? 'bg-purple-100 text-purple-800' : 'bg-amber-100 text-amber-800'} rounded-xl flex items-center justify-center font-bold">
+                    <i data-lucide="${g.icon || 'gamepad'}" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-slate-900">${g.title}</h4>
+                    <span class="text-[10px] uppercase font-bold text-purple-700">Interactive Game Mode</span>
+                  </div>
+                </div>
+                <p class="text-xs text-slate-600 leading-relaxed">${g.description}</p>
+                <div class="pt-2">
+                  <button onclick="alert('Starting ${g.title}!')" class="px-4 py-2 ${idx === 0 ? 'bg-purple-700 hover:bg-purple-800' : 'bg-amber-600 hover:bg-amber-700'} text-white text-xs font-semibold rounded-xl transition flex items-center space-x-2">
+                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                    <span>Play Challenge</span>
+                  </button>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+
+        <!-- 2. Unit & Strategy Integrated Quizzes (ควิชแยกเฉพาะรวม 2 เนื้อหา) -->
+        <div>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3 gap-2">
+            <h3 class="text-base font-bold text-purple-900 flex items-center space-x-2">
+              <i data-lucide="award" class="w-5 h-5 text-emerald-700"></i>
+              <span>Unit Comprehension Quizzes (แบบทดสอบประจำบทเรียน 6 Units)</span>
+            </h3>
+            <span class="text-[11px] font-semibold text-purple-800 bg-purple-100/80 px-3 py-1 rounded-full">
+              บูรณาการ Module 1 (Lessons) + Module 2 (Strategies)
+            </span>
           </div>
 
-          <div class="glass-card p-6 border-l-4 border-amber-500 space-y-4">
-            <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center">
-              <i data-lucide="file-check" class="w-6 h-6"></i>
-            </div>
-            <h3 class="font-bold text-lg text-slate-900">Reading Passage Practice</h3>
-            <p class="text-xs text-slate-600">Realistic academic passages with comprehension questions & audio playback.</p>
-            <button onclick="app.selectUnit(1); app.selectActivityStep('learn');" class="px-5 py-2.5 bg-amber-600 hover:bg-amber-700 text-white text-xs font-semibold rounded-xl transition">
-              Start Passage Practice 📖
-            </button>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            ${quizzes.map((q, idx) => `
+              <div class="glass-card p-5 border border-purple-100 flex flex-col justify-between hover:shadow-md transition">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-100 text-purple-800">${q.code}</span>
+                    <span class="text-[10px] text-slate-500 font-semibold flex items-center space-x-1">
+                      <i data-lucide="clock" class="w-3 h-3"></i>
+                      <span>${q.timeMinutes} mins</span>
+                    </span>
+                  </div>
+                  <h4 class="font-bold text-sm text-slate-900 leading-snug">${q.title}</h4>
+                  <p class="text-[11px] text-purple-700 font-semibold">${q.thaiTitle}</p>
+                  <p class="text-[11px] text-slate-500">${q.questionsCount} Multiple-Choice Questions &bull; Immediate Feedback</p>
+                </div>
+
+                <div class="pt-4 mt-3 border-t border-purple-50 flex items-center justify-between">
+                  <span class="text-[11px] font-bold text-emerald-700 flex items-center space-x-1">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                    <span>Passing: ${q.passingScore}%</span>
+                  </span>
+                  <button onclick="app.startStandaloneQuiz('${q.id}')" class="px-3.5 py-1.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-lg text-xs transition flex items-center space-x-1 cursor-pointer">
+                    <span>Take Quiz</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+              </div>
+            `).join('')}
           </div>
+        </div>
+
+      </div>
+    `;
+  }
+
+  // Standalone Quiz Test Runner Screen (ควิชทดสอบเฉพาะ)
+  renderStandaloneQuizRunner() {
+    const quiz = ReadSkillsData.practiceOptions.quizzes.find(q => q.id === this.activeStandaloneQuizId);
+    if (!quiz) {
+      this.activeStandaloneQuizId = null;
+      return this.renderPracticeHub();
+    }
+
+    const answeredCount = Object.keys(this.activeQuizAnswers).length;
+    const allAnswered = answeredCount === quiz.questions.length;
+
+    return `
+      <div class="space-y-6">
+        <!-- Top Nav & Breadcrumb Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 glass-card p-4 sm:p-5">
+          <div class="flex items-center space-x-3">
+            <button onclick="app.exitStandaloneQuiz()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shrink-0">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span class="hidden sm:inline">Back to Quiz Hub</span>
+              <span class="sm:hidden">Back</span>
+            </button>
+            <div class="h-6 w-px bg-purple-200"></div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="bg-purple-700 text-white text-[10px] font-extrabold px-2 py-0.5 rounded">${quiz.code}</span>
+                <span class="text-xs font-bold text-slate-800 line-clamp-1">${quiz.title}</span>
+              </div>
+              <p class="text-[11px] text-purple-700 font-medium line-clamp-1">${quiz.thaiTitle}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3 text-xs self-end sm:self-auto">
+            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-lg font-semibold flex items-center space-x-1">
+              <i data-lucide="help-circle" class="w-3.5 h-3.5"></i>
+              <span>Answered: ${answeredCount} / ${quiz.questions.length}</span>
+            </span>
+            <span class="px-3 py-1 bg-amber-100 text-amber-900 rounded-lg font-semibold flex items-center space-x-1">
+              <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+              <span>${quiz.timeMinutes} Mins</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Quiz Grid: Passage on Left / Top, Questions on Right -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left: Reading Passage Card (5 cols on lg) -->
+          <div class="lg:col-span-5 space-y-4 lg:sticky lg:top-24">
+            <div class="glass-card p-4 sm:p-6 bg-slate-900 text-slate-100 rounded-2xl shadow-lg space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
+                <div>
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-pink-400">Integrated Reading Passage</span>
+                  <h4 class="text-base font-bold text-white mt-0.5">${quiz.passage.title}</h4>
+                </div>
+                <div class="flex items-center space-x-2">
+                  <!-- Audio Speed Control -->
+                  <div class="flex items-center space-x-1 bg-slate-800 border border-slate-700 rounded-lg px-2 py-1" title="Playback Speed (ความเร็วเสียงอ่าน)">
+                    <i data-lucide="gauge" class="w-3 h-3 text-purple-300 shrink-0"></i>
+                    <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-[11px] font-semibold focus:outline-none cursor-pointer">
+                      <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x</option>
+                      <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x ✨</option>
+                      <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x</option>
+                      <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x</option>
+                    </select>
+                  </div>
+
+                  <button onclick="app.togglePassageAudio('${encodeURIComponent(quiz.passage.audioText || quiz.passage.text)}')" class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                    <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-3.5 h-3.5"></i>
+                    <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen'}</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="text-sm text-slate-200 leading-relaxed max-h-[260px] sm:max-h-[380px] overflow-y-auto pr-2 space-y-3 font-serif">
+                <p class="italic">"${quiz.passage.text}"</p>
+              </div>
+
+              <div class="bg-slate-800/80 p-3.5 rounded-xl border border-slate-700 text-xs text-slate-300">
+                <p class="font-bold text-amber-300 mb-1 flex items-center space-x-1">
+                  <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i>
+                  <span>Two-Content Integration (การรวม 2 เนื้อหา):</span>
+                </p>
+                <p class="text-[11px] text-slate-300">
+                  แบบทดสอบเฉพาะนี้ผสานเนื้อหาจาก <strong>${quiz.unitRef}</strong> และกลยุทธ์ <strong>${quiz.strategyRef}</strong> ร่วมกัน เพื่อประเมินความเข้าใจเชิงลึก
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Questions List (7 cols on lg) -->
+          <div class="lg:col-span-7 space-y-5">
+            ${quiz.questions.map((q, qIdx) => {
+              const selectedOpt = this.activeQuizAnswers[qIdx];
+              return `
+                <div class="glass-card p-4 sm:p-6 rounded-2xl border ${selectedOpt !== undefined ? 'border-purple-400 shadow-sm' : 'border-purple-100'} transition">
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${q.tag.includes('Lesson') ? 'bg-purple-100 text-purple-800' : (q.tag.includes('Strategy') ? 'bg-pink-100 text-pink-700' : 'bg-amber-100 text-amber-800')}">
+                      ${q.tag}
+                    </span>
+                    <span class="text-[11px] font-semibold text-slate-400">Question ${qIdx + 1} of ${quiz.questions.length}</span>
+                  </div>
+
+                  <h5 class="text-sm font-bold text-slate-900 mb-4 leading-relaxed">${q.question}</h5>
+
+                  <div class="space-y-2.5">
+                    ${q.options.map((opt, optIdx) => {
+                      const isSelected = selectedOpt === optIdx;
+                      return `
+                        <button 
+                          type="button"
+                          onclick="app.selectQuizAnswer(${qIdx}, ${optIdx})"
+                          class="w-full text-left p-3 sm:p-3.5 rounded-xl border text-xs font-medium transition flex items-start space-x-3 cursor-pointer min-h-[44px] ${isSelected ? 'bg-purple-700 text-white border-purple-700 shadow-sm' : 'bg-white hover:bg-purple-50/60 border-purple-200 text-slate-700'}"
+                        >
+                          <span class="w-5 h-5 rounded-full flex items-center justify-center shrink-0 font-bold text-[11px] ${isSelected ? 'bg-white text-purple-900' : 'bg-purple-100 text-purple-800'}">
+                            ${String.fromCharCode(65 + optIdx)}
+                          </span>
+                          <span class="leading-snug">${opt}</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              `;
+            }).join('')}
+
+            <!-- Submit Section -->
+            <div class="glass-card p-4 sm:p-6 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+              <div>
+                <p class="text-xs font-bold text-slate-800">Ready to submit?</p>
+                <p class="text-[11px] text-slate-500">${answeredCount === quiz.questions.length ? 'All questions answered. You can now submit your test.' : `Please answer all questions (${answeredCount}/${quiz.questions.length} completed).`}</p>
+              </div>
+
+              <button 
+                onclick="app.submitStandaloneQuiz()" 
+                class="w-full sm:w-auto px-8 py-3 rounded-xl font-bold text-xs text-white transition shadow-md flex items-center justify-center space-x-2 cursor-pointer ${allAnswered ? 'bg-emerald-600 hover:bg-emerald-700' : 'bg-purple-700 hover:bg-purple-800'}"
+              >
+                <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+                <span>Submit Quiz & View Results (ส่งคำตอบ)</span>
+              </button>
+            </div>
+          </div>
+
         </div>
       </div>
     `;
+  }
+
+  // Standalone Quiz Result & Detailed Review Screen
+  renderStandaloneQuizResult() {
+    const res = this.activeQuizResult;
+    const quiz = ReadSkillsData.practiceOptions.quizzes.find(q => q.id === this.activeStandaloneQuizId);
+    if (!res || !quiz) {
+      return this.renderPracticeHub();
+    }
+
+    return `
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <!-- Results Summary Hero Card -->
+        <div class="glass-card p-5 sm:p-8 text-center rounded-3xl shadow-xl space-y-4 border-t-8 ${res.passed ? 'border-emerald-500 bg-gradient-to-b from-emerald-50/50 to-white' : 'border-rose-500 bg-gradient-to-b from-rose-50/50 to-white'}">
+          <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-3xl ${res.passed ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'} flex items-center justify-center mx-auto shadow-md">
+            <i data-lucide="${res.passed ? 'award' : 'alert-circle'}" class="w-8 h-8 sm:w-10 sm:h-10"></i>
+          </div>
+
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider ${res.passed ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'} mb-2">
+              ${res.passed ? 'PASSED • ผ่านเกณฑ์การประเมิน' : 'NEEDS REVIEW • ยังไม่ผ่านเกณฑ์'}
+            </span>
+            <h2 class="text-xl sm:text-3xl font-extrabold text-slate-900">${quiz.title}</h2>
+            <p class="text-xs text-slate-500 mt-1">${quiz.thaiTitle}</p>
+          </div>
+
+          <div class="flex flex-wrap items-center justify-around sm:justify-center gap-4 sm:space-x-6 py-4">
+            <div class="text-center min-w-[80px]">
+              <span class="text-[11px] text-slate-500 font-semibold uppercase">Total Score</span>
+              <div class="text-2xl sm:text-3xl font-extrabold ${res.passed ? 'text-emerald-700' : 'text-rose-700'}">${res.correctCount} / ${res.total}</div>
+            </div>
+            <div class="hidden sm:block h-10 w-px bg-slate-200"></div>
+            <div class="text-center min-w-[80px]">
+              <span class="text-[11px] text-slate-500 font-semibold uppercase">Percentage</span>
+              <div class="text-2xl sm:text-3xl font-extrabold ${res.passed ? 'text-emerald-700' : 'text-rose-700'}">${res.percentage}%</div>
+            </div>
+            <div class="hidden sm:block h-10 w-px bg-slate-200"></div>
+            <div class="text-center min-w-[80px]">
+              <span class="text-[11px] text-slate-500 font-semibold uppercase">Passing Score</span>
+              <div class="text-2xl sm:text-3xl font-extrabold text-slate-700">${quiz.passingScore}%</div>
+            </div>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button onclick="app.retakeStandaloneQuiz()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl text-xs font-semibold transition flex items-center justify-center space-x-1.5 cursor-pointer">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>Retake Quiz (ทำอีกครั้ง)</span>
+            </button>
+            <button onclick="app.exitStandaloneQuiz()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold transition flex items-center justify-center space-x-1.5 shadow-md cursor-pointer">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span>Back to Quiz Hub (กลับสู่หน้ารวม)</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Detailed Question Review List -->
+        <div class="space-y-4">
+          <h3 class="text-base sm:text-lg font-bold text-slate-900 flex items-center space-x-2">
+            <i data-lucide="file-text" class="w-5 h-5 text-purple-700 shrink-0"></i>
+            <span>Detailed Assessment Review & Immediate Feedback (เฉลยและคำอธิบายละเอียด)</span>
+          </h3>
+
+          ${quiz.questions.map((q, idx) => {
+            const userAns = res.userAnswers[idx];
+            const isCorrect = userAns === q.answer;
+            return `
+              <div class="glass-card p-4 sm:p-6 rounded-2xl border-l-4 ${isCorrect ? 'border-emerald-500' : 'border-rose-500'} space-y-3">
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${q.tag.includes('Lesson') ? 'bg-purple-100 text-purple-800' : (q.tag.includes('Strategy') ? 'bg-pink-100 text-pink-700' : 'bg-amber-100 text-amber-800')}">
+                    ${q.tag}
+                  </span>
+                  <span class="text-xs font-bold flex items-center space-x-1 ${isCorrect ? 'text-emerald-700' : 'text-rose-600'}">
+                    <i data-lucide="${isCorrect ? 'check-circle' : 'x-circle'}" class="w-4 h-4"></i>
+                    <span>${isCorrect ? 'Correct (+1 pt)' : 'Incorrect (0 pt)'}</span>
+                  </span>
+                </div>
+
+                <p class="text-sm font-bold text-slate-900">${q.question}</p>
+
+                <!-- Options status -->
+                <div class="space-y-1.5 pt-1">
+                  ${q.options.map((opt, optIdx) => {
+                    const isUserChoice = userAns === optIdx;
+                    const isTheCorrectAns = q.answer === optIdx;
+
+                    let optClass = "bg-white border-slate-200 text-slate-700";
+                    if (isTheCorrectAns) {
+                      optClass = "bg-emerald-50 border-emerald-400 text-emerald-900 font-semibold";
+                    } else if (isUserChoice && !isCorrect) {
+                      optClass = "bg-rose-50 border-rose-400 text-rose-900 font-medium line-through";
+                    }
+
+                    return `
+                      <div class="p-3 rounded-xl border text-xs flex items-center justify-between ${optClass}">
+                        <div class="flex items-center space-x-2">
+                          <span class="w-5 h-5 rounded-full flex items-center justify-center font-bold text-[10px] ${isTheCorrectAns ? 'bg-emerald-600 text-white' : (isUserChoice ? 'bg-rose-500 text-white' : 'bg-slate-100 text-slate-600')}">
+                            ${String.fromCharCode(65 + optIdx)}
+                          </span>
+                          <span>${opt}</span>
+                        </div>
+                        ${isTheCorrectAns ? '<span class="text-[10px] font-extrabold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Correct Answer</span>' : (isUserChoice ? '<span class="text-[10px] font-bold text-rose-600 bg-rose-100 px-2 py-0.5 rounded">Your Choice</span>' : '')}
+                      </div>
+                    `;
+                  }).join('')}
+                </div>
+
+                <!-- Explanation Box -->
+                <div class="bg-purple-50/80 p-3.5 rounded-xl border border-purple-200 text-xs text-purple-950 mt-2 leading-relaxed">
+                  <strong>💡 Explanation (คำอธิบาย):</strong> ${q.explanation}
+                </div>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      </div>
+    `;
+  }
+
+  /* ------------------- Standalone Quiz Event Handlers ------------------- */
+  startStandaloneQuiz(quizId) {
+    this.activeStandaloneQuizId = quizId;
+    this.activeQuizAnswers = {};
+    this.activeQuizResult = null;
+    this.navigate('practice');
+  }
+
+  selectQuizAnswer(questionIndex, optionIndex) {
+    this.activeQuizAnswers[questionIndex] = optionIndex;
+    this.navigate('practice');
+  }
+
+  submitStandaloneQuiz() {
+    const quiz = ReadSkillsData.practiceOptions.quizzes.find(q => q.id === this.activeStandaloneQuizId);
+    if (!quiz) return;
+
+    const answeredCount = Object.keys(this.activeQuizAnswers).length;
+    if (answeredCount < quiz.questions.length) {
+      if (!confirm(`You have answered ${answeredCount} of ${quiz.questions.length} questions. Are you sure you want to submit now?`)) {
+        return;
+      }
+    }
+
+    let correctCount = 0;
+    quiz.questions.forEach((q, idx) => {
+      if (this.activeQuizAnswers[idx] === q.answer) {
+        correctCount++;
+      }
+    });
+
+    const total = quiz.questions.length;
+    const percentage = Math.round((correctCount / total) * 100);
+    const passed = percentage >= quiz.passingScore;
+
+    this.activeQuizResult = {
+      correctCount,
+      total,
+      percentage,
+      passed,
+      userAnswers: { ...this.activeQuizAnswers }
+    };
+
+    // Update student report database record
+    const studentIdx = ReadSkillsData.studentsReport.findIndex(s => s.email === this.user.email);
+    if (studentIdx >= 0) {
+      ReadSkillsData.studentsReport[studentIdx].quizAvg = `${percentage}%`;
+    }
+
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+
+    this.navigate('practice');
+  }
+
+  retakeStandaloneQuiz() {
+    this.activeQuizAnswers = {};
+    this.activeQuizResult = null;
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+    this.navigate('practice');
+  }
+
+  exitStandaloneQuiz() {
+    this.activeStandaloneQuizId = null;
+    this.activeQuizAnswers = {};
+    this.activeQuizResult = null;
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+    this.navigate('practice');
   }
 
   // 5. Learning Progress View
@@ -1044,6 +2077,21 @@ class ReadSkillsApp {
     document.body.removeChild(link);
   }
 
+  setAudioSpeed(speed) {
+    this.audioSpeed = parseFloat(speed) || 0.75;
+    localStorage.setItem('bru_audio_speed', this.audioSpeed);
+    if (this.isAudioPlaying && this.speechSynth) {
+      this.speechSynth.cancel();
+      this.isAudioPlaying = false;
+      this.navigate(this.currentView);
+    }
+  }
+
+  playUnit1Passage() {
+    const text = "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately, boasting that no creature in the forest could ever outpace his lightning speed. When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed. I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway, he laughed smugly. Soon, the complacent Hare fell into a deep slumber, foolishly underestimating his rival. Meanwhile, the steadfast Tortoise pressed forward with silent determination. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize triumph. The enduring moral of the race proves that steady perseverance and humble consistency will consistently triumph over careless arrogance and complacent talent. Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless. Approaching the winner, he shook the Tortoise's hand with genuine humility, acknowledging that true greatness comes from quiet dedication rather than loud boasting. From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.";
+    this.togglePassageAudio(encodeURIComponent(text));
+  }
+
   /* ------------------- Audio Player Synthesizer ------------------- */
   togglePassageAudio(encodedText) {
     const text = decodeURIComponent(encodedText);
@@ -1059,9 +2107,22 @@ class ReadSkillsApp {
       return;
     }
 
+    // Cancel any ongoing speech before starting
+    if (this.speechSynth) this.speechSynth.cancel();
+
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
-    utterance.rate = 0.9;
+    // Slower, clearer speech rate (default 0.75 for EFL learning)
+    utterance.rate = this.audioSpeed || 0.75;
+    utterance.pitch = 1.0;
+
+    // Pick natural English voice if available in browser
+    if (this.speechSynth && typeof this.speechSynth.getVoices === 'function') {
+      const voices = this.speechSynth.getVoices();
+      const naturalVoice = voices.find(v => v.lang && v.lang.startsWith('en') && 
+        (v.name.includes('Google') || v.name.includes('Natural') || v.name.includes('Samantha') || v.name.includes('Zira') || v.name.includes('Jenny') || v.name.includes('David')));
+      if (naturalVoice) utterance.voice = naturalVoice;
+    }
 
     utterance.onstart = () => {
       this.isAudioPlaying = true;
@@ -1126,12 +2187,15 @@ class ReadSkillsApp {
     `;
 
     modal.classList.remove('hidden');
+    modal.classList.add('flex');
     if (window.lucide) lucide.createIcons();
   }
 
   closeFeedbackModal() {
     const modal = document.getElementById('feedback-modal');
+    if (!modal) return;
     modal.classList.add('hidden');
+    modal.classList.remove('flex');
   }
 
   /* ------------------- Snowfall Effect ------------------- */

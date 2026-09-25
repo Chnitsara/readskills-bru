@@ -1,18 +1,18 @@
 # ReadSkills BRU – Web Application Handbook & Client Handover Package
 
 **Client**: Buriram Rajabhat University (BRU)  
-**Based on**: Chapter 3 and Lesson Plans 1–6 Blueprint  
+**Based on**: Chapter 3 Course Curriculum Blueprint  
 **Target Level**: CEFR A1–B2 English learners with Thai support  
 
 ---
 
 ## 🌟 Overview & Key Features
 
-ReadSkills BRU is a web application designed around the **2 Modules per Lesson Plan** structure:
+ReadSkills BRU is a web application designed around the **2 Integrated Modules** structure:
 
 1. **Email Authentication System**: Simple, clean email login for students and instructors with role management.
 2. **Module 1: Reading Lessons (บทเรียนการอ่าน)**:
-   - 6 Units (Lesson Plans 1–6)
+   - 6 Core Reading Units
    - 3 Instructional Stage Tabs (`Pre-Reading`, `While-Reading`, `Post-Reading`)
    - 5-Step Activity Stepper (`Overview` ➔ `Learn` ➔ `Example` ➔ `Practice` ➔ `Quiz / Review`)
 3. **Module 2: Reading Strategies (กลยุทธ์การอ่าน)**:
