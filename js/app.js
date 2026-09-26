@@ -55,6 +55,8 @@ class ReadSkillsApp {
     this.speechSynth = window.speechSynthesis;
     this.isAudioPlaying = false;
     this.audioSpeed = parseFloat(localStorage.getItem('bru_audio_speed')) || 0.75;
+    this.currentExampleTab = 1;
+    this.currentLearnPart = 'part1';
 
     this.init();
   }
@@ -446,6 +448,33 @@ class ReadSkillsApp {
         break;
       default:
         container.innerHTML = this.renderDashboard();
+    }
+
+    if (viewName === 'lessons') {
+      if (this.currentActivityStep === 'example' && this.currentExampleTab === 2) {
+        const view1 = document.getElementById('example-view-1');
+        const view2 = document.getElementById('example-view-2');
+        const tab1 = document.getElementById('ex-tab-1');
+        const tab2 = document.getElementById('ex-tab-2');
+        if (view1 && view2 && tab1 && tab2) {
+          view1.classList.add('hidden');
+          view2.classList.remove('hidden');
+          tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+          tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+        }
+      }
+      if (this.currentActivityStep === 'learn' && this.currentLearnPart === 'part2') {
+        const p1 = document.getElementById('learn-part-1');
+        const p2 = document.getElementById('learn-part-2');
+        const tab1 = document.getElementById('learn-tab-1');
+        const tab2 = document.getElementById('learn-tab-2');
+        if (p1 && p2 && tab1 && tab2) {
+          p1.classList.add('hidden');
+          p2.classList.remove('hidden');
+          tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+          tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+        }
+      }
     }
 
     if (window.lucide) lucide.createIcons();
@@ -1090,6 +1119,8 @@ class ReadSkillsApp {
     this.currentStage = 'preReading';
     this.currentTopicIndex = 0;
     this.currentActivityStep = 'overview';
+    this.currentExampleTab = 1;
+    this.currentLearnPart = 'part1';
     this.navigate('lessons');
   }
 
@@ -1129,6 +1160,7 @@ class ReadSkillsApp {
   }
 
   switchLearnPart(partId) {
+    this.currentLearnPart = partId;
     const p1 = document.getElementById('learn-part-1');
     const p2 = document.getElementById('learn-part-2');
     const tab1 = document.getElementById('learn-tab-1');
@@ -1154,6 +1186,7 @@ class ReadSkillsApp {
   }
 
   switchExampleTab(tabIndex) {
+    this.currentExampleTab = tabIndex;
     const view1 = document.getElementById('example-view-1');
     const view2 = document.getElementById('example-view-2');
     const tab1 = document.getElementById('ex-tab-1');
@@ -2654,7 +2687,7 @@ class ReadSkillsApp {
     if (this.isAudioPlaying && this.speechSynth) {
       this.speechSynth.cancel();
       this.isAudioPlaying = false;
-      this.navigate(this.currentView);
+      this.updateAudioButtonsUI();
     }
   }
 
@@ -2669,12 +2702,38 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Audio Player Synthesizer ------------------- */
+  updateAudioButtonsUI() {
+    const audioButtons = document.querySelectorAll('button[onclick*="Passage"], button[onclick*="togglePassageAudio"], button[onclick*="playUnit1Passage"], button[onclick*="playQuizPassageAudio"]');
+    audioButtons.forEach(btn => {
+      const span = btn.querySelector('span');
+      const icon = btn.querySelector('i');
+      if (this.isAudioPlaying) {
+        btn.classList.add('audio-playing');
+        if (span && span.textContent.includes('Listen')) {
+          span.textContent = span.textContent.replace('Listen', 'Stop');
+        }
+        if (icon) {
+          icon.setAttribute('data-lucide', 'square');
+        }
+      } else {
+        btn.classList.remove('audio-playing');
+        if (span && span.textContent.includes('Stop')) {
+          span.textContent = span.textContent.replace('Stop', 'Listen');
+        }
+        if (icon) {
+          icon.setAttribute('data-lucide', 'volume-2');
+        }
+      }
+    });
+    if (window.lucide) lucide.createIcons();
+  }
+
   togglePassageAudio(encodedText) {
     const text = decodeURIComponent(encodedText);
     if (this.isAudioPlaying) {
       if (this.speechSynth) this.speechSynth.cancel();
       this.isAudioPlaying = false;
-      this.navigate(this.currentView);
+      this.updateAudioButtonsUI();
       return;
     }
 
@@ -2702,17 +2761,17 @@ class ReadSkillsApp {
 
     utterance.onstart = () => {
       this.isAudioPlaying = true;
-      this.navigate(this.currentView);
+      this.updateAudioButtonsUI();
     };
 
     utterance.onend = () => {
       this.isAudioPlaying = false;
-      this.navigate(this.currentView);
+      this.updateAudioButtonsUI();
     };
 
     utterance.onerror = () => {
       this.isAudioPlaying = false;
-      this.navigate(this.currentView);
+      this.updateAudioButtonsUI();
     };
 
     this.speechSynth.speak(utterance);
