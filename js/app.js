@@ -2692,11 +2692,23 @@ class ReadSkillsApp {
   }
 
   playUnit1Passage() {
+    this.currentExampleTab = 1;
     const text = "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately, boasting that no creature in the forest could ever outpace his lightning speed. When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed. I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway, he laughed smugly. Soon, the complacent Hare fell into a deep slumber, foolishly underestimating his rival. Meanwhile, the steadfast Tortoise pressed forward with silent determination. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize triumph. The enduring moral of the race proves that steady perseverance and humble consistency will consistently triumph over careless arrogance and complacent talent. Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless. Approaching the winner, he shook the Tortoise's hand with genuine humility, acknowledging that true greatness comes from quiet dedication rather than loud boasting. From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.";
     this.togglePassageAudio(encodeURIComponent(text));
   }
 
   playUnit1Passage2() {
+    this.currentExampleTab = 2;
+    const view1 = document.getElementById('example-view-1');
+    const view2 = document.getElementById('example-view-2');
+    const tab1 = document.getElementById('ex-tab-1');
+    const tab2 = document.getElementById('ex-tab-2');
+    if (view1 && view2 && tab1 && tab2) {
+      view1.classList.add('hidden');
+      view2.classList.remove('hidden');
+      tab2.className = 'px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md';
+      tab1.className = 'px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200';
+    }
     const text = "During a radiant summer afternoon, an industrious Ant worked tirelessly storing grain, while a frivolous Grasshopper sang carefree songs and mocked her constant toil. The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship. Instead of heeding the wise advice, the complacent Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's abundance would never run out. Week after week, the Ant practiced steadfast diligence, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant. When the harsh winter finally arrived with freezing blizzards, the impoverished Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth. The enduring wisdom of the season demonstrates that foresight, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared. Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain. Humbled by the generous gift, the reformed Grasshopper bowed with sincere humility, promising that every future summer would be devoted to responsible prudence alongside his music. From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.";
     this.togglePassageAudio(encodeURIComponent(text));
   }
