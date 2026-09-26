@@ -846,8 +846,8 @@ window.ReadSkillsData = {
                   <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans">Beginning Position</span>
                 </div>
                 <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-green">A <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">boastful</span> Hare was constantly <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">ridiculing</span> a slow-moving Tortoise for his clumsy pace.</span>
-                  Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">arrogant</span> Hare accepted immediately, boasting that no creature in the forest could ever <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">outpace</span> his lightning speed.
+                  <span class="highlighter-pen highlighter-green">A <span class="vocab-word font-bold border-b border-dashed">boastful</span> Hare was constantly <span class="vocab-word font-bold border-b border-dashed">ridiculing</span> a slow-moving Tortoise for his clumsy pace.</span>
+                  Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">arrogant</span> Hare accepted immediately, boasting that no creature in the forest could ever <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">outpace</span> his lightning speed.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
                 <div class="bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2">
@@ -866,7 +866,7 @@ window.ReadSkillsData = {
                 </div>
                 <p class="leading-relaxed">
                   When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed.
-                  <span class="highlighter-pen highlighter-blue">"I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway,"</span> he laughed smugly. Soon, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">complacent</span> Hare fell into a deep slumber, foolishly underestimating his rival.
+                  <span class="highlighter-pen highlighter-blue">"I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway,"</span> he laughed smugly. Soon, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">complacent</span> Hare fell into a deep slumber, foolishly underestimating his rival.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
                 <div class="bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2">
@@ -884,8 +884,8 @@ window.ReadSkillsData = {
                   <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans">Concluding Position</span>
                 </div>
                 <p class="leading-relaxed">
-                  Meanwhile, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">steadfast</span> Tortoise pressed forward with silent <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">determination</span>. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">triumph</span>.
-                  <span class="highlighter-pen highlighter-pink">The enduring moral of the race proves that steady <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">perseverance</span> and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>
+                  Meanwhile, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">steadfast</span> Tortoise pressed forward with silent <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">determination</span>. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">triumph</span>.
+                  <span class="highlighter-pen highlighter-pink">The enduring moral of the race proves that steady <span class="vocab-word font-bold border-b border-dashed">perseverance</span> and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
                 <div class="bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2">
@@ -904,7 +904,7 @@ window.ReadSkillsData = {
                 </div>
                 <p class="leading-relaxed">
                   Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless.
-                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Approaching the winner, he shook the Tortoise's hand with genuine <span class="text-purple-950 font-bold border-b border-dashed border-purple-900">humility</span>, acknowledging that true greatness comes from quiet dedication rather than loud boasting.</span>
+                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Approaching the winner, he shook the Tortoise's hand with genuine <span class="vocab-word font-bold border-b border-dashed">humility</span>, acknowledging that true greatness comes from quiet dedication rather than loud boasting.</span>
                   From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
@@ -1227,7 +1227,7 @@ window.ReadSkillsData = {
                   <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans">Beginning Position</span>
                 </div>
                 <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-green">During a radiant summer afternoon, an <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">industrious</span> Ant worked tirelessly storing grain, while a <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">frivolous</span> Grasshopper sang carefree songs and mocked her constant toil.</span>
+                  <span class="highlighter-pen highlighter-green">During a radiant summer afternoon, an <span class="vocab-word font-bold border-b border-dashed">industrious</span> Ant worked tirelessly storing grain, while a <span class="vocab-word font-bold border-b border-dashed">frivolous</span> Grasshopper sang carefree songs and mocked her constant toil.</span>
                   The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
@@ -1246,8 +1246,8 @@ window.ReadSkillsData = {
                   <span class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans">Major Detail</span>
                 </div>
                 <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-blue">Instead of heeding the wise advice, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">complacent</span> Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">abundance</span> would never run out.</span>
-                  Week after week, the Ant practiced steadfast <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">diligence</span>, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant.
+                  <span class="highlighter-pen highlighter-blue">Instead of heeding the wise advice, the <span class="vocab-word font-bold border-b border-dashed">complacent</span> Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's <span class="vocab-word font-bold border-b border-dashed">abundance</span> would never run out.</span>
+                  Week after week, the Ant practiced steadfast <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">diligence</span>, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
                 <div class="bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2">
@@ -1265,8 +1265,8 @@ window.ReadSkillsData = {
                   <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans">Concluding Position</span>
                 </div>
                 <p class="leading-relaxed">
-                  When the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">harsh</span> winter finally arrived with freezing blizzards, the <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">impoverished</span> Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth.
-                  <span class="highlighter-pen highlighter-pink">The enduring wisdom of the season demonstrates that <span class="text-amber-300 font-bold border-b border-dashed border-amber-300">foresight</span>, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared.</span>
+                  When the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">harsh</span> winter finally arrived with freezing blizzards, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">impoverished</span> Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth.
+                  <span class="highlighter-pen highlighter-pink">The enduring wisdom of the season demonstrates that <span class="vocab-word font-bold border-b border-dashed">foresight</span>, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared.</span>
                 </p>
                 <!-- Micro-Analysis: Why This Works -->
                 <div class="bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2">
@@ -1285,7 +1285,7 @@ window.ReadSkillsData = {
                 </div>
                 <p class="leading-relaxed">
                   Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain.
-                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Humbled by the generous gift, the reformed Grasshopper bowed with sincere <span class="text-purple-950 font-bold border-b border-dashed border-purple-900">humility</span>, promising that every future summer would be devoted to responsible <span class="text-purple-950 font-bold border-b border-dashed border-purple-900">prudence</span> alongside his music.</span>
+                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Humbled by the generous gift, the reformed Grasshopper bowed with sincere <span class="vocab-word font-bold border-b border-dashed">humility</span>, promising that every future summer would be devoted to responsible <span class="vocab-word font-bold border-b border-dashed">prudence</span> alongside his music.</span>
                   From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.
                 </p>
                 <!-- Micro-Analysis: Why This Works -->

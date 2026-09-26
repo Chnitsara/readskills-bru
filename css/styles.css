@@ -254,6 +254,77 @@ body {
 }
 
 /* ==========================================================================
+   Vocabulary Words & Nested Highlighter Accessibility (WCAG AA/AAA >= 7:1)
+   ========================================================================== */
+
+/* Standalone vocabulary words on dark passage background (contrast 12.38:1 - AAA) */
+.vocab-word {
+  color: #FCD34D;
+  font-weight: 700;
+  border-bottom: 1.5px dashed #FCD34D;
+  background: transparent;
+  display: inline;
+}
+
+/* When a vocabulary word is nested inside a paragraph-level role highlight:
+   Avoid stacking backgrounds. Use bold + distinct underline + high-contrast text color. */
+.highlighter-pen .vocab-word,
+.highlighter-pen [class*="text-amber-300"] {
+  font-weight: 800 !important;
+  background: transparent !important;
+}
+
+/* Green highlight (Topic Sentence): background #a7f3d0 -> text #042f2e (contrast 11.28:1 - AAA) */
+.highlighter-green .vocab-word,
+.highlighter-green [class*="text-amber-300"] {
+  color: #042f2e !important;
+  border-bottom: 2px solid #0f766e !important;
+}
+
+/* Blue highlight (Supporting Detail): background #bae6fd -> text #082f49 (contrast 10.46:1 - AAA) */
+.highlighter-blue .vocab-word,
+.highlighter-blue [class*="text-amber-300"] {
+  color: #082f49 !important;
+  border-bottom: 2px solid #0369a1 !important;
+}
+
+/* Pink/Red highlight (Main Idea): background #fecdd3 -> text #4c0519 (contrast 11.08:1 - AAA) */
+.highlighter-pink .vocab-word,
+.highlighter-pink [class*="text-amber-300"] {
+  color: #4c0519 !important;
+  border-bottom: 2px solid #9f1239 !important;
+}
+
+/* Yellow highlight (Reflection): background #fef08a -> text #1e1b4b (contrast 13.74:1 - AAA) */
+.highlighter-yellow .vocab-word,
+.highlighter-yellow [class*="text-amber-300"],
+.highlighter-yellow [class*="text-purple-950"] {
+  color: #1e1b4b !important;
+  border-bottom: 2px solid #4338ca !important;
+}
+
+/* Purple highlight: background #e9d5ff -> text #2e1065 (contrast 11.19:1 - AAA) */
+.highlighter-purple .vocab-word,
+.highlighter-purple [class*="text-amber-300"] {
+  color: #2e1065 !important;
+  border-bottom: 2px solid #6b21a8 !important;
+}
+
+/* Orange highlight: background #fed7aa -> text #431407 (contrast 11.56:1 - AAA) */
+.highlighter-orange .vocab-word,
+.highlighter-orange [class*="text-amber-300"] {
+  color: #431407 !important;
+  border-bottom: 2px solid #9a3412 !important;
+}
+
+/* Teal highlight: background #99f6e4 -> text #042f2e (contrast 11.48:1 - AAA) */
+.highlighter-teal .vocab-word,
+.highlighter-teal [class*="text-amber-300"] {
+  color: #042f2e !important;
+  border-bottom: 2px solid #0f766e !important;
+}
+
+/* ==========================================================================
    Mobile & Smartphone Optimization Utilities
    ========================================================================== */
 
