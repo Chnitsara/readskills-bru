@@ -1294,7 +1294,7 @@ class ReadSkillsApp {
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
           <!-- Left: Passage Card (lg:col-span-6) -->
-          <div class="lg:col-span-6 bg-slate-900 text-slate-100 p-5 rounded-2xl space-y-3 shadow-lg border border-slate-800 sticky top-20">
+          <div class="lg:col-span-6 bg-slate-900 text-slate-100 p-5 rounded-2xl space-y-3 shadow-lg border border-slate-800 lg:sticky lg:top-24">
             <div class="flex items-center justify-between border-b border-slate-800 pb-2">
               <div class="flex items-center space-x-2">
                 <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
@@ -1430,7 +1430,7 @@ class ReadSkillsApp {
         <div class="space-y-2">
           <p class="text-xs text-purple-900 bg-purple-50 p-2.5 rounded-lg border border-purple-100 flex items-center space-x-1.5">
             <i data-lucide="hand" class="w-4 h-4 text-purple-700 shrink-0"></i>
-            <span>คลิกเลือกประโยคที่ถูกต้องในกล่องบทอ่านด้านซ้ายมือ หรือกดเลือกจากตัวเลือกด้านล่าง:</span>
+            <span>คลิกเลือกประโยคที่ถูกต้องในกล่องบทอ่าน หรือกดเลือกจากตัวเลือกด้านล่าง:</span>
           </p>
           <div class="space-y-1.5 max-h-[280px] overflow-y-auto pr-1">
             ${passage.sentences.map((sent, sIdx) => {
