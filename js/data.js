@@ -2076,7 +2076,7 @@ window.ReadSkillsData = {
       unitNumber: 2,
       title: "Skimming & Scanning",
       thaiTitle: "การอ่านแบบกวาดสายตาและค้นหาข้อมูล",
-      scope: "Skimming for main ideas, scanning for specific information",
+      scope: "Skimming for main ideas/gist, scanning for specific information",
       cefr: "A2-B1",
       icon: "eye",
       steps: [
@@ -2085,36 +2085,37 @@ window.ReadSkillsData = {
           title: "What is the strategy?",
           thaiTitle: "คืออะไร?",
           icon: "help-circle",
-          content: "Skimming is rapid reading (3-4 times normal speed) to grasp the overall gist or main idea without reading every word. Scanning is darting your eyes rapidly across text to locate a specific piece of information such as a date, name, number, or keyword.",
-          thaiExplanation: "Skimming คือการอ่านอย่างรวดเร็วเพื่อจับใจความรวม (Gist) ส่วน Scanning คือการกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะเจาะจง เช่น ตัวเลข วันที่ หรือคำสำคัญ"
+          content: "Skimming and scanning are twin high-speed reading techniques designed to locate information quickly without reading every single word:\n\n1. Skimming (การอ่านข้ามอย่างรวดเร็วเพื่อจับใจความสำคัญ): Reading at high speed (300–500 words per minute)—approximately 3 to 4 times faster than regular reading—to quickly capture the main idea, overall gist, theme, and structure of a text. You intentionally skip over minor details, lengthy examples, and unfamiliar words.\n\n2. Scanning (การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะ): Darting your eyes rapidly across the lines with a specific target in mind—such as a key name, number, date, year, percentage, room number, or technical term. You do not read whole sentences until your eyes lock directly onto your target keyword.",
+          thaiExplanation: "Skimming คือการ 'อ่านข้ามเพื่อจับใจความสำคัญ' (What is it about?) เหมาะสำหรับดูภาพรวมและโครงสร้างเนื้อหาอย่างรวดเร็ว ส่วน Scanning คือการ 'กวาดสายตาหาข้อมูลเฉพาะ' (Where is the specific fact?) เช่น ค้นหาตัวเลข วันที่ ชื่อคน หรือคำศัพท์เฉพาะ ทั้งสองทักษะช่วยให้ผู้อ่านประหยัดเวลาได้อย่างมหาศาลและไม่ต้องอ่านทุกคำตั้งแต่ต้นจนจบ"
         },
         {
           stepNum: 2,
           title: "Why use it?",
           thaiTitle: "ทำไมต้องใช้?",
           icon: "lightbulb",
-          content: "Academic texts are often dense. Skimming saves valuable time by helping you evaluate whether a source is relevant. Scanning lets you retrieve answers and verify empirical facts instantly without re-reading entire chapters.",
-          thaiExplanation: "ช่วยประหยัดเวลาอย่างมาก ช่วยคัดกรองบทความที่เกี่ยวข้อง และค้นหาคำตอบในข้อสอบหรือเอกสารวิชาการได้อย่างรวดเร็ว"
+          content: "In academic study and standardized examinations, skimming and scanning deliver crucial advantages:\n1. Drastic Time Efficiency: Saves up to 70% of reading time, enabling you to finish lengthy exams (like TOEIC, IELTS, and university finals) well within the time limit.\n2. Prevents Cognitive Overload: Keeps you from getting trapped and frustrated by low-priority unknown words in dense paragraphs.\n3. Efficient Source Filtering: Enables university students to evaluate whether an entire library book, journal paper, or website is useful for their research in under two minutes.\n4. Pinpoint Accuracy: Scanning allows instant fact retrieval, leading to higher accuracy when answering detail-oriented comprehension questions.",
+          thaiExplanation: "ช่วยประหยัดเวลาในการทำข้อสอบได้ถึง 70% ป้องกันอาการสมองล้าจากการอ่านคำศัพท์ยากๆ ที่ไม่จำเป็น ช่วยคัดกรองงานวิจัยและหนังสือในห้องสมุดได้อย่างรวดเร็ว และช่วยค้นหาคำตอบในข้อสอบได้อย่างแม่นยำตรงจุด"
         },
         {
           stepNum: 3,
           title: "When do I use it?",
           thaiTitle: "ใช้เมื่อไหร่?",
           icon: "calendar",
-          content: "Use skimming when previewing library books, reviewing articles for exams, or surveying chapters. Use scanning when looking up flight schedules, dictionary entries, statistical tables, or specific test questions.",
-          thaiExplanation: "ใช้ Skimming เมื่อต้องการดูภาพรวมของบทเรียนหรือบทความยาวๆ และใช้ Scanning เมื่อต้องการหาคำตอบเฉพาะข้อในข้อสอบ"
+          content: "Apply these dual techniques in the following academic and daily scenarios:\n• Use Skimming when:\n  - Previewing textbook chapters or research articles before attending lectures.\n  - Deciding whether a journal article or online source is relevant to your term paper.\n  - Reviewing previously read chapters the evening before an examination to refresh key concepts.\n  - Reading newspaper headlines, editorial summaries, and magazine articles.\n• Use Scanning when:\n  - Answering exam questions starting with 'When...', 'Who...', 'Where...', 'How many...', or 'According to paragraph 2...'.\n  - Looking up flight departures, bus/train timetables, university exam schedules, or room assignments.\n  - Finding a word in a dictionary, glossary, index, or contact directory.\n  - Locating specific statistical figures, percentages, or research citations.",
+          thaiExplanation: "ใช้ Skimming เมื่อต้องการสำรวจภาพรวมก่อนเรียน คัดกรองบทความวิจัย และทบทวนบทเรียนก่อนสอบ และใช้ Scanning เมื่อต้องตอบคำถามเฉพาะข้อในข้อสอบ ค้นหาตารางสอบ/ห้องสอบ ตรวจสอบตารางการเดินทาง หรือหาคำศัพท์ในพจนานุกรม"
         },
         {
           stepNum: 4,
           title: "How do I use it?",
           thaiTitle: "ใช้อย่างไร?",
           icon: "settings",
-          content: "Techniques for Skimming and Scanning:",
+          content: "Follow the 5-Step Execution Protocol for Skimming & Scanning:",
           checklist: [
-            "Skim: Read the title, opening paragraph, topic sentences, and conclusion.",
-            "Skim: Let your eyes glide smoothly down the center of each page.",
-            "Scan: Fix the exact target word, date, or number clearly in your mind.",
-            "Scan: Sweep eyes in a zigzag or vertical pattern looking only for that target pattern."
+          "Step 1 (Determine Your Purpose): Ask yourself: 'Do I need the overall gist (Skim) or a specific piece of information (Scan)?'",
+          "Step 2 (Skimming - Focus on High-Value Zones): Read the title, subheadings, the first paragraph (introduction), the topic sentence (first sentence) of each body paragraph, and the concluding paragraph.",
+          "Step 3 (Skimming - Eye Movement Patterns): Move your eyes rapidly down the center of each page in smooth 'Z' or 'S' curves; ignore supporting adjectives and keep moving forward without back-tracking.",
+          "Step 4 (Scanning - Formulate a Target Mental Image): Lock the exact keyword, number format (e.g., 4-digit year, percentage sign '%', or capital letter for a name) clearly in your mind before looking at the page.",
+          "Step 5 (Scanning - Sweep & Lock On Target): Sweep your finger, pen, or eyes systematically down the text; the instant your target appears, halt immediately and read only that single sentence to confirm your answer."
           ]
         },
         {
@@ -2122,46 +2123,51 @@ window.ReadSkillsData = {
           title: "Worked Example",
           thaiTitle: "ตัวอย่างการใช้",
           icon: "file-text",
-          content: "Snippet: 'Buriram Rajabhat University was originally established in 1971 as Buriram Teachers College before achieving full comprehensive university status.'",
-          annotated: "Scanning Task: Find the founding year. Target: 4-digit number starting with 19 -> Located: '1971' in 2 seconds.",
-          takeaway: "Targeted scanning bypasses unnecessary text to pinpoint data instantly."
+          content: "Sample Text: 'Buriram Rajabhat University Announcement (October 2026): The Academic Resource Center will host the 2026 International Digital Literacy Conference from November 12 to 14, 2026, in the Golden Teak Auditorium (Building 15, Room 402). Keynote speaker Dr. Alan Montgomery from Cambridge University will deliver the opening address at 09:30 AM. Registered undergraduate students who check in before 09:00 AM will receive a complimentary e-certificate and 6 professional development credits.'",
+          annotated: "Strategy Analysis (Unit 2 Model):\n• [Skimming Task (Title & Topic Sentence)]: Quickly reads the headline and first sentence -> Identifies the core event: BRU Academic Resource Center is hosting an International Digital Literacy Conference.\n• [Scanning Task 1 (Target Date)]: Visual target 'November' / '2026' -> Eye locks directly onto 'November 12 to 14, 2026' without reading the surrounding lines.\n• [Scanning Task 2 (Target Location)]: Visual target 'Room' / 'Building' -> Sweeps directly to 'Building 15, Room 402'.\n• [Scanning Task 3 (Keynote Speaker)]: Visual target capitalized name / 'Dr.' -> Pinpoints 'Dr. Alan Montgomery from Cambridge University'.\n• [Scanning Task 4 (Student Incentive)]: Visual target digits / 'credits' -> Locates '6 professional development credits' in 2 seconds.\n• [Verification]: Successfully extracted 4 critical data points in under 15 seconds!",
+          takeaway: "Skimming reveals the overarching topic in 4 seconds; scanning extracts exact dates, rooms, and names without reading all 80 words."
         },
         {
           stepNum: 6,
           title: "Guided Practice",
           thaiTitle: "ฝึกปฏิบัติ",
           icon: "user-check",
-          content: "Scan the sentence for the room number: 'The English Reading Strategy Workshop will convene in Hall 304 at 10:00 AM on Wednesday.'",
-          question: "Where will the workshop take place?",
-          options: ["Hall 304", "Wednesday", "10:00 AM", "Main Library"],
+          content: "Notice: 'Campus Library Examination Hours Notice: During final examination week (October 10-24, 2026), the Central Library will operate under extended hours: Monday through Friday from 07:30 AM to 23:00 PM, and Saturday through Sunday from 08:30 AM to 20:00 PM. High-speed study pods in Zone C (3rd Floor) require online reservation via the BRU Smart Portal at least 2 hours in advance. Late check-ins over 15 minutes will automatically release reserved workstations.'",
+          question: "Scan the notice: What is the latest closing time for the library on weekdays during final examination week?",
+          options: [
+          "23:00 PM",
+          "20:00 PM",
+          "07:30 AM",
+          "15 minutes"
+          ],
           answer: 0,
-          explanation: "Scanning for 'Hall' or room digits directly points your eyes to 'Hall 304'."
+          explanation: "By fixing your mental target on 'weekdays' / 'Monday through Friday' and scanning for closing time digits, your eyes immediately find '23:00 PM'."
         },
         {
           stepNum: 7,
           title: "Apply to a Short Text",
           thaiTitle: "นำไปใช้กับบทอ่านสั้น",
           icon: "book-open",
-          passageTitle: "Smart Irrigation in Isan Agriculture",
-          passage: "Agricultural researchers in Buriram installed 120 IoT humidity sensors across experimental rice paddies. These automated drip irrigation networks reduced freshwater consumption by 45% while boosting harvest yields by 22% during the 2025 dry season.",
-          audioText: "Agricultural researchers in Buriram installed 120 IoT humidity sensors across experimental rice paddies. These automated drip irrigation networks reduced freshwater consumption by 45% while boosting harvest yields by 22% during the 2025 dry season.",
-          taskQuestion: "Scan for the percentage reduction in freshwater consumption.",
-          taskAnswer: "45%"
+          passageTitle: "Sustainable Agrotechnology in Buriram Province",
+          passage: "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
+          audioText: "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
+          taskQuestion: "Practice Scanning: By what percentage did organic jasmine rice yields increase during the evaluation period?",
+          taskAnswer: "28% (Scanning for 'jasmine rice' and percentage symbols directly locates the 28% yield increase)."
         },
         {
           stepNum: 8,
           title: "Strategy Quiz",
           thaiTitle: "แบบทดสอบ",
           icon: "trophy",
-          question: "Which reading task is best accomplished through skimming?",
+          question: "Which of the following scenarios demonstrates the most appropriate use of SCANNING rather than skimming?",
           options: [
-            "Getting a quick general understanding of a chapter before a lecture",
-            "Looking up an emergency telephone number in a phone book",
-            "Checking the spelling of an author's middle name",
-            "Counting how many commas exist on page 40"
+          "Looking up the departure gate for Flight TG 208 on an airport departure display monitor",
+          "Reading through an entire introductory chapter to understand the major themes of sociology",
+          "Deciding whether a 400-page historical novel has an appealing overall tone",
+          "Grasping the main viewpoint of a newspaper editorial before deciding to buy the paper"
           ],
           answer: 0,
-          explanation: "Skimming is designed for quickly understanding the main theme or gist of an entire chapter."
+          explanation: "Scanning is designed for locating a specific known piece of data (such as flight number 'TG 208' or gate letter) in a list or display without reading other details."
         }
       ]
     },
@@ -2179,36 +2185,37 @@ window.ReadSkillsData = {
           title: "What is the strategy?",
           thaiTitle: "คืออะไร?",
           icon: "help-circle",
-          content: "Using context clues means unlocking the meaning of unfamiliar words and sentences by analyzing surrounding words, synonyms, antonyms, definitions, and punctuation clues in the same paragraph.",
-          thaiExplanation: "การใช้บริบท (Context Clues) คือการคาดเดาความหมายของคำศัพท์ที่ไม่คุ้นเคย โดยอาศัยคำแวดล้อม คำเหมือน คำตรงข้าม คำจำกัดความ หรือเครื่องหมายวรรคตอน"
+          content: "Using context clues means uncovering the meaning of unfamiliar words and complex sentences by analyzing surrounding words, phrases, and punctuation marks provided by the author in the same paragraph.\n\nThe 4 Major Types of Context Clues (The D-S-A-E Framework):\n1. Definition / Restatement Clues (การให้คำจำกัดความ/การกล่าวซ้ำ): The author directly defines the term using linking phrases (is defined as, means, refers to) or punctuation marks like commas, em-dashes, or parentheses.\n2. Synonym Clues (คำเหมือนหรือคำที่มีความหมายใกล้เคียง): The author pairs the unfamiliar word with a familiar synonym or rephrasing using signal markers such as 'or', 'that is', 'also known as', or 'in other words'.\n3. Antonym / Contrast Clues (คำตรงข้ามหรือข้อความที่ขัดแย้ง): The author clarifies the word by contrasting it with its opposite using transition words such as 'unlike', 'however', 'but', 'on the other hand', 'in contrast', 'whereas', or 'although'.\n4. Example / Illustration Clues (การยกตัวอย่างประกอบ): The author explains the word by listing concrete real-world examples using signal phrases such as 'such as', 'for example', 'for instance', 'including', or 'e.g.'.",
+          thaiExplanation: "บริบท (Context Clues) คือเบาะแสหรือข้อความแวดล้อมที่ผู้เขียนใส่ไว้เพื่อช่วยให้ผู้อ่านเข้าใจคำศัพท์ที่ไม่คุ้นเคยโดยไม่ต้องเปิดพจนานุกรม ประกอบด้วย 4 ประเภทหลัก: 1. การให้คำจำกัดความ (Definition) 2. คำเหมือน (Synonym) 3. คำตรงข้าม/ข้อความขัดแย้ง (Antonym/Contrast) และ 4. การยกตัวอย่างประกอบ (Example)"
         },
         {
           stepNum: 2,
           title: "Why use it?",
           thaiTitle: "ทำไมต้องใช้?",
           icon: "lightbulb",
-          content: "Stopping to consult a dictionary for every unknown word disrupts your reading flow and impairs comprehension. Context clues allow continuous, fluent comprehension while organically expanding vocabulary.",
-          thaiExplanation: "ช่วยให้อ่านบทความได้อย่างต่อเนื่อง ไม่ต้องหยุดเปิดพจนานุกรมทุกครั้งที่เจอคำยาก และช่วยจดจำคำศัพท์ผ่านบริบทจริง"
+          content: "In university-level reading and academic examinations, using context clues provides critical cognitive benefits:\n1. Preserves Reading Fluency & Momentum: Stopping to look up every single unknown word in a dictionary disrupts short-term memory, slows reading speed, and breaks your comprehension train of thought.\n2. Crucial for Timed Examinations: In standardized tests (like TOEIC, TOEFL, IELTS, and BRU exams), dictionaries and phones are strictly prohibited; context clues are your only tool to decode unknown terms.\n3. Unlocks Nuanced Academic Meanings: Many English words possess multiple definitions (polysemy); context clues reveal the precise shade of meaning intended by the author in that specific field.\n4. Accelerates Long-Term Vocabulary Acquisition: Research shows that discovering word meanings through authentic context leads to significantly stronger memory retention than memorizing word lists in isolation.",
+          thaiExplanation: "ช่วยรักษาความต่อเนื่องในการอ่านโดยไม่ต้องหยุดเปิดพจนานุกรมบ่อยๆ เป็นทักษะชี้ขาดในห้องสอบที่ไม่อนุญาตให้นำอุปกรณ์ช่วยแปลเข้าไป ช่วยระบุความหมายเฉพาะทางของคำศัพท์ที่มีหลายความหมาย (Polysemy) และช่วยให้จดจำคำศัพท์ใหม่ได้อย่างยาวนานและเป็นธรรมชาติ"
         },
         {
           stepNum: 3,
           title: "When do I use it?",
           thaiTitle: "ใช้เมื่อไหร่?",
           icon: "calendar",
-          content: "Use context clues whenever you meet unfamiliar technical jargon, polysemous words, descriptive adjectives, or during timed examinations where dictionaries are prohibited.",
-          thaiExplanation: "ใช้เมื่อเจอคำศัพท์ที่ไม่รู้จักในบทความวิชาการ หรือในห้องสอบที่ไม่อนุญาตให้นำพจนานุกรมเข้าไป"
+          content: "Use context clues whenever you encounter:\n• Low-frequency or specialized technical terminology in academic journal articles and textbooks.\n• Polysemous words where the common everyday meaning does not make sense (e.g., 'yield' meaning crop output vs. give way; 'table' meaning to postpone a debate).\n• Descriptive adjectives, adverbs, and idiomatic expressions in literature, news editorials, and fables.\n• Timed comprehension quizzes, university midterm/final exams, and professional English certifications.",
+          thaiExplanation: "ใช้เมื่อเจอคำศัพท์วิชาการยากๆ ในตำราเรียนและงานวิจัย คำศัพท์ที่มีหลายความหมายแต่บริบททำให้ความหมายเปลี่ยนไป สำนวนและคำคุณศัพท์ในการอ่านวรรณกรรม และเมื่อทำแบบทดสอบวัดระดับภาษาอังกฤษในห้องสอบ"
         },
         {
           stepNum: 4,
           title: "How do I use it?",
           thaiTitle: "ใช้อย่างไร?",
           icon: "settings",
-          content: "Examine these 4 major clue types:",
+          content: "Follow the 5-Step Execution Protocol for Using Context Clues:",
           checklist: [
-            "Definition / Restatement clues: look for 'is defined as', commas, dashes, or parentheses.",
-            "Synonym clues: nearby words with similar meanings (e.g., 'or', 'that is').",
-            "Antonym / Contrast clues: signaled by 'unlike', 'however', 'in contrast', 'although'.",
-            "Example clues: illustrative samples introduced by 'such as', 'for instance', 'including'."
+          "Step 1 (Isolate & Bracket): When you encounter an unknown word, do not panic or stop; read past the word to the end of the sentence to take in the complete thought.",
+          "Step 2 (Hunt for Signal Words & Punctuation): Look closely for punctuation clues (commas, dashes, parentheses) and connective signal words (means, or, unlike, however, such as, for instance).",
+          "Step 3 (Classify the Clue Category): Identify which clue type the author provided: Definition, Synonym, Contrast, or Example.",
+          "Step 4 (Substitute a Trial Meaning): Think of a simple replacement word (e.g., 'helpful', 'dangerous', 'tool', 'gather') and mentally insert it in place of the unknown word.",
+          "Step 5 (Verify Logical & Grammatical Fit): Re-read the modified sentence to ensure that your substituted meaning creates perfect logical and grammatical coherence in the paragraph."
           ]
         },
         {
@@ -2216,51 +2223,51 @@ window.ReadSkillsData = {
           title: "Worked Example",
           thaiTitle: "ตัวอย่างการใช้",
           icon: "file-text",
-          content: "Sentence: 'The lecturer was famous for his brevity; in fact, his presentations never exceeded fifteen minutes.'",
-          annotated: "Clue Analysis: 'never exceeded fifteen minutes' clarifies that 'brevity' means shortness of duration or concise expression.",
-          takeaway: "Explanatory semicolons and follow-up clauses frequently reveal unknown word meanings."
+          content: "Sample Text: 'Archaeologists excavating the ruins of Muang Tam Sanctuary discovered several subterranean chambers—underground rooms located beneath the stone foundation—which were used for preserving sacred offerings from tropical heat.'",
+          annotated: "Strategy Analysis (Unit 3 Model):\n• [Target Vocabulary Word]: Unfamiliar academic term 'subterranean'.\n• [Punctuation Clue (Dashes)]: The author places explanatory em-dashes immediately after the word: '—underground rooms located beneath the stone foundation—'.\n• [Context Clue Type]: Definition / Restatement Clue directly defining the word between punctuation marks.\n• [Morphological Clue (Word Parts)]: Prefix 'sub-' (under/below) + Latin root 'terra' (earth/ground).\n• [Contextual Supporting Detail]: Purpose is 'preserving sacred offerings from tropical heat', confirming cool subterranean conditions.\n• [Decoded Definition]: 'Subterranean' means existing, occurring, or situated underground beneath the surface of the earth.\n• [Verification]: Substituting 'underground' into the sentence preserves perfect grammatical and semantic coherence.",
+          takeaway: "Punctuation marks such as dashes, commas, and parentheses act as the author's built-in glossary—always examine the words between them first!"
         },
         {
           stepNum: 6,
           title: "Guided Practice",
           thaiTitle: "ฝึกปฏิบัติ",
           icon: "user-check",
-          content: "Passage: 'Unlike her gregarious brother who loved attending crowded parties, Maria was shy, quiet, and preferred solitary evenings.'",
-          question: "Based on the contrast clue 'Unlike', what does 'gregarious' mean?",
+          content: "Passage: 'While Professor Thanarat was known for his amicable and welcoming disposition, his colleague was sullen, hostile, and constantly avoided talking to students.'",
+          question: "Based on the contrast clue 'While' and the opposites 'sullen and hostile', what is the most accurate meaning of 'amicable'?",
           options: [
-            "Sociable and fond of company",
-            "Afraid of the dark",
-            "Weak and sickly",
-            "Selfish and greedy"
+          "Friendly, pleasant, and easy to get along with",
+          "Extremely wealthy and powerful",
+          "Tired, sleepy, and exhausted",
+          "Strict, harsh, and punitive"
           ],
           answer: 0,
-          explanation: "'Unlike' sets up a direct contrast with Maria who is 'shy, quiet, and solitary', meaning gregarious means sociable."
+          explanation: "The contrast marker 'While' contrasts the professor's 'amicable' nature directly with his colleague who is 'sullen, hostile, and avoids talking', proving amicable means friendly and welcoming."
         },
         {
           stepNum: 7,
           title: "Apply to a Short Text",
           thaiTitle: "นำไปใช้กับบทอ่านสั้น",
           icon: "book-open",
-          passageTitle: "Architectural Conservation at Phanom Rung",
-          passage: "Conservators working at Phanom Rung Historical Park must be meticulous in their documentation. They record every minute crack and weathered sandstone fissure with millimeter precision to prevent irreversible structural damage.",
-          audioText: "Conservators working at Phanom Rung Historical Park must be meticulous in their documentation. They record every minute crack and weathered sandstone fissure with millimeter precision to prevent irreversible structural damage.",
-          taskQuestion: "What does 'meticulous' mean according to context clues?",
-          taskAnswer: "Extremely careful, precise, and attentive to every detail."
+          passageTitle: "Endangered Biodiversity in the Dong Phayayen-Khao Yai Forest",
+          passage: "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
+          audioText: "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
+          taskQuestion: "Using the example clues ('such as gibbons, flying squirrels...') and sentence clues ('canopy-dwelling species... high in the treetops'), what does the word 'arboreal' mean?",
+          taskAnswer: "'Arboreal' means living in or relating to trees and tree canopies (living off the ground)."
         },
         {
           stepNum: 8,
           title: "Strategy Quiz",
           thaiTitle: "แบบทดสอบ",
           icon: "trophy",
-          question: "In the sentence 'The desert climate is arid, meaning it receives less than ten inches of rain per year', which clue type defines 'arid'?",
+          question: "In the sentence 'Unlike synthetic fertilizers that degrade soil quality over time, compost is a natural soil enhancer; moreover, it is biodegradable, which means capable of being broken down safely by microorganisms', what TWO types of context clues are used?",
           options: [
-            "Definition clue signaled by 'meaning'",
-            "Antonym contrast clue",
-            "Sound imitation clue",
-            "Rhyme scheme clue"
+          "Contrast clue ('Unlike') and Definition clue ('which means')",
+          "Synonym clue and Sound imitation clue",
+          "Rhyme clue and Punctuation ellipsis clue",
+          "Chronological time clue and Question clue"
           ],
           answer: 0,
-          explanation: "The word 'meaning' directly introduces an explicit definition of 'arid' as receiving less than 10 inches of rain."
+          explanation: "'Unlike' introduces a contrast clue against synthetic fertilizers, while 'which means' explicitly introduces a definition clue for 'biodegradable'."
         }
       ]
     },
@@ -2278,36 +2285,37 @@ window.ReadSkillsData = {
           title: "What is the strategy?",
           thaiTitle: "คืออะไร?",
           icon: "help-circle",
-          content: "Identifying text organization involves recognizing how an author arranges ideas (cause-effect, compare-contrast, chronological sequence, problem-solution) and tracking reference pronouns and logical connectives that bind the text together.",
-          thaiExplanation: "การระบุโครงสร้างข้อความ คือการวิเคราะห์รูปแบบการจัดระเบียบความคิดของผู้เขียน เช่น เหตุและผล เปรียบเทียบ ลำดับเวลา และการเชื่อมโยงคำอ้างอิง (Pronoun References)"
+          content: "Identifying text organization involves recognizing how an author systematically arranges ideas, claims, and factual evidence, as well as tracking reference words and transitional connectives that create cohesive flow.\n\nThe 4 Major Text Organization Patterns:\n1. Chronological / Sequence Pattern (ลำดับเวลา/ขั้นตอน): Organizes events, historical developments, or instructions in temporal order (Signal words: first, next, subsequently, then, meanwhile, finally, in 1990, dates).\n2. Cause and Effect Pattern (เหตุและผล): Explains why an event happened and what consequences resulted (Signal words: because, since, leads to, causes, consequently, therefore, as a result, resulting in).\n3. Compare and Contrast Pattern (เปรียบเทียบความเหมือนและความต่าง): Analyzes similarities and differences between two or more subjects (Signal words: similarly, likewise, in contrast, however, on the other hand, unlike, whereas, while).\n4. Problem and Solution Pattern (ปัญหาและแนวทางแก้ไข): Introduces an obstacle, dilemma, or challenge, followed by one or more proposed or implemented solutions (Signal words: problem, challenge, dilemma, solution, solve, resolve, overcome, remedy).\n\nReference Words & Cohesive Ties (คำอ้างอิงและตัวเชื่อมความสัมพันธ์):\nAuthors use pronouns (it, they, them, this, that, these, those, former, latter) to refer back to previously mentioned nouns (antecedents). Correctly identifying these links prevents confusion about subjects.",
+          thaiExplanation: "การระบุโครงสร้างข้อความ คือการทำความเข้าใจรูปแบบการจัดระเบียบความคิดของผู้เขียน เช่น ลำดับเวลา (Chronological), เหตุและผล (Cause-Effect), เปรียบเทียบ (Compare-Contrast) และปัญหา-ทางออก (Problem-Solution) พร้อมทั้งการแกะรอยคำอ้างอิง (Pronoun Reference) เช่น it, they, this, these ว่าชี้กลับไปที่คำนามตัวใด เพื่อให้เข้าใจเนื้อหาได้อย่างแม่นยำไม่สับสน"
         },
         {
           stepNum: 2,
           title: "Why use it?",
           thaiTitle: "ทำไมต้องใช้?",
           icon: "lightbulb",
-          content: "Recognizing structural patterns uncovers the author's train of thought. It helps you anticipate upcoming points, construct accurate outlines, and retain complex academic arguments with high fidelity.",
-          thaiExplanation: "ช่วยให้มองเห็นแผนผังความคิดของผู้เขียนอย่างชัดเจน สรุปประเด็นได้เป็นระบบ และจดจำเนื้อหาที่ซับซ้อนได้อย่างมีประสิทธิภาพ"
+          content: "Recognizing structural patterns and reference markers provides essential academic reading benefits:\n1. Creates a Cognitive Roadmap: Knowing the organizational pattern helps you anticipate upcoming content (e.g., encountering a problem prepares your mind to search for the solution).\n2. Dramatically Improves Summarization: Every pattern has a natural summary template (e.g., Compare-Contrast yields a comparative table; Cause-Effect yields a causal chain).\n3. Prevents Subject Confusion: Tracking pronoun references (e.g., 'What does \"it\" refer to?') ensures you never misattribute actions or research findings to the wrong subject.\n4. Crucial for Academic Reading Exams: Structure and reference questions appear in nearly every university English test and standardized exam (TOEIC, TOEFL, IELTS).",
+          thaiExplanation: "ช่วยสร้างแผนผังความคิดล่วงหน้า ทำให้คาดเดาเนื้อหาถัดไปได้ง่ายขึ้น สรุปความได้อย่างมีแบบแผน ป้องกันการสับสนประธานของประโยคเมื่อมีสรรพนามหลายตัว และตรงกับแนวข้อสอบวัดระดับภาษาอังกฤษที่มักถามโครงสร้างข้อความและ Pronoun Reference เสมอ"
         },
         {
           stepNum: 3,
           title: "When do I use it?",
           thaiTitle: "ใช้เมื่อไหร่?",
           icon: "calendar",
-          content: "Use this strategy when analyzing research papers, comparative essays, historical timelines, experimental procedures, and argumentative editorial texts.",
-          thaiExplanation: "ใช้เมื่ออ่านบทความวิจัย เรียงความเปรียบเทียบ ขั้นตอนการทดลอง หรือบทความแสดงความคิดเห็นเชิงวิชาการ"
+          content: "Apply this strategy when reading:\n• Academic research papers, thesis introductions, and scientific laboratory reports.\n• Historical chronicles, biographies, and chronological process explanations.\n• Persuasive essays, debate analyses, and policy evaluations comparing competing viewpoints.\n• Problem-solution case studies in business, environmental science, and public health.\n• Answering exam questions such as 'How is paragraph 2 organized?' or 'The word \"they\" in line 12 refers to...'.",
+          thaiExplanation: "ใช้เมื่ออ่านบทความวิจัย รายงานการทดลองทางวิทยาศาสตร์ ลำดับเหตุการณ์ทางประวัติศาสตร์ บทความแสดงความคิดเห็นเชิงวิชาการ กรณีศึกษาทางธุรกิจและสิ่งแวดล้อม และเมื่อทำข้อสอบที่ถามหาโครงสร้างย่อหน้าหรือถามว่าคำสรรพนามหมายถึงสิ่งใด"
         },
         {
           stepNum: 4,
           title: "How do I use it?",
           thaiTitle: "ใช้อย่างไร?",
           icon: "settings",
-          content: "Identify organizational signals and cohesive ties:",
+          content: "Follow the 5-Step Execution Protocol for Text Organization & Reference Tracking:",
           checklist: [
-            "Look for transition words: 'Consequently', 'In contrast', 'First... Next... Finally', 'Therefore'.",
-            "Trace reference pronouns ('they', 'it', 'these', 'this') back to their antecedents.",
-            "Determine pattern: Cause-Effect, Comparison, Sequence, or Problem-Solution.",
-            "Sketch a mini mental diagram of how the paragraphs connect."
+          "Step 1 (Scan for Transitional Connectives): Survey the paragraph for signal markers (e.g., 'Consequently', 'In contrast', 'First... Next... Finally', 'The primary solution').",
+          "Step 2 (Determine the Organizational Blueprint): Match the dominant connectives to one of the 4 patterns: Sequence, Cause-Effect, Comparison, or Problem-Solution.",
+          "Step 3 (Trace Pronoun Antecedents): When encountering a reference pronoun ('it', 'they', 'these', 'this'), look back into the immediate preceding sentence to locate the matching noun (verify singular vs. plural agreement).",
+          "Step 4 (Construct a Mental Flowchart): Mentally sketch the connection: Cause ➔ Effect, or Problem ➔ Solution, or Subject A vs. Subject B.",
+          "Step 5 (Verify Paragraph Cohesion): Confirm that the structural pattern accurately represents the entire paragraph rather than just an isolated clause."
           ]
         },
         {
@@ -2315,51 +2323,51 @@ window.ReadSkillsData = {
           title: "Worked Example",
           thaiTitle: "ตัวอย่างการใช้",
           icon: "file-text",
-          content: "Passage: 'Unlike traditional lectures where students passively listen, flipped classrooms demand active pre-class study. Consequently, class time is dedicated to collaborative problem-solving.'",
-          annotated: "Structure: Comparison ('Unlike') combined with Cause-and-Effect ('Consequently'). Cohesive tie links student pre-study to collaborative classroom discussions.",
-          takeaway: "Connective markers reveal both contrast and logical consequence simultaneously."
+          content: "Sample Text: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises. Concrete buildings and asphalt highways absorb intense solar radiation during daytime hours, causing city temperatures to surge 4 to 7 degrees Celsius higher than surrounding rural valleys. To address this severe environmental dilemma, municipal urban planners in Bangkok have launched a rooftop vegetation initiative. Under this green roof policy, commercial skyscraper owners receive property tax exemptions if they cover at least 40% of their rooftop surfaces with living shrubs and sedum plants. These eco-friendly installations absorb sunlight, insulate buildings, and successfully reduce ambient rooftop temperatures.'",
+          annotated: "Strategy Analysis (Unit 4 Model):\n• [Structural Pattern (Problem)]: Opening sentence signals crisis: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises'.\n• [Supporting Detail (Cause & Effect)]: Solar absorption in concrete/asphalt causes urban temperatures to rise 4 to 7 degrees Celsius.\n• [Transitional Connective (Solution)]: 'To address this severe environmental dilemma' shifts the text from Problem to Solution.\n• [Structural Pattern (Solution)]: Green roof policy with property tax exemptions for skyscraper owners covering 40% with living plants.\n• [Pronoun Reference 1]: 'they' in 'if they cover at least 40%' refers back to plural antecedent 'commercial skyscraper owners'.\n• [Pronoun Reference 2]: 'These eco-friendly installations' in the conclusion refers back to 'living shrubs and sedum plants' / 'green roofs'.\n• [Verification]: The complete paragraph organizes seamlessly into Problem (Urban Heat) -> Solution (Green Roof Tax Incentives).",
+          takeaway: "Recognizing the Problem-Solution transition enables you to summarize an entire 100-word paragraph into two clear parts: Crisis = Urban heat; Solution = Green rooftop vegetation policy."
         },
         {
           stepNum: 6,
           title: "Guided Practice",
           thaiTitle: "ฝึกปฏิบัติ",
           icon: "user-check",
-          content: "Passage: 'Severe deforestation leads to severe topsoil erosion. As a result, local farmers experience diminished crop harvests each rainy season.'",
-          question: "What is the primary organizational pattern?",
+          content: "Passage: 'Traditional petroleum combustion engines emit substantial volumes of carbon dioxide, which directly accelerates atmospheric global warming. In contrast, electric vehicles produce zero tailpipe emissions during operation; however, their heavy reliance on lithium-ion batteries raises significant ecological concerns regarding open-pit mineral mining.'",
+          question: "Which pair of transitional connectives establishes the primary organizational pattern between traditional engines and electric vehicles?",
           options: [
-            "Cause and Effect",
-            "Chronological Timeline",
-            "Alphabetical Listing",
-            "Classification by Color"
+          "'In contrast' and 'however' establishing a Compare and Contrast relationship",
+          "'First' and 'finally' establishing a Chronological Sequence",
+          "'For example' and 'such as' establishing an Illustration pattern",
+          "'Consequently' and 'therefore' establishing pure Cause and Effect"
           ],
           answer: 0,
-          explanation: "'Leads to' and 'As a result' are classic transition markers indicating cause and effect."
+          explanation: "'In contrast' directly compares petroleum engines with electric vehicles, while 'however' presents a contrasting counterpoint regarding battery mining."
         },
         {
           stepNum: 7,
           title: "Apply to a Short Text",
           thaiTitle: "นำไปใช้กับบทอ่านสั้น",
           icon: "book-open",
-          passageTitle: "Scientific Laboratory Protocol",
-          passage: "First, sterilize all glass petri dishes in the autoclave at 121 degrees Celsius. Second, pour the nutrient agar solution evenly into each dish. Finally, inoculate the prepared agar with the bacterial sample and seal the plates hermetically.",
-          audioText: "First, sterilize all glass petri dishes in the autoclave at 121 degrees Celsius. Second, pour the nutrient agar solution evenly into each dish. Finally, inoculate the prepared agar with the bacterial sample and seal the plates hermetically.",
-          taskQuestion: "What organizational pattern does the author use here?",
-          taskAnswer: "Chronological Sequence / Step-by-Step Process signaled by 'First', 'Second', and 'Finally'."
+          passageTitle: "The Evolution of Silk Weaving in Buriram",
+          passage: "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
+          audioText: "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
+          taskQuestion: "1. What is the overarching organizational structure? 2. What does the pronoun 'they' in the final sentence refer to?",
+          taskAnswer: "1. Chronological Sequence / Historical Process (signaled by 'First', 'Second', 'Finally'). 2. 'They' refers to 'these exquisite textiles' / 'volcanic soil-dyed silk fabrics'."
         },
         {
           stepNum: 8,
           title: "Strategy Quiz",
           thaiTitle: "แบบทดสอบ",
           icon: "trophy",
-          question: "In the sentence 'Although the initial budget was limited, the research team achieved groundbreaking results', what relationship does 'Although' establish?",
+          question: "In the sentence 'Excessive plastic pollution severely threatens marine ecosystems; consequently, over 80 coastal nations have passed legislation banning single-use shopping bags', what does the connective 'consequently' indicate?",
           options: [
-            "Contrast / Concession",
-            "Cause and Effect",
-            "Chronological Sequence",
-            "Numerical Division"
+          "A logical effect or result resulting from the preceding cause",
+          "A chronological time order going backward in history",
+          "A contrast showing that plastic is beneficial",
+          "An example showing types of plastic polymers"
           ],
           answer: 0,
-          explanation: "'Although' introduces a concessive contrast between a limited budget and groundbreaking success."
+          explanation: "'Consequently' is a causal transition word signaling an effect or result of the preceding problem (severe threat of plastic pollution)."
         }
       ]
     },
@@ -2377,36 +2385,37 @@ window.ReadSkillsData = {
           title: "What is the strategy?",
           thaiTitle: "คืออะไร?",
           icon: "help-circle",
-          content: "Making inferences is drawing logical deductions by connecting explicit textual clues with your own prior real-world knowledge ('reading between the lines') to uncover ideas that the author suggests but does not directly state.",
-          thaiExplanation: "การอนุมาน (Making Inferences) คือการ 'อ่านระหว่างบรรทัด' เพื่อสรุปความหมายที่ผู้เขียนไม่ได้ระบุไว้ตรงๆ โดยนำหลักฐานในบทอ่านมาประมวลผลร่วมกับความรู้และประสบการณ์เดิม"
+          content: "Making inferences is drawing logical deductions and uncovering unstated meanings by synthesizing explicit textual clues with your prior real-world knowledge (Schema). It is widely known as 'reading between the lines'—discovering what the author implies or suggests without stating it word-for-word.\n\nThe Core Academic Inference Formula:\nText Clues (What the author explicitly writes) + Prior Knowledge (What you know about the world) = Logical Inference (Valid deduction)\n\nValid Inference vs. Wild Guess:\n• A Valid Inference is firmly anchored in concrete textual evidence and reasonable logical deduction.\n• An Invalid Inference (Wild Guess) is unsupported speculation, personal prejudice, or an assumption directly contradicted by the text.",
+          thaiExplanation: "การอนุมาน (Making Inferences) คือการ 'อ่านระหว่างบรรทัด' เพื่อสรุปความหมาย เจตนา หรือความรู้สึกที่ผู้เขียนไม่ได้ระบุไว้ตรงๆ โดยใช้สมการ: หลักฐานในบทอ่าน (Text Clues) + ความรู้และประสบการณ์เดิม (Prior Knowledge) = ข้อสรุปที่สมเหตุสมผล (Logical Inference) โดยต้องมีหลักฐานสนับสนุนเสมอ ไม่ใช่การเดาอย่างไร้เหตุผล"
         },
         {
           stepNum: 2,
           title: "Why use it?",
           thaiTitle: "ทำไมต้องใช้?",
           icon: "lightbulb",
-          content: "Authors rarely spell out every emotion, attitude, motive, or implication directly. Inferencing allows you to detect subtle sarcasm, underlying biases, author's tone, and unstated conclusions.",
-          thaiExplanation: "ช่วยให้เข้าใจเจตนาที่แท้จริง อารมณ์ น้ำเสียง และทัศนคติของผู้เขียนที่ซ่อนอยู่ลึกกว่าแค่ตัวอักษรบนหน้ากระดาษ"
+          content: "In academic literature and university reading assessments, making inferences delivers essential intellectual power:\n1. Decodes Author's Tone, Mood, and Attitude: Writers often express subtle irony, skepticism, humor, or empathy through descriptive details rather than direct declarations.\n2. Essential for High-Level Reading Tests: Standardized English tests (TOEIC, TOEFL, IELTS, CU-TEP, TU-GET) devote up to 30–40% of reading questions to inferences ('It can be inferred that...', 'The author implies...').\n3. Strengthens Critical Thinking: Transforms learners from passive decoders of words into active, analytical thinkers who evaluate unstated assumptions and underlying motives.\n4. Enhances Deeper Literary & Cultural Appreciation: Unlocks multi-layered character motivations, symbolic meanings, and thematic depths in stories, fables, and essays.",
+          thaiExplanation: "ช่วยให้เข้าใจน้ำเสียง เจตนา และทัศนคติที่แท้จริงของผู้เขียน เป็นทักษะสำคัญที่ออกข้อสอบวัดระดับภาษาอังกฤษมากถึง 30-40% พัฒนาทักษะการคิดเชิงวิพากษ์ (Critical Thinking) และช่วยให้ซาบซึ้งกับวรรณกรรมและบทความเชิงวิเคราะห์ได้อย่างลึกซึ้ง"
         },
         {
           stepNum: 3,
           title: "When do I use it?",
           thaiTitle: "ใช้เมื่อไหร่?",
           icon: "calendar",
-          content: "Use inferencing when reading editorial columns, literary fiction, historical documents, character dialogues, and academic opinion analyses.",
-          thaiExplanation: "ใช้เมื่ออ่านบทความวิเคราะห์ คอลัมน์ความคิดเห็น วรรณกรรม หรือบทอ่านที่ต้องวิเคราะห์น้ำเสียงของผู้เขียน"
+          content: "Apply inferencing whenever you encounter:\n• Exam questions asking: 'What can be inferred from paragraph 3?', 'What does the author imply about...?', or 'With which statement would the author most likely agree?'.\n• Literary narratives, fables, and dramas where characters' feelings and motives are shown through actions rather than told directly.\n• Opinion editorials, political columns, and persuasive essays where authors use nuanced rhetoric, sarcasm, or understatement.\n• Scientific discussion sections where researchers suggest broader implications of their experimental data.",
+          thaiExplanation: "ใช้เมื่อเจอข้อสอบที่ถามว่าบทความนี้บอกเป็นนัยถึงสิ่งใด (Implied/Inferred) เมื่ออ่านนิทาน วรรณกรรม และบทละครที่ตัวละครแสดงอารมณ์ผ่านการกระทำ เมื่ออ่านคอลัมน์แสดงความคิดเห็น และเมื่ออ่านผลการทดลองทางวิทยาศาสตร์ที่ต้องตีความความหมายเชิงลึก"
         },
         {
           stepNum: 4,
           title: "How do I use it?",
           thaiTitle: "ใช้อย่างไร?",
           icon: "settings",
-          content: "Apply the inference formula:",
+          content: "Follow the 5-Step Execution Protocol for Making Inferences:",
           checklist: [
-            "Step 1: Identify explicit text clues (what the words say).",
-            "Step 2: Connect with prior knowledge (what you know about the world).",
-            "Step 3: Formulate a logical inference (Text Evidence + Prior Knowledge = Valid Deduction).",
-            "Step 4: Verify that your inference does not contradict any stated facts."
+          "Step 1 (Identify Explicit Text Clues): Highlight concrete facts, descriptive adjectives, character actions, dialogue, and tone words stated directly in the text.",
+          "Step 2 (Activate Relevant Schema): Ask yourself: 'What do I know from real life, psychology, or history about people behaving or reacting this way?'",
+          "Step 3 (Formulate the Logical Bridge): Combine the evidence: 'Because the text states [Clue] and I know [Schema], I can reasonably infer that [Inference]'.",
+          "Step 4 (Test Against Alternative Explanations): Challenge your deduction: 'Is this the most probable explanation, or am I leaping to an extreme, unsupported assumption?'",
+          "Step 5 (Verify Against Passage Facts): Ensure that your inference does not contradict any other stated statement or fact in the entire passage."
           ]
         },
         {
@@ -2414,51 +2423,51 @@ window.ReadSkillsData = {
           title: "Worked Example",
           thaiTitle: "ตัวอย่างการใช้",
           icon: "file-text",
-          content: "Text: 'Paula adjusted her thick woolen scarf, pulled her earmuffs tighter, and watched her breath form misty white clouds in the morning air.'",
-          annotated: "Evidence: 'thick woolen scarf', 'earmuffs', 'breath forming misty clouds' + Prior Knowledge: People wear wool and breath condenses in near-freezing temperatures -> Logical Inference: The weather is extremely cold winter.",
-          takeaway: "The author never uses the word 'cold' or 'winter', yet the setting is undeniable."
+          content: "Sample Text: 'Dr. Kanya stared intently at the glowing computer monitor in the genetics lab at 02:45 AM. Her coffee cup had been cold for hours, and crumpled spreadsheets covered every square inch of the workbench. Suddenly, her eyes widened. She repeatedly double-checked the DNA sequencing readouts on screen, grabbed her smartphone with trembling fingers, and dialed the department chair's private home number despite the late hour.'",
+          annotated: "Strategy Analysis (Unit 5 Model):\n• [Explicit Text Clue 1 (Time & Setting)]: '02:45 AM', 'coffee cold for hours', 'crumpled spreadsheets covered every square inch of the workbench'.\n• [Explicit Text Clue 2 (Physical Reaction)]: 'eyes widened', 'fingers trembling', 'repeatedly double-checked the DNA sequencing readouts'.\n• [Explicit Text Clue 3 (Action)]: 'dialed the department chair's private home number despite the late hour'.\n• [Prior Knowledge (Schema)]: Research scientists only make urgent 3 AM phone calls to university directors when they achieve a landmark breakthrough or critical milestone.\n• [Formulated Logical Inference]: Dr. Kanya has just discovered a groundbreaking, historic genetics breakthrough that warrants immediate notification.\n• [Verification & Error Check]: The text evidence firmly eliminates trivial explanations (e.g. routine lab chores or accidental errors).",
+          takeaway: "The author never directly wrote 'She made a historic breakthrough', but her physical reactions and emergency late-night call make that deduction undeniable."
         },
         {
           stepNum: 6,
           title: "Guided Practice",
           thaiTitle: "ฝึกปฏิบัติ",
           icon: "user-check",
-          content: "Passage: 'The student glanced repeatedly at the wall clock every twenty seconds while drumming his fingers on his blank examination booklet.'",
-          question: "What can you logically infer about the student?",
+          content: "Passage: 'When the airline gate attendant announced that Flight 412 would be delayed by another five hours due to mechanical issues, Mr. Chen sighed deeply, slumped into his airport terminal chair, rubbed his throbbing temples, and slowly pulled a travel pillow from his backpack.'",
+          question: "What can you logically infer about Mr. Chen's emotional state and immediate plan?",
           options: [
-            "He is experiencing anxiety, pressure, or difficulty answering the exam",
-            "He has finished the test early and is celebrating",
-            "He is fast asleep in the library",
-            "He is repairing the wall clock"
+          "He is exhausted and frustrated by the delay, and plans to sleep at the airport terminal while waiting",
+          "He is delighted that he gets to spend five more hours shopping at the airport duty-free stores",
+          "He is angry at his travel pillow and decides to cancel his vacation completely",
+          "He is an airline mechanic preparing to fix the aircraft engine himself"
           ],
           answer: 0,
-          explanation: "Repeated clock-watching combined with finger drumming and a blank booklet strongly indicates anxiety and struggle."
+          explanation: "Sighing deeply, slumping in a chair, rubbing throbbing temples (signs of fatigue and frustration), and retrieving a travel pillow strongly support the inference that he is tired and preparing to sleep."
         },
         {
           stepNum: 7,
           title: "Apply to a Short Text",
           thaiTitle: "นำไปใช้กับบทอ่านสั้น",
           icon: "book-open",
-          passageTitle: "Modern Library Transformations",
-          passage: "At BRU's central library, towering dark wooden bookshelves have been replaced with glass-partitioned collaborative workspaces, high-speed WiFi charging pods, and digital presentation pods. Physical book borrow records declined by 30%, whereas digital journal downloads multiplied fivefold.",
-          audioText: "At BRU's central library, towering dark wooden bookshelves have been replaced with glass-partitioned collaborative workspaces, high-speed WiFi charging pods, and digital presentation pods. Physical book borrow records declined by 30%, whereas digital journal downloads multiplied fivefold.",
-          taskQuestion: "What can you infer about contemporary student study habits?",
-          taskAnswer: "Students have shifted heavily from individual paper-based reading to collaborative digital research."
+          passageTitle: "Digital Transformation in Buriram Classrooms",
+          passage: "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
+          audioText: "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
+          taskQuestion: "What can you logically infer about how educational technology has transformed the daily role of classroom teachers?",
+          taskAnswer: "Technology automated repetitive administrative chores (printing, paper grading), freeing teachers to focus on interactive mentoring and high-impact student engagement."
         },
         {
           stepNum: 8,
           title: "Strategy Quiz",
           thaiTitle: "แบบทดสอบ",
           icon: "trophy",
-          question: "Which statement accurately describes a valid inference?",
+          question: "Which of the following represents a CRITICAL error when making inferences in reading comprehension tests?",
           options: [
-            "A logical deduction grounded in textual clues and reasonable world knowledge",
-            "A wild guess without any evidence from the text",
-            "A direct copy-paste of the first sentence of the text",
-            "A translation of English vocabulary into Thai"
+          "Making an assumption based entirely on personal opinion that is not supported by any textual evidence",
+          "Combining explicit factual clues with reasonable real-world background knowledge",
+          "Checking whether the inferred idea contradicts any statement in the text",
+          "Looking for clues in the characters' actions and emotional descriptions"
           ],
           answer: 0,
-          explanation: "Inferences must always be grounded in textual evidence combined with logical deduction."
+          explanation: "An inference must always be anchored in textual evidence. Making conclusions based on personal bias or unsupported speculation is an invalid wild guess."
         }
       ]
     },
@@ -2467,7 +2476,7 @@ window.ReadSkillsData = {
       unitNumber: 6,
       title: "Integrated Strategy Review",
       thaiTitle: "การทบทวนกลยุทธ์แบบบูรณาการ",
-      scope: "Applying multiple strategies together",
+      scope: "Applying multiple strategies together across Pre-reading, While-reading, and Post-reading stages",
       cefr: "B2",
       icon: "check-check",
       steps: [
@@ -2476,35 +2485,37 @@ window.ReadSkillsData = {
           title: "What is the strategy?",
           thaiTitle: "คืออะไร?",
           icon: "help-circle",
-          content: "Integrated Strategy Review is the holistic orchestration of all essential reading strategies (Previewing, Predicting, Skimming, Scanning, Context Clues, Text Organization, Making Inferences, and Summarizing) across multi-stage reading tasks.",
-          thaiExplanation: "การทบทวนกลยุทธ์แบบบูรณาการ คือการนำกลยุทธ์การอ่านทั้งหมดมาปรับใช้ร่วมกันอย่างเป็นระบบ ทั้งก่อนอ่าน ขณะอ่าน และหลังอ่าน เพื่อความเข้าใจบทอ่านระดับสูงอย่างแท้จริง"
+          content: "Integrated Strategy Review is the holistic orchestration and dynamic synthesis of all five core reading strategies across the Three-Phase Reading Model:\n\n1. Strategy Repertoire:\n• Previewing & Predicting (Unit 1): Surveying structural text features to anticipate topics and activate schema.\n• Skimming & Scanning (Unit 2): Skimming for general gist and scanning for targeted empirical data.\n• Using Context Clues (Unit 3): Deciphering unknown vocabulary through definitions, synonyms, contrasts, and examples.\n• Identifying Text Organization (Unit 4): Recognizing structural patterns and tracing cohesive pronoun references.\n• Making Inferences (Unit 5): Synthesizing explicit text clues with background schema to read between the lines.\n\n2. The Three-Phase Framework:\n• Pre-Reading Stage: Previewing titles, subheadings, diagrams; activating schema; formulating initial predictions.\n• While-Reading Stage: Skimming for macro structure; scanning for facts; solving unknown vocabulary with context clues; tracking text organization; inferring unstated meanings.\n• Post-Reading Stage: Verifying initial predictions; synthesizing core takeaways; evaluating authorial purpose and tone; formulating concise written summaries.",
+          thaiExplanation: "การทบทวนกลยุทธ์แบบบูรณาการ คือการนำกลยุทธ์การอ่านทั้ง 5 ทักษะมาปรับใช้ร่วมกันอย่างยืดหยุ่นและเป็นระบบตลอด 3 ขั้นตอนการอ่าน: 1. ขั้นก่อนอ่าน (Pre-Reading) สำรวจและคาดเดา 2. ขั้นระหว่างอ่าน (While-Reading) กวาดสายตา แกะรอยบริบท วิเคราะห์โครงสร้าง และอนุมานความหมาย และ 3. ขั้นหลังอ่าน (Post-Reading) ตรวจสอบการคาดเดาและสังเคราะห์สรุปใจความสำคัญ"
         },
         {
           stepNum: 2,
           title: "Why use it?",
           thaiTitle: "ทำไมต้องใช้?",
           icon: "lightbulb",
-          content: "Proficient academic readers do not rely on a single technique. Integrating strategies flexibly creates autonomous, self-monitoring readers who can tackle difficult research journals, thesis papers, and standardized examinations.",
-          thaiExplanation: "ช่วยให้นักศึกษาสามารถอ่านบทความวิชาการที่ยากและซับซ้อนได้อย่างเป็นอิสระ มีความมั่นใจ และทำข้อสอบวัดระดับภาษาอังกฤษได้คะแนนสูงขึ้น"
+          content: "Mastering integrated strategy orchestration provides profound academic and intellectual advantages:\n1. Fosters Autonomous, Self-Monitoring Readers: Transforms students from dependent readers who need constant word-by-word translation into autonomous scholars capable of tackling complex English materials independently.\n2. Delivers Mastery in High-Stakes Exams: Standardized university exit exams, TOEIC, TOEFL, and IELTS do not test strategies in isolation; high scores require seamless switching between skimming, scanning, context clues, and inferencing under time constraints.\n3. Prevents Cognitive Overload in Dense Academic Literature: Enables students to absorb 20-page research journal articles, thesis literature reviews, and policy documents without fatigue or confusion.\n4. Long-Term Knowledge Retention: Engaging with texts through a multi-strategy workflow encodes information deeply into long-term cognitive structures rather than superficial short-term memory.",
+          thaiExplanation: "ช่วยพัฒนาผู้เรียนให้เป็นผู้อ่านอิสระ (Autonomous Reader) ที่สามารถกำกับและตรวจสอบความเข้าใจของตนเองได้ เป็นหัวใจสำคัญในการทำข้อสอบวัดระดับภาษาอังกฤษระดับสูง (TOEIC, TOEFL, IELTS) ช่วยให้อ่านบทความวิจัยขนาดยาวได้อย่างมีประสิทธิภาพโดยไม่เหนื่อยล้า และช่วยจดจำเนื้อหาได้อย่างลึกซึ้งและยาวนาน"
         },
         {
           stepNum: 3,
           title: "When do I use it?",
           thaiTitle: "ใช้เมื่อไหร่?",
           icon: "calendar",
-          content: "Use the integrated framework during term research projects, academic thesis readings, professional journal reviews, and university comprehensive exams.",
-          thaiExplanation: "ใช้ในการค้นคว้างานวิจัย การอ่านเอกสารอ้างอิงสำหรับวิทยานิพนธ์ และการสอบวัดผลภาษาอังกฤษระดับมหาวิทยาลัย"
+          content: "Orchestrate integrated reading strategies in these demanding academic and professional settings:\n• Conducting comprehensive literature reviews for undergraduate senior projects, independent studies, and graduate theses.\n• Sitting for high-stakes standardized English proficiency and university exit examinations.\n• Analyzing multi-disciplinary academic textbooks, government policy whitepapers, and international industry reports.\n• Reading authentic literature, scholarly editorials, and peer-reviewed journals where complex arguments and technical data intersect.",
+          thaiExplanation: "ใช้ในการค้นคว้าและทบทวนวรรณกรรมสำหรับงานวิจัยและวิทยานิพนธ์ การทำข้อสอบวัดระดับภาษาอังกฤษเพื่อสำเร็จการศึกษา การอ่านรายงานนโยบายภาครัฐและบทวิเคราะห์ระดับนานาชาติ และการอ่านตำราวิชาการระดับสูง"
         },
         {
           stepNum: 4,
           title: "How do I use it?",
           thaiTitle: "ใช้อย่างไร?",
           icon: "settings",
-          content: "Orchestrate across the 3-Stage Reading Framework:",
+          content: "Execute the 5-Step Master Protocol for Strategy Integration:",
           checklist: [
-            "Pre-Reading: Preview text features (Unit 1) and make active predictions.",
-            "While-Reading: Skim for gist (Unit 2), scan for key data, use context clues (Unit 3), track text organization (Unit 4), and make critical inferences (Unit 5).",
-            "Post-Reading: Synthesize main arguments, evaluate empirical evidence, and write a concise objective summary."
+          "Step 1 (Pre-Reading Orientation): Survey the title, abstract, subheadings, and visuals in 30 seconds; state a formal prediction: 'Based on text features, this passage will demonstrate...'",
+          "Step 2 (First-Pass Skimming): Skim the introductory paragraph, topic sentences of body paragraphs, and concluding thoughts at 3x speed to map the overall thesis and structure.",
+          "Step 3 (Active While-Reading & Context Clues): Read closely; when encountering unfamiliar academic jargon, immediately classify and apply context clues (IDEAS framework); trace pronoun referents ('it', 'they', 'this') back to their antecedents.",
+          "Step 4 (Deep Inferencing & Data Scanning): When comprehension questions demand specific metrics or dates, scan directly for target patterns; read between the lines to deduce authorial tone, implied attitudes, and unstated conclusions.",
+          "Step 5 (Post-Reading Synthesis & Summary): Revisit your Step 1 prediction (Confirmed, Refined, or Disproved?); construct a concise 1-to-2 sentence objective summary capturing the central thesis and supporting evidence."
           ]
         },
         {
@@ -2512,51 +2523,51 @@ window.ReadSkillsData = {
           title: "Worked Example",
           thaiTitle: "ตัวอย่างการใช้",
           icon: "file-text",
-          content: "Complex Abstract: 'A 16-week intervention study at Buriram Rajabhat University examined explicit reading strategy training across 120 first-year English majors. Results indicated a 28% increase in standardized reading comprehension test scores.'",
-          annotated: "Strategy Integration: Previewed title -> Scanned for sample size ('120') and duration ('16-week') -> Inferred strategy effectiveness -> Summarized: Structured strategy training significantly enhances EFL reading competence.",
-          takeaway: "Combining strategies converts a 500-word dense report into actionable insights in seconds."
+          content: "Sample Text: 'Abstract: An Empirical Investigation into Community-Based Cultural Tourism along the Khmer Sanctuary Trail in Southern Buriram (Research Bulletin, Vol. 14, 2026). Traditional agricultural revenue in rural Buriram has experienced persistent volatility due to erratic rainfall cycles. In response, four rural subdistricts adjacent to Phanom Rung and Muang Tam sanctuaries established community-based homestay networks in 2023. These enterprises allow heritage travelers to engage directly in silk weaving, volcanic pottery craftsmanship, and local organic farming. Over a three-year assessment period, participating rural households experienced a 36% rise in supplemental annual income; however, researchers noted that municipal infrastructure—specifically rural road access and multilingual directional signage—remains inadequate to support peak festival seasons. Consequently, the provincial administration has allocated emergency infrastructure grants to resolve these transit bottlenecks before the upcoming 2027 tourism cycle.'",
+          annotated: "Strategy Analysis (Unit 6 Model):\n• [Phase 1: Pre-Reading Preview]: Surveying title & journal source reveals subject: Community-based Khmer cultural heritage tourism in southern Buriram.\n• [Phase 2: Skimming for Gist]: Captures the core dilemma and response: Erratic rainfall reduced crop revenue, prompting farming communities to create homestay enterprises.\n• [Phase 2: Scanning for Specific Data]: Pinpoints empirical metrics: established in '2023', 'three-year assessment', and '36% rise in supplemental annual income'.\n• [Phase 2: Context Clues]: Decodes 'bottlenecks' via surrounding clue 'rural road access and multilingual signage remains inadequate' -> transit obstacles/delays.\n• [Phase 2: Text Organization & Reference]: Tracks Problem-Solution and Cause-Effect connectives ('In response', 'however', 'Consequently').\n• [Phase 2: Making Inferences]: Deduces that provincial government financial intervention was vital to prevent homestay tourism from collapsing during peak festival seasons.\n• [Phase 3: Post-Reading Synthesis]: Combining these 5 strategies synthesizes the entire 150-word research abstract into a coherent, highly actionable 2-sentence summary!",
+          takeaway: "Orchestrating strategies transforms complex academic research into crystal-clear comprehension in under 60 seconds."
         },
         {
           stepNum: 6,
           title: "Guided Practice",
           thaiTitle: "ฝึกปฏิบัติ",
           icon: "user-check",
-          content: "When reading an unfamiliar 10-page academic journal article, what sequence of integrated strategies is most effective?",
-          question: "Which sequential approach demonstrates expert strategy integration?",
+          content: "Scenario: You are given a 12-page research report on renewable bioenergy in Isan with 15 comprehension questions to answer in 20 minutes.",
+          question: "Which sequential workflow represents the most effective integration of reading strategies under strict time pressure?",
           options: [
-            "Preview abstract/headings -> Skim main sections -> Read closely using context clues -> Summarize key takeaways",
-            "Translate every word into Thai from page 1 to page 10 without previewing",
-            "Read only the footnotes and ignore headings",
-            "Memorize the bibliography citations first"
+          "Preview title & headings -> Skim introduction & conclusion for gist -> Scan for question keywords to locate answers -> Use context clues & inference for analytical questions",
+          "Start reading word-for-word from page 1 and look up every unknown word in an English-Thai dictionary",
+          "Answer all 15 questions by guessing without looking at the text at all",
+          "Read only the last sentence of each page and ignore headings and charts"
           ],
           answer: 0,
-          explanation: "Expert readers preview and skim first to establish context, then read closely, and finish with summarization."
+          explanation: "Master readers combine previewing to frame the topic, skimming for general structure, scanning to locate answers quickly, and context clues/inferencing to solve complex analytical questions."
         },
         {
           stepNum: 7,
           title: "Apply to a Short Text",
           thaiTitle: "นำไปใช้กับบทอ่านสั้น",
           icon: "book-open",
-          passageTitle: "Empowering Autonomous EFL Readers",
-          passage: "Explicit reading strategy instruction empowers English as a Foreign Language learners by reducing reading anxiety, elevating self-efficacy, and equipping students with lifelong analytical tools. By systematically mastering previewing, predicting, text structure analysis, and critical summarization, university students achieve true cognitive autonomy.",
-          audioText: "Explicit reading strategy instruction empowers English as a Foreign Language learners by reducing reading anxiety, elevating self-efficacy, and equipping students with lifelong analytical tools. By systematically mastering previewing, predicting, text structure analysis, and critical summarization, university students achieve true cognitive autonomy.",
-          taskQuestion: "Synthesize the overarching conclusion of this passage in one sentence.",
-          taskAnswer: "Explicit strategy instruction transforms EFL learners into confident, autonomous, and analytical lifelong readers."
+          passageTitle: "The Transformative Power of Strategic Reading",
+          passage: "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
+          audioText: "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
+          taskQuestion: "Explain how expert readers demonstrate flexibility according to this passage, and synthesize the ultimate benefit of mastering integrated reading strategies.",
+          taskAnswer: "Expert readers dynamically adjust their reading speed and strategy based on text demands (previewing, skimming, scanning, context clues, inferencing), which ultimately transforms them into autonomous, analytical, and confident lifelong scholars."
         },
         {
           stepNum: 8,
           title: "Strategy Quiz",
           thaiTitle: "แบบทดสอบ",
           icon: "trophy",
-          question: "What is the primary hallmark of an autonomous, strategic reader?",
+          question: "Which scenario best exemplifies an autonomous reader applying integrated reading strategies in an academic setting?",
           options: [
-            "The ability to flexibly select and combine appropriate reading strategies based on the text and purpose",
-            "Reading every document at exactly the same slow speed",
-            "Refusing to preview text features before reading",
-            "Relying exclusively on machine translation"
+          "A student who previews the abstract and subheadings of a research paper, skims to find relevant sections, scans for statistical data, uses context clues for technical terms, and verifies conclusions",
+          "A student who translates an entire 20-page textbook chapter word-by-word with a translation app",
+          "A student who skips reading entirely and relies solely on lecture slides",
+          "A student who reads every type of text—from poetry to bus schedules—at the exact same slow speed"
           ],
           answer: 0,
-          explanation: "Autonomous readers flexibly orchestrate strategies according to their reading purpose and text complexity."
+          explanation: "An autonomous reader flexibly selects, combines, and adapts reading strategies to match the specific reading purpose and complexity of the text."
         }
       ]
     }
