@@ -205,6 +205,7 @@ body {
 }
 
 .highlighter-yellow {
+  background-color: #fef08a;
   background: linear-gradient(104deg, rgba(254, 240, 138, 0.45) 0.9%, rgba(254, 240, 138, 0.95) 2.4%, rgba(254, 240, 138, 0.85) 50%, rgba(254, 240, 138, 0.95) 93%, rgba(254, 240, 138, 0.45) 98%);
   border-bottom: 2px solid #eab308;
   color: #1e293b;
@@ -212,6 +213,7 @@ body {
 }
 
 .highlighter-green {
+  background-color: #a7f3d0;
   background: linear-gradient(104deg, rgba(167, 243, 208, 0.45) 0.9%, rgba(167, 243, 208, 0.95) 2.4%, rgba(167, 243, 208, 0.85) 50%, rgba(167, 243, 208, 0.95) 93%, rgba(167, 243, 208, 0.45) 98%);
   border-bottom: 2px solid #10b981;
   color: #064e3b;
@@ -219,6 +221,7 @@ body {
 }
 
 .highlighter-blue {
+  background-color: #bae6fd;
   background: linear-gradient(104deg, rgba(186, 230, 253, 0.45) 0.9%, rgba(186, 230, 253, 0.95) 2.4%, rgba(186, 230, 253, 0.85) 50%, rgba(186, 230, 253, 0.95) 93%, rgba(186, 230, 253, 0.45) 98%);
   border-bottom: 2px solid #0284c7;
   color: #0c4a6e;
@@ -226,6 +229,7 @@ body {
 }
 
 .highlighter-pink {
+  background-color: #fecdd3;
   background: linear-gradient(104deg, rgba(254, 205, 211, 0.45) 0.9%, rgba(254, 205, 211, 0.95) 2.4%, rgba(254, 205, 211, 0.85) 50%, rgba(254, 205, 211, 0.95) 93%, rgba(254, 205, 211, 0.45) 98%);
   border-bottom: 2px solid #f43f5e;
   color: #881337;
@@ -233,6 +237,7 @@ body {
 }
 
 .highlighter-purple {
+  background-color: #e9d5ff;
   background: linear-gradient(104deg, rgba(233, 213, 255, 0.45) 0.9%, rgba(233, 213, 255, 0.95) 2.4%, rgba(233, 213, 255, 0.85) 50%, rgba(233, 213, 255, 0.95) 93%, rgba(233, 213, 255, 0.45) 98%);
   border-bottom: 2px solid #a855f7;
   color: #581c87;
@@ -240,6 +245,7 @@ body {
 }
 
 .highlighter-orange {
+  background-color: #fed7aa;
   background: linear-gradient(104deg, rgba(254, 215, 170, 0.45) 0.9%, rgba(254, 215, 170, 0.95) 2.4%, rgba(254, 215, 170, 0.85) 50%, rgba(254, 215, 170, 0.95) 93%, rgba(254, 215, 170, 0.45) 98%);
   border-bottom: 2px solid #f97316;
   color: #7c2d12;
@@ -247,6 +253,7 @@ body {
 }
 
 .highlighter-teal {
+  background-color: #99f6e4;
   background: linear-gradient(104deg, rgba(153, 246, 228, 0.45) 0.9%, rgba(153, 246, 228, 0.95) 2.4%, rgba(153, 246, 228, 0.85) 50%, rgba(153, 246, 228, 0.95) 93%, rgba(153, 246, 228, 0.45) 98%);
   border-bottom: 2px solid #14b8a6;
   color: #134e4a;
@@ -269,38 +276,46 @@ body {
 /* When a vocabulary word is nested inside a paragraph-level role highlight:
    Avoid stacking backgrounds. Use bold + distinct underline + high-contrast text color. */
 .highlighter-pen .vocab-word,
+.highlighter-pen span.vocab-word,
 .highlighter-pen [class*="text-amber-300"] {
   font-weight: 800 !important;
   background: transparent !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 2px !important;
+  border-bottom: none !important;
 }
 
-/* Green highlight (Topic Sentence): background #a7f3d0 -> text #042f2e (contrast 11.28:1 - AAA) */
+/* Green highlight (Topic Sentence / Major Detail): background #a7f3d0 -> text #042f2e (contrast 11.28:1 - AAA) */
 .highlighter-green .vocab-word,
+.highlighter-green span.vocab-word,
 .highlighter-green [class*="text-amber-300"] {
   color: #042f2e !important;
-  border-bottom: 2px solid #0f766e !important;
+  text-decoration-color: #0f766e !important;
 }
 
-/* Blue highlight (Supporting Detail): background #bae6fd -> text #082f49 (contrast 10.46:1 - AAA) */
+/* Blue highlight (Supporting Detail / Minor Detail): background #bae6fd -> text #082f49 (contrast 10.46:1 - AAA) */
 .highlighter-blue .vocab-word,
+.highlighter-blue span.vocab-word,
 .highlighter-blue [class*="text-amber-300"] {
   color: #082f49 !important;
-  border-bottom: 2px solid #0369a1 !important;
+  text-decoration-color: #0369a1 !important;
 }
 
 /* Pink/Red highlight (Main Idea): background #fecdd3 -> text #4c0519 (contrast 11.08:1 - AAA) */
 .highlighter-pink .vocab-word,
+.highlighter-pink span.vocab-word,
 .highlighter-pink [class*="text-amber-300"] {
   color: #4c0519 !important;
-  border-bottom: 2px solid #9f1239 !important;
+  text-decoration-color: #9f1239 !important;
 }
 
-/* Yellow highlight (Reflection): background #fef08a -> text #1e1b4b (contrast 13.74:1 - AAA) */
+/* Yellow highlight (Main Idea / Reflection): background #fef08a -> text #1e1b4b (contrast 13.74:1 - AAA) */
 .highlighter-yellow .vocab-word,
+.highlighter-yellow span.vocab-word,
 .highlighter-yellow [class*="text-amber-300"],
 .highlighter-yellow [class*="text-purple-950"] {
   color: #1e1b4b !important;
-  border-bottom: 2px solid #4338ca !important;
+  text-decoration-color: #4338ca !important;
 }
 
 /* Purple highlight: background #e9d5ff -> text #2e1065 (contrast 11.19:1 - AAA) */

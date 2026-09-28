@@ -58,6 +58,20 @@ class ReadSkillsApp {
     this.currentExampleTab = 1;
     this.currentLearnPart = 'part1';
 
+    // Unit 2 State (Supporting Details & Idea Relationships)
+    this.unit2PreScanTimer = null;
+    this.unit2PreScanTimeLeft = 60;
+    this.unit2PreScanAnswers = {};
+    this.unit2Highlights = {};
+    this.unit2ChallengeAnswers = JSON.parse(localStorage.getItem('bru_unit2_challenge_answers') || '{}');
+    this.unit2ChallengeScore = localStorage.getItem('bru_unit2_challenge_score') ? parseInt(localStorage.getItem('bru_unit2_challenge_score')) : null;
+    this.unit2PostScanTimer = null;
+    this.unit2PostScanTimeLeft = 90;
+    this.unit2PostScanAnswers = {};
+    this.unit2PostScanScore = localStorage.getItem('bru_unit2_scanning_score') ? parseInt(localStorage.getItem('bru_unit2_scanning_score')) : null;
+    this.unit2TestAnswers = JSON.parse(localStorage.getItem('bru_unit2_test_answers') || '{}');
+    this.unit2TestScore = localStorage.getItem('bru_unit2_test_score') ? parseInt(localStorage.getItem('bru_unit2_test_score')) : null;
+
     this.init();
   }
 
@@ -695,21 +709,40 @@ class ReadSkillsApp {
     const stage = this.currentStage;
     let steps = [];
 
-    if (stage === 'preReading') {
-      steps = [
-        { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
-        { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'กลยุทธ์ก่อนการอ่าน' }
-      ];
-    } else if (stage === 'whileReading') {
-      steps = [
-        { key: 'learn', num: 1, label: 'Learn (Part 2)', sub: 'ใจความสำคัญ & ประโยคหลัก' },
-        { key: 'example', num: 2, label: 'Example', sub: 'บทอ่านตัวอย่าง & คำศัพท์' },
-        { key: 'practice', num: 3, label: 'Practice', sub: 'แบบฝึกหัดทบทวน' }
-      ];
-    } else if (stage === 'postReading') {
-      steps = [
-        { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบวัดผล 4 บทความ' }
-      ];
+    if (this.currentUnitId === 2) {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & อุ่นเครื่อง [6.1.1-6.1.2]' },
+          { key: 'learn', num: 2, label: 'Key Concepts & Scan', sub: 'แนวคิดหลัก & สแกน [6.1.3-6.1.5]' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิต Skimming & Scanning [6.2.1]' },
+          { key: 'example', num: 2, label: 'Highlight & Signals', sub: 'เครื่องมือไฮไลต์ & คำเชื่อม [6.2.2-6.2.4]' },
+          { key: 'practice', num: 3, label: 'Main Idea Challenge', sub: 'ท้าทายเก็บคะแนน (70%) [6.2.3]' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Post-Reading Assessment', sub: 'Timed Scan & Test [6.3.3-6.3.4]' }
+        ];
+      }
+    } else {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'กลยุทธ์ก่อนการอ่าน' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Learn (Part 2)', sub: 'ใจความสำคัญ & ประโยคหลัก' },
+          { key: 'example', num: 2, label: 'Example', sub: 'บทอ่านตัวอย่าง & คำศัพท์' },
+          { key: 'practice', num: 3, label: 'Practice', sub: 'แบบฝึกหัดทบทวน' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบวัดผล 4 บทความ' }
+        ];
+      }
     }
 
     return `
@@ -927,6 +960,13 @@ class ReadSkillsApp {
     if (currentStep === 'quiz') {
       if (this.currentUnitId === 1) {
         return this.renderQuizStep();
+      }
+      if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
+        setTimeout(() => {
+          if (window.lucide) lucide.createIcons();
+          this.updateUnit2SummaryDashboard();
+        }, 30);
+        return s.quiz;
       }
       const q = s.quiz;
       if (q) {
@@ -2713,7 +2753,421 @@ class ReadSkillsApp {
     this.togglePassageAudio(encodeURIComponent(text));
   }
 
-  /* ------------------- Audio Player Synthesizer ------------------- */
+  /* ==========================================================================
+     UNIT 2: INTERACTIVE METHODS & TIMED SCANNERS [U2-5.1..5.6, U2-6.1..6.3]
+     ========================================================================== */
+
+  // 1. Warm-Up Checker [U2-6.1.2]
+  checkUnit2Warmup(selectedNum) {
+    const fb = document.getElementById('u2-warmup-feedback');
+    if (!fb) return;
+    fb.classList.remove('hidden');
+    if (selectedNum === 1) {
+      fb.className = 'p-3.5 bg-emerald-100 border border-emerald-300 rounded-xl text-xs text-emerald-950 font-medium space-y-1 block';
+      fb.innerHTML = `
+        <div class="flex items-center space-x-1.5 font-bold text-emerald-900">
+          <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+          <span>ถูกต้องยอดเยี่ยม! (Correct) 🎉</span>
+        </div>
+        <p class="leading-relaxed">
+          ประโยค (1) คือ <strong>Main Idea (ใจความสำคัญ)</strong> เพราะทำหน้าที่เป็น <em>'ร่มคันใหญ่ (Umbrella Sentence)'</em> ที่ครอบคลุมเนื้อหาทั้งหมดว่าการดื่มน้ำตอนเช้าให้ประโยชน์สำคัญทางสรีรวิทยา ส่วนประโยคที่ (2) และ (4) คือ Major Details และ (3), (5) คือ Minor Details
+        </p>
+      `;
+    } else {
+      fb.className = 'p-3.5 bg-amber-100 border border-amber-300 rounded-xl text-xs text-amber-950 font-medium space-y-1 block';
+      fb.innerHTML = `
+        <div class="flex items-center space-x-1.5 font-bold text-amber-900">
+          <i data-lucide="help-circle" class="w-4 h-4 text-amber-700"></i>
+          <span>ยังไม่ถูกต้องครับ ลองสังเกตใหม่ดูนะครับ</span>
+        </div>
+        <p class="leading-relaxed">
+          ประโยคที่คุณเลือกคือ <strong>Supporting Detail (รายละเอียดสนับสนุน)</strong> ที่ให้เหตุผลหรือตัวอย่างเฉพาะด้าน (เช่น การเผาผลาญ หรืออาการคอแห้ง) ยังไม่ใช่ประโยคหลักที่ครอบคลุมภาพรวมทั้งหมด คำตอบที่ถูกต้องคือ <strong>ประโยค (1)</strong>
+        </p>
+      `;
+    }
+    if (window.lucide) lucide.createIcons();
+  }
+
+  // 2. Pre-Reading Timed Scanning Task [U2-6.1.4, U2-5.6]
+  startUnit2PreTimer() {
+    const btn = document.getElementById('u2-pre-timer-btn');
+    const timerDisplay = document.getElementById('u2-pre-timer');
+    if (this.unit2PreScanTimer) {
+      clearInterval(this.unit2PreScanTimer);
+      this.unit2PreScanTimer = null;
+      if (btn) btn.textContent = 'Resume Timer';
+      return;
+    }
+    if (btn) btn.textContent = 'Pause Timer';
+    this.unit2PreScanTimer = setInterval(() => {
+      if (this.unit2PreScanTimeLeft <= 0) {
+        clearInterval(this.unit2PreScanTimer);
+        this.unit2PreScanTimer = null;
+        if (timerDisplay) timerDisplay.textContent = '00:00 (Time Up!)';
+        if (btn) btn.textContent = 'Time Up';
+        this.submitUnit2PreScan();
+        return;
+      }
+      this.unit2PreScanTimeLeft--;
+      const m = String(Math.floor(this.unit2PreScanTimeLeft / 60)).padStart(2, '0');
+      const s = String(this.unit2PreScanTimeLeft % 60).padStart(2, '0');
+      if (timerDisplay) timerDisplay.textContent = `${m}:${s}`;
+    }, 1000);
+  }
+
+  setUnit2PreScanAnswer(qNum, val) {
+    if (!this.unit2PreScanAnswers) this.unit2PreScanAnswers = {};
+    this.unit2PreScanAnswers[qNum] = val;
+    const btns = document.querySelectorAll(`.u2-prescan-q${qNum}`);
+    btns.forEach(b => {
+      if (b.textContent.trim() === val) {
+        b.className = `u2-prescan-q${qNum} p-2 rounded-lg border-2 border-purple-600 bg-purple-100 text-purple-950 text-center font-bold cursor-pointer`;
+      } else {
+        b.className = `u2-prescan-q${qNum} p-2 rounded-lg border border-slate-200 bg-white hover:bg-purple-50 text-center font-medium cursor-pointer`;
+      }
+    });
+  }
+
+  submitUnit2PreScan() {
+    if (this.unit2PreScanTimer) {
+      clearInterval(this.unit2PreScanTimer);
+      this.unit2PreScanTimer = null;
+      const btn = document.getElementById('u2-pre-timer-btn');
+      if (btn) btn.textContent = 'Completed';
+    }
+    const key = { 1: '1200', 2: 'Building 18', 3: '45%', 4: '3.5 million baht' };
+    let score = 0;
+    Object.keys(key).forEach(q => {
+      if (this.unit2PreScanAnswers && this.unit2PreScanAnswers[q] === key[q]) score++;
+    });
+    const resultBox = document.getElementById('u2-prescan-result');
+    if (resultBox) {
+      const pass = score >= 3;
+      resultBox.innerHTML = `
+        <span class="px-3 py-1.5 rounded-xl ${pass ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-slate-950'} font-bold">
+          Score: ${score} / 4 (${Math.round((score/4)*100)}%) ${pass ? '🎉 Passed (&ge;70%)' : 'Retake to improve'}
+        </span>
+      `;
+    }
+  }
+
+  // 3. Interactive Highlighting Tool [U2-6.2.2]
+  highlightSentence(sentenceId, role) {
+    if (!this.unit2Highlights) this.unit2Highlights = {};
+    this.unit2Highlights[sentenceId] = role;
+
+    const box = document.getElementById(`u2-s${sentenceId}-box`);
+    const fb = document.getElementById(`u2-s${sentenceId}-feedback`);
+    if (!box) return;
+
+    box.className = 'p-3 rounded-xl border space-y-2 transition ';
+    if (role === 'yellow') {
+      box.className += 'bg-yellow-950/80 border-2 border-yellow-400 text-yellow-100 shadow-md';
+    } else if (role === 'green') {
+      box.className += 'bg-emerald-950/80 border-2 border-emerald-500 text-emerald-100 shadow-md';
+    } else if (role === 'blue') {
+      box.className += 'bg-sky-950/80 border-2 border-sky-400 text-sky-100 shadow-md';
+    }
+
+    const correctRoles = {
+      1: { role: 'yellow', name: 'Main Idea', reason: 'ประโยคหลักที่ครอบคลุมผลกระทบสิ่งแวดล้อมและจิตวิทยาของพื้นที่สีเขียว' },
+      2: { role: 'green', name: 'Major Supporting Detail 1', reason: 'บอกเหตุผลสำคัญประเด็นที่ 1: การลดปรากฏการณ์เกาะความร้อนในเมือง' },
+      3: { role: 'blue', name: 'Minor Detail 1a', reason: 'ให้ข้อมูลตัวเลขงานวิจัยในกรุงเทพฯ ที่ลดอุณหภูมิได้ 3.8°C' },
+      4: { role: 'green', name: 'Major Supporting Detail 2', reason: 'บอกเหตุผลสำคัญประเด็นที่ 2: การพัฒนาสุขภาพจิตของประชาชน' },
+      5: { role: 'blue', name: 'Minor Detail 2a', reason: 'ให้สถิติตัวอย่างนักศึกษา 450 คนและความเครียดที่ลดลง 28%' }
+    };
+
+    const target = correctRoles[sentenceId];
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      if (role === target.role) {
+        fb.className = 'text-[11px] font-sans p-2 rounded-lg bg-emerald-900/60 text-emerald-200 border border-emerald-500/40 block';
+        fb.innerHTML = `<strong>ถูกต้อง!</strong> ประโยคนี้คือ <em>${target.name}</em> &bull; ${target.reason}`;
+      } else {
+        fb.className = 'text-[11px] font-sans p-2 rounded-lg bg-amber-900/60 text-amber-200 border border-amber-500/40 block';
+        fb.innerHTML = `<strong>ยังไม่ตรงบทบาท:</strong> ประโยคนี้ควรเป็น <em>${target.name}</em> (${target.role === 'yellow' ? 'สีเหลือง' : target.role === 'green' ? 'สีเขียว' : 'สีฟ้า'}) &bull; ${target.reason}`;
+      }
+    }
+  }
+
+  resetUnit2Highlights() {
+    this.unit2Highlights = {};
+    for (let i = 1; i <= 5; i++) {
+      const box = document.getElementById(`u2-s${i}-box`);
+      const fb = document.getElementById(`u2-s${i}-feedback`);
+      if (box) box.className = 'p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition';
+      if (fb) {
+        fb.classList.add('hidden');
+        fb.innerHTML = '';
+      }
+    }
+  }
+
+  revealUnit2Highlights() {
+    const correctRoles = { 1: 'yellow', 2: 'green', 3: 'blue', 4: 'green', 5: 'blue' };
+    Object.keys(correctRoles).forEach(id => {
+      this.highlightSentence(parseInt(id), correctRoles[id]);
+    });
+  }
+
+  // 4. Main Idea Challenge [U2-5.5, U2-6.2.3]
+  submitUnit2Challenge(itemNum, choiceIdx) {
+    if (!this.unit2ChallengeAnswers) this.unit2ChallengeAnswers = {};
+    this.unit2ChallengeAnswers[itemNum] = choiceIdx;
+
+    const correctKey = {
+      1: { ans: 0, label: 'Main Idea', exp: 'เป็นประโยคใจความสำคัญที่ครอบคลุมความคุ้มค่าทางเศรษฐกิจของพลังงานแสงอาทิตย์ในชนบท' },
+      2: { ans: 1, label: 'Major Supporting Detail', exp: 'บอกเหตุผลสำคัญข้อที่หนึ่งเรื่องต้นทุนการผลิตที่ลดลง 58%' },
+      3: { ans: 2, label: 'Minor Supporting Detail', exp: 'เป็นสถิติอ้างอิงจากรายงานกระทรวงพลังงานปี 2025 ที่ลดลงจาก 85 เหลือ 36 บาท' },
+      4: { ans: 0, label: 'Main Idea', exp: 'เป็นใจความสำคัญเรื่องการบริหารเวลาช่วยสร้างสมดุลระหว่างการเรียนและสุขภาพ' },
+      5: { ans: 1, label: 'Major Supporting Detail', exp: 'บอกเหตุผลสำคัญข้อที่หนึ่งเรื่องการจัดตารางสัปดาห์ช่วยลดความวิตกกังวล' },
+      6: { ans: 2, label: 'Minor Supporting Detail', exp: 'เป็นสถิติตัวอย่างเทคนิค Pomodoro ที่ช่วยให้ทำการบ้านเสร็จเร็วขึ้น 30%' }
+    };
+
+    const target = correctKey[itemNum];
+    const fb = document.getElementById(`u2-c${itemNum}-fb`);
+    const btns = document.querySelectorAll(`.u2-c${itemNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        if (choiceIdx === target.ans) {
+          b.className = `u2-c${itemNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 font-bold text-left`;
+        } else {
+          b.className = `u2-c${itemNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 font-bold text-left`;
+        }
+      } else if (idx === target.ans) {
+        b.className = `u2-c${itemNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 font-medium text-left`;
+      } else {
+        b.className = `u2-c${itemNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white/70 text-slate-500 text-left`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      if (choiceIdx === target.ans) {
+        fb.className = 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block';
+        fb.innerHTML = `<strong>ถูกต้อง! 🎉</strong> ข้อความนี้คือ <em>${target.label}</em> &bull; ${target.exp}`;
+      } else {
+        fb.className = 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+        fb.innerHTML = `<strong>ยังไม่ถูกต้อง:</strong> ข้อความนี้คือ <em>${target.label}</em> &bull; ${target.exp}`;
+      }
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(correctKey).forEach(k => {
+      if (this.unit2ChallengeAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit2ChallengeAnswers[k] === correctKey[k].ans) score++;
+      }
+    });
+
+    const scoreDisplay = document.getElementById('u2-challenge-score');
+    if (scoreDisplay) scoreDisplay.textContent = `${score} / 6`;
+
+    this.unit2ChallengeScore = score;
+    localStorage.setItem('bru_unit2_challenge_score', score);
+    localStorage.setItem('bru_unit2_challenge_answers', JSON.stringify(this.unit2ChallengeAnswers));
+
+    if (answered === 6) {
+      const finalBox = document.getElementById('u2-challenge-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 4;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'award' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ยินดีด้วย! คุณผ่านเกณฑ์ตัวบ่งชี้ 3.3 (Passed &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (ต้องการ 4/6 ข้อขึ้นไป)'}</span>
+          </div>
+          <p class="text-xs">คะแนนที่ได้: <strong>${score} / 6 (${Math.round((score/6)*100)}%)</strong> &bull; บันทึกผลการเรียนรู้เรียบร้อยแล้ว</p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+  }
+
+  // 5. Post-Reading Timed Scanning Task [U2-5.6, U2-6.3.3]
+  startUnit2PostTimer() {
+    const btn = document.getElementById('u2-post-timer-btn');
+    const timerDisplay = document.getElementById('u2-post-timer');
+    if (this.unit2PostScanTimer) {
+      clearInterval(this.unit2PostScanTimer);
+      this.unit2PostScanTimer = null;
+      if (btn) btn.textContent = 'Resume Timer';
+      return;
+    }
+    if (btn) btn.textContent = 'Pause Timer';
+    this.unit2PostScanTimer = setInterval(() => {
+      if (this.unit2PostScanTimeLeft <= 0) {
+        clearInterval(this.unit2PostScanTimer);
+        this.unit2PostScanTimer = null;
+        if (timerDisplay) timerDisplay.textContent = '00:00 (Time Up!)';
+        if (btn) btn.textContent = 'Time Up';
+        this.submitUnit2PostScan();
+        return;
+      }
+      this.unit2PostScanTimeLeft--;
+      const m = String(Math.floor(this.unit2PostScanTimeLeft / 60)).padStart(2, '0');
+      const s = String(this.unit2PostScanTimeLeft % 60).padStart(2, '0');
+      if (timerDisplay) timerDisplay.textContent = `${m}:${s}`;
+    }, 1000);
+  }
+
+  setUnit2PostScanAnswer(qNum, val) {
+    if (!this.unit2PostScanAnswers) this.unit2PostScanAnswers = {};
+    this.unit2PostScanAnswers[qNum] = val;
+    const btns = document.querySelectorAll(`.u2-postscan-q${qNum}`);
+    btns.forEach(b => {
+      if (b.textContent.trim().startsWith(val) || b.textContent.trim().includes(val)) {
+        b.className = `u2-postscan-q${qNum} p-2 rounded-lg border-2 border-indigo-600 bg-indigo-100 text-indigo-950 text-center font-bold cursor-pointer`;
+      } else {
+        b.className = `u2-postscan-q${qNum} p-2 rounded-lg border border-slate-200 bg-white hover:bg-purple-50 text-center font-medium cursor-pointer`;
+      }
+    });
+  }
+
+  submitUnit2PostScan() {
+    if (this.unit2PostScanTimer) {
+      clearInterval(this.unit2PostScanTimer);
+      this.unit2PostScanTimer = null;
+      const btn = document.getElementById('u2-post-timer-btn');
+      if (btn) btn.textContent = 'Completed';
+    }
+    const key = { 1: '3.25', 2: '45000', 3: 'Nov 15, 2026', 4: 'Room 304', 5: '12' };
+    let score = 0;
+    Object.keys(key).forEach(q => {
+      if (this.unit2PostScanAnswers && this.unit2PostScanAnswers[q] === key[q]) score++;
+    });
+
+    this.unit2PostScanScore = score;
+    localStorage.setItem('bru_unit2_scanning_score', score);
+
+    const resultBox = document.getElementById('u2-postscan-result');
+    if (resultBox) {
+      const pass = score >= 4;
+      resultBox.innerHTML = `
+        <span class="px-3.5 py-1.5 rounded-xl ${pass ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-slate-950'} font-bold">
+          Score: ${score} / 5 (${Math.round((score/5)*100)}%) ${pass ? '🎉 Passed Indicator 3.3 (&ge;70%)' : 'Retake recommended'}
+        </span>
+      `;
+    }
+    this.updateUnit2SummaryDashboard();
+  }
+
+  // 6. Supporting Details & Reading Comprehension Test [U2-6.3.3]
+  submitUnit2Test(qNum, choiceIdx) {
+    if (!this.unit2TestAnswers) this.unit2TestAnswers = {};
+    this.unit2TestAnswers[qNum] = choiceIdx;
+
+    const correctKey = {
+      1: { ans: 0, exp: 'ประโยคแรกคือ Main Idea ที่รวบรวมประโยชน์ทั้งด้านลดแรงงาน ลดต้นทุน และความปลอดภัย' },
+      2: { ans: 1, exp: 'การตรวจจับข้อบกพร่องและโรคพืชคือ Major Supporting Detail ที่สนับสนุนใจความสำคัญโดยตรง' },
+      3: { ans: 0, exp: "'in contrast' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่าง 8 ชม. กับ 25 นาที" },
+      4: { ans: 0, exp: 'ตัวเลขสถิติ 38% และ 25% คือ Minor Supporting Detail ที่ทำหน้าที่เป็นหลักฐานเชิงประจักษ์' },
+      5: { ans: 0, exp: "'Consequently' ชี้บอกผลลัพธ์ (Cause & Effect) คือต้นทุนลดลง 22% และผลผลิตเพิ่ม 17%" },
+      6: { ans: 0, exp: 'ประโยค A รวบยอดทั้งประเด็นหลักและรายละเอียดสนับสนุนครบถ้วนทุกมิติอย่างถูกต้อง' }
+    };
+
+    const target = correctKey[qNum];
+    const fb = document.getElementById(`u2-t${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u2-t${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        if (choiceIdx === target.ans) {
+          b.className = `u2-t${qNum}-btn w-full text-left p-2.5 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 font-bold`;
+        } else {
+          b.className = `u2-t${qNum}-btn w-full text-left p-2.5 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 font-bold`;
+        }
+      } else if (idx === target.ans) {
+        b.className = `u2-t${qNum}-btn w-full text-left p-2.5 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 font-medium`;
+      } else {
+        b.className = `u2-t${qNum}-btn w-full text-left p-2.5 rounded-lg border border-slate-200 bg-white/70 text-slate-500`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      if (choiceIdx === target.ans) {
+        fb.className = 'text-xs font-medium p-2 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block';
+        fb.innerHTML = `<strong>ถูกต้อง! 🎉</strong> ${target.exp}`;
+      } else {
+        fb.className = 'text-xs font-medium p-2 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+        fb.innerHTML = `<strong>ยังไม่ถูกต้อง:</strong> ${target.exp}`;
+      }
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(correctKey).forEach(k => {
+      if (this.unit2TestAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit2TestAnswers[k] === correctKey[k].ans) score++;
+      }
+    });
+
+    const scoreDisplay = document.getElementById('u2-test-score');
+    if (scoreDisplay) scoreDisplay.textContent = `${score} / 6`;
+
+    this.unit2TestScore = score;
+    localStorage.setItem('bru_unit2_test_score', score);
+    localStorage.setItem('bru_unit2_test_answers', JSON.stringify(this.unit2TestAnswers));
+
+    if (answered === 6) {
+      const finalBox = document.getElementById('u2-test-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 4;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านการทดสอบวัดความเข้าใจ Unit 2 (Passed &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70%'}</span>
+          </div>
+          <p class="text-xs">คะแนนทดสอบ: <strong>${score} / 6 (${Math.round((score/6)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit2SummaryDashboard();
+  }
+
+  // 7. Unit 2 Score Dashboard [U2-6.3.4]
+  updateUnit2SummaryDashboard() {
+    const cScore = localStorage.getItem('bru_unit2_challenge_score');
+    const sScore = localStorage.getItem('bru_unit2_scanning_score');
+    const tScore = localStorage.getItem('bru_unit2_test_score');
+
+    const sc1 = document.getElementById('summary-u2-challenge');
+    const bg1 = document.getElementById('badge-u2-challenge');
+    if (sc1 && bg1 && cScore !== null) {
+      const val = parseInt(cScore);
+      sc1.textContent = `${val} / 6`;
+      bg1.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 4 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg1.textContent = val >= 4 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc2 = document.getElementById('summary-u2-scanning');
+    const bg2 = document.getElementById('badge-u2-scanning');
+    if (sc2 && bg2 && sScore !== null) {
+      const val = parseInt(sScore);
+      sc2.textContent = `${val} / 5`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 4 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 4 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc3 = document.getElementById('summary-u2-test');
+    const bg3 = document.getElementById('badge-u2-test');
+    if (sc3 && bg3 && tScore !== null) {
+      const val = parseInt(tScore);
+      sc3.textContent = `${val} / 6`;
+      bg3.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 4 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg3.textContent = val >= 4 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+  }
+
+  /* ------------------- Global Audio TTS Playback ------------------- */
   updateAudioButtonsUI() {
     const audioButtons = document.querySelectorAll('button[onclick*="Passage"], button[onclick*="togglePassageAudio"], button[onclick*="playUnit1Passage"], button[onclick*="playQuizPassageAudio"]');
     audioButtons.forEach(btn => {
