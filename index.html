@@ -20,7 +20,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <!-- Custom Stylesheet -->
-  <link rel="stylesheet" href="css/styles.css?v=20260928-01" />
+  <link rel="stylesheet" href="css/styles.css?v=20261003-02" />
 
   <script>
     tailwind.config = {
@@ -41,7 +41,7 @@
     }
   </script>
 </head>
-<body class="antialiased min-h-screen flex flex-col relative">
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden w-full">
 
   <!-- Snowfall Background Canvas (Active on every page) -->
   <div id="snowfall" class="snowfall-bg"></div>
@@ -191,7 +191,7 @@
   </header>
 
   <!-- Main Content Container (Extra bottom padding for mobile nav bar) -->
-  <main id="main-content" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 pb-24 md:pb-8 z-10">
+  <main id="main-content" class="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-8 pb-24 md:pb-8 z-10 overflow-x-hidden">
     <!-- Rendered dynamically (Login Screen or Main Dashboard/Module Views) -->
   </main>
 
