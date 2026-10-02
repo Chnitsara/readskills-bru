@@ -2835,7 +2835,7 @@ class ReadSkillsApp {
       const btn = document.getElementById('u2-pre-timer-btn');
       if (btn) btn.textContent = 'Completed';
     }
-    const key = { 1: '1200', 2: 'Building 18', 3: '45%', 4: '3.5 million baht' };
+    const key = { 1: '420', 2: 'Lotus Pond Zone', 3: '62%', 4: '8.2 million baht' };
     let score = 0;
     Object.keys(key).forEach(q => {
       if (this.unit2PreScanAnswers && this.unit2PreScanAnswers[q] === key[q]) score++;
@@ -3034,7 +3034,7 @@ class ReadSkillsApp {
       const btn = document.getElementById('u2-post-timer-btn');
       if (btn) btn.textContent = 'Completed';
     }
-    const key = { 1: '3.25', 2: '45000', 3: 'Nov 15, 2026', 4: 'Room 304', 5: '12' };
+    const key = { 1: '2.80', 2: '38000', 3: 'Mar 20, 2027', 4: 'Hall C', 5: '18' };
     let score = 0;
     Object.keys(key).forEach(q => {
       if (this.unit2PostScanAnswers && this.unit2PostScanAnswers[q] === key[q]) score++;
