@@ -66,7 +66,7 @@ class ReadSkillsApp {
     this.unit2ChallengeAnswers = JSON.parse(localStorage.getItem('bru_unit2_challenge_answers') || '{}');
     this.unit2ChallengeScore = localStorage.getItem('bru_unit2_challenge_score') ? parseInt(localStorage.getItem('bru_unit2_challenge_score')) : null;
     this.unit2PostScanTimer = null;
-    this.unit2PostScanTimeLeft = 90;
+    this.unit2PostScanTimeLeft = 180;
     this.unit2PostScanAnswers = {};
     this.unit2PostScanScore = localStorage.getItem('bru_unit2_scanning_score') ? parseInt(localStorage.getItem('bru_unit2_scanning_score')) : null;
     this.unit2TestAnswers = JSON.parse(localStorage.getItem('bru_unit2_test_answers') || '{}');
@@ -3034,7 +3034,11 @@ class ReadSkillsApp {
       const btn = document.getElementById('u2-post-timer-btn');
       if (btn) btn.textContent = 'Completed';
     }
-    const key = { 1: '2.80', 2: '38000', 3: 'Mar 20, 2027', 4: 'Hall C', 5: '18' };
+    const key = {
+      1: '2.80', 2: '38,000 baht', 3: 'Mar 20, 2027', 4: 'Hall C, Ground Floor', 5: '18 judges',
+      6: '14.6 million baht', 7: '3,400 frames', 8: '84%', 9: 'Dr. Nattapong Vichit', 10: 'Phuket Pier 9',
+      11: 'Train No. 908', 12: '160 km/h', 13: '2,450 baht', 14: '30 kg', 15: '21:40 PM'
+    };
     let score = 0;
     Object.keys(key).forEach(q => {
       if (this.unit2PostScanAnswers && this.unit2PostScanAnswers[q] === key[q]) score++;
@@ -3045,28 +3049,47 @@ class ReadSkillsApp {
 
     const resultBox = document.getElementById('u2-postscan-result');
     if (resultBox) {
-      const pass = score >= 4;
+      const pass = score >= 11;
       resultBox.innerHTML = `
-        <span class="px-3.5 py-1.5 rounded-xl ${pass ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-slate-950'} font-bold">
-          Score: ${score} / 5 (${Math.round((score/5)*100)}%) ${pass ? '🎉 Passed Indicator 3.3 (&ge;70%)' : 'Retake recommended'}
+        <span class="px-3.5 py-1.5 rounded-xl ${pass ? 'bg-emerald-500 text-white' : 'bg-amber-400 text-slate-950'} font-bold inline-block">
+          Score: ${score} / 15 (${Math.round((score/15)*100)}%) ${pass ? '🎉 Passed Indicator 3.3 (&ge;70%)' : 'Retake recommended (Pass &ge; 11/15)'}
         </span>
       `;
     }
     this.updateUnit2SummaryDashboard();
   }
 
-  // 6. Supporting Details & Reading Comprehension Test [U2-6.3.3]
+  // 6. Supporting Details & Reading Comprehension Test (25 Questions across 3 Passages) [U2-6.3.3]
   submitUnit2Test(qNum, choiceIdx) {
     if (!this.unit2TestAnswers) this.unit2TestAnswers = {};
     this.unit2TestAnswers[qNum] = choiceIdx;
 
     const correctKey = {
-      1: { ans: 0, exp: 'ใจความสำคัญรวบรวมประเด็นหลักทั้งสอง: วิกฤตผึ้งลดจำนวน + โดรนช่วยแก้ปัญหาการผสมเกสรได้อย่างมีประสิทธิภาพ' },
-      2: { ans: 1, exp: 'ระบบโดรนผสมเกสรขนาดเล็ก (Robotic micro-drone) คือ Major Detail ที่สนับสนุน Main Idea โดยตรง ส่วน 47% และ 6 workers/10 days คือ Minor Details' },
-      3: { ans: 0, exp: "'in contrast' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างการผสมเกสรด้วยมือ (10 วัน) กับโดรน (18 ชั่วโมง)" },
-      4: { ans: 0, exp: 'ตัวเลข 47% คือ Minor Supporting Detail ที่เป็นหลักฐานเชิงประจักษ์สนับสนุน Major Detail เรื่องสารกำจัดศัตรูพืชทำลายผึ้ง ไม่ใช่ Main Idea' },
-      5: { ans: 0, exp: "'Consequently' ชี้บอกผลลัพธ์ (Cause & Effect) คือการใช้โดรนผสมเกสรทำให้ผลผลิตเพิ่ม 31% และลดค่าแรงลง 19%" },
-      6: { ans: 0, exp: 'ประโยค A รวบยอดทั้ง 2 ประเด็นหลักอย่างครบถ้วน: วิกฤตผึ้ง + โดรนเป็นทางออกที่ลดแรงงานและเพิ่มผลผลิต' }
+      1: { ans: 0, exp: 'ประโยค (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร' },
+      2: { ans: 1, exp: "ประโยค (2) ที่ขึ้นต้นด้วย 'First' คือ Major Supporting Detail ที่อธิบายสาเหตุหลักข้อแรกที่ทำให้ประชากรผึ้งลดลง" },
+      3: { ans: 0, exp: 'ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยค (2)' },
+      4: { ans: 0, exp: "วลี 'For instance' ชี้ชัดว่าประโยค (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างรูปธรรมเพื่อขยายความประโยค (4)" },
+      5: { ans: 0, exp: 'คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญ (Sequence / Listing of Major Details)' },
+      6: { ans: 0, exp: "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์" },
+      7: { ans: 0, exp: "'in contrast' ใช้เปรียบเทียบความต่างอย่างชัดเจนระหว่างการผสมเกสรด้วยมือ (6 คน 10 วัน) กับฝูงโดรนอัตโนมัติ (18 ชั่วโมง)" },
+      8: { ans: 0, exp: "'Consequently' (ดังนั้น/ส่งผลให้) เป็นคำเชื่อมบอกเหตุและผล (Cause & Effect) ชี้ผลลัพธ์คืออัตราการติดผลดีขึ้น 31% และลดค่าแรง 19%" },
+      9: { ans: 0, exp: "จากการสแกนประโยคสุดท้ายพบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คือการติดผลดีขึ้น)" },
+      10: { ans: 0, exp: 'ประโยค (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก' },
+      11: { ans: 0, exp: 'ประโยค (2) คือ Major Detail ข้อที่ 1 ที่อธิบายกระบวนการสร้างพลังงานด้วยสังเคราะห์ทางเคมี (chemosynthesis)' },
+      12: { ans: 0, exp: 'เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยค (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยค (4)' },
+      13: { ans: 0, exp: "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Contrast) ระหว่างพืชผิวน้ำที่ใช้แสงอาทิตย์กับจุลินทรีย์ก้นทะเล" },
+      14: { ans: 0, exp: "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน" },
+      15: { ans: 0, exp: 'การระบุชื่อดวงจันทร์ Europa และ Enceladus ในประโยค (7) เป็น Minor Detail ที่ให้ข้อเท็จจริงเฉพาะเจาะจงสนับสนุนประโยค (6)' },
+      16: { ans: 0, exp: "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect)" },
+      17: { ans: 0, exp: "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยค (3) พบคำว่า 'exceeding 350 degrees Celsius'" },
+      18: { ans: 0, exp: 'ประโยค (1) และประโยคสรุป (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค' },
+      19: { ans: 0, exp: 'ประโยค (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues)' },
+      20: { ans: 0, exp: 'สถิติ 28% จากงานวิจัยการตลาดในประโยค (3) เป็น Minor Detail ที่ทำหน้าที่เป็นหลักฐานสนับสนุนประโยค (2)' },
+      21: { ans: 0, exp: "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28%" },
+      22: { ans: 0, exp: "'In contrast' ใช้เชื่อมโยงแบบเปรียบเทียบความตรงกันข้าม (Contrast) ระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย" },
+      23: { ans: 0, exp: "ประโยค (4) บอกคุณสมบัติของสีฟ้า (สาเหตุ) และ 'Consequently' ในประโยค (5) ชี้ผลลัพธ์ที่ธนาคารและคลินิกนำสีฟ้าไปใช้ลดความกังวล" },
+      24: { ans: 0, exp: "'Initially' (ในตอนแรก) และ 'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเวลา (Sequence) ของการปรับแสงไฟในร้านค้า" },
+      25: { ans: 0, exp: 'ตัวเลือก A สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา) ส่วน B และ C เป็นเพียง Minor Details' }
     };
 
     const target = correctKey[qNum];
@@ -3108,24 +3131,24 @@ class ReadSkillsApp {
     });
 
     const scoreDisplay = document.getElementById('u2-test-score');
-    if (scoreDisplay) scoreDisplay.textContent = `${score} / 6`;
+    if (scoreDisplay) scoreDisplay.textContent = `${score} / 25`;
 
     this.unit2TestScore = score;
     localStorage.setItem('bru_unit2_test_score', score);
     localStorage.setItem('bru_unit2_test_answers', JSON.stringify(this.unit2TestAnswers));
 
-    if (answered === 6) {
+    if (answered === 25) {
       const finalBox = document.getElementById('u2-test-final-box');
       if (finalBox) {
         finalBox.classList.remove('hidden');
-        const pass = score >= 4;
+        const pass = score >= 18;
         finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
         finalBox.innerHTML = `
           <div class="text-base font-bold flex items-center justify-center space-x-2">
             <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
-            <span>${pass ? 'ผ่านการทดสอบวัดความเข้าใจ Unit 2 (Passed &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70%'}</span>
+            <span>${pass ? 'ผ่านการทดสอบวัดความเข้าใจ Unit 2 (Passed &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (18/25)'}</span>
           </div>
-          <p class="text-xs">คะแนนทดสอบ: <strong>${score} / 6 (${Math.round((score/6)*100)}%)</strong></p>
+          <p class="text-xs">คะแนนทดสอบ: <strong>${score} / 25 (${Math.round((score/25)*100)}%)</strong></p>
         `;
         if (window.lucide) lucide.createIcons();
       }
@@ -3152,18 +3175,18 @@ class ReadSkillsApp {
     const bg2 = document.getElementById('badge-u2-scanning');
     if (sc2 && bg2 && sScore !== null) {
       const val = parseInt(sScore);
-      sc2.textContent = `${val} / 5`;
-      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 4 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
-      bg2.textContent = val >= 4 ? 'Passed (>=70%)' : 'Needs Retake';
+      sc2.textContent = `${val} / 15`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 11 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 11 ? 'Passed (>=70%)' : 'Needs Retake';
     }
 
     const sc3 = document.getElementById('summary-u2-test');
     const bg3 = document.getElementById('badge-u2-test');
     if (sc3 && bg3 && tScore !== null) {
       const val = parseInt(tScore);
-      sc3.textContent = `${val} / 6`;
-      bg3.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 4 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
-      bg3.textContent = val >= 4 ? 'Passed (>=70%)' : 'Needs Retake';
+      sc3.textContent = `${val} / 25`;
+      bg3.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 18 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg3.textContent = val >= 18 ? 'Passed (>=70%)' : 'Needs Retake';
     }
   }
 
