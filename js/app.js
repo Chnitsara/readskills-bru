@@ -79,6 +79,16 @@ class ReadSkillsApp {
     this.unit3GameScore = localStorage.getItem('bru_unit3_game_score') ? parseInt(localStorage.getItem('bru_unit3_game_score')) : null;
     this.unit3TestAnswers = JSON.parse(localStorage.getItem('bru_unit3_test_answers') || '{}');
     this.unit3TestScore = localStorage.getItem('bru_unit3_test_score') ? parseInt(localStorage.getItem('bru_unit3_test_score')) : null;
+    const savedU3QuizScore = localStorage.getItem('bru_unit3_quiz_score');
+    this.unit3QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedU3QuizScore ? parseInt(savedU3QuizScore) : null
+    };
 
     this.init();
   }
@@ -983,7 +993,7 @@ class ReadSkillsApp {
     const currentStep = this.currentActivityStep;
 
     if (currentStep === 'quiz') {
-      if (this.currentUnitId === 1) {
+      if (this.currentUnitId === 1 || this.currentUnitId === 3) {
         return this.renderQuizStep();
       }
       if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
@@ -1277,15 +1287,95 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Unit 1 Graded Quiz Engine (40 Questions) ------------------- */
+  /* ------------------- Graded Quiz Engine (40 Questions — Unit 1 & Unit 3) ------------------- */
+  getActiveUnitQuizContext() {
+    if (this.currentUnitId === 3) {
+      return {
+        unitId: 3,
+        quizData: ReadSkillsData.unit3Quiz,
+        state: this.unit3QuizState,
+        storageKey: 'bru_unit3_quiz_score',
+        cefrLabel: 'CEFR Target: A2-B1 Level',
+        unitTitle: 'Unit 3 Practice Results (ผลคะแนนแบบทดสอบคำศัพท์และประโยค 40 ข้อ)',
+        unitSub: 'คะแนนแบบทดสอบวัดผลคำศัพท์ในบริบทและความหมายของประโยค Unit 3 (40 ข้อ • Indicator 3.3)',
+        passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์โครงสร้างประโยคซับซ้อนได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
+      };
+    }
+    return {
+      unitId: 1,
+      quizData: ReadSkillsData.unit1Quiz,
+      state: this.unit1QuizState,
+      storageKey: 'bru_unit1_quiz_score',
+      cefrLabel: 'CEFR Target: A1-A2 Level',
+      unitTitle: 'Unit 1 Practice Results (ผลคะแนนแบบฝึกหัด 40 ข้อ)',
+      unitSub: 'คะแนนแบบฝึกหัดพัฒนาทักษะการอ่าน Unit 1 (ใจความสำคัญ 40 ข้อ)',
+      passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถระบุใจความสำคัญ ประโยคหลัก รายละเอียดสนับสนุน และคำศัพท์ได้ถูกต้องแม่นยำตามเกณฑ์ CEFR A2'
+    };
+  }
+
   renderQuizStep() {
-    setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
-    const quizData = ReadSkillsData.unit1Quiz;
+    setTimeout(() => {
+      if (window.lucide) lucide.createIcons();
+      if (this.currentUnitId === 3 && this.updateUnit3SummaryDashboard) {
+        this.updateUnit3SummaryDashboard();
+      }
+    }, 30);
+
+    const ctx = this.getActiveUnitQuizContext();
+    const quizData = ctx.quizData;
     if (!quizData) {
       return '<div class="p-6 text-center text-slate-500">Quiz data not found.</div>';
     }
 
-    const state = this.unit1QuizState;
+    const state = ctx.state;
+
+    // Extra Unit 3 In-Class Cards & Wrap-Up Footer (Syllabus 6.3.1, 6.3.2, 6.3.4)
+    const unit3TopCards = ctx.unitId === 3 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="search" class="w-4 h-4 text-purple-700"></i>
+            <span>In-class activity: Vocabulary Detective [U3-6.3.1]</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยทำใบงาน Vocabulary Detective เพื่อระบุคำศัพท์ใหม่ ชนิดของ Context Clues ความหมาย และใจความหลักของประโยค
+          </p>
+        </div>
+        <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+            <i data-lucide="message-square" class="w-4 h-4 text-indigo-700"></i>
+            <span>In-class activity: Group Discussion [U3-6.3.2]</span>
+          </div>
+          <p class="text-indigo-900 leading-relaxed">
+            <strong>Group Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบและอธิบายวิธีใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายประโยคหน้าชั้นเรียน
+          </p>
+        </div>
+      </div>
+    ` : '';
+
+    const unit3BottomWrapup = ctx.unitId === 3 ? `
+      <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. มองข้ามเครื่องหมายวรรคตอน</strong>
+            <p class="leading-relaxed">ข้ามข้อความในขีดยาว <code>— ... —</code> หรือวงเล็บ <code>( ... )</code> ซึ่งผู้เขียนวางคำนิยามของคำศัพท์ยากไว้ตรงนั้นพอดี</p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. แปลตรงข้ามเมื่อเจอ Antonym</strong>
+            <p class="leading-relaxed">เมื่อเจอคำว่า <em>Unlike</em> หรือ <em>Whereas</em> ต้องกลับขั้วความหมายให้ตรงข้ามกับคำข้างเคียง ไม่ใช่แปลเหมือนกัน</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. หลงในส่วนขยายประโยคยาว</strong>
+            <p class="leading-relaxed">ให้ตัดอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) ออกชั่วคราวเพื่อล็อกหา Core Subject + Main Verb</p>
+          </div>
+        </div>
+      </div>
+    ` : '';
 
     // Completed Screen
     if (state.isCompleted) {
@@ -1301,10 +1391,10 @@ class ReadSkillsApp {
 
           <div class="space-y-2">
             <span class="text-xs font-bold uppercase tracking-wider ${passed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-3 py-1 rounded-full">
-              ${passed ? 'Practice Completed with Excellence! 🎉' : 'Practice Completed! 💪'}
+              ${passed ? 'Assessment Completed with Excellence! 🎉' : 'Assessment Completed! 💪'}
             </span>
-            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">Unit 1 Practice Results (ผลคะแนนแบบฝึกหัด 40 ข้อ)</h3>
-            <p class="text-xs text-slate-600">คะแนนแบบฝึกหัดพัฒนาทักษะการอ่าน Unit 1 (ใจความสำคัญ 40 ข้อ)</p>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">${ctx.unitTitle}</h3>
+            <p class="text-xs text-slate-600">${ctx.unitSub}</p>
           </div>
 
           <!-- Total Score Pill -->
@@ -1312,7 +1402,7 @@ class ReadSkillsApp {
             <div class="text-4xl sm:text-5xl font-black text-purple-900">${totalScore} <span class="text-xl sm:text-2xl text-purple-400">/ 40</span></div>
             <div class="text-sm font-bold text-purple-700 mt-1">${percentage}% Accuracy Score</div>
             <div class="mt-3 text-xs text-slate-600 leading-relaxed">
-              ${passed ? 'ยอดเยี่ยมมากครับ! คุณสามารถระบุใจความสำคัญ ประโยคหลัก รายละเอียดสนับสนุน และคำศัพท์ได้ถูกต้องแม่นยำตามเกณฑ์ CEFR A2' : 'ทำได้ดีครับ! ลองทบทวนข้อที่ตอบผิดและฝึกทำใหม่อีกครั้งเพื่อเสริมสร้างความมั่นใจก่อนไปบทถัดไป'}
+              ${passed ? ctx.passMsg : 'ทำได้ดีครับ! ลองทบทวนข้อที่ตอบผิดและฝึกทำใหม่อีกครั้งเพื่อเสริมสร้างความมั่นใจให้ผ่านเกณฑ์ 70% (28/40)'}
             </div>
           </div>
 
@@ -1327,15 +1417,17 @@ class ReadSkillsApp {
             `).join('')}
           </div>
 
+          ${unit3BottomWrapup}
+
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 border-t border-purple-100">
             <button onclick="app.resetUnit1Quiz()" class="w-full sm:w-auto px-6 py-3 bg-slate-200/90 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-xs cursor-pointer transition flex items-center justify-center space-x-2">
               <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-              <span>Retake Practice (ฝึกทำใหม่อีกครั้ง)</span>
+              <span>Retake Quiz (ฝึกทำใหม่อีกครั้ง)</span>
             </button>
             <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-8 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-md flex items-center justify-center space-x-2">
               <i data-lucide="book-open" class="w-4 h-4"></i>
-              <span>Review Unit 1 Lessons ➔</span>
+              <span>Review Unit ${ctx.unitId} Lessons ➔</span>
             </button>
           </div>
         </div>
@@ -1351,6 +1443,8 @@ class ReadSkillsApp {
 
     return `
       <div class="space-y-6">
+        ${unit3TopCards}
+
         <!-- Top Quiz Header & Progress Tracker -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
           <div>
@@ -1366,7 +1460,7 @@ class ReadSkillsApp {
           <div class="flex items-center space-x-3 self-start sm:self-auto">
             <!-- Running Score Badge -->
             <div class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl text-right">
-              <span class="text-[10px] text-purple-600 block font-semibold">Practice Score</span>
+              <span class="text-[10px] text-purple-600 block font-semibold">Quiz Score</span>
               <span class="text-xs font-bold text-purple-900">${state.passageScores.reduce((a, b) => a + b, 0)} / 40</span>
             </div>
 
@@ -1428,7 +1522,7 @@ class ReadSkillsApp {
             
             <div class="text-[10px] text-slate-400 pt-2 border-t border-slate-800 flex items-center justify-between">
               <span>Reading Length: ~${currentPassage.sentences.join(' ').split(' ').length} words</span>
-              <span>CEFR Target: A1-A2 Level</span>
+              <span>${ctx.cefrLabel}</span>
             </div>
           </div>
 
@@ -1481,7 +1575,7 @@ class ReadSkillsApp {
                 </div>
                 ${answeredState ? `
                   <button onclick="app.nextQuizQuestion()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
-                    <span>${qGlobalNumber === 40 ? 'Finish Practice & View Score 🏆' : (state.questionIndex === 9 ? 'Next Passage ➔' : 'Next Question ➔')}</span>
+                    <span>${qGlobalNumber === 40 ? 'Finish Quiz & View Score 🏆' : (state.questionIndex === 9 ? 'Next Passage ➔' : 'Next Question ➔')}</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                   </button>
                 ` : ''}
@@ -1491,6 +1585,8 @@ class ReadSkillsApp {
           </div>
 
         </div>
+
+        ${unit3BottomWrapup}
       </div>
     `;
   }
@@ -1598,12 +1694,12 @@ class ReadSkillsApp {
   }
 
   answerQuizMC(choiceIndex) {
-    const state = this.unit1QuizState;
+    const ctx = this.getActiveUnitQuizContext();
+    const state = ctx.state;
     const answerKey = `${state.passageIndex}-${state.questionIndex}`;
     if (state.answers[answerKey]) return;
 
-    const quizData = ReadSkillsData.unit1Quiz;
-    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const currentQ = ctx.quizData.passages[state.passageIndex].questions[state.questionIndex];
     const isCorrect = choiceIndex === currentQ.correctAnswer;
 
     state.answers[answerKey] = { selected: choiceIndex, isCorrect };
@@ -1614,12 +1710,12 @@ class ReadSkillsApp {
   }
 
   answerQuizHighlight(sentIndex) {
-    const state = this.unit1QuizState;
+    const ctx = this.getActiveUnitQuizContext();
+    const state = ctx.state;
     const answerKey = `${state.passageIndex}-${state.questionIndex}`;
     if (state.answers[answerKey]) return;
 
-    const quizData = ReadSkillsData.unit1Quiz;
-    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const currentQ = ctx.quizData.passages[state.passageIndex].questions[state.questionIndex];
     const isCorrect = sentIndex === currentQ.targetSentenceIndex;
 
     state.answers[answerKey] = { selected: sentIndex, isCorrect };
@@ -1630,12 +1726,12 @@ class ReadSkillsApp {
   }
 
   answerQuizFillBlank(word) {
-    const state = this.unit1QuizState;
+    const ctx = this.getActiveUnitQuizContext();
+    const state = ctx.state;
     const answerKey = `${state.passageIndex}-${state.questionIndex}`;
     if (state.answers[answerKey]) return;
 
-    const quizData = ReadSkillsData.unit1Quiz;
-    const currentQ = quizData.passages[state.passageIndex].questions[state.questionIndex];
+    const currentQ = ctx.quizData.passages[state.passageIndex].questions[state.questionIndex];
     const isCorrect = word.trim().toLowerCase() === currentQ.correctWord.trim().toLowerCase();
 
     state.answers[answerKey] = { selected: word, isCorrect };
@@ -1646,7 +1742,8 @@ class ReadSkillsApp {
   }
 
   nextQuizQuestion() {
-    const state = this.unit1QuizState;
+    const ctx = this.getActiveUnitQuizContext();
+    const state = ctx.state;
     if (state.questionIndex < 9) {
       state.questionIndex++;
     } else {
@@ -1656,7 +1753,10 @@ class ReadSkillsApp {
       } else {
         state.isCompleted = true;
         const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
-        localStorage.setItem('bru_unit1_quiz_score', totalScore);
+        localStorage.setItem(ctx.storageKey, totalScore);
+        if (ctx.unitId === 3) {
+          localStorage.setItem('bru_unit3_test_score', totalScore);
+        }
         state.lastScore = totalScore;
       }
     }
@@ -1664,20 +1764,27 @@ class ReadSkillsApp {
   }
 
   resetUnit1Quiz() {
-    this.unit1QuizState = {
+    const ctx = this.getActiveUnitQuizContext();
+    const freshState = {
       passageIndex: 0,
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
       currentFeedback: null,
       isCompleted: false,
-      lastScore: localStorage.getItem('bru_unit1_quiz_score') ? parseInt(localStorage.getItem('bru_unit1_quiz_score')) : null
+      lastScore: localStorage.getItem(ctx.storageKey) ? parseInt(localStorage.getItem(ctx.storageKey)) : null
     };
+    if (ctx.unitId === 3) {
+      this.unit3QuizState = freshState;
+    } else {
+      this.unit1QuizState = freshState;
+    }
     this.navigate(this.currentView);
   }
 
   playQuizPassageAudio(pIndex) {
-    const quizData = ReadSkillsData.unit1Quiz;
+    const ctx = this.getActiveUnitQuizContext();
+    const quizData = ctx.quizData;
     if (!quizData || !quizData.passages[pIndex]) return;
     const passage = quizData.passages[pIndex];
     this.togglePassageAudio(encodeURIComponent(passage.audioText));
@@ -3091,31 +3198,31 @@ class ReadSkillsApp {
     this.unit2TestAnswers[qNum] = choiceIdx;
 
     const correctKey = {
-      1: { ans: 0, exp: 'ประโยค (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร' },
+      1: { ans: 1, exp: 'ประโยค (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร' },
       2: { ans: 1, exp: "ประโยค (2) ที่ขึ้นต้นด้วย 'First' คือ Major Supporting Detail ที่อธิบายสาเหตุหลักข้อแรกที่ทำให้ประชากรผึ้งลดลง" },
-      3: { ans: 0, exp: 'ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยค (2)' },
+      3: { ans: 2, exp: 'ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยค (2)' },
       4: { ans: 0, exp: "วลี 'For instance' ชี้ชัดว่าประโยค (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างรูปธรรมเพื่อขยายความประโยค (4)" },
-      5: { ans: 0, exp: 'คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญ (Sequence / Listing of Major Details)' },
-      6: { ans: 0, exp: "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์" },
-      7: { ans: 0, exp: "'in contrast' ใช้เปรียบเทียบความต่างอย่างชัดเจนระหว่างการผสมเกสรด้วยมือ (6 คน 10 วัน) กับฝูงโดรนอัตโนมัติ (18 ชั่วโมง)" },
+      5: { ans: 2, exp: 'คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญ (Sequence / Listing of Major Details)' },
+      6: { ans: 1, exp: "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์" },
+      7: { ans: 2, exp: "'in contrast' ใช้เปรียบเทียบความต่างอย่างชัดเจนระหว่างการผสมเกสรด้วยมือ (6 คน 10 วัน) กับฝูงโดรนอัตโนมัติ (18 ชั่วโมง)" },
       8: { ans: 0, exp: "'Consequently' (ดังนั้น/ส่งผลให้) เป็นคำเชื่อมบอกเหตุและผล (Cause & Effect) ชี้ผลลัพธ์คืออัตราการติดผลดีขึ้น 31% และลดค่าแรง 19%" },
-      9: { ans: 0, exp: "จากการสแกนประโยคสุดท้ายพบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คือการติดผลดีขึ้น)" },
-      10: { ans: 0, exp: 'ประโยค (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก' },
+      9: { ans: 1, exp: "จากการสแกนประโยคสุดท้ายพบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คือการติดผลดีขึ้น)" },
+      10: { ans: 2, exp: 'ประโยค (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก' },
       11: { ans: 0, exp: 'ประโยค (2) คือ Major Detail ข้อที่ 1 ที่อธิบายกระบวนการสร้างพลังงานด้วยสังเคราะห์ทางเคมี (chemosynthesis)' },
-      12: { ans: 0, exp: 'เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยค (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยค (4)' },
-      13: { ans: 0, exp: "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Contrast) ระหว่างพืชผิวน้ำที่ใช้แสงอาทิตย์กับจุลินทรีย์ก้นทะเล" },
-      14: { ans: 0, exp: "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน" },
+      12: { ans: 1, exp: 'เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยค (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยค (4)' },
+      13: { ans: 2, exp: "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Contrast) ระหว่างพืชผิวน้ำที่ใช้แสงอาทิตย์กับจุลินทรีย์ก้นทะเล" },
+      14: { ans: 1, exp: "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน" },
       15: { ans: 0, exp: 'การระบุชื่อดวงจันทร์ Europa และ Enceladus ในประโยค (7) เป็น Minor Detail ที่ให้ข้อเท็จจริงเฉพาะเจาะจงสนับสนุนประโยค (6)' },
-      16: { ans: 0, exp: "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect)" },
-      17: { ans: 0, exp: "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยค (3) พบคำว่า 'exceeding 350 degrees Celsius'" },
-      18: { ans: 0, exp: 'ประโยค (1) และประโยคสรุป (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค' },
-      19: { ans: 0, exp: 'ประโยค (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues)' },
+      16: { ans: 2, exp: "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect)" },
+      17: { ans: 1, exp: "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยค (3) พบคำว่า 'exceeding 350 degrees Celsius'" },
+      18: { ans: 1, exp: 'ประโยค (1) และประโยคสรุป (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค' },
+      19: { ans: 2, exp: 'ประโยค (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues)' },
       20: { ans: 0, exp: 'สถิติ 28% จากงานวิจัยการตลาดในประโยค (3) เป็น Minor Detail ที่ทำหน้าที่เป็นหลักฐานสนับสนุนประโยค (2)' },
-      21: { ans: 0, exp: "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28%" },
-      22: { ans: 0, exp: "'In contrast' ใช้เชื่อมโยงแบบเปรียบเทียบความตรงกันข้าม (Contrast) ระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย" },
+      21: { ans: 1, exp: "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28%" },
+      22: { ans: 2, exp: "'In contrast' ใช้เชื่อมโยงแบบเปรียบเทียบความตรงกันข้าม (Contrast) ระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย" },
       23: { ans: 0, exp: "ประโยค (4) บอกคุณสมบัติของสีฟ้า (สาเหตุ) และ 'Consequently' ในประโยค (5) ชี้ผลลัพธ์ที่ธนาคารและคลินิกนำสีฟ้าไปใช้ลดความกังวล" },
-      24: { ans: 0, exp: "'Initially' (ในตอนแรก) และ 'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเวลา (Sequence) ของการปรับแสงไฟในร้านค้า" },
-      25: { ans: 0, exp: 'ตัวเลือก A สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา) ส่วน B และ C เป็นเพียง Minor Details' }
+      24: { ans: 1, exp: "'Initially' (ในตอนแรก) และ 'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเวลา (Sequence) ของการปรับแสงไฟในร้านค้า" },
+      25: { ans: 2, exp: 'ตัวเลือก C สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา)' }
     };
 
     const target = correctKey[qNum];
@@ -3329,14 +3436,14 @@ class ReadSkillsApp {
     this.unit3GameAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 0, exp: "วลีขยาย 'cleverly reading subtle wave patterns...' ชี้ว่า astute หมายถึง ฉลาดหลักแหลมและช่างสังเกต" },
-      2: { ans: 1, exp: "Definition Clue หลังขีดยาว '—a period of suspended growth and biological inactivity—' แปลตรงตัวว่า ภาวะพักตัวหรือหยุดการเจริญเติบโตชั่วคราว" },
-      3: { ans: 0, exp: "จากคำตรงข้าม 'Unlike synthetic plastics' และคำอธิบาย 'decomposes naturally within months' ชี้ว่า biodegradable แปลว่า ย่อยสลายได้เองตามธรรมชาติ" },
-      4: { ans: 0, exp: "เบาะแสแผ่นดินไหวหลายพันครั้งและควันกำมะถันพวยพุ่งออกจากปากปล่อง ชี้ว่าการปะทุนั้น imminent = กำลังจะเกิดขึ้นในอีกไม่ช้า" },
-      5: { ans: 0, exp: "Synonym Clue หลังคำว่า ', or thrifty and economical use...' แปลว่า ประหยัด มัธยัสถ์ และไม่ทิ้งขว้าง" },
-      6: { ans: 0, exp: "น้ำมันหอมระเหยในสมุนไพรช่วย inhibit การเน่าเสียของอาหารจากแบคทีเรีย จึงหมายถึง ยับยั้งหรือชะลอ" },
-      7: { ans: 0, exp: "ตัดวลี Despite... ข้างหน้าออก จะพบ Core Subject คือ 'the solar-powered catamaran' และ Main Verb คือ 'completed'" },
-      8: { ans: 0, exp: "ประธานหลักคือ 'Public botanical gardens' กริยาหลักคือ 'educate' (ส่วน which preserve... เป็นอนุประโยคขยาย) ใจความหลักจึงตรงกับข้อ A" }
+      1: { ans: 2, exp: "วลีขยาย 'cleverly reading subtle wave patterns...' ชี้ว่า astute หมายถึง ฉลาดหลักแหลมและช่างสังเกต (ข้อ C)" },
+      2: { ans: 1, exp: "Definition Clue หลังขีดยาว '—a period of suspended growth and biological inactivity—' แปลตรงตัวว่า ภาวะพักตัวชั่วคราว (ข้อ B)" },
+      3: { ans: 0, exp: "จากคำตรงข้าม 'Unlike synthetic plastics' และคำอธิบาย 'decomposes naturally within months' ชี้ว่า biodegradable แปลว่า ย่อยสลายได้ตามธรรมชาติ (ข้อ A)" },
+      4: { ans: 2, exp: "เบาะแสแผ่นดินไหวหลายพันครั้งและควันกำมะถันพวยพุ่งออกจากปากปล่อง ชี้ว่าการปะทุนั้น imminent = กำลังจะเกิดขึ้นในอีกไม่ช้า (ข้อ C)" },
+      5: { ans: 1, exp: "Synonym Clue หลังคำว่า ', or thrifty and economical use...' แปลว่า ประหยัด มัธยัสถ์ และไม่ทิ้งขว้าง (ข้อ B)" },
+      6: { ans: 2, exp: "น้ำมันหอมระเหยในสมุนไพรช่วย inhibit การเน่าเสียของอาหารจากแบคทีเรีย จึงหมายถึง ยับยั้งหรือชะลอ (ข้อ C)" },
+      7: { ans: 1, exp: "ตัดวลี Despite... ข้างหน้าออก จะพบ Core Subject คือ 'the solar-powered catamaran' และ Main Verb คือ 'completed' (ข้อ B)" },
+      8: { ans: 2, exp: "ประธานหลักคือ 'Public botanical gardens' กริยาหลักคือ 'educate' ใจความหลักจึงตรงกับข้อ C" }
     };
 
     const target = key[qNum];
