@@ -529,35 +529,36 @@ class ReadSkillsApp {
   renderDashboard() {
     return `
       <div class="space-y-6 sm:space-y-8">
-        <!-- Welcome Hero -->
-        <div class="glass-card p-5 sm:p-8 bg-gradient-to-r from-purple-800 via-purple-700 to-pink-600 text-white rounded-2xl sm:rounded-3xl relative overflow-hidden shadow-xl">
-          <div class="relative z-10 max-w-2xl">
-            <span class="inline-block bg-white/20 backdrop-blur-md text-[10px] sm:text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 sm:mb-3">
-              Course 2031103: Introduction to English Reading Strategies &bull; BRU
-            </span>
-            <h1 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2">
-              Welcome, ${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || 'Somsak Jaidee'}
-            </h1>
-            <p class="text-purple-100 text-xs sm:text-base leading-relaxed mb-5 sm:mb-6">
-              A web-based learning application designed for English major students at Buriram Rajabhat University. Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
-              <button onclick="app.navigate('lessons')" class="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-purple-900 font-bold rounded-xl hover:bg-purple-50 shadow-md transition flex items-center justify-center space-x-2 text-xs sm:text-sm cursor-pointer">
-                <i data-lucide="play-circle" class="w-4 h-4 sm:w-5 sm:h-5 text-purple-700"></i>
-                <span>Continue Lesson (Unit ${this.currentUnitId})</span>
-              </button>
-              <button onclick="app.navigate('strategies')" class="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-purple-900/60 hover:bg-purple-900 text-white font-semibold rounded-xl backdrop-blur-md transition flex items-center justify-center space-x-2 text-xs sm:text-sm border border-purple-300/30 cursor-pointer">
-                <i data-lucide="lightbulb" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-300"></i>
-                <span>Explore Strategies</span>
-              </button>
+        <!-- Welcome Hero (Playful Neo-Brutalist Banner) -->
+        <div class="nb-hero relative overflow-hidden p-5 sm:p-8">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+            <div class="max-w-2xl">
+              <span class="nb-chip nb-chip-yellow mb-3 inline-flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
+              </span>
+              <h1 class="nb-display text-3xl sm:text-5xl leading-none mb-3 text-slate-900">
+                Hello, <span class="text-[#8B5CF6]">${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim().split(' ')[0] || 'Somsak'}</span> <span class="nb-wave inline-block">👋</span>
+              </h1>
+              <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
+                Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+                <button onclick="app.navigate('lessons')" class="nb-btn nb-btn-purple">
+                  <i data-lucide="play-circle" class="w-4 h-4"></i>
+                  <span>Continue Lesson (Unit ${this.currentUnitId})</span>
+                </button>
+                <button onclick="app.navigate('strategies')" class="nb-btn nb-btn-white">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>Explore Strategies</span>
+                </button>
+              </div>
+            </div>
+            <div class="text-right shrink-0 hidden sm:block">
+              <div class="nb-display text-6xl sm:text-7xl leading-none text-slate-900">6</div>
+              <div class="text-[11px] font-bold text-slate-700">Reading Units</div>
             </div>
           </div>
-
-          <!-- Decorative Icon -->
-          <div class="absolute -right-8 -bottom-8 opacity-10 pointer-events-none">
-            <i data-lucide="graduation-cap" class="w-80 h-80 text-white"></i>
-          </div>
+          <div class="nb-sticker absolute -right-2 -bottom-3 sm:right-24 sm:bottom-auto sm:top-4 text-4xl select-none pointer-events-none">📚</div>
         </div>
 
         <!-- 4 Core Navigation Cards matching Blueprint -->

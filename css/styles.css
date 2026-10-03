@@ -376,3 +376,313 @@ html, body {
 }
 
 
+
+/* ==========================================================================
+   PLAYFUL NEO-BRUTALIST THEME LAYER
+   Simple + playful: ink borders, hard offset shadows, mint & lavender pastels.
+   Applied globally on top of existing Tailwind classes.
+   ========================================================================== */
+
+:root {
+  --nb-ink: #111111;
+  --nb-mint: #CDEBE8;
+  --nb-lavender: #F1E6FA;
+  --nb-grid: rgba(139, 92, 246, 0.10);
+  --nb-purple: #8B5CF6;
+  --nb-purple-soft: #E4D7FB;
+  --nb-yellow: #FDE68A;
+  --nb-pink: #FBCFE8;
+  --nb-shadow: 4px 4px 0 var(--nb-ink);
+  --nb-shadow-sm: 2px 2px 0 var(--nb-ink);
+  --nb-shadow-lg: 6px 6px 0 var(--nb-ink);
+  --nb-radius: 14px;
+}
+
+/* ---------- Base: lavender graph-paper background ---------- */
+html, body {
+  background-color: var(--nb-lavender) !important;
+  background-image:
+    linear-gradient(var(--nb-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--nb-grid) 1px, transparent 1px);
+  background-size: 24px 24px;
+  font-family: 'Space Grotesk', 'Prompt', sans-serif;
+}
+
+h1, h2, h3, .nb-display {
+  font-family: 'Space Grotesk', 'Prompt', sans-serif;
+  letter-spacing: -0.02em;
+}
+.nb-display { font-weight: 700; }
+
+/* Snow doesn't fit the flat look */
+.snowfall-bg { display: none !important; }
+
+/* ---------- Header / Footer / Mobile nav: mint bars with ink rule ---------- */
+#app-header {
+  background: var(--nb-mint) !important;
+  backdrop-filter: none !important;
+  border-bottom: 2.5px solid var(--nb-ink) !important;
+  box-shadow: none !important;
+}
+#app-header > div > div { height: 4rem !important; }
+
+#app-header .bg-gradient-to-tr {
+  background: var(--nb-purple) !important;
+  border: 2px solid var(--nb-ink);
+  box-shadow: var(--nb-shadow-sm) !important;
+}
+
+.nav-btn {
+  border: 2px solid transparent;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  padding: 0.4rem 0.8rem !important;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease !important;
+}
+.nav-btn:hover {
+  background: #fff !important;
+  border-color: var(--nb-ink);
+  box-shadow: var(--nb-shadow-sm);
+}
+.nav-btn.bg-white {
+  background: #fff !important;
+  border-color: var(--nb-ink) !important;
+  box-shadow: var(--nb-shadow-sm);
+  color: var(--nb-ink) !important;
+}
+
+#user-profile-btn:hover { background: rgba(255,255,255,.6) !important; }
+
+#app-footer {
+  background: var(--nb-mint) !important;
+  border-top: 2.5px solid var(--nb-ink) !important;
+  backdrop-filter: none !important;
+}
+
+#mobile-bottom-nav {
+  background: var(--nb-mint) !important;
+  border-top: 2.5px solid var(--nb-ink) !important;
+  backdrop-filter: none !important;
+}
+.m-nav-btn.text-purple-900 > div {
+  background: #fff;
+  border: 2px solid var(--nb-ink);
+  box-shadow: var(--nb-shadow-sm);
+}
+
+/* ---------- Cards ---------- */
+.glass-card,
+.login-card-container,
+#feedback-modal > div,
+#user-dropdown-menu {
+  background: #fff !important;
+  backdrop-filter: none !important;
+  border: 2.5px solid var(--nb-ink) !important;
+  border-radius: var(--nb-radius) !important;
+  box-shadow: var(--nb-shadow) !important;
+}
+.glass-card {
+  transition: transform .15s ease, box-shadow .15s ease !important;
+}
+.glass-card:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: var(--nb-shadow-lg) !important;
+}
+/* Cards that hold quizzes / long content shouldn't jump */
+.glass-card.min-h-\[300px\]:hover,
+.glass-card:has(input):hover,
+.glass-card:has(canvas):hover {
+  transform: none !important;
+  box-shadow: var(--nb-shadow) !important;
+}
+
+/* Colored top-stripe cards keep their accent as a thick top bar */
+.glass-card.border-t-4 { border-top-width: 8px !important; }
+.glass-card.border-purple-700 { border-top-color: var(--nb-purple) !important; }
+.glass-card.border-pink-500 { border-top-color: #F472B6 !important; }
+.glass-card.border-amber-500 { border-top-color: #FBBF24 !important; }
+.glass-card.border-emerald-600 { border-top-color: #34D399 !important; }
+
+/* Gradient banners inside lessons become flat pastel */
+.glass-card[class*="bg-gradient-to"] {
+  background: var(--nb-purple-soft) !important;
+}
+
+/* ---------- Hero banner ---------- */
+.nb-hero {
+  background: var(--nb-mint);
+  border: 2.5px solid var(--nb-ink);
+  border-radius: 18px;
+  box-shadow: var(--nb-shadow-lg);
+}
+.nb-sticker { display: none; transform: rotate(-12deg); animation: nb-bob 3s ease-in-out infinite; }
+@media (min-width: 640px) { .nb-sticker { display: block; } }
+.nb-wave { transform-origin: 70% 70%; animation: nb-wave 2.4s ease-in-out infinite; }
+
+@keyframes nb-bob {
+  0%, 100% { transform: rotate(-12deg) translateY(0); }
+  50% { transform: rotate(-6deg) translateY(-6px); }
+}
+@keyframes nb-wave {
+  0%, 60%, 100% { transform: rotate(0); }
+  10%, 30% { transform: rotate(16deg); }
+  20%, 40% { transform: rotate(-8deg); }
+}
+
+/* ---------- Chips / pills ---------- */
+.nb-chip {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border: 2px solid var(--nb-ink);
+  border-radius: 999px;
+  box-shadow: var(--nb-shadow-sm);
+  background: #fff;
+  color: var(--nb-ink);
+  transform: rotate(-2deg);
+}
+.nb-chip-yellow { background: var(--nb-yellow); }
+
+/* Existing small rounded-full badges get an ink outline */
+span.rounded-full[class*="bg-"]:not([class*="h-2"]):not([class*="w-2"]):not([class*="w-1"]):not([class*="h-1"]) {
+  border: 1.5px solid var(--nb-ink);
+}
+
+/* ---------- Buttons ---------- */
+.nb-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .7rem 1.2rem;
+  font-size: .8rem; font-weight: 700;
+  border: 2.5px solid var(--nb-ink);
+  border-radius: 12px;
+  box-shadow: var(--nb-shadow);
+  cursor: pointer;
+  transition: transform .1s ease, box-shadow .1s ease;
+}
+.nb-btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--nb-ink); }
+.nb-btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--nb-ink); }
+.nb-btn-purple { background: var(--nb-purple); color: #fff; }
+.nb-btn-white { background: #fff; color: var(--nb-ink); }
+
+/* Solid filled buttons across the app -> ink border + hard shadow */
+button[class*="bg-purple-6"],
+button[class*="bg-purple-7"],
+button[class*="bg-purple-8"],
+button[class*="bg-slate-9"],
+button[class*="bg-emerald-6"],
+button[class*="bg-pink-5"],
+button[class*="bg-pink-6"],
+button[class*="bg-amber-5"],
+button[class*="bg-rose-6"],
+.btn-purple-primary,
+.auth-tab-active,
+.stage-tab-active {
+  border: 2px solid var(--nb-ink) !important;
+  box-shadow: var(--nb-shadow-sm) !important;
+  transition: transform .1s ease, box-shadow .1s ease !important;
+}
+button[class*="bg-purple-6"]:not(:disabled):hover,
+button[class*="bg-purple-7"]:not(:disabled):hover,
+button[class*="bg-slate-9"]:not(:disabled):hover,
+.btn-purple-primary:hover {
+  transform: translate(-1px, -1px) !important;
+  box-shadow: 4px 4px 0 var(--nb-ink) !important;
+}
+button:not(:disabled):active { transform: translate(2px, 2px) !important; box-shadow: none !important; }
+
+button[class*="bg-purple-6"], button[class*="bg-purple-7"], .btn-purple-primary,
+.auth-tab-active, .stage-tab-active {
+  background-color: var(--nb-purple) !important;
+}
+
+/* Outlined option buttons (quiz choices, tabs) */
+button.border[class*="border-purple-"],
+button.border[class*="border-slate-"] {
+  border-width: 2px !important;
+  border-color: var(--nb-ink) !important;
+}
+button.border[class*="border-purple-"]:not(:disabled):hover {
+  box-shadow: var(--nb-shadow-sm);
+  transform: translate(-1px, -1px);
+}
+/* Keep correct/wrong feedback colors visible */
+button[class*="border-emerald-"] { border-color: #059669 !important; border-width: 2px !important; }
+button[class*="border-rose-"] { border-color: #e11d48 !important; border-width: 2px !important; }
+
+.stage-tab-inactive, .auth-tab-inactive {
+  background: #fff !important;
+  border: 2px solid var(--nb-ink);
+}
+
+/* ---------- Inputs ---------- */
+.input-lavender,
+input[type="text"], input[type="email"], input[type="password"], select, textarea {
+  background: #fff !important;
+  border: 2px solid var(--nb-ink) !important;
+  border-radius: 10px !important;
+}
+.input-lavender:focus, input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  box-shadow: var(--nb-shadow-sm) !important;
+}
+
+/* ---------- Login ---------- */
+.login-screen-bg { background: transparent !important; }
+.login-card-container { box-shadow: var(--nb-shadow-lg) !important; }
+.login-card-container > div:first-child {
+  background: var(--nb-purple) !important;
+  border: 2px solid var(--nb-ink);
+  box-shadow: var(--nb-shadow-sm) !important;
+}
+
+/* ---------- Progress bars ---------- */
+div.rounded-full.overflow-hidden[class*="bg-slate-2"],
+div.rounded-full.overflow-hidden[class*="bg-purple-1"] {
+  background: #fff !important;
+  border: 2px solid var(--nb-ink);
+}
+div.rounded-full[class*="bg-gradient-to-r"] {
+  background: var(--nb-purple) !important;
+}
+
+/* ---------- Icon tiles: little ink-outlined squares ---------- */
+.glass-card div.rounded-xl[class*="bg-purple-100"],
+.glass-card div.rounded-xl[class*="bg-pink-100"],
+.glass-card div.rounded-xl[class*="bg-amber-100"],
+.glass-card div.rounded-xl[class*="bg-emerald-100"] {
+  border: 2px solid var(--nb-ink) !important;
+  box-shadow: var(--nb-shadow-sm);
+  transition: transform .2s ease;
+}
+.glass-card:hover div.rounded-xl[class*="bg-purple-100"],
+.glass-card:hover div.rounded-xl[class*="bg-pink-100"],
+.glass-card:hover div.rounded-xl[class*="bg-amber-100"],
+.glass-card:hover div.rounded-xl[class*="bg-emerald-100"] {
+  transform: rotate(-6deg) scale(1.05);
+}
+
+/* ---------- Dark passage boxes ---------- */
+div[class*="bg-slate-900"], div[class*="bg-purple-950"] {
+  border: 2.5px solid var(--nb-ink) !important;
+  box-shadow: var(--nb-shadow) !important;
+}
+
+/* ---------- Scrollbar ---------- */
+::-webkit-scrollbar-track { background: var(--nb-lavender); }
+::-webkit-scrollbar-thumb { background: var(--nb-purple); border: 2px solid var(--nb-ink); border-radius: 8px; }
+
+@media (max-width: 640px) {
+  :root { --nb-shadow: 3px 3px 0 var(--nb-ink); --nb-shadow-lg: 4px 4px 0 var(--nb-ink); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nb-sticker, .nb-wave { animation: none; }
+}
+
+/* Header nav: keep labels on one line */
+.nav-btn, .nav-btn span { white-space: nowrap; }
+@media (max-width: 1439px) {
+  #app-header p[class*="sm:block"] { display: none !important; }
+  .nav-btn { padding: .35rem .6rem !important; font-size: .74rem !important; }
+}
