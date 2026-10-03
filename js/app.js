@@ -72,6 +72,14 @@ class ReadSkillsApp {
     this.unit2TestAnswers = JSON.parse(localStorage.getItem('bru_unit2_test_answers') || '{}');
     this.unit2TestScore = localStorage.getItem('bru_unit2_test_score') ? parseInt(localStorage.getItem('bru_unit2_test_score')) : null;
 
+    // Unit 3 State (Vocabulary in Context & Sentence Meaning)
+    this.unit3PreGameAnswers = {};
+    this.unit3Highlights = {};
+    this.unit3GameAnswers = JSON.parse(localStorage.getItem('bru_unit3_game_answers') || '{}');
+    this.unit3GameScore = localStorage.getItem('bru_unit3_game_score') ? parseInt(localStorage.getItem('bru_unit3_game_score')) : null;
+    this.unit3TestAnswers = JSON.parse(localStorage.getItem('bru_unit3_test_answers') || '{}');
+    this.unit3TestScore = localStorage.getItem('bru_unit3_test_score') ? parseInt(localStorage.getItem('bru_unit3_test_score')) : null;
+
     this.init();
   }
 
@@ -726,6 +734,23 @@ class ReadSkillsApp {
           { key: 'quiz', num: 1, label: 'Post-Reading Assessment', sub: 'Timed Scan & Test [6.3.3-6.3.4]' }
         ];
       }
+    } else if (this.currentUnitId === 3) {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & ทายศัพท์ [6.1.1-6.1.2]' },
+          { key: 'learn', num: 2, label: '5 Clues & Mini-Game', sub: 'บริบท 5 แบบ & เกม [6.1.3-6.1.5]' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิตบริบท & โครงสร้างประโยค [6.2.1]' },
+          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี [6.2.2]' },
+          { key: 'practice', num: 3, label: 'Context Clue Game', sub: 'เกมเก็บคะแนน (70%) [6.2.3-6.2.5]' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Vocabulary Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบท 40 ข้อ [6.3.3-6.3.4]' }
+        ];
+      }
     } else {
       if (stage === 'preReading') {
         steps = [
@@ -965,6 +990,7 @@ class ReadSkillsApp {
         setTimeout(() => {
           if (window.lucide) lucide.createIcons();
           this.updateUnit2SummaryDashboard();
+          if (this.updateUnit3SummaryDashboard) this.updateUnit3SummaryDashboard();
         }, 30);
         return s.quiz;
       }
@@ -3187,6 +3213,319 @@ class ReadSkillsApp {
       sc3.textContent = `${val} / 25`;
       bg3.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 18 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
       bg3.textContent = val >= 18 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+  }
+
+  /* ------------------- Unit 3 Interactive Methods (Vocabulary in Context & Sentence Meaning) ------------------- */
+
+  // 1. Warm-Up Detective Guessing [U3-6.1.2]
+  checkUnit3Warmup(selectedNum) {
+    const fb = document.getElementById('u3-warmup-feedback');
+    if (!fb) return;
+    fb.classList.remove('hidden');
+    if (selectedNum === 2) {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉 (Active at night):</strong> เบาะแสสำคัญคือ 1) ตัวอย่างในเครื่องหมายขีดยาว <em>"—such as owls, bats, and night monkeys—"</em> และ 2) คำอธิบายเหตุผลข้างหลังว่า <em>"sleep all day and only emerge to hunt after sunset"</em>';
+    } else {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300';
+      fb.innerHTML = '<strong>ลองสังเกตบริบทอีกครั้ง:</strong> ดูตัวอย่างสัตว์หลังคำว่า <em>such as (นกฮูก ค้างคาว)</em> และวลีท้ายประโยค <em>"sleep all day and only emerge to hunt after sunset"</em> คำว่า <strong>nocturnal</strong> จึงหมายถึง ออกหากินเวลากลางคืน (ข้อ B)';
+    }
+  }
+
+  // 2. Pre-Reading Short Context Clue Mini-Game (5 Items) [U3-6.1.4]
+  submitUnit3PreGame(qNum, choiceIdx) {
+    if (!this.unit3PreGameAnswers) this.unit3PreGameAnswers = {};
+    this.unit3PreGameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 0, exp: "คำนิยามหลังคอมมา ', which bloom for only a few days before withering away' ชี้ว่า ephemeral แปลว่า อายุสั้น/บานเพียงไม่กี่วัน" },
+      2: { ans: 1, exp: "เครื่องหมายขีดคู่ (— ... —) พร้อมคำว่า 'such as carrots, radishes...' คือ Example Clue" },
+      3: { ans: 0, exp: "คำเชื่อม 'Whereas' เปรียบเทียบความตรงข้ามกับ 'violent and dangerous' ดังนั้น tranquil จึงแปลว่า สงบนิ่ง" },
+      4: { ans: 1, exp: "วลี ', or extremely careful and precise,' เป็น Synonym Clue ที่แปลคำว่า meticulous ไว้ตรงตัว" },
+      5: { ans: 1, exp: "บริบทเหตุและผล (หมอกหนาทึบทำให้เรือมองไม่เห็นชายฝั่ง) ชี้ว่า obscured แปลว่า ถูกบดบัง" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u3-pg${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u3-pg${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u3-pg${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u3-pg${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u3-pg${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u3-pg${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit3PreGameAnswers[k] === key[k].ans) score++;
+    });
+    const scoreEl = document.getElementById('u3-pregame-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 5`;
+  }
+
+  // 3. While-Reading 3-Colour Highlighting Tool [U3-6.2.2]
+  // Yellow = Unfamiliar vocabulary, Green = Context clues, Blue = Main ideas and sentence meaning
+  highlightUnit3Sentence(segNum, color) {
+    const expected = {
+      1: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่บอกใจความหลักเรื่องการนอนหลับลึกช่วยเปลี่ยนความจำระยะสั้นเป็นความจำระยะยาว' },
+      2: { role: 'yellow', exp: 'Segment (2) คือ Unfamiliar Vocabulary (สีเหลือง) ได้แก่คำศัพท์วิชาการเป้าหมาย: consolidation, nocturnal, cognitive deprivation' },
+      3: { role: 'green', exp: 'Segment (3) คือ Context Clue (สีเขียว) ที่ใช้เครื่องหมายขีดยาวและคำว่า that is เพื่อนิยามคำว่า consolidation' },
+      4: { role: 'green', exp: 'Segment (4) คือ Context Clue (สีเขียว) ที่ใช้คำสัญญาณ such as ยกตัวอย่างอาการของการอดนอน (sleep deprivation)' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่สรุปแก่นความหมายของประโยค (Subject + Verb + Core Meaning)' }
+    };
+
+    const textEl = document.getElementById(`u3-s${segNum}-text`);
+    const fbEl = document.getElementById(`u3-s${segNum}-feedback`);
+    if (!textEl || !fbEl) return;
+
+    const hlMap = {
+      yellow: 'highlighter-pen highlighter-yellow',
+      green: 'highlighter-pen highlighter-green',
+      blue: 'highlighter-pen highlighter-blue'
+    };
+
+    const rawText = textEl.textContent.trim();
+    textEl.innerHTML = `<span class="${hlMap[color]}">${rawText}</span>`;
+
+    const isCorrect = expected[segNum].role === color;
+    fbEl.classList.remove('hidden');
+    fbEl.className = `text-[11px] font-sans pt-1 ${isCorrect ? 'text-emerald-300' : 'text-amber-300'}`;
+    fbEl.innerHTML = isCorrect
+      ? `✅ <strong>ถูกต้อง!</strong> ${expected[segNum].exp}`
+      : `💡 <strong>คำแนะนำ:</strong> ${expected[segNum].exp}`;
+  }
+
+  resetUnit3Highlights() {
+    for (let i = 1; i <= 5; i++) {
+      const textEl = document.getElementById(`u3-s${i}-text`);
+      const fbEl = document.getElementById(`u3-s${i}-feedback`);
+      if (textEl) textEl.innerHTML = textEl.textContent.trim();
+      if (fbEl) fbEl.classList.add('hidden');
+    }
+  }
+
+  revealUnit3Highlights() {
+    const roles = { 1: 'blue', 2: 'yellow', 3: 'green', 4: 'green', 5: 'blue' };
+    Object.keys(roles).forEach(k => this.highlightUnit3Sentence(Number(k), roles[k]));
+  }
+
+  // 4. While-Reading Graded Context Clue Game & Sentence Practice (8 Items) [U3-6.2.3, 6.2.4, 6.2.5]
+  submitUnit3Game(qNum, choiceIdx) {
+    if (!this.unit3GameAnswers) this.unit3GameAnswers = {};
+    this.unit3GameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 0, exp: "วลีขยาย 'cleverly reading subtle wave patterns...' ชี้ว่า astute หมายถึง ฉลาดหลักแหลมและช่างสังเกต" },
+      2: { ans: 1, exp: "Definition Clue หลังขีดยาว '—a period of suspended growth and biological inactivity—' แปลตรงตัวว่า ภาวะพักตัวหรือหยุดการเจริญเติบโตชั่วคราว" },
+      3: { ans: 0, exp: "จากคำตรงข้าม 'Unlike synthetic plastics' และคำอธิบาย 'decomposes naturally within months' ชี้ว่า biodegradable แปลว่า ย่อยสลายได้เองตามธรรมชาติ" },
+      4: { ans: 0, exp: "เบาะแสแผ่นดินไหวหลายพันครั้งและควันกำมะถันพวยพุ่งออกจากปากปล่อง ชี้ว่าการปะทุนั้น imminent = กำลังจะเกิดขึ้นในอีกไม่ช้า" },
+      5: { ans: 0, exp: "Synonym Clue หลังคำว่า ', or thrifty and economical use...' แปลว่า ประหยัด มัธยัสถ์ และไม่ทิ้งขว้าง" },
+      6: { ans: 0, exp: "น้ำมันหอมระเหยในสมุนไพรช่วย inhibit การเน่าเสียของอาหารจากแบคทีเรีย จึงหมายถึง ยับยั้งหรือชะลอ" },
+      7: { ans: 0, exp: "ตัดวลี Despite... ข้างหน้าออก จะพบ Core Subject คือ 'the solar-powered catamaran' และ Main Verb คือ 'completed'" },
+      8: { ans: 0, exp: "ประธานหลักคือ 'Public botanical gardens' กริยาหลักคือ 'educate' (ส่วน which preserve... เป็นอนุประโยคขยาย) ใจความหลักจึงตรงกับข้อ A" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u3-g${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u3-g${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u3-g${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u3-g${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u3-g${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u3-g${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>ยังไม่ถูกต้อง:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit3GameAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit3GameAnswers[k] === key[k].ans) score++;
+      }
+    });
+
+    const scoreEl = document.getElementById('u3-game-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 8`;
+
+    this.unit3GameScore = score;
+    localStorage.setItem('bru_unit3_game_score', score);
+    localStorage.setItem('bru_unit3_game_answers', JSON.stringify(this.unit3GameAnswers));
+
+    if (answered === 8) {
+      const finalBox = document.getElementById('u3-game-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 6;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านเกณฑ์ Context Clue Game (Indicator 3.3 &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (ต้องได้ 6/8 ข้อขึ้นไป)'}</span>
+          </div>
+          <p class="text-xs">คะแนนที่ได้: <strong>${score} / 8 (${Math.round((score/8)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit3SummaryDashboard();
+  }
+
+  // 5. Post-Reading 40-Question Vocabulary in Context & Sentence Meaning Quiz [U3-5.6, 6.3.3]
+  submitUnit3Test(qNum, choiceIdx) {
+    if (!this.unit3TestAnswers) this.unit3TestAnswers = {};
+    this.unit3TestAnswers[qNum] = choiceIdx;
+
+    const correctKey = {
+      1: { ans: 0, exp: 'เครื่องหมายขีดยาว (—) ในประโยค (1) ให้คำจำกัดความ (Definition Clue) ของ bioluminescence ไว้โดยตรง' },
+      2: { ans: 0, exp: 'ผู้เขียนใช้เครื่องหมายขีดยาว (Dash) เพื่อนิยามความหมายตรงๆ จัดเป็น Definition Clue' },
+      3: { ans: 0, exp: "คำว่า 'Unlike superficial surface reflections' และคำอธิบายตามหลังว่า 'generated internally within specialized cells' ชี้ว่า endogenous แปลว่า เกิดขึ้นจากภายในสิ่งมีชีวิต" },
+      4: { ans: 0, exp: "วลี 'such as...' ที่คั่นด้วยคอมมา ทำหน้าที่เป็น Example Clue ยกตัวอย่างนักล่าใต้ทะเลลึก" },
+      5: { ans: 0, exp: 'จากบริบทการใช้เหยื่อล่อเรืองแสงเพื่อดึงดูดเหยื่อเข้ามาในระยะจู่โจม คำว่า entice จึงหมายถึง ดึงดูดหรือล่อลวงเข้ามา' },
+      6: { ans: 0, exp: "'in other words' (กล่าวอีกนัยหนึ่งคือ) เป็นคำสัญญาณบอกการกล่าวซ้ำเพื่อขยายความหมายให้เข้าใจง่ายขึ้น (Restatement)" },
+      7: { ans: 0, exp: "ข้อความในเครื่องหมายขีดคู่ '—the deepest, pitch-black layer of the ocean—' นิยามคำว่า abyssal ไว้อย่างชัดเจน" },
+      8: { ans: 0, exp: "วลี ', or glowing ink mist,' ที่คั่นด้วยเครื่องหมายจุลภาคและคำว่า or เป็น Synonym Clue ที่แปลคำว่า luminous cloud ไว้ตรงๆ" },
+      9: { ans: 0, exp: "อนุประโยคที่ขึ้นต้นด้วย Although เป็นส่วนขยายรอง ประโยคหลักมีประธานหลักคือ 'the evolutionary advantages' และกริยาหลักคือ 'outweigh'" },
+      10: { ans: 0, exp: "ประธานหลักคือ 'decoding the chemical efficiency...' กริยาหลักคือ 'enables' และใจความสำคัญคือช่วยให้แพทย์ติดตามการทำงานของเซลล์มนุษย์ได้โดยไม่ต้องผ่าตัด" },
+      11: { ans: 0, exp: "คำสัญญาณ '—that is, immeasurably valuable and irreplaceable—' นิยามความหมายของ priceless ไว้อย่างชัดเจน" },
+      12: { ans: 0, exp: 'วลีขยายที่คั่นด้วยเครื่องหมายคอมมา (bone-dry air และฝนตกน้อยกว่า 40 มม. ต่อปี) ชี้ชัดว่า arid แปลว่า แห้งแล้งจัด' },
+      13: { ans: 0, exp: 'ประโยคขยายความหลังคำว่า specifically บอกว่าความชื้นจากลมหายใจนักท่องเที่ยวทำให้ปูนภาพจิตรกรรมพองและหลุดลอก ดังนั้น detrimental จึงแปลว่า ซึ่งเป็นผลเสีย/เป็นอันตราย' },
+      14: { ans: 0, exp: "ผู้เขียนให้ทั้งคำนิยามในวงเล็บ (Parentheses) และใช้คำเชื่อมเปรียบเทียบความต่าง 'Whereas' กับการทำงานเป็นทีม" },
+      15: { ans: 0, exp: "คำสัญญาณ 'including' ที่คั่นด้วยคอมมา เป็นการยกตัวอย่าง (Example Clue) ของโบราณวัตถุอินทรีย์ที่เปราะบาง" },
+      16: { ans: 0, exp: "การใช้เครื่องหมายคอมมาตามด้วยคำว่า 'or' เป็นรูปแบบมาตรฐานของ Synonym / Restatement Clue (autonomous = ทำงานได้เองโดยอัตโนมัติ)" },
+      17: { ans: 0, exp: "หลังเครื่องหมายขีดยาว (—) นิยามไว้ตรงตัวว่า 'exact full-scale reconstructions of the original caves'" },
+      18: { ans: 0, exp: 'เชื่อมโยงจากประโยค (6)-(7) ที่มีการใช้เซ็นเซอร์ตรวจวัดและจำกัดคนเข้าอย่างเข้มงวด คำว่า stringent จึงหมายถึง เข้มงวด/รัดกุม' },
+      19: { ans: 0, exp: "ส่วนที่ขึ้นต้นด้วย Whenever เป็นอนุประโยคบอกเงื่อนไข ส่วนประโยคหลักมี Core Subject คือ 'the computer network' และ Main Verb คือ 'restricts'" },
+      20: { ans: 0, exp: 'แก่นของประโยคที่ (8) คือการสร้างสมดุลระหว่างการให้ความรู้แก่สาธารณชนกับการควบคุมสภาพอากาศอย่างเข้มงวด ช่วยรักษามรดกโลกไว้ให้คนรุ่นหลัง' },
+      21: { ans: 0, exp: "หลังเครื่องหมายขีดยาว (—) อธิบายไว้ชัดเจนว่า 'high-rise residential towers covered in thousands of living trees and shrubs'" },
+      22: { ans: 0, exp: "'in other words' ใช้ขยายความเปรียบเทียบให้เห็นภาพชัดเจนขึ้นว่าต้นไม้ 900 ต้นบนตึกนั้นเทียบเท่ากับป่าแนวราบถึง 2 เฮกตาร์" },
+      23: { ans: 0, exp: 'การดูดซับก๊าซคาร์บอนไดออกไซด์ 30 ตันและดักจับฝุ่นละออง เป็นเบาะแส General Clue ที่ชี้ว่า mitigate หมายถึง ช่วยบรรเทาหรือลดมลพิษทางอากาศ' },
+      24: { ans: 0, exp: "คำว่า 'whereas' เปรียบเทียบความต่างระหว่างผนังกระจกเปลือยที่สะสมความร้อน กับระเบียงต้นไม้ที่ช่วยบังแดดและลดการใช้แอร์ลง 30%" },
+      25: { ans: 0, exp: "วลีขยายข้างหลัง 'that can withstand fierce high-altitude winds' ชี้ว่า hardy แปลว่า แข็งแรงทนทานต่อสภาพอากาศเลวร้าย" },
+      26: { ans: 0, exp: "เครื่องหมายขีดคู่พร้อมคำว่า 'such as' เป็น Example Clue ที่ยกตัวอย่างพันธุ์ไม้ที่ทนทานต่อลมแรง" },
+      27: { ans: 0, exp: "ข้อความในวงเล็บ '(securely fasten and hold down)' แปลความหมายของคำกริยา anchor ไว้โดยตรง" },
+      28: { ans: 0, exp: "วลีที่ตามหลังคอมมา ', which recycles greywater...' นิยามความหมายของระบบน้ำแบบวงจรปิด (closed-loop)" },
+      29: { ans: 0, exp: "ประธานหลักของประโยคคือ Gerund phrase 'integrating living nature directly into high-density housing' และกริยาหลักคือ 'restores'" },
+      30: { ans: 0, exp: 'ตัวเลือก A รวบยอดใจความสำคัญและประโยคสรุปของเรื่อง Vertical Forests ได้ครบทุกมิติ' },
+      31: { ans: 0, exp: "ข้อความในเครื่องหมายขีดคู่ '—mental disorder or intellectual delay—' ให้คำนิยามของ cognitive confusion ไว้อย่างตรงไปตรงมา" },
+      32: { ans: 0, exp: "อนุประโยคหลังคอมมา ', which governs attention, task-switching, and impulse inhibition' ทำหน้าที่นิยามหน้าที่ของระบบบริหารจัดการสมอง" },
+      33: { ans: 0, exp: "วงเล็บ '(unwanted interference)' แปลความหมายของคำว่า intrusion (การแทรกแซงที่ไม่พึงประสงค์) ไว้โดยตรง" },
+      34: { ans: 0, exp: "วลีหลังเครื่องหมายคอมมาและคำว่า ', or ...' ให้คำนิยามพ้องความหมายของ cognitive reserve" },
+      35: { ans: 0, exp: "เครื่องหมายขีดคู่พร้อมคำว่า 'such as' เป็น Example Clue ยกตัวอย่างงานวิจัยระยะยาวใน 3 เมืองใหญ่ทั่วโลก" },
+      36: { ans: 0, exp: "วลีคั่นด้วยคอมมา ', a severe loss of memory and reasoning ability,' นิยามความหมายของโรคสมองเสื่อม (dementia) ไว้ชัดเจน" },
+      37: { ans: 0, exp: "จากการเปรียบเทียบกับคำว่า 'bilinguals' (คนที่พูดสองภาษา) คำว่า monolingual จึงหมายถึง คนที่พูดเพียงภาษาเดียว" },
+      38: { ans: 0, exp: 'การสลับใช้คำศัพท์หลายภาษาช่วยเสริมสร้าง/เพิ่มพูน (enhances) ความยืดหยุ่นของสมองด้วยการสร้างเส้นใยประสาทที่หนาแน่นขึ้น' },
+      39: { ans: 0, exp: "วลี ', meaning quickness and flexibility of thought,' นิยามคำว่า agility (ความคล่องแคล่วว่องไวทางความคิด) ไว้โดยตรง" },
+      40: { ans: 0, exp: "ประธานหลักคือ 'adults' กริยาหลักคือ 'experience' และใจความสำคัญคือการเรียนภาษาที่สองในวัยกลางคนยังช่วยพัฒนาความคล่องตัวทางความคิดได้อย่างชัดเจน" }
+    };
+
+    const target = correctKey[qNum];
+    const fb = document.getElementById(`u3-t${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u3-t${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u3-t${qNum}-btn w-full text-left p-2.5 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 font-bold`
+          : `u3-t${qNum}-btn w-full text-left p-2.5 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 font-bold`;
+      } else if (idx === target.ans) {
+        b.className = `u3-t${qNum}-btn w-full text-left p-2.5 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 font-medium`;
+      } else {
+        b.className = `u3-t${qNum}-btn w-full text-left p-2.5 rounded-lg border border-slate-200 bg-white/70 text-slate-500`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>ยังไม่ถูกต้อง:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(correctKey).forEach(k => {
+      if (this.unit3TestAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit3TestAnswers[k] === correctKey[k].ans) score++;
+      }
+    });
+
+    const scoreDisplay = document.getElementById('u3-test-score');
+    if (scoreDisplay) scoreDisplay.textContent = `${score} / 40`;
+
+    this.unit3TestScore = score;
+    localStorage.setItem('bru_unit3_test_score', score);
+    localStorage.setItem('bru_unit3_test_answers', JSON.stringify(this.unit3TestAnswers));
+
+    if (answered === 40) {
+      const finalBox = document.getElementById('u3-test-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 28;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านการทดสอบ Vocabulary & Sentence Meaning Quiz Unit 3 (Passed &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (28/40)'}</span>
+          </div>
+          <p class="text-xs">คะแนนทดสอบ: <strong>${score} / 40 (${Math.round((score/40)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit3SummaryDashboard();
+  }
+
+  // 6. Unit 3 Score Dashboard [U3-6.3.4]
+  updateUnit3SummaryDashboard() {
+    const gScore = localStorage.getItem('bru_unit3_game_score');
+    const tScore = localStorage.getItem('bru_unit3_test_score');
+
+    const sc1 = document.getElementById('summary-u3-game');
+    const bg1 = document.getElementById('badge-u3-game');
+    if (sc1 && bg1 && gScore !== null) {
+      const val = parseInt(gScore);
+      sc1.textContent = `${val} / 8`;
+      bg1.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 6 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg1.textContent = val >= 6 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc2 = document.getElementById('summary-u3-test');
+    const bg2 = document.getElementById('badge-u3-test');
+    if (sc2 && bg2 && tScore !== null) {
+      const val = parseInt(tScore);
+      sc2.textContent = `${val} / 40`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 28 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 28 ? 'Passed (>=70%)' : 'Needs Retake';
     }
   }
 
