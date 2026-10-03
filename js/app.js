@@ -71,6 +71,16 @@ class ReadSkillsApp {
     this.unit2PostScanScore = localStorage.getItem('bru_unit2_scanning_score') ? parseInt(localStorage.getItem('bru_unit2_scanning_score')) : null;
     this.unit2TestAnswers = JSON.parse(localStorage.getItem('bru_unit2_test_answers') || '{}');
     this.unit2TestScore = localStorage.getItem('bru_unit2_test_score') ? parseInt(localStorage.getItem('bru_unit2_test_score')) : null;
+    const savedU2QuizScore = localStorage.getItem('bru_unit2_quiz_score');
+    this.unit2QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedU2QuizScore ? parseInt(savedU2QuizScore) : null
+    };
 
     // Unit 3 State (Vocabulary in Context & Sentence Meaning)
     this.unit3PreGameAnswers = {};
@@ -741,7 +751,7 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Post-Reading Assessment', sub: 'Timed Scan & Test [6.3.3-6.3.4]' }
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบทเรียน [U2-6.3.3]' }
         ];
       }
     } else if (this.currentUnitId === 3) {
@@ -993,7 +1003,7 @@ class ReadSkillsApp {
     const currentStep = this.currentActivityStep;
 
     if (currentStep === 'quiz') {
-      if (this.currentUnitId === 1 || this.currentUnitId === 3) {
+      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3) {
         return this.renderQuizStep();
       }
       if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
@@ -1287,8 +1297,20 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Graded Quiz Engine (40 Questions — Unit 1 & Unit 3) ------------------- */
+  /* ------------------- Graded Quiz Engine (40 Questions — Units 1, 2 & 3) ------------------- */
   getActiveUnitQuizContext() {
+    if (this.currentUnitId === 2) {
+      return {
+        unitId: 2,
+        quizData: ReadSkillsData.unit2Quiz,
+        state: this.unit2QuizState,
+        storageKey: 'bru_unit2_quiz_score',
+        cefrLabel: 'CEFR Target: A2-B1 Level',
+        unitTitle: 'Unit 2 Assessment Results (ผลคะแนนแบบทดสอบ 40 ข้อ)',
+        unitSub: 'คะแนนแบบทดสอบรายละเอียดสนับสนุน ความสัมพันธ์ทางความคิด และการสแกน Unit 2 (40 ข้อ • Indicator 3.3)',
+        passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถแยกแยะ Major/Minor Details, วิเคราะห์ Signal Words และใช้ Skimming/Scanning ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
+      };
+    }
     if (this.currentUnitId === 3) {
       return {
         unitId: 3,
@@ -1316,6 +1338,9 @@ class ReadSkillsApp {
   renderQuizStep() {
     setTimeout(() => {
       if (window.lucide) lucide.createIcons();
+      if (this.currentUnitId === 2 && this.updateUnit2SummaryDashboard) {
+        this.updateUnit2SummaryDashboard();
+      }
       if (this.currentUnitId === 3 && this.updateUnit3SummaryDashboard) {
         this.updateUnit3SummaryDashboard();
       }
@@ -1329,53 +1354,106 @@ class ReadSkillsApp {
 
     const state = ctx.state;
 
-    // Extra Unit 3 In-Class Cards & Wrap-Up Footer (Syllabus 6.3.1, 6.3.2, 6.3.4)
-    const unit3TopCards = ctx.unitId === 3 ? `
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
-        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
-          <div class="flex items-center space-x-2 text-purple-950 font-bold">
-            <i data-lucide="search" class="w-4 h-4 text-purple-700"></i>
-            <span>In-class activity: Vocabulary Detective [U3-6.3.1]</span>
+    // Extra In-Class Cards & Wrap-Up Footer for Unit 2 & Unit 3
+    let unit3TopCards = '';
+    if (ctx.unitId === 2) {
+      unit3TopCards = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+          <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold">
+              <i data-lucide="layout-grid" class="w-4 h-4 text-purple-700"></i>
+              <span>In-class activity: Group Graphic Organizer [U2-6.3.1]</span>
+            </div>
+            <p class="text-purple-900 leading-relaxed">
+              <strong>Group Activity:</strong> แบ่งกลุ่มสร้างผังลำดับความคิด (Hierarchical Tree Diagram) เพื่อเชื่อมโยง Main Idea, Major Supporting Details และ Minor Details
+            </p>
           </div>
-          <p class="text-purple-900 leading-relaxed">
-            <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยทำใบงาน Vocabulary Detective เพื่อระบุคำศัพท์ใหม่ ชนิดของ Context Clues ความหมาย และใจความหลักของประโยค
-          </p>
-        </div>
-        <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
-          <div class="flex items-center space-x-2 text-indigo-950 font-bold">
-            <i data-lucide="message-square" class="w-4 h-4 text-indigo-700"></i>
-            <span>In-class activity: Group Discussion [U3-6.3.2]</span>
+          <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+              <i data-lucide="presentation" class="w-4 h-4 text-indigo-700"></i>
+              <span>In-class activity: Group Presentation [U2-6.3.2]</span>
+            </div>
+            <p class="text-indigo-900 leading-relaxed">
+              <strong>Group Presentation:</strong> แต่ละกลุ่มส่งตัวแทนนำเสนอผังความคิดหน้าชั้นเรียน โดยเน้นชี้แจงความสัมพันธ์ระหว่างความคิด (Cause/Effect, Contrast, Sequence)
+            </p>
           </div>
-          <p class="text-indigo-900 leading-relaxed">
-            <strong>Group Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบและอธิบายวิธีใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายประโยคหน้าชั้นเรียน
-          </p>
         </div>
-      </div>
-    ` : '';
+      `;
+    } else if (ctx.unitId === 3) {
+      unit3TopCards = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+          <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold">
+              <i data-lucide="search" class="w-4 h-4 text-purple-700"></i>
+              <span>In-class activity: Vocabulary Detective [U3-6.3.1]</span>
+            </div>
+            <p class="text-purple-900 leading-relaxed">
+              <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยทำใบงาน Vocabulary Detective เพื่อระบุคำศัพท์ใหม่ ชนิดของ Context Clues ความหมาย และใจความหลักของประโยค
+            </p>
+          </div>
+          <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+              <i data-lucide="message-square" class="w-4 h-4 text-indigo-700"></i>
+              <span>In-class activity: Group Discussion [U3-6.3.2]</span>
+            </div>
+            <p class="text-indigo-900 leading-relaxed">
+              <strong>Group Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบและอธิบายวิธีใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายประโยคหน้าชั้นเรียน
+            </p>
+          </div>
+        </div>
+      `;
+    }
 
-    const unit3BottomWrapup = ctx.unitId === 3 ? `
-      <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->
-      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
-        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
-          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-          <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>
+    let unit3BottomWrapup = '';
+    if (ctx.unitId === 2) {
+      unit3BottomWrapup = `
+        <!-- Lesson Wrap-up & Common Mistakes [U2-6.3.4] -->
+        <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+          <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U2-6.3.4]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+              <strong class="font-bold block text-rose-900">1. สับสน Minor กับ Main Idea</strong>
+              <p class="leading-relaxed">นำตัวเลขสถิติที่สะดุดตา (เช่น 47%, 350°C หรือ 28%) ไปตอบเป็นใจความสำคัญ ทั้งที่เป็นเพียง <em>Minor Detail</em></p>
+            </div>
+            <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+              <strong class="font-bold block text-amber-900">2. สแกนโดยไม่อ่านคำขยาย</strong>
+              <p class="leading-relaxed">กวาดสายตาหาตัวเลขโดยไม่อ่านคำนามข้างหน้า เช่น โจทย์ถาม <em>labor reduction (19%)</em> แต่ไปคว้า <em>yield improvement (31%)</em></p>
+            </div>
+            <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+              <strong class="font-bold block text-purple-900">3. มองข้าม Signal Words</strong>
+              <p class="leading-relaxed">อ่านข้ามคำเชื่อมสำคัญอย่าง <em>whereas, in contrast</em> หรือ <em>consequently</em> ทำให้เข้าใจสลับกันว่าประเด็นใดคือผลลัพธ์</p>
+            </div>
+          </div>
         </div>
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
-            <strong class="font-bold block text-rose-900">1. มองข้ามเครื่องหมายวรรคตอน</strong>
-            <p class="leading-relaxed">ข้ามข้อความในขีดยาว <code>— ... —</code> หรือวงเล็บ <code>( ... )</code> ซึ่งผู้เขียนวางคำนิยามของคำศัพท์ยากไว้ตรงนั้นพอดี</p>
+      `;
+    } else if (ctx.unitId === 3) {
+      unit3BottomWrapup = `
+        <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->
+        <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+          <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>
           </div>
-          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
-            <strong class="font-bold block text-amber-900">2. แปลตรงข้ามเมื่อเจอ Antonym</strong>
-            <p class="leading-relaxed">เมื่อเจอคำว่า <em>Unlike</em> หรือ <em>Whereas</em> ต้องกลับขั้วความหมายให้ตรงข้ามกับคำข้างเคียง ไม่ใช่แปลเหมือนกัน</p>
-          </div>
-          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
-            <strong class="font-bold block text-purple-900">3. หลงในส่วนขยายประโยคยาว</strong>
-            <p class="leading-relaxed">ให้ตัดอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) ออกชั่วคราวเพื่อล็อกหา Core Subject + Main Verb</p>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+              <strong class="font-bold block text-rose-900">1. มองข้ามเครื่องหมายวรรคตอน</strong>
+              <p class="leading-relaxed">ข้ามข้อความในขีดยาว <code>— ... —</code> หรือวงเล็บ <code>( ... )</code> ซึ่งผู้เขียนวางคำนิยามของคำศัพท์ยากไว้ตรงนั้นพอดี</p>
+            </div>
+            <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+              <strong class="font-bold block text-amber-900">2. แปลตรงข้ามเมื่อเจอ Antonym</strong>
+              <p class="leading-relaxed">เมื่อเจอคำว่า <em>Unlike</em> หรือ <em>Whereas</em> ต้องกลับขั้วความหมายให้ตรงข้ามกับคำข้างเคียง ไม่ใช่แปลเหมือนกัน</p>
+            </div>
+            <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+              <strong class="font-bold block text-purple-900">3. หลงในส่วนขยายประโยคยาว</strong>
+              <p class="leading-relaxed">ให้ตัดอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) ออกชั่วคราวเพื่อล็อกหา Core Subject + Main Verb</p>
+            </div>
           </div>
         </div>
-      </div>
-    ` : '';
+      `;
+    }
 
     // Completed Screen
     if (state.isCompleted) {
@@ -1756,6 +1834,8 @@ class ReadSkillsApp {
         localStorage.setItem(ctx.storageKey, totalScore);
         if (ctx.unitId === 3) {
           localStorage.setItem('bru_unit3_test_score', totalScore);
+        } else if (ctx.unitId === 2) {
+          localStorage.setItem('bru_unit2_test_score', totalScore);
         }
         state.lastScore = totalScore;
       }
@@ -1776,6 +1856,8 @@ class ReadSkillsApp {
     };
     if (ctx.unitId === 3) {
       this.unit3QuizState = freshState;
+    } else if (ctx.unitId === 2) {
+      this.unit2QuizState = freshState;
     } else {
       this.unit1QuizState = freshState;
     }

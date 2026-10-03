@@ -3550,6 +3550,571 @@ window.ReadSkillsData = {
   ]
 ,
 
+  // Unit 2 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
+  unit2Quiz: {
+      "title": "Unit 2 Graded Quiz: Supporting Details & Idea Relationships",
+      "thaiTitle": "แบบทดสอบประเมินผลการเรียนรู้ Unit 2: รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด (40 ข้อ)",
+      "totalQuestions": 40,
+      "passages": [
+          {
+              "id": "u2-quiz-p1",
+              "title": "Passage 1: The Global Honeybee Crisis and Pollination Technology",
+              "thaiTitle": "บทอ่านที่ 1: วิกฤตประชากรผึ้งโลกและเทคโนโลยีโดรนผสมเกสร [U2-5.1..5.6, 6.3.3]",
+              "genre": "Agricultural Science & Ecology",
+              "audioText": "The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops. First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity. Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas. Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles. For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar. Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared. Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor. Consequently, pilot orchards adopting robotic pollination reported a thirty-one percent improvement in fruit-setting rates alongside a nineteen percent reduction in seasonal labor expenditure.",
+              "sentences": [
+                  "(1) The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops.",
+                  "(2) First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity.",
+                  "(3) Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas.",
+                  "(4) Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles.",
+                  "(5) For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
+                  "(6) Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared.",
+                  "(7) Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor.",
+                  "(8) Consequently, pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure."
+              ],
+              "questions": [
+                  {
+                      "id": 1,
+                      "type": "mc",
+                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 1? [U2-5.1, 5.3]",
+                      "options": [
+                          "Hand pollination is significantly faster and cheaper than using autonomous micro-drones in apple orchards",
+                          "Declining honeybee populations threaten global crop yields due to pesticides and climate shifts, while robotic pollination drones offer an effective technological alternative",
+                          "Cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average",
+                          "Organic farming areas in Europe no longer grow commercial fruits or vegetables"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "ประโยคที่ (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 2,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the sentence that functions as the FIRST Major Supporting Detail explaining how agricultural chemicals harm wild bees. [U2-5.1]",
+                      "targetSentenceIndex": 1,
+                      "explanation": "ประโยคที่ (2) ที่ขึ้นต้นด้วย 'First,' คือ Major Supporting Detail ข้อที่ 1 ที่อธิบายสาเหตุหลักเรื่องสารกำจัดศัตรูพืชทำลายระบบนำทางและการสืบพันธุ์ของผึ้ง"
+                  },
+                  {
+                      "id": 3,
+                      "type": "mc",
+                      "prompt": "What is the structural role of Sentence (3) regarding the 47% reduction across twelve European countries? [U2-5.1]",
+                      "options": [
+                          "Main Idea — it summarizes the entire passage's argument about robotic drones",
+                          "Major Supporting Detail — it introduces a brand-new fourth reason for climate change",
+                          "Minor Supporting Detail — it provides concrete statistical evidence to prove how pesticides harm bee diversity",
+                          "Concluding Summary — it wraps up the economic benefits of apple orchards"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยคที่ (2) (ตัวเลือก C)"
+                  },
+                  {
+                      "id": 4,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (5) with the signal phrase that introduces a Minor Supporting Detail example: [U2-5.1, 5.2]",
+                      "sentenceWithBlank": "[ _______ ], cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
+                      "choices": [
+                          "For instance",
+                          "In contrast",
+                          "Consequently",
+                          "Whereas"
+                      ],
+                      "correctWord": "For instance",
+                      "explanation": "'For instance' (ยกตัวอย่างเช่น) เป็นคำสัญญาณที่ใช้เปิดตัว Minor Supporting Detail เพื่อยกตัวอย่างสวนเชอร์รีในญี่ปุ่น"
+                  },
+                  {
+                      "id": 5,
+                      "type": "mc",
+                      "prompt": "Which signal words in Passage 1 are used to organize the three primary Major Supporting Details? [U2-5.2, 6.2.4]",
+                      "options": [
+                          "For instance, in contrast, consequently",
+                          "Compared to, within, alongside",
+                          "Twelve, nine, eighteen",
+                          "First, Second, Third"
+                      ],
+                      "correctAnswer": 3,
+                      "explanation": "คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญหลัก (Sequence / Listing of Major Details) (ตัวเลือก D)"
+                  },
+                  {
+                      "id": 6,
+                      "type": "mc",
+                      "prompt": "In Sentence (3), what idea relationship is signaled by the phrase 'compared to'? [U2-5.2]",
+                      "options": [
+                          "Compare and Contrast — contrasting bee diversity in intensively farmed regions versus organic farming areas",
+                          "Cause and Effect — showing how organic farming causes pesticide pollution",
+                          "Chronological Sequence — listing historical events from earliest to latest",
+                          "Definition — defining the biological meaning of queen bees"
+                      ],
+                      "correctAnswer": 0,
+                      "explanation": "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์ (ตัวเลือก A)"
+                  },
+                  {
+                      "id": 7,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the sentence that uses the contrast signal 'in contrast' to compare manual hand pollination (10 days) with autonomous drones (18 hours). [U2-5.2]",
+                      "targetSentenceIndex": 6,
+                      "explanation": "ประโยคที่ (7) ใช้คำเชื่อม '; in contrast,' เพื่อเปรียบเทียบความแตกต่างอย่างชัดเจนระหว่างแรงงานคน 6 คนทำ 10 วัน กับฝูงโดรนอัตโนมัติที่ใช้เวลาเพียง 18 ชั่วโมง"
+                  },
+                  {
+                      "id": 8,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (8) with the Cause-and-Effect transition word showing the positive results of adopting robotic pollination: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ], pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure.",
+                      "choices": [
+                          "Consequently",
+                          "Unlike",
+                          "Initially",
+                          "Whereas"
+                      ],
+                      "correctWord": "Consequently",
+                      "explanation": "'Consequently' (ดังนั้น/ส่งผลให้) เป็นคำเชื่อมบอกเหตุและผล (Cause & Effect) ชี้ผลลัพธ์จากการนำโดรนมาใช้"
+                  },
+                  {
+                      "id": 9,
+                      "type": "mc",
+                      "prompt": "Scanning for Specific Facts: According to Sentence (5), how many days earlier did cherry orchards in central Japan bloom in 2024 compared to the historical average? [U2-5.4]",
+                      "options": [
+                          "Six days earlier",
+                          "Nine days earlier",
+                          "Twelve days earlier",
+                          "Eighteen days earlier"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "จากการสแกนประโยคที่ (5) พบข้อมูลเฉพาะเจาะจงว่า 'bloomed nine days earlier in 2024' (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 10,
+                      "type": "mc",
+                      "prompt": "Scanning for Numbers: How much seasonal labor expenditure did pilot orchards save by adopting robotic pollination? [U2-5.4]",
+                      "options": [
+                          "47%",
+                          "31%",
+                          "19%",
+                          "50%"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "จากการสแกนประโยคที่ (8) พบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คืออัตราการติดผลที่ดีขึ้น) (ตัวเลือก C)"
+                  }
+              ]
+          },
+          {
+              "id": "u2-quiz-p2",
+              "title": "Passage 2: Deep-Sea Hydrothermal Vents and Extreme Marine Life",
+              "thaiTitle": "บทอ่านที่ 2: ปล่องน้ำพุร้อนใต้ทะเลลึกและสิ่งมีชีวิตในสภาพแวดล้อมสุดขั้ว [U2-5.1..5.6, 6.3.3]",
+              "genre": "Oceanography & Astrobiology",
+              "audioText": "Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight. First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy. Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius. Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures. Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition. Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons. Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity. Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
+              "sentences": [
+                  "(1) Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight.",
+                  "(2) First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy.",
+                  "(3) Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius.",
+                  "(4) Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
+                  "(5) Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition.",
+                  "(6) Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons.",
+                  "(7) Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity.",
+                  "(8) Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures."
+              ],
+              "questions": [
+                  {
+                      "id": 11,
+                      "type": "mc",
+                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 2? [U2-5.1, 5.3]",
+                      "options": [
+                          "Giant tube worms are the largest predators living in shallow tropical coral reefs",
+                          "Surface plants cannot survive without solar radiation and warm temperatures",
+                          "Robotic space probes have already landed on Saturn's moon Enceladus",
+                          "Deep-sea hydrothermal vents sustain unique sunless ecosystems through chemosynthesis and help scientists understand potential life on icy moons"
+                      ],
+                      "correctAnswer": 3,
+                      "explanation": "ประโยคที่ (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก (ตัวเลือก D)"
+                  },
+                  {
+                      "id": 12,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the Topic Sentence that states the overarching Main Idea of Passage 2. [U2-5.1]",
+                      "targetSentenceIndex": 0,
+                      "explanation": "ประโยคที่ (1) ทำหน้าที่เป็น Topic Sentence เปิดเรื่องที่สรุปใจความหลักของทั้งย่อหน้า"
+                  },
+                  {
+                      "id": 13,
+                      "type": "mc",
+                      "prompt": "Which sentence functions as a Major Supporting Detail introducing the role of bacteria as the base of the deep-sea food web? [U2-5.1]",
+                      "options": [
+                          "Sentence (3): Whereas surface plants rely on solar radiation to manufacture nutrients...",
+                          "Sentence (4): Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
+                          "Sentence (5): Giant tube worms measuring up to two meters tall lack mouths...",
+                          "Sentence (7): Planetary scientists note that Jupiter's moon Europa..."
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' คือ Major Supporting Detail ข้อที่ 2 ที่ระบุว่าแบคทีเรียเหล่านี้เป็นฐานห่วงโซ่อาหารของสัตว์ทะเลลึก (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 14,
+                      "type": "mc",
+                      "prompt": "What is the role of Sentence (5) about two-meter-tall giant tube worms? [U2-5.1]",
+                      "options": [
+                          "Minor Supporting Detail — it provides a specific biological example of a bizarre creature that relies on vent bacteria",
+                          "Main Idea — it states the primary topic of planetary space exploration",
+                          "Major Supporting Detail — it introduces the fourth reason why volcanoes erupt underwater",
+                          "Concluding Summary — it summarizes the entire passage"
+                      ],
+                      "correctAnswer": 0,
+                      "explanation": "เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยคที่ (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยคที่ (4) (ตัวเลือก A)"
+                  },
+                  {
+                      "id": 15,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (3) with the signal word that contrasts solar-powered surface plants with deep-sea vent microbes: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ] surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys.",
+                      "choices": [
+                          "Whereas",
+                          "Therefore",
+                          "Second",
+                          "Because"
+                      ],
+                      "correctWord": "Whereas",
+                      "explanation": "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Compare & Contrast) ระหว่างพืชผิวน้ำกับจุลินทรีย์ก้นทะเล"
+                  },
+                  {
+                      "id": 16,
+                      "type": "mc",
+                      "prompt": "In Sentence (5), what relationship does the transition word 'instead' express? [U2-5.2]",
+                      "options": [
+                          "Time Order — listing the steps a scientist takes to measure a tube worm",
+                          "Effect — proving that bacteria destroy the tissues of giant tube worms",
+                          "Contrast / Alternative — showing how tube worms obtain nutrition internally rather than eating with a mouth",
+                          "Similarity — comparing tube worms to surface trees"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน (ตัวเลือก C)"
+                  },
+                  {
+                      "id": 17,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the Minor Supporting Detail sentence that names specific icy moons (Europa and Enceladus) where subsurface oceans exist. [U2-5.1, 5.4]",
+                      "targetSentenceIndex": 6,
+                      "explanation": "ประโยคที่ (7) เป็น Minor Supporting Detail ที่ระบุชื่อดวงจันทร์ Europa ของดาวพฤหัสบดี และ Enceladus ของดาวเสาร์ เพื่อสนับสนุนประโยคที่ (6)"
+                  },
+                  {
+                      "id": 18,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (8) with the Cause-and-Effect signal word that introduces the concluding result of the passage: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ], understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
+                      "choices": [
+                          "Therefore",
+                          "Unlike",
+                          "Whereas",
+                          "Initially"
+                      ],
+                      "correctWord": "Therefore",
+                      "explanation": "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect) ปิดท้ายย่อหน้า"
+                  },
+                  {
+                      "id": 19,
+                      "type": "mc",
+                      "prompt": "Scanning for Specific Facts: What chemical gas do hydrothermal vent microbes oxidize to produce energy? [U2-5.4]",
+                      "options": [
+                          "Carbon monoxide gas",
+                          "Hydrogen sulfide gas",
+                          "Pure atmospheric nitrogen",
+                          "Liquid helium"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "จากการสแกนประโยคที่ (3) พบคำว่า 'oxidize hydrogen sulfide gas gushing from seafloor chimneys' (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 20,
+                      "type": "mc",
+                      "prompt": "Scanning for Numbers: What temperature do the volcanic seafloor chimneys exceed? [U2-5.4]",
+                      "options": [
+                          "100 degrees Celsius",
+                          "220 degrees Celsius",
+                          "350 degrees Celsius",
+                          "500 degrees Celsius"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยคที่ (3) พบคำว่า 'exceeding 350 degrees Celsius' (ตัวเลือก C)"
+                  }
+              ]
+          },
+          {
+              "id": "u2-quiz-p3",
+              "title": "Passage 3: The Psychology of Color in Retail and Interior Design",
+              "thaiTitle": "บทอ่านที่ 3: จิตวิทยาการใช้สีและแสงในการออกแบบพื้นที่ค้าปลีกและสถาปัตยกรรมภายใน [U2-5.1..5.6, 6.3.3]",
+              "genre": "Consumer Psychology & Design",
+              "audioText": "Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior. First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency. Consumer marketing studies reveal that red clearance signage increases impulse buying by twenty-eight percent in fashion boutiques because it elevates heart rate and captures immediate visual attention. In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security. Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to thirty-five percent during long waits. Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms. Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing. By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments.",
+              "sentences": [
+                  "(1) Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior.",
+                  "(2) First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
+                  "(3) Consumer marketing studies reveal that red clearance signage increases impulse buying by 28% in fashion boutiques because it elevates heart rate and captures immediate visual attention.",
+                  "(4) In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
+                  "(5) Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to 35% during long waits.",
+                  "(6) Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms.",
+                  "(7) Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing.",
+                  "(8) By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments."
+              ],
+              "questions": [
+                  {
+                      "id": 21,
+                      "type": "mc",
+                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 3? [U2-5.1, 5.3]",
+                      "options": [
+                          "Healthcare clinics should only use bright red paint in their waiting rooms to excite patients",
+                          "Fashion boutiques close at 18:00 PM every evening to save electricity",
+                          "Strategic color choices and dynamic lighting in interior design strongly shape human emotions, physiology, and shopping behavior",
+                          "Financial institutions refuse to use LED lighting in their waiting lounges"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "ประโยคที่ (1) และประโยคสรุปที่ (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค (ตัวเลือก C)"
+                  },
+                  {
+                      "id": 22,
+                      "type": "mc",
+                      "prompt": "Which sentence functions as a Major Supporting Detail introducing the effect of warm colors? [U2-5.1]",
+                      "options": [
+                          "Sentence (2): First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
+                          "Sentence (3): Consumer marketing studies reveal that red clearance signage increases impulse buying by 28%...",
+                          "Sentence (5): Consequently, financial institutions and healthcare clinics predominantly paint...",
+                          "Sentence (7): Initially, bright daylight-balanced white LEDs energize morning shoppers..."
+                      ],
+                      "correctAnswer": 0,
+                      "explanation": "ประโยคที่ (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues) (ตัวเลือก A)"
+                  },
+                  {
+                      "id": 23,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the Minor Supporting Detail sentence that provides the 28% impulse-buying statistic in fashion boutiques. [U2-5.1]",
+                      "targetSentenceIndex": 2,
+                      "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่อ้างอิงสถิติงานวิจัยการตลาด (28%) เพื่อพิสูจน์ประโยคที่ (2)"
+                  },
+                  {
+                      "id": 24,
+                      "type": "mc",
+                      "prompt": "In Sentence (3), what relationship does the signal word 'because' establish? [U2-5.2]",
+                      "options": [
+                          "Compare and Contrast — comparing red clearance signs with blue bank logos",
+                          "Cause and Effect — explaining why red signage increases impulse buying (it elevates heart rate and grabs attention)",
+                          "Chronological Sequence — showing the time of day when signs are printed",
+                          "Opposition — proving that red signage reduces store sales"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28% (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 25,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (4) with the transition phrase that shifts from stimulating warm colors to calming cool colors: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ], cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
+                      "choices": [
+                          "In contrast",
+                          "For instance",
+                          "Therefore",
+                          "Subsequently"
+                      ],
+                      "correctWord": "In contrast",
+                      "explanation": "'In contrast' (ในทางตรงกันข้าม) ใช้เชื่อมโยงแบบเปรียบเทียบความต่างระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย"
+                  },
+                  {
+                      "id": 26,
+                      "type": "mc",
+                      "prompt": "What is the relationship between Sentence (4) and Sentence (5), signaled by 'Consequently'? [U2-5.2]",
+                      "options": [
+                          "Sequence — banks paint their walls blue before building their roofs",
+                          "Contrast — clinics refuse to use blue paint despite its calming effects",
+                          "Definition — defining the medical meaning of blood pressure",
+                          "Cause and Effect — because blue promotes calm and trust (Cause), banks and clinics use pale blue lounges to reduce anxiety by up to 35% (Effect)"
+                      ],
+                      "correctAnswer": 3,
+                      "explanation": "ประโยคที่ (4) บอกคุณสมบัติของสีฟ้า (สาเหตุ) และ 'Consequently' ในประโยคที่ (5) ชี้ผลลัพธ์ที่ธนาคารและคลินิกนำสีฟ้าไปใช้ลดความกังวลได้ถึง 35% (ตัวเลือก D)"
+                  },
+                  {
+                      "id": 27,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the sentence that uses the chronological sequence markers 'Initially' and 'subsequently' to trace store lighting changes from 09:00 AM to 18:00 PM. [U2-5.2]",
+                      "targetSentenceIndex": 6,
+                      "explanation": "ประโยคที่ (7) ใช้คำสัญญาณบอกลำดับเวลา 'Initially' (ในตอนเช้า 09:00 AM) และ 'subsequently' (ต่อมาหลัง 18:00 PM)"
+                  },
+                  {
+                      "id": 28,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (7) with the sequence signal word meaning 'afterward or later in time': [U2-5.2]",
+                      "sentenceWithBlank": "Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; [ _______ ], stores transition to warm amber illumination after 18:00 PM.",
+                      "choices": [
+                          "subsequently",
+                          "whereas",
+                          "unlike",
+                          "because"
+                      ],
+                      "correctWord": "subsequently",
+                      "explanation": "'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเหตุการณ์ตามเวลา (Sequence)"
+                  },
+                  {
+                      "id": 29,
+                      "type": "mc",
+                      "prompt": "Scanning for Numbers: By what percentage do pale blue waiting lounges reduce patient anxiety during long waits? [U2-5.4]",
+                      "options": [
+                          "Up to 18%",
+                          "Up to 28%",
+                          "Up to 35%",
+                          "Up to 50%"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "จากการสแกนประโยคที่ (5) พบตัวเลข 'reduce patient anxiety by up to 35%' (ส่วน 28% คือการซื้อฉับพลันจากป้ายสีแดง) (ตัวเลือก C)"
+                  },
+                  {
+                      "id": 30,
+                      "type": "mc",
+                      "prompt": "Summary & Synthesis: Which statement best summarizes Passage 3? [U2-6.3.3]",
+                      "options": [
+                          "Designers use warm colors to stimulate urgency, cool colors to foster calm and trust, and timed lighting shifts to match human rhythms and shape consumer behavior",
+                          "Red clearance signage increases impulse purchases by 28%, while pale blue waiting rooms reduce anxiety by 35%",
+                          "Store managers switch LED lighting from white to amber at 18:00 PM every day",
+                          "Only fashion boutiques and banks care about interior architecture"
+                      ],
+                      "correctAnswer": 0,
+                      "explanation": "ตัวเลือก A สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา) ส่วน B และ C เป็นเพียง Minor Details"
+                  }
+              ]
+          },
+          {
+              "id": "u2-quiz-p4",
+              "title": "Passage 4: High-Speed Rail Expansion and Regional Eco-Tourism",
+              "thaiTitle": "บทอ่านที่ 4: การขยายโครงข่ายรถไฟความเร็วสูงและการท่องเที่ยวเชิงนิเวศ [U2-5.1..5.6, 6.3.3]",
+              "genre": "Transportation & Regional Economics",
+              "audioText": "The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions. First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights. Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets. Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach. For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds. Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks. Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers. Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds.",
+              "sentences": [
+                  "(1) The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions.",
+                  "(2) First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights.",
+                  "(3) Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets.",
+                  "(4) Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach.",
+                  "(5) For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds.",
+                  "(6) Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks.",
+                  "(7) Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers.",
+                  "(8) Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds."
+              ],
+              "questions": [
+                  {
+                      "id": 31,
+                      "type": "mc",
+                      "prompt": "Skimming for Main Idea: What is the primary Main Idea of Passage 4? [U2-5.1, 5.3]",
+                      "options": [
+                          "Commercial jets are faster and more environmentally friendly than electric trains",
+                          "Electric high-speed rail expansion transforms regional eco-tourism, cuts carbon emissions, protects wildlife corridors, and streamlines travel",
+                          "First-class train cabins cost 2,450 baht while standard berths cost 980 baht",
+                          "Wild elephants and deer are afraid of elevated railway viaducts"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "ประโยคที่ (1) และโครงสร้าง Major Details ทั้ง 3 ประการสรุปใจความสำคัญว่ารถไฟความเร็วสูงพลังงานไฟฟ้ายกระดับการท่องเที่ยว ลดคาร์บอน และเป็นมิตรต่อระบบนิเวศ (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 32,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the Minor Supporting Detail sentence that gives specific statistics about the Emerald Express (Train No. 908), its 160 km/h speed, and 62% lower emissions. [U2-5.1, 5.4]",
+                      "targetSentenceIndex": 2,
+                      "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่ให้ข้อมูลตัวเลขและสถิติของขบวนรถไฟ Emerald Express (Train No. 908) เพื่อสนับสนุนประโยคที่ (2)"
+                  },
+                  {
+                      "id": 33,
+                      "type": "mc",
+                      "prompt": "Scanning for Specific Facts: How long does the Emerald Express (Train No. 908) take to complete the 750-kilometer northern route? [U2-5.4]",
+                      "options": [
+                          "3 hours and 45 minutes",
+                          "5 hours and 30 minutes",
+                          "6 hours and 15 minutes",
+                          "9 hours and 20 minutes"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "จากการสแกนประโยคที่ (3) พบข้อมูลเวลาเดินทาง 'in just 6 hours and 15 minutes' (ตัวเลือก C)"
+                  },
+                  {
+                      "id": 34,
+                      "type": "mc",
+                      "prompt": "What is the structural role of Sentence (4) ('Second, convenient rail connectivity revitalizes secondary nature reserves...')? [U2-5.1]",
+                      "options": [
+                          "Major Supporting Detail — it introduces the second primary benefit of high-speed rail (boosting eco-tourism in nature reserves)",
+                          "Minor Supporting Detail — it gives the exact ticket price of a sleeper berth",
+                          "Main Idea — it summarizes the entire history of aviation",
+                          "Contrast Detail — it argues that tourists dislike nature reserves"
+                      ],
+                      "correctAnswer": 0,
+                      "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' ทำหน้าที่เป็น Major Supporting Detail ข้อที่ 2 ของย่อหน้า (ตัวเลือก A)"
+                  },
+                  {
+                      "id": 35,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (5) with the signal phrase that introduces a concrete example of a revitalized nature reserve: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ], following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists.",
+                      "choices": [
+                          "For example",
+                          "In contrast",
+                          "Whereas",
+                          "Finally"
+                      ],
+                      "correctWord": "For example",
+                      "explanation": "'For example' ใช้เปิดตัว Minor Supporting Detail ที่ยกตัวอย่างเทศกาลดูนกอพยพที่เชียงราย"
+                  },
+                  {
+                      "id": 36,
+                      "type": "mc",
+                      "prompt": "Scanning for Numbers: How much money did the Annual Migratory Bird Festival generate for local conservation funds? [U2-5.4]",
+                      "options": [
+                          "2.45 million baht",
+                          "6.2 million baht",
+                          "14.5 million baht",
+                          "8.2 million baht"
+                      ],
+                      "correctAnswer": 3,
+                      "explanation": "จากการสแกนประโยคที่ (5) พบคำว่า 'generating 8.2 million baht for local conservation funds' (ส่วน 14,500 คือจำนวนนักท่องเที่ยว) (ตัวเลือก D)"
+                  },
+                  {
+                      "id": 37,
+                      "type": "highlight",
+                      "prompt": "Tap/Select the sentence that uses 'Whereas' to contrast habitat-fragmenting highways with wildlife-friendly elevated railway viaducts. [U2-5.2]",
+                      "targetSentenceIndex": 5,
+                      "explanation": "ประโยคที่ (6) ใช้คำเชื่อม 'Whereas' เปรียบเทียบความแตกต่างระหว่างถนนทางหลวงที่ตัดแบ่งป่า กับสะพานรถไฟยกระดับที่ให้ช้างและกวางเดินลอดได้อย่างปลอดภัย"
+                  },
+                  {
+                      "id": 38,
+                      "type": "mc",
+                      "prompt": "Scanning for Specific Facts: In Sentence (8), what is the price of a first-class private cabin versus a standard berth? [U2-5.4]",
+                      "options": [
+                          "1,600 baht for first class / 750 baht for standard",
+                          "2,450 baht for first class / 980 baht for standard",
+                          "3,500 baht for first class / 1,200 baht for standard",
+                          "980 baht for first class / 2,450 baht for standard"
+                      ],
+                      "correctAnswer": 1,
+                      "explanation": "จากการสแกนประโยคที่ (8) พบข้อมูลราคาตั๋ว 'priced at 2,450 baht for first class or 980 baht for standard berths' (ตัวเลือก B)"
+                  },
+                  {
+                      "id": 39,
+                      "type": "fillBlank",
+                      "prompt": "Complete Sentence (7) with the sequence signal word that introduces the third and last Major Supporting Detail: [U2-5.2]",
+                      "sentenceWithBlank": "[ _______ ], integrated digital ticketing systems streamline multi-city travel for independent passengers.",
+                      "choices": [
+                          "Finally",
+                          "Whereas",
+                          "Unlike",
+                          "Because"
+                      ],
+                      "correctWord": "Finally",
+                      "explanation": "'Finally' เป็น Signal Word บอกลำดับประเด็นหลักข้อสุดท้าย (First -> Second -> Finally)"
+                  },
+                  {
+                      "id": 40,
+                      "type": "mc",
+                      "prompt": "In Sentence (8), what idea relationship is signaled by the pair of words 'Initially ... ; subsequently, ...'? [U2-5.2, 6.2.4]",
+                      "options": [
+                          "Compare and Contrast — contrasting mobile apps with paper tickets",
+                          "Cause and Effect — explaining why trains are delayed at Platform 4",
+                          "Chronological Sequence — showing the step-by-step order from booking on the app to passing through the biometric gate",
+                          "Definition — defining the meaning of biometric gates"
+                      ],
+                      "correctAnswer": 2,
+                      "explanation": "'Initially ... ; subsequently, ...' แสดงลำดับขั้นตอนตามเวลา (Sequence) ตั้งแต่การจองตั๋วผ่านแอปไปจนถึงการสแกนผ่านประตูอัตโนมัติที่ชานชาลา 4 (ตัวเลือก C)"
+                  }
+              ]
+          }
+      ]
+  },
+
   // Unit 3 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
   unit3Quiz: {
       "title": "Unit 3 Graded Quiz: Vocabulary in Context & Sentence Meaning",
