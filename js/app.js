@@ -3415,10 +3415,10 @@ class ReadSkillsApp {
     fb.classList.remove('hidden');
     if (selectedNum === 2) {
       fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300';
-      fb.innerHTML = '<strong>ถูกต้อง! 🎉 (Active at night):</strong> เบาะแสสำคัญคือ 1) ตัวอย่างในเครื่องหมายขีดยาว <em>"—such as owls, bats, and night monkeys—"</em> และ 2) คำอธิบายเหตุผลข้างหลังว่า <em>"sleep all day and only emerge to hunt after sunset"</em>';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉 (A person who enjoys long walks in the countryside):</strong> เบาะแสสำคัญคือเครื่องหมายขีดยาว <em>"—a person who enjoys long walks in the countryside"</em> และคำแวดล้อม <em>"walks in the woods near Lake Ullswater"</em>';
     } else {
       fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300';
-      fb.innerHTML = '<strong>ลองสังเกตบริบทอีกครั้ง:</strong> ดูตัวอย่างสัตว์หลังคำว่า <em>such as (นกฮูก ค้างคาว)</em> และวลีท้ายประโยค <em>"sleep all day and only emerge to hunt after sunset"</em> คำว่า <strong>nocturnal</strong> จึงหมายถึง ออกหากินเวลากลางคืน (ข้อ B)';
+      fb.innerHTML = '<strong>ลองสังเกตบริบทอีกครั้ง:</strong> ดูข้อความหลังเครื่องหมายขีดยาว <em>"—a person who enjoys long walks in the countryside"</em> คำว่า <strong>hiker</strong> จึงหมายถึง นักเดินป่าชมธรรมชาติ (ข้อ B)';
     }
   }
 
@@ -3428,11 +3428,11 @@ class ReadSkillsApp {
     this.unit3PreGameAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 0, exp: "คำนิยามหลังคอมมา ', which bloom for only a few days before withering away' ชี้ว่า ephemeral แปลว่า อายุสั้น/บานเพียงไม่กี่วัน" },
-      2: { ans: 1, exp: "เครื่องหมายขีดคู่ (— ... —) พร้อมคำว่า 'such as carrots, radishes...' คือ Example Clue" },
-      3: { ans: 0, exp: "คำเชื่อม 'Whereas' เปรียบเทียบความตรงข้ามกับ 'violent and dangerous' ดังนั้น tranquil จึงแปลว่า สงบนิ่ง" },
-      4: { ans: 1, exp: "วลี ', or extremely careful and precise,' เป็น Synonym Clue ที่แปลคำว่า meticulous ไว้ตรงตัว" },
-      5: { ans: 1, exp: "บริบทเหตุและผล (หมอกหนาทึบทำให้เรือมองไม่เห็นชายฝั่ง) ชี้ว่า obscured แปลว่า ถูกบดบัง" }
+      1: { ans: 0, exp: "คำนิยามหลังคอมมา ', which is a big truck used for carrying heavy boxes by road' ชี้ว่า lorry แปลว่า รถบรรทุกขนาดใหญ่ (Definition Clue)" },
+      2: { ans: 1, exp: "เครื่องหมายขีดคู่ (— ... —) พร้อมคำว่า 'such as cookies, sandwiches, and energy drinks' คือ Example Clue" },
+      3: { ans: 0, exp: "คำเชื่อม 'Unlike' เปรียบเทียบความตรงข้ามกับ 'the noisy city street' ดังนั้น silent จึงแปลว่า เงียบสงัดไร้เสียง" },
+      4: { ans: 1, exp: "วลี ', or exactly the same in every detail' เป็น Synonym Clue ที่แปลคำว่า identical ไว้ตรงตัว" },
+      5: { ans: 1, exp: "บริบทเหตุและผล (ไม่ได้กินอะไรตั้งแต่เช้าจนหิวมาก จึงตัดสินใจหาร้านอาหาร) ชี้ว่า restaurant คือสถานที่ซื้อและรับประทานอาหาร" }
     };
 
     const target = key[qNum];
@@ -3471,11 +3471,11 @@ class ReadSkillsApp {
   // Yellow = Unfamiliar vocabulary, Green = Context clues, Blue = Main ideas and sentence meaning
   highlightUnit3Sentence(segNum, color) {
     const expected = {
-      1: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่บอกใจความหลักเรื่องการนอนหลับลึกช่วยเปลี่ยนความจำระยะสั้นเป็นความจำระยะยาว' },
-      2: { role: 'yellow', exp: 'Segment (2) คือ Unfamiliar Vocabulary (สีเหลือง) ได้แก่คำศัพท์วิชาการเป้าหมาย: consolidation, nocturnal, cognitive deprivation' },
-      3: { role: 'green', exp: 'Segment (3) คือ Context Clue (สีเขียว) ที่ใช้เครื่องหมายขีดยาวและคำว่า that is เพื่อนิยามคำว่า consolidation' },
-      4: { role: 'green', exp: 'Segment (4) คือ Context Clue (สีเขียว) ที่ใช้คำสัญญาณ such as ยกตัวอย่างอาการของการอดนอน (sleep deprivation)' },
-      5: { role: 'blue', exp: 'Segment (5) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่สรุปแก่นความหมายของประโยค (Subject + Verb + Core Meaning)' }
+      1: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่บอกใจความหลักว่าซิลเวียและจอร์จไปเดินป่าริมทะเลสาบและพบบ้านไม้เก่าแก่' },
+      2: { role: 'yellow', exp: 'Segment (2) คือ Unfamiliar Vocabulary (สีเหลือง) ได้แก่คำศัพท์สำคัญจากเรื่องสั้น: excursion, footprints, costume, renovate' },
+      3: { role: 'green', exp: 'Segment (3) คือ Context Clue (สีเขียว) ที่ใช้เครื่องหมายขีดยาวและคำว่า that is เพื่อนิยามคำว่า footprints (รอยเท้าบนพื้นฝุ่น)' },
+      4: { role: 'green', exp: 'Segment (4) คือ Context Clue (สีเขียว) ที่ใช้วงเล็บอธิบายความหมายของคำว่า costume (ชุดปลอมตัว)' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Main Idea & Sentence Meaning (สีฟ้า) ที่สรุปแก่นตอนจบของเรื่องว่าสัตว์ประหลาดคือคุณพ่อ และบ้านหลังนั้นคือของขวัญวันเกิด' }
     };
 
     const textEl = document.getElementById(`u3-s${segNum}-text`);
@@ -3519,14 +3519,14 @@ class ReadSkillsApp {
     this.unit3GameAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 2, exp: "วลีขยาย 'cleverly reading subtle wave patterns...' ชี้ว่า astute หมายถึง ฉลาดหลักแหลมและช่างสังเกต (ข้อ C)" },
-      2: { ans: 1, exp: "Definition Clue หลังขีดยาว '—a period of suspended growth and biological inactivity—' แปลตรงตัวว่า ภาวะพักตัวชั่วคราว (ข้อ B)" },
-      3: { ans: 0, exp: "จากคำตรงข้าม 'Unlike synthetic plastics' และคำอธิบาย 'decomposes naturally within months' ชี้ว่า biodegradable แปลว่า ย่อยสลายได้ตามธรรมชาติ (ข้อ A)" },
-      4: { ans: 2, exp: "เบาะแสแผ่นดินไหวหลายพันครั้งและควันกำมะถันพวยพุ่งออกจากปากปล่อง ชี้ว่าการปะทุนั้น imminent = กำลังจะเกิดขึ้นในอีกไม่ช้า (ข้อ C)" },
-      5: { ans: 1, exp: "Synonym Clue หลังคำว่า ', or thrifty and economical use...' แปลว่า ประหยัด มัธยัสถ์ และไม่ทิ้งขว้าง (ข้อ B)" },
-      6: { ans: 2, exp: "น้ำมันหอมระเหยในสมุนไพรช่วย inhibit การเน่าเสียของอาหารจากแบคทีเรีย จึงหมายถึง ยับยั้งหรือชะลอ (ข้อ C)" },
-      7: { ans: 1, exp: "ตัดวลี Despite... ข้างหน้าออก จะพบ Core Subject คือ 'the solar-powered catamaran' และ Main Verb คือ 'completed' (ข้อ B)" },
-      8: { ans: 2, exp: "ประธานหลักคือ 'Public botanical gardens' กริยาหลักคือ 'educate' ใจความหลักจึงตรงกับข้อ C" }
+      1: { ans: 2, exp: "คำนิยามหลังขีดยาว '—a person who buys and sells things in a market' แปลตรงตัวว่า พ่อค้าในตลาด (ข้อ C)" },
+      2: { ans: 1, exp: "Definition Clue หลังขีดยาว '—a letter written on paper or skin and rolled up—' แปลว่า ม้วนหนังสือหรือสาส์น (ข้อ B)" },
+      3: { ans: 0, exp: "จากคำตรงข้าม 'Unlike modern digital watches' และคำขยาย 'worn hundreds of years ago' ชี้ว่า old-fashioned แปลว่า โบราณ/ล้าสมัย (ข้อ A)" },
+      4: { ans: 2, exp: "ทหารให้ม้าลงไปเกลือกกลิ้งและเดินย่ำในน้ำพุจนไม่สามารถใช้ได้อีก คำว่า foul จึงหมายถึง สกปรกเน่าเสียและใช้ดื่มไม่ได้ (ข้อ C)" },
+      5: { ans: 1, exp: "Synonym Clue หลังคำว่า ', or tidy and arranged carefully' แปลว่า สะอาดและเป็นระเบียบเรียบร้อย (ข้อ B)" },
+      6: { ans: 2, exp: "เบาะแส 'her friends could not see her at all' ชี้ชัดว่า invisible แปลว่า ล่องหนหรือมองไม่เห็น (ข้อ C)" },
+      7: { ans: 1, exp: "ตัดวลีบอกเวลา 'After searching the old garage for an hour,' ออก จะพบ Core Subject คือ 'David' และ Main Verb คือ 'found' (ข้อ B)" },
+      8: { ans: 2, exp: "ประธานหลักและกริยาหลักคือ 'the old chest opened and revealed a letter from their uncle Walter' ใจความสำคัญจึงตรงกับข้อ C" }
     };
 
     const target = key[qNum];

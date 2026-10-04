@@ -1,1727 +1,46 @@
-/**
- * Reading Skills Data Store
- * Aligned with Chapter 3 & Research Specifications:
- * Course: Introduction to English Reading Strategies (2031103)
- * Buriram Rajabhat University
- */
-
 window.ReadSkillsData = {
-  // Course Metadata
-  course: {
-    code: "2031103",
-    name: "Introduction to English Reading Strategies",
-    institution: "Buriram Rajabhat University",
-    program: "English Program, Faculty of Humanities and Social Sciences",
-    instructor: "Asst. Prof. Naviya Chutopama",
-    office: "250804, Building 25",
-    credit: "3(3-0-6)",
-    duration: "6 periods (2 weeks)",
-    targetGroup: "First-year English major students",
-    framework: "Pre-, While-, and Post-Reading Instructional Framework"
+  "course": {
+    "code": "2031103",
+    "name": "Introduction to English Reading Strategies",
+    "institution": "Buriram Rajabhat University",
+    "program": "English Program, Faculty of Humanities and Social Sciences",
+    "instructor": "Asst. Prof. Naviya Chutopama",
+    "office": "250804, Building 25",
+    "credit": "3(3-0-6)",
+    "duration": "6 periods (2 weeks)",
+    "targetGroup": "First-year English major students",
+    "framework": "Pre-, While-, and Post-Reading Instructional Framework"
   },
-
-  // 6 Instructional Units (Module 1: Reading Lessons)
-  units: [
-        {
-      id: 1,
-      code: "UNIT-01",
-      title: "Main Ideas",
-      topic: "Navigating Main Ideas",
-      thaiTitle: "ใจความสำคัญ (Navigating Main Ideas)",
-      scope: "Overview & Objectives, In-Depth Definitions & 4-Step Strategy, Long Passage & ~10 Vocabulary Words with Prediction Clues, Interactive Guided Practice",
-      description: "Unit 1 • Course 2031103: Master identifying main ideas, topic sentences, exploring text features, vocabulary preview (~10 words), predicting, and reading The Tortoise and the Hare with immediate feedback.",
-      cefr: "A1-A2",
-      stages: {
-        preReading: {
-          title: "Pre-Reading Stage",
-          steps: {
-            overview: `<div class="space-y-6">
-          <!-- Header & Objectives -->
-          <div class="space-y-3">
-            <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-              <i data-lucide="target" class="w-6 h-6 text-purple-700"></i>
-              <h3>เป้าหมายการเรียนรู้ประจำบท (Unit Learning Objectives)</h3>
-            </div>
-            <p class="text-sm text-slate-700 leading-relaxed">
-              ยินดีต้อนรับสู่ <strong>Unit 1: Main Ideas (ใจความสำคัญ)</strong> ในบทเรียนนี้ ผู้เรียนจะได้เรียนรู้ทักษะพื้นฐานที่สำคัญที่สุดของการอ่านภาษาอังกฤษ นั่นคือการจับประเด็นหลักและแยกแยะใจความสำคัญออกจากรายละเอียด เพื่อให้สามารถอ่านเข้าใจบทความได้อย่างรวดเร็วและถูกต้อง
-            </p>
-
-            <!-- 4 Objective Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-              <div class="p-3.5 bg-purple-50/80 rounded-xl border border-purple-200 flex items-start space-x-3">
-                <div class="w-7 h-7 rounded-lg bg-purple-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
-                <div>
-                  <h5 class="font-bold text-xs text-purple-950">เข้าใจความหมายของ Main Idea</h5>
-                  <p class="text-[11px] text-slate-600 mt-0.5">แยกแยะระหว่าง Topic (หัวข้อ), Main Idea (ใจความสำคัญ), และ Supporting Details (รายละเอียดสนับสนุน)</p>
-                </div>
-              </div>
-              <div class="p-3.5 bg-pink-50/80 rounded-xl border border-pink-200 flex items-start space-x-3">
-                <div class="w-7 h-7 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
-                <div>
-                  <h5 class="font-bold text-xs text-pink-950">ระบุ Topic Sentence ในบทอ่าน</h5>
-                  <p class="text-[11px] text-slate-600 mt-0.5">ค้นหาประโยคใจความสำคัญที่ปรากฏอยู่ต้น กลาง หรือท้ายย่อหน้าได้อย่างแม่นยำ</p>
-                </div>
-              </div>
-              <div class="p-3.5 bg-amber-50/80 rounded-xl border border-amber-200 flex items-start space-x-3">
-                <div class="w-7 h-7 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</div>
-                <div>
-                  <h5 class="font-bold text-xs text-amber-950">กลยุทธ์สำรวจเบาะแส (Text Features & Prediction)</h5>
-                  <p class="text-[11px] text-slate-600 mt-0.5">ใช้ชื่อเรื่อง ภาพประกอบ และคำศัพท์ตัวหนาในการคาดเดาทิศทางของเรื่องก่อนอ่านจริง</p>
-                </div>
-              </div>
-              <div class="p-3.5 bg-emerald-50/80 rounded-xl border border-emerald-200 flex items-start space-x-3">
-                <div class="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">4</div>
-                <div>
-                  <h5 class="font-bold text-xs text-emerald-950">สรุปความเรื่องเล่าและคติธรรม (Fable)</h5>
-                  <p class="text-[11px] text-slate-600 mt-0.5">อ่านนิทานคลาสสิกเรื่อง "The Tortoise and the Hare" และสรุปสาระสำคัญด้วยภาษาของตนเอง</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Mind Map ภาพรวมของบท -->
-          <div class="p-5 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 rounded-2xl border border-purple-200 shadow-sm space-y-4">
-            <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
-              <i data-lucide="network" class="w-5 h-5 text-purple-700"></i>
-              <span>ภาพรวมโครงสร้างบทเรียน: ความสัมพันธ์ 3 ระดับของบทอ่าน (Reading Hierarchy Mind Map)</span>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs">
-              <div class="p-4 bg-white rounded-xl border-l-4 border-purple-600 shadow-xs space-y-2">
-                <div class="font-bold text-purple-950 text-sm flex items-center space-x-2">
-                  <span class="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs">1</span>
-                  <span>Topic (หัวข้อเรื่อง)</span>
-                </div>
-                <p class="text-slate-600 text-[11px]">บทความนี้เกี่ยวกับอะไร? (เป็นคำหรือวลีสั้นๆ)</p>
-                <div class="p-2 bg-purple-50 rounded-lg text-purple-900 font-semibold text-[11px]">
-                  📌 ตัวอย่าง: <em>The race of the Tortoise and the Hare</em>
-                </div>
-              </div>
-
-              <div class="p-4 bg-white rounded-xl border-l-4 border-pink-500 shadow-xs space-y-2">
-                <div class="font-bold text-pink-950 text-sm flex items-center space-x-2">
-                  <span class="w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-xs">2</span>
-                  <span>Main Idea (ใจความสำคัญ)</span>
-                </div>
-                <p class="text-slate-600 text-[11px]">ผู้เขียนต้องการบอกอะไรเกี่ยวกับ Topic? (ประโยคสมบูรณ์)</p>
-                <div class="p-2 bg-pink-50 rounded-lg text-pink-900 font-semibold text-[11px]">
-                  🎯 ตัวอย่าง: <em>Steady perseverance will always triumph over arrogant complacency.</em>
-                </div>
-              </div>
-
-              <div class="p-4 bg-white rounded-xl border-l-4 border-amber-500 shadow-xs space-y-2">
-                <div class="font-bold text-amber-950 text-sm flex items-center space-x-2">
-                  <span class="w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs">3</span>
-                  <span>Supporting Details (รายละเอียด)</span>
-                </div>
-                <p class="text-slate-600 text-[11px]">หลักฐาน/เหตุการณ์ที่ช่วยพิสูจน์หรือขยาย Main Idea</p>
-                <div class="p-2 bg-amber-50 rounded-lg text-amber-900 font-semibold text-[11px]">
-                  🧱 ตัวอย่าง: <em>The boastful Hare naps; the patient Tortoise never stops walking.</em>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-2">
-            <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
-              <span>Next Step: Learn (คำอธิบายละเอียด)</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>`,
-
-        learn: `<div class="space-y-6" id="learn-content-top">
-          <!-- Banner for Part 1: Pre-Reading Strategies -->
-          <div class="bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200">
-            <div class="flex items-center space-x-2 mb-1.5">
-              <span class="bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">Pre-Reading Stage</span>
-              <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full">Part 1: Strategies & Warm-Up</span>
-            </div>
-            <h3 class="text-base sm:text-lg font-bold text-slate-900">Pre-Reading Strategies (กลยุทธ์ก่อนการอ่าน)</h3>
-            <p class="text-xs text-slate-700 mt-1 leading-relaxed">
-              เตรียมความพร้อมของสมองก่อนลงมืออ่านจริง: การสำรวจจุดเด่นของบทอ่าน (Text Features), การคาดเดาเนื้อเรื่อง (Predicting), การกระตุ้นความรู้เดิม (Prior Knowledge), และการดูคำศัพท์ล่วงหน้า (Vocabulary Preview)
-            </p>
-          </div>
-
-          <!-- Content for Part 1 -->
-          <div class="space-y-6">
-            <!-- 1. Pre-Reading คืออะไร และทำไมต้องทำก่อนอ่าน -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-                <i data-lucide="compass" class="w-6 h-6 text-purple-700"></i>
-                <h3>1. Pre-Reading คืออะไร และทำไมต้องทำก่อนอ่าน?</h3>
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed">
-                <strong>Pre-Reading (ขั้นตอนก่อนการอ่าน)</strong> คือ กระบวนการเตรียมความพร้อมของสมองก่อนลงมืออ่านบทความจริงแบบละเอียด เปรียบเสมือนการ <strong>"วอร์มอัพ (Warm-up)"</strong> ร่างกายก่อนเล่นกีฬา หรือการเปิด <strong>"แผนที่นำทาง (GPS Roadmap)"</strong> เพื่อดูทิศทางและภูมิประเทศคร่าวๆ ก่อนออกเดินทางไกล การทำ Pre-Reading จะใช้เวลาสั้นๆ เพียง <strong>1–2 นาที</strong> เพื่อสำรวจจุดเด่นของบทอ่านโดยไม่ต้องอ่านทุกตัวอักษร
-              </p>
-
-              <!-- 4 เหตุผลว่าทำไมต้องทำ Pre-Reading -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1">
-                <div class="p-3.5 bg-purple-50 rounded-xl border border-purple-200 space-y-1.5 shadow-2xs">
-                  <div class="w-7 h-7 rounded-lg bg-purple-700 text-white flex items-center justify-center font-bold text-xs">
-                    <i data-lucide="zap" class="w-4 h-4"></i>
-                  </div>
-                  <h6 class="font-bold text-xs text-purple-950">ปลุกสมองให้พร้อม (Activate Brain)</h6>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">กระตุ้นโครงข่ายความรู้เดิม (Schema) ในสมอง ให้พร้อมรับข้อมูลและคำศัพท์ใหม่ได้อย่างรวดเร็ว</p>
-                </div>
-
-                <div class="p-3.5 bg-pink-50 rounded-xl border border-pink-200 space-y-1.5 shadow-2xs">
-                  <div class="w-7 h-7 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs">
-                    <i data-lucide="target" class="w-4 h-4"></i>
-                  </div>
-                  <h6 class="font-bold text-xs text-pink-950">กำหนดเป้าหมาย (Set Purpose)</h6>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">สร้างคำถามในใจล่วงหน้า ทำให้รู้ชัดเจนว่าเรากำลังอ่านบทความนี้ไปเพื่อค้นหาข้อมูลอะไร</p>
-                </div>
-
-                <div class="p-3.5 bg-amber-50 rounded-xl border border-amber-200 space-y-1.5 shadow-2xs">
-                  <div class="w-7 h-7 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs">
-                    <i data-lucide="gauge" class="w-4 h-4"></i>
-                  </div>
-                  <h6 class="font-bold text-xs text-amber-950">อ่านเร็วขึ้น & ไม่งง (Speed & Fluency)</h6>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">เมื่อเห็นโครงร่างและใจความกว้างๆ จะช่วยลดการอ่านสะดุด ทำให้จับประเด็นได้ลื่นไหล ไม่หลงทาง</p>
-                </div>
-
-                <div class="p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1.5 shadow-2xs">
-                  <div class="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">
-                    <i data-lucide="shield-check" class="w-4 h-4"></i>
-                  </div>
-                  <h6 class="font-bold text-xs text-emerald-950">ลดความกังวล (Reduce Anxiety)</h6>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">ลดความกลัวต่อบทความภาษาอังกฤษที่ยาวหรือยาก เพราะได้ทำความคุ้นเคยกับคำศัพท์หลักไว้แล้ว</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- 2. 4 กลยุทธ์สำคัญของ Pre-Reading (Pre-Reading Strategies) -->
-            <div class="space-y-4">
-              <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-                <i data-lucide="layers" class="w-6 h-6 text-purple-700"></i>
-                <h3>2. กลยุทธ์ Pre-Reading 4 ประการ: คำอธิบาย, ขั้นตอนปฏิบัติ และเคล็ดลับ</h3>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <!-- กลยุทธ์ที่ 1: Previewing -->
-                <div class="p-4 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-3">
-                  <div class="flex items-center space-x-2 pb-2 border-b border-purple-100">
-                    <span class="w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs">1</span>
-                    <h4 class="font-bold text-purple-950 text-sm">การดูชื่อเรื่องและรูปภาพ (Previewing)</h4>
-                  </div>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>คำอธิบาย:</strong> การกวาดสายตาสำรวจ <em>Text Features (ร่องรอยภายนอกของบทความ)</em> ในเวลา 30–45 วินาที เพื่อสร้างภาพจำลองโครงสร้างของบทอ่านในสมอง
-                  </p>
-                  <div class="bg-purple-50/70 p-3 rounded-xl border border-purple-100 space-y-1.5 text-xs text-slate-700">
-                    <span class="font-bold text-purple-900 text-[11px] flex items-center space-x-1">
-                      <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-purple-700"></i>
-                      <span>ขั้นตอนการทำ (Step-by-Step):</span>
-                    </span>
-                    <ul class="text-[11px] space-y-1 pl-1 text-slate-600">
-                      <li>• <strong>Step 1:</strong> อ่าน <strong>Title (ชื่อเรื่อง)</strong> และ Subheadings เพื่อดูว่าเรื่องเกี่ยวกับอะไร</li>
-                      <li>• <strong>Step 2:</strong> สำรวจ <strong>Visuals (รูปภาพ, แผนภูมิ, กราฟ)</strong> และอ่านคำอธิบายใต้ภาพ (Captions)</li>
-                      <li>• <strong>Step 3:</strong> สแกนหาคำเน้น เช่น <strong>ตัวหนา (Bold)</strong>, <em>ตัวเอียง (Italics)</em> หรือตัวเลข</li>
-                    </ul>
-                  </div>
-                  <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5">
-                    <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
-                    <span><strong>เคล็ดลับ (Tip):</strong> อย่าเพิ่งอ่านเนื้อความยาวๆ ให้สายตามองข้ามตัวหนังสือธรรมดา แล้วโฟกัสเฉพาะ "จุดเด่นที่สะดุดตา" ก่อนเท่านั้น</span>
-                  </div>
-                </div>
-
-                <!-- กลยุทธ์ที่ 2: Predicting -->
-                <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-3">
-                  <div class="flex items-center space-x-2 pb-2 border-b border-pink-100">
-                    <span class="w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs">2</span>
-                    <h4 class="font-bold text-pink-950 text-sm">การคาดเดาเนื้อหา (Predicting)</h4>
-                  </div>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>คำอธิบาย:</strong> การใช้ร่องรอย (Clues) จากการ Preview มาตั้งสมมติฐานหรือคาดเดาอย่างมีเหตุผล (Educated Guess) ว่าบทความจะเล่าเรื่องอะไรหรือมีจุดจบอย่างไร
-                  </p>
-                  <div class="bg-pink-50/70 p-3 rounded-xl border border-pink-100 space-y-1.5 text-xs text-slate-700">
-                    <span class="font-bold text-pink-900 text-[11px] flex items-center space-x-1">
-                      <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-pink-600"></i>
-                      <span>ขั้นตอนการทำ (Step-by-Step):</span>
-                    </span>
-                    <ul class="text-[11px] space-y-1 pl-1 text-slate-600">
-                      <li>• <strong>Step 1:</strong> นำข้อมูลจากชื่อเรื่องและภาพมาตั้งคำถาม (เช่น <em>"กระต่ายกับเต่าจะทำอะไรร่วมกัน?"</em>)</li>
-                      <li>• <strong>Step 2:</strong> เขียนหรือคิดข้อคาดเดาไว้ 1–2 ประโยค (เช่น <em>"กระต่ายต้องท้าเต่าแข่งวิ่งแน่นอน"</em>)</li>
-                      <li>• <strong>Step 3:</strong> ตั้งใจอ่านเพื่อ <strong>ตรวจสอบ (Verify)</strong> ว่าเนื้อเรื่องตรงกับที่เราคาดเดาไว้หรือไม่</li>
-                    </ul>
-                  </div>
-                  <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5">
-                    <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
-                    <span><strong>เคล็ดลับ (Tip):</strong> การคาดเดา "ผิด" ไม่ใช่เรื่องเสียหาย! จุดประสงค์ของการคาดเดาคือการสร้าง <span class="highlighter-pen highlighter-yellow font-semibold">Active Curiosity</span> ทำให้สมองตื่นตัวรอค้นหาคำตอบจริง</span>
-                  </div>
-                </div>
-
-                <!-- กลยุทธ์ที่ 3: Activating Background Knowledge -->
-                <div class="p-4 bg-white rounded-2xl border border-amber-200 shadow-xs space-y-3">
-                  <div class="flex items-center space-x-2 pb-2 border-b border-amber-100">
-                    <span class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs">3</span>
-                    <h4 class="font-bold text-amber-950 text-sm">การดึงความรู้เดิมมาใช้ (Activating Prior Knowledge)</h4>
-                  </div>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>คำอธิบาย:</strong> การดึงความจำ ความรู้ และประสบการณ์เดิมที่สะสมไว้ในสมอง (Schema) มาเชื่อมโยงกับเรื่องที่กำลังจะอ่าน ช่วยให้เข้าใจเนื้อหาใหม่ได้ง่ายขึ้นเป็นทวีคูณ
-                  </p>
-                  <div class="bg-amber-50/70 p-3 rounded-xl border border-amber-100 space-y-1.5 text-xs text-slate-700">
-                    <span class="font-bold text-amber-900 text-[11px] flex items-center space-x-1">
-                      <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-amber-600"></i>
-                      <span>ขั้นตอนการทำ (Step-by-Step):</span>
-                    </span>
-                    <ul class="text-[11px] space-y-1 pl-1 text-slate-600">
-                      <li>• <strong>Step 1:</strong> ถามตัวเอง: <em>"เรารู้อะไรเกี่ยวกับเรื่องนี้บ้างแล้ว?"</em> (เช่น คาแรคเตอร์เต่าเดินช้า กระต่ายวิ่งเร็ว)</li>
-                      <li>• <strong>Step 2:</strong> ใช้เทคนิค <strong>K-W-L</strong> สั้นๆ: <strong>K</strong> (สิ่งที่เรารู้แล้ว) $\rightarrow$ <strong>W</strong> (สิ่งที่อยากรู้จากเรื่องนี้)</li>
-                      <li>• <strong>Step 3:</strong> นึกเชื่อมโยงกับประสบการณ์ตรงหรือเรื่องราวที่เคยดู/เคยฟังในชีวิตประจำวัน</li>
-                    </ul>
-                  </div>
-                  <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5">
-                    <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
-                    <span><strong>เคล็ดลับ (Tip):</strong> สมองมนุษย์เรียนรู้สิ่งใหม่ได้ดีที่สุดเมื่อมี "สะพานเชื่อม" กับสิ่งเดิม ใช้เวลาเพียง 20 วินาทีนึกถึงเรื่องที่เคยรู้ จะช่วยให้จำเนื้อหาใหม่ได้แม่นยำขึ้นมาก</span>
-                  </div>
-                </div>
-
-                <!-- กลยุทธ์ที่ 4: Vocabulary Preview -->
-                <div class="p-4 bg-white rounded-2xl border border-emerald-200 shadow-xs space-y-3">
-                  <div class="flex items-center space-x-2 pb-2 border-b border-emerald-100">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs">4</span>
-                    <h4 class="font-bold text-emerald-950 text-sm">การเรียนรู้คำศัพท์ล่วงหน้า (Vocabulary Preview)</h4>
-                  </div>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    <strong>คำอธิบาย:</strong> การสำรวจและเรียนรู้คำศัพท์สำคัญประจำบท (Key Content Words) ล่วงหน้า เพื่อป้องกันไม่ให้คำศัพท์ยากกลายเป็นกำแพงขัดขวางการทำความเข้าใจ
-                  </p>
-                  <div class="bg-emerald-50/70 p-3 rounded-xl border border-emerald-100 space-y-1.5 text-xs text-slate-700">
-                    <span class="font-bold text-emerald-900 text-[11px] flex items-center space-x-1">
-                      <i data-lucide="list-ordered" class="w-3.5 h-3.5 text-emerald-700"></i>
-                      <span>ขั้นตอนการทำ (Step-by-Step):</span>
-                    </span>
-                    <ul class="text-[11px] space-y-1 pl-1 text-slate-600">
-                      <li>• <strong>Step 1:</strong> สังเกตคำศัพท์สำคัญที่เน้นตัวหนา หรือคำศัพท์ที่ปรากฏซ้ำบ่อยในชื่อเรื่องและย่อหน้าแรก</li>
-                      <li>• <strong>Step 2:</strong> ตรวจดูประเภทคำ (Part of Speech) และความหมายหลักคร่าวๆ (~5–10 คำสำคัญ)</li>
-                      <li>• <strong>Step 3:</strong> เดาความหมายของคำจากบริบทแวดล้อม (Context Clues) เบื้องต้นก่อนเปิดพจนานุกรม</li>
-                    </ul>
-                  </div>
-                  <div class="bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5">
-                    <i data-lucide="lightbulb" class="w-4 h-4 text-amber-600 shrink-0 mt-0.5"></i>
-                    <span><strong>เคล็ดลับ (Tip):</strong> ไม่จำเป็นต้องเปิดพจนานุกรมทุกคำที่ไม่รู้! ดูเฉพาะคำหลักที่ส่งผลต่อใจความสำคัญ หากคำศัพท์นั้นเป็นแค่คำบรรยายปลีกย่อย ให้ข้ามไปก่อนได้</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3. Mind Map / ไดอะแกรมสรุปขั้นตอน Pre-Reading -->
-            <div class="p-4 sm:p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 rounded-2xl border border-purple-200 space-y-3">
-              <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
-                <i data-lucide="sparkles" class="w-5 h-5 text-purple-700"></i>
-                <span>3. แผนผังกระบวนการ Pre-Reading ประจำบท (4-Step Action Routine)</span>
-              </div>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center">
-                <div class="p-3 bg-white/95 rounded-xl border border-purple-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-md">STEP 1</span>
-                  <h6 class="font-bold text-xs text-slate-900">สำรวจ Text Features</h6>
-                  <p class="text-[11px] text-slate-600">กวาดตาดู Title, ภาพประกอบ, และตัวหนา (30 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-pink-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md">STEP 2</span>
-                  <h6 class="font-bold text-xs text-slate-900">ปลุกความรู้เดิม (Schema)</h6>
-                  <p class="text-[11px] text-slate-600">นึกถึงสิ่งที่เรารู้เกี่ยวกับหัวข้อนี้มาก่อน (20 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-amber-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">STEP 3</span>
-                  <h6 class="font-bold text-xs text-slate-900">ส่องศัพท์สำคัญ (~10 คำ)</h6>
-                  <p class="text-[11px] text-slate-600">ทำความเข้าใจคำศัพท์หลักก่อนอ่านเนื้อเรื่องจริง (45 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-emerald-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">STEP 4</span>
-                  <h6 class="font-bold text-xs text-slate-900">ตั้งสมมติฐาน & คาดเดา</h6>
-                  <p class="text-[11px] text-slate-600">คาดเดาเนื้อเรื่องและกำหนดเป้าหมายในการอ่าน (25 วินาที)</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- 4. ข้อผิดพลาดที่พบบ่อย (Common Mistakes & Traps) -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-rose-950 font-bold text-lg">
-                <i data-lucide="alert-triangle" class="w-6 h-6 text-rose-600"></i>
-                <h3>4. ข้อผิดพลาดที่พบบ่อยในการทำ Pre-Reading (Common Mistakes & Traps)</h3>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>1. กระโดดอ่านบรรทัดแรกทันทีโดยไม่สำรวจ (Diving Straight In)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ผลเสีย:</strong> สมองไม่มีทิศทาง ไม่รู้ภาพรวม ทำให้อ่านช้าและหลงประเด็นง่าย<br>
-                    <strong class="text-emerald-700">✓ วิธีแก้:</strong> สละเวลา 1–2 นาที กวาดตาดูชื่อเรื่อง ภาพประกอบ และหัวข้อย่อยก่อนเสมอ
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>2. ใช้เวลากับ Pre-Reading นานเกินไป (Over-Reading)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ผลเสีย:</strong> พยายามอ่านทุกประโยคตั้งแต่ช่วงสำรวจ ทำให้หมดเวลาและเหนื่อยล้าก่อนอ่านจริง<br>
-                    <strong class="text-emerald-700">✓ วิธีแก้:</strong> กำหนดเวลาเคร่งครัดเพียง 1–2 นาที ใช้การสแกน (Scanning) แทนการอ่านคำต่อคำ
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>3. กลัวการคาดเดาผิด (Fear of Wrong Predictions)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ผลเสีย:</strong> ไม่กล้าตั้งสมมติฐานเพราะกังวลว่าจะไม่ตรงกับเนื้อเรื่อง<br>
-                    <strong class="text-emerald-700">✓ วิธีแก้:</strong> จำไว้ว่า <span class="highlighter-pen highlighter-pink">การคาดเดาไม่มีผิดถูก</span> เป้าหมายคือทำให้สมองกระตือรือร้นในการตรวจสอบความจริง
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>4. หยุดเปิดพจนานุกรมทุกคำที่ไม่คุ้นตา (Dictionary Dependency)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ผลเสีย:</strong> สมาธิขาดตอน เสียจังหวะในการทำความเข้าใจภาพรวมของเรื่อง<br>
-                    <strong class="text-emerald-700">✓ วิธีแก้:</strong> พรีวิวเฉพาะคำสำคัญ 5–10 คำ คำที่เหลือให้ลองเดาจากบริบทขณะอ่านจริง
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Part 1 Bottom Navigation Buttons -->
-            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
-              <button onclick="app.selectActivityStep('overview')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
-                ⬅ Back: Overview
-              </button>
-              <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
-                <span>Next: While-Reading Stage (Learn Part 2)</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
-        </div>`
+  "units": [
+    {
+      "id": 1,
+      "code": "UNIT-01",
+      "title": "Main Ideas",
+      "topic": "Navigating Main Ideas",
+      "thaiTitle": "ใจความสำคัญ (Navigating Main Ideas)",
+      "scope": "Overview & Objectives, In-Depth Definitions & 4-Step Strategy, Long Passage & ~10 Vocabulary Words with Prediction Clues, Interactive Guided Practice",
+      "description": "Unit 1 • Course 2031103: Master identifying main ideas, topic sentences, exploring text features, vocabulary preview (~10 words), predicting, and reading The Tortoise and the Hare with immediate feedback.",
+      "cefr": "A1-A2",
+      "stages": {
+        "preReading": {
+          "title": "Pre-Reading Stage",
+          "steps": {
+            "overview": "<div class=\"space-y-6\">\n          <!-- Header & Objectives -->\n          <div class=\"space-y-3\">\n            <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n              <i data-lucide=\"target\" class=\"w-6 h-6 text-purple-700\"></i>\n              <h3>เป้าหมายการเรียนรู้ประจำบท (Unit Learning Objectives)</h3>\n            </div>\n            <p class=\"text-sm text-slate-700 leading-relaxed\">\n              ยินดีต้อนรับสู่ <strong>Unit 1: Main Ideas (ใจความสำคัญ)</strong> ในบทเรียนนี้ ผู้เรียนจะได้เรียนรู้ทักษะพื้นฐานที่สำคัญที่สุดของการอ่านภาษาอังกฤษ นั่นคือการจับประเด็นหลักและแยกแยะใจความสำคัญออกจากรายละเอียด เพื่อให้สามารถอ่านเข้าใจบทความได้อย่างรวดเร็วและถูกต้อง\n            </p>\n\n            <!-- 4 Objective Cards -->\n            <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1\">\n              <div class=\"p-3.5 bg-purple-50/80 rounded-xl border border-purple-200 flex items-start space-x-3\">\n                <div class=\"w-7 h-7 rounded-lg bg-purple-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5\">1</div>\n                <div>\n                  <h5 class=\"font-bold text-xs text-purple-950\">เข้าใจความหมายของ Main Idea</h5>\n                  <p class=\"text-[11px] text-slate-600 mt-0.5\">แยกแยะระหว่าง Topic (หัวข้อ), Main Idea (ใจความสำคัญ), และ Supporting Details (รายละเอียดสนับสนุน)</p>\n                </div>\n              </div>\n              <div class=\"p-3.5 bg-pink-50/80 rounded-xl border border-pink-200 flex items-start space-x-3\">\n                <div class=\"w-7 h-7 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5\">2</div>\n                <div>\n                  <h5 class=\"font-bold text-xs text-pink-950\">ระบุ Topic Sentence ในบทอ่าน</h5>\n                  <p class=\"text-[11px] text-slate-600 mt-0.5\">ค้นหาประโยคใจความสำคัญที่ปรากฏอยู่ต้น กลาง หรือท้ายย่อหน้าได้อย่างแม่นยำ</p>\n                </div>\n              </div>\n              <div class=\"p-3.5 bg-amber-50/80 rounded-xl border border-amber-200 flex items-start space-x-3\">\n                <div class=\"w-7 h-7 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5\">3</div>\n                <div>\n                  <h5 class=\"font-bold text-xs text-amber-950\">กลยุทธ์สำรวจเบาะแส (Text Features & Prediction)</h5>\n                  <p class=\"text-[11px] text-slate-600 mt-0.5\">ใช้ชื่อเรื่อง ภาพประกอบ และคำศัพท์ตัวหนาในการคาดเดาทิศทางของเรื่องก่อนอ่านจริง</p>\n                </div>\n              </div>\n              <div class=\"p-3.5 bg-emerald-50/80 rounded-xl border border-emerald-200 flex items-start space-x-3\">\n                <div class=\"w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5\">4</div>\n                <div>\n                  <h5 class=\"font-bold text-xs text-emerald-950\">สรุปความเรื่องเล่าและคติธรรม (Fable)</h5>\n                  <p class=\"text-[11px] text-slate-600 mt-0.5\">อ่านนิทานคลาสสิกเรื่อง \"The Tortoise and the Hare\" และสรุปสาระสำคัญด้วยภาษาของตนเอง</p>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Mind Map ภาพรวมของบท -->\n          <div class=\"p-5 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 rounded-2xl border border-purple-200 shadow-sm space-y-4\">\n            <div class=\"flex items-center space-x-2 text-purple-950 font-bold text-sm\">\n              <i data-lucide=\"network\" class=\"w-5 h-5 text-purple-700\"></i>\n              <span>ภาพรวมโครงสร้างบทเรียน: ความสัมพันธ์ 3 ระดับของบทอ่าน (Reading Hierarchy Mind Map)</span>\n            </div>\n            \n            <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3.5 text-xs\">\n              <div class=\"p-4 bg-white rounded-xl border-l-4 border-purple-600 shadow-xs space-y-2\">\n                <div class=\"font-bold text-purple-950 text-sm flex items-center space-x-2\">\n                  <span class=\"w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-xs\">1</span>\n                  <span>Topic (หัวข้อเรื่อง)</span>\n                </div>\n                <p class=\"text-slate-600 text-[11px]\">บทความนี้เกี่ยวกับอะไร? (เป็นคำหรือวลีสั้นๆ)</p>\n                <div class=\"p-2 bg-purple-50 rounded-lg text-purple-900 font-semibold text-[11px]\">\n                  📌 ตัวอย่าง: <em>The race of the Tortoise and the Hare</em>\n                </div>\n              </div>\n\n              <div class=\"p-4 bg-white rounded-xl border-l-4 border-pink-500 shadow-xs space-y-2\">\n                <div class=\"font-bold text-pink-950 text-sm flex items-center space-x-2\">\n                  <span class=\"w-6 h-6 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center text-xs\">2</span>\n                  <span>Main Idea (ใจความสำคัญ)</span>\n                </div>\n                <p class=\"text-slate-600 text-[11px]\">ผู้เขียนต้องการบอกอะไรเกี่ยวกับ Topic? (ประโยคสมบูรณ์)</p>\n                <div class=\"p-2 bg-pink-50 rounded-lg text-pink-900 font-semibold text-[11px]\">\n                  🎯 ตัวอย่าง: <em>Steady perseverance will always triumph over arrogant complacency.</em>\n                </div>\n              </div>\n\n              <div class=\"p-4 bg-white rounded-xl border-l-4 border-amber-500 shadow-xs space-y-2\">\n                <div class=\"font-bold text-amber-950 text-sm flex items-center space-x-2\">\n                  <span class=\"w-6 h-6 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-xs\">3</span>\n                  <span>Supporting Details (รายละเอียด)</span>\n                </div>\n                <p class=\"text-slate-600 text-[11px]\">หลักฐาน/เหตุการณ์ที่ช่วยพิสูจน์หรือขยาย Main Idea</p>\n                <div class=\"p-2 bg-amber-50 rounded-lg text-amber-900 font-semibold text-[11px]\">\n                  🧱 ตัวอย่าง: <em>The boastful Hare naps; the patient Tortoise never stops walking.</em>\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <div class=\"pt-2\">\n            <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md\">\n              <span>Next Step: Learn (คำอธิบายละเอียด)</span>\n              <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n            </button>\n          </div>\n        </div>",
+            "learn": "<div class=\"space-y-6\" id=\"learn-content-top\">\n          <!-- Banner for Part 1: Pre-Reading Strategies -->\n          <div class=\"bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200\">\n            <div class=\"flex items-center space-x-2 mb-1.5\">\n              <span class=\"bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider\">Pre-Reading Stage</span>\n              <span class=\"text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full\">Part 1: Strategies & Warm-Up</span>\n            </div>\n            <h3 class=\"text-base sm:text-lg font-bold text-slate-900\">Pre-Reading Strategies (กลยุทธ์ก่อนการอ่าน)</h3>\n            <p class=\"text-xs text-slate-700 mt-1 leading-relaxed\">\n              เตรียมความพร้อมของสมองก่อนลงมืออ่านจริง: การสำรวจจุดเด่นของบทอ่าน (Text Features), การคาดเดาเนื้อเรื่อง (Predicting), การกระตุ้นความรู้เดิม (Prior Knowledge), และการดูคำศัพท์ล่วงหน้า (Vocabulary Preview)\n            </p>\n          </div>\n\n          <!-- Content for Part 1 -->\n          <div class=\"space-y-6\">\n            <!-- 1. Pre-Reading คืออะไร และทำไมต้องทำก่อนอ่าน -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n                <i data-lucide=\"compass\" class=\"w-6 h-6 text-purple-700\"></i>\n                <h3>1. Pre-Reading คืออะไร และทำไมต้องทำก่อนอ่าน?</h3>\n              </div>\n              <p class=\"text-sm text-slate-700 leading-relaxed\">\n                <strong>Pre-Reading (ขั้นตอนก่อนการอ่าน)</strong> คือ กระบวนการเตรียมความพร้อมของสมองก่อนลงมืออ่านบทความจริงแบบละเอียด เปรียบเสมือนการ <strong>\"วอร์มอัพ (Warm-up)\"</strong> ร่างกายก่อนเล่นกีฬา หรือการเปิด <strong>\"แผนที่นำทาง (GPS Roadmap)\"</strong> เพื่อดูทิศทางและภูมิประเทศคร่าวๆ ก่อนออกเดินทางไกล การทำ Pre-Reading จะใช้เวลาสั้นๆ เพียง <strong>1–2 นาที</strong> เพื่อสำรวจจุดเด่นของบทอ่านโดยไม่ต้องอ่านทุกตัวอักษร\n              </p>\n\n              <!-- 4 เหตุผลว่าทำไมต้องทำ Pre-Reading -->\n              <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 pt-1\">\n                <div class=\"p-3.5 bg-purple-50 rounded-xl border border-purple-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"w-7 h-7 rounded-lg bg-purple-700 text-white flex items-center justify-center font-bold text-xs\">\n                    <i data-lucide=\"zap\" class=\"w-4 h-4\"></i>\n                  </div>\n                  <h6 class=\"font-bold text-xs text-purple-950\">ปลุกสมองให้พร้อม (Activate Brain)</h6>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">กระตุ้นโครงข่ายความรู้เดิม (Schema) ในสมอง ให้พร้อมรับข้อมูลและคำศัพท์ใหม่ได้อย่างรวดเร็ว</p>\n                </div>\n\n                <div class=\"p-3.5 bg-pink-50 rounded-xl border border-pink-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"w-7 h-7 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">\n                    <i data-lucide=\"target\" class=\"w-4 h-4\"></i>\n                  </div>\n                  <h6 class=\"font-bold text-xs text-pink-950\">กำหนดเป้าหมาย (Set Purpose)</h6>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">สร้างคำถามในใจล่วงหน้า ทำให้รู้ชัดเจนว่าเรากำลังอ่านบทความนี้ไปเพื่อค้นหาข้อมูลอะไร</p>\n                </div>\n\n                <div class=\"p-3.5 bg-amber-50 rounded-xl border border-amber-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"w-7 h-7 rounded-lg bg-amber-600 text-white flex items-center justify-center font-bold text-xs\">\n                    <i data-lucide=\"gauge\" class=\"w-4 h-4\"></i>\n                  </div>\n                  <h6 class=\"font-bold text-xs text-amber-950\">อ่านเร็วขึ้น & ไม่งง (Speed & Fluency)</h6>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">เมื่อเห็นโครงร่างและใจความกว้างๆ จะช่วยลดการอ่านสะดุด ทำให้จับประเด็นได้ลื่นไหล ไม่หลงทาง</p>\n                </div>\n\n                <div class=\"p-3.5 bg-emerald-50 rounded-xl border border-emerald-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center font-bold text-xs\">\n                    <i data-lucide=\"shield-check\" class=\"w-4 h-4\"></i>\n                  </div>\n                  <h6 class=\"font-bold text-xs text-emerald-950\">ลดความกังวล (Reduce Anxiety)</h6>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">ลดความกลัวต่อบทความภาษาอังกฤษที่ยาวหรือยาก เพราะได้ทำความคุ้นเคยกับคำศัพท์หลักไว้แล้ว</p>\n                </div>\n              </div>\n            </div>\n\n            <!-- 2. 4 กลยุทธ์สำคัญของ Pre-Reading (Pre-Reading Strategies) -->\n            <div class=\"space-y-4\">\n              <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n                <i data-lucide=\"layers\" class=\"w-6 h-6 text-purple-700\"></i>\n                <h3>2. กลยุทธ์ Pre-Reading 4 ประการ: คำอธิบาย, ขั้นตอนปฏิบัติ และเคล็ดลับ</h3>\n              </div>\n\n              <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n                <!-- กลยุทธ์ที่ 1: Previewing -->\n                <div class=\"p-4 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-3\">\n                  <div class=\"flex items-center space-x-2 pb-2 border-b border-purple-100\">\n                    <span class=\"w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs\">1</span>\n                    <h4 class=\"font-bold text-purple-950 text-sm\">การดูชื่อเรื่องและรูปภาพ (Previewing)</h4>\n                  </div>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    <strong>คำอธิบาย:</strong> การกวาดสายตาสำรวจ <em>Text Features (ร่องรอยภายนอกของบทความ)</em> ในเวลา 30–45 วินาที เพื่อสร้างภาพจำลองโครงสร้างของบทอ่านในสมอง\n                  </p>\n                  <div class=\"bg-purple-50/70 p-3 rounded-xl border border-purple-100 space-y-1.5 text-xs text-slate-700\">\n                    <span class=\"font-bold text-purple-900 text-[11px] flex items-center space-x-1\">\n                      <i data-lucide=\"list-ordered\" class=\"w-3.5 h-3.5 text-purple-700\"></i>\n                      <span>ขั้นตอนการทำ (Step-by-Step):</span>\n                    </span>\n                    <ul class=\"text-[11px] space-y-1 pl-1 text-slate-600\">\n                      <li>• <strong>Step 1:</strong> อ่าน <strong>Title (ชื่อเรื่อง)</strong> และ Subheadings เพื่อดูว่าเรื่องเกี่ยวกับอะไร</li>\n                      <li>• <strong>Step 2:</strong> สำรวจ <strong>Visuals (รูปภาพ, แผนภูมิ, กราฟ)</strong> และอ่านคำอธิบายใต้ภาพ (Captions)</li>\n                      <li>• <strong>Step 3:</strong> สแกนหาคำเน้น เช่น <strong>ตัวหนา (Bold)</strong>, <em>ตัวเอียง (Italics)</em> หรือตัวเลข</li>\n                    </ul>\n                  </div>\n                  <div class=\"bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5\">\n                    <i data-lucide=\"lightbulb\" class=\"w-4 h-4 text-amber-600 shrink-0 mt-0.5\"></i>\n                    <span><strong>เคล็ดลับ (Tip):</strong> อย่าเพิ่งอ่านเนื้อความยาวๆ ให้สายตามองข้ามตัวหนังสือธรรมดา แล้วโฟกัสเฉพาะ \"จุดเด่นที่สะดุดตา\" ก่อนเท่านั้น</span>\n                  </div>\n                </div>\n\n                <!-- กลยุทธ์ที่ 2: Predicting -->\n                <div class=\"p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-3\">\n                  <div class=\"flex items-center space-x-2 pb-2 border-b border-pink-100\">\n                    <span class=\"w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">2</span>\n                    <h4 class=\"font-bold text-pink-950 text-sm\">การคาดเดาเนื้อหา (Predicting)</h4>\n                  </div>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    <strong>คำอธิบาย:</strong> การใช้ร่องรอย (Clues) จากการ Preview มาตั้งสมมติฐานหรือคาดเดาอย่างมีเหตุผล (Educated Guess) ว่าบทความจะเล่าเรื่องอะไรหรือมีจุดจบอย่างไร\n                  </p>\n                  <div class=\"bg-pink-50/70 p-3 rounded-xl border border-pink-100 space-y-1.5 text-xs text-slate-700\">\n                    <span class=\"font-bold text-pink-900 text-[11px] flex items-center space-x-1\">\n                      <i data-lucide=\"list-ordered\" class=\"w-3.5 h-3.5 text-pink-600\"></i>\n                      <span>ขั้นตอนการทำ (Step-by-Step):</span>\n                    </span>\n                    <ul class=\"text-[11px] space-y-1 pl-1 text-slate-600\">\n                      <li>• <strong>Step 1:</strong> นำข้อมูลจากชื่อเรื่องและภาพมาตั้งคำถาม (เช่น <em>\"กระต่ายกับเต่าจะทำอะไรร่วมกัน?\"</em>)</li>\n                      <li>• <strong>Step 2:</strong> เขียนหรือคิดข้อคาดเดาไว้ 1–2 ประโยค (เช่น <em>\"กระต่ายต้องท้าเต่าแข่งวิ่งแน่นอน\"</em>)</li>\n                      <li>• <strong>Step 3:</strong> ตั้งใจอ่านเพื่อ <strong>ตรวจสอบ (Verify)</strong> ว่าเนื้อเรื่องตรงกับที่เราคาดเดาไว้หรือไม่</li>\n                    </ul>\n                  </div>\n                  <div class=\"bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5\">\n                    <i data-lucide=\"lightbulb\" class=\"w-4 h-4 text-amber-600 shrink-0 mt-0.5\"></i>\n                    <span><strong>เคล็ดลับ (Tip):</strong> การคาดเดา \"ผิด\" ไม่ใช่เรื่องเสียหาย! จุดประสงค์ของการคาดเดาคือการสร้าง <span class=\"highlighter-pen highlighter-yellow font-semibold\">Active Curiosity</span> ทำให้สมองตื่นตัวรอค้นหาคำตอบจริง</span>\n                  </div>\n                </div>\n\n                <!-- กลยุทธ์ที่ 3: Activating Background Knowledge -->\n                <div class=\"p-4 bg-white rounded-2xl border border-amber-200 shadow-xs space-y-3\">\n                  <div class=\"flex items-center space-x-2 pb-2 border-b border-amber-100\">\n                    <span class=\"w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs\">3</span>\n                    <h4 class=\"font-bold text-amber-950 text-sm\">การดึงความรู้เดิมมาใช้ (Activating Prior Knowledge)</h4>\n                  </div>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    <strong>คำอธิบาย:</strong> การดึงความจำ ความรู้ และประสบการณ์เดิมที่สะสมไว้ในสมอง (Schema) มาเชื่อมโยงกับเรื่องที่กำลังจะอ่าน ช่วยให้เข้าใจเนื้อหาใหม่ได้ง่ายขึ้นเป็นทวีคูณ\n                  </p>\n                  <div class=\"bg-amber-50/70 p-3 rounded-xl border border-amber-100 space-y-1.5 text-xs text-slate-700\">\n                    <span class=\"font-bold text-amber-900 text-[11px] flex items-center space-x-1\">\n                      <i data-lucide=\"list-ordered\" class=\"w-3.5 h-3.5 text-amber-600\"></i>\n                      <span>ขั้นตอนการทำ (Step-by-Step):</span>\n                    </span>\n                    <ul class=\"text-[11px] space-y-1 pl-1 text-slate-600\">\n                      <li>• <strong>Step 1:</strong> ถามตัวเอง: <em>\"เรารู้อะไรเกี่ยวกับเรื่องนี้บ้างแล้ว?\"</em> (เช่น คาแรคเตอร์เต่าเดินช้า กระต่ายวิ่งเร็ว)</li>\n                      <li>• <strong>Step 2:</strong> ใช้เทคนิค <strong>K-W-L</strong> สั้นๆ: <strong>K</strong> (สิ่งที่เรารู้แล้ว) $\rightarrow$ <strong>W</strong> (สิ่งที่อยากรู้จากเรื่องนี้)</li>\n                      <li>• <strong>Step 3:</strong> นึกเชื่อมโยงกับประสบการณ์ตรงหรือเรื่องราวที่เคยดู/เคยฟังในชีวิตประจำวัน</li>\n                    </ul>\n                  </div>\n                  <div class=\"bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5\">\n                    <i data-lucide=\"lightbulb\" class=\"w-4 h-4 text-amber-600 shrink-0 mt-0.5\"></i>\n                    <span><strong>เคล็ดลับ (Tip):</strong> สมองมนุษย์เรียนรู้สิ่งใหม่ได้ดีที่สุดเมื่อมี \"สะพานเชื่อม\" กับสิ่งเดิม ใช้เวลาเพียง 20 วินาทีนึกถึงเรื่องที่เคยรู้ จะช่วยให้จำเนื้อหาใหม่ได้แม่นยำขึ้นมาก</span>\n                  </div>\n                </div>\n\n                <!-- กลยุทธ์ที่ 4: Vocabulary Preview -->\n                <div class=\"p-4 bg-white rounded-2xl border border-emerald-200 shadow-xs space-y-3\">\n                  <div class=\"flex items-center space-x-2 pb-2 border-b border-emerald-100\">\n                    <span class=\"w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs\">4</span>\n                    <h4 class=\"font-bold text-emerald-950 text-sm\">การเรียนรู้คำศัพท์ล่วงหน้า (Vocabulary Preview)</h4>\n                  </div>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    <strong>คำอธิบาย:</strong> การสำรวจและเรียนรู้คำศัพท์สำคัญประจำบท (Key Content Words) ล่วงหน้า เพื่อป้องกันไม่ให้คำศัพท์ยากกลายเป็นกำแพงขัดขวางการทำความเข้าใจ\n                  </p>\n                  <div class=\"bg-emerald-50/70 p-3 rounded-xl border border-emerald-100 space-y-1.5 text-xs text-slate-700\">\n                    <span class=\"font-bold text-emerald-900 text-[11px] flex items-center space-x-1\">\n                      <i data-lucide=\"list-ordered\" class=\"w-3.5 h-3.5 text-emerald-700\"></i>\n                      <span>ขั้นตอนการทำ (Step-by-Step):</span>\n                    </span>\n                    <ul class=\"text-[11px] space-y-1 pl-1 text-slate-600\">\n                      <li>• <strong>Step 1:</strong> สังเกตคำศัพท์สำคัญที่เน้นตัวหนา หรือคำศัพท์ที่ปรากฏซ้ำบ่อยในชื่อเรื่องและย่อหน้าแรก</li>\n                      <li>• <strong>Step 2:</strong> ตรวจดูประเภทคำ (Part of Speech) และความหมายหลักคร่าวๆ (~5–10 คำสำคัญ)</li>\n                      <li>• <strong>Step 3:</strong> เดาความหมายของคำจากบริบทแวดล้อม (Context Clues) เบื้องต้นก่อนเปิดพจนานุกรม</li>\n                    </ul>\n                  </div>\n                  <div class=\"bg-amber-50 p-2.5 rounded-lg border border-amber-200 text-[11px] text-amber-900 flex items-start space-x-1.5\">\n                    <i data-lucide=\"lightbulb\" class=\"w-4 h-4 text-amber-600 shrink-0 mt-0.5\"></i>\n                    <span><strong>เคล็ดลับ (Tip):</strong> ไม่จำเป็นต้องเปิดพจนานุกรมทุกคำที่ไม่รู้! ดูเฉพาะคำหลักที่ส่งผลต่อใจความสำคัญ หากคำศัพท์นั้นเป็นแค่คำบรรยายปลีกย่อย ให้ข้ามไปก่อนได้</span>\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <!-- 3. Mind Map / ไดอะแกรมสรุปขั้นตอน Pre-Reading -->\n            <div class=\"p-4 sm:p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-amber-50 rounded-2xl border border-purple-200 space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-950 font-bold text-sm\">\n                <i data-lucide=\"sparkles\" class=\"w-5 h-5 text-purple-700\"></i>\n                <span>3. แผนผังกระบวนการ Pre-Reading ประจำบท (4-Step Action Routine)</span>\n              </div>\n              \n              <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center\">\n                <div class=\"p-3 bg-white/95 rounded-xl border border-purple-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-md\">STEP 1</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">สำรวจ Text Features</h6>\n                  <p class=\"text-[11px] text-slate-600\">กวาดตาดู Title, ภาพประกอบ, และตัวหนา (30 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-pink-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md\">STEP 2</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">ปลุกความรู้เดิม (Schema)</h6>\n                  <p class=\"text-[11px] text-slate-600\">นึกถึงสิ่งที่เรารู้เกี่ยวกับหัวข้อนี้มาก่อน (20 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-amber-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md\">STEP 3</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">ส่องศัพท์สำคัญ (~10 คำ)</h6>\n                  <p class=\"text-[11px] text-slate-600\">ทำความเข้าใจคำศัพท์หลักก่อนอ่านเนื้อเรื่องจริง (45 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-emerald-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md\">STEP 4</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">ตั้งสมมติฐาน & คาดเดา</h6>\n                  <p class=\"text-[11px] text-slate-600\">คาดเดาเนื้อเรื่องและกำหนดเป้าหมายในการอ่าน (25 วินาที)</p>\n                </div>\n              </div>\n            </div>\n\n            <!-- 4. ข้อผิดพลาดที่พบบ่อย (Common Mistakes & Traps) -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-rose-950 font-bold text-lg\">\n                <i data-lucide=\"alert-triangle\" class=\"w-6 h-6 text-rose-600\"></i>\n                <h3>4. ข้อผิดพลาดที่พบบ่อยในการทำ Pre-Reading (Common Mistakes & Traps)</h3>\n              </div>\n\n              <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs\">\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>1. กระโดดอ่านบรรทัดแรกทันทีโดยไม่สำรวจ (Diving Straight In)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ผลเสีย:</strong> สมองไม่มีทิศทาง ไม่รู้ภาพรวม ทำให้อ่านช้าและหลงประเด็นง่าย<br>\n                    <strong class=\"text-emerald-700\">✓ วิธีแก้:</strong> สละเวลา 1–2 นาที กวาดตาดูชื่อเรื่อง ภาพประกอบ และหัวข้อย่อยก่อนเสมอ\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>2. ใช้เวลากับ Pre-Reading นานเกินไป (Over-Reading)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ผลเสีย:</strong> พยายามอ่านทุกประโยคตั้งแต่ช่วงสำรวจ ทำให้หมดเวลาและเหนื่อยล้าก่อนอ่านจริง<br>\n                    <strong class=\"text-emerald-700\">✓ วิธีแก้:</strong> กำหนดเวลาเคร่งครัดเพียง 1–2 นาที ใช้การสแกน (Scanning) แทนการอ่านคำต่อคำ\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>3. กลัวการคาดเดาผิด (Fear of Wrong Predictions)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ผลเสีย:</strong> ไม่กล้าตั้งสมมติฐานเพราะกังวลว่าจะไม่ตรงกับเนื้อเรื่อง<br>\n                    <strong class=\"text-emerald-700\">✓ วิธีแก้:</strong> จำไว้ว่า <span class=\"highlighter-pen highlighter-pink\">การคาดเดาไม่มีผิดถูก</span> เป้าหมายคือทำให้สมองกระตือรือร้นในการตรวจสอบความจริง\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>4. หยุดเปิดพจนานุกรมทุกคำที่ไม่คุ้นตา (Dictionary Dependency)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ผลเสีย:</strong> สมาธิขาดตอน เสียจังหวะในการทำความเข้าใจภาพรวมของเรื่อง<br>\n                    <strong class=\"text-emerald-700\">✓ วิธีแก้:</strong> พรีวิวเฉพาะคำสำคัญ 5–10 คำ คำที่เหลือให้ลองเดาจากบริบทขณะอ่านจริง\n                  </p>\n                </div>\n              </div>\n            </div>\n\n            <!-- Part 1 Bottom Navigation Buttons -->\n            <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100\">\n              <button onclick=\"app.selectActivityStep('overview')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n                ⬅ Back: Overview\n              </button>\n              <button onclick=\"app.selectStageAndStep('whileReading', 'learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md\">\n                <span>Next: While-Reading Stage (Learn Part 2)</span>\n                <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n              </button>\n            </div>\n          </div>\n        </div>"
           }
         },
-        whileReading: {
-          title: "While-Reading Stage",
-          steps: {
-            learn: `<div class="space-y-6" id="learn-content-top">
-              <!-- Header for Part 2 -->
-              <div class="bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200">
-                <div class="flex items-center space-x-2 mb-1.5">
-                  <span class="bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider">While-Reading Stage</span>
-                  <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full">Part 2: Core Lesson</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold text-slate-900">Main Idea & Topic Sentence (ใจความสำคัญและประโยคหลัก)</h3>
-                <p class="text-xs text-slate-700 mt-1 leading-relaxed">
-                  เรียนรู้โครงสร้างหัวใจสำคัญของการอ่านภาษาอังกฤษ: การแยกแยะ 3 ระดับความคิด (Topic vs Main Idea vs Supporting Details), การหาตำแหน่ง Topic Sentence, และเทคนิคการสรุปใจความสำคัญแบบ Step-by-Step
-                </p>
-              </div>
-
-              <!-- Content for Part 2 -->
-              <div class="space-y-6">
-
-            <!-- A) Topic vs Main Idea vs Supporting Details (3 Levels in Depth + Everyday Examples) -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-                <i data-lucide="layers" class="w-6 h-6 text-purple-700"></i>
-                <h3>A. ความแตกต่างเชิงลึก: 3 ระดับความคิดในบทอ่าน (Reading Hierarchy)</h3>
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed">
-                การอ่านภาษาอังกฤษให้เข้าใจอย่างถ่องแท้ ต้องสามารถแยกความแตกต่างของข้อมูลออกเป็น <strong>3 ลำดับขั้น (Hierarchy)</strong> โดยเปรียบเทียบเหมือน <strong>"ร่มคันใหญ่ (Umbrella)"</strong> ที่มีโครงสร้างซ้อนกันอย่างชัดเจน:
-              </p>
-
-              <!-- 3 Levels Cards -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
-                <!-- Level 1: Topic -->
-                <div class="p-4 bg-white rounded-2xl border-t-4 border-purple-600 border-x border-b border-purple-100 shadow-xs space-y-2">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded-md">LEVEL 1</span>
-                    <i data-lucide="hash" class="w-4 h-4 text-purple-600"></i>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-sm">Topic (หัวข้อเรื่อง)</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    คือ <strong>"คำหรือวลีสั้นๆ (Word / Noun Phrase)"</strong> ที่ตอบคำถามว่า <em>"เรื่องนี้พูดถึงใครหรืออะไร?" (Who or what is the text about?)</em>
-                  </p>
-                  <div class="p-2.5 bg-purple-50/80 rounded-xl text-[11px] text-purple-900 space-y-1">
-                    <span class="font-bold block">ลักษณะเด่น:</span>
-                    <ul class="space-y-0.5 pl-1">
-                      <li>• เป็นแค่คำนามหรือวลี <strong>ไม่มีกริยาแท้สมบูรณ์</strong></li>
-                      <li>• ยังไม่สามารถบอกความคิดเห็นหรือสารของผู้เขียนได้</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Level 2: Main Idea -->
-                <div class="p-4 bg-white rounded-2xl border-t-4 border-pink-500 border-x border-b border-pink-100 shadow-xs space-y-2">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md">LEVEL 2 (CORE)</span>
-                    <i data-lucide="bookmark" class="w-4 h-4 text-pink-600"></i>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-sm">Main Idea (ใจความสำคัญ)</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    คือ <strong>"แก่นแท้หรือข้อความสำคัญที่สุด"</strong> ที่ผู้เขียนต้องการบอกผู้อ่านเกี่ยวกับ Topic นั้น
-                  </p>
-                  <div class="p-2.5 bg-pink-50/80 rounded-xl text-[11px] text-pink-900 space-y-1">
-                    <span class="font-bold block">ลักษณะเด่น:</span>
-                    <ul class="space-y-0.5 pl-1">
-                      <li>• <strong class="text-pink-950">ต้องเป็นประโยคที่สมบูรณ์ (Complete Sentence)</strong> เสมอ (Subject + Verb)</li>
-                      <li>• ต้องกว้างพอที่จะคลุมเนื้อหาทั้งย่อหน้าได้</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <!-- Level 3: Supporting Details -->
-                <div class="p-4 bg-white rounded-2xl border-t-4 border-amber-500 border-x border-b border-amber-100 shadow-xs space-y-2">
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md">LEVEL 3</span>
-                    <i data-lucide="list-tree" class="w-4 h-4 text-amber-600"></i>
-                  </div>
-                  <h4 class="font-bold text-slate-900 text-sm">Supporting Details (รายละเอียด)</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    คือ <strong>"หลักฐาน ข้อเท็จจริง ตัวเลข สถิติ หรือตัวอย่าง"</strong> ที่นำมาพิสูจน์หรือขยายความ Main Idea
-                  </p>
-                  <div class="p-2.5 bg-amber-50/80 rounded-xl text-[11px] text-amber-900 space-y-1">
-                    <span class="font-bold block">ลักษณะเด่น:</span>
-                    <ul class="space-y-0.5 pl-1">
-                      <li>• <strong>Major Details:</strong> ประเด็นรองหลักที่ชี้แจง Main Idea โดยตรง</li>
-                      <li>• <strong>Minor Details:</strong> ข้อมูลสถิติ ตัวเลข ชื่อเฉพาะ หรือคำอธิบายเสริม</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Everyday Examples Comparison Box -->
-              <div class="p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 via-pink-50/50 to-indigo-50/90 rounded-2xl border border-purple-200 space-y-3 mt-2">
-                <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
-                  <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
-                  <span>ตัวอย่างเปรียบเทียบในชีวิตประจำวัน (Everyday Real-World Examples):</span>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                  <!-- Example 1: Social Media -->
-                  <div class="p-3.5 bg-white/95 rounded-xl border border-purple-100 shadow-2xs space-y-2">
-                    <div class="flex items-center space-x-2 text-purple-900 font-bold">
-                      <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px]">📱</span>
-                      <span>เรื่องที่ 1: การใช้โซเชียลมีเดีย (Social Media)</span>
-                    </div>
-                    <div class="space-y-1.5 pl-1 text-[11px] text-slate-700">
-                      <div>
-                        <strong class="text-purple-800 font-semibold">[Topic]:</strong> <em>Social media use among university students</em> (การใช้โซเชียลมีเดียของนักศึกษา)
-                      </div>
-                      <div>
-                        <strong class="text-pink-700 font-semibold">[Main Idea]:</strong> <em>Excessive social media use negatively affects university students' sleep quality and mental health.</em> (การใช้โซเชียลมากเกินไปส่งผลเสียต่อคุณภาพการนอนและสุขภาพจิต)
-                      </div>
-                      <div class="bg-slate-50 p-2 rounded-lg border border-slate-200/80 text-slate-600 space-y-0.5">
-                        <p>• <strong>Major Detail:</strong> Late-night blue light from phone screens disrupts melatonin production.</p>
-                        <p>• <strong>Minor Detail:</strong> A 2023 campus survey found 72% of students scroll TikTok for over 2 hours before bed.</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Example 2: Coffee & Health -->
-                  <div class="p-3.5 bg-white/95 rounded-xl border border-purple-100 shadow-2xs space-y-2">
-                    <div class="flex items-center space-x-2 text-amber-900 font-bold">
-                      <span class="w-5 h-5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-[10px]">☕</span>
-                      <span>เรื่องที่ 2: การดื่มกาแฟ (Coffee Consumption)</span>
-                    </div>
-                    <div class="space-y-1.5 pl-1 text-[11px] text-slate-700">
-                      <div>
-                        <strong class="text-purple-800 font-semibold">[Topic]:</strong> <em>Daily coffee consumption</em> (การดื่มกาแฟในชีวิตประจำวัน)
-                      </div>
-                      <div>
-                        <strong class="text-pink-700 font-semibold">[Main Idea]:</strong> <em>Drinking a moderate amount of coffee every day provides several remarkable health benefits.</em> (การดื่มกาแฟในปริมาณพอเหมาะให้ประโยชน์ต่อสุขภาพหลายประการ)
-                      </div>
-                      <div class="bg-slate-50 p-2 rounded-lg border border-slate-200/80 text-slate-600 space-y-0.5">
-                        <p>• <strong>Major Detail:</strong> It contains antioxidants that enhance brain function and reduce heart disease risk.</p>
-                        <p>• <strong>Minor Detail:</strong> Studies show 2–3 cups daily can reduce the risk of type 2 diabetes by 25%.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- B) What is a Topic Sentence & Where it Can Appear -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-                <i data-lucide="bookmark-check" class="w-6 h-6 text-purple-700"></i>
-                <h3>B. Topic Sentence คืออะไร และปรากฏอยู่ที่ตำแหน่งใดบ้าง?</h3>
-              </div>
-              <p class="text-sm text-slate-700 leading-relaxed">
-                <strong>Topic Sentence (ประโยคใจความหลัก)</strong> คือประโยคในย่อหน้าที่ระบุ Main Idea ไว้อย่างชัดเจน (Stated Main Idea) โดยทำหน้าที่เป็น <strong>"ร่มคันใหญ่ (Umbrella Sentence)"</strong> ที่กางคลุมประโยคอื่นๆ ทั้งหมดในย่อหน้า ตำแหน่งของ Topic Sentence สามารถปรากฏได้ 3 ตำแหน่งหลัก:
-              </p>
-
-              <!-- 3 Positions Cards -->
-              <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
-                <!-- Position 1: Beginning -->
-                <div class="p-4 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-2">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs">1</span>
-                    <h5 class="font-bold text-purple-950 text-xs">ต้นย่อหน้า (Beginning Sentence)</h5>
-                  </div>
-                  <span class="inline-block text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">พบบ่อยที่สุด (~80%)</span>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    ผู้เขียนประกาศประเด็นหลักทันทีในประโยคที่ 1 หรือ 2 เพื่อให้ผู้อ่านเข้าใจภาพรวม แล้วจึงตามด้วยประโยคขยายความ
-                  </p>
-                  <div class="p-2 bg-purple-50 rounded-lg text-[10px] font-mono text-purple-900 border border-purple-200">
-                    [Topic Sentence] ➔ Detail 1 ➔ Detail 2 ➔ Detail 3
-                  </div>
-                </div>
-
-                <!-- Position 2: End -->
-                <div class="p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-2">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs">2</span>
-                    <h5 class="font-bold text-pink-950 text-xs">ท้ายย่อหน้า (Concluding Sentence)</h5>
-                  </div>
-                  <span class="inline-block text-[10px] font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-full">พบได้บ่อย (~15%)</span>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    ผู้เขียนจะเริ่มจากการเล่าข้อเท็จจริง ตัวอย่าง หรือเหตุการณ์ก่อน แล้วจึงรวบยอดสรุปใจความสำคัญในประโยคสุดท้าย
-                  </p>
-                  <div class="p-2 bg-pink-50 rounded-lg text-[10px] font-mono text-pink-900 border border-pink-200">
-                    Detail 1 ➔ Detail 2 ➔ Detail 3 ➔ [Topic Sentence]
-                  </div>
-                </div>
-
-                <!-- Position 3: Middle -->
-                <div class="p-4 bg-white rounded-2xl border border-amber-200 shadow-xs space-y-2">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs">3</span>
-                    <h5 class="font-bold text-amber-950 text-xs">กลางย่อหน้า (Middle Sentence)</h5>
-                  </div>
-                  <span class="inline-block text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full">พบได้ (~5%)</span>
-                  <p class="text-xs text-slate-600 leading-relaxed">
-                    ผู้เขียนอาจเริ่มด้วยประเด็นเกริ่นนำหรือมุมมองทั่วไป แล้วใช้คำเชื่อมขัดแย้งนำทางเข้าสู่ Topic Sentence ที่แท้จริง
-                  </p>
-                  <div class="p-2 bg-amber-50 rounded-lg text-[10px] font-mono text-amber-900 border border-amber-200">
-                    Intro / Hook ➔ [Topic Sentence] ➔ Supporting Details
-                  </div>
-                </div>
-              </div>
-
-              <!-- Signal Clues to Find Topic Sentence -->
-              <div class="p-4 bg-purple-50/80 rounded-2xl border border-purple-200 space-y-2 text-xs">
-                <span class="font-bold text-purple-950 text-xs flex items-center space-x-1.5">
-                  <i data-lucide="search" class="w-4 h-4 text-purple-700"></i>
-                  <span>สัญญาณสังเกตและร่องรอยค้นหา Topic Sentence (Signal Clues):</span>
-                </span>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-slate-700">
-                  <div class="p-2.5 bg-white rounded-xl border border-purple-100">
-                    <strong class="text-purple-900 block mb-0.5">1. General vs. Specific (ความกว้าง vs ความเจาะจง):</strong>
-                    Topic Sentence จะเป็นประโยคที่ <strong>"กว้างพอ (General)"</strong> ที่จะคลุมประโยคอื่นๆ ส่วนประโยคแวดล้อมจะเป็นข้อเท็จจริงที่ <strong>"เฉพาะเจาะจง (Specific)"</strong>
-                  </div>
-                  <div class="p-2.5 bg-white rounded-xl border border-purple-100">
-                    <strong class="text-purple-900 block mb-0.5">2. Contrast & Concluding Transitions:</strong>
-                    สังเกตคำเชื่อมเปลี่ยนทิศทาง เช่น <em>However, But, In reality</em> (มักพบกลางย่อหน้า) หรือคำสรุปความ เช่น <em>Therefore, Thus, In conclusion</em> (มักพบท้ายย่อหน้า)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- C) Step-by-Step Method to Find the Main Idea -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-purple-900 font-bold text-lg">
-                <i data-lucide="check-circle-2" class="w-6 h-6 text-purple-700"></i>
-                <h3>C. วิธีการค้นหา Main Idea 4 ขั้นตอน (Step-by-Step Method)</h3>
-              </div>
-
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-                <div class="p-3.5 bg-white rounded-xl border border-purple-200 shadow-2xs space-y-1.5">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs shrink-0">1</span>
-                    <h5 class="font-bold text-purple-950 text-xs">หา Topic ให้เจอ</h5>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">
-                    ถามตัวเองว่า: <em>"Who or what is this text about?"</em> สังเกตคำที่กล่าวซ้ำ (Repeated Words) หรือคำสรรพนามที่แทนที่คำนั้น
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-white rounded-xl border border-pink-200 shadow-2xs space-y-1.5">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs shrink-0">2</span>
-                    <h5 class="font-bold text-pink-950 text-xs">ถาม "ผู้เขียนบอกอะไร?"</h5>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">
-                    ถามตัวเองว่า: <em>"What does the author say about this topic?"</em> ดูว่าผู้เขียนมีทัศนะ ข้อโต้แย้ง หรือสาระสำคัญอะไรเกี่ยวกับ Topic นั้น
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-1.5">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shrink-0">3</span>
-                    <h5 class="font-bold text-amber-950 text-xs">เช็กรายละเอียดสนับสนุน</h5>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">
-                    ตรวจเช็กประโยคอื่นๆ ในย่อหน้าว่าทำหน้าที่ให้เหตุผล พิสูจน์ หรือยกตัวอย่างสนับสนุนข้อความนี้จริงหรือไม่ (The Umbrella Test)
-                  </p>
-                </div>
-
-                <div class="p-3.5 bg-white rounded-xl border border-emerald-200 shadow-2xs space-y-1.5">
-                  <div class="flex items-center space-x-2">
-                    <span class="w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0">4</span>
-                    <h5 class="font-bold text-emerald-950 text-xs">สรุปเป็น 1 ประโยคสมบูรณ์</h5>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed">
-                    เขียนหรือเรียบเรียง Main Idea ด้วยภาษาของตนเอง โดยต้องมีประธานและกริยาครบถ้วน (Subject + Verb) เป็นประโยคสมบูรณ์
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- D) Common Mistakes & Traps in Finding Main Ideas -->
-            <div class="space-y-3">
-              <div class="flex items-center space-x-2 text-rose-950 font-bold text-lg">
-                <i data-lucide="alert-octagon" class="w-6 h-6 text-rose-600"></i>
-                <h3>D. ข้อผิดพลาดและกับดักที่พบบ่อยในการหา Main Idea (Common Mistakes)</h3>
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                <!-- Trap 1: Too Broad -->
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>1. กว้างเกินไป (Too Broad)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ข้อผิดพลาด:</strong> เลือกข้อความที่กว้างครอบจักรวาลเกินไป จนไม่ได้ระบุประเด็นที่บทความพูดถึงจริง<br>
-                    <strong>ตัวอย่าง:</strong> บทความพูดถึง <em>"ผลดีของการดื่มกาแฟดำต่อหัวใจ"</em> แต่ตอบว่า <em>"Healthy human lifestyle"</em> (กว้างเกินไป)
-                  </p>
-                </div>
-
-                <!-- Trap 2: Too Narrow -->
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>2. แคบเกินไป (Too Narrow)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ข้อผิดพลาด:</strong> เลือกข้อความที่เป็นเพียงตัวอย่างปลีกย่อยหรือข้อมูลเจาะจงจุดเดียว ซึ่งไม่คลุมเนื้อหาทั้งย่อหน้า<br>
-                    <strong>ตัวอย่าง:</strong> ตอบว่า <em>"Coffee contains caffeine."</em> ซึ่งเป็นแค่ข้อมูลย่อย 1 จุด ไม่ได้สรุปภาพรวม
-                  </p>
-                </div>
-
-                <!-- Trap 3: Picking a Supporting Detail -->
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>3. หลงเลือก Supporting Detail ที่มีคำตรงในบทอ่าน (Detail Trap)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ข้อผิดพลาด:</strong> กับดักยอดฮิตในข้อสอบ! ตัวเลือกมักยกข้อความที่ปรากฏในบทอ่านคำต่อคำมาหลอก ทำให้นักศึกษาเห็นคำตรงแล้วรีบเลือก ทั้งที่ประโยคนั้นเป็นเพียง Minor Detail
-                  </p>
-                </div>
-
-                <!-- Trap 4: Picking a Fragment/Noun Phrase -->
-                <div class="p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs">
-                  <div class="flex items-center space-x-2 text-rose-900 font-bold text-xs">
-                    <span class="w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]">✕</span>
-                    <span>4. ตอบเป็นคำหรือวลี ไม่ใช่ประโยคสมบูรณ์ (Fragment Trap)</span>
-                  </div>
-                  <p class="text-[11px] text-slate-600 leading-relaxed pl-7">
-                    <strong>ข้อผิดพลาด:</strong> สับสนระหว่าง Topic กับ Main Idea เช่น ตอบว่า <em>"The benefits of sleep"</em> (เป็นแค่ Topic) แทนที่จะเป็นประโยค <em>"Quality sleep significantly improves students' learning ability."</em>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- E) Short 4-Step Summary Routine Card -->
-            <div class="p-4 sm:p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-emerald-50 rounded-2xl border border-purple-200 space-y-3">
-              <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
-                <i data-lucide="zap" class="w-5 h-5 text-purple-700"></i>
-                <span>E. แผนผังปฏิบัติการค้นหา Main Idea (4-Step Action Routine)</span>
-              </div>
-              
-              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center">
-                <div class="p-3 bg-white/95 rounded-xl border border-purple-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-md">STEP 1</span>
-                  <h6 class="font-bold text-xs text-slate-900">Spot the Topic</h6>
-                  <p class="text-[11px] text-slate-600">กวาดตาจับคำซ้ำ หาหัวข้อว่าเรื่องเกี่ยวกับใคร/อะไร (20 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-pink-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md">STEP 2</span>
-                  <h6 class="font-bold text-xs text-slate-900">Ask "So What?"</h6>
-                  <p class="text-[11px] text-slate-600">ถามหาประเด็นที่ผู้เขียนต้องการบอกเกี่ยวกับหัวข้อนั้น (30 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-amber-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md">STEP 3</span>
-                  <h6 class="font-bold text-xs text-slate-900">The Umbrella Test</h6>
-                  <p class="text-[11px] text-slate-600">กางร่มเช็กว่าประโยคนี้คลุมรายละเอียดอื่นๆ ทั้งหมดหรือไม่ (30 วินาที)</p>
-                </div>
-
-                <div class="p-3 bg-white/95 rounded-xl border border-emerald-200 shadow-2xs space-y-1">
-                  <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md">STEP 4</span>
-                  <h6 class="font-bold text-xs text-slate-900">Form Complete Sentence</h6>
-                  <p class="text-[11px] text-slate-600">เขียนหรือเลือกคำตอบที่เป็นประโยคสมบูรณ์ (30 วินาที)</p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Part 2 Bottom Navigation Buttons -->
-            <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
-              <button onclick="app.selectStageAndStep('preReading', 'learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                <span>Back: Pre-Reading (Learn Part 1)</span>
-              </button>
-              <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md">
-                <span>Next Step: Example (Passage ยาว & คำศัพท์ 10 คำ)</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </button>
-            </div>
-          </div>
-        </div>`,
-
-        example: `<div class="space-y-6">
-          <!-- Title & Overview Banner -->
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
-            <div>
-              <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
-                <i data-lucide="book-open" class="w-5 h-5 text-purple-700"></i>
-                <span>Worked Example: Passage ยาว & การวิเคราะห์ใจความสำคัญ</span>
-              </h4>
-              <p class="text-xs text-slate-500 mt-0.5">การนำทฤษฎีจากหน้า Learn มาประยุกต์ใช้วิเคราะห์บทอ่านจริงอย่างละเอียดลึกซึ้ง</p>
-            </div>
-            <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full self-start sm:self-auto">Unit 1 Reading Model (2 Examples)</span>
-          </div>
-
-          <div id="example-content-top"></div>
-
-          <!-- Sub-Tab Switcher: Example 1 vs Example 2 -->
-          <div class="flex items-center space-x-2 border-b border-purple-200/80 pb-2">
-            <button id="ex-tab-1" onclick="app.switchExampleTab(1)" class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md">
-              <i data-lucide="bookmark" class="w-4 h-4"></i>
-              <span>Example 1: The Tortoise & Hare</span>
-              <span class="text-[10px] bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded-full">Perseverance</span>
-            </button>
-            <button id="ex-tab-2" onclick="app.switchExampleTab(2)" class="px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200">
-              <i data-lucide="bookmark" class="w-4 h-4"></i>
-              <span>Example 2: The Ant & Grasshopper</span>
-              <span class="text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">Preparation</span>
-            </button>
-          </div>
-
-          <!-- Example 1 Container -->
-          <div id="example-view-1" class="space-y-6">
-            <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->
-            <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
-              <div>
-                <span class="text-[10px] font-bold text-pink-400 uppercase tracking-wider">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า)</span>
-                <h5 class="text-base font-bold text-white mt-0.5">The Tortoise and the Hare: The Classic Race of Perseverance</h5>
-              </div>
-              
-              <div class="flex items-center space-x-2">
-                <!-- Audio Speed Selector -->
-                <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
-                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
-                  <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
-                    <option value="0.65" class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
-                    <option value="0.75" selected class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
-                    <option value="0.85" class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
-                    <option value="1.0" class="bg-slate-900 text-white">1.0x (ปกติ)</option>
-                  </select>
-                </div>
-
-                <button onclick="app.playUnit1Passage()" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer shadow-md">
-                  <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Listen Passage</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 4-Paragraph Passage with Micro-Analysis -->
-            <div class="text-sm text-slate-200 leading-relaxed space-y-4 font-serif">
-              
-              <!-- Paragraph 1: Introduction & Topic Sentence -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">[Paragraph 1: Topic Sentence - Introduction & Conflict]</span>
-                  <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans">Beginning Position</span>
-                </div>
-                <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-green">A <span class="vocab-word font-bold border-b border-dashed">boastful</span> Hare was constantly <span class="vocab-word font-bold border-b border-dashed">ridiculing</span> a slow-moving Tortoise for his clumsy pace.</span>
-                  Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">arrogant</span> Hare accepted immediately, boasting that no creature in the forest could ever <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">outpace</span> his lightning speed.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-emerald-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคนี้ทำหน้าที่เป็น <strong>Topic Sentence</strong> เพราะมีระดับความกว้าง (General enough) ที่เปิดประเด็นแนะนำตัวละครหลักทั้ง 2 ฝ่าย และจุดประกายปมขัดแย้งของเรื่องทันที ประโยคแวดล้อมที่ตามมาทั้งหมดในย่อหน้าเป็นเพียงรายละเอียดสนับสนุนว่าการเยาะเย้ยนี้นำไปสู่การท้าแข่งขันได้อย่างไร
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 2: Conflict & Supporting Details -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-sky-400 uppercase tracking-wider block">[Paragraph 2: Supporting Details - Conflict & Turning Point]</span>
-                  <span class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans">Major Detail</span>
-                </div>
-                <p class="leading-relaxed">
-                  When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed.
-                  <span class="highlighter-pen highlighter-blue">"I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway,"</span> he laughed smugly. Soon, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">complacent</span> Hare fell into a deep slumber, foolishly underestimating his rival.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-sky-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ข้อความที่ไฮไลต์เป็น <strong>Major Supporting Detail</strong> ที่ให้ข้อมูลเหตุการณ์เฉพาะจุด (Specific action) อธิบายพฤติกรรมความประมาทของกระต่าย ประโยคนี้ช่วยขับเคลื่อนโครงเรื่อง แต่ไม่สามารถเป็น Main Idea ได้เพราะเป็นเพียงการกระทำย่อยจุดเดียว ไม่ได้คลุมบทสรุปทั้งหมด
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 3: Climax & Main Idea / Moral -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-rose-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block">[Paragraph 3: Climax & Stated Moral / Main Idea]</span>
-                  <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans">Concluding Position</span>
-                </div>
-                <p class="leading-relaxed">
-                  Meanwhile, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">steadfast</span> Tortoise pressed forward with silent <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">determination</span>. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">triumph</span>.
-                  <span class="highlighter-pen highlighter-pink">The enduring moral of the race proves that steady <span class="vocab-word font-bold underline">perseverance</span> and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-rose-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคสรุปจบนี้คือ <strong>Stated Main Idea</strong> ประจำบทเรียน เพราะทำหน้าที่เป็น <strong>"ร่มคันใหญ่ (Umbrella Sentence)"</strong> ที่รวบยอดทั้งชัยชนะของเต่า (ความเพียรพยายาม) และความพ่ายแพ้ของกระต่าย (ความหยิ่งผยอง) ไว้เป็นประโยคที่สมบูรณ์และทรงคุณค่าทางคติธรรม
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 4: Resolution & Character Reflection -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block">[Paragraph 4: Resolution / Reflection - The Moral Reinforced]</span>
-                  <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-sans">Character Growth</span>
-                </div>
-                <p class="leading-relaxed">
-                  Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless.
-                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Approaching the winner, he shook the Tortoise's hand with genuine <span class="vocab-word font-bold border-b border-dashed">humility</span>, acknowledging that true greatness comes from quiet dedication rather than loud boasting.</span>
-                  From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-amber-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ย่อหน้าที่ 4 นี้ช่วย <strong>ตอกย้ำ Main Idea (Reinforcing the Theme)</strong> ผ่านการเปลี่ยนแปลงภายในของตัวละคร (Character Growth) ทำให้ผู้อ่านเห็นว่าข้อคิดเรื่องความถ่อมตนและความมุ่งมั่นไม่ได้เป็นเพียงข้อความลอยๆ แต่ส่งผลให้ตัวละครเปลี่ยนพฤติกรรมจริงในตอนท้าย
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 2. คำศัพท์ 10 คำ ครบถ้วน พร้อมตัวอย่างประโยคบริบทใหม่ (10 Core Vocabulary Cards) -->
-          <div class="space-y-3">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-purple-100 pb-2">
-              <h5 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
-                <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
-                <span>คำศัพท์สำคัญ 10 คำ (10 Core Vocabulary Words in Context)</span>
-              </h5>
-              <span class="text-[11px] text-purple-800 font-medium bg-purple-50 px-2 py-0.5 rounded-md">ปรากฏครบทั้ง 10 คำในบทอ่าน + ตัวอย่างประโยคใหม่</span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-              <!-- Vocab 1: Perseverance -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">1. Perseverance</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 3</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˌpɜː.sɪˈvɪə.rəns/ <em>(n.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ความเพียรพยายาม ความบากบั่น</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Through continuous perseverance, Sarah became fluent in English after two years of daily practice.
-                </div>
-              </div>
-
-              <!-- Vocab 2: Arrogant -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">2. Arrogant</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 1</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˈær.ə.ɡənt/ <em>(adj.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">หยิ่งยโส อวดดี หลงตัวเอง</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> The arrogant player ignored his coach's advice, which directly caused the team's defeat.
-                </div>
-              </div>
-
-              <!-- Vocab 3: Boastful -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">3. Boastful</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 1</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˈbəʊst.fəl/ <em>(adj.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ขี้คุย โอ้อวด ชอบพูดอวดตัว</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Nobody enjoyed talking to the boastful student because he always bragged about his exam scores.
-                </div>
-              </div>
-
-              <!-- Vocab 4: Complacent -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">4. Complacent</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 2</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/kəmˈpleɪ.sənt/ <em>(adj.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ชะล่าใจ พึงพอใจจนประมาท</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> We must never become complacent after midterm success; finals require equal hard work.
-                </div>
-              </div>
-
-              <!-- Vocab 5: Determination -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">5. Determination</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 3</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/dɪˌtɜː.mɪˈneɪ.ʃən/ <em>(n.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ความมุ่งมั่น ความตั้งใจเด็ดเดี่ยว</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Despite working two jobs, Ken completed his bachelor degree through sheer determination.
-                </div>
-              </div>
-
-              <!-- Vocab 6: Ridiculing -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">6. Ridiculing</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 1</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˈrɪd.ɪ.kjuːl.ɪŋ/ <em>(v./part.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">เยาะเย้ย ถากถาง ล้อเลียน</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Ridiculing classmates who make speaking mistakes creates a hostile learning environment.
-                </div>
-              </div>
-
-              <!-- Vocab 7: Steadfast -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">7. Steadfast</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 3</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˈsted.fɑːst/ <em>(adj.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">มั่นคง แน่วแน่ ไม่เปลี่ยนแปลง</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Her steadfast loyalty to her study group ensured that all members passed their exams.
-                </div>
-              </div>
-
-              <!-- Vocab 8: Outpace -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">8. Outpace</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 1</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˌaʊtˈpeɪs/ <em>(v.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">วิ่งแซง ก้าวหน้าเร็วกว่า</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Demand for skilled bilingual graduates will quickly outpace the supply of job applicants.
-                </div>
-              </div>
-
-              <!-- Vocab 9: Humility -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">9. Humility</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 4</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/hjuːˈmɪl.ə.ti/ <em>(n.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ความถ่อมตน ความอ่อนน้อม</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Great leaders listen to constructive criticism with genuine humility and respect.
-                </div>
-              </div>
-
-              <!-- Vocab 10: Triumph -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-bold text-purple-900">10. Triumph</span>
-                    <span class="text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded">Para 3</span>
-                  </div>
-                  <span class="text-[10px] text-slate-500 block font-mono">/ˈtraɪ.əmf/ <em>(n./v.)</em></span>
-                  <p class="text-[11px] text-slate-800 font-medium mt-1">ชัยชนะ ความสำเร็จอันยิ่งใหญ่</p>
-                </div>
-                <div class="p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug">
-                  <strong>Ex:</strong> Overcoming stage fright to present her research was a major personal triumph.
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3. Prediction Clues Breakdown (Before vs. After Reading) -->
-          <div class="p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 via-pink-50/60 to-indigo-50/90 border border-purple-200 rounded-2xl space-y-4">
-            <div class="flex items-center justify-between">
-              <strong class="font-bold text-purple-950 flex items-center space-x-2 text-sm">
-                <i data-lucide="compass" class="w-4 h-4 text-purple-700"></i>
-                <span>การวิเคราะห์เบาะแสการคาดเดา: ขั้นตอนก่อนอ่าน vs หลังอ่าน (Before & After Reading Flow)</span>
-              </strong>
-              <span class="text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full">Active Inquiring Method</span>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <!-- Before Reading Stage -->
-              <div class="p-4 bg-white/95 rounded-xl border border-purple-200 shadow-xs space-y-2.5">
-                <div class="flex items-center space-x-2 text-purple-900 font-bold text-xs pb-1.5 border-b border-purple-100">
-                  <span class="w-5 h-5 rounded-full bg-purple-700 text-white flex items-center justify-center text-[10px]">1</span>
-                  <span>BEFORE READING (เบาะแสและการคาดเดาก่อนอ่าน)</span>
-                </div>
-                <ul class="text-[11px] text-slate-700 space-y-2 pl-1 leading-relaxed">
-                  <li>
-                    <strong class="text-purple-900">• Title Clue:</strong> ชื่อเรื่อง <em>"The Tortoise and the Hare"</em> ชี้ชัดว่าเป็นการแข่งขันระหว่างสัตว์ที่วิ่งเร็วที่สุดกับสัตว์ที่เดินช้าที่สุด
-                  </li>
-                  <li>
-                    <strong class="text-purple-900">• Vocab Clue:</strong> พบคำคู่ตรงข้ามอย่าง <em>boastful, arrogant, complacent</em> (ฝ่ายเร็ว) คู่กับ <em>steadfast, perseverance, determination</em> (ฝ่ายช้า)
-                  </li>
-                  <li>
-                    <strong class="text-pink-700 font-semibold">• Prediction Hypothesis:</strong> คาดเดาว่าฝ่ายที่วิ่งเร็วจะประมาทหรือหลงตัวเองจนพ่ายแพ้ ส่วนฝ่ายที่ช้าแต่มุ่งมั่นจะคว้าชัยชนะในตอนท้าย
-                  </li>
-                </ul>
-              </div>
-
-              <!-- After Reading Stage -->
-              <div class="p-4 bg-white/95 rounded-xl border border-purple-200 shadow-xs space-y-2.5">
-                <div class="flex items-center space-x-2 text-emerald-900 font-bold text-xs pb-1.5 border-b border-emerald-100">
-                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px]">2</span>
-                  <span>AFTER READING (การตรวจสอบและยืนยันผลหลังอ่าน)</span>
-                </div>
-                <ul class="text-[11px] text-slate-700 space-y-2 pl-1 leading-relaxed">
-                  <li>
-                    <strong class="text-emerald-800">• Verification 1:</strong> ยืนยันถูกต้อง! ทั้งสองตัวละครท้าแข่งวิ่ง 5 ไมล์ โดยกระต่ายออกตัวนำลิ่วแต่ไปแวะนอนหลับใต้ต้นไม้เพราะความชะล่าใจ
-                  </li>
-                  <li>
-                    <strong class="text-emerald-800">• Verification 2:</strong> ยืนยันถูกต้อง 100%! เต่าเดินอย่างสม่ำเสมอจนเข้าเส้นชัยก่อน และกระต่ายเรียนรู้ความถ่อมตนในตอนจบ
-                  </li>
-                  <li>
-                    <strong class="text-emerald-800 font-semibold">• Learning Impact:</strong> การคาดเดาช่วยสร้าง "จุดโฟกัส (Reading Purpose)" ทำให้สายตารอจับตาดูพฤติกรรมความผิดพลาดของกระต่าย และจับใจความสำคัญได้ทันทีโดยไม่ต้องอ่านทวนซ้ำ
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Reflection & Critical Analysis Questions (Bridge into Practice) -->
-          <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-3">
-            <div class="flex items-center space-x-2 text-slate-900 font-bold text-sm">
-              <i data-lucide="help-circle" class="w-4 h-4 text-purple-700"></i>
-              <span>คำถามชวนคิดเพื่อวิเคราะห์เชิงลึก (Reflection & Analytical Inquiry Questions)</span>
-            </div>
-            <p class="text-xs text-slate-600">
-              ลองตอบคำถามวิเคราะห์ 3 ข้อนี้ในใจ เพื่อเชื่อมโยงทฤษฎี Main Idea สู่การทำแบบฝึกหัดจริงในหน้า Practice:
-            </p>
-
-            <div class="space-y-2.5 text-xs">
-              <!-- Question 1 -->
-              <div class="p-3 bg-purple-50/70 rounded-xl border border-purple-100 space-y-1">
-                <p class="font-bold text-purple-950">
-                  1. "If the stated moral sentence at the end of paragraph 3 were removed, could you still identify the Main Idea? Why and how?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-purple-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> หาได้แน่นอน โดยใช้วิธี <em>Implied Main Idea (ใจความสำคัญโดยนัย)</em> จากการเปรียบเทียบการกระทำและผลลัพธ์ของ 2 ตัวละคร: เต่าไม่หยุดเดิน (Perseverance) $\rightarrow$ ชนะ ส่วนกระต่ายหลับ (Complacency) $\rightarrow$ แพ้ แล้วสรุปเป็นประโยคด้วยถ้อยคำของตนเอง
-                </p>
-              </div>
-
-              <!-- Question 2 -->
-              <div class="p-3 bg-pink-50/70 rounded-xl border border-pink-100 space-y-1">
-                <p class="font-bold text-pink-950">
-                  2. "Which paragraph best demonstrates the Hare's arrogance through physical action rather than descriptive adjectives?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-pink-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> ย่อหน้าที่ 2 — การที่กระต่ายตัดสินใจล้มตัวลงนอนหลับใต้ต้นไม้โอ๊กอย่างสบายใจระหว่างการแข่งขัน คือการกระทำ (Action) ที่สะท้อนความประมาทและดูถูกคู่แข่งได้อย่างทรงพลังที่สุด ยิ่งกว่าคำบรรยายใดๆ
-                </p>
-              </div>
-
-              <!-- Question 3 -->
-              <div class="p-3 bg-amber-50/70 rounded-xl border border-amber-100 space-y-1">
-                <p class="font-bold text-amber-950">
-                  3. "How does paragraph 4 (the Hare's reaction of humility) deepen our understanding of the Main Idea compared to just stopping at the finish line?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-amber-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> ย่อหน้าที่ 4 แสดงการเติบโตของตัวละคร (Character Growth) ทำให้เห็นว่าคติธรรมเรื่องความเพียรและความถ่อมตนเป็นความจริงที่ทรงพลัง แม้แต่ผู้พ่ายแพ้ก็ยอมรับและปรับปรุงตัว ทำให้บทเรียนนี้มีความหมายลึกซึ้งและสมบูรณ์แบบ
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Navigation Buttons for Example 1 -->
-          <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
-            <button onclick="app.selectActivityStep('learn')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
-              ⬅ Back: Learn (ทฤษฎีใจความสำคัญ)
-            </button>
-            <button onclick="app.switchExampleTab(2)" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-              <span>Next: Example 2 (มดกับตั๊กแตน)</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>
-
-        <!-- Example 2 Container (The Ant and the Grasshopper) -->
-        <div id="example-view-2" class="space-y-6 hidden">
-          <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->
-          <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
-              <div>
-                <span class="text-[10px] font-bold text-pink-400 uppercase tracking-wider">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า - การมองการณ์ไกล vs ความประมาท)</span>
-                <h5 class="text-base font-bold text-white mt-0.5">The Ant and the Grasshopper: The Wisdom of Preparation</h5>
-              </div>
-              
-              <div class="flex items-center space-x-2">
-                <!-- Audio Speed Selector -->
-                <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
-                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
-                  <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
-                    <option value="0.65" class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
-                    <option value="0.75" selected class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
-                    <option value="0.85" class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
-                    <option value="1.0" class="bg-slate-900 text-white">1.0x (ปกติ)</option>
-                  </select>
-                </div>
-
-                <button onclick="app.playUnit1Passage2()" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer shadow-md">
-                  <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Listen Passage</span>
-                </button>
-              </div>
-            </div>
-
-            <!-- 4-Paragraph Passage with Micro-Analysis -->
-            <div class="text-sm text-slate-200 leading-relaxed space-y-4 font-serif">
-              
-              <!-- Paragraph 1: Introduction & Topic Sentence -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider block">[Paragraph 1: Topic Sentence - Contrasting Behaviors in Summer]</span>
-                  <span class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans">Beginning Position</span>
-                </div>
-                <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-green">During a radiant summer afternoon, an <span class="vocab-word font-bold border-b border-dashed">industrious</span> Ant worked tirelessly storing grain, while a <span class="vocab-word font-bold border-b border-dashed">frivolous</span> Grasshopper sang carefree songs and mocked her constant toil.</span>
-                  The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-emerald-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคแรกทำหน้าที่เป็น <strong>Topic Sentence</strong> เพราะมีความกว้าง (General enough) ในการเปิดประเด็นเปรียบเทียบพฤติกรรมระหว่างตัวละครหลักทั้งสอง (มดผู้ขยัน vs ตั๊กแตนผู้รักสนุก) และปูพื้นฐานปมความขัดแย้งของเรื่องทันที ประโยคแวดล้อมที่ตามมาเป็นเพียงรายละเอียดสนับสนุนเกี่ยวกับการเตือนเรื่องสภาพอากาศ
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 2: Supporting Details -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-sky-400 uppercase tracking-wider block">[Paragraph 2: Supporting Details - Complacency vs Daily Diligence]</span>
-                  <span class="text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans">Major Detail</span>
-                </div>
-                <p class="leading-relaxed">
-                  <span class="highlighter-pen highlighter-blue">Instead of heeding the wise advice, the <span class="vocab-word font-bold border-b border-dashed">complacent</span> Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's <span class="vocab-word font-bold border-b border-dashed">abundance</span> would never run out.</span>
-                  Week after week, the Ant practiced steadfast <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">diligence</span>, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-sky-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-sky-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ข้อความที่ไฮไลต์เป็น <strong>Major Supporting Detail</strong> ที่ระบุพฤติกรรมความชะล่าใจเฉพาะเจาะจง (Specific action) ของตั๊กแตน ซึ่งทำหน้าที่เป็นข้อมูลสนับสนุนว่าเหตุใดตั๊กแตนจึงไม่ได้เตรียมพร้อมเมื่อฤดูหนาวมาถึง
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 3: Climax & Main Idea / Moral -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-rose-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-rose-400 uppercase tracking-wider block">[Paragraph 3: Climax & Stated Moral / Main Idea]</span>
-                  <span class="text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans">Concluding Position</span>
-                </div>
-                <p class="leading-relaxed">
-                  When the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">harsh</span> winter finally arrived with freezing blizzards, the <span class="vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300">impoverished</span> Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth.
-                  <span class="highlighter-pen highlighter-pink">The enduring wisdom of the season demonstrates that <span class="vocab-word font-bold border-b border-dashed">foresight</span>, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared.</span>
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-rose-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-rose-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคสรุปจบนี้คือ <strong>Stated Main Idea</strong> ประจำบทเรียน ทำหน้าที่เป็น <strong>"ร่มคันใหญ่ (Umbrella Sentence)"</strong> ที่ครอบคลุมทั้งผลลัพธ์ของความรอบคอบในการเตรียมพร้อม และความหายนะของผู้ที่ละเลย โดยสรุปเป็นหลักคิดที่นำไปปรับใช้ได้จริง
-                  </div>
-                </div>
-              </div>
-
-              <!-- Paragraph 4: Resolution & Character Reflection -->
-              <div class="p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-500 space-y-2">
-                <div class="flex items-center justify-between">
-                  <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider block">[Paragraph 4: Resolution / Reflection - The Moral Reinforced]</span>
-                  <span class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-sans">Character Growth</span>
-                </div>
-                <p class="leading-relaxed">
-                  Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain.
-                  <span class="highlighter-pen highlighter-yellow text-slate-900 font-medium">Humbled by the generous gift, the reformed Grasshopper bowed with sincere <span class="vocab-word font-bold border-b border-dashed">humility</span>, promising that every future summer would be devoted to responsible <span class="vocab-word font-bold border-b border-dashed">prudence</span> alongside his music.</span>
-                  From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.
-                </p>
-                <!-- Micro-Analysis: Why This Works -->
-                <div class="bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200 flex items-start space-x-2">
-                  <i data-lucide="info" class="w-4 h-4 text-amber-400 shrink-0 mt-0.5"></i>
-                  <div>
-                    <strong class="text-amber-300 font-bold">Why This Works (วิเคราะห์เหตุผล):</strong> ย่อหน้าที่ 4 ช่วย <strong>ตอกย้ำ Main Idea (Reinforcing the Theme)</strong> ผ่านการเปลี่ยนแปลงของตัวละคร (Character Growth) ตั๊กแตนไม่ได้แค่รอดชีวิต แต่เกิดการเรียนรู้ความถ่อมตนและความรอบคอบ ทำให้คติสอนใจนี้กลายเป็นบทเรียนชีวิตที่สมบูรณ์
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 2. คำศัพท์ 10 คำ ครบถ้วน พร้อมตัวอย่างประโยคบริบทใหม่ (10 Core Vocabulary Cards) -->
-          <div class="space-y-3">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-purple-100 pb-2">
-              <h5 class="font-bold text-slate-900 text-sm flex items-center space-x-2">
-                <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
-                <span>คำศัพท์สำคัญ 10 คำ (10 Core Vocabulary Words in Context)</span>
-              </h5>
-              <span class="text-[11px] text-purple-800 font-medium bg-purple-50 px-2 py-0.5 rounded-md">ปรากฏครบทั้ง 10 คำในบทอ่าน + ตัวอย่างประโยคใหม่</span>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
-              <!-- Vocab 1: Industrious -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Industrious</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ɪnˈdʌs.tri.əs/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ขยันขันแข็ง, อุตสาหะ</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...an industrious Ant worked tirelessly storing grain..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> The industrious university students spent extra hours studying in the library.
-                </div>
-              </div>
-
-              <!-- Vocab 2: Frivolous -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Frivolous</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ˈfrɪv.əl.əs/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ไร้สาระ, ไม่จริงจัง, รักสนุก</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...while a frivolous Grasshopper sang carefree songs..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Spending your monthly savings on frivolous items can lead to financial trouble.
-                </div>
-              </div>
-
-              <!-- Vocab 3: Complacent -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Complacent</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/kəmˈpleɪ.sənt/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ชะล่าใจ, พึงพอใจจนประมาท</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...the complacent Grasshopper spent every sunny morning dancing..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Never become complacent after passing the midterm exam; continue reviewing daily.
-                </div>
-              </div>
-
-              <!-- Vocab 4: Abundance -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Abundance</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/əˈbʌn.dəns/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ความอุดมสมบูรณ์, ปริมาณมาก</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...convinced that nature's abundance would never run out."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Thailand enjoys an abundance of fresh fruits throughout the rainy season.
-                </div>
-              </div>
-
-              <!-- Vocab 5: Diligence -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Diligence</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ˈdɪl.ɪ.dʒəns/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ความขยันหมั่นเพียร, ความเอาใจใส่</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...the Ant practiced steadfast diligence, hauling heavy seeds..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Through continuous diligence and reading practice, he achieved a high English score.
-                </div>
-              </div>
-
-              <!-- Vocab 6: Harsh -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Harsh</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/hɑːʃ/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">รุนแรง, โหดร้าย, ทารุณ</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "When the harsh winter finally arrived with freezing blizzards..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> The climbers protected themselves against the harsh winds on the mountain peak.
-                </div>
-              </div>
-
-              <!-- Vocab 7: Impoverished -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Impoverished</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">adj.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ɪmˈpɒv.ər.ɪʃt/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ตกระกำลำบาก, ขัดสน, ยากจนลง</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...the impoverished Grasshopper found himself shivering..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> The unexpected flood left many villagers impoverished until emergency aid arrived.
-                </div>
-              </div>
-
-              <!-- Vocab 8: Foresight -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Foresight</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ˈfɔː.saɪt/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">การมองการณ์ไกล, ความรอบคอบ</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...demonstrates that foresight, disciplined preparation..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Having the foresight to organize your study plan prevents stressful cramming.
-                </div>
-              </div>
-
-              <!-- Vocab 9: Humility -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Humility</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/hjuːˈmɪl.ə.ti/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ความถ่อมตน, ความนอบน้อม</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...the reformed Grasshopper bowed with sincere humility..."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> She received the student leadership award with genuine humility and grace.
-                </div>
-              </div>
-
-              <!-- Vocab 10: Prudence -->
-              <div class="p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between">
-                <div>
-                  <div class="flex items-center justify-between">
-                    <span class="font-bold text-purple-900 text-sm">Prudence</span>
-                    <span class="text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono">n.</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 font-mono">/ˈpruː.dəns/</div>
-                  <div class="text-xs font-bold text-pink-700 mt-1">ความรอบคอบ, ความสุขุมรอบคอบ</div>
-                  <div class="text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug">
-                    <strong class="text-slate-800">In Story:</strong> "...would be devoted to responsible prudence alongside his music."
-                  </div>
-                </div>
-                <div class="text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug">
-                  <strong class="text-purple-950">Extra Context:</strong> Exercising financial prudence allows you to handle unexpected expenses easily.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- 3. Clue & Strategy Breakdown Split into Before / After Reading -->
-          <div class="space-y-3">
-            <div class="flex items-center space-x-2 border-b border-purple-100 pb-2">
-              <i data-lucide="compass" class="w-4 h-4 text-purple-700"></i>
-              <h5 class="font-bold text-slate-900 text-sm">การแยกแยะร่องรอยกลยุทธ์: ก่อนอ่าน vs หลังอ่าน (Before & After Reading Breakdown)</h5>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
-              <!-- Before Reading: Prediction Clues -->
-              <div class="p-4 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl border border-purple-200 space-y-2">
-                <div class="flex items-center space-x-2 text-purple-900 font-bold text-xs">
-                  <span class="w-5 h-5 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-[11px]">1</span>
-                  <span>BEFORE READING: ร่องรอยการคาดเดา (Predicting & Previewing)</span>
-                </div>
-                <ul class="space-y-1.5 text-slate-700 text-[11px] pl-2">
-                  <li>
-                    • <strong>Title Analysis:</strong> ชื่อเรื่อง <em>"The Ant and the Grasshopper: The Wisdom of Preparation"</em> บ่งชี้ทันทีว่าจะมีการเปรียบเทียบลักษณะนิสัยระหว่าง "มด" กับ "ตั๊กแตน" โดยมีแก่นเรื่องเกี่ยวกับคุณค่าของการเตรียมพร้อม
-                  </li>
-                  <li>
-                    • <strong>Background Knowledge:</strong> ผู้อ่านดึงความรู้เดิมว่ามดเป็นสัตว์ขยันเก็บอาหารในฤดูร้อน ส่วนตั๊กแตนมักชอบร้องเพลง จึงคาดเดาได้ว่าจะเกิดวิกฤตเมื่อฤดูกาลเปลี่ยนแปลงสู่ฤดูหนาว
-                  </li>
-                  <li>
-                    • <strong>Prediction Hypothesis:</strong> คาดการณ์ว่าฝ่ายที่เตรียมพร้อมจะรอดชีวิต ส่วนฝ่ายที่ละเลยจะพบความยากลำบาก และเรื่องจะสรุปด้วยคติสอนใจ
-                  </li>
-                </ul>
-              </div>
-
-              <!-- After Reading: Verification & Analysis -->
-              <div class="p-4 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 space-y-2">
-                <div class="flex items-center space-x-2 text-emerald-900 font-bold text-xs">
-                  <span class="w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-[11px]">2</span>
-                  <span>AFTER READING: ตรวจสอบและยืนยันโครงสร้าง (Verifying & Analyzing)</span>
-                </div>
-                <ul class="space-y-1.5 text-slate-700 text-[11px] pl-2">
-                  <li>
-                    • <strong>Locating Topic Sentence:</strong> ย่อหน้าที่ 1 ประโยคแรกเปิดประเด็นเปรียบเทียบพฤติกรรมของทั้งสองฝ่ายทันที สอดคล้องกับตำแหน่งต้นย่อหน้า
-                  </li>
-                  <li>
-                    • <strong>Checking Supporting Details:</strong> ย่อหน้าที่ 2 ให้ข้อมูลเหตุการณ์ที่ตั๊กแตนละเลยคำเตือนและเต้นรำอย่างชะล่าใจ ซึ่งเป็น Major Detail สนับสนุนปมปัญหา
-                  </li>
-                  <li>
-                    • <strong>Confirming Main Idea:</strong> ย่อหน้าที่ 3 สรุปคติธรรมอย่างชัดเจน (Stated Moral) ว่าการมองการณ์ไกลและความขยันปกป้องเราจากความยากลำบาก
-                  </li>
-                  <li>
-                    • <strong>Evaluating Character Growth:</strong> ย่อหน้าที่ 4 แสดงให้เห็นว่าตั๊กแตนสำนึกผิดและเปลี่ยนแปลงตนเอง (Character Growth) ทำให้ใจความสำคัญมีน้ำหนักสมบูรณ์
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4. Reflection Questions -->
-          <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-200 space-y-3 shadow-xs">
-            <div class="flex items-center space-x-2 text-purple-950 font-bold text-sm">
-              <i data-lucide="help-circle" class="w-5 h-5 text-purple-700"></i>
-              <span>คำถามสะท้อนคิดเพื่อความเข้าใจระดับสูง (Deep Reading Reflection Questions)</span>
-            </div>
-            <p class="text-xs text-slate-600">
-              ลองฝึกคิดวิเคราะห์ตาม 3 ประเด็นต่อไปนี้ เพื่อฝึกฝนทักษะการอ่านวิเคราะห์ (Critical Reading) ตามมาตรฐาน CEFR A2:
-            </p>
-
-            <div class="space-y-2.5 text-xs">
-              <!-- Question 1 -->
-              <div class="p-3 bg-purple-50/70 rounded-xl border border-purple-100 space-y-1">
-                <p class="font-bold text-purple-950">
-                  1. "How do the contrasting actions of the Ant and the Grasshopper in paragraphs 1 and 2 directly support the moral stated in paragraph 3?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-purple-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> การกระทำที่ตรงข้ามกัน (มดเก็บอาหาร vs ตั๊กแตนเต้นรำ) ทำหน้าที่เป็นหลักฐานเชิงประจักษ์ (Empirical Evidence) ที่แสดงความสัมพันธ์แบบเหตุและผล (Cause & Effect) นำไปสู่บทสรุปว่าทำไมการเตรียมตัวล่วงหน้าจึงจำเป็น
-                </p>
-              </div>
-
-              <!-- Question 2 -->
-              <div class="p-3 bg-pink-50/70 rounded-xl border border-pink-100 space-y-1">
-                <p class="font-bold text-pink-950">
-                  2. "Why is paragraph 4 (the Grasshopper's humility and promise of prudence) essential for demonstrating true character growth?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-pink-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> หากเรื่องจบที่ย่อหน้า 3 บทอ่านจะสะท้อนเพียงความล้มเหลว แต่ย่อหน้า 4 แสดงถึงการยอมรับความจริงและการเปลี่ยนแปลงพฤติกรรม (Character Growth) ทำให้คติธรรมกลายเป็นบทเรียนชีวิตที่มีความหวังและสมบูรณ์
-                </p>
-              </div>
-
-              <!-- Question 3 -->
-              <div class="p-3 bg-amber-50/70 rounded-xl border border-amber-100 space-y-1">
-                <p class="font-bold text-amber-950">
-                  3. "For university students, what actions in academic life represent 'storing grain' versus 'singing frivolously'?"
-                </p>
-                <p class="text-[11px] text-slate-600 pl-2 border-l-2 border-amber-400">
-                  💡 <strong>แนวคิดวิเคราะห์:</strong> 'Storing grain' คือการอ่านหนังสือทบทวนบทเรียนและสะสมคำศัพท์เป็นประจำทุกสัปดาห์ ส่วน 'Singing frivolously' คือการผัดวันประกันพรุ่งและรออ่านคืนก่อนสอบ ซึ่งอาจทำให้ 'หนาวสั่น' เมื่อเจอข้อสอบจริง
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Bottom Navigation Buttons for Example 2 -->
-          <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100">
-            <button onclick="app.switchExampleTab(1)" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
-              ⬅ Back: Example 1 (เต่ากับกระต่าย)
-            </button>
-            <button onclick="app.selectActivityStep('practice')" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-              <span>Next Step: Practice (แบบฝึกหัด 40 ข้อ)</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>
-      </div>`,
-
-        practice: `<div class="space-y-6">
-          <div class="flex items-center justify-between border-b border-purple-100 pb-3">
-            <div>
-              <h4 class="text-lg font-bold text-slate-900 flex items-center space-x-2">
-                <i data-lucide="help-circle" class="w-5 h-5 text-purple-700"></i>
-                <span>Guided Practice: แบบฝึกหัดทบทวนความเข้าใจ</span>
-              </h4>
-              <p class="text-xs text-slate-500 mt-0.5">ฝึกระบุ Main Idea, Topic Sentence, รายละเอียดสนับสนุน และคำศัพท์ พร้อมตรวจเฉลยทันที</p>
-            </div>
-            <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">4 Questions</span>
-          </div>
-
-          <!-- Question 1 -->
-          <div class="p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800">Question 1 • Main Idea</span>
-              <span class="text-[11px] text-slate-400 font-semibold">1 pt</span>
-            </div>
-            <h5 class="text-sm font-bold text-slate-900">What is the central Main Idea of "The Tortoise and the Hare"?</h5>
-            <div class="space-y-2">
-              <button onclick="app.submitPracticeAnswer(0, 1, encodeURIComponent('ข้อนี้เป็นเพียงรายละเอียดปลีกย่อย ไม่ใช่ใจความสำคัญของเรื่องทั้งหมด'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">A</span>
-                <span>The Hare took a comfortable nap under a shady oak tree.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(1, 1, encodeURIComponent('ถูกต้อง! ประโยคนี้สรุปแก่นของเรื่องว่าความพากเพียรและสม่ำเสมอจะเอาชนะความหยิ่งยโสและความประมาทได้อย่างแท้จริง'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">B</span>
-                <span>Steady perseverance and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(2, 1, encodeURIComponent('ข้อนี้กว้างเกินไป (Too Broad) และไม่ได้ระบุข้อคิดหลักของเรื่อง'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">C</span>
-                <span>Forest animals enjoy competing in five-mile cross-country footraces.</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 2 -->
-          <div class="p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800">Question 2 • Topic Sentence</span>
-              <span class="text-[11px] text-slate-400 font-semibold">1 pt</span>
-            </div>
-            <h5 class="text-sm font-bold text-slate-900">Where is the stated moral and concluding Main Idea located in the final paragraph?</h5>
-            <div class="space-y-2">
-              <button onclick="app.submitPracticeAnswer(0, 0, encodeURIComponent('ถูกต้อง! ประโยคสุดท้ายของเรื่องทำหน้าที่เป็น Concluding Topic Sentence ที่ระบุคติธรรมและใจความสำคัญไว้อย่างชัดเจน'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">A</span>
-                <span>At the very end of the paragraph as a summarizing concluding statement.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(1, 0, encodeURIComponent('ในย่อหน้าสุดท้าย ประโยคเปิดเป็นเพียงการเล่าการเดินของเต่า ยังไม่ใช่ประโยคสรุปใจความสำคัญ'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">B</span>
-                <span>In the first sentence only.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(2, 0, encodeURIComponent('เรื่องนี้ระบุ Main Idea ไว้อย่างชัดเจน (Stated Main Idea) ในประโยคสรุปท้าย ไม่ได้ซ่อนไว้'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">C</span>
-                <span>It is not stated anywhere in the text.</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800">Question 3 • Supporting Detail</span>
-              <span class="text-[11px] text-slate-400 font-semibold">1 pt</span>
-            </div>
-            <h5 class="text-sm font-bold text-slate-900">Which of the following is a Supporting Detail (รายละเอียดสนับสนุน) and NOT the Main Idea?</h5>
-            <div class="space-y-2">
-              <button onclick="app.submitPracticeAnswer(0, 1, encodeURIComponent('ประโยคนี้คือ Main Idea ของเรื่อง ไม่ใช่ Supporting Detail'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">A</span>
-                <span>Perseverance and humility triumph over arrogant complacency.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(1, 1, encodeURIComponent('ถูกต้อง! การที่นกฮูก (wise Owl) ได้รับเลือกให้เป็นผู้วางเส้นทางวิ่งแข่ง เป็นเพียงรายละเอียดสนับสนุนเหตุการณ์ ไม่ใช่ใจความสำคัญ'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">B</span>
-                <span>The wise Owl was selected to map the course and mark the finish line.</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(2, 1, encodeURIComponent('ประโยคนี้สื่อถึงข้อคิดหลักของการแข่งขัน'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">C</span>
-                <span>Consistency and determination lead to lasting achievement.</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Question 4 -->
-          <div class="p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">Question 4 • Vocabulary in Context</span>
-              <span class="text-[11px] text-slate-400 font-semibold">1 pt</span>
-            </div>
-            <h5 class="text-sm font-bold text-slate-900">Complete the sentence: "The Hare was so ______ that he believed victory was guaranteed, so he fell asleep."</h5>
-            <div class="space-y-2">
-              <button onclick="app.submitPracticeAnswer(0, 2, encodeURIComponent('humble แปลว่า ถ่อมตน ซึ่งตรงข้ามกับนิสัยของกระต่าย'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">A</span>
-                <span>humble (ถ่อมตน)</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(1, 2, encodeURIComponent('steadfast แปลว่า มั่นคงแน่วแน่ ซึ่งเป็นคุณลักษณะของเต่า'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">B</span>
-                <span>steadfast (มั่นคงแน่วแน่)</span>
-              </button>
-              <button onclick="app.submitPracticeAnswer(2, 2, encodeURIComponent('ถูกต้อง! complacent หมายถึง ชะล่าใจ หรือพึงพอใจในตนเองจนประมาทเลินเล่อ ซึ่งเป็นสาเหตุที่กระต่ายไปนอนหลับจนแพ้การแข่งขัน'))" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
-                <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">C</span>
-                <span>complacent (ชะล่าใจ / ประมาท)</span>
-              </button>
-            </div>
-          </div>
-
-          <!-- Bottom Finish Buttons -->
-          <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
-            <button onclick="app.selectActivityStep('example')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center">
-              ⬅ Back: Example
-            </button>
-            <button onclick="app.selectStageAndStep('postReading', 'quiz')" class="w-full sm:w-auto px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md">
-              <span>Next Step: Post-Reading Quiz (แบบทดสอบ 40 ข้อ)</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-          </div>
-        </div>`
+        "whileReading": {
+          "title": "While-Reading Stage",
+          "steps": {
+            "learn": "<div class=\"space-y-6\" id=\"learn-content-top\">\n              <!-- Header for Part 2 -->\n              <div class=\"bg-gradient-to-r from-purple-100/90 to-pink-100/90 p-4 sm:p-5 rounded-2xl border border-purple-200\">\n                <div class=\"flex items-center space-x-2 mb-1.5\">\n                  <span class=\"bg-purple-700 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-md uppercase tracking-wider\">While-Reading Stage</span>\n                  <span class=\"text-xs font-semibold text-purple-900 bg-purple-200/80 px-2.5 py-0.5 rounded-full\">Part 2: Core Lesson</span>\n                </div>\n                <h3 class=\"text-base sm:text-lg font-bold text-slate-900\">Main Idea & Topic Sentence (ใจความสำคัญและประโยคหลัก)</h3>\n                <p class=\"text-xs text-slate-700 mt-1 leading-relaxed\">\n                  เรียนรู้โครงสร้างหัวใจสำคัญของการอ่านภาษาอังกฤษ: การแยกแยะ 3 ระดับความคิด (Topic vs Main Idea vs Supporting Details), การหาตำแหน่ง Topic Sentence, และเทคนิคการสรุปใจความสำคัญแบบ Step-by-Step\n                </p>\n              </div>\n\n              <!-- Content for Part 2 -->\n              <div class=\"space-y-6\">\n\n            <!-- A) Topic vs Main Idea vs Supporting Details (3 Levels in Depth + Everyday Examples) -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n                <i data-lucide=\"layers\" class=\"w-6 h-6 text-purple-700\"></i>\n                <h3>A. ความแตกต่างเชิงลึก: 3 ระดับความคิดในบทอ่าน (Reading Hierarchy)</h3>\n              </div>\n              <p class=\"text-sm text-slate-700 leading-relaxed\">\n                การอ่านภาษาอังกฤษให้เข้าใจอย่างถ่องแท้ ต้องสามารถแยกความแตกต่างของข้อมูลออกเป็น <strong>3 ลำดับขั้น (Hierarchy)</strong> โดยเปรียบเทียบเหมือน <strong>\"ร่มคันใหญ่ (Umbrella)\"</strong> ที่มีโครงสร้างซ้อนกันอย่างชัดเจน:\n              </p>\n\n              <!-- 3 Levels Cards -->\n              <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3.5\">\n                <!-- Level 1: Topic -->\n                <div class=\"p-4 bg-white rounded-2xl border-t-4 border-purple-600 border-x border-b border-purple-100 shadow-xs space-y-2\">\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-800 bg-purple-100 px-2 py-0.5 rounded-md\">LEVEL 1</span>\n                    <i data-lucide=\"hash\" class=\"w-4 h-4 text-purple-600\"></i>\n                  </div>\n                  <h4 class=\"font-bold text-slate-900 text-sm\">Topic (หัวข้อเรื่อง)</h4>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    คือ <strong>\"คำหรือวลีสั้นๆ (Word / Noun Phrase)\"</strong> ที่ตอบคำถามว่า <em>\"เรื่องนี้พูดถึงใครหรืออะไร?\" (Who or what is the text about?)</em>\n                  </p>\n                  <div class=\"p-2.5 bg-purple-50/80 rounded-xl text-[11px] text-purple-900 space-y-1\">\n                    <span class=\"font-bold block\">ลักษณะเด่น:</span>\n                    <ul class=\"space-y-0.5 pl-1\">\n                      <li>• เป็นแค่คำนามหรือวลี <strong>ไม่มีกริยาแท้สมบูรณ์</strong></li>\n                      <li>• ยังไม่สามารถบอกความคิดเห็นหรือสารของผู้เขียนได้</li>\n                    </ul>\n                  </div>\n                </div>\n\n                <!-- Level 2: Main Idea -->\n                <div class=\"p-4 bg-white rounded-2xl border-t-4 border-pink-500 border-x border-b border-pink-100 shadow-xs space-y-2\">\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md\">LEVEL 2 (CORE)</span>\n                    <i data-lucide=\"bookmark\" class=\"w-4 h-4 text-pink-600\"></i>\n                  </div>\n                  <h4 class=\"font-bold text-slate-900 text-sm\">Main Idea (ใจความสำคัญ)</h4>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    คือ <strong>\"แก่นแท้หรือข้อความสำคัญที่สุด\"</strong> ที่ผู้เขียนต้องการบอกผู้อ่านเกี่ยวกับ Topic นั้น\n                  </p>\n                  <div class=\"p-2.5 bg-pink-50/80 rounded-xl text-[11px] text-pink-900 space-y-1\">\n                    <span class=\"font-bold block\">ลักษณะเด่น:</span>\n                    <ul class=\"space-y-0.5 pl-1\">\n                      <li>• <strong class=\"text-pink-950\">ต้องเป็นประโยคที่สมบูรณ์ (Complete Sentence)</strong> เสมอ (Subject + Verb)</li>\n                      <li>• ต้องกว้างพอที่จะคลุมเนื้อหาทั้งย่อหน้าได้</li>\n                    </ul>\n                  </div>\n                </div>\n\n                <!-- Level 3: Supporting Details -->\n                <div class=\"p-4 bg-white rounded-2xl border-t-4 border-amber-500 border-x border-b border-amber-100 shadow-xs space-y-2\">\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md\">LEVEL 3</span>\n                    <i data-lucide=\"list-tree\" class=\"w-4 h-4 text-amber-600\"></i>\n                  </div>\n                  <h4 class=\"font-bold text-slate-900 text-sm\">Supporting Details (รายละเอียด)</h4>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    คือ <strong>\"หลักฐาน ข้อเท็จจริง ตัวเลข สถิติ หรือตัวอย่าง\"</strong> ที่นำมาพิสูจน์หรือขยายความ Main Idea\n                  </p>\n                  <div class=\"p-2.5 bg-amber-50/80 rounded-xl text-[11px] text-amber-900 space-y-1\">\n                    <span class=\"font-bold block\">ลักษณะเด่น:</span>\n                    <ul class=\"space-y-0.5 pl-1\">\n                      <li>• <strong>Major Details:</strong> ประเด็นรองหลักที่ชี้แจง Main Idea โดยตรง</li>\n                      <li>• <strong>Minor Details:</strong> ข้อมูลสถิติ ตัวเลข ชื่อเฉพาะ หรือคำอธิบายเสริม</li>\n                    </ul>\n                  </div>\n                </div>\n              </div>\n\n              <!-- Everyday Examples Comparison Box -->\n              <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 via-pink-50/50 to-indigo-50/90 rounded-2xl border border-purple-200 space-y-3 mt-2\">\n                <div class=\"flex items-center space-x-2 text-purple-950 font-bold text-sm\">\n                  <i data-lucide=\"sparkles\" class=\"w-4 h-4 text-purple-700\"></i>\n                  <span>ตัวอย่างเปรียบเทียบในชีวิตประจำวัน (Everyday Real-World Examples):</span>\n                </div>\n\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs\">\n                  <!-- Example 1: Social Media -->\n                  <div class=\"p-3.5 bg-white/95 rounded-xl border border-purple-100 shadow-2xs space-y-2\">\n                    <div class=\"flex items-center space-x-2 text-purple-900 font-bold\">\n                      <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px]\">📱</span>\n                      <span>เรื่องที่ 1: การใช้โซเชียลมีเดีย (Social Media)</span>\n                    </div>\n                    <div class=\"space-y-1.5 pl-1 text-[11px] text-slate-700\">\n                      <div>\n                        <strong class=\"text-purple-800 font-semibold\">[Topic]:</strong> <em>Social media use among university students</em> (การใช้โซเชียลมีเดียของนักศึกษา)\n                      </div>\n                      <div>\n                        <strong class=\"text-pink-700 font-semibold\">[Main Idea]:</strong> <em>Excessive social media use negatively affects university students' sleep quality and mental health.</em> (การใช้โซเชียลมากเกินไปส่งผลเสียต่อคุณภาพการนอนและสุขภาพจิต)\n                      </div>\n                      <div class=\"bg-slate-50 p-2 rounded-lg border border-slate-200/80 text-slate-600 space-y-0.5\">\n                        <p>• <strong>Major Detail:</strong> Late-night blue light from phone screens disrupts melatonin production.</p>\n                        <p>• <strong>Minor Detail:</strong> A 2023 campus survey found 72% of students scroll TikTok for over 2 hours before bed.</p>\n                      </div>\n                    </div>\n                  </div>\n\n                  <!-- Example 2: Coffee & Health -->\n                  <div class=\"p-3.5 bg-white/95 rounded-xl border border-purple-100 shadow-2xs space-y-2\">\n                    <div class=\"flex items-center space-x-2 text-amber-900 font-bold\">\n                      <span class=\"w-5 h-5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-[10px]\">☕</span>\n                      <span>เรื่องที่ 2: การดื่มกาแฟ (Coffee Consumption)</span>\n                    </div>\n                    <div class=\"space-y-1.5 pl-1 text-[11px] text-slate-700\">\n                      <div>\n                        <strong class=\"text-purple-800 font-semibold\">[Topic]:</strong> <em>Daily coffee consumption</em> (การดื่มกาแฟในชีวิตประจำวัน)\n                      </div>\n                      <div>\n                        <strong class=\"text-pink-700 font-semibold\">[Main Idea]:</strong> <em>Drinking a moderate amount of coffee every day provides several remarkable health benefits.</em> (การดื่มกาแฟในปริมาณพอเหมาะให้ประโยชน์ต่อสุขภาพหลายประการ)\n                      </div>\n                      <div class=\"bg-slate-50 p-2 rounded-lg border border-slate-200/80 text-slate-600 space-y-0.5\">\n                        <p>• <strong>Major Detail:</strong> It contains antioxidants that enhance brain function and reduce heart disease risk.</p>\n                        <p>• <strong>Minor Detail:</strong> Studies show 2–3 cups daily can reduce the risk of type 2 diabetes by 25%.</p>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <!-- B) What is a Topic Sentence & Where it Can Appear -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n                <i data-lucide=\"bookmark-check\" class=\"w-6 h-6 text-purple-700\"></i>\n                <h3>B. Topic Sentence คืออะไร และปรากฏอยู่ที่ตำแหน่งใดบ้าง?</h3>\n              </div>\n              <p class=\"text-sm text-slate-700 leading-relaxed\">\n                <strong>Topic Sentence (ประโยคใจความหลัก)</strong> คือประโยคในย่อหน้าที่ระบุ Main Idea ไว้อย่างชัดเจน (Stated Main Idea) โดยทำหน้าที่เป็น <strong>\"ร่มคันใหญ่ (Umbrella Sentence)\"</strong> ที่กางคลุมประโยคอื่นๆ ทั้งหมดในย่อหน้า ตำแหน่งของ Topic Sentence สามารถปรากฏได้ 3 ตำแหน่งหลัก:\n              </p>\n\n              <!-- 3 Positions Cards -->\n              <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3\">\n                <!-- Position 1: Beginning -->\n                <div class=\"p-4 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-2\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs\">1</span>\n                    <h5 class=\"font-bold text-purple-950 text-xs\">ต้นย่อหน้า (Beginning Sentence)</h5>\n                  </div>\n                  <span class=\"inline-block text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full\">พบบ่อยที่สุด (~80%)</span>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    ผู้เขียนประกาศประเด็นหลักทันทีในประโยคที่ 1 หรือ 2 เพื่อให้ผู้อ่านเข้าใจภาพรวม แล้วจึงตามด้วยประโยคขยายความ\n                  </p>\n                  <div class=\"p-2 bg-purple-50 rounded-lg text-[10px] font-mono text-purple-900 border border-purple-200\">\n                    [Topic Sentence] ➔ Detail 1 ➔ Detail 2 ➔ Detail 3\n                  </div>\n                </div>\n\n                <!-- Position 2: End -->\n                <div class=\"p-4 bg-white rounded-2xl border border-pink-200 shadow-xs space-y-2\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">2</span>\n                    <h5 class=\"font-bold text-pink-950 text-xs\">ท้ายย่อหน้า (Concluding Sentence)</h5>\n                  </div>\n                  <span class=\"inline-block text-[10px] font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-full\">พบได้บ่อย (~15%)</span>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    ผู้เขียนจะเริ่มจากการเล่าข้อเท็จจริง ตัวอย่าง หรือเหตุการณ์ก่อน แล้วจึงรวบยอดสรุปใจความสำคัญในประโยคสุดท้าย\n                  </p>\n                  <div class=\"p-2 bg-pink-50 rounded-lg text-[10px] font-mono text-pink-900 border border-pink-200\">\n                    Detail 1 ➔ Detail 2 ➔ Detail 3 ➔ [Topic Sentence]\n                  </div>\n                </div>\n\n                <!-- Position 3: Middle -->\n                <div class=\"p-4 bg-white rounded-2xl border border-amber-200 shadow-xs space-y-2\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs\">3</span>\n                    <h5 class=\"font-bold text-amber-950 text-xs\">กลางย่อหน้า (Middle Sentence)</h5>\n                  </div>\n                  <span class=\"inline-block text-[10px] font-bold text-amber-800 bg-amber-100 px-2 py-0.5 rounded-full\">พบได้ (~5%)</span>\n                  <p class=\"text-xs text-slate-600 leading-relaxed\">\n                    ผู้เขียนอาจเริ่มด้วยประเด็นเกริ่นนำหรือมุมมองทั่วไป แล้วใช้คำเชื่อมขัดแย้งนำทางเข้าสู่ Topic Sentence ที่แท้จริง\n                  </p>\n                  <div class=\"p-2 bg-amber-50 rounded-lg text-[10px] font-mono text-amber-900 border border-amber-200\">\n                    Intro / Hook ➔ [Topic Sentence] ➔ Supporting Details\n                  </div>\n                </div>\n              </div>\n\n              <!-- Signal Clues to Find Topic Sentence -->\n              <div class=\"p-4 bg-purple-50/80 rounded-2xl border border-purple-200 space-y-2 text-xs\">\n                <span class=\"font-bold text-purple-950 text-xs flex items-center space-x-1.5\">\n                  <i data-lucide=\"search\" class=\"w-4 h-4 text-purple-700\"></i>\n                  <span>สัญญาณสังเกตและร่องรอยค้นหา Topic Sentence (Signal Clues):</span>\n                </span>\n                <div class=\"grid grid-cols-1 md:grid-cols-2 gap-2.5 text-slate-700\">\n                  <div class=\"p-2.5 bg-white rounded-xl border border-purple-100\">\n                    <strong class=\"text-purple-900 block mb-0.5\">1. General vs. Specific (ความกว้าง vs ความเจาะจง):</strong>\n                    Topic Sentence จะเป็นประโยคที่ <strong>\"กว้างพอ (General)\"</strong> ที่จะคลุมประโยคอื่นๆ ส่วนประโยคแวดล้อมจะเป็นข้อเท็จจริงที่ <strong>\"เฉพาะเจาะจง (Specific)\"</strong>\n                  </div>\n                  <div class=\"p-2.5 bg-white rounded-xl border border-purple-100\">\n                    <strong class=\"text-purple-900 block mb-0.5\">2. Contrast & Concluding Transitions:</strong>\n                    สังเกตคำเชื่อมเปลี่ยนทิศทาง เช่น <em>However, But, In reality</em> (มักพบกลางย่อหน้า) หรือคำสรุปความ เช่น <em>Therefore, Thus, In conclusion</em> (มักพบท้ายย่อหน้า)\n                  </div>\n                </div>\n              </div>\n            </div>\n\n            <!-- C) Step-by-Step Method to Find the Main Idea -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-lg\">\n                <i data-lucide=\"check-circle-2\" class=\"w-6 h-6 text-purple-700\"></i>\n                <h3>C. วิธีการค้นหา Main Idea 4 ขั้นตอน (Step-by-Step Method)</h3>\n              </div>\n\n              <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3\">\n                <div class=\"p-3.5 bg-white rounded-xl border border-purple-200 shadow-2xs space-y-1.5\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-xs shrink-0\">1</span>\n                    <h5 class=\"font-bold text-purple-950 text-xs\">หา Topic ให้เจอ</h5>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">\n                    ถามตัวเองว่า: <em>\"Who or what is this text about?\"</em> สังเกตคำที่กล่าวซ้ำ (Repeated Words) หรือคำสรรพนามที่แทนที่คำนั้น\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-white rounded-xl border border-pink-200 shadow-2xs space-y-1.5\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-pink-600 text-white flex items-center justify-center font-bold text-xs shrink-0\">2</span>\n                    <h5 class=\"font-bold text-pink-950 text-xs\">ถาม \"ผู้เขียนบอกอะไร?\"</h5>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">\n                    ถามตัวเองว่า: <em>\"What does the author say about this topic?\"</em> ดูว่าผู้เขียนมีทัศนะ ข้อโต้แย้ง หรือสาระสำคัญอะไรเกี่ยวกับ Topic นั้น\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-white rounded-xl border border-amber-200 shadow-2xs space-y-1.5\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shrink-0\">3</span>\n                    <h5 class=\"font-bold text-amber-950 text-xs\">เช็กรายละเอียดสนับสนุน</h5>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">\n                    ตรวจเช็กประโยคอื่นๆ ในย่อหน้าว่าทำหน้าที่ให้เหตุผล พิสูจน์ หรือยกตัวอย่างสนับสนุนข้อความนี้จริงหรือไม่ (The Umbrella Test)\n                  </p>\n                </div>\n\n                <div class=\"p-3.5 bg-white rounded-xl border border-emerald-200 shadow-2xs space-y-1.5\">\n                  <div class=\"flex items-center space-x-2\">\n                    <span class=\"w-6 h-6 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shrink-0\">4</span>\n                    <h5 class=\"font-bold text-emerald-950 text-xs\">สรุปเป็น 1 ประโยคสมบูรณ์</h5>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed\">\n                    เขียนหรือเรียบเรียง Main Idea ด้วยภาษาของตนเอง โดยต้องมีประธานและกริยาครบถ้วน (Subject + Verb) เป็นประโยคสมบูรณ์\n                  </p>\n                </div>\n              </div>\n            </div>\n\n            <!-- D) Common Mistakes & Traps in Finding Main Ideas -->\n            <div class=\"space-y-3\">\n              <div class=\"flex items-center space-x-2 text-rose-950 font-bold text-lg\">\n                <i data-lucide=\"alert-octagon\" class=\"w-6 h-6 text-rose-600\"></i>\n                <h3>D. ข้อผิดพลาดและกับดักที่พบบ่อยในการหา Main Idea (Common Mistakes)</h3>\n              </div>\n\n              <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs\">\n                <!-- Trap 1: Too Broad -->\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>1. กว้างเกินไป (Too Broad)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ข้อผิดพลาด:</strong> เลือกข้อความที่กว้างครอบจักรวาลเกินไป จนไม่ได้ระบุประเด็นที่บทความพูดถึงจริง<br>\n                    <strong>ตัวอย่าง:</strong> บทความพูดถึง <em>\"ผลดีของการดื่มกาแฟดำต่อหัวใจ\"</em> แต่ตอบว่า <em>\"Healthy human lifestyle\"</em> (กว้างเกินไป)\n                  </p>\n                </div>\n\n                <!-- Trap 2: Too Narrow -->\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>2. แคบเกินไป (Too Narrow)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ข้อผิดพลาด:</strong> เลือกข้อความที่เป็นเพียงตัวอย่างปลีกย่อยหรือข้อมูลเจาะจงจุดเดียว ซึ่งไม่คลุมเนื้อหาทั้งย่อหน้า<br>\n                    <strong>ตัวอย่าง:</strong> ตอบว่า <em>\"Coffee contains caffeine.\"</em> ซึ่งเป็นแค่ข้อมูลย่อย 1 จุด ไม่ได้สรุปภาพรวม\n                  </p>\n                </div>\n\n                <!-- Trap 3: Picking a Supporting Detail -->\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>3. หลงเลือก Supporting Detail ที่มีคำตรงในบทอ่าน (Detail Trap)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ข้อผิดพลาด:</strong> กับดักยอดฮิตในข้อสอบ! ตัวเลือกมักยกข้อความที่ปรากฏในบทอ่านคำต่อคำมาหลอก ทำให้นักศึกษาเห็นคำตรงแล้วรีบเลือก ทั้งที่ประโยคนั้นเป็นเพียง Minor Detail\n                  </p>\n                </div>\n\n                <!-- Trap 4: Picking a Fragment/Noun Phrase -->\n                <div class=\"p-3.5 bg-rose-50/80 rounded-xl border border-rose-200 space-y-1.5 shadow-2xs\">\n                  <div class=\"flex items-center space-x-2 text-rose-900 font-bold text-xs\">\n                    <span class=\"w-5 h-5 rounded-full bg-rose-200 text-rose-800 flex items-center justify-center font-bold text-[11px]\">✕</span>\n                    <span>4. ตอบเป็นคำหรือวลี ไม่ใช่ประโยคสมบูรณ์ (Fragment Trap)</span>\n                  </div>\n                  <p class=\"text-[11px] text-slate-600 leading-relaxed pl-7\">\n                    <strong>ข้อผิดพลาด:</strong> สับสนระหว่าง Topic กับ Main Idea เช่น ตอบว่า <em>\"The benefits of sleep\"</em> (เป็นแค่ Topic) แทนที่จะเป็นประโยค <em>\"Quality sleep significantly improves students' learning ability.\"</em>\n                  </p>\n                </div>\n              </div>\n            </div>\n\n            <!-- E) Short 4-Step Summary Routine Card -->\n            <div class=\"p-4 sm:p-5 bg-gradient-to-r from-purple-50 via-pink-50 to-emerald-50 rounded-2xl border border-purple-200 space-y-3\">\n              <div class=\"flex items-center space-x-2 text-purple-950 font-bold text-sm\">\n                <i data-lucide=\"zap\" class=\"w-5 h-5 text-purple-700\"></i>\n                <span>E. แผนผังปฏิบัติการค้นหา Main Idea (4-Step Action Routine)</span>\n              </div>\n              \n              <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-center\">\n                <div class=\"p-3 bg-white/95 rounded-xl border border-purple-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-md\">STEP 1</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">Spot the Topic</h6>\n                  <p class=\"text-[11px] text-slate-600\">กวาดตาจับคำซ้ำ หาหัวข้อว่าเรื่องเกี่ยวกับใคร/อะไร (20 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-pink-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-pink-700 bg-pink-100 px-2 py-0.5 rounded-md\">STEP 2</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">Ask \"So What?\"</h6>\n                  <p class=\"text-[11px] text-slate-600\">ถามหาประเด็นที่ผู้เขียนต้องการบอกเกี่ยวกับหัวข้อนั้น (30 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-amber-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-md\">STEP 3</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">The Umbrella Test</h6>\n                  <p class=\"text-[11px] text-slate-600\">กางร่มเช็กว่าประโยคนี้คลุมรายละเอียดอื่นๆ ทั้งหมดหรือไม่ (30 วินาที)</p>\n                </div>\n\n                <div class=\"p-3 bg-white/95 rounded-xl border border-emerald-200 shadow-2xs space-y-1\">\n                  <span class=\"text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-md\">STEP 4</span>\n                  <h6 class=\"font-bold text-xs text-slate-900\">Form Complete Sentence</h6>\n                  <p class=\"text-[11px] text-slate-600\">เขียนหรือเลือกคำตอบที่เป็นประโยคสมบูรณ์ (30 วินาที)</p>\n                </div>\n              </div>\n            </div>\n\n            <!-- Part 2 Bottom Navigation Buttons -->\n            <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100\">\n              <button onclick=\"app.selectStageAndStep('preReading', 'learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5\">\n                <i data-lucide=\"arrow-left\" class=\"w-4 h-4\"></i>\n                <span>Back: Pre-Reading (Learn Part 1)</span>\n              </button>\n              <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-2 shadow-md\">\n                <span>Next Step: Example (Passage ยาว & คำศัพท์ 10 คำ)</span>\n                <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n              </button>\n            </div>\n          </div>\n        </div>",
+            "example": "<div class=\"space-y-6\">\n          <!-- Title & Overview Banner -->\n          <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3\">\n            <div>\n              <h4 class=\"text-lg font-bold text-slate-900 flex items-center space-x-2\">\n                <i data-lucide=\"book-open\" class=\"w-5 h-5 text-purple-700\"></i>\n                <span>Worked Example: Passage ยาว & การวิเคราะห์ใจความสำคัญ</span>\n              </h4>\n              <p class=\"text-xs text-slate-500 mt-0.5\">การนำทฤษฎีจากหน้า Learn มาประยุกต์ใช้วิเคราะห์บทอ่านจริงอย่างละเอียดลึกซึ้ง</p>\n            </div>\n            <span class=\"text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full self-start sm:self-auto\">Unit 1 Reading Model (2 Examples)</span>\n          </div>\n\n          <div id=\"example-content-top\"></div>\n\n          <!-- Sub-Tab Switcher: Example 1 vs Example 2 -->\n          <div class=\"flex items-center space-x-2 border-b border-purple-200/80 pb-2\">\n            <button id=\"ex-tab-1\" onclick=\"app.switchExampleTab(1)\" class=\"px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-2 cursor-pointer bg-purple-700 text-white shadow-md\">\n              <i data-lucide=\"bookmark\" class=\"w-4 h-4\"></i>\n              <span>Example 1: The Tortoise & Hare</span>\n              <span class=\"text-[10px] bg-purple-900/60 text-purple-200 px-2 py-0.5 rounded-full\">Perseverance</span>\n            </button>\n            <button id=\"ex-tab-2\" onclick=\"app.switchExampleTab(2)\" class=\"px-4 py-2.5 rounded-xl text-xs font-semibold transition flex items-center space-x-2 cursor-pointer bg-white/80 text-purple-900 hover:bg-white border border-purple-200\">\n              <i data-lucide=\"bookmark\" class=\"w-4 h-4\"></i>\n              <span>Example 2: The Ant & Grasshopper</span>\n              <span class=\"text-[10px] bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full\">Preparation</span>\n            </button>\n          </div>\n\n          <!-- Example 1 Container -->\n          <div id=\"example-view-1\" class=\"space-y-6\">\n            <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->\n            <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n              <div>\n                <span class=\"text-[10px] font-bold text-pink-400 uppercase tracking-wider\">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า)</span>\n                <h5 class=\"text-base font-bold text-white mt-0.5\">The Tortoise and the Hare: The Classic Race of Perseverance</h5>\n              </div>\n              \n              <div class=\"flex items-center space-x-2\">\n                <!-- Audio Speed Selector -->\n                <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\" title=\"Playback Speed (ความเร็วเสียงอ่าน)\">\n                  <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300 shrink-0\"></i>\n                  <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n                    <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n                    <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n                    <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n                    <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n                  </select>\n                </div>\n\n                <button onclick=\"app.playUnit1Passage()\" class=\"px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer shadow-md\">\n                  <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n                  <span>Listen Passage</span>\n                </button>\n              </div>\n            </div>\n\n            <!-- 4-Paragraph Passage with Micro-Analysis -->\n            <div class=\"text-sm text-slate-200 leading-relaxed space-y-4 font-serif\">\n              \n              <!-- Paragraph 1: Introduction & Topic Sentence -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-emerald-400 uppercase tracking-wider block\">[Paragraph 1: Topic Sentence - Introduction & Conflict]</span>\n                  <span class=\"text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans\">Beginning Position</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  <span class=\"highlighter-pen highlighter-green\">A <span class=\"vocab-word font-bold border-b border-dashed\">boastful</span> Hare was constantly <span class=\"vocab-word font-bold border-b border-dashed\">ridiculing</span> a slow-moving Tortoise for his clumsy pace.</span>\n                  Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a five-mile cross-country footrace. Believing the challenge was a hilarious joke, the <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">arrogant</span> Hare accepted immediately, boasting that no creature in the forest could ever <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">outpace</span> his lightning speed.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-emerald-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-emerald-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคนี้ทำหน้าที่เป็น <strong>Topic Sentence</strong> เพราะมีระดับความกว้าง (General enough) ที่เปิดประเด็นแนะนำตัวละครหลักทั้ง 2 ฝ่าย และจุดประกายปมขัดแย้งของเรื่องทันที ประโยคแวดล้อมที่ตามมาทั้งหมดในย่อหน้าเป็นเพียงรายละเอียดสนับสนุนว่าการเยาะเย้ยนี้นำไปสู่การท้าแข่งขันได้อย่างไร\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 2: Conflict & Supporting Details -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-sky-400 uppercase tracking-wider block\">[Paragraph 2: Supporting Details - Conflict & Turning Point]</span>\n                  <span class=\"text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans\">Major Detail</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  When the starting horn sounded, the Hare bolted ahead like lightning, creating a massive lead in mere moments. Looking back and seeing no sign of the plodding Tortoise, the overconfident Hare decided that victory was already guaranteed.\n                  <span class=\"highlighter-pen highlighter-blue\">\"I have more than enough time to relax under this shady oak tree and take a peaceful nap before that clumsy creature reaches halfway,\"</span> he laughed smugly. Soon, the <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">complacent</span> Hare fell into a deep slumber, foolishly underestimating his rival.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-sky-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-sky-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ข้อความที่ไฮไลต์เป็น <strong>Major Supporting Detail</strong> ที่ให้ข้อมูลเหตุการณ์เฉพาะจุด (Specific action) อธิบายพฤติกรรมความประมาทของกระต่าย ประโยคนี้ช่วยขับเคลื่อนโครงเรื่อง แต่ไม่สามารถเป็น Main Idea ได้เพราะเป็นเพียงการกระทำย่อยจุดเดียว ไม่ได้คลุมบทสรุปทั้งหมด\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 3: Climax & Main Idea / Moral -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-rose-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-rose-400 uppercase tracking-wider block\">[Paragraph 3: Climax & Stated Moral / Main Idea]</span>\n                  <span class=\"text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans\">Concluding Position</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  Meanwhile, the <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">steadfast</span> Tortoise pressed forward with silent <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">determination</span>. Ignoring his weary limbs, rejecting all distractions, he never ceased his deliberate march. Hours slipped past as the complacent Hare slept deeply. When the Hare finally awakened in shock to the distant cheering of forest animals, he bolted forward desperately, only to watch in disbelief as the Tortoise crossed the finish ribbon to seize <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">triumph</span>.\n                  <span class=\"highlighter-pen highlighter-pink\">The enduring moral of the race proves that steady <span class=\"vocab-word font-bold underline\">perseverance</span> and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-rose-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-rose-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคสรุปจบนี้คือ <strong>Stated Main Idea</strong> ประจำบทเรียน เพราะทำหน้าที่เป็น <strong>\"ร่มคันใหญ่ (Umbrella Sentence)\"</strong> ที่รวบยอดทั้งชัยชนะของเต่า (ความเพียรพยายาม) และความพ่ายแพ้ของกระต่าย (ความหยิ่งผยอง) ไว้เป็นประโยคที่สมบูรณ์และทรงคุณค่าทางคติธรรม\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 4: Resolution & Character Reflection -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-amber-400 uppercase tracking-wider block\">[Paragraph 4: Resolution / Reflection - The Moral Reinforced]</span>\n                  <span class=\"text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-sans\">Character Growth</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  Standing near the finish line, the humbled Hare bowed his head, realizing that raw talent without discipline was completely meaningless.\n                  <span class=\"highlighter-pen highlighter-yellow text-slate-900 font-medium\">Approaching the winner, he shook the Tortoise's hand with genuine <span class=\"vocab-word font-bold border-b border-dashed\">humility</span>, acknowledging that true greatness comes from quiet dedication rather than loud boasting.</span>\n                  From that day forward, the Hare abandoned his foolish arrogance, having learned that even the fastest runner can be beaten by those who never give up.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-amber-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-amber-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ย่อหน้าที่ 4 นี้ช่วย <strong>ตอกย้ำ Main Idea (Reinforcing the Theme)</strong> ผ่านการเปลี่ยนแปลงภายในของตัวละคร (Character Growth) ทำให้ผู้อ่านเห็นว่าข้อคิดเรื่องความถ่อมตนและความมุ่งมั่นไม่ได้เป็นเพียงข้อความลอยๆ แต่ส่งผลให้ตัวละครเปลี่ยนพฤติกรรมจริงในตอนท้าย\n                  </div>\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n          <!-- 2. คำศัพท์ 10 คำ ครบถ้วน พร้อมตัวอย่างประโยคบริบทใหม่ (10 Core Vocabulary Cards) -->\n          <div class=\"space-y-3\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-purple-100 pb-2\">\n              <h5 class=\"font-bold text-slate-900 text-sm flex items-center space-x-2\">\n                <i data-lucide=\"sparkles\" class=\"w-4 h-4 text-purple-700\"></i>\n                <span>คำศัพท์สำคัญ 10 คำ (10 Core Vocabulary Words in Context)</span>\n              </h5>\n              <span class=\"text-[11px] text-purple-800 font-medium bg-purple-50 px-2 py-0.5 rounded-md\">ปรากฏครบทั้ง 10 คำในบทอ่าน + ตัวอย่างประโยคใหม่</span>\n            </div>\n\n            <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3\">\n              <!-- Vocab 1: Perseverance -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">1. Perseverance</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 3</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˌpɜː.sɪˈvɪə.rəns/ <em>(n.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ความเพียรพยายาม ความบากบั่น</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Through continuous perseverance, Sarah became fluent in English after two years of daily practice.\n                </div>\n              </div>\n\n              <!-- Vocab 2: Arrogant -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">2. Arrogant</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 1</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˈær.ə.ɡənt/ <em>(adj.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">หยิ่งยโส อวดดี หลงตัวเอง</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> The arrogant player ignored his coach's advice, which directly caused the team's defeat.\n                </div>\n              </div>\n\n              <!-- Vocab 3: Boastful -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">3. Boastful</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 1</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˈbəʊst.fəl/ <em>(adj.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ขี้คุย โอ้อวด ชอบพูดอวดตัว</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Nobody enjoyed talking to the boastful student because he always bragged about his exam scores.\n                </div>\n              </div>\n\n              <!-- Vocab 4: Complacent -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">4. Complacent</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 2</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/kəmˈpleɪ.sənt/ <em>(adj.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ชะล่าใจ พึงพอใจจนประมาท</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> We must never become complacent after midterm success; finals require equal hard work.\n                </div>\n              </div>\n\n              <!-- Vocab 5: Determination -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">5. Determination</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 3</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/dɪˌtɜː.mɪˈneɪ.ʃən/ <em>(n.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ความมุ่งมั่น ความตั้งใจเด็ดเดี่ยว</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Despite working two jobs, Ken completed his bachelor degree through sheer determination.\n                </div>\n              </div>\n\n              <!-- Vocab 6: Ridiculing -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">6. Ridiculing</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 1</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˈrɪd.ɪ.kjuːl.ɪŋ/ <em>(v./part.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">เยาะเย้ย ถากถาง ล้อเลียน</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Ridiculing classmates who make speaking mistakes creates a hostile learning environment.\n                </div>\n              </div>\n\n              <!-- Vocab 7: Steadfast -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">7. Steadfast</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 3</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˈsted.fɑːst/ <em>(adj.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">มั่นคง แน่วแน่ ไม่เปลี่ยนแปลง</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Her steadfast loyalty to her study group ensured that all members passed their exams.\n                </div>\n              </div>\n\n              <!-- Vocab 8: Outpace -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">8. Outpace</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 1</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˌaʊtˈpeɪs/ <em>(v.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">วิ่งแซง ก้าวหน้าเร็วกว่า</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Demand for skilled bilingual graduates will quickly outpace the supply of job applicants.\n                </div>\n              </div>\n\n              <!-- Vocab 9: Humility -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">9. Humility</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 4</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/hjuːˈmɪl.ə.ti/ <em>(n.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ความถ่อมตน ความอ่อนน้อม</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Great leaders listen to constructive criticism with genuine humility and respect.\n                </div>\n              </div>\n\n              <!-- Vocab 10: Triumph -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"text-xs font-bold text-purple-900\">10. Triumph</span>\n                    <span class=\"text-[9px] font-semibold text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded\">Para 3</span>\n                  </div>\n                  <span class=\"text-[10px] text-slate-500 block font-mono\">/ˈtraɪ.əmf/ <em>(n./v.)</em></span>\n                  <p class=\"text-[11px] text-slate-800 font-medium mt-1\">ชัยชนะ ความสำเร็จอันยิ่งใหญ่</p>\n                </div>\n                <div class=\"p-2 bg-purple-50/70 rounded-lg text-[10px] text-purple-950 border border-purple-100 leading-snug\">\n                  <strong>Ex:</strong> Overcoming stage fright to present her research was a major personal triumph.\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- 3. Prediction Clues Breakdown (Before vs. After Reading) -->\n          <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 via-pink-50/60 to-indigo-50/90 border border-purple-200 rounded-2xl space-y-4\">\n            <div class=\"flex items-center justify-between\">\n              <strong class=\"font-bold text-purple-950 flex items-center space-x-2 text-sm\">\n                <i data-lucide=\"compass\" class=\"w-4 h-4 text-purple-700\"></i>\n                <span>การวิเคราะห์เบาะแสการคาดเดา: ขั้นตอนก่อนอ่าน vs หลังอ่าน (Before & After Reading Flow)</span>\n              </strong>\n              <span class=\"text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded-full\">Active Inquiring Method</span>\n            </div>\n            \n            <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n              <!-- Before Reading Stage -->\n              <div class=\"p-4 bg-white/95 rounded-xl border border-purple-200 shadow-xs space-y-2.5\">\n                <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-xs pb-1.5 border-b border-purple-100\">\n                  <span class=\"w-5 h-5 rounded-full bg-purple-700 text-white flex items-center justify-center text-[10px]\">1</span>\n                  <span>BEFORE READING (เบาะแสและการคาดเดาก่อนอ่าน)</span>\n                </div>\n                <ul class=\"text-[11px] text-slate-700 space-y-2 pl-1 leading-relaxed\">\n                  <li>\n                    <strong class=\"text-purple-900\">• Title Clue:</strong> ชื่อเรื่อง <em>\"The Tortoise and the Hare\"</em> ชี้ชัดว่าเป็นการแข่งขันระหว่างสัตว์ที่วิ่งเร็วที่สุดกับสัตว์ที่เดินช้าที่สุด\n                  </li>\n                  <li>\n                    <strong class=\"text-purple-900\">• Vocab Clue:</strong> พบคำคู่ตรงข้ามอย่าง <em>boastful, arrogant, complacent</em> (ฝ่ายเร็ว) คู่กับ <em>steadfast, perseverance, determination</em> (ฝ่ายช้า)\n                  </li>\n                  <li>\n                    <strong class=\"text-pink-700 font-semibold\">• Prediction Hypothesis:</strong> คาดเดาว่าฝ่ายที่วิ่งเร็วจะประมาทหรือหลงตัวเองจนพ่ายแพ้ ส่วนฝ่ายที่ช้าแต่มุ่งมั่นจะคว้าชัยชนะในตอนท้าย\n                  </li>\n                </ul>\n              </div>\n\n              <!-- After Reading Stage -->\n              <div class=\"p-4 bg-white/95 rounded-xl border border-purple-200 shadow-xs space-y-2.5\">\n                <div class=\"flex items-center space-x-2 text-emerald-900 font-bold text-xs pb-1.5 border-b border-emerald-100\">\n                  <span class=\"w-5 h-5 rounded-full bg-emerald-600 text-white flex items-center justify-center text-[10px]\">2</span>\n                  <span>AFTER READING (การตรวจสอบและยืนยันผลหลังอ่าน)</span>\n                </div>\n                <ul class=\"text-[11px] text-slate-700 space-y-2 pl-1 leading-relaxed\">\n                  <li>\n                    <strong class=\"text-emerald-800\">• Verification 1:</strong> ยืนยันถูกต้อง! ทั้งสองตัวละครท้าแข่งวิ่ง 5 ไมล์ โดยกระต่ายออกตัวนำลิ่วแต่ไปแวะนอนหลับใต้ต้นไม้เพราะความชะล่าใจ\n                  </li>\n                  <li>\n                    <strong class=\"text-emerald-800\">• Verification 2:</strong> ยืนยันถูกต้อง 100%! เต่าเดินอย่างสม่ำเสมอจนเข้าเส้นชัยก่อน และกระต่ายเรียนรู้ความถ่อมตนในตอนจบ\n                  </li>\n                  <li>\n                    <strong class=\"text-emerald-800 font-semibold\">• Learning Impact:</strong> การคาดเดาช่วยสร้าง \"จุดโฟกัส (Reading Purpose)\" ทำให้สายตารอจับตาดูพฤติกรรมความผิดพลาดของกระต่าย และจับใจความสำคัญได้ทันทีโดยไม่ต้องอ่านทวนซ้ำ\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n\n          <!-- 4. Reflection & Critical Analysis Questions (Bridge into Practice) -->\n          <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-200 shadow-xs space-y-3\">\n            <div class=\"flex items-center space-x-2 text-slate-900 font-bold text-sm\">\n              <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n              <span>คำถามชวนคิดเพื่อวิเคราะห์เชิงลึก (Reflection & Analytical Inquiry Questions)</span>\n            </div>\n            <p class=\"text-xs text-slate-600\">\n              ลองตอบคำถามวิเคราะห์ 3 ข้อนี้ในใจ เพื่อเชื่อมโยงทฤษฎี Main Idea สู่การทำแบบฝึกหัดจริงในหน้า Practice:\n            </p>\n\n            <div class=\"space-y-2.5 text-xs\">\n              <!-- Question 1 -->\n              <div class=\"p-3 bg-purple-50/70 rounded-xl border border-purple-100 space-y-1\">\n                <p class=\"font-bold text-purple-950\">\n                  1. \"If the stated moral sentence at the end of paragraph 3 were removed, could you still identify the Main Idea? Why and how?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-purple-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> หาได้แน่นอน โดยใช้วิธี <em>Implied Main Idea (ใจความสำคัญโดยนัย)</em> จากการเปรียบเทียบการกระทำและผลลัพธ์ของ 2 ตัวละคร: เต่าไม่หยุดเดิน (Perseverance) $\rightarrow$ ชนะ ส่วนกระต่ายหลับ (Complacency) $\rightarrow$ แพ้ แล้วสรุปเป็นประโยคด้วยถ้อยคำของตนเอง\n                </p>\n              </div>\n\n              <!-- Question 2 -->\n              <div class=\"p-3 bg-pink-50/70 rounded-xl border border-pink-100 space-y-1\">\n                <p class=\"font-bold text-pink-950\">\n                  2. \"Which paragraph best demonstrates the Hare's arrogance through physical action rather than descriptive adjectives?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-pink-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> ย่อหน้าที่ 2 — การที่กระต่ายตัดสินใจล้มตัวลงนอนหลับใต้ต้นไม้โอ๊กอย่างสบายใจระหว่างการแข่งขัน คือการกระทำ (Action) ที่สะท้อนความประมาทและดูถูกคู่แข่งได้อย่างทรงพลังที่สุด ยิ่งกว่าคำบรรยายใดๆ\n                </p>\n              </div>\n\n              <!-- Question 3 -->\n              <div class=\"p-3 bg-amber-50/70 rounded-xl border border-amber-100 space-y-1\">\n                <p class=\"font-bold text-amber-950\">\n                  3. \"How does paragraph 4 (the Hare's reaction of humility) deepen our understanding of the Main Idea compared to just stopping at the finish line?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-amber-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> ย่อหน้าที่ 4 แสดงการเติบโตของตัวละคร (Character Growth) ทำให้เห็นว่าคติธรรมเรื่องความเพียรและความถ่อมตนเป็นความจริงที่ทรงพลัง แม้แต่ผู้พ่ายแพ้ก็ยอมรับและปรับปรุงตัว ทำให้บทเรียนนี้มีความหมายลึกซึ้งและสมบูรณ์แบบ\n                </p>\n              </div>\n            </div>\n          </div>\n\n          <!-- Bottom Navigation Buttons for Example 1 -->\n          <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100\">\n            <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n              ⬅ Back: Learn (ทฤษฎีใจความสำคัญ)\n            </button>\n            <button onclick=\"app.switchExampleTab(2)\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md\">\n              <span>Next: Example 2 (มดกับตั๊กแตน)</span>\n              <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n            </button>\n          </div>\n        </div>\n\n        <!-- Example 2 Container (The Ant and the Grasshopper) -->\n        <div id=\"example-view-2\" class=\"space-y-6 hidden\">\n          <!-- 1. Reading Passage Box with Audio Player & Highlighter Tags -->\n          <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n              <div>\n                <span class=\"text-[10px] font-bold text-pink-400 uppercase tracking-wider\">Classic Narrative Fable (บทอ่านเรื่องเล่าคลาสสิก 4 ย่อหน้า - การมองการณ์ไกล vs ความประมาท)</span>\n                <h5 class=\"text-base font-bold text-white mt-0.5\">The Ant and the Grasshopper: The Wisdom of Preparation</h5>\n              </div>\n              \n              <div class=\"flex items-center space-x-2\">\n                <!-- Audio Speed Selector -->\n                <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\" title=\"Playback Speed (ความเร็วเสียงอ่าน)\">\n                  <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300 shrink-0\"></i>\n                  <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n                    <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n                    <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n                    <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n                    <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n                  </select>\n                </div>\n\n                <button onclick=\"app.playUnit1Passage2()\" class=\"px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer shadow-md\">\n                  <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n                  <span>Listen Passage</span>\n                </button>\n              </div>\n            </div>\n\n            <!-- 4-Paragraph Passage with Micro-Analysis -->\n            <div class=\"text-sm text-slate-200 leading-relaxed space-y-4 font-serif\">\n              \n              <!-- Paragraph 1: Introduction & Topic Sentence -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-emerald-400 uppercase tracking-wider block\">[Paragraph 1: Topic Sentence - Contrasting Behaviors in Summer]</span>\n                  <span class=\"text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-sans\">Beginning Position</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  <span class=\"highlighter-pen highlighter-green\">During a radiant summer afternoon, an <span class=\"vocab-word font-bold border-b border-dashed\">industrious</span> Ant worked tirelessly storing grain, while a <span class=\"vocab-word font-bold border-b border-dashed\">frivolous</span> Grasshopper sang carefree songs and mocked her constant toil.</span>\n                  The carefree Grasshopper urged her to enjoy the sunshine and abandon her exhausting labor. However, the wise Ant warned him that summer would not last forever and that winter would bring severe hardship.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-emerald-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-emerald-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคแรกทำหน้าที่เป็น <strong>Topic Sentence</strong> เพราะมีความกว้าง (General enough) ในการเปิดประเด็นเปรียบเทียบพฤติกรรมระหว่างตัวละครหลักทั้งสอง (มดผู้ขยัน vs ตั๊กแตนผู้รักสนุก) และปูพื้นฐานปมความขัดแย้งของเรื่องทันที ประโยคแวดล้อมที่ตามมาเป็นเพียงรายละเอียดสนับสนุนเกี่ยวกับการเตือนเรื่องสภาพอากาศ\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 2: Supporting Details -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-sky-400 uppercase tracking-wider block\">[Paragraph 2: Supporting Details - Complacency vs Daily Diligence]</span>\n                  <span class=\"text-[10px] bg-sky-500/20 text-sky-300 px-2 py-0.5 rounded font-sans\">Major Detail</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  <span class=\"highlighter-pen highlighter-blue\">Instead of heeding the wise advice, the <span class=\"vocab-word font-bold border-b border-dashed\">complacent</span> Grasshopper spent every sunny morning dancing in the meadows, convinced that nature's <span class=\"vocab-word font-bold border-b border-dashed\">abundance</span> would never run out.</span>\n                  Week after week, the Ant practiced steadfast <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">diligence</span>, hauling heavy seeds into her underground shelter. In contrast, the Grasshopper laughed that only foolish insects worried about tomorrow when today was so pleasant.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-sky-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-sky-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ข้อความที่ไฮไลต์เป็น <strong>Major Supporting Detail</strong> ที่ระบุพฤติกรรมความชะล่าใจเฉพาะเจาะจง (Specific action) ของตั๊กแตน ซึ่งทำหน้าที่เป็นข้อมูลสนับสนุนว่าเหตุใดตั๊กแตนจึงไม่ได้เตรียมพร้อมเมื่อฤดูหนาวมาถึง\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 3: Climax & Main Idea / Moral -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-rose-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-rose-400 uppercase tracking-wider block\">[Paragraph 3: Climax & Stated Moral / Main Idea]</span>\n                  <span class=\"text-[10px] bg-rose-500/20 text-rose-300 px-2 py-0.5 rounded font-sans\">Concluding Position</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  When the <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">harsh</span> winter finally arrived with freezing blizzards, the <span class=\"vocab-word text-amber-300 font-bold border-b border-dashed border-amber-300\">impoverished</span> Grasshopper found himself shivering without a single crumb to eat. Desperate and starving, he dragged his weak body to the Ant's warm storehouse, begging for food. Watching the well-fed ants rest comfortably, he grasped the timeless truth.\n                  <span class=\"highlighter-pen highlighter-pink\">The enduring wisdom of the season demonstrates that <span class=\"vocab-word font-bold border-b border-dashed\">foresight</span>, disciplined preparation, and steadfast diligence protect us against unexpected hardships that ruin the unprepared.</span>\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-rose-500/30 font-sans text-xs text-rose-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-rose-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-rose-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ประโยคสรุปจบนี้คือ <strong>Stated Main Idea</strong> ประจำบทเรียน ทำหน้าที่เป็น <strong>\"ร่มคันใหญ่ (Umbrella Sentence)\"</strong> ที่ครอบคลุมทั้งผลลัพธ์ของความรอบคอบในการเตรียมพร้อม และความหายนะของผู้ที่ละเลย โดยสรุปเป็นหลักคิดที่นำไปปรับใช้ได้จริง\n                  </div>\n                </div>\n              </div>\n\n              <!-- Paragraph 4: Resolution & Character Reflection -->\n              <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-500 space-y-2\">\n                <div class=\"flex items-center justify-between\">\n                  <span class=\"text-[10px] font-bold text-amber-400 uppercase tracking-wider block\">[Paragraph 4: Resolution / Reflection - The Moral Reinforced]</span>\n                  <span class=\"text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-sans\">Character Growth</span>\n                </div>\n                <p class=\"leading-relaxed\">\n                  Standing in the freezing cold, the humbled Grasshopper bowed his head, realizing that endless fun without foresight led only to ruin. Taking pity on her freezing neighbor, the kind Ant shared a modest portion of grain.\n                  <span class=\"highlighter-pen highlighter-yellow text-slate-900 font-medium\">Humbled by the generous gift, the reformed Grasshopper bowed with sincere <span class=\"vocab-word font-bold border-b border-dashed\">humility</span>, promising that every future summer would be devoted to responsible <span class=\"vocab-word font-bold border-b border-dashed\">prudence</span> alongside his music.</span>\n                  From that bitter winter forward, the Grasshopper understood that true joy is sweetest when built on the solid foundation of preparation.\n                </p>\n                <!-- Micro-Analysis: Why This Works -->\n                <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200 flex items-start space-x-2\">\n                  <i data-lucide=\"info\" class=\"w-4 h-4 text-amber-400 shrink-0 mt-0.5\"></i>\n                  <div>\n                    <strong class=\"text-amber-300 font-bold\">Why This Works (วิเคราะห์เหตุผล):</strong> ย่อหน้าที่ 4 ช่วย <strong>ตอกย้ำ Main Idea (Reinforcing the Theme)</strong> ผ่านการเปลี่ยนแปลงของตัวละคร (Character Growth) ตั๊กแตนไม่ได้แค่รอดชีวิต แต่เกิดการเรียนรู้ความถ่อมตนและความรอบคอบ ทำให้คติสอนใจนี้กลายเป็นบทเรียนชีวิตที่สมบูรณ์\n                  </div>\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n          <!-- 2. คำศัพท์ 10 คำ ครบถ้วน พร้อมตัวอย่างประโยคบริบทใหม่ (10 Core Vocabulary Cards) -->\n          <div class=\"space-y-3\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-purple-100 pb-2\">\n              <h5 class=\"font-bold text-slate-900 text-sm flex items-center space-x-2\">\n                <i data-lucide=\"sparkles\" class=\"w-4 h-4 text-purple-700\"></i>\n                <span>คำศัพท์สำคัญ 10 คำ (10 Core Vocabulary Words in Context)</span>\n              </h5>\n              <span class=\"text-[11px] text-purple-800 font-medium bg-purple-50 px-2 py-0.5 rounded-md\">ปรากฏครบทั้ง 10 คำในบทอ่าน + ตัวอย่างประโยคใหม่</span>\n            </div>\n\n            <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3\">\n              <!-- Vocab 1: Industrious -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Industrious</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">adj.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ɪnˈdʌs.tri.əs/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ขยันขันแข็ง, อุตสาหะ</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...an industrious Ant worked tirelessly storing grain...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> The industrious university students spent extra hours studying in the library.\n                </div>\n              </div>\n\n              <!-- Vocab 2: Frivolous -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Frivolous</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">adj.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ˈfrɪv.əl.əs/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ไร้สาระ, ไม่จริงจัง, รักสนุก</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...while a frivolous Grasshopper sang carefree songs...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Spending your monthly savings on frivolous items can lead to financial trouble.\n                </div>\n              </div>\n\n              <!-- Vocab 3: Complacent -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Complacent</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">adj.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/kəmˈpleɪ.sənt/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ชะล่าใจ, พึงพอใจจนประมาท</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...the complacent Grasshopper spent every sunny morning dancing...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Never become complacent after passing the midterm exam; continue reviewing daily.\n                </div>\n              </div>\n\n              <!-- Vocab 4: Abundance -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Abundance</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">n.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/əˈbʌn.dəns/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ความอุดมสมบูรณ์, ปริมาณมาก</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...convinced that nature's abundance would never run out.\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Thailand enjoys an abundance of fresh fruits throughout the rainy season.\n                </div>\n              </div>\n\n              <!-- Vocab 5: Diligence -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Diligence</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">n.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ˈdɪl.ɪ.dʒəns/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ความขยันหมั่นเพียร, ความเอาใจใส่</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...the Ant practiced steadfast diligence, hauling heavy seeds...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Through continuous diligence and reading practice, he achieved a high English score.\n                </div>\n              </div>\n\n              <!-- Vocab 6: Harsh -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Harsh</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">adj.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/hɑːʃ/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">รุนแรง, โหดร้าย, ทารุณ</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"When the harsh winter finally arrived with freezing blizzards...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> The climbers protected themselves against the harsh winds on the mountain peak.\n                </div>\n              </div>\n\n              <!-- Vocab 7: Impoverished -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Impoverished</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">adj.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ɪmˈpɒv.ər.ɪʃt/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ตกระกำลำบาก, ขัดสน, ยากจนลง</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...the impoverished Grasshopper found himself shivering...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> The unexpected flood left many villagers impoverished until emergency aid arrived.\n                </div>\n              </div>\n\n              <!-- Vocab 8: Foresight -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Foresight</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">n.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ˈfɔː.saɪt/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">การมองการณ์ไกล, ความรอบคอบ</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...demonstrates that foresight, disciplined preparation...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Having the foresight to organize your study plan prevents stressful cramming.\n                </div>\n              </div>\n\n              <!-- Vocab 9: Humility -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Humility</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">n.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/hjuːˈmɪl.ə.ti/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ความถ่อมตน, ความนอบน้อม</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...the reformed Grasshopper bowed with sincere humility...\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> She received the student leadership award with genuine humility and grace.\n                </div>\n              </div>\n\n              <!-- Vocab 10: Prudence -->\n              <div class=\"p-3.5 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1.5 flex flex-col justify-between\">\n                <div>\n                  <div class=\"flex items-center justify-between\">\n                    <span class=\"font-bold text-purple-900 text-sm\">Prudence</span>\n                    <span class=\"text-[10px] bg-purple-100 text-purple-700 px-1.5 py-0.5 rounded font-mono\">n.</span>\n                  </div>\n                  <div class=\"text-[11px] text-slate-400 font-mono\">/ˈpruː.dəns/</div>\n                  <div class=\"text-xs font-bold text-pink-700 mt-1\">ความรอบคอบ, ความสุขุมรอบคอบ</div>\n                  <div class=\"text-[11px] text-slate-600 mt-1.5 bg-slate-50 p-1.5 rounded border border-slate-100 leading-snug\">\n                    <strong class=\"text-slate-800\">In Story:</strong> \"...would be devoted to responsible prudence alongside his music.\"\n                  </div>\n                </div>\n                <div class=\"text-[11px] text-purple-800 bg-purple-50/70 p-1.5 rounded border border-purple-100 mt-2 leading-snug\">\n                  <strong class=\"text-purple-950\">Extra Context:</strong> Exercising financial prudence allows you to handle unexpected expenses easily.\n                </div>\n              </div>\n\n            </div>\n          </div>\n\n          <!-- 3. Clue & Strategy Breakdown Split into Before / After Reading -->\n          <div class=\"space-y-3\">\n            <div class=\"flex items-center space-x-2 border-b border-purple-100 pb-2\">\n              <i data-lucide=\"compass\" class=\"w-4 h-4 text-purple-700\"></i>\n              <h5 class=\"font-bold text-slate-900 text-sm\">การแยกแยะร่องรอยกลยุทธ์: ก่อนอ่าน vs หลังอ่าน (Before & After Reading Breakdown)</h5>\n            </div>\n\n            <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-xs\">\n              <!-- Before Reading: Prediction Clues -->\n              <div class=\"p-4 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl border border-purple-200 space-y-2\">\n                <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-xs\">\n                  <span class=\"w-5 h-5 rounded-full bg-purple-700 text-white flex items-center justify-center font-bold text-[11px]\">1</span>\n                  <span>BEFORE READING: ร่องรอยการคาดเดา (Predicting & Previewing)</span>\n                </div>\n                <ul class=\"space-y-1.5 text-slate-700 text-[11px] pl-2\">\n                  <li>\n                    • <strong>Title Analysis:</strong> ชื่อเรื่อง <em>\"The Ant and the Grasshopper: The Wisdom of Preparation\"</em> บ่งชี้ทันทีว่าจะมีการเปรียบเทียบลักษณะนิสัยระหว่าง \"มด\" กับ \"ตั๊กแตน\" โดยมีแก่นเรื่องเกี่ยวกับคุณค่าของการเตรียมพร้อม\n                  </li>\n                  <li>\n                    • <strong>Background Knowledge:</strong> ผู้อ่านดึงความรู้เดิมว่ามดเป็นสัตว์ขยันเก็บอาหารในฤดูร้อน ส่วนตั๊กแตนมักชอบร้องเพลง จึงคาดเดาได้ว่าจะเกิดวิกฤตเมื่อฤดูกาลเปลี่ยนแปลงสู่ฤดูหนาว\n                  </li>\n                  <li>\n                    • <strong>Prediction Hypothesis:</strong> คาดการณ์ว่าฝ่ายที่เตรียมพร้อมจะรอดชีวิต ส่วนฝ่ายที่ละเลยจะพบความยากลำบาก และเรื่องจะสรุปด้วยคติสอนใจ\n                  </li>\n                </ul>\n              </div>\n\n              <!-- After Reading: Verification & Analysis -->\n              <div class=\"p-4 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-200 space-y-2\">\n                <div class=\"flex items-center space-x-2 text-emerald-900 font-bold text-xs\">\n                  <span class=\"w-5 h-5 rounded-full bg-emerald-700 text-white flex items-center justify-center font-bold text-[11px]\">2</span>\n                  <span>AFTER READING: ตรวจสอบและยืนยันโครงสร้าง (Verifying & Analyzing)</span>\n                </div>\n                <ul class=\"space-y-1.5 text-slate-700 text-[11px] pl-2\">\n                  <li>\n                    • <strong>Locating Topic Sentence:</strong> ย่อหน้าที่ 1 ประโยคแรกเปิดประเด็นเปรียบเทียบพฤติกรรมของทั้งสองฝ่ายทันที สอดคล้องกับตำแหน่งต้นย่อหน้า\n                  </li>\n                  <li>\n                    • <strong>Checking Supporting Details:</strong> ย่อหน้าที่ 2 ให้ข้อมูลเหตุการณ์ที่ตั๊กแตนละเลยคำเตือนและเต้นรำอย่างชะล่าใจ ซึ่งเป็น Major Detail สนับสนุนปมปัญหา\n                  </li>\n                  <li>\n                    • <strong>Confirming Main Idea:</strong> ย่อหน้าที่ 3 สรุปคติธรรมอย่างชัดเจน (Stated Moral) ว่าการมองการณ์ไกลและความขยันปกป้องเราจากความยากลำบาก\n                  </li>\n                  <li>\n                    • <strong>Evaluating Character Growth:</strong> ย่อหน้าที่ 4 แสดงให้เห็นว่าตั๊กแตนสำนึกผิดและเปลี่ยนแปลงตนเอง (Character Growth) ทำให้ใจความสำคัญมีน้ำหนักสมบูรณ์\n                  </li>\n                </ul>\n              </div>\n            </div>\n          </div>\n\n          <!-- 4. Reflection Questions -->\n          <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-200 space-y-3 shadow-xs\">\n            <div class=\"flex items-center space-x-2 text-purple-950 font-bold text-sm\">\n              <i data-lucide=\"help-circle\" class=\"w-5 h-5 text-purple-700\"></i>\n              <span>คำถามสะท้อนคิดเพื่อความเข้าใจระดับสูง (Deep Reading Reflection Questions)</span>\n            </div>\n            <p class=\"text-xs text-slate-600\">\n              ลองฝึกคิดวิเคราะห์ตาม 3 ประเด็นต่อไปนี้ เพื่อฝึกฝนทักษะการอ่านวิเคราะห์ (Critical Reading) ตามมาตรฐาน CEFR A2:\n            </p>\n\n            <div class=\"space-y-2.5 text-xs\">\n              <!-- Question 1 -->\n              <div class=\"p-3 bg-purple-50/70 rounded-xl border border-purple-100 space-y-1\">\n                <p class=\"font-bold text-purple-950\">\n                  1. \"How do the contrasting actions of the Ant and the Grasshopper in paragraphs 1 and 2 directly support the moral stated in paragraph 3?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-purple-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> การกระทำที่ตรงข้ามกัน (มดเก็บอาหาร vs ตั๊กแตนเต้นรำ) ทำหน้าที่เป็นหลักฐานเชิงประจักษ์ (Empirical Evidence) ที่แสดงความสัมพันธ์แบบเหตุและผล (Cause & Effect) นำไปสู่บทสรุปว่าทำไมการเตรียมตัวล่วงหน้าจึงจำเป็น\n                </p>\n              </div>\n\n              <!-- Question 2 -->\n              <div class=\"p-3 bg-pink-50/70 rounded-xl border border-pink-100 space-y-1\">\n                <p class=\"font-bold text-pink-950\">\n                  2. \"Why is paragraph 4 (the Grasshopper's humility and promise of prudence) essential for demonstrating true character growth?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-pink-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> หากเรื่องจบที่ย่อหน้า 3 บทอ่านจะสะท้อนเพียงความล้มเหลว แต่ย่อหน้า 4 แสดงถึงการยอมรับความจริงและการเปลี่ยนแปลงพฤติกรรม (Character Growth) ทำให้คติธรรมกลายเป็นบทเรียนชีวิตที่มีความหวังและสมบูรณ์\n                </p>\n              </div>\n\n              <!-- Question 3 -->\n              <div class=\"p-3 bg-amber-50/70 rounded-xl border border-amber-100 space-y-1\">\n                <p class=\"font-bold text-amber-950\">\n                  3. \"For university students, what actions in academic life represent 'storing grain' versus 'singing frivolously'?\"\n                </p>\n                <p class=\"text-[11px] text-slate-600 pl-2 border-l-2 border-amber-400\">\n                  💡 <strong>แนวคิดวิเคราะห์:</strong> 'Storing grain' คือการอ่านหนังสือทบทวนบทเรียนและสะสมคำศัพท์เป็นประจำทุกสัปดาห์ ส่วน 'Singing frivolously' คือการผัดวันประกันพรุ่งและรออ่านคืนก่อนสอบ ซึ่งอาจทำให้ 'หนาวสั่น' เมื่อเจอข้อสอบจริง\n                </p>\n              </div>\n            </div>\n          </div>\n\n          <!-- Bottom Navigation Buttons for Example 2 -->\n          <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4 border-t border-purple-100\">\n            <button onclick=\"app.switchExampleTab(1)\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n              ⬅ Back: Example 1 (เต่ากับกระต่าย)\n            </button>\n            <button onclick=\"app.selectActivityStep('practice')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md\">\n              <span>Next Step: Practice (แบบฝึกหัด 40 ข้อ)</span>\n              <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n            </button>\n          </div>\n        </div>\n      </div>",
+            "practice": "<div class=\"space-y-6\">\n          <div class=\"flex items-center justify-between border-b border-purple-100 pb-3\">\n            <div>\n              <h4 class=\"text-lg font-bold text-slate-900 flex items-center space-x-2\">\n                <i data-lucide=\"help-circle\" class=\"w-5 h-5 text-purple-700\"></i>\n                <span>Guided Practice: แบบฝึกหัดทบทวนความเข้าใจ</span>\n              </h4>\n              <p class=\"text-xs text-slate-500 mt-0.5\">ฝึกระบุ Main Idea, Topic Sentence, รายละเอียดสนับสนุน และคำศัพท์ พร้อมตรวจเฉลยทันที</p>\n            </div>\n            <span class=\"text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full\">4 Questions</span>\n          </div>\n\n          <!-- Question 1 -->\n          <div class=\"p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n            <div class=\"flex items-center justify-between\">\n              <span class=\"px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-purple-100 text-purple-800\">Question 1 • Main Idea</span>\n              <span class=\"text-[11px] text-slate-400 font-semibold\">1 pt</span>\n            </div>\n            <h5 class=\"text-sm font-bold text-slate-900\">What is the central Main Idea of \"The Tortoise and the Hare\"?</h5>\n            <div class=\"space-y-2\">\n              <button onclick=\"app.submitPracticeAnswer(0, 1, encodeURIComponent('ข้อนี้เป็นเพียงรายละเอียดปลีกย่อย ไม่ใช่ใจความสำคัญของเรื่องทั้งหมด'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">A</span>\n                <span>The Hare took a comfortable nap under a shady oak tree.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(1, 1, encodeURIComponent('ถูกต้อง! ประโยคนี้สรุปแก่นของเรื่องว่าความพากเพียรและสม่ำเสมอจะเอาชนะความหยิ่งยโสและความประมาทได้อย่างแท้จริง'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">B</span>\n                <span>Steady perseverance and humble consistency will consistently triumph over careless arrogance and complacent talent.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(2, 1, encodeURIComponent('ข้อนี้กว้างเกินไป (Too Broad) และไม่ได้ระบุข้อคิดหลักของเรื่อง'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">C</span>\n                <span>Forest animals enjoy competing in five-mile cross-country footraces.</span>\n              </button>\n            </div>\n          </div>\n\n          <!-- Question 2 -->\n          <div class=\"p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n            <div class=\"flex items-center justify-between\">\n              <span class=\"px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800\">Question 2 • Topic Sentence</span>\n              <span class=\"text-[11px] text-slate-400 font-semibold\">1 pt</span>\n            </div>\n            <h5 class=\"text-sm font-bold text-slate-900\">Where is the stated moral and concluding Main Idea located in the final paragraph?</h5>\n            <div class=\"space-y-2\">\n              <button onclick=\"app.submitPracticeAnswer(0, 0, encodeURIComponent('ถูกต้อง! ประโยคสุดท้ายของเรื่องทำหน้าที่เป็น Concluding Topic Sentence ที่ระบุคติธรรมและใจความสำคัญไว้อย่างชัดเจน'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">A</span>\n                <span>At the very end of the paragraph as a summarizing concluding statement.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(1, 0, encodeURIComponent('ในย่อหน้าสุดท้าย ประโยคเปิดเป็นเพียงการเล่าการเดินของเต่า ยังไม่ใช่ประโยคสรุปใจความสำคัญ'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">B</span>\n                <span>In the first sentence only.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(2, 0, encodeURIComponent('เรื่องนี้ระบุ Main Idea ไว้อย่างชัดเจน (Stated Main Idea) ในประโยคสรุปท้าย ไม่ได้ซ่อนไว้'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">C</span>\n                <span>It is not stated anywhere in the text.</span>\n              </button>\n            </div>\n          </div>\n\n          <!-- Question 3 -->\n          <div class=\"p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n            <div class=\"flex items-center justify-between\">\n              <span class=\"px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-800\">Question 3 • Supporting Detail</span>\n              <span class=\"text-[11px] text-slate-400 font-semibold\">1 pt</span>\n            </div>\n            <h5 class=\"text-sm font-bold text-slate-900\">Which of the following is a Supporting Detail (รายละเอียดสนับสนุน) and NOT the Main Idea?</h5>\n            <div class=\"space-y-2\">\n              <button onclick=\"app.submitPracticeAnswer(0, 1, encodeURIComponent('ประโยคนี้คือ Main Idea ของเรื่อง ไม่ใช่ Supporting Detail'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">A</span>\n                <span>Perseverance and humility triumph over arrogant complacency.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(1, 1, encodeURIComponent('ถูกต้อง! การที่นกฮูก (wise Owl) ได้รับเลือกให้เป็นผู้วางเส้นทางวิ่งแข่ง เป็นเพียงรายละเอียดสนับสนุนเหตุการณ์ ไม่ใช่ใจความสำคัญ'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">B</span>\n                <span>The wise Owl was selected to map the course and mark the finish line.</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(2, 1, encodeURIComponent('ประโยคนี้สื่อถึงข้อคิดหลักของการแข่งขัน'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">C</span>\n                <span>Consistency and determination lead to lasting achievement.</span>\n              </button>\n            </div>\n          </div>\n\n          <!-- Question 4 -->\n          <div class=\"p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n            <div class=\"flex items-center justify-between\">\n              <span class=\"px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800\">Question 4 • Vocabulary in Context</span>\n              <span class=\"text-[11px] text-slate-400 font-semibold\">1 pt</span>\n            </div>\n            <h5 class=\"text-sm font-bold text-slate-900\">Complete the sentence: \"The Hare was so ______ that he believed victory was guaranteed, so he fell asleep.\"</h5>\n            <div class=\"space-y-2\">\n              <button onclick=\"app.submitPracticeAnswer(0, 2, encodeURIComponent('humble แปลว่า ถ่อมตน ซึ่งตรงข้ามกับนิสัยของกระต่าย'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">A</span>\n                <span>humble (ถ่อมตน)</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(1, 2, encodeURIComponent('steadfast แปลว่า มั่นคงแน่วแน่ ซึ่งเป็นคุณลักษณะของเต่า'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">B</span>\n                <span>steadfast (มั่นคงแน่วแน่)</span>\n              </button>\n              <button onclick=\"app.submitPracticeAnswer(2, 2, encodeURIComponent('ถูกต้อง! complacent หมายถึง ชะล่าใจ หรือพึงพอใจในตนเองจนประมาทเลินเล่อ ซึ่งเป็นสาเหตุที่กระต่ายไปนอนหลับจนแพ้การแข่งขัน'))\" class=\"w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer\">\n                <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0\">C</span>\n                <span>complacent (ชะล่าใจ / ประมาท)</span>\n              </button>\n            </div>\n          </div>\n\n          <!-- Bottom Finish Buttons -->\n          <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4\">\n            <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n              ⬅ Back: Example\n            </button>\n            <button onclick=\"app.selectStageAndStep('postReading', 'quiz')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-xl text-xs cursor-pointer text-center flex items-center justify-center space-x-1.5 shadow-md\">\n              <span>Next Step: Post-Reading Quiz (แบบทดสอบ 40 ข้อ)</span>\n              <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n            </button>\n          </div>\n        </div>"
           }
         },
-        postReading: {
-          title: "Post-Reading Stage",
-          steps: {
-            quiz: true
+        "postReading": {
+          "title": "Post-Reading Stage",
+          "steps": {
+            "quiz": true
           }
         }
       }
@@ -1772,224 +91,241 @@ window.ReadSkillsData = {
       }
     },
     {
-          "id": 3,
-          "code": "UNIT-03",
-          "title": "Vocabulary in Context & Sentence Meaning",
-          "thaiTitle": "การเดาความหมายคำศัพท์จากบริบทและการเข้าใจความหมายของประโยค (Unlocking Textual Meaning)",
-          "scope": "Context clues (definition, synonym, antonym, example, general), signal words & punctuation, sentence meaning (subject, verb, key info), Context Clue Game, Vocabulary Quiz",
-          "description": "Unlock unfamiliar vocabulary using 5 types of context clues and punctuation markers, and analyze complex sentences by identifying core subjects, verbs, and supporting details.",
-          "cefr": "A2-B1",
-          "stages": {
-                "preReading": {
-                      "title": "Pre-Reading Stage",
-                      "steps": {
-                            "overview": "\n<div class=\"space-y-6\">\n  <!-- Unit Header & Syllabus Ref -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.1.1 &bull; U3-6.1.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">CEFR A2–B1</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Overview & Warm-Up</h3>\n      <p class=\"text-xs text-slate-500\">บทนำสู่บทเรียนและกิจกรรมอุ่นเครื่อง: การปลดล็อกความหมายของคำศัพท์จากบริบทและโครงสร้างประโยค (Unlocking Textual Meaning)</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">\n      Course 2031103 &bull; Section 6.1\n    </span>\n  </div>\n\n  <!-- Objectives & Concept Model Grid [U3-4, U3-6.1.1] -->\n  <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n    <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n        <i data-lucide=\"target\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit Learning Objectives (วัตถุประสงค์การเรียนรู้) [U3-4, U3-6.1.1]</span>\n      </div>\n      <ul class=\"text-xs text-slate-700 space-y-2 leading-relaxed\">\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">1</span>\n          <span><strong>Five Context Clue Types:</strong> อธิบายและใช้บริบทแวดล้อม 5 ประเภท (Definitions, Synonyms, Antonyms, Examples, General Clues) เพื่อเดาความหมายของคำศัพท์ใหม่โดยไม่ต้องพึ่งพจนานุกรม <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.1, 5.1]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">2</span>\n          <span><strong>Signal Words & Punctuation:</strong> สังเกตคำสัญญาณและเครื่องหมายวรรคตอน (commas, dashes, parentheses, such as, however, in other words) ที่ช่วยชี้เบาะแสความหมาย <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.2, 5.2]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">3</span>\n          <span><strong>Sentence Meaning Analysis:</strong> แยกแยะโครงสร้างประโยคซับซ้อนโดยหาประธานหลัก (Core Subject) กริยาหลัก (Main Verb) และส่วนขยายสำคัญ <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.3, 5.3]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">4</span>\n          <span><strong>Graded Mastery (Indicator 3.3):</strong> ทำกิจกรรม Context Clue Game และ Vocabulary Quiz ผ่านเกณฑ์ความถูกต้องไม่ต่ำกว่า 70% <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-3.3, 5.5, 5.6]</span></span>\n        </li>\n      </ul>\n    </div>\n\n    <!-- Mind Map Card [U3-6.1.1] -->\n    <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 to-indigo-50/90 rounded-2xl border border-purple-200/80 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n          <i data-lucide=\"key\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>Unlocking Textual Meaning Framework [U3-6.1.1]</span>\n        </div>\n        <span class=\"text-[10px] font-mono bg-purple-200/80 text-purple-900 px-2 py-0.5 rounded font-bold\">2-Pillar Model</span>\n      </div>\n      \n      <div class=\"space-y-2.5 text-xs\">\n        <div class=\"p-2.5 bg-amber-100 border border-amber-300 rounded-xl text-amber-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-amber-500 text-white flex items-center justify-center font-bold text-[10px]\">1</span>\n            <span><strong>Pillar 1: Context Clues (เบาะแสบริบท 5 รูปแบบ) [U3-5.1, 5.2]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-amber-900 pl-7\">Definition &bull; Synonym &bull; Antonym &bull; Example &bull; General Clues + Punctuation (, — ())</p>\n        </div>\n\n        <div class=\"p-2.5 bg-emerald-100 border border-emerald-300 rounded-xl text-emerald-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]\">2</span>\n            <span><strong>Pillar 2: Sentence Meaning (แก่นความหมายประโยค) [U3-5.3, 5.4]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-emerald-900 pl-7\">Core Subject (ใคร/อะไร) + Main Verb (ทำอะไร) + Supporting Modifiers (ขยายความอย่างไร)</p>\n        </div>\n\n        <div class=\"p-2 bg-sky-100 border border-sky-300 rounded-xl text-sky-950 font-medium flex items-center space-x-2\">\n          <span class=\"w-5 h-5 rounded-md bg-sky-600 text-white flex items-center justify-center font-bold text-[10px]\">✓</span>\n          <span><strong>Result:</strong> อ่านบทความวิชาการได้ลื่นไหลและแม่นยำโดยไม่ต้องเปิดพจนานุกรมทุกคำ!</span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Warm-Up Activity: Guess Meaning Without a Dictionary [U3-6.1.2] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-200 shadow-sm space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"w-6 h-6 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">⚡</span>\n        <h4 class=\"font-bold text-slate-900 text-sm sm:text-base\">Warm-Up Activity: Detective Word Guessing (No Dictionary!) [U3-6.1.2]</h4>\n      </div>\n      <span class=\"text-[11px] font-bold text-pink-700 bg-pink-100 px-2.5 py-1 rounded-full\">Interactive Starter</span>\n    </div>\n\n    <p class=\"text-xs text-slate-600\">\n      ลองอ่านประโยคด้านล่างแล้วใช้ <strong>คำแวดล้อมและเครื่องหมายวรรคตอน</strong> เพื่อทายความหมายของคำที่ขีดเส้นใต้โดยไม่ต้องเปิดดิกชันนารี:\n    </p>\n\n    <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n      <div class=\"text-[10px] font-sans font-bold text-purple-300 uppercase tracking-wider mb-1\">Warm-Up Mystery Sentence</div>\n      <p>\n        \"Deep in the Amazon rainforest, wildlife photographers rarely spot <span class=\"text-amber-300 font-bold underline\">nocturnal</span> creatures—such as owls, bats, and night monkeys—because these animals sleep inside dark tree hollows all day and only emerge to hunt after sunset.\"\n      </p>\n    </div>\n\n    <!-- Warm-Up Question -->\n    <div class=\"p-4 bg-purple-50/80 rounded-xl border border-purple-200/90 space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n          <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>จากบริบทในประโยค คำว่า \"nocturnal\" น่าจะมีความหมายตรงกับข้อใดมากที่สุด?</span>\n        </span>\n        <span class=\"text-[10px] font-mono bg-purple-200 text-purple-900 px-2 py-0.5 rounded font-bold\">U3-6.1.2</span>\n      </div>\n\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.checkUnit3Warmup(1)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">A</span>\n          <span>ซึ่งมีพิษร้ายแรงและอันตรายต่อมนุษย์ (Poisonous and dangerous)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(2)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">B</span>\n          <span>ซึ่งออกหากินและใช้ชีวิตในเวลากลางคืน (Active at night rather than by day)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(3)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">C</span>\n          <span>ซึ่งอาศัยอยู่ในแหล่งน้ำจืดเท่านั้น (Living exclusively in freshwater rivers)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(4)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">D</span>\n          <span>ซึ่งมีขนาดลำตัวใหญ่โตมโหฬาร (Extremely large in body size)</span>\n        </button>\n      </div>\n\n      <div id=\"u3-warmup-feedback\" class=\"hidden p-3 rounded-xl text-xs font-medium\"></div>\n    </div>\n\n    <div class=\"flex justify-end pt-2\">\n      <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n        <span>Next: Key Concepts & Pre-Reading Context Clue Game</span>\n        <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n",
-                            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.1.3..6.1.5 &bull; U3-5.1..5.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Key Concepts</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Five Context Clues, Signals & Mini Game</h3>\n      <p class=\"text-xs text-slate-500\">เรียนรู้บริบท 5 ประเภท, เครื่องหมายวรรคตอนชี้เบาะแส และเกมทบทวนก่อนอ่าน [U3-5.1, 5.2, 6.1.3, 6.1.4, 6.1.5]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 2 in Pre-Reading</span>\n  </div>\n\n  <!-- 1. The Five Main Types of Context Clues [U3-5.1, U3-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"compass\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">1. Five Main Types of Context Clues (บริบทแวดล้อม 5 ประเภท) [U3-5.1, U3-6.1.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Content 5.1</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs\">\n      <!-- Type 1: Definition -->\n      <div class=\"p-3.5 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-purple-950\">\n          <span>1. Definition / Restatement</span>\n          <span class=\"text-[10px] bg-purple-200 text-purple-900 px-2 py-0.5 rounded\">คำจำกัดความ</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">ผู้เขียนนิยามความหมายของคำศัพท์ไว้ตรงๆ ในประโยคเดียวกันหรือประโยคถัดไปทันที</p>\n        <div class=\"p-2 bg-white rounded-lg border border-purple-100 text-[11px] text-purple-950\">\n          <strong>Signals:</strong> <em>is defined as, means, refers to, is / are, that is, in other words</em><br>\n          <strong>Ex:</strong> \"<strong>Hydroponics</strong>, <em>which refers to</em> growing plants in nutrient-rich water without soil, saves farmland.\"\n        </div>\n      </div>\n\n      <!-- Type 2: Synonym -->\n      <div class=\"p-3.5 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-emerald-950\">\n          <span>2. Synonym Clue</span>\n          <span class=\"text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded\">คำพ้องความหมาย</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">วางคำที่มีความหมายเหมือนกันและคุ้นเคยกว่าไว้ใกล้ๆ เพื่อขยายความคำยาก</p>\n        <div class=\"p-2 bg-white rounded-lg border border-emerald-100 text-[11px] text-emerald-950\">\n          <strong>Signals:</strong> <em>or, also known as, similarly, likewise, commas (, or ...)</em><br>\n          <strong>Ex:</strong> \"The ancient manuscript was <strong>fragile</strong>, <em>or</em> easily broken and delicate.\"\n        </div>\n      </div>\n\n      <!-- Type 3: Antonym / Contrast -->\n      <div class=\"p-3.5 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-rose-950\">\n          <span>3. Antonym / Contrast</span>\n          <span class=\"text-[10px] bg-rose-200 text-rose-900 px-2 py-0.5 rounded\">คำตรงข้าม</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">บอกความหมายโดยชี้ให้เห็นสิ่งที่ตรงกันข้ามกันอย่างชัดเจน</p>\n        <div class=\"p-2 bg-white rounded-lg border border-rose-100 text-[11px] text-rose-950\">\n          <strong>Signals:</strong> <em>however, but, unlike, whereas, while, in contrast, instead of</em><br>\n          <strong>Ex:</strong> \"<em>Unlike</em> his <strong>gregarious</strong> sister who loves big parties, Tom is shy and quiet.\" (gregarious = ชอบเข้าสังคม)\n        </div>\n      </div>\n\n      <!-- Type 4: Example -->\n      <div class=\"p-3.5 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-amber-950\">\n          <span>4. Example Clue</span>\n          <span class=\"text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded\">การยกตัวอย่าง</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">ยกตัวอย่างสิ่งที่เป็นรูปธรรมเพื่อให้ผู้อ่านสรุปหมวดหมู่หรือความหมายของคำศัพท์นั้นได้</p>\n        <div class=\"p-2 bg-white rounded-lg border border-amber-100 text-[11px] text-amber-950\">\n          <strong>Signals:</strong> <em>such as, including, for example, for instance, like</em><br>\n          <strong>Ex:</strong> \"<strong>Citrus fruits</strong>, <em>such as</em> oranges, lemons, and limes, are rich in Vitamin C.\"\n        </div>\n      </div>\n\n      <!-- Type 5: General / Inference Clue -->\n      <div class=\"p-3.5 bg-sky-50/80 border border-sky-200 rounded-xl space-y-1.5 md:col-span-2 lg:col-span-2\">\n        <div class=\"flex items-center justify-between font-bold text-sky-950\">\n          <span>5. General / Situation Inference Clue</span>\n          <span class=\"text-[10px] bg-sky-200 text-sky-900 px-2 py-0.5 rounded\">บริบทแวดล้อมทั่วไป/เหตุผล</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">ไม่มีคำสัญญาณตรงๆ แต่ผู้เขียนให้รายละเอียดสถานการณ์ เหตุและผล หรือบรรยากาศรอบข้าง จนสามารถอนุมานความหมายได้</p>\n        <div class=\"p-2 bg-white rounded-lg border border-sky-100 text-[11px] text-sky-950\">\n          <strong>Clue Logic:</strong> สังเกตอาการ ผลลัพธ์ หรือสาเหตุในประโยค ➔ <strong>Ex:</strong> \"After hiking ten hours in the scorching desert without a single drop of water, the travelers felt completely <strong>parched</strong>.\" (เดินในทะเลทรายร้อนจัด 10 ชม. โดยไม่มีน้ำดื่ม ➔ parched = กระหายน้ำอย่างหนัก/แห้งผาก)\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 2. Signal Words & Punctuation Clues [U3-5.2, U3-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"code\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">2. Punctuation & Signal Markers (เครื่องหมายวรรคตอนและคำบอกใบ้) [U3-5.2]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Content 5.2</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Commas ( , ... , )</strong>\n        <p class=\"text-slate-600 text-[11px]\">คั่นวลีขยายความหมายที่วางซ้อนอยู่ข้างหลังคำศัพท์ (Appositive)</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"<strong>Glaciers</strong>, <em>massive rivers of slow-moving ice</em>, shape valleys.\"\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Dashes ( — ... — )</strong>\n        <p class=\"text-slate-600 text-[11px]\">เน้นคำจำกัดความหรือตัวอย่างสำคัญให้สะดุดตาผู้อ่านทันที</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"The chef used <strong>saffron</strong>—<em>the world's most expensive spice</em>—in the soup.\"\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Parentheses ( ( ... ) )</strong>\n        <p class=\"text-slate-600 text-[11px]\">ใส่วงเล็บเพื่อแปลความหมาย อธิบายคำย่อ หรือให้คำพ้องความหมาย</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"Marine <strong>bioluminescence</strong> <em>(light produced by living organisms)</em> glows blue.\"\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 3. Pre-Reading Short Context Clue Game [U3-6.1.4, U3-5.5] -->\n  <div class=\"p-4 sm:p-6 bg-gradient-to-r from-purple-900 to-indigo-950 text-white rounded-2xl shadow-md space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-800 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-amber-400 text-slate-950 font-bold text-[10px] rounded font-mono\">PRE-READING GAME</span>\n          <span class=\"px-2 py-0.5 bg-purple-800 text-purple-200 font-bold text-[10px] rounded font-mono\">U3-6.1.4 &bull; U3-5.5</span>\n        </div>\n        <h4 class=\"text-base font-bold mt-1 text-white flex items-center space-x-2\">\n          <i data-lucide=\"gamepad-2\" class=\"w-5 h-5 text-amber-400\"></i>\n          <span>Short Context Clue Mini-Game (ทบทวนก่อนอ่าน 5 ข้อ)</span>\n        </h4>\n        <p class=\"text-xs text-purple-200\">จับคู่คำศัพท์ที่ขีดเส้นใต้กับความหมายและชนิดของ Context Clue ให้ถูกต้อง</p>\n      </div>\n      <div class=\"bg-purple-950/80 px-3.5 py-2 rounded-xl border border-purple-700 text-xs font-bold text-amber-300 shrink-0\">\n        Mini-Game Score: <span id=\"u3-pregame-score\">0 / 5</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-3 text-xs text-slate-900\">\n      <!-- Game Q1 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          1. \" Botanists study <strong>ephemeral</strong> desert wildflowers, <em>which bloom for only a few days before withering away</em>.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(1, 0)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Short-lived / lasting a very brief time (Definition Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(1, 1)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Tall and thorny like a cactus (Antonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(1, 2)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Poisonous to desert insects (Example Clue)</button>\n        </div>\n        <div id=\"u3-pg1-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q2 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          2. \"Root vegetables—<em>such as carrots, radishes, and sweet potatoes</em>—store vital carbohydrates underground.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(2, 0)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Clue Type: Antonym / Contrast</button>\n          <button onclick=\"app.submitUnit3PreGame(2, 1)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Clue Type: Example Clue (Dashes + 'such as')</button>\n          <button onclick=\"app.submitUnit3PreGame(2, 2)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Clue Type: No context clue present</button>\n        </div>\n        <div id=\"u3-pg2-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q3 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          3. \"<em>Whereas</em> the surface of the lake was <strong>tranquil</strong> in the early morning, the afternoon storm made the water violent and dangerous.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(3, 0)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Calm and peaceful (Antonym Clue: 'Whereas' + 'violent')</button>\n          <button onclick=\"app.submitUnit3PreGame(3, 1)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Deep and frozen solid (Synonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(3, 2)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Muddy and polluted (Example Clue)</button>\n        </div>\n        <div id=\"u3-pg3-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q4 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          4. \"The watchmaker performed a <strong>meticulous</strong>, <em>or extremely careful and precise</em>, inspection of the tiny golden gears.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(4, 0)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Careless and rushed (Antonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(4, 1)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Extremely careful and precise (Synonym Clue: ', or ...')</button>\n          <button onclick=\"app.submitUnit3PreGame(4, 2)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Expensive and antique (General Clue)</button>\n        </div>\n        <div id=\"u3-pg4-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q5 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          5. \"Because the lighthouse beam was <strong>obscured</strong> by thick coastal fog, approaching cargo ships could not see the rocky shoreline.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(5, 0)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Made brighter and clearer (Synonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(5, 1)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Hidden or blocked from view (General Cause-Effect Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(5, 2)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Repaired by engineers (Definition Clue)</button>\n        </div>\n        <div id=\"u3-pg5-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 4. Previewing the Text [U3-6.1.5] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 text-xs space-y-2\">\n    <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n      <i data-lucide=\"eye\" class=\"w-4 h-4 text-purple-700\"></i>\n      <span>Previewing the Text: Unfamiliar Words & Signal Markers [U3-6.1.5]</span>\n    </div>\n    <p class=\"text-purple-900 leading-relaxed\">\n      ก่อนเข้าสู่ขั้น While-Reading: กวาดสายตาสำรวจบทอ่านเรื่อง <em>\"Biomimicry: How Nature Inspires Modern Engineering\"</em> มองหาคำศัพท์ที่ไม่คุ้นเคย (เช่น <strong>biomimicry, aerodynamic, hydrophobic, resilient</strong>) พร้อมสังเกตเครื่องหมายวรรคตอน (วงเล็บ, เครื่องหมายขีดยาว —, และคำเชื่อม <em>such as, in other words</em>) ที่ซ่อนคำแปลไว้ข้างๆ!\n    </p>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('overview')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Overview & Warm-Up\n    </button>\n    <button onclick=\"app.selectStageAndStep('whileReading', 'learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: While-Reading Guided Demo</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
-                      }
-                },
-                "whileReading": {
-                      "title": "While-Reading Stage",
-                      "steps": {
-                            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.2.1 &bull; U3-6.2.4 &bull; U3-5.3</span>\n        <span class=\"px-2.5 py-0.5 bg-indigo-100 text-indigo-800 rounded-md text-[10px] font-bold\">Guided Demo</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Guided Reading & Sentence Meaning Analysis</h3>\n      <p class=\"text-xs text-slate-500\">สาธิตการถอดรหัสคำศัพท์จากบริบท และการแยกแยะ Subject + Verb + Core Meaning ในประโยคซับซ้อน [U3-6.2.1, 6.2.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 1 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Audio Player & Worked Passage Box [U3-6.2.1] -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n      <div>\n        <span class=\"text-[10px] font-bold text-pink-300 uppercase tracking-wider block\">Worked Example Passage [U3-6.2.1]</span>\n        <h4 class=\"text-base font-bold text-white mt-0.5\">Biomimicry: How Nature Inspires Modern Engineering</h4>\n      </div>\n\n      <div class=\"flex items-center space-x-2\">\n        <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\">\n          <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300\"></i>\n          <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n            <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n            <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n            <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n            <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n          </select>\n        </div>\n\n        <button onclick=\"app.togglePassageAudio(encodeURIComponent('Biomimicry—the practice of emulating nature\\'s time-tested patterns and biological strategies—has revolutionized twenty-first-century architecture and transportation engineering. For instance, Japanese railway engineers solved severe tunnel noise problems by redesigning bullet train noses to mimic the aerodynamic beak of the kingfisher bird, which dives into water with virtually zero splash. Furthermore, materials scientists studying lotus leaves discovered that microscopic waxy bumps make the plant\\'s surface hydrophobic; in other words, water droplets roll off immediately and carry away dirt particles. Unlike conventional synthetic coatings that deteriorate rapidly under harsh ultraviolet sunlight, bio-inspired self-cleaning surfaces remain remarkably resilient for decades.'))\" class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer shadow-md\">\n          <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n          <span id=\"audio-btn-label\">Listen Passage</span>\n        </button>\n      </div>\n    </div>\n\n    <!-- Passage Breakdown with Unit 3 Color Scheme -->\n    <div class=\"space-y-4 font-serif text-xs sm:text-sm leading-relaxed text-slate-200\">\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-amber-300 uppercase tracking-wider\">[Sentence 1: Definition Clue via Dashes]</span>\n          <span class=\"bg-amber-400/20 text-amber-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-6.2.1</span>\n        </div>\n        <p>\n          <span class=\"highlighter-pen highlighter-yellow\">Biomimicry</span>—<span class=\"highlighter-pen highlighter-green\">the practice of emulating nature's time-tested patterns and biological strategies</span>—<span class=\"highlighter-pen highlighter-blue\">has revolutionized twenty-first-century architecture and transportation engineering.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200\">\n          <strong>Clue Analysis:</strong> คำไม่คุ้นเคยคือ <strong>Biomimicry</strong> (สีเหลือง) มีเครื่องหมายขีดยาว <code>— ... —</code> คั่นคำนิยาม (สีเขียว: การเลียนแบบรูปแบบและกลยุทธ์ทางชีววิทยาของธรรมชาติ) ส่วนสีฟ้าคือใจความหลักของประโยค\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-emerald-300 uppercase tracking-wider\">[Sentence 2 & 3: Restatement & Example Clues]</span>\n          <span class=\"bg-emerald-500/20 text-emerald-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-5.1 &bull; 5.2</span>\n        </div>\n        <p>\n          For instance, <span class=\"highlighter-pen highlighter-blue\">Japanese railway engineers solved severe tunnel noise problems by redesigning bullet train noses</span> to mimic the <span class=\"highlighter-pen highlighter-yellow\">aerodynamic</span> beak of the kingfisher bird, <span class=\"highlighter-pen highlighter-green\">which dives into water with virtually zero splash</span>. Furthermore, materials scientists studying lotus leaves discovered that microscopic waxy bumps make the plant's surface <span class=\"highlighter-pen highlighter-yellow\">hydrophobic</span>; <span class=\"highlighter-pen highlighter-green\">in other words, water droplets roll off immediately and carry away dirt particles</span>.\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200\">\n          <strong>Clue Analysis:</strong> คำว่า <strong>hydrophobic</strong> (สีเหลือง) ถูRestate ความหมายทันทีหลังคำเชื่อม <em>\"in other words\"</em> (สีเขียว = ซึ่งไม่เกาะน้ำ/ผลักหยดน้ำออกทันที)\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-sky-300 uppercase tracking-wider\">[Sentence 4: Contrast Clue]</span>\n          <span class=\"bg-sky-400/20 text-sky-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-5.1</span>\n        </div>\n        <p>\n          <span class=\"highlighter-pen highlighter-green\">Unlike conventional synthetic coatings that deteriorate rapidly under harsh ultraviolet sunlight</span>, <span class=\"highlighter-pen highlighter-blue\">bio-inspired self-cleaning surfaces remain remarkably</span> <span class=\"highlighter-pen highlighter-yellow\">resilient</span> <span class=\"highlighter-pen highlighter-blue\">for decades.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200\">\n          <strong>Clue Analysis:</strong> คำว่า <em>\"Unlike ... deteriorate rapidly\"</em> (ตรงข้ามกับการเสื่อมสภาพอย่างรวดเร็ว) ชี้ให้เห็นว่า <strong>resilient</strong> หมายถึง ทนทานและคงสภาพได้ดีเยี่ยม\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Sentence Meaning Practice: Subject + Verb + Core Meaning [U3-5.3, U3-6.2.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"cpu\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">Sentence Meaning Practice: Unpacking Complex Sentences [U3-5.3, U3-6.2.4]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Activity 6.2.4</span>\n    </div>\n\n    <p class=\"text-xs text-slate-700 leading-relaxed\">\n      เมื่อเจอประโยคยาวที่มีส่วนขยายซับซ้อน อย่าเพิ่งตกใจ! ให้ตัดส่วนขยายรองออกชั่วคราว แล้วล็อกหา <strong>1. Core Subject (ประธานหลัก)</strong> + <strong>2. Main Verb (กริยาหลัก)</strong> + <strong>3. Key Supporting Information (ใจความสำคัญที่เหลือ)</strong>:\n    </p>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-xs\">\n      <!-- Example Breakdown 1 -->\n      <div class=\"p-3.5 bg-purple-50/70 rounded-xl border border-purple-200 space-y-2\">\n        <span class=\"font-bold text-purple-950 block\">Complex Sentence A:</span>\n        <p class=\"font-serif text-slate-800 bg-white p-2.5 rounded-lg border border-purple-100\">\n          \"<em>Although deep-sea exploration requires expensive submarines</em>, <strong>marine biologists</strong> <strong>have discovered</strong> <u>hundreds of medicinal compounds inside coral sponges</u>.\"\n        </p>\n        <ul class=\"space-y-1 text-[11px] text-slate-700\">\n          <li>&bull; <strong class=\"text-purple-900\">Core Subject (ใคร):</strong> <code>marine biologists</code> (นักชีววิทยาทางทะเล)</li>\n          <li>&bull; <strong class=\"text-emerald-800\">Main Verb (ทำอะไร):</strong> <code>have discovered</code> (ได้ค้นพบ)</li>\n          <li>&bull; <strong class=\"text-sky-900\">Key Object/Meaning:</strong> <code>hundreds of medicinal compounds</code> (สารประกอบทางยาหลายร้อยชนิดในฟองน้ำปะการัง)</li>\n        </ul>\n      </div>\n\n      <!-- Example Breakdown 2 -->\n      <div class=\"p-3.5 bg-indigo-50/70 rounded-xl border border-indigo-200 space-y-2\">\n        <span class=\"font-bold text-indigo-950 block\">Complex Sentence B:</span>\n        <p class=\"font-serif text-slate-800 bg-white p-2.5 rounded-lg border border-indigo-100\">\n          \"<strong>Vertical farming systems</strong>, <em>which stack plant trays inside climate-controlled skyscrapers</em>, <strong>reduce</strong> <u>agricultural water consumption by ninety percent</u>.\"\n        </p>\n        <ul class=\"space-y-1 text-[11px] text-slate-700\">\n          <li>&bull; <strong class=\"text-purple-900\">Core Subject (อะไร):</strong> <code>Vertical farming systems</code> (ระบบเกษตรแนวตั้ง)</li>\n          <li>&bull; <strong class=\"text-emerald-800\">Main Verb (ทำอะไร):</strong> <code>reduce</code> (ช่วยลด)</li>\n          <li>&bull; <strong class=\"text-sky-900\">Key Object/Meaning:</strong> <code>water consumption by 90%</code> (การใช้น้ำทางการเกษตรลง 90%)</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('preReading', 'learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Pre-Reading Concepts\n    </button>\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Reading Practice & Highlighting Tool</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
-                            "example": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.2.2 &bull; U3-6.2.4 &bull; U3-6.2.6</span>\n        <span class=\"px-2.5 py-0.5 bg-amber-100 text-amber-800 rounded-md text-[10px] font-bold\">Interactive Highlighting</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Reading Practice with 3-Colour Highlighting Tool</h3>\n      <p class=\"text-xs text-slate-500\">ฝึกไฮไลต์จำแนก Unfamiliar Vocabulary (เหลือง), Context Clues (เขียว), และ Main Ideas & Sentence Meaning (ฟ้า) [U3-6.2.2]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Unit 3 Official Highlighting Legend [U3-6.2.2] -->\n  <div class=\"p-4 bg-white rounded-2xl border border-purple-200 shadow-sm space-y-3\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"highlighter\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span class=\"text-xs font-bold text-slate-900\">Unit 3 Official Highlighting Scheme (เกณฑ์สีไฮไลต์ประจำบทที่ 3) [U3-6.2.2]</span>\n      </div>\n      <span class=\"text-[10px] font-bold text-purple-700 bg-purple-50 px-2.5 py-1 rounded-full border border-purple-200\">Always Visible Legend</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs\">\n      <div class=\"p-2.5 bg-yellow-50 border-2 border-yellow-300 rounded-xl flex items-center space-x-2 text-yellow-950 font-bold\">\n        <span class=\"w-4 h-4 rounded-full bg-yellow-400 border border-yellow-600 shadow-xs shrink-0\"></span>\n        <span>Yellow = Unfamiliar Vocabulary (คำศัพท์เป้าหมาย)</span>\n      </div>\n      <div class=\"p-2.5 bg-emerald-50 border-2 border-emerald-300 rounded-xl flex items-center space-x-2 text-emerald-950 font-bold\">\n        <span class=\"w-4 h-4 rounded-full bg-emerald-500 border border-emerald-700 shadow-xs shrink-0\"></span>\n        <span>Green = Context Clues (บริบทและคำบอกใบ้)</span>\n      </div>\n      <div class=\"p-2.5 bg-sky-50 border-2 border-sky-300 rounded-xl flex items-center space-x-2 text-sky-950 font-bold\">\n        <span class=\"w-4 h-4 rounded-full bg-sky-400 border border-sky-600 shadow-xs shrink-0\"></span>\n        <span>Blue = Main Ideas & Sentence Meaning</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- Interactive Highlighting Practice Box [U3-6.2.2] -->\n  <div class=\"p-4 sm:p-6 bg-slate-900 text-slate-100 rounded-2xl shadow-lg space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-700 pb-3\">\n      <div>\n        <span class=\"text-[10px] font-bold text-amber-300 uppercase tracking-wider block\">Interactive Highlighting Passage [U3-6.2.2]</span>\n        <h4 class=\"text-sm sm:text-base font-bold text-white mt-0.5\">The Architecture of Sleep and Memory Consolidation</h4>\n      </div>\n      <div class=\"flex items-center space-x-2\">\n        <button onclick=\"app.resetUnit3Highlights()\" class=\"px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-lg text-xs font-semibold transition cursor-pointer\">\n          Reset All\n        </button>\n        <button onclick=\"app.revealUnit3Highlights()\" class=\"px-3 py-1.5 bg-purple-600 hover:bg-purple-700 text-white rounded-lg text-xs font-bold transition cursor-pointer shadow\">\n          Reveal Analysis\n        </button>\n      </div>\n    </div>\n\n    <p class=\"text-xs text-slate-300 font-sans\">\n      คลิกเลือกสีไฮไลต์ให้กับแต่ละส่วนของย่อหน้าด้านล่าง เพื่อจำแนกว่าส่วนใดคือ <strong>Unfamiliar Vocabulary (Yellow)</strong>, <strong>Context Clues (Green)</strong> หรือ <strong>Main Idea & Sentence Meaning (Blue)</strong>:\n    </p>\n\n    <div class=\"space-y-3 text-xs sm:text-sm font-serif leading-relaxed\" id=\"u3-highlight-container\">\n      <!-- Segment 1 -->\n      <div id=\"u3-s1-box\" class=\"p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition\">\n        <p id=\"u3-s1-text\" class=\"text-slate-200\">\n          (Segment 1) Deep slow-wave sleep plays an indispensable role in transforming fragile short-term experiences into permanent long-term memories.\n        </p>\n        <div class=\"flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-700/60 font-sans text-xs\">\n          <span class=\"text-slate-400 text-[11px]\">เลือกบทบาทของ Segment (1):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(1, 'yellow')\" class=\"px-2.5 py-1 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Yellow: Unfamiliar Vocab</button>\n            <button onclick=\"app.highlightUnit3Sentence(1, 'green')\" class=\"px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-white rounded font-bold text-[10px] cursor-pointer\">Green: Context Clue</button>\n            <button onclick=\"app.highlightUnit3Sentence(1, 'blue')\" class=\"px-2.5 py-1 bg-sky-400 hover:bg-sky-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Blue: Main Idea & Meaning</button>\n          </div>\n        </div>\n        <div id=\"u3-s1-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 2 -->\n      <div id=\"u3-s2-box\" class=\"p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition\">\n        <p id=\"u3-s2-text\" class=\"text-slate-200\">\n          (Segment 2) Target Vocabulary Terms: \"consolidation\", \"nocturnal\", and \"cognitive deprivation\"\n        </p>\n        <div class=\"flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-700/60 font-sans text-xs\">\n          <span class=\"text-slate-400 text-[11px]\">เลือกบทบาทของ Segment (2):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(2, 'yellow')\" class=\"px-2.5 py-1 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Yellow: Unfamiliar Vocab</button>\n            <button onclick=\"app.highlightUnit3Sentence(2, 'green')\" class=\"px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-white rounded font-bold text-[10px] cursor-pointer\">Green: Context Clue</button>\n            <button onclick=\"app.highlightUnit3Sentence(2, 'blue')\" class=\"px-2.5 py-1 bg-sky-400 hover:bg-sky-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Blue: Main Idea & Meaning</button>\n          </div>\n        </div>\n        <div id=\"u3-s2-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 3 -->\n      <div id=\"u3-s3-box\" class=\"p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition\">\n        <p id=\"u3-s3-text\" class=\"text-slate-200\">\n          (Segment 3) \"—that is, the biological process of stabilizing and strengthening newly acquired neural pathways—\" (explaining 'consolidation')\n        </p>\n        <div class=\"flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-700/60 font-sans text-xs\">\n          <span class=\"text-slate-400 text-[11px]\">เลือกบทบาทของ Segment (3):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(3, 'yellow')\" class=\"px-2.5 py-1 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Yellow: Unfamiliar Vocab</button>\n            <button onclick=\"app.highlightUnit3Sentence(3, 'green')\" class=\"px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-white rounded font-bold text-[10px] cursor-pointer\">Green: Context Clue</button>\n            <button onclick=\"app.highlightUnit3Sentence(3, 'blue')\" class=\"px-2.5 py-1 bg-sky-400 hover:bg-sky-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Blue: Main Idea & Meaning</button>\n          </div>\n        </div>\n        <div id=\"u3-s3-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 4 -->\n      <div id=\"u3-s4-box\" class=\"p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition\">\n        <p id=\"u3-s4-text\" class=\"text-slate-200\">\n          (Segment 4) \"such as severe memory lapses, slowed reaction times, and impaired logical judgment\" (examples explaining the effects of 'sleep deprivation')\n        </p>\n        <div class=\"flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-700/60 font-sans text-xs\">\n          <span class=\"text-slate-400 text-[11px]\">เลือกบทบาทของ Segment (4):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(4, 'yellow')\" class=\"px-2.5 py-1 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Yellow: Unfamiliar Vocab</button>\n            <button onclick=\"app.highlightUnit3Sentence(4, 'green')\" class=\"px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-white rounded font-bold text-[10px] cursor-pointer\">Green: Context Clue</button>\n            <button onclick=\"app.highlightUnit3Sentence(4, 'blue')\" class=\"px-2.5 py-1 bg-sky-400 hover:bg-sky-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Blue: Main Idea & Meaning</button>\n          </div>\n        </div>\n        <div id=\"u3-s4-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 5 -->\n      <div id=\"u3-s5-box\" class=\"p-3 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2 transition\">\n        <p id=\"u3-s5-text\" class=\"text-slate-200\">\n          (Segment 5) Core Sentence Meaning: Consistent seven-to-eight-hour sleep cycles protect brain health and maximize daily problem-solving efficiency.\n        </p>\n        <div class=\"flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-slate-700/60 font-sans text-xs\">\n          <span class=\"text-slate-400 text-[11px]\">เลือกบทบาทของ Segment (5):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(5, 'yellow')\" class=\"px-2.5 py-1 bg-yellow-400 hover:bg-yellow-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Yellow: Unfamiliar Vocab</button>\n            <button onclick=\"app.highlightUnit3Sentence(5, 'green')\" class=\"px-2.5 py-1 bg-emerald-500 hover:bg-emerald-400 text-white rounded font-bold text-[10px] cursor-pointer\">Green: Context Clue</button>\n            <button onclick=\"app.highlightUnit3Sentence(5, 'blue')\" class=\"px-2.5 py-1 bg-sky-400 hover:bg-sky-300 text-slate-900 rounded font-bold text-[10px] cursor-pointer\">Blue: Main Idea & Meaning</button>\n          </div>\n        </div>\n        <div id=\"u3-s5-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Feedback & Support Card [U3-6.2.6] -->\n  <div class=\"p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-xs space-y-1.5 text-emerald-950\">\n    <div class=\"flex items-center space-x-2 font-bold\">\n      <i data-lucide=\"check-circle\" class=\"w-4 h-4 text-emerald-700\"></i>\n      <span>Instructor Feedback & Strategy Support (คำแนะนำการอ่าน) [U3-6.2.6]</span>\n    </div>\n    <p class=\"leading-relaxed\">\n      <strong>เคล็ดลับการเช็คคำตอบ (Checking Meaning in Context [U3-5.4]):</strong> เมื่อเดาความหมายของคำศัพท์ได้แล้ว ให้ลองนำความหมายนั้นไป <strong>\"แทนค่ากลับเข้าไปในประโยค\"</strong> หากอ่านแล้วสอดคล้องกับ Core Subject และ Main Verb ของประโยค แปลว่าคุณถอดรหัสคำศัพท์ได้ถูกต้องแม่นยำ!\n    </p>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Guided Demo\n    </button>\n    <button onclick=\"app.selectActivityStep('practice')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Context Clue Game & Sentence Practice (Graded 70%)</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
-                            "practice": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-amber-600 text-white rounded-md text-[10px] font-bold font-mono\">GRADED ASSESSMENT</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-5.5 &bull; U3-6.2.3 &bull; U3-6.2.5</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Indicator 3.3 (&ge;70%)</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Context Clue Game & Sentence Meaning Practice (8 Items)</h3>\n      <p class=\"text-xs text-slate-500\">เลือกความหมายของคำศัพท์จากบริบทและระบุโครงสร้างความหมายหลักของประโยค (เกณฑ์ผ่าน &ge; 70% หรือ 6/8 ข้อ) [U3-6.2.3, 6.2.4, 6.2.5]</p>\n    </div>\n\n    <div class=\"flex items-center space-x-2 bg-purple-100 px-3.5 py-1.5 rounded-xl border border-purple-200 shrink-0 self-start sm:self-auto\">\n      <i data-lucide=\"award\" class=\"w-4 h-4 text-purple-700\"></i>\n      <span class=\"text-xs font-bold text-purple-900\">Score: <span id=\"u3-game-score\">0 / 8</span></span>\n    </div>\n  </div>\n\n  <!-- Instruction Box -->\n  <div class=\"p-4 bg-purple-50/80 rounded-2xl border border-purple-200 text-xs text-purple-950 space-y-1\">\n    <strong>คำชี้แจงกิจกรรมเก็บคะแนน (Indicator 3.3 Context Clue Game):</strong>\n    <p class=\"leading-relaxed\">\n      อ่านประโยคที่กำหนดให้ สังเกตคำบอกใบ้และเครื่องหมายวรรคตอน แล้วเลือกคำตอบที่ถูกต้องที่สุด ต้องได้คะแนนอย่างน้อย <strong>6 จาก 8 ข้อ (&ge; 75%)</strong> เพื่อผ่านเกณฑ์ตัวบ่งชี้ที่ 3.3\n    </p>\n  </div>\n\n  <div class=\"space-y-4\">\n    \n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 1 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 1 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"Ancient Polynesian navigators were <strong>astute</strong> observers of nature, <em>cleverly reading subtle wave patterns, star positions, and bird flights to locate distant islands</em>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What is the closest meaning of the bold word 'astute'?</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(1, 0)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Fearful and reluctant to travel across deep oceans</button>\n        <button onclick=\"app.submitUnit3Game(1, 1)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Careless and unable to notice stars in the night sky</button>\n        <button onclick=\"app.submitUnit3Game(1, 2)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Clever, sharp, and perceptive in noticing details</button>\n      </div>\n      <div id=\"u3-g1-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 2 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 2 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"Many alpine plants enter a state of <strong>dormancy</strong>—<em>a period of suspended growth and biological inactivity</em>—to survive freezing winter blizzards.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Based on the dash definition clue, what does 'dormancy' mean?</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(2, 0)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Rapid flowering and year-round seed production</button>\n        <button onclick=\"app.submitUnit3Game(2, 1)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. A temporary state of rest or biological inactivity</button>\n        <button onclick=\"app.submitUnit3Game(2, 2)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Permanent death caused by summer forest fires</button>\n      </div>\n      <div id=\"u3-g2-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 3 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 3 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"<em>Unlike</em> synthetic plastics that persist in landfills for centuries, <strong>biodegradable</strong> packaging—<em>such as bamboo fiber and cornstarch film</em>—decomposes naturally within months.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Using both contrast and example clues, what does 'biodegradable' mean?</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(3, 0)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Capable of being broken down naturally by living organisms without polluting</button>\n        <button onclick=\"app.submitUnit3Game(3, 1)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Manufactured from heavy industrial metals and toxic petroleum</button>\n        <button onclick=\"app.submitUnit3Game(3, 2)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Completely waterproof and indestructible for centuries</button>\n      </div>\n      <div id=\"u3-g3-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 4 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 4 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"The volcano's eruption was <strong>imminent</strong>; <em>seismic sensors recorded thousands of shallow earthquakes, and thick sulfur smoke billowed from the crater rim</em>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Based on the surrounding general clues, 'imminent' means:</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(4, 0)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Completely extinct and harmless for a million years</button>\n        <button onclick=\"app.submitUnit3Game(4, 1)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Hidden deep beneath the freezing ocean floor</button>\n        <button onclick=\"app.submitUnit3Game(4, 2)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. About to happen very soon</button>\n      </div>\n      <div id=\"u3-g4-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 5 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 5 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"Chef Marco is famous for his <strong>frugal</strong> kitchen management, <em>or thrifty and economical use of every vegetable peel to make rich soup stock</em>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does the word 'frugal' mean based on the synonym clue?</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(5, 0)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Extravagant, wasteful, and careless with money</button>\n        <button onclick=\"app.submitUnit3Game(5, 1)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Economical, thrifty, and avoiding waste</button>\n        <button onclick=\"app.submitUnit3Game(5, 2)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Spicy and heavily seasoned with black pepper</button>\n      </div>\n      <div id=\"u3-g5-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 6 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Context Clue Game &bull; Item 6 [U3-6.2.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"Culinary herbs—<em>including basil, rosemary, thyme, and oregano</em>—contain natural essential oils that <strong>inhibit</strong> bacterial spoilage in food.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">In this context, 'inhibit' most likely means:</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(6, 0)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Accelerate and multiply bacteria rapidly</button>\n        <button onclick=\"app.submitUnit3Game(6, 1)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Cook at an extremely high boiling temperature</button>\n        <button onclick=\"app.submitUnit3Game(6, 2)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Slow down, restrain, or prevent from happening</button>\n      </div>\n      <div id=\"u3-g6-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 7 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Sentence Meaning Analysis &bull; Item 7 [U3-6.2.4, U3-5.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"<em>Despite facing fierce Atlantic headwinds and freezing rain for twelve consecutive days</em>, <strong>the solar-powered catamaran</strong> <strong>completed</strong> <u>its historic transatlantic voyage without burning a drop of fossil fuel</u>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Identify the Core Subject and Main Verb of this complex sentence:</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(7, 0)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Core Subject: 'fierce Atlantic headwinds' | Main Verb: 'facing'</button>\n        <button onclick=\"app.submitUnit3Game(7, 1)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Core Subject: 'the solar-powered catamaran' | Main Verb: 'completed'</button>\n        <button onclick=\"app.submitUnit3Game(7, 2)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Core Subject: 'a drop of fossil fuel' | Main Verb: 'burning'</button>\n      </div>\n      <div id=\"u3-g7-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900\">Item 8 of 8</span>\n        <span class=\"text-[10px] font-mono text-purple-700 bg-purple-50 px-2 py-0.5 rounded\">Sentence Meaning Analysis &bull; Item 8 [U3-6.2.4, U3-5.3]</span>\n      </div>\n      <p class=\"text-xs sm:text-sm font-serif text-slate-800 bg-slate-50 p-3.5 rounded-xl border border-slate-200 leading-relaxed\">\n        \"<strong>Public botanical gardens</strong>, <em>which preserve rare tropical orchids threatened by deforestation</em>, <strong>educate</strong> <u>millions of city visitors about biodiversity conservation every year</u>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What is the main meaning (core message) of this complex sentence?</p>\n      <div class=\"grid grid-cols-1 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(8, 0)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. City visitors destroy rare tropical orchids every year through deforestation</button>\n        <button onclick=\"app.submitUnit3Game(8, 1)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Tropical orchids can only grow inside dark underground caves</button>\n        <button onclick=\"app.submitUnit3Game(8, 2)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-purple-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Public botanical gardens educate millions of visitors annually while preserving rare orchids</button>\n      </div>\n      <div id=\"u3-g8-fb\" class=\"hidden text-xs font-medium p-2.5 rounded-lg\"></div>\n    </div>\n  </div>\n\n  <div id=\"u3-game-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Highlighting Practice\n    </button>\n    <button onclick=\"app.selectStageAndStep('postReading', 'quiz')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: Post-Reading 40-Item Vocabulary & Sentence Quiz</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
-                      }
-                },
-                "postReading": {
-                      "title": "Post-Reading Stage",
-                      "steps": {
-                            "quiz": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-5.6 &bull; U3-6.3.3 &bull; U3-6.3.4</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">40 Questions Total</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Post-Reading Stage: Vocabulary in Context & Sentence Meaning Quiz (40 ข้อ)</h3>\n      <p class=\"text-xs text-slate-500\">แบบทดสอบวัดผลคำศัพท์ในบริบทและโครงสร้างความหมายประโยค 4 บทความ (40 ข้อ • เกณฑ์ผ่าน &ge; 70% หรือ 28/40) [U3-5.6, 6.3.3, 6.3.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Final Stage &bull; 40 Items</span>\n  </div>\n\n  <!-- In-Class Activity Cards [U3-6.3.1, U3-6.3.2] -->\n  <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n    <div class=\"p-4 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1.5\">\n      <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n        <i data-lucide=\"search\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>In-class activity (กิจกรรมในชั้นเรียน): Vocabulary Detective [U3-6.3.1]</span>\n      </div>\n      <p class=\"text-purple-900 leading-relaxed\">\n        <strong>Group Activity (Vocabulary Detective Worksheet):</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อสืบค้นคำศัพท์ที่ไม่คุ้นเคย ระบุชนิดของ Context Clues ที่ใช้ เขียนความหมายที่ถูกต้อง และอธิบายใจความหลักของประโยค\n      </p>\n    </div>\n\n    <div class=\"p-4 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1.5\">\n      <div class=\"flex items-center space-x-2 text-indigo-950 font-bold\">\n        <i data-lucide=\"message-square\" class=\"w-4 h-4 text-indigo-700\"></i>\n        <span>In-class activity (กิจกรรมในชั้นเรียน): Group Discussion [U3-6.3.2]</span>\n      </div>\n      <p class=\"text-indigo-900 leading-relaxed\">\n        <strong>Group Discussion & Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบหน้าชั้นเรียนและอธิบายกระบวนการคิดในการใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายของประโยคซับซ้อน\n      </p>\n    </div>\n  </div>\n\n  <!-- Individual Assessment: 40-Question Vocabulary & Sentence Meaning Quiz [U3-5.6, U3-6.3.3] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-100 shadow-sm space-y-5\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-purple-700 text-white font-bold text-[10px] rounded font-mono\">GRADED 3.3</span>\n          <span class=\"px-2 py-0.5 bg-purple-100 text-purple-800 font-bold text-[10px] rounded font-mono\">U3-5.6 &bull; U3-6.3.3</span>\n          <span class=\"text-xs font-bold text-purple-700\">Pass Mark &ge; 70% (28 / 40)</span>\n        </div>\n        <h4 class=\"text-base font-bold text-slate-900 mt-1\">Individual Assessment: Post-Reading Vocabulary & Sentence Meaning Quiz (40 ข้อ)</h4>\n        <p class=\"text-xs text-slate-500\">วิเคราะห์ความหมายคำศัพท์จากบริบท ชนิดของ Context Clues เครื่องหมายวรรคตอน และใจความหลักของประโยคจาก 4 บทความ</p>\n      </div>\n      <div id=\"u3-test-score-badge\" class=\"text-xs font-bold text-purple-900 bg-purple-100 px-3.5 py-1.5 rounded-xl shrink-0\">\n        Score: <span id=\"u3-test-score\">0 / 40</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-6\" id=\"u3-test-items\">\n      \n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 1 of 4: The Mystery of Bioluminescent Oceans (Questions 1–10)\n        </span>\n        <p>(1) Across tropical coastlines and deep oceanic trenches, sailors have long marveled at <strong>bioluminescence</strong>—the biochemical emission of visible light by living marine organisms. (2) Unlike superficial surface reflections caused by moonlight, this <strong>endogenous</strong> glow is generated internally within specialized cells containing a light-emitting compound called luciferin. (3) Marine predators, <em>such as the deep-sea anglerfish, viperfish, and cookie-cutter shark</em>, utilize glowing lures to entice curious prey into striking distance. (4) Conversely, microscopic plankton known as dinoflagellates flash brilliantly when disturbed by swimming fish; in other words, their sudden illumination acts as a burglar alarm that startles attackers. (5) Because sunlight vanishes completely below two hundred meters, life in the <strong>abyssal</strong> zone—the deepest, pitch-black layer of the ocean—depends heavily on these visual signals for survival. (6) In addition, some squid species expel a <strong>luminous</strong> cloud, <em>or glowing ink mist</em>, to confuse hungry sharks before darting away into the darkness. (7) Although producing biological light requires significant metabolic energy, the evolutionary advantages of <strong>camouflaging</strong> one's silhouette against faint overhead light outweigh the physiological costs. (8) Ultimately, decoding the chemical efficiency of marine light production enables biomedical researchers to track cellular activity inside human tissues without invasive surgery.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q1 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">1. Based on the dash punctuation in Sentence (1), what is the exact meaning of 'bioluminescence'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(1, 0)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The biochemical emission of visible light by living marine organisms</button>\n          <button onclick=\"app.submitUnit3Test(1, 1)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The reflection of silver moonlight on shallow ocean waves</button>\n          <button onclick=\"app.submitUnit3Test(1, 2)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The warming of tropical currents caused by underwater volcanoes</button>\n        </div>\n        <div id=\"u3-t1-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q2 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">2. Which type of context clue is used in Sentence (1) to explain 'bioluminescence'? [U3-4.2.1, 5.1]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(2, 0)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Definition clue signaled by a dash (—)</button>\n          <button onclick=\"app.submitUnit3Test(2, 1)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Antonym clue signaled by 'however'</button>\n          <button onclick=\"app.submitUnit3Test(2, 2)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Example clue signaled by 'for instance'</button>\n        </div>\n        <div id=\"u3-t2-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q3 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">3. In Sentence (2), using the contrast word 'Unlike' and surrounding words, what does 'endogenous' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(3, 0)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Produced or originating from within an organism internally</button>\n          <button onclick=\"app.submitUnit3Test(3, 1)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Reflected from external moonlight on the surface</button>\n          <button onclick=\"app.submitUnit3Test(3, 2)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Artificially manufactured by submarine floodlights</button>\n        </div>\n        <div id=\"u3-t3-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q4 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">4. Why does the author include the phrase 'such as the deep-sea anglerfish, viperfish, and cookie-cutter shark' in Sentence (3)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(4, 0)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To provide an Example Clue illustrating specific marine predators that use glowing lures</button>\n          <button onclick=\"app.submitUnit3Test(4, 1)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To give an Antonym Clue contrasting sharks with freshwater frogs</button>\n          <button onclick=\"app.submitUnit3Test(4, 2)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To state the concluding summary of the entire passage</button>\n        </div>\n        <div id=\"u3-t4-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q5 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">5. In Sentence (3), the word 'entice' ('utilize glowing lures to entice curious prey into striking distance') most nearly means: [U3-4.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(5, 0)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Attract, tempt, or lure closer</button>\n          <button onclick=\"app.submitUnit3Test(5, 1)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Frighten and chase away permanently</button>\n          <button onclick=\"app.submitUnit3Test(5, 2)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Digest food slowly inside the stomach</button>\n        </div>\n        <div id=\"u3-t5-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q6 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">6. In Sentence (4), what is the function of the signal phrase 'in other words'? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(6, 0)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. It introduces a restatement explaining how the plankton's flash works like a burglar alarm</button>\n          <button onclick=\"app.submitUnit3Test(6, 1)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. It signals a chronological timeline of ancient ocean history</button>\n          <button onclick=\"app.submitUnit3Test(6, 2)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. It contradicts the scientific facts stated in Sentence (1)</button>\n        </div>\n        <div id=\"u3-t6-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q7 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">7. Based on the double dashes (— ... —) in Sentence (5), what does 'abyssal' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(7, 0)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Relating to the deepest, pitch-black layer of the ocean where sunlight vanishes</button>\n          <button onclick=\"app.submitUnit3Test(7, 1)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Relating to shallow, sunlit coral reefs near sandy beaches</button>\n          <button onclick=\"app.submitUnit3Test(7, 2)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Relating to high mountain lakes above the clouds</button>\n        </div>\n        <div id=\"u3-t7-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q8 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">8. In Sentence (6), what clue reveals that 'luminous' means 'glowing or emitting light'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(8, 0)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The synonym clue ', or glowing ink mist,' set off by commas</button>\n          <button onclick=\"app.submitUnit3Test(8, 1)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The contrast word 'Although' in Sentence (7)</button>\n          <button onclick=\"app.submitUnit3Test(8, 2)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The word 'sharks' at the end of the clause</button>\n        </div>\n        <div id=\"u3-t8-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q9 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">9. Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (7) ('Although producing biological light requires..., the evolutionary advantages of camouflaging... outweigh the physiological costs'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(9, 0)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'the evolutionary advantages' | Main Verb: 'outweigh'</button>\n          <button onclick=\"app.submitUnit3Test(9, 1)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'producing biological light' | Main Verb: 'requires'</button>\n          <button onclick=\"app.submitUnit3Test(9, 2)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'faint overhead light' | Main Verb: 'camouflaging'</button>\n        </div>\n        <div id=\"u3-t9-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q10 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">10. What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(10, 0)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Understanding how marine creatures produce light helps medical scientists observe human cells without performing invasive surgery</button>\n          <button onclick=\"app.submitUnit3Test(10, 1)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Biomedical researchers must perform surgery on deep-sea sharks to extract luciferin</button>\n          <button onclick=\"app.submitUnit3Test(10, 2)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Human tissues naturally glow in the dark when exposed to tropical seawater</button>\n        </div>\n        <div id=\"u3-t10-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 2 of 4: The Pompeii of the East — Ancient Cave Preservation (Questions 11–20)\n        </span>\n        <p>(1) Carved into sheer sandstone cliffs along the Silk Road, the Mogao Caves contain a <strong>priceless</strong>—that is, immeasurably valuable and irreplaceable—collection of ancient Buddhist murals and manuscripts. (2) For over a millennium, the region's <strong>arid</strong> desert climate, <em>characterized by bone-dry air and less than forty millimeters of annual rainfall</em>, naturally preserved the delicate mineral pigments from rotting. (3) However, rapid modern tourism has introduced a <strong>detrimental</strong> new threat; specifically, the warm moisture exhaled by thousands of daily visitors causes mural plaster to blister and flake off. (4) Whereas ancient monks worked in <strong>solitude</strong> (complete isolation and quiet seclusion), modern conservationists collaborate in international scientific teams to rescue the deteriorating artwork. (5) Fragile organic artifacts, <em>including silk banners, hemp paper scrolls, and wooden sculptures</em>, are particularly vulnerable to sudden humidity spikes. (6) To combat this degradation, engineers installed <strong>autonomous</strong> environmental sensors, <em>or self-operating digital monitors</em>, inside every grotto. (7) Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry and diverts tourists to <strong>replicas</strong>—exact full-scale reconstructions of the original caves. (8) By balancing public cultural education with stringent microclimate control, heritage specialists ensure that these ancient masterpieces endure for future generations.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q11 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">11. In Sentence (1), what does the word 'priceless' mean based on the signal phrase 'that is'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(11, 0)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Immeasurably valuable and irreplaceable</button>\n          <button onclick=\"app.submitUnit3Test(11, 1)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Having zero financial or historical worth</button>\n          <button onclick=\"app.submitUnit3Test(11, 2)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Recently painted by modern tourists</button>\n        </div>\n        <div id=\"u3-t11-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q12 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">12. In Sentence (2), which clue explains the meaning of the word 'arid'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(12, 0)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The appositive phrase between commas: 'characterized by bone-dry air and less than forty millimeters of annual rainfall'</button>\n          <button onclick=\"app.submitUnit3Test(12, 1)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The phrase 'Carved into sheer sandstone cliffs' in Sentence (1)</button>\n          <button onclick=\"app.submitUnit3Test(12, 2)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The word 'monks' in Sentence (4)</button>\n        </div>\n        <div id=\"u3-t12-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q13 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">13. Based on the general cause-and-effect clue in Sentence (3) ('causes mural plaster to blister and flake off'), what does 'detrimental' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(13, 0)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Harmful, damaging, or causing injury</button>\n          <button onclick=\"app.submitUnit3Test(13, 1)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Beneficial and restorative to ancient paint</button>\n          <button onclick=\"app.submitUnit3Test(13, 2)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Expensive to photograph</button>\n        </div>\n        <div id=\"u3-t13-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q14 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">14. In Sentence (4), how is the meaning of 'solitude' unlocked for the reader? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(14, 0)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Both through parentheses '(complete isolation and quiet seclusion)' and the contrast word 'Whereas' comparing it with 'collaborate in teams'</button>\n          <button onclick=\"app.submitUnit3Test(14, 1)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Through a numerical statistic about rainfall</button>\n          <button onclick=\"app.submitUnit3Test(14, 2)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Through an example of silk banners and wooden sculptures</button>\n        </div>\n        <div id=\"u3-t14-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q15 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">15. In Sentence (5), why does the author list 'silk banners, hemp paper scrolls, and wooden sculptures'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(15, 0)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. As an Example Clue (signaled by 'including') to show what kinds of 'fragile organic artifacts' exist in the caves</button>\n          <button onclick=\"app.submitUnit3Test(15, 1)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. As an Antonym Clue proving that stone cliffs are softer than paper</button>\n          <button onclick=\"app.submitUnit3Test(15, 2)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. As a Definition Clue for computer sensors</button>\n        </div>\n        <div id=\"u3-t15-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q16 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">16. In Sentence (6), the phrase ', or self-operating digital monitors,' provides which type of context clue for 'autonomous'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(16, 0)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Synonym / Restatement clue signaled by ', or'</button>\n          <button onclick=\"app.submitUnit3Test(16, 1)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Antonym clue signaled by 'however'</button>\n          <button onclick=\"app.submitUnit3Test(16, 2)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Chronological sequence clue</button>\n        </div>\n        <div id=\"u3-t16-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q17 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">17. Based on the dash clue in Sentence (7), what are 'replicas'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(17, 0)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Exact full-scale reconstructions or copies of the original caves</button>\n          <button onclick=\"app.submitUnit3Test(17, 1)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Ancient monks who guarded the Silk Road</button>\n          <button onclick=\"app.submitUnit3Test(17, 2)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Natural sandstorms that erode desert cliffs</button>\n        </div>\n        <div id=\"u3-t17-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q18 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">18. In Sentence (8), what does 'stringent' ('stringent microclimate control') most likely mean in context? [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(18, 0)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Strict, precise, and tightly regulated</button>\n          <button onclick=\"app.submitUnit3Test(18, 1)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Careless, relaxed, and unmonitored</button>\n          <button onclick=\"app.submitUnit3Test(18, 2)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Ancient and traditional</button>\n        </div>\n        <div id=\"u3-t18-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q19 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">19. Sentence Meaning Analysis: In Sentence (7) ('Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry...'), what is the Core Subject and Main Verb? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(19, 0)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'the computer network' | Main Verb: 'restricts (and diverts)'</button>\n          <button onclick=\"app.submitUnit3Test(19, 1)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'safe thresholds' | Main Verb: 'exceed'</button>\n          <button onclick=\"app.submitUnit3Test(19, 2)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'original caves' | Main Verb: 'reconstructions'</button>\n        </div>\n        <div id=\"u3-t19-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q20 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">20. What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(20, 0)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Combining public education with strict climate control allows experts to protect ancient cave art for the future</button>\n          <button onclick=\"app.submitUnit3Test(20, 1)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Heritage specialists decided to close all museums permanently to stop public education</button>\n          <button onclick=\"app.submitUnit3Test(20, 2)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Future generations will no longer be interested in viewing Buddhist murals</button>\n        </div>\n        <div id=\"u3-t20-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 3 of 4: The Architecture of Vertical Forests in Modern Cities (Questions 21–30)\n        </span>\n        <p>(1) As metropolitan populations swell and horizontal land becomes scarce, visionary architects are constructing <strong>arboricultural</strong> skyscrapers—high-rise residential towers covered in thousands of living trees and shrubs. (2) Pioneered in Milan, Italy, the famous Bosco Verticale houses nine hundred trees across its cantilevered balconies; <em>in other words</em>, the building functions as a vertical forest equivalent to two hectares of flat woodland. (3) These suspended ecosystems <strong>mitigate</strong> urban air pollution by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles on their leaves. (4) Furthermore, dense foliage acts as a natural thermal buffer: <em>whereas</em> bare glass facades amplify scorching summer heat, leafy balconies shade interior apartments and reduce air-conditioning demand by thirty percent. (5) Botanical engineers select <strong>hardy</strong> plant species—<em>such as holm oaks, wild olives, and rosemary</em>—that can withstand fierce high-altitude winds. (6) To prevent falling branches during severe gales, giant steel safety cages <strong>anchor</strong> (securely fasten and hold down) the root bulbs to the reinforced concrete floor slabs. (7) Irrigation is managed through a <strong>closed-loop</strong> hydrological system, which recycles greywater from residents' sinks and showers to nourish the balcony gardens. (8) Consequently, integrating living nature directly into high-density housing restores urban biodiversity while significantly improving residents' respiratory and psychological health.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q21 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">21. Using the dash clue in Sentence (1), what does 'arboricultural' mean when describing skyscrapers? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(21, 0)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Involving the cultivation and integration of living trees and shrubs</button>\n          <button onclick=\"app.submitUnit3Test(21, 1)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Constructed entirely out of recycled ocean plastic</button>\n          <button onclick=\"app.submitUnit3Test(21, 2)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Built underground beneath subway tunnels</button>\n        </div>\n        <div id=\"u3-t21-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q22 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">22. In Sentence (2), why does the author use the signal phrase 'in other words'? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(22, 0)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To restate the scale of the 900 balcony trees by comparing them to two hectares of flat woodland</button>\n          <button onclick=\"app.submitUnit3Test(22, 1)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To introduce an opposite opinion that criticizes Italian architects</button>\n          <button onclick=\"app.submitUnit3Test(22, 2)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To list the names of the residents living in Milan</button>\n        </div>\n        <div id=\"u3-t22-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q23 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">23. Based on the surrounding context in Sentence (3) ('by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles'), what does 'mitigate' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(23, 0)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Reduce, lessen, or make less severe</button>\n          <button onclick=\"app.submitUnit3Test(23, 1)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Create and worsen air pollution</button>\n          <button onclick=\"app.submitUnit3Test(23, 2)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Measure with a thermometer</button>\n        </div>\n        <div id=\"u3-t23-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q24 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">24. In Sentence (4), what context clue helps explain how 'leafy balconies' work as a 'thermal buffer'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(24, 0)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. An Antonym / Contrast clue signaled by 'whereas', contrasting heat-amplifying glass facades with shade-providing leafy balconies</button>\n          <button onclick=\"app.submitUnit3Test(24, 1)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. A Parentheses clue giving the Latin name of oak trees</button>\n          <button onclick=\"app.submitUnit3Test(24, 2)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. A Synonym clue signaled by ', or'</button>\n        </div>\n        <div id=\"u3-t24-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q25 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">25. In Sentence (5), what does the word 'hardy' mean based on the clause 'that can withstand fierce high-altitude winds'? [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(25, 0)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Robust, resilient, and able to survive harsh weather conditions</button>\n          <button onclick=\"app.submitUnit3Test(25, 1)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Delicate, fragile, and easily killed by a light breeze</button>\n          <button onclick=\"app.submitUnit3Test(25, 2)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Artificial and made of silk</button>\n        </div>\n        <div id=\"u3-t25-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q26 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">26. What is the role of '—such as holm oaks, wild olives, and rosemary—' in Sentence (5)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(26, 0)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. It provides an Example Clue naming specific hardy plant species selected by engineers</button>\n          <button onclick=\"app.submitUnit3Test(26, 1)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. It defines the meaning of reinforced concrete</button>\n          <button onclick=\"app.submitUnit3Test(26, 2)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. It contrasts tall skyscrapers with rural cottages</button>\n        </div>\n        <div id=\"u3-t26-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q27 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">27. Based on the parentheses clue in Sentence (6), what does the verb 'anchor' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(27, 0)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Securely fasten and hold down in place</button>\n          <button onclick=\"app.submitUnit3Test(27, 1)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Trim and prune dead leaves</button>\n          <button onclick=\"app.submitUnit3Test(27, 2)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Water plants with recycled rainwater</button>\n        </div>\n        <div id=\"u3-t27-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q28 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">28. In Sentence (7), how does the author explain the meaning of a 'closed-loop' hydrological system? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(28, 0)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Through the relative clause ', which recycles greywater from residents' sinks and showers to nourish the balcony gardens'</button>\n          <button onclick=\"app.submitUnit3Test(28, 1)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. By contrasting it with desert sandstorms</button>\n          <button onclick=\"app.submitUnit3Test(28, 2)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. By listing three types of Italian pasta</button>\n        </div>\n        <div id=\"u3-t28-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q29 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">29. Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (8) ('Consequently, integrating living nature directly into high-density housing restores urban biodiversity while...'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(29, 0)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'integrating living nature (directly into high-density housing)' | Main Verb: 'restores'</button>\n          <button onclick=\"app.submitUnit3Test(29, 1)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'urban biodiversity' | Main Verb: 'improving'</button>\n          <button onclick=\"app.submitUnit3Test(29, 2)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'psychological health' | Main Verb: 'integrating'</button>\n        </div>\n        <div id=\"u3-t29-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q30 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">30. Which statement best captures the main meaning of Passage 3 as a whole? [U3-5.3, 6.3.3]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(30, 0)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Vertical forest skyscrapers integrate living trees into high-rise buildings to clean urban air, save energy, recycle water, and boost human and ecological health</button>\n          <button onclick=\"app.submitUnit3Test(30, 1)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. High-altitude winds in Milan are too dangerous for any plants to grow on apartment balconies</button>\n          <button onclick=\"app.submitUnit3Test(30, 2)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Residents of Bosco Verticale must carry water buckets up the stairs every morning to water 900 oak trees</button>\n        </div>\n        <div id=\"u3-t30-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 4 of 4: The Neuroscience of Bilingualism and the Aging Brain (Questions 31–40)\n        </span>\n        <p>(1) Neuroscientists using advanced brain-imaging technology have overturned the outdated misconception that speaking two languages causes <strong>cognitive</strong> confusion—mental disorder or intellectual delay—in young children. (2) On the contrary, managing two active linguistic systems simultaneously strengthens the brain's <strong>executive control network</strong>, <em>which governs attention, task-switching, and impulse inhibition</em>. (3) Because both languages remain active in a bilingual person's mind, the prefrontal cortex must constantly select the target word while suppressing <strong>intrusion</strong> (unwanted interference) from the other language. (4) This lifelong mental workout builds <strong>cognitive reserve</strong>, <em>or extra neural resilience that helps the brain compensate for age-related tissue decline</em>. (5) Clinical longitudinal studies—<em>such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad</em>—reveal a striking protective benefit. (6) Specifically, lifelong bilinguals develop symptoms of <strong>dementia</strong>, a severe loss of memory and reasoning ability, an average of four to five years later than monolingual adults. (7)Whereas physical exercise fortifies cardiovascular muscles, juggling multiple vocabularies <strong>enhances</strong> neuroplasticity by forging denser white-matter connections between brain hemispheres. (8) Even adults who acquire a second language in middle age experience measurable improvements in mental <strong>agility</strong>, <em>meaning quickness and flexibility of thought</em>, proving that it is never too late to reshape the human brain.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q31 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">31. Based on the dash clue in Sentence (1), 'cognitive confusion' refers to: [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(31, 0)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Mental disorder or intellectual delay</button>\n          <button onclick=\"app.submitUnit3Test(31, 1)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Physical muscle fatigue in the legs</button>\n          <button onclick=\"app.submitUnit3Test(31, 2)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Fluency in speaking multiple dialects</button>\n        </div>\n        <div id=\"u3-t31-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q32 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">32. In Sentence (2), how does the author explain what the 'executive control network' does? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(32, 0)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Using a comma and the relative clause 'which governs attention, task-switching, and impulse inhibition'</button>\n          <button onclick=\"app.submitUnit3Test(32, 1)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Using parentheses to list three cities in India</button>\n          <button onclick=\"app.submitUnit3Test(32, 2)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Using an antonym comparing children with elderly patients</button>\n        </div>\n        <div id=\"u3-t32-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q33 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">33. Based on the parentheses in Sentence (3), what does 'intrusion' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(33, 0)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Unwanted interference</button>\n          <button onclick=\"app.submitUnit3Test(33, 1)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Accurate pronunciation</button>\n          <button onclick=\"app.submitUnit3Test(33, 2)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Rapid memorization</button>\n        </div>\n        <div id=\"u3-t33-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q34 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">34. In Sentence (4), which context clue unlocks the meaning of 'cognitive reserve'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(34, 0)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. A Synonym / Definition clue signaled by ', or extra neural resilience that helps the brain compensate for age-related tissue decline'</button>\n          <button onclick=\"app.submitUnit3Test(34, 1)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. An Example clue listing hospital equipment</button>\n          <button onclick=\"app.submitUnit3Test(34, 2)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. An Antonym clue signaled by 'however'</button>\n        </div>\n        <div id=\"u3-t34-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q35 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">35. Why does the author include '—such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad—' in Sentence (5)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(35, 0)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To give concrete Examples of clinical longitudinal studies conducted across different countries</button>\n          <button onclick=\"app.submitUnit3Test(35, 1)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To prove that only people living in cold climates can learn two languages</button>\n          <button onclick=\"app.submitUnit3Test(35, 2)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To define the medical term 'prefrontal cortex'</button>\n        </div>\n        <div id=\"u3-t35-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q36 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">36. In Sentence (6), what does 'dementia' mean, and how do we know? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(36, 0)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. 'A severe loss of memory and reasoning ability' — explained by the appositive phrase between commas</button>\n          <button onclick=\"app.submitUnit3Test(36, 1)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. 'Speaking a single language' — explained by the word 'monolingual'</button>\n          <button onclick=\"app.submitUnit3Test(36, 2)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. 'High blood pressure' — explained by Sentence (7)</button>\n        </div>\n        <div id=\"u3-t36-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q37 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">37. Using Sentence (1) ('speaking two languages') and Sentence (6) ('four to five years later than monolingual adults'), what does 'monolingual' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(37, 0)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Speaking or using only one single language (contrasted with 'bilingual')</button>\n          <button onclick=\"app.submitUnit3Test(37, 1)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Speaking four or five languages fluently</button>\n          <button onclick=\"app.submitUnit3Test(37, 2)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Suffering from severe hearing loss</button>\n        </div>\n        <div id=\"u3-t37-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q38 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">38. In Sentence (7), based on the context 'by forging denser white-matter connections between brain hemispheres', the verb 'enhances' means: [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(38, 0)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Improves, strengthens, or increases in quality</button>\n          <button onclick=\"app.submitUnit3Test(38, 1)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Destroys and weakens permanently</button>\n          <button onclick=\"app.submitUnit3Test(38, 2)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Ignores and overlooks</button>\n        </div>\n        <div id=\"u3-t38-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q39 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">39. In Sentence (8), what does 'agility' ('mental agility') mean based on the signal word 'meaning'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(39, 0)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Quickness and flexibility of thought</button>\n          <button onclick=\"app.submitUnit3Test(39, 1)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Slowness and rigidity of memory</button>\n          <button onclick=\"app.submitUnit3Test(39, 2)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Exhaustion after taking a test</button>\n        </div>\n        <div id=\"u3-t39-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q40 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">40. Sentence Meaning Analysis: Identify the Core Subject, Main Verb, and Main Meaning of Sentence (8) ('Even adults who acquire a second language in middle age experience measurable improvements in mental agility...'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(40, 0)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'adults' | Main Verb: 'experience' | Meaning: Learning a second language in middle age still significantly improves mental quickness and brain flexibility</button>\n          <button onclick=\"app.submitUnit3Test(40, 1)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'middle age' | Main Verb: 'acquire' | Meaning: Only young children can learn a second language</button>\n          <button onclick=\"app.submitUnit3Test(40, 2)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'the human brain' | Main Verb: 'reshape' | Meaning: Adults lose their memory when studying vocabulary</button>\n        </div>\n        <div id=\"u3-t40-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n    </div>\n\n    <div id=\"u3-test-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n  </div>\n\n  <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center space-x-2 border-b border-slate-100 pb-2.5 text-purple-900 font-bold text-sm\">\n      <i data-lucide=\"alert-triangle\" class=\"w-4 h-4 text-amber-500\"></i>\n      <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1.5 text-rose-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-rose-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-rose-600\"></i>\n          <span>Mistake 1: มองข้ามเครื่องหมายวรรคตอน</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          ผู้เรียนมักข้ามข้อความในเครื่องหมายขีดยาว <code>— ... —</code> หรือวงเล็บ <code>( ... )</code> ทั้งที่ผู้เขียนตั้งใจวางคำแปลหรือนิยามของคำศัพท์ยากไว้ตรงนั้นพอดี\n        </p>\n      </div>\n\n      <div class=\"p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1.5 text-amber-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-amber-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-amber-600\"></i>\n          <span>Mistake 2: แปลตรงข้ามเมื่อเจอ Antonym</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          เมื่อเจอคำว่า <em>'Unlike'</em> หรือ <em>'Whereas'</em> ผู้เรียนบางคนเผลอนำคำคุณศัพท์ข้างเคียงมาตอบเป็นความหมายเดียวกัน ทั้งที่ต้องกลับขั้วเป็นความหมายตรงกันข้าม\n        </p>\n      </div>\n\n      <div class=\"p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1.5 text-purple-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-purple-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-purple-600\"></i>\n          <span>Mistake 3: หลงในส่วนขยายของประโยคยาว</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          เมื่อประโยคมีอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) มักสับสนว่าคำนามในส่วนขยายคือประธานหลัก ให้ตัดส่วนขยายในคอมมาออกก่อนเสมอเพื่อหา Subject + Verb แท้\n        </p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Unit 3 Performance Score Summary Dashboard [U3-6.3.4] -->\n  <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl space-y-3\">\n    <div class=\"flex items-center justify-between text-purple-950 font-bold text-sm\">\n      <span class=\"flex items-center space-x-2\">\n        <i data-lucide=\"trophy\" class=\"w-4 h-4 text-amber-500\"></i>\n        <span>Unit 3 Performance Score Summary (สรุปผลคะแนนประจำ Unit 3) [U3-6.3.4]</span>\n      </span>\n      <span class=\"text-[10px] font-mono bg-purple-200/80 px-2 py-0.5 rounded\">Indicator 3.3 Status (&ge;70%)</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n      <div class=\"p-3 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1\">\n        <span class=\"text-slate-500 text-[11px] block\">1. Context Clue Game & Sentence Practice (While-Reading)</span>\n        <div class=\"flex items-center justify-between\">\n          <span id=\"summary-u3-game\" class=\"font-bold text-purple-900 text-sm\">-- / 8</span>\n          <span id=\"badge-u3-game\" class=\"text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-600\">Pending</span>\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1\">\n        <span class=\"text-slate-500 text-[11px] block\">2. Post-Reading Vocabulary & Sentence Quiz (40 ข้อ)</span>\n        <div class=\"flex items-center justify-between\">\n          <span id=\"summary-u3-test\" class=\"font-bold text-purple-900 text-sm\">-- / 40</span>\n          <span id=\"badge-u3-test\" class=\"text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-600\">Pending</span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation & Review Unit -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('whileReading', 'practice')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Context Clue Game\n    </button>\n    <button onclick=\"app.selectStageAndStep('preReading', 'overview')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md\">\n      <i data-lucide=\"rotate-ccw\" class=\"w-4 h-4\"></i>\n      <span>Review Unit 3 from Start ↺</span>\n    </button>\n  </div>\n</div>\n"
-                      }
-                }
-          }
-    },
-    {
-      id: 4,
-      code: "UNIT-04",
-      title: "References, Connectives & Text Organization",
-      thaiTitle: "คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ",
-      scope: "Reference words, connectives, paragraph organization, text structure practice",
-      description: "Identify pronoun references (it, they, which) and logical transitions (however, furthermore, as a result).",
-      cefr: "B1",
-      stages: {
-        preReading: {
-          title: "Pre-Reading Stage",
-          steps: {
-            overview: "Pronouns like 'it', 'they', 'this', and 'these' refer back to nouns mentioned earlier.",
-            learn: "Find the antecedent by matching number (singular/plural) and meaning in the previous sentence."
+      "id": 3,
+      "code": "UNIT-03",
+      "title": "Vocabulary in Context & Sentence Meaning",
+      "thaiTitle": "การเดาความหมายคำศัพท์จากบริบทและการเข้าใจความหมายของประโยค (Unlocking Textual Meaning)",
+      "scope": "Context clues (definition, synonym, antonym, example, general), signal words & punctuation, sentence meaning (subject, verb, key info), Context Clue Game, Vocabulary Quiz",
+      "description": "Unlock unfamiliar vocabulary using 5 types of context clues and punctuation markers, and analyze complex sentences by identifying core subjects, verbs, and supporting details.",
+      "cefr": "A2-B1",
+      "stages": {
+        "preReading": {
+          "title": "Pre-Reading Stage",
+          "steps": {
+            "overview": "\n<div class=\"space-y-6\">\n  <!-- Unit Header & Syllabus Ref -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.1.1 &bull; U3-6.1.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">CEFR A2–B1 (Short Stories)</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Overview & Warm-Up</h3>\n      <p class=\"text-xs text-slate-500\">บทนำสู่บทเรียนและกิจกรรมอุ่นเครื่อง: การเดาความหมายคำศัพท์จากบริบทและประโยคผ่านเรื่องสั้นอ่านสนุก (Short Stories in English)</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">\n      Course 2031103 &bull; Section 6.1\n    </span>\n  </div>\n\n  <!-- Objectives & Concept Model Grid [U3-4, U3-6.1.1] -->\n  <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n    <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n        <i data-lucide=\"target\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit Learning Objectives (วัตถุประสงค์การเรียนรู้) [U3-4, U3-6.1.1]</span>\n      </div>\n      <ul class=\"text-xs text-slate-700 space-y-2 leading-relaxed\">\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">1</span>\n          <span><strong>Five Context Clue Types:</strong> ใช้บริบทแวดล้อม 5 ประเภท (Definitions, Synonyms, Antonyms, Examples, General Clues) เพื่อเดาความหมายคำศัพท์ในนิทานและเรื่องสั้นโดยไม่ต้องเปิดดิกชันนารี <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.1, 5.1]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">2</span>\n          <span><strong>Signal Words & Punctuation:</strong> สังเกตคำบอกใบ้และเครื่องหมายวรรคตอน (commas, dashes, parentheses, such as, but, in other words) ที่ซ่อนคำแปลไว้ในประโยค <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.2, 5.2]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">3</span>\n          <span><strong>Sentence Meaning Analysis:</strong> เข้าใจความหมายของประโยคโดยแยกแยะประธานหลัก (Subject: ใคร/อะไร) + กริยาหลัก (Verb: ทำอะไร) + ใจความสำคัญ <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-4.2.3, 5.3]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">4</span>\n          <span><strong>Graded Mastery (Indicator 3.3):</strong> ทำกิจกรรม Context Clue Game และ Vocabulary Quiz จากเรื่องสั้นผ่านเกณฑ์ไม่ต่ำกว่า 70% <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U3-3.3, 5.5, 5.6]</span></span>\n        </li>\n      </ul>\n    </div>\n\n    <!-- Mind Map Card [U3-6.1.1] -->\n    <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 to-indigo-50/90 rounded-2xl border border-purple-200/80 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n          <i data-lucide=\"key\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>Unlocking Story Meaning Framework [U3-6.1.1]</span>\n        </div>\n        <span class=\"text-[10px] font-mono bg-purple-200/80 text-purple-900 px-2 py-0.5 rounded font-bold\">2-Pillar Model</span>\n      </div>\n      \n      <div class=\"space-y-2.5 text-xs\">\n        <div class=\"p-2.5 bg-amber-100 border border-amber-300 rounded-xl text-amber-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-amber-500 text-white flex items-center justify-center font-bold text-[10px]\">1</span>\n            <span><strong>Pillar 1: Context Clues (เบาะแสคำศัพท์ 5 รูปแบบ) [U3-5.1, 5.2]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-amber-900 pl-7\">Definition &bull; Synonym &bull; Antonym &bull; Example &bull; General Clues + Punctuation (, — ())</p>\n        </div>\n\n        <div class=\"p-2.5 bg-emerald-100 border border-emerald-300 rounded-xl text-emerald-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]\">2</span>\n            <span><strong>Pillar 2: Sentence Meaning (แก่นของประโยค) [U3-5.3, 5.4]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-emerald-900 pl-7\">Core Subject (ใคร/อะไร) + Main Verb (ทำอะไร) + Key Story Detail (ที่ไหน/อย่างไร)</p>\n        </div>\n\n        <div class=\"p-2 bg-sky-100 border border-sky-300 rounded-xl text-sky-950 font-medium flex items-center space-x-2\">\n          <span class=\"w-5 h-5 rounded-md bg-sky-600 text-white flex items-center justify-center font-bold text-[10px]\">✓</span>\n          <span><strong>Result:</strong> อ่านเรื่องสั้นภาษาอังกฤษสนุกเข้าใจง่าย ไม่ต้องสะดุดเปิดแปลทุกคำ!</span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Warm-Up Activity: Guess Meaning Without a Dictionary [U3-6.1.2] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-200 shadow-sm space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"w-6 h-6 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">⚡</span>\n        <h4 class=\"font-bold text-slate-900 text-sm sm:text-base\">Warm-Up Activity: Story Word Detective (No Dictionary!) [U3-6.1.2]</h4>\n      </div>\n      <span class=\"text-[11px] font-bold text-pink-700 bg-pink-100 px-2.5 py-1 rounded-full\">Story: A Very Unusual Excursion</span>\n    </div>\n\n    <p class=\"text-xs text-slate-600\">\n      ลองอ่านประโยคจากเรื่องสั้น <em>\"A Very Unusual Excursion\"</em> ด้านล่าง แล้วใช้ <strong>คำบอกใบ้และเครื่องหมายขีดยาว (—)</strong> ทายความหมายของคำที่ขีดเส้นใต้โดยไม่ต้องใช้ดิกชันนารี:\n    </p>\n\n    <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n      <div class=\"text-[10px] font-sans font-bold text-purple-300 uppercase tracking-wider mb-1\">Warm-Up Story Sentence</div>\n      <p>\n        \"Every weekend, Sylvia puts her things in a backpack and walks in the woods near Lake Ullswater because she is a <span class=\"text-amber-300 font-bold underline\">hiker</span>—a person who enjoys long walks in the countryside.\"\n      </p>\n    </div>\n\n    <!-- Warm-Up Question -->\n    <div class=\"p-4 bg-purple-50/80 rounded-xl border border-purple-200/90 space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n          <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>จากบริบทในประโยค คำว่า \"hiker\" มีความหมายตรงกับข้อใด?</span>\n        </span>\n        <span class=\"text-[10px] font-mono bg-purple-200 text-purple-900 px-2 py-0.5 rounded font-bold\">U3-6.1.2</span>\n      </div>\n\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.checkUnit3Warmup(1)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">A</span>\n          <span>คนขับรถแท็กซี่รับส่งผู้โดยสารในเมือง (A city taxi driver)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(2)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">B</span>\n          <span>นักเดินป่า หรือผู้ที่ชอบเดินชมธรรมชาติระยะไกล (A person who enjoys long walks in the countryside)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(3)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">C</span>\n          <span>ช่างซ่อมนาฬิกาโบราณริมชายหาด (A person who repairs old watches)</span>\n        </button>\n        <button onclick=\"app.checkUnit3Warmup(4)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">D</span>\n          <span>พ่อครัวทำอาหารสเปนในร้านอาหาร (A chef who cooks Spanish food)</span>\n        </button>\n      </div>\n\n      <div id=\"u3-warmup-feedback\" class=\"hidden p-3 rounded-xl text-xs font-medium\"></div>\n    </div>\n\n    <div class=\"flex justify-end pt-2\">\n      <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n        <span>Next: Key Concepts & Pre-Reading Context Clue Game</span>\n        <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n",
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.1.3..6.1.5 &bull; U3-5.1..5.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Key Concepts</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Five Context Clues, Signals & Mini Game</h3>\n      <p class=\"text-xs text-slate-500\">เรียนรู้บริบท 5 ประเภทจากเรื่องสั้น, เครื่องหมายวรรคตอนบอกใบ้ และเกมทบทวนก่อนอ่าน [U3-5.1, 5.2, 6.1.3, 6.1.4, 6.1.5]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 2 in Pre-Reading</span>\n  </div>\n\n  <!-- 1. The Five Main Types of Context Clues [U3-5.1, U3-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"compass\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">1. Five Main Types of Context Clues (บริบทแวดล้อม 5 ประเภทในเรื่องสั้น) [U3-5.1, U3-6.1.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Content 5.1</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 text-xs\">\n      <!-- Type 1: Definition -->\n      <div class=\"p-3.5 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-purple-950\">\n          <span>1. Definition / Restatement</span>\n          <span class=\"text-[10px] bg-purple-200 text-purple-900 px-2 py-0.5 rounded\">คำจำกัดความ</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">ผู้เขียนบอกความหมายของคำศัพท์ไว้ตรงๆ ในประโยคเดียวกัน</p>\n        <div class=\"p-2 bg-white rounded-lg border border-purple-100 text-[11px] text-purple-950\">\n          <strong>Signals:</strong> <em>means, refers to, is / are, that is, in other words</em><br>\n          <strong>Story Ex:</strong> \"Carl was a <strong>watchmaker</strong>, <em>which means a person who makes and repairs watches</em>.\"\n        </div>\n      </div>\n\n      <!-- Type 2: Synonym -->\n      <div class=\"p-3.5 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-emerald-950\">\n          <span>2. Synonym Clue</span>\n          <span class=\"text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded\">คำพ้องความหมาย</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">วางคำที่มีความหมายเหมือนกันและเข้าใจง่ายกว่าไว้ข้างๆ</p>\n        <div class=\"p-2 bg-white rounded-lg border border-emerald-100 text-[11px] text-emerald-950\">\n          <strong>Signals:</strong> <em>or, also known as, commas (, or ...)</em><br>\n          <strong>Story Ex:</strong> \"The number 35 bus is normally <strong>packed</strong>, <em>or very full of people</em>, at lunchtime.\"\n        </div>\n      </div>\n\n      <!-- Type 3: Antonym / Contrast -->\n      <div class=\"p-3.5 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-rose-950\">\n          <span>3. Antonym / Contrast</span>\n          <span class=\"text-[10px] bg-rose-200 text-rose-900 px-2 py-0.5 rounded\">คำตรงข้าม</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">บอกความหมายโดยเปรียบเทียบกับสิ่งที่ตรงกันข้าม</p>\n        <div class=\"p-2 bg-white rounded-lg border border-rose-100 text-[11px] text-rose-950\">\n          <strong>Signals:</strong> <em>but, however, unlike, whereas, while</em><br>\n          <strong>Story Ex:</strong> \"<em>Unlike</em> her brother who loves talking to strangers, Julia is very <strong>shy</strong> and quiet.\"\n        </div>\n      </div>\n\n      <!-- Type 4: Example -->\n      <div class=\"p-3.5 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-amber-950\">\n          <span>4. Example Clue</span>\n          <span class=\"text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded\">การยกตัวอย่าง</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">ยกตัวอย่างสิ่งของหรือการกระทำเพื่อให้เดาความหมายคำหลักได้</p>\n        <div class=\"p-2 bg-white rounded-lg border border-amber-100 text-[11px] text-amber-950\">\n          <strong>Signals:</strong> <em>such as, including, for example, like</em><br>\n          <strong>Story Ex:</strong> \"The guards carried <strong>weapons</strong>, <em>such as swords, knives, and bows</em>, to protect the gold.\"\n        </div>\n      </div>\n\n      <!-- Type 5: General / Inference Clue -->\n      <div class=\"p-3.5 bg-sky-50/80 border border-sky-200 rounded-xl space-y-1.5 md:col-span-2 lg:col-span-2\">\n        <div class=\"flex items-center justify-between font-bold text-sky-950\">\n          <span>5. General / Situation Inference Clue</span>\n          <span class=\"text-[10px] bg-sky-200 text-sky-900 px-2 py-0.5 rounded\">บริบทเหตุการณ์รอบข้าง</span>\n        </div>\n        <p class=\"text-slate-700 leading-relaxed\">สังเกตเหตุการณ์ อาการของตัวละคร หรือเหตุและผลในเนื้อเรื่องเพื่อเดาความหมาย</p>\n        <div class=\"p-2 bg-white rounded-lg border border-sky-100 text-[11px] text-sky-950\">\n          <strong>Story Ex:</strong> \"When Daniel laughed very loudly in the restaurant, everyone turned to look at him, and his face turned red because he felt <strong>embarrassed</strong>.\" (คนหันมามองทั้งร้านจนหน้าแดง ➔ <strong>embarrassed</strong> = รู้สึกเขินอาย/ขายหน้า)\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 2. Signal Words & Punctuation Clues [U3-5.2, U3-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"code\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">2. Punctuation & Signal Markers (เครื่องหมายวรรคตอนบอกใบ้) [U3-5.2]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Content 5.2</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Commas ( , ... , )</strong>\n        <p class=\"text-slate-600 text-[11px]\">คั่นคำอธิบายหรือคำแปลที่วางอยู่ข้างหลังคำศัพท์</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"They ate <strong>paella</strong>, <em>a Spanish dish made of rice and chicken</em>.\"\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Dashes ( — ... — )</strong>\n        <p class=\"text-slate-600 text-[11px]\">เน้นคำจำกัดความหรือตัวอย่างให้เห็นชัดเจน</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"Dad gave Julia a <strong>wad of cash</strong>—<em>a big pile of paper money</em>—for the trip.\"\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200 space-y-1\">\n        <strong class=\"text-purple-900 block font-bold\">Parentheses ( ( ... ) )</strong>\n        <p class=\"text-slate-600 text-[11px]\">ใส่วงเล็บเพื่อแปลความหมายคำศัพท์หรือสำนวน</p>\n        <div class=\"font-mono text-[11px] bg-white p-1.5 rounded border border-slate-200 text-slate-800\">\n          \"We <strong>head for</strong> <em>(go towards)</em> the airport in Mum's car.\"\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 3. Pre-Reading Short Context Clue Game [U3-6.1.4, U3-5.5] -->\n  <div class=\"p-4 sm:p-6 bg-gradient-to-r from-purple-900 to-indigo-950 text-white rounded-2xl shadow-md space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-800 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-amber-400 text-slate-950 font-bold text-[10px] rounded font-mono\">PRE-READING GAME</span>\n          <span class=\"px-2 py-0.5 bg-purple-800 text-purple-200 font-bold text-[10px] rounded font-mono\">U3-6.1.4 &bull; U3-5.5</span>\n        </div>\n        <h4 class=\"text-base font-bold mt-1 text-white flex items-center space-x-2\">\n          <i data-lucide=\"gamepad-2\" class=\"w-5 h-5 text-amber-400\"></i>\n          <span>Short Context Clue Mini-Game (ทบทวนคำศัพท์จากเรื่องสั้น 5 ข้อ)</span>\n        </h4>\n        <p class=\"text-xs text-purple-200\">เลือกความหมายและชนิดของ Context Clue จากประโยคในเรื่องสั้นให้ถูกต้อง</p>\n      </div>\n      <div class=\"bg-purple-950/80 px-3.5 py-2 rounded-xl border border-purple-700 text-xs font-bold text-amber-300 shrink-0\">\n        Mini-Game Score: <span id=\"u3-pregame-score\">0 / 5</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-3 text-xs text-slate-900\">\n      <!-- Game Q1 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          1. \"Daniel saw a large <strong>lorry</strong>, <em>which is a big truck used for carrying heavy boxes by road</em>.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(1, 0)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. A large truck for carrying goods (Definition Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(1, 1)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. A small wooden boat (Antonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(1, 2)\" class=\"u3-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. A train ticket (Example Clue)</button>\n        </div>\n        <div id=\"u3-pg1-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q2 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          2. \"Sylvia took tasty snacks—<em>such as cookies, sandwiches, and energy drinks</em>—out of her backpack.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(2, 0)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Clue Type: Antonym / Contrast</button>\n          <button onclick=\"app.submitUnit3PreGame(2, 1)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Clue Type: Example Clue (Dashes + 'such as')</button>\n          <button onclick=\"app.submitUnit3PreGame(2, 2)\" class=\"u3-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Clue Type: No context clue</button>\n        </div>\n        <div id=\"u3-pg2-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q3 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          3. \"<em>Unlike</em> the noisy city street, the old woods near the lake were completely <strong>silent</strong>.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(3, 0)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Quiet with no sound at all (Antonym Clue: 'Unlike' + 'noisy')</button>\n          <button onclick=\"app.submitUnit3PreGame(3, 1)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Full of loud music (Synonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(3, 2)\" class=\"u3-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Very hot and sunny (Example Clue)</button>\n        </div>\n        <div id=\"u3-pg3-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q4 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          4. \"The two castles looked <strong>identical</strong>, <em>or exactly the same in every detail</em>.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(4, 0)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Completely different (Antonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(4, 1)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Exactly the same (Synonym Clue: ', or ...')</button>\n          <button onclick=\"app.submitUnit3PreGame(4, 2)\" class=\"u3-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Broken and ugly (General Clue)</button>\n        </div>\n        <div id=\"u3-pg4-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Game Q5 -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          5. \"Because Daniel had not eaten anything since breakfast, he felt very hungry and decided to find a <strong>restaurant</strong>.\"\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit3PreGame(5, 0)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. A place to repair bicycles (Synonym Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(5, 1)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. A place where you can buy and eat a meal (General Cause-Effect Clue)</button>\n          <button onclick=\"app.submitUnit3PreGame(5, 2)\" class=\"u3-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. A ticket office at an airport (Antonym Clue)</button>\n        </div>\n        <div id=\"u3-pg5-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 4. Previewing the Text [U3-6.1.5] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 text-xs space-y-2\">\n    <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n      <i data-lucide=\"eye\" class=\"w-4 h-4 text-purple-700\"></i>\n      <span>Previewing the Story: Unfamiliar Words & Signal Markers [U3-6.1.5]</span>\n    </div>\n    <p class=\"text-purple-900 leading-relaxed\">\n      ก่อนเข้าสู่ขั้น While-Reading: กวาดสายตาสำรวจเรื่องสั้น <em>\"Crazy Paella: The Wrong Bus to Valencia\"</em> และ <em>\"A Very Unusual Excursion\"</em> มองหาคำศัพท์เด่น (เช่น <strong>paella, packed, express bus, embarrassed, excursion, footprints</strong>) พร้อมสังเกตเครื่องหมายวรรคตอน (วงเล็บ, เครื่องหมายขีดยาว —, และคำเชื่อม <em>in other words, unlike</em>) ที่ซ่อนคำแปลไว้ข้างๆ!\n    </p>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('overview')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Overview & Warm-Up\n    </button>\n    <button onclick=\"app.selectStageAndStep('whileReading', 'learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: While-Reading Guided Demo</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
           }
         },
-        whileReading: {
-          title: "While-Reading Stage",
-          steps: {
-            learn: "Notice headings and transition words to predict where the author's argument is heading.",
-            passage: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
-            audioText: "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
-            example: "Pattern: Problem ('Traffic congestion... air pollution') -> Solution ('introduced electric bus lanes...').",
-            practice: {
-              question: "What organizational pattern does the passage follow?",
-              options: ["Chronological / Timeline", "Problem and Solution", "Classification / Division", "Narrative Story"],
-              answer: 1,
-              explanation: "The text identifies a problem (traffic & pollution) and offers concrete solutions (bus lanes, bike paths)."
+        "whileReading": {
+          "title": "While-Reading Stage",
+          "steps": {
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.2.1 &bull; U3-6.2.4 &bull; U3-5.3</span>\n        <span class=\"px-2.5 py-0.5 bg-indigo-100 text-indigo-800 rounded-md text-[10px] font-bold\">Guided Story Demo</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Story Context Clues & Sentence Meaning</h3>\n      <p class=\"text-xs text-slate-500\">สาธิตการเดาคำศัพท์จากบริบทในเรื่องสั้น \"Crazy Paella\" และการหา Subject + Verb + Core Meaning [U3-6.2.1, 6.2.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 1 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Audio Player & Worked Passage Box [U3-6.2.1] -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n      <div>\n        <span class=\"text-[10px] font-bold text-pink-300 uppercase tracking-wider block\">Worked Example Story [U3-6.2.1] &bull; Adapted from \"Crazy Paella\"</span>\n        <h4 class=\"text-base font-bold text-white mt-0.5\">Crazy Paella: Daniel's Wrong Bus to Valencia</h4>\n      </div>\n\n      <div class=\"flex items-center space-x-2\">\n        <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\">\n          <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300\"></i>\n          <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n            <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n            <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n            <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n            <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n          </select>\n        </div>\n\n        <button onclick=\"app.togglePassageAudio(encodeURIComponent('Daniel and his sister Julia arrived in Barcelona at lunchtime and wanted to eat paella—a famous Spanish dish made of chicken, rice, seafood, and vegetables. A friendly man on the street told them that the number 35 bus was normally packed; in other words, it was very full of passengers at that time. While Julia walked to a quiet fish restaurant next door, Daniel got on an express bus—a fast bus that travels directly between big cities without stopping—and quickly fell asleep. When Daniel woke up in Valencia with a dead mobile battery, he laughed so loudly in a restaurant that everyone looked at him and he felt very embarrassed.'))\" class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer shadow-md\">\n          <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n          <span id=\"audio-btn-label\">Listen Story</span>\n        </button>\n      </div>\n    </div>\n\n    <!-- Passage Breakdown with Unit 3 Color Scheme -->\n    <div class=\"space-y-4 font-serif text-xs sm:text-sm leading-relaxed text-slate-200\">\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-amber-300 uppercase tracking-wider\">[Sentence 1: Definition Clue via Dash]</span>\n          <span class=\"bg-amber-400/20 text-amber-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-6.2.1</span>\n        </div>\n        <p>\n          <span class=\"highlighter-pen highlighter-blue\">Daniel and his sister Julia arrived in Barcelona at lunchtime and wanted to eat</span> <span class=\"highlighter-pen highlighter-yellow\">paella</span>—<span class=\"highlighter-pen highlighter-green\">a famous Spanish dish made of chicken, rice, seafood, and vegetables.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200\">\n          <strong>Clue Analysis:</strong> คำไม่คุ้นเคยคือ <strong>paella</strong> (สีเหลือง) มีเครื่องหมายขีดยาว <code>—</code> ตามด้วยคำนิยามตรงตัว (สีเขียว: อาหารสเปนที่ทำจากไก่ ข้าว อาหารทะเล และผัก) ส่วนสีฟ้าคือใจความหลักของประโยค\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-emerald-300 uppercase tracking-wider\">[Sentence 2 & 3: Restatement & Contrast Clues]</span>\n          <span class=\"bg-emerald-500/20 text-emerald-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-5.1 &bull; 5.2</span>\n        </div>\n        <p>\n          A friendly man on the street told them that the number 35 bus was normally <span class=\"highlighter-pen highlighter-yellow\">packed</span>; <span class=\"highlighter-pen highlighter-green\">in other words, it was very full of passengers at that time</span>. <span class=\"highlighter-pen highlighter-green\">While Julia walked to a quiet fish restaurant next door</span>, <span class=\"highlighter-pen highlighter-blue\">Daniel got on an</span> <span class=\"highlighter-pen highlighter-yellow\">express bus</span>—<span class=\"highlighter-pen highlighter-green\">a fast bus that travels directly between big cities without stopping</span>—<span class=\"highlighter-pen highlighter-blue\">and quickly fell asleep.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200\">\n          <strong>Clue Analysis:</strong> คำว่า <strong>packed</strong> (สีเหลือง) ถูกอธิบายซ้ำหลังคำว่า <em>\"in other words\"</em> ว่าหมายถึง <em>\"very full of passengers\"</em> (แน่นขนัด) และคำว่า <strong>express bus</strong> มีขีดยาว <code>— ... —</code> นิยามว่าคือรถด่วนที่วิ่งตรงระหว่างเมืองใหญ่โดยไม่จอดแวะ\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-sky-300 uppercase tracking-wider\">[Sentence 4: General / Cause-Effect Clue]</span>\n          <span class=\"bg-sky-400/20 text-sky-200 px-2 py-0.5 rounded font-mono text-[10px]\">U3-5.1</span>\n        </div>\n        <p>\n          <span class=\"highlighter-pen highlighter-blue\">When Daniel woke up in Valencia with a dead mobile battery, he laughed so loudly in a restaurant</span> <span class=\"highlighter-pen highlighter-green\">that everyone turned and looked at him</span>, and he felt very <span class=\"highlighter-pen highlighter-yellow\">embarrassed</span>.\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200\">\n          <strong>Clue Analysis:</strong> จากสถานการณ์ที่หัวเราะเสียงดังลั่นร้านจนคนทั้งร้านหันมามอง (สีเขียว) ทำให้เดาได้ทันทีว่า <strong>embarrassed</strong> หมายถึง รู้สึกเขินอายหรือขายหน้า\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Sentence Meaning Practice: Subject + Verb + Core Meaning [U3-5.3, U3-6.2.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"cpu\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">Sentence Meaning Practice: Finding Subject + Verb + Key Meaning [U3-5.3, U3-6.2.4]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Activity 6.2.4</span>\n    </div>\n\n    <p class=\"text-xs text-slate-700 leading-relaxed\">\n      เมื่อเจอประโยคในเรื่องสั้นที่มีส่วนบอกเวลาหรือส่วนขยายคั่นอยู่ ให้มองหา <strong>1. Core Subject (ใคร/อะไร)</strong> + <strong>2. Main Verb (ทำอะไร)</strong> + <strong>3. Key Information (ใจความสำคัญ)</strong>:\n    </p>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 text-xs\">\n      <!-- Example Breakdown 1 -->\n      <div class=\"p-3.5 bg-purple-50/70 rounded-xl border border-purple-200 space-y-2\">\n        <span class=\"font-bold text-purple-950 block\">Story Sentence A (from \"Crazy Paella\"):</span>\n        <p class=\"font-serif text-slate-800 bg-white p-2.5 rounded-lg border border-purple-100\">\n          \"<em>After waking up in a hotel in Valencia</em>, <strong>Daniel</strong> <strong>asked</strong> <u>a friendly lorry driver to take him back to Barcelona</u>.\"\n        </p>\n        <ul class=\"space-y-1 text-[11px] text-slate-700\">\n          <li>&bull; <strong class=\"text-purple-900\">Core Subject (ใคร):</strong> <code>Daniel</code> (แดเนียล)</li>\n          <li>&bull; <strong class=\"text-emerald-800\">Main Verb (ทำอะไร):</strong> <code>asked</code> (ขอร้อง)</li>\n          <li>&bull; <strong class=\"text-sky-900\">Key Meaning:</strong> <code>a lorry driver to take him back to Barcelona</code> (ให้คนขับรถบรรทุกพาเขากลับไปส่งที่บาร์เซโลนา)</li>\n        </ul>\n      </div>\n\n      <!-- Example Breakdown 2 -->\n      <div class=\"p-3.5 bg-indigo-50/70 rounded-xl border border-indigo-200 space-y-2\">\n        <span class=\"font-bold text-indigo-950 block\">Story Sentence B (from \"The Watch\"):</span>\n        <p class=\"font-serif text-slate-800 bg-white p-2.5 rounded-lg border border-indigo-100\">\n          \"<strong>Carl</strong>, <em>who worked as a skilled watchmaker in Penzance</em>, <strong>examined</strong> <u>the old golden pirate watch in his workshop</u>.\"\n        </p>\n        <ul class=\"space-y-1 text-[11px] text-slate-700\">\n          <li>&bull; <strong class=\"text-purple-900\">Core Subject (ใคร):</strong> <code>Carl</code> (คาร์ล)</li>\n          <li>&bull; <strong class=\"text-emerald-800\">Main Verb (ทำอะไร):</strong> <code>examined</code> (ตรวจสอบดู)</li>\n          <li>&bull; <strong class=\"text-sky-900\">Key Meaning:</strong> <code>the old golden pirate watch</code> (นาฬิกาโจรสลัดเรือนเก่าแก่ในห้องทำงานของเขา)</li>\n        </ul>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('preReading', 'learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Pre-Reading Stage\n    </button>\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: 3-Colour Highlighting Tool</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
+            "example": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.2.2</span>\n        <span class=\"px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded-md text-[10px] font-bold\">Interactive Highlighting</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: 3-Colour Highlighting Tool</h3>\n      <p class=\"text-xs text-slate-500\">ฝึกแยกสีส่วนประกอบในเรื่องสั้น \"A Very Unusual Excursion\": สีเหลือง (คำศัพท์ใหม่) • สีเขียว (Context Clues) • สีฟ้า (ใจความหลักของประโยค) [U3-6.2.2]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Color Key Legend [U3-6.2.2] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 space-y-3\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n        <i data-lucide=\"highlighter\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit 3 Highlighting Color Code (เกณฑ์การระบายสี 3 ประเภทตามแผนการสอน 6.2.2):</span>\n      </span>\n      <div class=\"flex items-center space-x-2\">\n        <button onclick=\"app.revealUnit3Highlights()\" class=\"px-3 py-1 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-[11px] font-bold cursor-pointer transition\">Show Model Key</button>\n        <button onclick=\"app.resetUnit3Highlights()\" class=\"px-3 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-lg text-[11px] font-semibold cursor-pointer transition\">Reset</button>\n      </div>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs\">\n      <div class=\"p-2.5 bg-amber-100 border border-amber-400 rounded-xl text-amber-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-amber-400 shrink-0\"></span>\n        <span><strong>Yellow (สีเหลือง):</strong> Unfamiliar Vocabulary (คำศัพท์เป้าหมาย)</span>\n      </div>\n      <div class=\"p-2.5 bg-emerald-100 border border-emerald-400 rounded-xl text-emerald-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-emerald-400 shrink-0\"></span>\n        <span><strong>Green (สีเขียว):</strong> Context Clues (คำใบ้/คำนิยามในบริบท)</span>\n      </div>\n      <div class=\"p-2.5 bg-sky-100 border border-sky-400 rounded-xl text-sky-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-sky-400 shrink-0\"></span>\n        <span><strong>Blue (สีฟ้า):</strong> Main Idea & Sentence Meaning (ใจความหลักของประโยค)</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- Interactive Passage Box -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"border-b border-slate-700 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <div>\n        <span class=\"text-[10px] font-bold text-amber-300 uppercase tracking-wider\">Interactive Story Passage [U3-6.2.2]</span>\n        <h4 class=\"text-base font-bold text-white\">A Very Unusual Excursion: The Old House by the Lake</h4>\n      </div>\n      <span class=\"text-[11px] text-slate-300\">คลิกปุ่มสี (Yellow / Green / Blue) ให้ตรงกับบทบาทของแต่ละข้อความ</span>\n    </div>\n\n    <div class=\"space-y-3 font-serif text-xs sm:text-sm leading-relaxed\">\n      <!-- Segment 1 -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (1):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(1, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Vocab)</button>\n            <button onclick=\"app.highlightUnit3Sentence(1, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Context Clue)</button>\n            <button onclick=\"app.highlightUnit3Sentence(1, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Meaning)</button>\n          </div>\n        </div>\n        <p id=\"u3-s1-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Last weekend, Sylvia and her good friend George went for a walk near Lake Ullswater and discovered a mysterious old wooden house by the water.\n        </p>\n        <div id=\"u3-s1-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 2 -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (2):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(2, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Vocab)</button>\n            <button onclick=\"app.highlightUnit3Sentence(2, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Context Clue)</button>\n            <button onclick=\"app.highlightUnit3Sentence(2, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Meaning)</button>\n          </div>\n        </div>\n        <p id=\"u3-s2-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Target Story Words: excursion, footprints, costume, renovate\n        </p>\n        <div id=\"u3-s2-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 3 -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (3):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(3, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Vocab)</button>\n            <button onclick=\"app.highlightUnit3Sentence(3, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Context Clue)</button>\n            <button onclick=\"app.highlightUnit3Sentence(3, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Meaning)</button>\n          </div>\n        </div>\n        <p id=\"u3-s3-text\" class=\"text-slate-100 transition p-1 rounded\">\n          —that is, marks left by feet on the dusty floor—which looked like the tracks of a big hairy creature!\n        </p>\n        <div id=\"u3-s3-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 4 -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (4):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(4, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Vocab)</button>\n            <button onclick=\"app.highlightUnit3Sentence(4, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Context Clue)</button>\n            <button onclick=\"app.highlightUnit3Sentence(4, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Meaning)</button>\n          </div>\n        </div>\n        <p id=\"u3-s4-text\" class=\"text-slate-100 transition p-1 rounded\">\n          (a special set of clothes worn to make someone look like an animal or another person)\n        </p>\n        <div id=\"u3-s4-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 5 -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (5):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit3Sentence(5, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Vocab)</button>\n            <button onclick=\"app.highlightUnit3Sentence(5, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Context Clue)</button>\n            <button onclick=\"app.highlightUnit3Sentence(5, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Meaning)</button>\n          </div>\n        </div>\n        <p id=\"u3-s5-text\" class=\"text-slate-100 transition p-1 rounded\">\n          In the end, the scary creature was actually Sylvia's father, and her parents bought the old cabin as her birthday present!\n        </p>\n        <div id=\"u3-s5-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Guided Demo\n    </button>\n    <button onclick=\"app.selectActivityStep('practice')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Context Clue Game (8 Items)</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
+            "practice": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-6.2.3 &bull; U3-6.2.4 &bull; U3-6.2.5</span>\n        <span class=\"px-2.5 py-0.5 bg-pink-100 text-pink-800 rounded-md text-[10px] font-bold\">Indicator 3.3 (&ge; 70%)</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Context Clue Game & Sentence Meaning Challenge</h3>\n      <p class=\"text-xs text-slate-500\">เกมท้าทายเดาคำศัพท์จากเรื่องสั้นและวิเคราะห์ความหมายประโยค 8 ข้อ (เกณฑ์ผ่าน 70% = 6/8 ข้อ) พร้อมเฉลยทันที [U3-5.5, 6.2.3, 6.2.5]</p>\n    </div>\n    <div class=\"bg-purple-100 text-purple-950 px-4 py-2 rounded-xl border border-purple-200 text-xs font-bold shrink-0 self-start sm:self-auto\">\n      Game Score: <span id=\"u3-game-score\" class=\"text-purple-700 font-extrabold\">0 / 8</span>\n    </div>\n  </div>\n\n  <!-- 8-Question Interactive Game Container -->\n  <div class=\"space-y-4\">\n    <!-- Q1 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 1 of 8 &bull; Story: The Knight [U3-5.1]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Lars stopped in the market square and went to a dark corner where he found a <strong class=\"text-purple-800 underline\">trader</strong>—<em>a person who buys and sells things in a market</em>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does the word \"trader\" mean in this sentence?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(1, 0)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. A soldier who guards a castle door</button>\n        <button onclick=\"app.submitUnit3Game(1, 1)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. A king who rules a large country</button>\n        <button onclick=\"app.submitUnit3Game(1, 2)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. A merchant or person who buys and sells goods</button>\n        <button onclick=\"app.submitUnit3Game(1, 3)\" class=\"u3-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. A horse that pulls a heavy wagon</button>\n      </div>\n      <div id=\"u3-g1-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q2 (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 2 of 8 &bull; Story: The Knight [U3-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Lars took an old <strong class=\"text-purple-800 underline\">scroll</strong>—<em>a letter written on paper or skin and rolled up</em>—out of his bag and gave it to the castle guard.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Based on the dash punctuation clue, what is a \"scroll\"?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(2, 0)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. A heavy stone bridge over a river</button>\n        <button onclick=\"app.submitUnit3Game(2, 1)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. A rolled-up letter written on paper or skin</button>\n        <button onclick=\"app.submitUnit3Game(2, 2)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. A bottle of magic water for strength</button>\n        <button onclick=\"app.submitUnit3Game(2, 3)\" class=\"u3-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. A golden necklace worn by the king</button>\n      </div>\n      <div id=\"u3-g2-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q3 (ans: 0 = A) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 3 of 8 &bull; Story: The Watch [U3-5.1]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"<em>Unlike</em> modern digital watches sold in shops today, the pirate's watch and clothes were very <strong class=\"text-purple-800 underline\">old-fashioned</strong>, worn hundreds of years ago.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Using the contrast word \"Unlike\", what does \"old-fashioned\" mean?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(3, 0)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Not modern; from an old time or past style</button>\n        <button onclick=\"app.submitUnit3Game(3, 1)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Brand new and made with computer parts</button>\n        <button onclick=\"app.submitUnit3Game(3, 2)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Very cheap and easy to find everywhere</button>\n        <button onclick=\"app.submitUnit3Game(3, 3)\" class=\"u3-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Brightly lit with electric lights</button>\n      </div>\n      <div id=\"u3-g3-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q4 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 4 of 8 &bull; Story: The Knight [U3-5.1]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"During the battle, soldiers let their horses roll in the fountain and walked through it with dirty boots; soon the water became <strong class=\"text-purple-800 underline\">foul</strong> and could no longer be used.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What can you infer \"foul\" means from the situation in the sentence?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(4, 0)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Fresh, clean, and delicious to drink</button>\n        <button onclick=\"app.submitUnit3Game(4, 1)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Frozen into solid ice in winter</button>\n        <button onclick=\"app.submitUnit3Game(4, 2)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Very dirty, unpleasant, and unusable</button>\n        <button onclick=\"app.submitUnit3Game(4, 3)\" class=\"u3-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Full of colourful fish and flowers</button>\n      </div>\n      <div id=\"u3-g4-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q5 (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 5 of 8 &bull; Story: The Chest [U3-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"David's house was small and <strong class=\"text-purple-800 underline\">neat</strong>, <em>or tidy and arranged carefully</em>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does \"neat\" mean based on the synonym clue?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(5, 0)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Messy and full of dust everywhere</button>\n        <button onclick=\"app.submitUnit3Game(5, 1)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Tidy, clean, and arranged carefully</button>\n        <button onclick=\"app.submitUnit3Game(5, 2)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Dark, scary, and broken</button>\n        <button onclick=\"app.submitUnit3Game(5, 3)\" class=\"u3-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Far away in another country</button>\n      </div>\n      <div id=\"u3-g5-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q6 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 6 of 8 &bull; Story: Laura, the Invisible Woman [U3-5.1]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"After Laura touched the cold metal ball in the trees, her friends could not see her at all because she had become <strong class=\"text-purple-800 underline\">invisible</strong>.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does the word \"invisible\" mean in this sentence?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(6, 0)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Very loud and easy to hear from far away</button>\n        <button onclick=\"app.submitUnit3Game(6, 1)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Hungry and ready to cook a barbecue</button>\n        <button onclick=\"app.submitUnit3Game(6, 2)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Impossible for other people to see</button>\n        <button onclick=\"app.submitUnit3Game(6, 3)\" class=\"u3-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Tired from working late at the office</button>\n      </div>\n      <div id=\"u3-g6-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q7 (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 7 of 8 &bull; Sentence Meaning (Subject + Verb) [U3-5.3, 6.2.4]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.4</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"After searching the old garage for an hour, David found a gold necklace with a secret number inside.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Identify the Core Subject and Main Verb of this sentence:</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(7, 0)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Subject: the old garage | Verb: searching</button>\n        <button onclick=\"app.submitUnit3Game(7, 1)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Subject: David | Verb: found</button>\n        <button onclick=\"app.submitUnit3Game(7, 2)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Subject: an hour | Verb: inside</button>\n        <button onclick=\"app.submitUnit3Game(7, 3)\" class=\"u3-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Subject: a secret number | Verb: searching</button>\n      </div>\n      <div id=\"u3-g7-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q8 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 8 of 8 &bull; Sentence Meaning Analysis [U3-5.3, 6.2.4]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U3-6.2.4</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"When David, Lucy, and Alan put their three numbers into the lock, the old chest opened and revealed a letter from their uncle Walter.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What is the main meaning of this sentence?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit3Game(8, 0)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. David lost his number and could not open the chest.</button>\n        <button onclick=\"app.submitUnit3Game(8, 1)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Uncle Walter sold the old chest at a market in London.</button>\n        <button onclick=\"app.submitUnit3Game(8, 2)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Using all three numbers together unlocked the chest, which had a letter from Uncle Walter inside.</button>\n        <button onclick=\"app.submitUnit3Game(8, 3)\" class=\"u3-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. The chest was completely empty when they opened it.</button>\n      </div>\n      <div id=\"u3-g8-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n  </div>\n\n  <!-- Final Score Summary Banner -->\n  <div id=\"u3-game-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: 3-Colour Highlighting Tool\n    </button>\n    <button onclick=\"app.selectStageAndStep('postReading', 'quiz')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: Post-Reading 40-Item Story Quiz</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
+          }
+        },
+        "postReading": {
+          "title": "Post-Reading Stage",
+          "steps": {
+            "quiz": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 03</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U3-5.6 &bull; U3-6.3.3 &bull; U3-6.3.4</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">40 Questions Total</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Post-Reading Stage: Vocabulary in Context & Sentence Meaning Quiz (40 ข้อ)</h3>\n      <p class=\"text-xs text-slate-500\">แบบทดสอบวัดผลคำศัพท์ในบริบทและโครงสร้างความหมายประโยค 4 บทความ (40 ข้อ • เกณฑ์ผ่าน &ge; 70% หรือ 28/40) [U3-5.6, 6.3.3, 6.3.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Final Stage &bull; 40 Items</span>\n  </div>\n\n  <!-- In-Class Activity Cards [U3-6.3.1, U3-6.3.2] -->\n  <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n    <div class=\"p-4 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1.5\">\n      <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n        <i data-lucide=\"search\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>In-class activity (กิจกรรมในชั้นเรียน): Vocabulary Detective [U3-6.3.1]</span>\n      </div>\n      <p class=\"text-purple-900 leading-relaxed\">\n        <strong>Group Activity (Vocabulary Detective Worksheet):</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อสืบค้นคำศัพท์ที่ไม่คุ้นเคย ระบุชนิดของ Context Clues ที่ใช้ เขียนความหมายที่ถูกต้อง และอธิบายใจความหลักของประโยค\n      </p>\n    </div>\n\n    <div class=\"p-4 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1.5\">\n      <div class=\"flex items-center space-x-2 text-indigo-950 font-bold\">\n        <i data-lucide=\"message-square\" class=\"w-4 h-4 text-indigo-700\"></i>\n        <span>In-class activity (กิจกรรมในชั้นเรียน): Group Discussion [U3-6.3.2]</span>\n      </div>\n      <p class=\"text-indigo-900 leading-relaxed\">\n        <strong>Group Discussion & Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบหน้าชั้นเรียนและอธิบายกระบวนการคิดในการใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายของประโยคซับซ้อน\n      </p>\n    </div>\n  </div>\n\n  <!-- Individual Assessment: 40-Question Vocabulary & Sentence Meaning Quiz [U3-5.6, U3-6.3.3] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-100 shadow-sm space-y-5\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-purple-700 text-white font-bold text-[10px] rounded font-mono\">GRADED 3.3</span>\n          <span class=\"px-2 py-0.5 bg-purple-100 text-purple-800 font-bold text-[10px] rounded font-mono\">U3-5.6 &bull; U3-6.3.3</span>\n          <span class=\"text-xs font-bold text-purple-700\">Pass Mark &ge; 70% (28 / 40)</span>\n        </div>\n        <h4 class=\"text-base font-bold text-slate-900 mt-1\">Individual Assessment: Post-Reading Vocabulary & Sentence Meaning Quiz (40 ข้อ)</h4>\n        <p class=\"text-xs text-slate-500\">วิเคราะห์ความหมายคำศัพท์จากบริบท ชนิดของ Context Clues เครื่องหมายวรรคตอน และใจความหลักของประโยคจาก 4 บทความ</p>\n      </div>\n      <div id=\"u3-test-score-badge\" class=\"text-xs font-bold text-purple-900 bg-purple-100 px-3.5 py-1.5 rounded-xl shrink-0\">\n        Score: <span id=\"u3-test-score\">0 / 40</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-6\" id=\"u3-test-items\">\n      \n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 1 of 4: The Mystery of Bioluminescent Oceans (Questions 1–10)\n        </span>\n        <p>(1) Across tropical coastlines and deep oceanic trenches, sailors have long marveled at <strong>bioluminescence</strong>—the biochemical emission of visible light by living marine organisms. (2) Unlike superficial surface reflections caused by moonlight, this <strong>endogenous</strong> glow is generated internally within specialized cells containing a light-emitting compound called luciferin. (3) Marine predators, <em>such as the deep-sea anglerfish, viperfish, and cookie-cutter shark</em>, utilize glowing lures to entice curious prey into striking distance. (4) Conversely, microscopic plankton known as dinoflagellates flash brilliantly when disturbed by swimming fish; in other words, their sudden illumination acts as a burglar alarm that startles attackers. (5) Because sunlight vanishes completely below two hundred meters, life in the <strong>abyssal</strong> zone—the deepest, pitch-black layer of the ocean—depends heavily on these visual signals for survival. (6) In addition, some squid species expel a <strong>luminous</strong> cloud, <em>or glowing ink mist</em>, to confuse hungry sharks before darting away into the darkness. (7) Although producing biological light requires significant metabolic energy, the evolutionary advantages of <strong>camouflaging</strong> one's silhouette against faint overhead light outweigh the physiological costs. (8) Ultimately, decoding the chemical efficiency of marine light production enables biomedical researchers to track cellular activity inside human tissues without invasive surgery.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q1 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">1. Based on the dash punctuation in Sentence (1), what is the exact meaning of 'bioluminescence'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(1, 0)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The biochemical emission of visible light by living marine organisms</button>\n          <button onclick=\"app.submitUnit3Test(1, 1)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The reflection of silver moonlight on shallow ocean waves</button>\n          <button onclick=\"app.submitUnit3Test(1, 2)\" class=\"u3-t1-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The warming of tropical currents caused by underwater volcanoes</button>\n        </div>\n        <div id=\"u3-t1-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q2 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">2. Which type of context clue is used in Sentence (1) to explain 'bioluminescence'? [U3-4.2.1, 5.1]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(2, 0)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Definition clue signaled by a dash (—)</button>\n          <button onclick=\"app.submitUnit3Test(2, 1)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Antonym clue signaled by 'however'</button>\n          <button onclick=\"app.submitUnit3Test(2, 2)\" class=\"u3-t2-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Example clue signaled by 'for instance'</button>\n        </div>\n        <div id=\"u3-t2-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q3 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">3. In Sentence (2), using the contrast word 'Unlike' and surrounding words, what does 'endogenous' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(3, 0)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Produced or originating from within an organism internally</button>\n          <button onclick=\"app.submitUnit3Test(3, 1)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Reflected from external moonlight on the surface</button>\n          <button onclick=\"app.submitUnit3Test(3, 2)\" class=\"u3-t3-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Artificially manufactured by submarine floodlights</button>\n        </div>\n        <div id=\"u3-t3-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q4 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">4. Why does the author include the phrase 'such as the deep-sea anglerfish, viperfish, and cookie-cutter shark' in Sentence (3)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(4, 0)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To provide an Example Clue illustrating specific marine predators that use glowing lures</button>\n          <button onclick=\"app.submitUnit3Test(4, 1)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To give an Antonym Clue contrasting sharks with freshwater frogs</button>\n          <button onclick=\"app.submitUnit3Test(4, 2)\" class=\"u3-t4-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To state the concluding summary of the entire passage</button>\n        </div>\n        <div id=\"u3-t4-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q5 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">5. In Sentence (3), the word 'entice' ('utilize glowing lures to entice curious prey into striking distance') most nearly means: [U3-4.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(5, 0)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Attract, tempt, or lure closer</button>\n          <button onclick=\"app.submitUnit3Test(5, 1)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Frighten and chase away permanently</button>\n          <button onclick=\"app.submitUnit3Test(5, 2)\" class=\"u3-t5-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Digest food slowly inside the stomach</button>\n        </div>\n        <div id=\"u3-t5-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q6 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">6. In Sentence (4), what is the function of the signal phrase 'in other words'? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(6, 0)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. It introduces a restatement explaining how the plankton's flash works like a burglar alarm</button>\n          <button onclick=\"app.submitUnit3Test(6, 1)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. It signals a chronological timeline of ancient ocean history</button>\n          <button onclick=\"app.submitUnit3Test(6, 2)\" class=\"u3-t6-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. It contradicts the scientific facts stated in Sentence (1)</button>\n        </div>\n        <div id=\"u3-t6-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q7 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">7. Based on the double dashes (— ... —) in Sentence (5), what does 'abyssal' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(7, 0)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Relating to the deepest, pitch-black layer of the ocean where sunlight vanishes</button>\n          <button onclick=\"app.submitUnit3Test(7, 1)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Relating to shallow, sunlit coral reefs near sandy beaches</button>\n          <button onclick=\"app.submitUnit3Test(7, 2)\" class=\"u3-t7-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Relating to high mountain lakes above the clouds</button>\n        </div>\n        <div id=\"u3-t7-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q8 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">8. In Sentence (6), what clue reveals that 'luminous' means 'glowing or emitting light'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(8, 0)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The synonym clue ', or glowing ink mist,' set off by commas</button>\n          <button onclick=\"app.submitUnit3Test(8, 1)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The contrast word 'Although' in Sentence (7)</button>\n          <button onclick=\"app.submitUnit3Test(8, 2)\" class=\"u3-t8-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The word 'sharks' at the end of the clause</button>\n        </div>\n        <div id=\"u3-t8-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q9 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">9. Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (7) ('Although producing biological light requires..., the evolutionary advantages of camouflaging... outweigh the physiological costs'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(9, 0)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'the evolutionary advantages' | Main Verb: 'outweigh'</button>\n          <button onclick=\"app.submitUnit3Test(9, 1)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'producing biological light' | Main Verb: 'requires'</button>\n          <button onclick=\"app.submitUnit3Test(9, 2)\" class=\"u3-t9-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'faint overhead light' | Main Verb: 'camouflaging'</button>\n        </div>\n        <div id=\"u3-t9-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q10 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">10. What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(10, 0)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Understanding how marine creatures produce light helps medical scientists observe human cells without performing invasive surgery</button>\n          <button onclick=\"app.submitUnit3Test(10, 1)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Biomedical researchers must perform surgery on deep-sea sharks to extract luciferin</button>\n          <button onclick=\"app.submitUnit3Test(10, 2)\" class=\"u3-t10-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Human tissues naturally glow in the dark when exposed to tropical seawater</button>\n        </div>\n        <div id=\"u3-t10-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 2 of 4: The Pompeii of the East — Ancient Cave Preservation (Questions 11–20)\n        </span>\n        <p>(1) Carved into sheer sandstone cliffs along the Silk Road, the Mogao Caves contain a <strong>priceless</strong>—that is, immeasurably valuable and irreplaceable—collection of ancient Buddhist murals and manuscripts. (2) For over a millennium, the region's <strong>arid</strong> desert climate, <em>characterized by bone-dry air and less than forty millimeters of annual rainfall</em>, naturally preserved the delicate mineral pigments from rotting. (3) However, rapid modern tourism has introduced a <strong>detrimental</strong> new threat; specifically, the warm moisture exhaled by thousands of daily visitors causes mural plaster to blister and flake off. (4) Whereas ancient monks worked in <strong>solitude</strong> (complete isolation and quiet seclusion), modern conservationists collaborate in international scientific teams to rescue the deteriorating artwork. (5) Fragile organic artifacts, <em>including silk banners, hemp paper scrolls, and wooden sculptures</em>, are particularly vulnerable to sudden humidity spikes. (6) To combat this degradation, engineers installed <strong>autonomous</strong> environmental sensors, <em>or self-operating digital monitors</em>, inside every grotto. (7) Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry and diverts tourists to <strong>replicas</strong>—exact full-scale reconstructions of the original caves. (8) By balancing public cultural education with stringent microclimate control, heritage specialists ensure that these ancient masterpieces endure for future generations.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q11 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">11. In Sentence (1), what does the word 'priceless' mean based on the signal phrase 'that is'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(11, 0)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Immeasurably valuable and irreplaceable</button>\n          <button onclick=\"app.submitUnit3Test(11, 1)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Having zero financial or historical worth</button>\n          <button onclick=\"app.submitUnit3Test(11, 2)\" class=\"u3-t11-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Recently painted by modern tourists</button>\n        </div>\n        <div id=\"u3-t11-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q12 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">12. In Sentence (2), which clue explains the meaning of the word 'arid'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(12, 0)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. The appositive phrase between commas: 'characterized by bone-dry air and less than forty millimeters of annual rainfall'</button>\n          <button onclick=\"app.submitUnit3Test(12, 1)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. The phrase 'Carved into sheer sandstone cliffs' in Sentence (1)</button>\n          <button onclick=\"app.submitUnit3Test(12, 2)\" class=\"u3-t12-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. The word 'monks' in Sentence (4)</button>\n        </div>\n        <div id=\"u3-t12-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q13 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">13. Based on the general cause-and-effect clue in Sentence (3) ('causes mural plaster to blister and flake off'), what does 'detrimental' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(13, 0)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Harmful, damaging, or causing injury</button>\n          <button onclick=\"app.submitUnit3Test(13, 1)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Beneficial and restorative to ancient paint</button>\n          <button onclick=\"app.submitUnit3Test(13, 2)\" class=\"u3-t13-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Expensive to photograph</button>\n        </div>\n        <div id=\"u3-t13-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q14 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">14. In Sentence (4), how is the meaning of 'solitude' unlocked for the reader? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(14, 0)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Both through parentheses '(complete isolation and quiet seclusion)' and the contrast word 'Whereas' comparing it with 'collaborate in teams'</button>\n          <button onclick=\"app.submitUnit3Test(14, 1)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Through a numerical statistic about rainfall</button>\n          <button onclick=\"app.submitUnit3Test(14, 2)\" class=\"u3-t14-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Through an example of silk banners and wooden sculptures</button>\n        </div>\n        <div id=\"u3-t14-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q15 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">15. In Sentence (5), why does the author list 'silk banners, hemp paper scrolls, and wooden sculptures'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(15, 0)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. As an Example Clue (signaled by 'including') to show what kinds of 'fragile organic artifacts' exist in the caves</button>\n          <button onclick=\"app.submitUnit3Test(15, 1)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. As an Antonym Clue proving that stone cliffs are softer than paper</button>\n          <button onclick=\"app.submitUnit3Test(15, 2)\" class=\"u3-t15-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. As a Definition Clue for computer sensors</button>\n        </div>\n        <div id=\"u3-t15-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q16 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">16. In Sentence (6), the phrase ', or self-operating digital monitors,' provides which type of context clue for 'autonomous'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(16, 0)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Synonym / Restatement clue signaled by ', or'</button>\n          <button onclick=\"app.submitUnit3Test(16, 1)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Antonym clue signaled by 'however'</button>\n          <button onclick=\"app.submitUnit3Test(16, 2)\" class=\"u3-t16-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Chronological sequence clue</button>\n        </div>\n        <div id=\"u3-t16-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q17 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">17. Based on the dash clue in Sentence (7), what are 'replicas'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(17, 0)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Exact full-scale reconstructions or copies of the original caves</button>\n          <button onclick=\"app.submitUnit3Test(17, 1)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Ancient monks who guarded the Silk Road</button>\n          <button onclick=\"app.submitUnit3Test(17, 2)\" class=\"u3-t17-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Natural sandstorms that erode desert cliffs</button>\n        </div>\n        <div id=\"u3-t17-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q18 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">18. In Sentence (8), what does 'stringent' ('stringent microclimate control') most likely mean in context? [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(18, 0)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Strict, precise, and tightly regulated</button>\n          <button onclick=\"app.submitUnit3Test(18, 1)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Careless, relaxed, and unmonitored</button>\n          <button onclick=\"app.submitUnit3Test(18, 2)\" class=\"u3-t18-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Ancient and traditional</button>\n        </div>\n        <div id=\"u3-t18-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q19 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">19. Sentence Meaning Analysis: In Sentence (7) ('Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry...'), what is the Core Subject and Main Verb? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(19, 0)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'the computer network' | Main Verb: 'restricts (and diverts)'</button>\n          <button onclick=\"app.submitUnit3Test(19, 1)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'safe thresholds' | Main Verb: 'exceed'</button>\n          <button onclick=\"app.submitUnit3Test(19, 2)\" class=\"u3-t19-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'original caves' | Main Verb: 'reconstructions'</button>\n        </div>\n        <div id=\"u3-t19-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q20 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">20. What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(20, 0)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Combining public education with strict climate control allows experts to protect ancient cave art for the future</button>\n          <button onclick=\"app.submitUnit3Test(20, 1)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Heritage specialists decided to close all museums permanently to stop public education</button>\n          <button onclick=\"app.submitUnit3Test(20, 2)\" class=\"u3-t20-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Future generations will no longer be interested in viewing Buddhist murals</button>\n        </div>\n        <div id=\"u3-t20-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 3 of 4: The Architecture of Vertical Forests in Modern Cities (Questions 21–30)\n        </span>\n        <p>(1) As metropolitan populations swell and horizontal land becomes scarce, visionary architects are constructing <strong>arboricultural</strong> skyscrapers—high-rise residential towers covered in thousands of living trees and shrubs. (2) Pioneered in Milan, Italy, the famous Bosco Verticale houses nine hundred trees across its cantilevered balconies; <em>in other words</em>, the building functions as a vertical forest equivalent to two hectares of flat woodland. (3) These suspended ecosystems <strong>mitigate</strong> urban air pollution by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles on their leaves. (4) Furthermore, dense foliage acts as a natural thermal buffer: <em>whereas</em> bare glass facades amplify scorching summer heat, leafy balconies shade interior apartments and reduce air-conditioning demand by thirty percent. (5) Botanical engineers select <strong>hardy</strong> plant species—<em>such as holm oaks, wild olives, and rosemary</em>—that can withstand fierce high-altitude winds. (6) To prevent falling branches during severe gales, giant steel safety cages <strong>anchor</strong> (securely fasten and hold down) the root bulbs to the reinforced concrete floor slabs. (7) Irrigation is managed through a <strong>closed-loop</strong> hydrological system, which recycles greywater from residents' sinks and showers to nourish the balcony gardens. (8) Consequently, integrating living nature directly into high-density housing restores urban biodiversity while significantly improving residents' respiratory and psychological health.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q21 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">21. Using the dash clue in Sentence (1), what does 'arboricultural' mean when describing skyscrapers? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(21, 0)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Involving the cultivation and integration of living trees and shrubs</button>\n          <button onclick=\"app.submitUnit3Test(21, 1)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Constructed entirely out of recycled ocean plastic</button>\n          <button onclick=\"app.submitUnit3Test(21, 2)\" class=\"u3-t21-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Built underground beneath subway tunnels</button>\n        </div>\n        <div id=\"u3-t21-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q22 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">22. In Sentence (2), why does the author use the signal phrase 'in other words'? [U3-5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(22, 0)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To restate the scale of the 900 balcony trees by comparing them to two hectares of flat woodland</button>\n          <button onclick=\"app.submitUnit3Test(22, 1)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To introduce an opposite opinion that criticizes Italian architects</button>\n          <button onclick=\"app.submitUnit3Test(22, 2)\" class=\"u3-t22-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To list the names of the residents living in Milan</button>\n        </div>\n        <div id=\"u3-t22-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q23 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">23. Based on the surrounding context in Sentence (3) ('by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles'), what does 'mitigate' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(23, 0)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Reduce, lessen, or make less severe</button>\n          <button onclick=\"app.submitUnit3Test(23, 1)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Create and worsen air pollution</button>\n          <button onclick=\"app.submitUnit3Test(23, 2)\" class=\"u3-t23-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Measure with a thermometer</button>\n        </div>\n        <div id=\"u3-t23-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q24 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">24. In Sentence (4), what context clue helps explain how 'leafy balconies' work as a 'thermal buffer'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(24, 0)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. An Antonym / Contrast clue signaled by 'whereas', contrasting heat-amplifying glass facades with shade-providing leafy balconies</button>\n          <button onclick=\"app.submitUnit3Test(24, 1)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. A Parentheses clue giving the Latin name of oak trees</button>\n          <button onclick=\"app.submitUnit3Test(24, 2)\" class=\"u3-t24-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. A Synonym clue signaled by ', or'</button>\n        </div>\n        <div id=\"u3-t24-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q25 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">25. In Sentence (5), what does the word 'hardy' mean based on the clause 'that can withstand fierce high-altitude winds'? [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(25, 0)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Robust, resilient, and able to survive harsh weather conditions</button>\n          <button onclick=\"app.submitUnit3Test(25, 1)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Delicate, fragile, and easily killed by a light breeze</button>\n          <button onclick=\"app.submitUnit3Test(25, 2)\" class=\"u3-t25-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Artificial and made of silk</button>\n        </div>\n        <div id=\"u3-t25-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q26 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">26. What is the role of '—such as holm oaks, wild olives, and rosemary—' in Sentence (5)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(26, 0)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. It provides an Example Clue naming specific hardy plant species selected by engineers</button>\n          <button onclick=\"app.submitUnit3Test(26, 1)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. It defines the meaning of reinforced concrete</button>\n          <button onclick=\"app.submitUnit3Test(26, 2)\" class=\"u3-t26-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. It contrasts tall skyscrapers with rural cottages</button>\n        </div>\n        <div id=\"u3-t26-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q27 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">27. Based on the parentheses clue in Sentence (6), what does the verb 'anchor' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(27, 0)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Securely fasten and hold down in place</button>\n          <button onclick=\"app.submitUnit3Test(27, 1)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Trim and prune dead leaves</button>\n          <button onclick=\"app.submitUnit3Test(27, 2)\" class=\"u3-t27-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Water plants with recycled rainwater</button>\n        </div>\n        <div id=\"u3-t27-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q28 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">28. In Sentence (7), how does the author explain the meaning of a 'closed-loop' hydrological system? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(28, 0)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Through the relative clause ', which recycles greywater from residents' sinks and showers to nourish the balcony gardens'</button>\n          <button onclick=\"app.submitUnit3Test(28, 1)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. By contrasting it with desert sandstorms</button>\n          <button onclick=\"app.submitUnit3Test(28, 2)\" class=\"u3-t28-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. By listing three types of Italian pasta</button>\n        </div>\n        <div id=\"u3-t28-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q29 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">29. Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (8) ('Consequently, integrating living nature directly into high-density housing restores urban biodiversity while...'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(29, 0)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'integrating living nature (directly into high-density housing)' | Main Verb: 'restores'</button>\n          <button onclick=\"app.submitUnit3Test(29, 1)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'urban biodiversity' | Main Verb: 'improving'</button>\n          <button onclick=\"app.submitUnit3Test(29, 2)\" class=\"u3-t29-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'psychological health' | Main Verb: 'integrating'</button>\n        </div>\n        <div id=\"u3-t29-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q30 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">30. Which statement best captures the main meaning of Passage 3 as a whole? [U3-5.3, 6.3.3]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(30, 0)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Vertical forest skyscrapers integrate living trees into high-rise buildings to clean urban air, save energy, recycle water, and boost human and ecological health</button>\n          <button onclick=\"app.submitUnit3Test(30, 1)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. High-altitude winds in Milan are too dangerous for any plants to grow on apartment balconies</button>\n          <button onclick=\"app.submitUnit3Test(30, 2)\" class=\"u3-t30-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Residents of Bosco Verticale must carry water buckets up the stairs every morning to water 900 oak trees</button>\n        </div>\n        <div id=\"u3-t30-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n\n    <!-- Passage & 10 Questions Block -->\n    <div class=\"space-y-4 pt-4 border-t border-purple-100 first:border-t-0 first:pt-0\">\n      <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n        <span class=\"font-sans font-bold text-amber-300 text-[11px] block uppercase tracking-wider mb-1\">\n          Passage 4 of 4: The Neuroscience of Bilingualism and the Aging Brain (Questions 31–40)\n        </span>\n        <p>(1) Neuroscientists using advanced brain-imaging technology have overturned the outdated misconception that speaking two languages causes <strong>cognitive</strong> confusion—mental disorder or intellectual delay—in young children. (2) On the contrary, managing two active linguistic systems simultaneously strengthens the brain's <strong>executive control network</strong>, <em>which governs attention, task-switching, and impulse inhibition</em>. (3) Because both languages remain active in a bilingual person's mind, the prefrontal cortex must constantly select the target word while suppressing <strong>intrusion</strong> (unwanted interference) from the other language. (4) This lifelong mental workout builds <strong>cognitive reserve</strong>, <em>or extra neural resilience that helps the brain compensate for age-related tissue decline</em>. (5) Clinical longitudinal studies—<em>such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad</em>—reveal a striking protective benefit. (6) Specifically, lifelong bilinguals develop symptoms of <strong>dementia</strong>, a severe loss of memory and reasoning ability, an average of four to five years later than monolingual adults. (7)Whereas physical exercise fortifies cardiovascular muscles, juggling multiple vocabularies <strong>enhances</strong> neuroplasticity by forging denser white-matter connections between brain hemispheres. (8) Even adults who acquire a second language in middle age experience measurable improvements in mental <strong>agility</strong>, <em>meaning quickness and flexibility of thought</em>, proving that it is never too late to reshape the human brain.</p>\n      </div>\n      <div class=\"space-y-3\">\n        \n      <!-- Q31 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">31. Based on the dash clue in Sentence (1), 'cognitive confusion' refers to: [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(31, 0)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Mental disorder or intellectual delay</button>\n          <button onclick=\"app.submitUnit3Test(31, 1)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Physical muscle fatigue in the legs</button>\n          <button onclick=\"app.submitUnit3Test(31, 2)\" class=\"u3-t31-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Fluency in speaking multiple dialects</button>\n        </div>\n        <div id=\"u3-t31-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q32 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">32. In Sentence (2), how does the author explain what the 'executive control network' does? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(32, 0)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Using a comma and the relative clause 'which governs attention, task-switching, and impulse inhibition'</button>\n          <button onclick=\"app.submitUnit3Test(32, 1)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Using parentheses to list three cities in India</button>\n          <button onclick=\"app.submitUnit3Test(32, 2)\" class=\"u3-t32-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Using an antonym comparing children with elderly patients</button>\n        </div>\n        <div id=\"u3-t32-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q33 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">33. Based on the parentheses in Sentence (3), what does 'intrusion' mean? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(33, 0)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Unwanted interference</button>\n          <button onclick=\"app.submitUnit3Test(33, 1)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Accurate pronunciation</button>\n          <button onclick=\"app.submitUnit3Test(33, 2)\" class=\"u3-t33-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Rapid memorization</button>\n        </div>\n        <div id=\"u3-t33-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q34 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">34. In Sentence (4), which context clue unlocks the meaning of 'cognitive reserve'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(34, 0)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. A Synonym / Definition clue signaled by ', or extra neural resilience that helps the brain compensate for age-related tissue decline'</button>\n          <button onclick=\"app.submitUnit3Test(34, 1)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. An Example clue listing hospital equipment</button>\n          <button onclick=\"app.submitUnit3Test(34, 2)\" class=\"u3-t34-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. An Antonym clue signaled by 'however'</button>\n        </div>\n        <div id=\"u3-t34-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q35 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">35. Why does the author include '—such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad—' in Sentence (5)? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(35, 0)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. To give concrete Examples of clinical longitudinal studies conducted across different countries</button>\n          <button onclick=\"app.submitUnit3Test(35, 1)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. To prove that only people living in cold climates can learn two languages</button>\n          <button onclick=\"app.submitUnit3Test(35, 2)\" class=\"u3-t35-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. To define the medical term 'prefrontal cortex'</button>\n        </div>\n        <div id=\"u3-t35-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q36 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">36. In Sentence (6), what does 'dementia' mean, and how do we know? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(36, 0)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. 'A severe loss of memory and reasoning ability' — explained by the appositive phrase between commas</button>\n          <button onclick=\"app.submitUnit3Test(36, 1)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. 'Speaking a single language' — explained by the word 'monolingual'</button>\n          <button onclick=\"app.submitUnit3Test(36, 2)\" class=\"u3-t36-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. 'High blood pressure' — explained by Sentence (7)</button>\n        </div>\n        <div id=\"u3-t36-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q37 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">37. Using Sentence (1) ('speaking two languages') and Sentence (6) ('four to five years later than monolingual adults'), what does 'monolingual' mean? [U3-5.1, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(37, 0)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Speaking or using only one single language (contrasted with 'bilingual')</button>\n          <button onclick=\"app.submitUnit3Test(37, 1)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Speaking four or five languages fluently</button>\n          <button onclick=\"app.submitUnit3Test(37, 2)\" class=\"u3-t37-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Suffering from severe hearing loss</button>\n        </div>\n        <div id=\"u3-t37-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q38 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">38. In Sentence (7), based on the context 'by forging denser white-matter connections between brain hemispheres', the verb 'enhances' means: [U3-4.2.4, 5.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(38, 0)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Improves, strengthens, or increases in quality</button>\n          <button onclick=\"app.submitUnit3Test(38, 1)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Destroys and weakens permanently</button>\n          <button onclick=\"app.submitUnit3Test(38, 2)\" class=\"u3-t38-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Ignores and overlooks</button>\n        </div>\n        <div id=\"u3-t38-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q39 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">39. In Sentence (8), what does 'agility' ('mental agility') mean based on the signal word 'meaning'? [U3-5.1, 5.2]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(39, 0)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Quickness and flexibility of thought</button>\n          <button onclick=\"app.submitUnit3Test(39, 1)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Slowness and rigidity of memory</button>\n          <button onclick=\"app.submitUnit3Test(39, 2)\" class=\"u3-t39-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Exhaustion after taking a test</button>\n        </div>\n        <div id=\"u3-t39-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q40 -->\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-2 text-xs\">\n        <span class=\"font-bold text-slate-900 block\">40. Sentence Meaning Analysis: Identify the Core Subject, Main Verb, and Main Meaning of Sentence (8) ('Even adults who acquire a second language in middle age experience measurable improvements in mental agility...'): [U3-5.3, 6.2.4]</span>\n        <div class=\"space-y-1.5\">\n          <button onclick=\"app.submitUnit3Test(40, 0)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">A. Core Subject: 'adults' | Main Verb: 'experience' | Meaning: Learning a second language in middle age still significantly improves mental quickness and brain flexibility</button>\n          <button onclick=\"app.submitUnit3Test(40, 1)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">B. Core Subject: 'middle age' | Main Verb: 'acquire' | Meaning: Only young children can learn a second language</button>\n          <button onclick=\"app.submitUnit3Test(40, 2)\" class=\"u3-t40-btn w-full text-left p-2.5 rounded-lg border border-slate-200 hover:bg-white bg-white/70 transition font-medium cursor-pointer\">C. Core Subject: 'the human brain' | Main Verb: 'reshape' | Meaning: Adults lose their memory when studying vocabulary</button>\n        </div>\n        <div id=\"u3-t40-fb\" class=\"hidden font-sans text-[11px] p-2 rounded\"></div>\n      </div>\n      </div>\n    </div>\n    </div>\n\n    <div id=\"u3-test-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n  </div>\n\n  <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center space-x-2 border-b border-slate-100 pb-2.5 text-purple-900 font-bold text-sm\">\n      <i data-lucide=\"alert-triangle\" class=\"w-4 h-4 text-amber-500\"></i>\n      <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1.5 text-rose-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-rose-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-rose-600\"></i>\n          <span>Mistake 1: มองข้ามเครื่องหมายวรรคตอน</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          ผู้เรียนมักข้ามข้อความในเครื่องหมายขีดยาว <code>— ... —</code> หรือวงเล็บ <code>( ... )</code> ทั้งที่ผู้เขียนตั้งใจวางคำแปลหรือนิยามของคำศัพท์ยากไว้ตรงนั้นพอดี\n        </p>\n      </div>\n\n      <div class=\"p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1.5 text-amber-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-amber-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-amber-600\"></i>\n          <span>Mistake 2: แปลตรงข้ามเมื่อเจอ Antonym</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          เมื่อเจอคำว่า <em>'Unlike'</em> หรือ <em>'Whereas'</em> ผู้เรียนบางคนเผลอนำคำคุณศัพท์ข้างเคียงมาตอบเป็นความหมายเดียวกัน ทั้งที่ต้องกลับขั้วเป็นความหมายตรงกันข้าม\n        </p>\n      </div>\n\n      <div class=\"p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1.5 text-purple-950\">\n        <strong class=\"font-bold flex items-center space-x-1 text-purple-900\">\n          <i data-lucide=\"x-circle\" class=\"w-3.5 h-3.5 text-purple-600\"></i>\n          <span>Mistake 3: หลงในส่วนขยายของประโยคยาว</span>\n        </strong>\n        <p class=\"leading-relaxed\">\n          เมื่อประโยคมีอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) มักสับสนว่าคำนามในส่วนขยายคือประธานหลัก ให้ตัดส่วนขยายในคอมมาออกก่อนเสมอเพื่อหา Subject + Verb แท้\n        </p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Unit 3 Performance Score Summary Dashboard [U3-6.3.4] -->\n  <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 rounded-2xl space-y-3\">\n    <div class=\"flex items-center justify-between text-purple-950 font-bold text-sm\">\n      <span class=\"flex items-center space-x-2\">\n        <i data-lucide=\"trophy\" class=\"w-4 h-4 text-amber-500\"></i>\n        <span>Unit 3 Performance Score Summary (สรุปผลคะแนนประจำ Unit 3) [U3-6.3.4]</span>\n      </span>\n      <span class=\"text-[10px] font-mono bg-purple-200/80 px-2 py-0.5 rounded\">Indicator 3.3 Status (&ge;70%)</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n      <div class=\"p-3 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1\">\n        <span class=\"text-slate-500 text-[11px] block\">1. Context Clue Game & Sentence Practice (While-Reading)</span>\n        <div class=\"flex items-center justify-between\">\n          <span id=\"summary-u3-game\" class=\"font-bold text-purple-900 text-sm\">-- / 8</span>\n          <span id=\"badge-u3-game\" class=\"text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-600\">Pending</span>\n        </div>\n      </div>\n\n      <div class=\"p-3 bg-white rounded-xl border border-purple-100 shadow-xs space-y-1\">\n        <span class=\"text-slate-500 text-[11px] block\">2. Post-Reading Vocabulary & Sentence Quiz (40 ข้อ)</span>\n        <div class=\"flex items-center justify-between\">\n          <span id=\"summary-u3-test\" class=\"font-bold text-purple-900 text-sm\">-- / 40</span>\n          <span id=\"badge-u3-test\" class=\"text-[10px] font-bold px-2 py-0.5 rounded bg-slate-100 text-slate-600\">Pending</span>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation & Review Unit -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('whileReading', 'practice')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Context Clue Game\n    </button>\n    <button onclick=\"app.selectStageAndStep('preReading', 'overview')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md\">\n      <i data-lucide=\"rotate-ccw\" class=\"w-4 h-4\"></i>\n      <span>Review Unit 3 from Start ↺</span>\n    </button>\n  </div>\n</div>\n"
+          }
+        }
+      }
+    },
+    {
+      "id": 4,
+      "code": "UNIT-04",
+      "title": "References, Connectives & Text Organization",
+      "thaiTitle": "คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ",
+      "scope": "Reference words, connectives, paragraph organization, text structure practice",
+      "description": "Identify pronoun references (it, they, which) and logical transitions (however, furthermore, as a result).",
+      "cefr": "B1",
+      "stages": {
+        "preReading": {
+          "title": "Pre-Reading Stage",
+          "steps": {
+            "overview": "Pronouns like 'it', 'they', 'this', and 'these' refer back to nouns mentioned earlier.",
+            "learn": "Find the antecedent by matching number (singular/plural) and meaning in the previous sentence."
+          }
+        },
+        "whileReading": {
+          "title": "While-Reading Stage",
+          "steps": {
+            "learn": "Notice headings and transition words to predict where the author's argument is heading.",
+            "passage": "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
+            "audioText": "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
+            "example": "Pattern: Problem ('Traffic congestion... air pollution') -> Solution ('introduced electric bus lanes...').",
+            "practice": {
+              "question": "What organizational pattern does the passage follow?",
+              "options": [
+                "Chronological / Timeline",
+                "Problem and Solution",
+                "Classification / Division",
+                "Narrative Story"
+              ],
+              "answer": 1,
+              "explanation": "The text identifies a problem (traffic & pollution) and offers concrete solutions (bus lanes, bike paths)."
             }
           }
         },
-        postReading: {
-          title: "Post-Reading Stage",
-          steps: {
-            quiz: {
-              question: "What is the primary benefit of recognizing text structure?",
-              options: ["It improves reading comprehension and retention", "It memorizes word spellings", "It counts syllables", "It writes code"],
-              answer: 0,
-              explanation: "Recognizing organization helps readers process and recall information systematically."
+        "postReading": {
+          "title": "Post-Reading Stage",
+          "steps": {
+            "quiz": {
+              "question": "What is the primary benefit of recognizing text structure?",
+              "options": [
+                "It improves reading comprehension and retention",
+                "It memorizes word spellings",
+                "It counts syllables",
+                "It writes code"
+              ],
+              "answer": 0,
+              "explanation": "Recognizing organization helps readers process and recall information systematically."
             }
           }
         }
       }
     },
     {
-      id: 5,
-      code: "UNIT-05",
-      title: "Text Interpretation & Paraphrased Meaning",
-      thaiTitle: "การตีความและความหมายที่เรียบเรียงใหม่",
-      scope: "Interpretation, paraphrased meaning, understanding meaning across sentences, guided practice",
-      description: "Recognize valid paraphrases, infer author's tone, and distinguish fact from opinion.",
-      cefr: "B1-B2",
-      stages: {
-        preReading: {
-          title: "Pre-Reading Stage",
-          steps: {
-            overview: "Paraphrasing means restating an author's ideas in your own words while retaining the original meaning.",
-            learn: "Change sentence structure and use accurate synonyms without altering the factual core."
+      "id": 5,
+      "code": "UNIT-05",
+      "title": "Text Interpretation & Paraphrased Meaning",
+      "thaiTitle": "การตีความและความหมายที่เรียบเรียงใหม่",
+      "scope": "Interpretation, paraphrased meaning, understanding meaning across sentences, guided practice",
+      "description": "Recognize valid paraphrases, infer author's tone, and distinguish fact from opinion.",
+      "cefr": "B1-B2",
+      "stages": {
+        "preReading": {
+          "title": "Pre-Reading Stage",
+          "steps": {
+            "overview": "Paraphrasing means restating an author's ideas in your own words while retaining the original meaning.",
+            "learn": "Change sentence structure and use accurate synonyms without altering the factual core."
           }
         },
-        whileReading: {
-          title: "While-Reading Stage",
-          steps: {
-            learn: "Look for value words like 'best', 'should', 'beautiful', or 'terrible' that signal opinions.",
-            passage: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
-            audioText: "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
-            example: "Fact: 'established in 1971' (historical record). Opinion: 'most inspiring institution' ('In my view').",
-            practice: {
-              question: "Which of the following statements is a FACT?",
-              options: [
+        "whileReading": {
+          "title": "While-Reading Stage",
+          "steps": {
+            "learn": "Look for value words like 'best', 'should', 'beautiful', or 'terrible' that signal opinions.",
+            "passage": "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
+            "audioText": "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
+            "example": "Fact: 'established in 1971' (historical record). Opinion: 'most inspiring institution' ('In my view').",
+            "practice": {
+              "question": "Which of the following statements is a FACT?",
+              "options": [
                 "English is the most enjoyable subject to study",
                 "Thailand's capital city is Bangkok",
                 "Online tests are much better than paper tests",
                 "Everyone should read two novels per week"
               ],
-              answer: 1,
-              explanation: "'Thailand's capital city is Bangkok' can be verified objectively as an established geographical fact."
+              "answer": 1,
+              "explanation": "'Thailand's capital city is Bangkok' can be verified objectively as an established geographical fact."
             }
           }
         },
-        postReading: {
-          title: "Post-Reading Stage",
-          steps: {
-            quiz: {
-              question: "Which phrase in a text signals that an OPINION is being stated?",
-              options: ["According to official statistics", "In the author's opinion", "The research data shows", "Confirmed by measurements"],
-              answer: 1,
-              explanation: "'In the author's opinion' explicitly announces a subjective viewpoint."
+        "postReading": {
+          "title": "Post-Reading Stage",
+          "steps": {
+            "quiz": {
+              "question": "Which phrase in a text signals that an OPINION is being stated?",
+              "options": [
+                "According to official statistics",
+                "In the author's opinion",
+                "The research data shows",
+                "Confirmed by measurements"
+              ],
+              "answer": 1,
+              "explanation": "'In the author's opinion' explicitly announces a subjective viewpoint."
             }
           }
         }
       }
     },
     {
-      id: 6,
-      code: "UNIT-06",
-      title: "Integrated Reading Practice",
-      thaiTitle: "การฝึกอ่านแบบบูรณาการ",
-      scope: "Integrated reading passages, review of multiple skills, overall reading practice, progress check",
-      description: "Synthesize all strategies across multi-paragraph academic and workplace texts.",
-      cefr: "B2",
-      stages: {
-        preReading: {
-          title: "Pre-Reading Stage",
-          steps: {
-            overview: "Skim and preview multi-paragraph academic texts before doing in-depth reading.",
-            learn: "Combine title preview, subheadings, and first-paragraph topic sentences to build a mental map."
+      "id": 6,
+      "code": "UNIT-06",
+      "title": "Integrated Reading Practice",
+      "thaiTitle": "การฝึกอ่านแบบบูรณาการ",
+      "scope": "Integrated reading passages, review of multiple skills, overall reading practice, progress check",
+      "description": "Synthesize all strategies across multi-paragraph academic and workplace texts.",
+      "cefr": "B2",
+      "stages": {
+        "preReading": {
+          "title": "Pre-Reading Stage",
+          "steps": {
+            "overview": "Skim and preview multi-paragraph academic texts before doing in-depth reading.",
+            "learn": "Combine title preview, subheadings, and first-paragraph topic sentences to build a mental map."
           }
         },
-        whileReading: {
-          title: "While-Reading Stage",
-          steps: {
-            learn: "Underline thesis statements, circle transition markers, and annotate margins with key takeaways.",
-            passage: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
-            audioText: "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
-            example: "Claim: Software improves reading. Evidence: 28% score increase over 16 weeks in a longitudinal study.",
-            practice: {
-              question: "What quantitative evidence is provided to support the effectiveness of reading software?",
-              options: ["A 28% score improvement over 16 weeks", "A 50% decrease in study hours", "Only qualitative interviews", "Zero measured change"],
-              answer: 0,
-              explanation: "The text specifies a 28% increase over a 16-week period."
+        "whileReading": {
+          "title": "While-Reading Stage",
+          "steps": {
+            "learn": "Underline thesis statements, circle transition markers, and annotate margins with key takeaways.",
+            "passage": "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
+            "audioText": "A longitudinal study by the Ministry of Education highlighted that university students engaged in interactive reading software improved reading scores by 28% over 16 weeks.",
+            "example": "Claim: Software improves reading. Evidence: 28% score increase over 16 weeks in a longitudinal study.",
+            "practice": {
+              "question": "What quantitative evidence is provided to support the effectiveness of reading software?",
+              "options": [
+                "A 28% score improvement over 16 weeks",
+                "A 50% decrease in study hours",
+                "Only qualitative interviews",
+                "Zero measured change"
+              ],
+              "answer": 0,
+              "explanation": "The text specifies a 28% increase over a 16-week period."
             }
           }
         },
-        postReading: {
-          title: "Post-Reading Stage",
-          steps: {
-            quiz: {
-              question: "What is the ultimate objective of learning reading strategies at university?",
-              options: [
+        "postReading": {
+          "title": "Post-Reading Stage",
+          "steps": {
+            "quiz": {
+              "question": "What is the ultimate objective of learning reading strategies at university?",
+              "options": [
                 "To become an autonomous, analytical, and proficient lifelong reader",
                 "To finish tests in five minutes",
                 "To avoid reading books completely",
                 "To translate every English sentence literally into Thai"
               ],
-              answer: 0,
-              explanation: "Strategies empower students to become independent and competent lifelong readers."
+              "answer": 0,
+              "explanation": "Strategies empower students to become independent and competent lifelong readers."
             }
           }
         }
       }
     }
   ],
-
-  // Module 2: Reading Strategies (6 Units, each with an 8-Step Learning Sequence)
-  // Aligned with Research Specification: Reading Strategies Module - Content Scope
-  strategies: [
+  "strategies": [
     {
-      id: "strat-u1",
-      unitNumber: 1,
-      title: "Previewing & Predicting",
-      thaiTitle: "การคาดเดาและการอ่านล่วงหน้า",
-      scope: "Previewing text features (titles, headings, pictures, bold words, typographical layout), predicting content, verifying predictions",
-      cefr: "A1-A2",
-      icon: "layout",
-      steps: [
+      "id": "strat-u1",
+      "unitNumber": 1,
+      "title": "Previewing & Predicting",
+      "thaiTitle": "การคาดเดาและการอ่านล่วงหน้า",
+      "scope": "Previewing text features (titles, headings, pictures, bold words, typographical layout), predicting content, verifying predictions",
+      "cefr": "A1-A2",
+      "icon": "layout",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Previewing is examining structural text features—such as titles, headings, subheadings, photographs, diagrams, captions, bold words, and typographical layout—before reading the entire text. Predicting is using these previewed clues combined with your prior background knowledge (Schema) to anticipate the topic, main ideas, and author's direction before and during reading.",
-          thaiExplanation: "การสำรวจข้อความ (Previewing) คือการสังเกตองค์ประกอบโครงสร้างของบทอ่าน เช่น หัวข้อหลัก หัวข้อย่อย รูปภาพ คำอธิบายภาพ ตัวหนา และการจัดหน้าก่อนเริ่มอ่านจริง ส่วนการคาดเดา (Predicting) คือการนำเบาะแสที่ได้มาประเมินร่วมกับความรู้เดิม (Schema) เพื่อคาดการณ์ใจความสำคัญและทิศทางของเนื้อหา"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Previewing is examining structural text features—such as titles, headings, subheadings, photographs, diagrams, captions, bold words, and typographical layout—before reading the entire text. Predicting is using these previewed clues combined with your prior background knowledge (Schema) to anticipate the topic, main ideas, and author's direction before and during reading.",
+          "thaiExplanation": "การสำรวจข้อความ (Previewing) คือการสังเกตองค์ประกอบโครงสร้างของบทอ่าน เช่น หัวข้อหลัก หัวข้อย่อย รูปภาพ คำอธิบายภาพ ตัวหนา และการจัดหน้าก่อนเริ่มอ่านจริง ส่วนการคาดเดา (Predicting) คือการนำเบาะแสที่ได้มาประเมินร่วมกับความรู้เดิม (Schema) เพื่อคาดการณ์ใจความสำคัญและทิศทางของเนื้อหา"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "In Unit 1 (Strategy Objectives), previewing and predicting:\n1. Activates Background Knowledge (Schema): Prepares your mind to absorb academic terminology smoothly.\n2. Establishes a Clear Reading Purpose: Keeps your attention focused on verifying whether your predictions are accurate.\n3. Reduces Reading Anxiety: Makes long or dense academic texts feel familiar and manageable.\n4. Transforms Passive Readers into Active Inquirers: Significantly improves reading speed, comprehension accuracy, and test performance.",
-          thaiExplanation: "กระตุ้นความรู้เดิม (Schema) กำหนดเป้าหมายการอ่าน ลดความวิตกกังวลเมื่อเจอบทความวิชาการภาษาอังกฤษ และเปลี่ยนผู้อ่านจากผู้รับสารแบบตั้งรับมาเป็นผู้อ่านเชิงรุกที่มีความมั่นใจ"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "In Unit 1 (Strategy Objectives), previewing and predicting:\n1. Activates Background Knowledge (Schema): Prepares your mind to absorb academic terminology smoothly.\n2. Establishes a Clear Reading Purpose: Keeps your attention focused on verifying whether your predictions are accurate.\n3. Reduces Reading Anxiety: Makes long or dense academic texts feel familiar and manageable.\n4. Transforms Passive Readers into Active Inquirers: Significantly improves reading speed, comprehension accuracy, and test performance.",
+          "thaiExplanation": "กระตุ้นความรู้เดิม (Schema) กำหนดเป้าหมายการอ่าน ลดความวิตกกังวลเมื่อเจอบทความวิชาการภาษาอังกฤษ และเปลี่ยนผู้อ่านจากผู้รับสารแบบตั้งรับมาเป็นผู้อ่านเชิงรุกที่มีความมั่นใจ"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Use previewing and predicting before reading any narrative story, fable, academic text, literature, or comprehension passage such as 'The Tortoise and the Hare', news features, and before taking reading comprehension quizzes or exams.",
-          thaiExplanation: "ใช้ก่อนเริ่มอ่านนิทาน วรรณกรรม บทความวิชาการ ตำราเรียน และก่อนทำแบบทดสอบการอ่านทุกครั้ง"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Use previewing and predicting before reading any narrative story, fable, academic text, literature, or comprehension passage such as 'The Tortoise and the Hare', news features, and before taking reading comprehension quizzes or exams.",
+          "thaiExplanation": "ใช้ก่อนเริ่มอ่านนิทาน วรรณกรรม บทความวิชาการ ตำราเรียน และก่อนทำแบบทดสอบการอ่านทุกครั้ง"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Follow the 5-Step Execution Protocol for Unit 1:",
-          checklist: [
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Follow the 5-Step Execution Protocol for Unit 1:",
+          "checklist": [
             "Step 1: Read the Main Title & Subheadings to determine the overarching academic domain.",
             "Step 2: Inspect Visuals & Captions: Examine photographs, charts, diagrams, and read visual captions.",
             "Step 3: Scan Typographical Signals: Notice bold vocabulary, italicized terminology, and bulleted lists.",
@@ -1998,1071 +334,1087 @@ window.ReadSkillsData = {
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Headline Previewed: 'The Tortoise and the Hare: The Classic Race of Perseverance'.\nSubheading: 'How Steady Determination Overcomes Careless Natural Talent'.\nVisual: Illustration showing the boastful Hare taking a nap under an oak tree while the persistent Tortoise walks steadily ahead.",
-          annotated: `Strategy Analysis (Unit 1 Model):
-• [Clue 1 (Title)]: Identifies the classic fable characters and theme of perseverance.
-• [Clue 2 (Subheading)]: Contrasts steady determination with careless natural talent.
-• [Clue 3 (Visual)]: Shows the Hare sleeping while the Tortoise presses onward.
-• [Formulated Prediction]: 'This story illustrates how the patient Tortoise defeats the proud, overconfident Hare who becomes careless during the race.'
-• [Post-Reading Verification]: 100% Confirmed upon reading the passage!`,
-          takeaway: "Previewing text features unlocks the central conflict and theme in under 15 seconds without dictionary dependency."
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Headline Previewed: 'The Tortoise and the Hare: The Classic Race of Perseverance'.\nSubheading: 'How Steady Determination Overcomes Careless Natural Talent'.\nVisual: Illustration showing the boastful Hare taking a nap under an oak tree while the persistent Tortoise walks steadily ahead.",
+          "annotated": "Strategy Analysis (Unit 1 Model):\n• [Clue 1 (Title)]: Identifies the classic fable characters and theme of perseverance.\n• [Clue 2 (Subheading)]: Contrasts steady determination with careless natural talent.\n• [Clue 3 (Visual)]: Shows the Hare sleeping while the Tortoise presses onward.\n• [Formulated Prediction]: 'This story illustrates how the patient Tortoise defeats the proud, overconfident Hare who becomes careless during the race.'\n• [Post-Reading Verification]: 100% Confirmed upon reading the passage!",
+          "takeaway": "Previewing text features unlocks the central conflict and theme in under 15 seconds without dictionary dependency."
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Headline: 'The Crow and the Pitcher: Ingenuity and Problem-Solving in Nature'.\nIllustration: A thirsty crow dropping small pebbles one by one into a tall, narrow water pitcher to raise the water level.",
-          question: "Based on previewing the title and illustration, what is the most logical prediction regarding the passage's central focus?",
-          options: [
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Headline: 'The Crow and the Pitcher: Ingenuity and Problem-Solving in Nature'.\nIllustration: A thirsty crow dropping small pebbles one by one into a tall, narrow water pitcher to raise the water level.",
+          "question": "Based on previewing the title and illustration, what is the most logical prediction regarding the passage's central focus?",
+          "options": [
             "How a clever bird uses patience and problem-solving tools to overcome a survival challenge",
             "A historical timeline of glass bottle manufacturing in ancient Egypt",
             "Instructions on how to catch crows using bird traps in cornfields",
             "A scientific study of rainfall patterns during winter storms"
           ],
-          answer: 0,
-          explanation: "The title 'The Crow and the Pitcher' paired with the visual of dropping pebbles into a jar predicts a story about ingenuity, clever problem-solving, and patience."
+          "answer": 0,
+          "explanation": "The title 'The Crow and the Pitcher' paired with the visual of dropping pebbles into a jar predicts a story about ingenuity, clever problem-solving, and patience."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "The Wisdom of Aesop: Lessons on Perseverance",
-          passage: "Fables have endured across centuries because they deliver profound truths through simple, memorable narratives. In the story of the Tortoise and the Hare, readers observe that natural speed and talent are easily squandered without discipline and humility. The humble Tortoise achieves victory not because he was physically superior, but because he remained steadfast and committed to his goal. Ultimately, steady perseverance will consistently outshine arrogant complacency.",
-          audioText: "Fables have endured across centuries because they deliver profound truths through simple, memorable narratives. In the story of the Tortoise and the Hare, readers observe that natural speed and talent are easily squandered without discipline and humility. The humble Tortoise achieves victory not because he was physically superior, but because he remained steadfast and committed to his goal. Ultimately, steady perseverance will consistently outshine arrogant complacency.",
-          taskQuestion: "After previewing the title and reading the text, verify your prediction: What enables the Tortoise to overcome the Hare's natural athletic advantage?",
-          taskAnswer: "Steadfast perseverance, discipline, and humility, while the Hare squanders his natural speed through overconfidence and lack of discipline."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "The Wisdom of Aesop: Lessons on Perseverance",
+          "passage": "Fables have endured across centuries because they deliver profound truths through simple, memorable narratives. In the story of the Tortoise and the Hare, readers observe that natural speed and talent are easily squandered without discipline and humility. The humble Tortoise achieves victory not because he was physically superior, but because he remained steadfast and committed to his goal. Ultimately, steady perseverance will consistently outshine arrogant complacency.",
+          "audioText": "Fables have endured across centuries because they deliver profound truths through simple, memorable narratives. In the story of the Tortoise and the Hare, readers observe that natural speed and talent are easily squandered without discipline and humility. The humble Tortoise achieves victory not because he was physically superior, but because he remained steadfast and committed to his goal. Ultimately, steady perseverance will consistently outshine arrogant complacency.",
+          "taskQuestion": "After previewing the title and reading the text, verify your prediction: What enables the Tortoise to overcome the Hare's natural athletic advantage?",
+          "taskAnswer": "Steadfast perseverance, discipline, and humility, while the Hare squanders his natural speed through overconfidence and lack of discipline."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "According to Strategy Performance Indicators in Unit 1, what should an active reader do immediately after previewing text features and formulating a prediction?",
-          options: [
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "According to Strategy Performance Indicators in Unit 1, what should an active reader do immediately after previewing text features and formulating a prediction?",
+          "options": [
             "Read the text actively to verify whether the initial predictions were accurate or need adjustment",
             "Stop reading completely because previewing already answers all comprehension questions",
             "Erase the predictions and ignore the passage information",
             "Memorize the dictionary definitions of every single word in alphabetical order"
           ],
-          answer: 0,
-          explanation: "Predicting is an ongoing, active inquiry process: readers formulate predictions during pre-reading and actively test and verify them while reading the text."
+          "answer": 0,
+          "explanation": "Predicting is an ongoing, active inquiry process: readers formulate predictions during pre-reading and actively test and verify them while reading the text."
         }
       ]
     },
     {
-      id: "strat-u2",
-      unitNumber: 2,
-      title: "Skimming & Scanning",
-      thaiTitle: "การอ่านแบบกวาดสายตาและค้นหาข้อมูล",
-      scope: "Skimming for main ideas/gist, scanning for specific information",
-      cefr: "A2-B1",
-      icon: "eye",
-      steps: [
+      "id": "strat-u2",
+      "unitNumber": 2,
+      "title": "Skimming & Scanning",
+      "thaiTitle": "การอ่านแบบกวาดสายตาและค้นหาข้อมูล",
+      "scope": "Skimming for main ideas/gist, scanning for specific information",
+      "cefr": "A2-B1",
+      "icon": "eye",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Skimming and scanning are twin high-speed reading techniques designed to locate information quickly without reading every single word:\n\n1. Skimming (การอ่านข้ามอย่างรวดเร็วเพื่อจับใจความสำคัญ): Reading at high speed (300–500 words per minute)—approximately 3 to 4 times faster than regular reading—to quickly capture the main idea, overall gist, theme, and structure of a text. You intentionally skip over minor details, lengthy examples, and unfamiliar words.\n\n2. Scanning (การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะ): Darting your eyes rapidly across the lines with a specific target in mind—such as a key name, number, date, year, percentage, room number, or technical term. You do not read whole sentences until your eyes lock directly onto your target keyword.",
-          thaiExplanation: "Skimming คือการ 'อ่านข้ามเพื่อจับใจความสำคัญ' (What is it about?) เหมาะสำหรับดูภาพรวมและโครงสร้างเนื้อหาอย่างรวดเร็ว ส่วน Scanning คือการ 'กวาดสายตาหาข้อมูลเฉพาะ' (Where is the specific fact?) เช่น ค้นหาตัวเลข วันที่ ชื่อคน หรือคำศัพท์เฉพาะ ทั้งสองทักษะช่วยให้ผู้อ่านประหยัดเวลาได้อย่างมหาศาลและไม่ต้องอ่านทุกคำตั้งแต่ต้นจนจบ"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Skimming and scanning are twin high-speed reading techniques designed to locate information quickly without reading every single word:\n\n1. Skimming (การอ่านข้ามอย่างรวดเร็วเพื่อจับใจความสำคัญ): Reading at high speed (300–500 words per minute)—approximately 3 to 4 times faster than regular reading—to quickly capture the main idea, overall gist, theme, and structure of a text. You intentionally skip over minor details, lengthy examples, and unfamiliar words.\n\n2. Scanning (การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะ): Darting your eyes rapidly across the lines with a specific target in mind—such as a key name, number, date, year, percentage, room number, or technical term. You do not read whole sentences until your eyes lock directly onto your target keyword.",
+          "thaiExplanation": "Skimming คือการ 'อ่านข้ามเพื่อจับใจความสำคัญ' (What is it about?) เหมาะสำหรับดูภาพรวมและโครงสร้างเนื้อหาอย่างรวดเร็ว ส่วน Scanning คือการ 'กวาดสายตาหาข้อมูลเฉพาะ' (Where is the specific fact?) เช่น ค้นหาตัวเลข วันที่ ชื่อคน หรือคำศัพท์เฉพาะ ทั้งสองทักษะช่วยให้ผู้อ่านประหยัดเวลาได้อย่างมหาศาลและไม่ต้องอ่านทุกคำตั้งแต่ต้นจนจบ"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "In academic study and standardized examinations, skimming and scanning deliver crucial advantages:\n1. Drastic Time Efficiency: Saves up to 70% of reading time, enabling you to finish lengthy exams (like TOEIC, IELTS, and university finals) well within the time limit.\n2. Prevents Cognitive Overload: Keeps you from getting trapped and frustrated by low-priority unknown words in dense paragraphs.\n3. Efficient Source Filtering: Enables university students to evaluate whether an entire library book, journal paper, or website is useful for their research in under two minutes.\n4. Pinpoint Accuracy: Scanning allows instant fact retrieval, leading to higher accuracy when answering detail-oriented comprehension questions.",
-          thaiExplanation: "ช่วยประหยัดเวลาในการทำข้อสอบได้ถึง 70% ป้องกันอาการสมองล้าจากการอ่านคำศัพท์ยากๆ ที่ไม่จำเป็น ช่วยคัดกรองงานวิจัยและหนังสือในห้องสมุดได้อย่างรวดเร็ว และช่วยค้นหาคำตอบในข้อสอบได้อย่างแม่นยำตรงจุด"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "In academic study and standardized examinations, skimming and scanning deliver crucial advantages:\n1. Drastic Time Efficiency: Saves up to 70% of reading time, enabling you to finish lengthy exams (like TOEIC, IELTS, and university finals) well within the time limit.\n2. Prevents Cognitive Overload: Keeps you from getting trapped and frustrated by low-priority unknown words in dense paragraphs.\n3. Efficient Source Filtering: Enables university students to evaluate whether an entire library book, journal paper, or website is useful for their research in under two minutes.\n4. Pinpoint Accuracy: Scanning allows instant fact retrieval, leading to higher accuracy when answering detail-oriented comprehension questions.",
+          "thaiExplanation": "ช่วยประหยัดเวลาในการทำข้อสอบได้ถึง 70% ป้องกันอาการสมองล้าจากการอ่านคำศัพท์ยากๆ ที่ไม่จำเป็น ช่วยคัดกรองงานวิจัยและหนังสือในห้องสมุดได้อย่างรวดเร็ว และช่วยค้นหาคำตอบในข้อสอบได้อย่างแม่นยำตรงจุด"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Apply these dual techniques in the following academic and daily scenarios:\n• Use Skimming when:\n  - Previewing textbook chapters or research articles before attending lectures.\n  - Deciding whether a journal article or online source is relevant to your term paper.\n  - Reviewing previously read chapters the evening before an examination to refresh key concepts.\n  - Reading newspaper headlines, editorial summaries, and magazine articles.\n• Use Scanning when:\n  - Answering exam questions starting with 'When...', 'Who...', 'Where...', 'How many...', or 'According to paragraph 2...'.\n  - Looking up flight departures, bus/train timetables, university exam schedules, or room assignments.\n  - Finding a word in a dictionary, glossary, index, or contact directory.\n  - Locating specific statistical figures, percentages, or research citations.",
-          thaiExplanation: "ใช้ Skimming เมื่อต้องการสำรวจภาพรวมก่อนเรียน คัดกรองบทความวิจัย และทบทวนบทเรียนก่อนสอบ และใช้ Scanning เมื่อต้องตอบคำถามเฉพาะข้อในข้อสอบ ค้นหาตารางสอบ/ห้องสอบ ตรวจสอบตารางการเดินทาง หรือหาคำศัพท์ในพจนานุกรม"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Apply these dual techniques in the following academic and daily scenarios:\n• Use Skimming when:\n  - Previewing textbook chapters or research articles before attending lectures.\n  - Deciding whether a journal article or online source is relevant to your term paper.\n  - Reviewing previously read chapters the evening before an examination to refresh key concepts.\n  - Reading newspaper headlines, editorial summaries, and magazine articles.\n• Use Scanning when:\n  - Answering exam questions starting with 'When...', 'Who...', 'Where...', 'How many...', or 'According to paragraph 2...'.\n  - Looking up flight departures, bus/train timetables, university exam schedules, or room assignments.\n  - Finding a word in a dictionary, glossary, index, or contact directory.\n  - Locating specific statistical figures, percentages, or research citations.",
+          "thaiExplanation": "ใช้ Skimming เมื่อต้องการสำรวจภาพรวมก่อนเรียน คัดกรองบทความวิจัย และทบทวนบทเรียนก่อนสอบ และใช้ Scanning เมื่อต้องตอบคำถามเฉพาะข้อในข้อสอบ ค้นหาตารางสอบ/ห้องสอบ ตรวจสอบตารางการเดินทาง หรือหาคำศัพท์ในพจนานุกรม"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Follow the 5-Step Execution Protocol for Skimming & Scanning:",
-          checklist: [
-          "Step 1 (Determine Your Purpose): Ask yourself: 'Do I need the overall gist (Skim) or a specific piece of information (Scan)?'",
-          "Step 2 (Skimming - Focus on High-Value Zones): Read the title, subheadings, the first paragraph (introduction), the topic sentence (first sentence) of each body paragraph, and the concluding paragraph.",
-          "Step 3 (Skimming - Eye Movement Patterns): Move your eyes rapidly down the center of each page in smooth 'Z' or 'S' curves; ignore supporting adjectives and keep moving forward without back-tracking.",
-          "Step 4 (Scanning - Formulate a Target Mental Image): Lock the exact keyword, number format (e.g., 4-digit year, percentage sign '%', or capital letter for a name) clearly in your mind before looking at the page.",
-          "Step 5 (Scanning - Sweep & Lock On Target): Sweep your finger, pen, or eyes systematically down the text; the instant your target appears, halt immediately and read only that single sentence to confirm your answer."
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Follow the 5-Step Execution Protocol for Skimming & Scanning:",
+          "checklist": [
+            "Step 1 (Determine Your Purpose): Ask yourself: 'Do I need the overall gist (Skim) or a specific piece of information (Scan)?'",
+            "Step 2 (Skimming - Focus on High-Value Zones): Read the title, subheadings, the first paragraph (introduction), the topic sentence (first sentence) of each body paragraph, and the concluding paragraph.",
+            "Step 3 (Skimming - Eye Movement Patterns): Move your eyes rapidly down the center of each page in smooth 'Z' or 'S' curves; ignore supporting adjectives and keep moving forward without back-tracking.",
+            "Step 4 (Scanning - Formulate a Target Mental Image): Lock the exact keyword, number format (e.g., 4-digit year, percentage sign '%', or capital letter for a name) clearly in your mind before looking at the page.",
+            "Step 5 (Scanning - Sweep & Lock On Target): Sweep your finger, pen, or eyes systematically down the text; the instant your target appears, halt immediately and read only that single sentence to confirm your answer."
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Sample Text: 'Buriram Rajabhat University Announcement (October 2026): The Academic Resource Center will host the 2026 International Digital Literacy Conference from November 12 to 14, 2026, in the Golden Teak Auditorium (Building 15, Room 402). Keynote speaker Dr. Alan Montgomery from Cambridge University will deliver the opening address at 09:30 AM. Registered undergraduate students who check in before 09:00 AM will receive a complimentary e-certificate and 6 professional development credits.'",
-          annotated: "Strategy Analysis (Unit 2 Model):\n• [Skimming Task (Title & Topic Sentence)]: Quickly reads the headline and first sentence -> Identifies the core event: BRU Academic Resource Center is hosting an International Digital Literacy Conference.\n• [Scanning Task 1 (Target Date)]: Visual target 'November' / '2026' -> Eye locks directly onto 'November 12 to 14, 2026' without reading the surrounding lines.\n• [Scanning Task 2 (Target Location)]: Visual target 'Room' / 'Building' -> Sweeps directly to 'Building 15, Room 402'.\n• [Scanning Task 3 (Keynote Speaker)]: Visual target capitalized name / 'Dr.' -> Pinpoints 'Dr. Alan Montgomery from Cambridge University'.\n• [Scanning Task 4 (Student Incentive)]: Visual target digits / 'credits' -> Locates '6 professional development credits' in 2 seconds.\n• [Verification]: Successfully extracted 4 critical data points in under 15 seconds!",
-          takeaway: "Skimming reveals the overarching topic in 4 seconds; scanning extracts exact dates, rooms, and names without reading all 80 words."
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Sample Text: 'Buriram Rajabhat University Announcement (October 2026): The Academic Resource Center will host the 2026 International Digital Literacy Conference from November 12 to 14, 2026, in the Golden Teak Auditorium (Building 15, Room 402). Keynote speaker Dr. Alan Montgomery from Cambridge University will deliver the opening address at 09:30 AM. Registered undergraduate students who check in before 09:00 AM will receive a complimentary e-certificate and 6 professional development credits.'",
+          "annotated": "Strategy Analysis (Unit 2 Model):\n• [Skimming Task (Title & Topic Sentence)]: Quickly reads the headline and first sentence -> Identifies the core event: BRU Academic Resource Center is hosting an International Digital Literacy Conference.\n• [Scanning Task 1 (Target Date)]: Visual target 'November' / '2026' -> Eye locks directly onto 'November 12 to 14, 2026' without reading the surrounding lines.\n• [Scanning Task 2 (Target Location)]: Visual target 'Room' / 'Building' -> Sweeps directly to 'Building 15, Room 402'.\n• [Scanning Task 3 (Keynote Speaker)]: Visual target capitalized name / 'Dr.' -> Pinpoints 'Dr. Alan Montgomery from Cambridge University'.\n• [Scanning Task 4 (Student Incentive)]: Visual target digits / 'credits' -> Locates '6 professional development credits' in 2 seconds.\n• [Verification]: Successfully extracted 4 critical data points in under 15 seconds!",
+          "takeaway": "Skimming reveals the overarching topic in 4 seconds; scanning extracts exact dates, rooms, and names without reading all 80 words."
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Notice: 'Campus Library Examination Hours Notice: During final examination week (October 10-24, 2026), the Central Library will operate under extended hours: Monday through Friday from 07:30 AM to 23:00 PM, and Saturday through Sunday from 08:30 AM to 20:00 PM. High-speed study pods in Zone C (3rd Floor) require online reservation via the BRU Smart Portal at least 2 hours in advance. Late check-ins over 15 minutes will automatically release reserved workstations.'",
-          question: "Scan the notice: What is the latest closing time for the library on weekdays during final examination week?",
-          options: [
-          "23:00 PM",
-          "20:00 PM",
-          "07:30 AM",
-          "15 minutes"
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Notice: 'Campus Library Examination Hours Notice: During final examination week (October 10-24, 2026), the Central Library will operate under extended hours: Monday through Friday from 07:30 AM to 23:00 PM, and Saturday through Sunday from 08:30 AM to 20:00 PM. High-speed study pods in Zone C (3rd Floor) require online reservation via the BRU Smart Portal at least 2 hours in advance. Late check-ins over 15 minutes will automatically release reserved workstations.'",
+          "question": "Scan the notice: What is the latest closing time for the library on weekdays during final examination week?",
+          "options": [
+            "23:00 PM",
+            "20:00 PM",
+            "07:30 AM",
+            "15 minutes"
           ],
-          answer: 0,
-          explanation: "By fixing your mental target on 'weekdays' / 'Monday through Friday' and scanning for closing time digits, your eyes immediately find '23:00 PM'."
+          "answer": 0,
+          "explanation": "By fixing your mental target on 'weekdays' / 'Monday through Friday' and scanning for closing time digits, your eyes immediately find '23:00 PM'."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "Sustainable Agrotechnology in Buriram Province",
-          passage: "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
-          audioText: "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
-          taskQuestion: "Practice Scanning: By what percentage did organic jasmine rice yields increase during the evaluation period?",
-          taskAnswer: "28% (Scanning for 'jasmine rice' and percentage symbols directly locates the 28% yield increase)."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "Sustainable Agrotechnology in Buriram Province",
+          "passage": "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
+          "audioText": "In 2025, agricultural scientists at Buriram Rajabhat University introduced solar-powered smart irrigation networks across 85 demonstration farms in Prakhon Chai district. The wireless soil moisture sensors transmit real-time telemetry every 15 minutes to farmers' mobile phones, enabling precision water delivery. Over a twelve-month evaluation period, participating farms documented a 42% reduction in groundwater usage and a 28% increase in organic jasmine rice yields. The provincial agricultural bureau has allocated a 15-million-baht grant to expand this solar IoT initiative to 300 additional farms by the end of 2027.",
+          "taskQuestion": "Practice Scanning: By what percentage did organic jasmine rice yields increase during the evaluation period?",
+          "taskAnswer": "28% (Scanning for 'jasmine rice' and percentage symbols directly locates the 28% yield increase)."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "Which of the following scenarios demonstrates the most appropriate use of SCANNING rather than skimming?",
-          options: [
-          "Looking up the departure gate for Flight TG 208 on an airport departure display monitor",
-          "Reading through an entire introductory chapter to understand the major themes of sociology",
-          "Deciding whether a 400-page historical novel has an appealing overall tone",
-          "Grasping the main viewpoint of a newspaper editorial before deciding to buy the paper"
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "Which of the following scenarios demonstrates the most appropriate use of SCANNING rather than skimming?",
+          "options": [
+            "Looking up the departure gate for Flight TG 208 on an airport departure display monitor",
+            "Reading through an entire introductory chapter to understand the major themes of sociology",
+            "Deciding whether a 400-page historical novel has an appealing overall tone",
+            "Grasping the main viewpoint of a newspaper editorial before deciding to buy the paper"
           ],
-          answer: 0,
-          explanation: "Scanning is designed for locating a specific known piece of data (such as flight number 'TG 208' or gate letter) in a list or display without reading other details."
+          "answer": 0,
+          "explanation": "Scanning is designed for locating a specific known piece of data (such as flight number 'TG 208' or gate letter) in a list or display without reading other details."
         }
       ]
     },
     {
-      id: "strat-u3",
-      unitNumber: 3,
-      title: "Using Context Clues",
-      thaiTitle: "การใช้คำศัพท์ในบริบท",
-      scope: "Using context clues to find word meaning and sentence meaning",
-      cefr: "B1",
-      icon: "key",
-      steps: [
+      "id": "strat-u3",
+      "unitNumber": 3,
+      "title": "Using Context Clues",
+      "thaiTitle": "การใช้คำศัพท์ในบริบท",
+      "scope": "Using context clues to find word meaning and sentence meaning",
+      "cefr": "B1",
+      "icon": "key",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Using context clues means uncovering the meaning of unfamiliar words and complex sentences by analyzing surrounding words, phrases, and punctuation marks provided by the author in the same paragraph.\n\nThe 4 Major Types of Context Clues (The D-S-A-E Framework):\n1. Definition / Restatement Clues (การให้คำจำกัดความ/การกล่าวซ้ำ): The author directly defines the term using linking phrases (is defined as, means, refers to) or punctuation marks like commas, em-dashes, or parentheses.\n2. Synonym Clues (คำเหมือนหรือคำที่มีความหมายใกล้เคียง): The author pairs the unfamiliar word with a familiar synonym or rephrasing using signal markers such as 'or', 'that is', 'also known as', or 'in other words'.\n3. Antonym / Contrast Clues (คำตรงข้ามหรือข้อความที่ขัดแย้ง): The author clarifies the word by contrasting it with its opposite using transition words such as 'unlike', 'however', 'but', 'on the other hand', 'in contrast', 'whereas', or 'although'.\n4. Example / Illustration Clues (การยกตัวอย่างประกอบ): The author explains the word by listing concrete real-world examples using signal phrases such as 'such as', 'for example', 'for instance', 'including', or 'e.g.'.",
-          thaiExplanation: "บริบท (Context Clues) คือเบาะแสหรือข้อความแวดล้อมที่ผู้เขียนใส่ไว้เพื่อช่วยให้ผู้อ่านเข้าใจคำศัพท์ที่ไม่คุ้นเคยโดยไม่ต้องเปิดพจนานุกรม ประกอบด้วย 4 ประเภทหลัก: 1. การให้คำจำกัดความ (Definition) 2. คำเหมือน (Synonym) 3. คำตรงข้าม/ข้อความขัดแย้ง (Antonym/Contrast) และ 4. การยกตัวอย่างประกอบ (Example)"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Using context clues means uncovering the meaning of unfamiliar words and complex sentences by analyzing surrounding words, phrases, and punctuation marks provided by the author in the same paragraph.\n\nThe 4 Major Types of Context Clues (The D-S-A-E Framework):\n1. Definition / Restatement Clues (การให้คำจำกัดความ/การกล่าวซ้ำ): The author directly defines the term using linking phrases (is defined as, means, refers to) or punctuation marks like commas, em-dashes, or parentheses.\n2. Synonym Clues (คำเหมือนหรือคำที่มีความหมายใกล้เคียง): The author pairs the unfamiliar word with a familiar synonym or rephrasing using signal markers such as 'or', 'that is', 'also known as', or 'in other words'.\n3. Antonym / Contrast Clues (คำตรงข้ามหรือข้อความที่ขัดแย้ง): The author clarifies the word by contrasting it with its opposite using transition words such as 'unlike', 'however', 'but', 'on the other hand', 'in contrast', 'whereas', or 'although'.\n4. Example / Illustration Clues (การยกตัวอย่างประกอบ): The author explains the word by listing concrete real-world examples using signal phrases such as 'such as', 'for example', 'for instance', 'including', or 'e.g.'.",
+          "thaiExplanation": "บริบท (Context Clues) คือเบาะแสหรือข้อความแวดล้อมที่ผู้เขียนใส่ไว้เพื่อช่วยให้ผู้อ่านเข้าใจคำศัพท์ที่ไม่คุ้นเคยโดยไม่ต้องเปิดพจนานุกรม ประกอบด้วย 4 ประเภทหลัก: 1. การให้คำจำกัดความ (Definition) 2. คำเหมือน (Synonym) 3. คำตรงข้าม/ข้อความขัดแย้ง (Antonym/Contrast) และ 4. การยกตัวอย่างประกอบ (Example)"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "In university-level reading and academic examinations, using context clues provides critical cognitive benefits:\n1. Preserves Reading Fluency & Momentum: Stopping to look up every single unknown word in a dictionary disrupts short-term memory, slows reading speed, and breaks your comprehension train of thought.\n2. Crucial for Timed Examinations: In standardized tests (like TOEIC, TOEFL, IELTS, and BRU exams), dictionaries and phones are strictly prohibited; context clues are your only tool to decode unknown terms.\n3. Unlocks Nuanced Academic Meanings: Many English words possess multiple definitions (polysemy); context clues reveal the precise shade of meaning intended by the author in that specific field.\n4. Accelerates Long-Term Vocabulary Acquisition: Research shows that discovering word meanings through authentic context leads to significantly stronger memory retention than memorizing word lists in isolation.",
-          thaiExplanation: "ช่วยรักษาความต่อเนื่องในการอ่านโดยไม่ต้องหยุดเปิดพจนานุกรมบ่อยๆ เป็นทักษะชี้ขาดในห้องสอบที่ไม่อนุญาตให้นำอุปกรณ์ช่วยแปลเข้าไป ช่วยระบุความหมายเฉพาะทางของคำศัพท์ที่มีหลายความหมาย (Polysemy) และช่วยให้จดจำคำศัพท์ใหม่ได้อย่างยาวนานและเป็นธรรมชาติ"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "In university-level reading and academic examinations, using context clues provides critical cognitive benefits:\n1. Preserves Reading Fluency & Momentum: Stopping to look up every single unknown word in a dictionary disrupts short-term memory, slows reading speed, and breaks your comprehension train of thought.\n2. Crucial for Timed Examinations: In standardized tests (like TOEIC, TOEFL, IELTS, and BRU exams), dictionaries and phones are strictly prohibited; context clues are your only tool to decode unknown terms.\n3. Unlocks Nuanced Academic Meanings: Many English words possess multiple definitions (polysemy); context clues reveal the precise shade of meaning intended by the author in that specific field.\n4. Accelerates Long-Term Vocabulary Acquisition: Research shows that discovering word meanings through authentic context leads to significantly stronger memory retention than memorizing word lists in isolation.",
+          "thaiExplanation": "ช่วยรักษาความต่อเนื่องในการอ่านโดยไม่ต้องหยุดเปิดพจนานุกรมบ่อยๆ เป็นทักษะชี้ขาดในห้องสอบที่ไม่อนุญาตให้นำอุปกรณ์ช่วยแปลเข้าไป ช่วยระบุความหมายเฉพาะทางของคำศัพท์ที่มีหลายความหมาย (Polysemy) และช่วยให้จดจำคำศัพท์ใหม่ได้อย่างยาวนานและเป็นธรรมชาติ"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Use context clues whenever you encounter:\n• Low-frequency or specialized technical terminology in academic journal articles and textbooks.\n• Polysemous words where the common everyday meaning does not make sense (e.g., 'yield' meaning crop output vs. give way; 'table' meaning to postpone a debate).\n• Descriptive adjectives, adverbs, and idiomatic expressions in literature, news editorials, and fables.\n• Timed comprehension quizzes, university midterm/final exams, and professional English certifications.",
-          thaiExplanation: "ใช้เมื่อเจอคำศัพท์วิชาการยากๆ ในตำราเรียนและงานวิจัย คำศัพท์ที่มีหลายความหมายแต่บริบททำให้ความหมายเปลี่ยนไป สำนวนและคำคุณศัพท์ในการอ่านวรรณกรรม และเมื่อทำแบบทดสอบวัดระดับภาษาอังกฤษในห้องสอบ"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Use context clues whenever you encounter:\n• Low-frequency or specialized technical terminology in academic journal articles and textbooks.\n• Polysemous words where the common everyday meaning does not make sense (e.g., 'yield' meaning crop output vs. give way; 'table' meaning to postpone a debate).\n• Descriptive adjectives, adverbs, and idiomatic expressions in literature, news editorials, and fables.\n• Timed comprehension quizzes, university midterm/final exams, and professional English certifications.",
+          "thaiExplanation": "ใช้เมื่อเจอคำศัพท์วิชาการยากๆ ในตำราเรียนและงานวิจัย คำศัพท์ที่มีหลายความหมายแต่บริบททำให้ความหมายเปลี่ยนไป สำนวนและคำคุณศัพท์ในการอ่านวรรณกรรม และเมื่อทำแบบทดสอบวัดระดับภาษาอังกฤษในห้องสอบ"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Follow the 5-Step Execution Protocol for Using Context Clues:",
-          checklist: [
-          "Step 1 (Isolate & Bracket): When you encounter an unknown word, do not panic or stop; read past the word to the end of the sentence to take in the complete thought.",
-          "Step 2 (Hunt for Signal Words & Punctuation): Look closely for punctuation clues (commas, dashes, parentheses) and connective signal words (means, or, unlike, however, such as, for instance).",
-          "Step 3 (Classify the Clue Category): Identify which clue type the author provided: Definition, Synonym, Contrast, or Example.",
-          "Step 4 (Substitute a Trial Meaning): Think of a simple replacement word (e.g., 'helpful', 'dangerous', 'tool', 'gather') and mentally insert it in place of the unknown word.",
-          "Step 5 (Verify Logical & Grammatical Fit): Re-read the modified sentence to ensure that your substituted meaning creates perfect logical and grammatical coherence in the paragraph."
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Follow the 5-Step Execution Protocol for Using Context Clues:",
+          "checklist": [
+            "Step 1 (Isolate & Bracket): When you encounter an unknown word, do not panic or stop; read past the word to the end of the sentence to take in the complete thought.",
+            "Step 2 (Hunt for Signal Words & Punctuation): Look closely for punctuation clues (commas, dashes, parentheses) and connective signal words (means, or, unlike, however, such as, for instance).",
+            "Step 3 (Classify the Clue Category): Identify which clue type the author provided: Definition, Synonym, Contrast, or Example.",
+            "Step 4 (Substitute a Trial Meaning): Think of a simple replacement word (e.g., 'helpful', 'dangerous', 'tool', 'gather') and mentally insert it in place of the unknown word.",
+            "Step 5 (Verify Logical & Grammatical Fit): Re-read the modified sentence to ensure that your substituted meaning creates perfect logical and grammatical coherence in the paragraph."
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Sample Text: 'Archaeologists excavating the ruins of Muang Tam Sanctuary discovered several subterranean chambers—underground rooms located beneath the stone foundation—which were used for preserving sacred offerings from tropical heat.'",
-          annotated: "Strategy Analysis (Unit 3 Model):\n• [Target Vocabulary Word]: Unfamiliar academic term 'subterranean'.\n• [Punctuation Clue (Dashes)]: The author places explanatory em-dashes immediately after the word: '—underground rooms located beneath the stone foundation—'.\n• [Context Clue Type]: Definition / Restatement Clue directly defining the word between punctuation marks.\n• [Morphological Clue (Word Parts)]: Prefix 'sub-' (under/below) + Latin root 'terra' (earth/ground).\n• [Contextual Supporting Detail]: Purpose is 'preserving sacred offerings from tropical heat', confirming cool subterranean conditions.\n• [Decoded Definition]: 'Subterranean' means existing, occurring, or situated underground beneath the surface of the earth.\n• [Verification]: Substituting 'underground' into the sentence preserves perfect grammatical and semantic coherence.",
-          takeaway: "Punctuation marks such as dashes, commas, and parentheses act as the author's built-in glossary—always examine the words between them first!"
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Sample Text: 'Archaeologists excavating the ruins of Muang Tam Sanctuary discovered several subterranean chambers—underground rooms located beneath the stone foundation—which were used for preserving sacred offerings from tropical heat.'",
+          "annotated": "Strategy Analysis (Unit 3 Model):\n• [Target Vocabulary Word]: Unfamiliar academic term 'subterranean'.\n• [Punctuation Clue (Dashes)]: The author places explanatory em-dashes immediately after the word: '—underground rooms located beneath the stone foundation—'.\n• [Context Clue Type]: Definition / Restatement Clue directly defining the word between punctuation marks.\n• [Morphological Clue (Word Parts)]: Prefix 'sub-' (under/below) + Latin root 'terra' (earth/ground).\n• [Contextual Supporting Detail]: Purpose is 'preserving sacred offerings from tropical heat', confirming cool subterranean conditions.\n• [Decoded Definition]: 'Subterranean' means existing, occurring, or situated underground beneath the surface of the earth.\n• [Verification]: Substituting 'underground' into the sentence preserves perfect grammatical and semantic coherence.",
+          "takeaway": "Punctuation marks such as dashes, commas, and parentheses act as the author's built-in glossary—always examine the words between them first!"
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Passage: 'While Professor Thanarat was known for his amicable and welcoming disposition, his colleague was sullen, hostile, and constantly avoided talking to students.'",
-          question: "Based on the contrast clue 'While' and the opposites 'sullen and hostile', what is the most accurate meaning of 'amicable'?",
-          options: [
-          "Friendly, pleasant, and easy to get along with",
-          "Extremely wealthy and powerful",
-          "Tired, sleepy, and exhausted",
-          "Strict, harsh, and punitive"
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Passage: 'While Professor Thanarat was known for his amicable and welcoming disposition, his colleague was sullen, hostile, and constantly avoided talking to students.'",
+          "question": "Based on the contrast clue 'While' and the opposites 'sullen and hostile', what is the most accurate meaning of 'amicable'?",
+          "options": [
+            "Friendly, pleasant, and easy to get along with",
+            "Extremely wealthy and powerful",
+            "Tired, sleepy, and exhausted",
+            "Strict, harsh, and punitive"
           ],
-          answer: 0,
-          explanation: "The contrast marker 'While' contrasts the professor's 'amicable' nature directly with his colleague who is 'sullen, hostile, and avoids talking', proving amicable means friendly and welcoming."
+          "answer": 0,
+          "explanation": "The contrast marker 'While' contrasts the professor's 'amicable' nature directly with his colleague who is 'sullen, hostile, and avoids talking', proving amicable means friendly and welcoming."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "Endangered Biodiversity in the Dong Phayayen-Khao Yai Forest",
-          passage: "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
-          audioText: "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
-          taskQuestion: "Using the example clues ('such as gibbons, flying squirrels...') and sentence clues ('canopy-dwelling species... high in the treetops'), what does the word 'arboreal' mean?",
-          taskAnswer: "'Arboreal' means living in or relating to trees and tree canopies (living off the ground)."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "Endangered Biodiversity in the Dong Phayayen-Khao Yai Forest",
+          "passage": "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
+          "audioText": "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
+          "taskQuestion": "Using the example clues ('such as gibbons, flying squirrels...') and sentence clues ('canopy-dwelling species... high in the treetops'), what does the word 'arboreal' mean?",
+          "taskAnswer": "'Arboreal' means living in or relating to trees and tree canopies (living off the ground)."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "In the sentence 'Unlike synthetic fertilizers that degrade soil quality over time, compost is a natural soil enhancer; moreover, it is biodegradable, which means capable of being broken down safely by microorganisms', what TWO types of context clues are used?",
-          options: [
-          "Contrast clue ('Unlike') and Definition clue ('which means')",
-          "Synonym clue and Sound imitation clue",
-          "Rhyme clue and Punctuation ellipsis clue",
-          "Chronological time clue and Question clue"
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "In the sentence 'Unlike synthetic fertilizers that degrade soil quality over time, compost is a natural soil enhancer; moreover, it is biodegradable, which means capable of being broken down safely by microorganisms', what TWO types of context clues are used?",
+          "options": [
+            "Contrast clue ('Unlike') and Definition clue ('which means')",
+            "Synonym clue and Sound imitation clue",
+            "Rhyme clue and Punctuation ellipsis clue",
+            "Chronological time clue and Question clue"
           ],
-          answer: 0,
-          explanation: "'Unlike' introduces a contrast clue against synthetic fertilizers, while 'which means' explicitly introduces a definition clue for 'biodegradable'."
+          "answer": 0,
+          "explanation": "'Unlike' introduces a contrast clue against synthetic fertilizers, while 'which means' explicitly introduces a definition clue for 'biodegradable'."
         }
       ]
     },
     {
-      id: "strat-u4",
-      unitNumber: 4,
-      title: "Identifying Text Organization",
-      thaiTitle: "การระบุโครงสร้างข้อความ",
-      scope: "Recognizing text structure, reference words, connectives, and organization",
-      cefr: "B1-B2",
-      icon: "git-merge",
-      steps: [
+      "id": "strat-u4",
+      "unitNumber": 4,
+      "title": "Identifying Text Organization",
+      "thaiTitle": "การระบุโครงสร้างข้อความ",
+      "scope": "Recognizing text structure, reference words, connectives, and organization",
+      "cefr": "B1-B2",
+      "icon": "git-merge",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Identifying text organization involves recognizing how an author systematically arranges ideas, claims, and factual evidence, as well as tracking reference words and transitional connectives that create cohesive flow.\n\nThe 4 Major Text Organization Patterns:\n1. Chronological / Sequence Pattern (ลำดับเวลา/ขั้นตอน): Organizes events, historical developments, or instructions in temporal order (Signal words: first, next, subsequently, then, meanwhile, finally, in 1990, dates).\n2. Cause and Effect Pattern (เหตุและผล): Explains why an event happened and what consequences resulted (Signal words: because, since, leads to, causes, consequently, therefore, as a result, resulting in).\n3. Compare and Contrast Pattern (เปรียบเทียบความเหมือนและความต่าง): Analyzes similarities and differences between two or more subjects (Signal words: similarly, likewise, in contrast, however, on the other hand, unlike, whereas, while).\n4. Problem and Solution Pattern (ปัญหาและแนวทางแก้ไข): Introduces an obstacle, dilemma, or challenge, followed by one or more proposed or implemented solutions (Signal words: problem, challenge, dilemma, solution, solve, resolve, overcome, remedy).\n\nReference Words & Cohesive Ties (คำอ้างอิงและตัวเชื่อมความสัมพันธ์):\nAuthors use pronouns (it, they, them, this, that, these, those, former, latter) to refer back to previously mentioned nouns (antecedents). Correctly identifying these links prevents confusion about subjects.",
-          thaiExplanation: "การระบุโครงสร้างข้อความ คือการทำความเข้าใจรูปแบบการจัดระเบียบความคิดของผู้เขียน เช่น ลำดับเวลา (Chronological), เหตุและผล (Cause-Effect), เปรียบเทียบ (Compare-Contrast) และปัญหา-ทางออก (Problem-Solution) พร้อมทั้งการแกะรอยคำอ้างอิง (Pronoun Reference) เช่น it, they, this, these ว่าชี้กลับไปที่คำนามตัวใด เพื่อให้เข้าใจเนื้อหาได้อย่างแม่นยำไม่สับสน"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Identifying text organization involves recognizing how an author systematically arranges ideas, claims, and factual evidence, as well as tracking reference words and transitional connectives that create cohesive flow.\n\nThe 4 Major Text Organization Patterns:\n1. Chronological / Sequence Pattern (ลำดับเวลา/ขั้นตอน): Organizes events, historical developments, or instructions in temporal order (Signal words: first, next, subsequently, then, meanwhile, finally, in 1990, dates).\n2. Cause and Effect Pattern (เหตุและผล): Explains why an event happened and what consequences resulted (Signal words: because, since, leads to, causes, consequently, therefore, as a result, resulting in).\n3. Compare and Contrast Pattern (เปรียบเทียบความเหมือนและความต่าง): Analyzes similarities and differences between two or more subjects (Signal words: similarly, likewise, in contrast, however, on the other hand, unlike, whereas, while).\n4. Problem and Solution Pattern (ปัญหาและแนวทางแก้ไข): Introduces an obstacle, dilemma, or challenge, followed by one or more proposed or implemented solutions (Signal words: problem, challenge, dilemma, solution, solve, resolve, overcome, remedy).\n\nReference Words & Cohesive Ties (คำอ้างอิงและตัวเชื่อมความสัมพันธ์):\nAuthors use pronouns (it, they, them, this, that, these, those, former, latter) to refer back to previously mentioned nouns (antecedents). Correctly identifying these links prevents confusion about subjects.",
+          "thaiExplanation": "การระบุโครงสร้างข้อความ คือการทำความเข้าใจรูปแบบการจัดระเบียบความคิดของผู้เขียน เช่น ลำดับเวลา (Chronological), เหตุและผล (Cause-Effect), เปรียบเทียบ (Compare-Contrast) และปัญหา-ทางออก (Problem-Solution) พร้อมทั้งการแกะรอยคำอ้างอิง (Pronoun Reference) เช่น it, they, this, these ว่าชี้กลับไปที่คำนามตัวใด เพื่อให้เข้าใจเนื้อหาได้อย่างแม่นยำไม่สับสน"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "Recognizing structural patterns and reference markers provides essential academic reading benefits:\n1. Creates a Cognitive Roadmap: Knowing the organizational pattern helps you anticipate upcoming content (e.g., encountering a problem prepares your mind to search for the solution).\n2. Dramatically Improves Summarization: Every pattern has a natural summary template (e.g., Compare-Contrast yields a comparative table; Cause-Effect yields a causal chain).\n3. Prevents Subject Confusion: Tracking pronoun references (e.g., 'What does \"it\" refer to?') ensures you never misattribute actions or research findings to the wrong subject.\n4. Crucial for Academic Reading Exams: Structure and reference questions appear in nearly every university English test and standardized exam (TOEIC, TOEFL, IELTS).",
-          thaiExplanation: "ช่วยสร้างแผนผังความคิดล่วงหน้า ทำให้คาดเดาเนื้อหาถัดไปได้ง่ายขึ้น สรุปความได้อย่างมีแบบแผน ป้องกันการสับสนประธานของประโยคเมื่อมีสรรพนามหลายตัว และตรงกับแนวข้อสอบวัดระดับภาษาอังกฤษที่มักถามโครงสร้างข้อความและ Pronoun Reference เสมอ"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "Recognizing structural patterns and reference markers provides essential academic reading benefits:\n1. Creates a Cognitive Roadmap: Knowing the organizational pattern helps you anticipate upcoming content (e.g., encountering a problem prepares your mind to search for the solution).\n2. Dramatically Improves Summarization: Every pattern has a natural summary template (e.g., Compare-Contrast yields a comparative table; Cause-Effect yields a causal chain).\n3. Prevents Subject Confusion: Tracking pronoun references (e.g., 'What does \"it\" refer to?') ensures you never misattribute actions or research findings to the wrong subject.\n4. Crucial for Academic Reading Exams: Structure and reference questions appear in nearly every university English test and standardized exam (TOEIC, TOEFL, IELTS).",
+          "thaiExplanation": "ช่วยสร้างแผนผังความคิดล่วงหน้า ทำให้คาดเดาเนื้อหาถัดไปได้ง่ายขึ้น สรุปความได้อย่างมีแบบแผน ป้องกันการสับสนประธานของประโยคเมื่อมีสรรพนามหลายตัว และตรงกับแนวข้อสอบวัดระดับภาษาอังกฤษที่มักถามโครงสร้างข้อความและ Pronoun Reference เสมอ"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Apply this strategy when reading:\n• Academic research papers, thesis introductions, and scientific laboratory reports.\n• Historical chronicles, biographies, and chronological process explanations.\n• Persuasive essays, debate analyses, and policy evaluations comparing competing viewpoints.\n• Problem-solution case studies in business, environmental science, and public health.\n• Answering exam questions such as 'How is paragraph 2 organized?' or 'The word \"they\" in line 12 refers to...'.",
-          thaiExplanation: "ใช้เมื่ออ่านบทความวิจัย รายงานการทดลองทางวิทยาศาสตร์ ลำดับเหตุการณ์ทางประวัติศาสตร์ บทความแสดงความคิดเห็นเชิงวิชาการ กรณีศึกษาทางธุรกิจและสิ่งแวดล้อม และเมื่อทำข้อสอบที่ถามหาโครงสร้างย่อหน้าหรือถามว่าคำสรรพนามหมายถึงสิ่งใด"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Apply this strategy when reading:\n• Academic research papers, thesis introductions, and scientific laboratory reports.\n• Historical chronicles, biographies, and chronological process explanations.\n• Persuasive essays, debate analyses, and policy evaluations comparing competing viewpoints.\n• Problem-solution case studies in business, environmental science, and public health.\n• Answering exam questions such as 'How is paragraph 2 organized?' or 'The word \"they\" in line 12 refers to...'.",
+          "thaiExplanation": "ใช้เมื่ออ่านบทความวิจัย รายงานการทดลองทางวิทยาศาสตร์ ลำดับเหตุการณ์ทางประวัติศาสตร์ บทความแสดงความคิดเห็นเชิงวิชาการ กรณีศึกษาทางธุรกิจและสิ่งแวดล้อม และเมื่อทำข้อสอบที่ถามหาโครงสร้างย่อหน้าหรือถามว่าคำสรรพนามหมายถึงสิ่งใด"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Follow the 5-Step Execution Protocol for Text Organization & Reference Tracking:",
-          checklist: [
-          "Step 1 (Scan for Transitional Connectives): Survey the paragraph for signal markers (e.g., 'Consequently', 'In contrast', 'First... Next... Finally', 'The primary solution').",
-          "Step 2 (Determine the Organizational Blueprint): Match the dominant connectives to one of the 4 patterns: Sequence, Cause-Effect, Comparison, or Problem-Solution.",
-          "Step 3 (Trace Pronoun Antecedents): When encountering a reference pronoun ('it', 'they', 'these', 'this'), look back into the immediate preceding sentence to locate the matching noun (verify singular vs. plural agreement).",
-          "Step 4 (Construct a Mental Flowchart): Mentally sketch the connection: Cause ➔ Effect, or Problem ➔ Solution, or Subject A vs. Subject B.",
-          "Step 5 (Verify Paragraph Cohesion): Confirm that the structural pattern accurately represents the entire paragraph rather than just an isolated clause."
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Follow the 5-Step Execution Protocol for Text Organization & Reference Tracking:",
+          "checklist": [
+            "Step 1 (Scan for Transitional Connectives): Survey the paragraph for signal markers (e.g., 'Consequently', 'In contrast', 'First... Next... Finally', 'The primary solution').",
+            "Step 2 (Determine the Organizational Blueprint): Match the dominant connectives to one of the 4 patterns: Sequence, Cause-Effect, Comparison, or Problem-Solution.",
+            "Step 3 (Trace Pronoun Antecedents): When encountering a reference pronoun ('it', 'they', 'these', 'this'), look back into the immediate preceding sentence to locate the matching noun (verify singular vs. plural agreement).",
+            "Step 4 (Construct a Mental Flowchart): Mentally sketch the connection: Cause ➔ Effect, or Problem ➔ Solution, or Subject A vs. Subject B.",
+            "Step 5 (Verify Paragraph Cohesion): Confirm that the structural pattern accurately represents the entire paragraph rather than just an isolated clause."
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Sample Text: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises. Concrete buildings and asphalt highways absorb intense solar radiation during daytime hours, causing city temperatures to surge 4 to 7 degrees Celsius higher than surrounding rural valleys. To address this severe environmental dilemma, municipal urban planners in Bangkok have launched a rooftop vegetation initiative. Under this green roof policy, commercial skyscraper owners receive property tax exemptions if they cover at least 40% of their rooftop surfaces with living shrubs and sedum plants. These eco-friendly installations absorb sunlight, insulate buildings, and successfully reduce ambient rooftop temperatures.'",
-          annotated: "Strategy Analysis (Unit 4 Model):\n• [Structural Pattern (Problem)]: Opening sentence signals crisis: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises'.\n• [Supporting Detail (Cause & Effect)]: Solar absorption in concrete/asphalt causes urban temperatures to rise 4 to 7 degrees Celsius.\n• [Transitional Connective (Solution)]: 'To address this severe environmental dilemma' shifts the text from Problem to Solution.\n• [Structural Pattern (Solution)]: Green roof policy with property tax exemptions for skyscraper owners covering 40% with living plants.\n• [Pronoun Reference 1]: 'they' in 'if they cover at least 40%' refers back to plural antecedent 'commercial skyscraper owners'.\n• [Pronoun Reference 2]: 'These eco-friendly installations' in the conclusion refers back to 'living shrubs and sedum plants' / 'green roofs'.\n• [Verification]: The complete paragraph organizes seamlessly into Problem (Urban Heat) -> Solution (Green Roof Tax Incentives).",
-          takeaway: "Recognizing the Problem-Solution transition enables you to summarize an entire 100-word paragraph into two clear parts: Crisis = Urban heat; Solution = Green rooftop vegetation policy."
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Sample Text: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises. Concrete buildings and asphalt highways absorb intense solar radiation during daytime hours, causing city temperatures to surge 4 to 7 degrees Celsius higher than surrounding rural valleys. To address this severe environmental dilemma, municipal urban planners in Bangkok have launched a rooftop vegetation initiative. Under this green roof policy, commercial skyscraper owners receive property tax exemptions if they cover at least 40% of their rooftop surfaces with living shrubs and sedum plants. These eco-friendly installations absorb sunlight, insulate buildings, and successfully reduce ambient rooftop temperatures.'",
+          "annotated": "Strategy Analysis (Unit 4 Model):\n• [Structural Pattern (Problem)]: Opening sentence signals crisis: 'Urban heat islands represent a growing crisis in modern Southeast Asian metropolises'.\n• [Supporting Detail (Cause & Effect)]: Solar absorption in concrete/asphalt causes urban temperatures to rise 4 to 7 degrees Celsius.\n• [Transitional Connective (Solution)]: 'To address this severe environmental dilemma' shifts the text from Problem to Solution.\n• [Structural Pattern (Solution)]: Green roof policy with property tax exemptions for skyscraper owners covering 40% with living plants.\n• [Pronoun Reference 1]: 'they' in 'if they cover at least 40%' refers back to plural antecedent 'commercial skyscraper owners'.\n• [Pronoun Reference 2]: 'These eco-friendly installations' in the conclusion refers back to 'living shrubs and sedum plants' / 'green roofs'.\n• [Verification]: The complete paragraph organizes seamlessly into Problem (Urban Heat) -> Solution (Green Roof Tax Incentives).",
+          "takeaway": "Recognizing the Problem-Solution transition enables you to summarize an entire 100-word paragraph into two clear parts: Crisis = Urban heat; Solution = Green rooftop vegetation policy."
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Passage: 'Traditional petroleum combustion engines emit substantial volumes of carbon dioxide, which directly accelerates atmospheric global warming. In contrast, electric vehicles produce zero tailpipe emissions during operation; however, their heavy reliance on lithium-ion batteries raises significant ecological concerns regarding open-pit mineral mining.'",
-          question: "Which pair of transitional connectives establishes the primary organizational pattern between traditional engines and electric vehicles?",
-          options: [
-          "'In contrast' and 'however' establishing a Compare and Contrast relationship",
-          "'First' and 'finally' establishing a Chronological Sequence",
-          "'For example' and 'such as' establishing an Illustration pattern",
-          "'Consequently' and 'therefore' establishing pure Cause and Effect"
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Passage: 'Traditional petroleum combustion engines emit substantial volumes of carbon dioxide, which directly accelerates atmospheric global warming. In contrast, electric vehicles produce zero tailpipe emissions during operation; however, their heavy reliance on lithium-ion batteries raises significant ecological concerns regarding open-pit mineral mining.'",
+          "question": "Which pair of transitional connectives establishes the primary organizational pattern between traditional engines and electric vehicles?",
+          "options": [
+            "'In contrast' and 'however' establishing a Compare and Contrast relationship",
+            "'First' and 'finally' establishing a Chronological Sequence",
+            "'For example' and 'such as' establishing an Illustration pattern",
+            "'Consequently' and 'therefore' establishing pure Cause and Effect"
           ],
-          answer: 0,
-          explanation: "'In contrast' directly compares petroleum engines with electric vehicles, while 'however' presents a contrasting counterpoint regarding battery mining."
+          "answer": 0,
+          "explanation": "'In contrast' directly compares petroleum engines with electric vehicles, while 'however' presents a contrasting counterpoint regarding battery mining."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "The Evolution of Silk Weaving in Buriram",
-          passage: "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
-          audioText: "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
-          taskQuestion: "1. What is the overarching organizational structure? 2. What does the pronoun 'they' in the final sentence refer to?",
-          taskAnswer: "1. Chronological Sequence / Historical Process (signaled by 'First', 'Second', 'Finally'). 2. 'They' refers to 'these exquisite textiles' / 'volcanic soil-dyed silk fabrics'."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "The Evolution of Silk Weaving in Buriram",
+          "passage": "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
+          "audioText": "Buriram's famous volcanic soil-dyed silk, known locally as Pha Sin Phukhao Fai, developed through a distinctive three-stage historical evolution. First, centuries ago, local Khmer-ancestry villagers harvested wild silkworms and extracted red dyes from indigenous tree bark. Second, during the mid-twentieth century, artisans began soaking woven threads in mineral-rich volcanic red clay mud gathered from extinct craters, which bestowed an exceptionally soft texture and distinctive terracotta sheen upon the fabric. Finally, in recent years, modern university designers collaborated with local weaving cooperatives to modernize loom techniques and market these exquisite textiles internationally. Today, they generate vital sustainable income for rural weaving communities across the province.",
+          "taskQuestion": "1. What is the overarching organizational structure? 2. What does the pronoun 'they' in the final sentence refer to?",
+          "taskAnswer": "1. Chronological Sequence / Historical Process (signaled by 'First', 'Second', 'Finally'). 2. 'They' refers to 'these exquisite textiles' / 'volcanic soil-dyed silk fabrics'."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "In the sentence 'Excessive plastic pollution severely threatens marine ecosystems; consequently, over 80 coastal nations have passed legislation banning single-use shopping bags', what does the connective 'consequently' indicate?",
-          options: [
-          "A logical effect or result resulting from the preceding cause",
-          "A chronological time order going backward in history",
-          "A contrast showing that plastic is beneficial",
-          "An example showing types of plastic polymers"
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "In the sentence 'Excessive plastic pollution severely threatens marine ecosystems; consequently, over 80 coastal nations have passed legislation banning single-use shopping bags', what does the connective 'consequently' indicate?",
+          "options": [
+            "A logical effect or result resulting from the preceding cause",
+            "A chronological time order going backward in history",
+            "A contrast showing that plastic is beneficial",
+            "An example showing types of plastic polymers"
           ],
-          answer: 0,
-          explanation: "'Consequently' is a causal transition word signaling an effect or result of the preceding problem (severe threat of plastic pollution)."
+          "answer": 0,
+          "explanation": "'Consequently' is a causal transition word signaling an effect or result of the preceding problem (severe threat of plastic pollution)."
         }
       ]
     },
     {
-      id: "strat-u5",
-      unitNumber: 5,
-      title: "Making Inferences",
-      thaiTitle: "การอนุมานความหมาย",
-      scope: "Making Inferences, reading between the lines",
-      cefr: "B2",
-      icon: "sparkles",
-      steps: [
+      "id": "strat-u5",
+      "unitNumber": 5,
+      "title": "Making Inferences",
+      "thaiTitle": "การอนุมานความหมาย",
+      "scope": "Making Inferences, reading between the lines",
+      "cefr": "B2",
+      "icon": "sparkles",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Making inferences is drawing logical deductions and uncovering unstated meanings by synthesizing explicit textual clues with your prior real-world knowledge (Schema). It is widely known as 'reading between the lines'—discovering what the author implies or suggests without stating it word-for-word.\n\nThe Core Academic Inference Formula:\nText Clues (What the author explicitly writes) + Prior Knowledge (What you know about the world) = Logical Inference (Valid deduction)\n\nValid Inference vs. Wild Guess:\n• A Valid Inference is firmly anchored in concrete textual evidence and reasonable logical deduction.\n• An Invalid Inference (Wild Guess) is unsupported speculation, personal prejudice, or an assumption directly contradicted by the text.",
-          thaiExplanation: "การอนุมาน (Making Inferences) คือการ 'อ่านระหว่างบรรทัด' เพื่อสรุปความหมาย เจตนา หรือความรู้สึกที่ผู้เขียนไม่ได้ระบุไว้ตรงๆ โดยใช้สมการ: หลักฐานในบทอ่าน (Text Clues) + ความรู้และประสบการณ์เดิม (Prior Knowledge) = ข้อสรุปที่สมเหตุสมผล (Logical Inference) โดยต้องมีหลักฐานสนับสนุนเสมอ ไม่ใช่การเดาอย่างไร้เหตุผล"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Making inferences is drawing logical deductions and uncovering unstated meanings by synthesizing explicit textual clues with your prior real-world knowledge (Schema). It is widely known as 'reading between the lines'—discovering what the author implies or suggests without stating it word-for-word.\n\nThe Core Academic Inference Formula:\nText Clues (What the author explicitly writes) + Prior Knowledge (What you know about the world) = Logical Inference (Valid deduction)\n\nValid Inference vs. Wild Guess:\n• A Valid Inference is firmly anchored in concrete textual evidence and reasonable logical deduction.\n• An Invalid Inference (Wild Guess) is unsupported speculation, personal prejudice, or an assumption directly contradicted by the text.",
+          "thaiExplanation": "การอนุมาน (Making Inferences) คือการ 'อ่านระหว่างบรรทัด' เพื่อสรุปความหมาย เจตนา หรือความรู้สึกที่ผู้เขียนไม่ได้ระบุไว้ตรงๆ โดยใช้สมการ: หลักฐานในบทอ่าน (Text Clues) + ความรู้และประสบการณ์เดิม (Prior Knowledge) = ข้อสรุปที่สมเหตุสมผล (Logical Inference) โดยต้องมีหลักฐานสนับสนุนเสมอ ไม่ใช่การเดาอย่างไร้เหตุผล"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "In academic literature and university reading assessments, making inferences delivers essential intellectual power:\n1. Decodes Author's Tone, Mood, and Attitude: Writers often express subtle irony, skepticism, humor, or empathy through descriptive details rather than direct declarations.\n2. Essential for High-Level Reading Tests: Standardized English tests (TOEIC, TOEFL, IELTS, CU-TEP, TU-GET) devote up to 30–40% of reading questions to inferences ('It can be inferred that...', 'The author implies...').\n3. Strengthens Critical Thinking: Transforms learners from passive decoders of words into active, analytical thinkers who evaluate unstated assumptions and underlying motives.\n4. Enhances Deeper Literary & Cultural Appreciation: Unlocks multi-layered character motivations, symbolic meanings, and thematic depths in stories, fables, and essays.",
-          thaiExplanation: "ช่วยให้เข้าใจน้ำเสียง เจตนา และทัศนคติที่แท้จริงของผู้เขียน เป็นทักษะสำคัญที่ออกข้อสอบวัดระดับภาษาอังกฤษมากถึง 30-40% พัฒนาทักษะการคิดเชิงวิพากษ์ (Critical Thinking) และช่วยให้ซาบซึ้งกับวรรณกรรมและบทความเชิงวิเคราะห์ได้อย่างลึกซึ้ง"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "In academic literature and university reading assessments, making inferences delivers essential intellectual power:\n1. Decodes Author's Tone, Mood, and Attitude: Writers often express subtle irony, skepticism, humor, or empathy through descriptive details rather than direct declarations.\n2. Essential for High-Level Reading Tests: Standardized English tests (TOEIC, TOEFL, IELTS, CU-TEP, TU-GET) devote up to 30–40% of reading questions to inferences ('It can be inferred that...', 'The author implies...').\n3. Strengthens Critical Thinking: Transforms learners from passive decoders of words into active, analytical thinkers who evaluate unstated assumptions and underlying motives.\n4. Enhances Deeper Literary & Cultural Appreciation: Unlocks multi-layered character motivations, symbolic meanings, and thematic depths in stories, fables, and essays.",
+          "thaiExplanation": "ช่วยให้เข้าใจน้ำเสียง เจตนา และทัศนคติที่แท้จริงของผู้เขียน เป็นทักษะสำคัญที่ออกข้อสอบวัดระดับภาษาอังกฤษมากถึง 30-40% พัฒนาทักษะการคิดเชิงวิพากษ์ (Critical Thinking) และช่วยให้ซาบซึ้งกับวรรณกรรมและบทความเชิงวิเคราะห์ได้อย่างลึกซึ้ง"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Apply inferencing whenever you encounter:\n• Exam questions asking: 'What can be inferred from paragraph 3?', 'What does the author imply about...?', or 'With which statement would the author most likely agree?'.\n• Literary narratives, fables, and dramas where characters' feelings and motives are shown through actions rather than told directly.\n• Opinion editorials, political columns, and persuasive essays where authors use nuanced rhetoric, sarcasm, or understatement.\n• Scientific discussion sections where researchers suggest broader implications of their experimental data.",
-          thaiExplanation: "ใช้เมื่อเจอข้อสอบที่ถามว่าบทความนี้บอกเป็นนัยถึงสิ่งใด (Implied/Inferred) เมื่ออ่านนิทาน วรรณกรรม และบทละครที่ตัวละครแสดงอารมณ์ผ่านการกระทำ เมื่ออ่านคอลัมน์แสดงความคิดเห็น และเมื่ออ่านผลการทดลองทางวิทยาศาสตร์ที่ต้องตีความความหมายเชิงลึก"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Apply inferencing whenever you encounter:\n• Exam questions asking: 'What can be inferred from paragraph 3?', 'What does the author imply about...?', or 'With which statement would the author most likely agree?'.\n• Literary narratives, fables, and dramas where characters' feelings and motives are shown through actions rather than told directly.\n• Opinion editorials, political columns, and persuasive essays where authors use nuanced rhetoric, sarcasm, or understatement.\n• Scientific discussion sections where researchers suggest broader implications of their experimental data.",
+          "thaiExplanation": "ใช้เมื่อเจอข้อสอบที่ถามว่าบทความนี้บอกเป็นนัยถึงสิ่งใด (Implied/Inferred) เมื่ออ่านนิทาน วรรณกรรม และบทละครที่ตัวละครแสดงอารมณ์ผ่านการกระทำ เมื่ออ่านคอลัมน์แสดงความคิดเห็น และเมื่ออ่านผลการทดลองทางวิทยาศาสตร์ที่ต้องตีความความหมายเชิงลึก"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Follow the 5-Step Execution Protocol for Making Inferences:",
-          checklist: [
-          "Step 1 (Identify Explicit Text Clues): Highlight concrete facts, descriptive adjectives, character actions, dialogue, and tone words stated directly in the text.",
-          "Step 2 (Activate Relevant Schema): Ask yourself: 'What do I know from real life, psychology, or history about people behaving or reacting this way?'",
-          "Step 3 (Formulate the Logical Bridge): Combine the evidence: 'Because the text states [Clue] and I know [Schema], I can reasonably infer that [Inference]'.",
-          "Step 4 (Test Against Alternative Explanations): Challenge your deduction: 'Is this the most probable explanation, or am I leaping to an extreme, unsupported assumption?'",
-          "Step 5 (Verify Against Passage Facts): Ensure that your inference does not contradict any other stated statement or fact in the entire passage."
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Follow the 5-Step Execution Protocol for Making Inferences:",
+          "checklist": [
+            "Step 1 (Identify Explicit Text Clues): Highlight concrete facts, descriptive adjectives, character actions, dialogue, and tone words stated directly in the text.",
+            "Step 2 (Activate Relevant Schema): Ask yourself: 'What do I know from real life, psychology, or history about people behaving or reacting this way?'",
+            "Step 3 (Formulate the Logical Bridge): Combine the evidence: 'Because the text states [Clue] and I know [Schema], I can reasonably infer that [Inference]'.",
+            "Step 4 (Test Against Alternative Explanations): Challenge your deduction: 'Is this the most probable explanation, or am I leaping to an extreme, unsupported assumption?'",
+            "Step 5 (Verify Against Passage Facts): Ensure that your inference does not contradict any other stated statement or fact in the entire passage."
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Sample Text: 'Dr. Kanya stared intently at the glowing computer monitor in the genetics lab at 02:45 AM. Her coffee cup had been cold for hours, and crumpled spreadsheets covered every square inch of the workbench. Suddenly, her eyes widened. She repeatedly double-checked the DNA sequencing readouts on screen, grabbed her smartphone with trembling fingers, and dialed the department chair's private home number despite the late hour.'",
-          annotated: "Strategy Analysis (Unit 5 Model):\n• [Explicit Text Clue 1 (Time & Setting)]: '02:45 AM', 'coffee cold for hours', 'crumpled spreadsheets covered every square inch of the workbench'.\n• [Explicit Text Clue 2 (Physical Reaction)]: 'eyes widened', 'fingers trembling', 'repeatedly double-checked the DNA sequencing readouts'.\n• [Explicit Text Clue 3 (Action)]: 'dialed the department chair's private home number despite the late hour'.\n• [Prior Knowledge (Schema)]: Research scientists only make urgent 3 AM phone calls to university directors when they achieve a landmark breakthrough or critical milestone.\n• [Formulated Logical Inference]: Dr. Kanya has just discovered a groundbreaking, historic genetics breakthrough that warrants immediate notification.\n• [Verification & Error Check]: The text evidence firmly eliminates trivial explanations (e.g. routine lab chores or accidental errors).",
-          takeaway: "The author never directly wrote 'She made a historic breakthrough', but her physical reactions and emergency late-night call make that deduction undeniable."
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Sample Text: 'Dr. Kanya stared intently at the glowing computer monitor in the genetics lab at 02:45 AM. Her coffee cup had been cold for hours, and crumpled spreadsheets covered every square inch of the workbench. Suddenly, her eyes widened. She repeatedly double-checked the DNA sequencing readouts on screen, grabbed her smartphone with trembling fingers, and dialed the department chair's private home number despite the late hour.'",
+          "annotated": "Strategy Analysis (Unit 5 Model):\n• [Explicit Text Clue 1 (Time & Setting)]: '02:45 AM', 'coffee cold for hours', 'crumpled spreadsheets covered every square inch of the workbench'.\n• [Explicit Text Clue 2 (Physical Reaction)]: 'eyes widened', 'fingers trembling', 'repeatedly double-checked the DNA sequencing readouts'.\n• [Explicit Text Clue 3 (Action)]: 'dialed the department chair's private home number despite the late hour'.\n• [Prior Knowledge (Schema)]: Research scientists only make urgent 3 AM phone calls to university directors when they achieve a landmark breakthrough or critical milestone.\n• [Formulated Logical Inference]: Dr. Kanya has just discovered a groundbreaking, historic genetics breakthrough that warrants immediate notification.\n• [Verification & Error Check]: The text evidence firmly eliminates trivial explanations (e.g. routine lab chores or accidental errors).",
+          "takeaway": "The author never directly wrote 'She made a historic breakthrough', but her physical reactions and emergency late-night call make that deduction undeniable."
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Passage: 'When the airline gate attendant announced that Flight 412 would be delayed by another five hours due to mechanical issues, Mr. Chen sighed deeply, slumped into his airport terminal chair, rubbed his throbbing temples, and slowly pulled a travel pillow from his backpack.'",
-          question: "What can you logically infer about Mr. Chen's emotional state and immediate plan?",
-          options: [
-          "He is exhausted and frustrated by the delay, and plans to sleep at the airport terminal while waiting",
-          "He is delighted that he gets to spend five more hours shopping at the airport duty-free stores",
-          "He is angry at his travel pillow and decides to cancel his vacation completely",
-          "He is an airline mechanic preparing to fix the aircraft engine himself"
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Passage: 'When the airline gate attendant announced that Flight 412 would be delayed by another five hours due to mechanical issues, Mr. Chen sighed deeply, slumped into his airport terminal chair, rubbed his throbbing temples, and slowly pulled a travel pillow from his backpack.'",
+          "question": "What can you logically infer about Mr. Chen's emotional state and immediate plan?",
+          "options": [
+            "He is exhausted and frustrated by the delay, and plans to sleep at the airport terminal while waiting",
+            "He is delighted that he gets to spend five more hours shopping at the airport duty-free stores",
+            "He is angry at his travel pillow and decides to cancel his vacation completely",
+            "He is an airline mechanic preparing to fix the aircraft engine himself"
           ],
-          answer: 0,
-          explanation: "Sighing deeply, slumping in a chair, rubbing throbbing temples (signs of fatigue and frustration), and retrieving a travel pillow strongly support the inference that he is tired and preparing to sleep."
+          "answer": 0,
+          "explanation": "Sighing deeply, slumping in a chair, rubbing throbbing temples (signs of fatigue and frustration), and retrieving a travel pillow strongly support the inference that he is tired and preparing to sleep."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "Digital Transformation in Buriram Classrooms",
-          passage: "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
-          audioText: "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
-          taskQuestion: "What can you logically infer about how educational technology has transformed the daily role of classroom teachers?",
-          taskAnswer: "Technology automated repetitive administrative chores (printing, paper grading), freeing teachers to focus on interactive mentoring and high-impact student engagement."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "Digital Transformation in Buriram Classrooms",
+          "passage": "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
+          "audioText": "In 2021, teachers at a secondary school in Buriram spent an average of forty minutes each morning printing paper worksheets, manually grading multiple-choice quizzes with red pens, and collecting heavy paper exercise notebooks into cardboard storage crates. By 2026, every student entered the classroom holding a lightweight tablet. Morning quizzes were completed via interactive cloud apps that generated instantaneous analytics, and homework assignments were submitted with a single tap into digital portfolios. Teachers spent the first thirty minutes of class facilitating lively small-group discussions and providing individualized mentoring to struggling learners.",
+          "taskQuestion": "What can you logically infer about how educational technology has transformed the daily role of classroom teachers?",
+          "taskAnswer": "Technology automated repetitive administrative chores (printing, paper grading), freeing teachers to focus on interactive mentoring and high-impact student engagement."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "Which of the following represents a CRITICAL error when making inferences in reading comprehension tests?",
-          options: [
-          "Making an assumption based entirely on personal opinion that is not supported by any textual evidence",
-          "Combining explicit factual clues with reasonable real-world background knowledge",
-          "Checking whether the inferred idea contradicts any statement in the text",
-          "Looking for clues in the characters' actions and emotional descriptions"
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "Which of the following represents a CRITICAL error when making inferences in reading comprehension tests?",
+          "options": [
+            "Making an assumption based entirely on personal opinion that is not supported by any textual evidence",
+            "Combining explicit factual clues with reasonable real-world background knowledge",
+            "Checking whether the inferred idea contradicts any statement in the text",
+            "Looking for clues in the characters' actions and emotional descriptions"
           ],
-          answer: 0,
-          explanation: "An inference must always be anchored in textual evidence. Making conclusions based on personal bias or unsupported speculation is an invalid wild guess."
+          "answer": 0,
+          "explanation": "An inference must always be anchored in textual evidence. Making conclusions based on personal bias or unsupported speculation is an invalid wild guess."
         }
       ]
     },
     {
-      id: "strat-u6",
-      unitNumber: 6,
-      title: "Integrated Strategy Review",
-      thaiTitle: "การทบทวนกลยุทธ์แบบบูรณาการ",
-      scope: "Applying multiple strategies together across Pre-reading, While-reading, and Post-reading stages",
-      cefr: "B2",
-      icon: "check-check",
-      steps: [
+      "id": "strat-u6",
+      "unitNumber": 6,
+      "title": "Integrated Strategy Review",
+      "thaiTitle": "การทบทวนกลยุทธ์แบบบูรณาการ",
+      "scope": "Applying multiple strategies together across Pre-reading, While-reading, and Post-reading stages",
+      "cefr": "B2",
+      "icon": "check-check",
+      "steps": [
         {
-          stepNum: 1,
-          title: "What is the strategy?",
-          thaiTitle: "คืออะไร?",
-          icon: "help-circle",
-          content: "Integrated Strategy Review is the holistic orchestration and dynamic synthesis of all five core reading strategies across the Three-Phase Reading Model:\n\n1. Strategy Repertoire:\n• Previewing & Predicting (Unit 1): Surveying structural text features to anticipate topics and activate schema.\n• Skimming & Scanning (Unit 2): Skimming for general gist and scanning for targeted empirical data.\n• Using Context Clues (Unit 3): Deciphering unknown vocabulary through definitions, synonyms, contrasts, and examples.\n• Identifying Text Organization (Unit 4): Recognizing structural patterns and tracing cohesive pronoun references.\n• Making Inferences (Unit 5): Synthesizing explicit text clues with background schema to read between the lines.\n\n2. The Three-Phase Framework:\n• Pre-Reading Stage: Previewing titles, subheadings, diagrams; activating schema; formulating initial predictions.\n• While-Reading Stage: Skimming for macro structure; scanning for facts; solving unknown vocabulary with context clues; tracking text organization; inferring unstated meanings.\n• Post-Reading Stage: Verifying initial predictions; synthesizing core takeaways; evaluating authorial purpose and tone; formulating concise written summaries.",
-          thaiExplanation: "การทบทวนกลยุทธ์แบบบูรณาการ คือการนำกลยุทธ์การอ่านทั้ง 5 ทักษะมาปรับใช้ร่วมกันอย่างยืดหยุ่นและเป็นระบบตลอด 3 ขั้นตอนการอ่าน: 1. ขั้นก่อนอ่าน (Pre-Reading) สำรวจและคาดเดา 2. ขั้นระหว่างอ่าน (While-Reading) กวาดสายตา แกะรอยบริบท วิเคราะห์โครงสร้าง และอนุมานความหมาย และ 3. ขั้นหลังอ่าน (Post-Reading) ตรวจสอบการคาดเดาและสังเคราะห์สรุปใจความสำคัญ"
+          "stepNum": 1,
+          "title": "What is the strategy?",
+          "thaiTitle": "คืออะไร?",
+          "icon": "help-circle",
+          "content": "Integrated Strategy Review is the holistic orchestration and dynamic synthesis of all five core reading strategies across the Three-Phase Reading Model:\n\n1. Strategy Repertoire:\n• Previewing & Predicting (Unit 1): Surveying structural text features to anticipate topics and activate schema.\n• Skimming & Scanning (Unit 2): Skimming for general gist and scanning for targeted empirical data.\n• Using Context Clues (Unit 3): Deciphering unknown vocabulary through definitions, synonyms, contrasts, and examples.\n• Identifying Text Organization (Unit 4): Recognizing structural patterns and tracing cohesive pronoun references.\n• Making Inferences (Unit 5): Synthesizing explicit text clues with background schema to read between the lines.\n\n2. The Three-Phase Framework:\n• Pre-Reading Stage: Previewing titles, subheadings, diagrams; activating schema; formulating initial predictions.\n• While-Reading Stage: Skimming for macro structure; scanning for facts; solving unknown vocabulary with context clues; tracking text organization; inferring unstated meanings.\n• Post-Reading Stage: Verifying initial predictions; synthesizing core takeaways; evaluating authorial purpose and tone; formulating concise written summaries.",
+          "thaiExplanation": "การทบทวนกลยุทธ์แบบบูรณาการ คือการนำกลยุทธ์การอ่านทั้ง 5 ทักษะมาปรับใช้ร่วมกันอย่างยืดหยุ่นและเป็นระบบตลอด 3 ขั้นตอนการอ่าน: 1. ขั้นก่อนอ่าน (Pre-Reading) สำรวจและคาดเดา 2. ขั้นระหว่างอ่าน (While-Reading) กวาดสายตา แกะรอยบริบท วิเคราะห์โครงสร้าง และอนุมานความหมาย และ 3. ขั้นหลังอ่าน (Post-Reading) ตรวจสอบการคาดเดาและสังเคราะห์สรุปใจความสำคัญ"
         },
         {
-          stepNum: 2,
-          title: "Why use it?",
-          thaiTitle: "ทำไมต้องใช้?",
-          icon: "lightbulb",
-          content: "Mastering integrated strategy orchestration provides profound academic and intellectual advantages:\n1. Fosters Autonomous, Self-Monitoring Readers: Transforms students from dependent readers who need constant word-by-word translation into autonomous scholars capable of tackling complex English materials independently.\n2. Delivers Mastery in High-Stakes Exams: Standardized university exit exams, TOEIC, TOEFL, and IELTS do not test strategies in isolation; high scores require seamless switching between skimming, scanning, context clues, and inferencing under time constraints.\n3. Prevents Cognitive Overload in Dense Academic Literature: Enables students to absorb 20-page research journal articles, thesis literature reviews, and policy documents without fatigue or confusion.\n4. Long-Term Knowledge Retention: Engaging with texts through a multi-strategy workflow encodes information deeply into long-term cognitive structures rather than superficial short-term memory.",
-          thaiExplanation: "ช่วยพัฒนาผู้เรียนให้เป็นผู้อ่านอิสระ (Autonomous Reader) ที่สามารถกำกับและตรวจสอบความเข้าใจของตนเองได้ เป็นหัวใจสำคัญในการทำข้อสอบวัดระดับภาษาอังกฤษระดับสูง (TOEIC, TOEFL, IELTS) ช่วยให้อ่านบทความวิจัยขนาดยาวได้อย่างมีประสิทธิภาพโดยไม่เหนื่อยล้า และช่วยจดจำเนื้อหาได้อย่างลึกซึ้งและยาวนาน"
+          "stepNum": 2,
+          "title": "Why use it?",
+          "thaiTitle": "ทำไมต้องใช้?",
+          "icon": "lightbulb",
+          "content": "Mastering integrated strategy orchestration provides profound academic and intellectual advantages:\n1. Fosters Autonomous, Self-Monitoring Readers: Transforms students from dependent readers who need constant word-by-word translation into autonomous scholars capable of tackling complex English materials independently.\n2. Delivers Mastery in High-Stakes Exams: Standardized university exit exams, TOEIC, TOEFL, and IELTS do not test strategies in isolation; high scores require seamless switching between skimming, scanning, context clues, and inferencing under time constraints.\n3. Prevents Cognitive Overload in Dense Academic Literature: Enables students to absorb 20-page research journal articles, thesis literature reviews, and policy documents without fatigue or confusion.\n4. Long-Term Knowledge Retention: Engaging with texts through a multi-strategy workflow encodes information deeply into long-term cognitive structures rather than superficial short-term memory.",
+          "thaiExplanation": "ช่วยพัฒนาผู้เรียนให้เป็นผู้อ่านอิสระ (Autonomous Reader) ที่สามารถกำกับและตรวจสอบความเข้าใจของตนเองได้ เป็นหัวใจสำคัญในการทำข้อสอบวัดระดับภาษาอังกฤษระดับสูง (TOEIC, TOEFL, IELTS) ช่วยให้อ่านบทความวิจัยขนาดยาวได้อย่างมีประสิทธิภาพโดยไม่เหนื่อยล้า และช่วยจดจำเนื้อหาได้อย่างลึกซึ้งและยาวนาน"
         },
         {
-          stepNum: 3,
-          title: "When do I use it?",
-          thaiTitle: "ใช้เมื่อไหร่?",
-          icon: "calendar",
-          content: "Orchestrate integrated reading strategies in these demanding academic and professional settings:\n• Conducting comprehensive literature reviews for undergraduate senior projects, independent studies, and graduate theses.\n• Sitting for high-stakes standardized English proficiency and university exit examinations.\n• Analyzing multi-disciplinary academic textbooks, government policy whitepapers, and international industry reports.\n• Reading authentic literature, scholarly editorials, and peer-reviewed journals where complex arguments and technical data intersect.",
-          thaiExplanation: "ใช้ในการค้นคว้าและทบทวนวรรณกรรมสำหรับงานวิจัยและวิทยานิพนธ์ การทำข้อสอบวัดระดับภาษาอังกฤษเพื่อสำเร็จการศึกษา การอ่านรายงานนโยบายภาครัฐและบทวิเคราะห์ระดับนานาชาติ และการอ่านตำราวิชาการระดับสูง"
+          "stepNum": 3,
+          "title": "When do I use it?",
+          "thaiTitle": "ใช้เมื่อไหร่?",
+          "icon": "calendar",
+          "content": "Orchestrate integrated reading strategies in these demanding academic and professional settings:\n• Conducting comprehensive literature reviews for undergraduate senior projects, independent studies, and graduate theses.\n• Sitting for high-stakes standardized English proficiency and university exit examinations.\n• Analyzing multi-disciplinary academic textbooks, government policy whitepapers, and international industry reports.\n• Reading authentic literature, scholarly editorials, and peer-reviewed journals where complex arguments and technical data intersect.",
+          "thaiExplanation": "ใช้ในการค้นคว้าและทบทวนวรรณกรรมสำหรับงานวิจัยและวิทยานิพนธ์ การทำข้อสอบวัดระดับภาษาอังกฤษเพื่อสำเร็จการศึกษา การอ่านรายงานนโยบายภาครัฐและบทวิเคราะห์ระดับนานาชาติ และการอ่านตำราวิชาการระดับสูง"
         },
         {
-          stepNum: 4,
-          title: "How do I use it?",
-          thaiTitle: "ใช้อย่างไร?",
-          icon: "settings",
-          content: "Execute the 5-Step Master Protocol for Strategy Integration:",
-          checklist: [
-          "Step 1 (Pre-Reading Orientation): Survey the title, abstract, subheadings, and visuals in 30 seconds; state a formal prediction: 'Based on text features, this passage will demonstrate...'",
-          "Step 2 (First-Pass Skimming): Skim the introductory paragraph, topic sentences of body paragraphs, and concluding thoughts at 3x speed to map the overall thesis and structure.",
-          "Step 3 (Active While-Reading & Context Clues): Read closely; when encountering unfamiliar academic jargon, immediately classify and apply context clues (IDEAS framework); trace pronoun referents ('it', 'they', 'this') back to their antecedents.",
-          "Step 4 (Deep Inferencing & Data Scanning): When comprehension questions demand specific metrics or dates, scan directly for target patterns; read between the lines to deduce authorial tone, implied attitudes, and unstated conclusions.",
-          "Step 5 (Post-Reading Synthesis & Summary): Revisit your Step 1 prediction (Confirmed, Refined, or Disproved?); construct a concise 1-to-2 sentence objective summary capturing the central thesis and supporting evidence."
+          "stepNum": 4,
+          "title": "How do I use it?",
+          "thaiTitle": "ใช้อย่างไร?",
+          "icon": "settings",
+          "content": "Execute the 5-Step Master Protocol for Strategy Integration:",
+          "checklist": [
+            "Step 1 (Pre-Reading Orientation): Survey the title, abstract, subheadings, and visuals in 30 seconds; state a formal prediction: 'Based on text features, this passage will demonstrate...'",
+            "Step 2 (First-Pass Skimming): Skim the introductory paragraph, topic sentences of body paragraphs, and concluding thoughts at 3x speed to map the overall thesis and structure.",
+            "Step 3 (Active While-Reading & Context Clues): Read closely; when encountering unfamiliar academic jargon, immediately classify and apply context clues (IDEAS framework); trace pronoun referents ('it', 'they', 'this') back to their antecedents.",
+            "Step 4 (Deep Inferencing & Data Scanning): When comprehension questions demand specific metrics or dates, scan directly for target patterns; read between the lines to deduce authorial tone, implied attitudes, and unstated conclusions.",
+            "Step 5 (Post-Reading Synthesis & Summary): Revisit your Step 1 prediction (Confirmed, Refined, or Disproved?); construct a concise 1-to-2 sentence objective summary capturing the central thesis and supporting evidence."
           ]
         },
         {
-          stepNum: 5,
-          title: "Worked Example",
-          thaiTitle: "ตัวอย่างการใช้",
-          icon: "file-text",
-          content: "Sample Text: 'Abstract: An Empirical Investigation into Community-Based Cultural Tourism along the Khmer Sanctuary Trail in Southern Buriram (Research Bulletin, Vol. 14, 2026). Traditional agricultural revenue in rural Buriram has experienced persistent volatility due to erratic rainfall cycles. In response, four rural subdistricts adjacent to Phanom Rung and Muang Tam sanctuaries established community-based homestay networks in 2023. These enterprises allow heritage travelers to engage directly in silk weaving, volcanic pottery craftsmanship, and local organic farming. Over a three-year assessment period, participating rural households experienced a 36% rise in supplemental annual income; however, researchers noted that municipal infrastructure—specifically rural road access and multilingual directional signage—remains inadequate to support peak festival seasons. Consequently, the provincial administration has allocated emergency infrastructure grants to resolve these transit bottlenecks before the upcoming 2027 tourism cycle.'",
-          annotated: "Strategy Analysis (Unit 6 Model):\n• [Phase 1: Pre-Reading Preview]: Surveying title & journal source reveals subject: Community-based Khmer cultural heritage tourism in southern Buriram.\n• [Phase 2: Skimming for Gist]: Captures the core dilemma and response: Erratic rainfall reduced crop revenue, prompting farming communities to create homestay enterprises.\n• [Phase 2: Scanning for Specific Data]: Pinpoints empirical metrics: established in '2023', 'three-year assessment', and '36% rise in supplemental annual income'.\n• [Phase 2: Context Clues]: Decodes 'bottlenecks' via surrounding clue 'rural road access and multilingual signage remains inadequate' -> transit obstacles/delays.\n• [Phase 2: Text Organization & Reference]: Tracks Problem-Solution and Cause-Effect connectives ('In response', 'however', 'Consequently').\n• [Phase 2: Making Inferences]: Deduces that provincial government financial intervention was vital to prevent homestay tourism from collapsing during peak festival seasons.\n• [Phase 3: Post-Reading Synthesis]: Combining these 5 strategies synthesizes the entire 150-word research abstract into a coherent, highly actionable 2-sentence summary!",
-          takeaway: "Orchestrating strategies transforms complex academic research into crystal-clear comprehension in under 60 seconds."
+          "stepNum": 5,
+          "title": "Worked Example",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "icon": "file-text",
+          "content": "Sample Text: 'Abstract: An Empirical Investigation into Community-Based Cultural Tourism along the Khmer Sanctuary Trail in Southern Buriram (Research Bulletin, Vol. 14, 2026). Traditional agricultural revenue in rural Buriram has experienced persistent volatility due to erratic rainfall cycles. In response, four rural subdistricts adjacent to Phanom Rung and Muang Tam sanctuaries established community-based homestay networks in 2023. These enterprises allow heritage travelers to engage directly in silk weaving, volcanic pottery craftsmanship, and local organic farming. Over a three-year assessment period, participating rural households experienced a 36% rise in supplemental annual income; however, researchers noted that municipal infrastructure—specifically rural road access and multilingual directional signage—remains inadequate to support peak festival seasons. Consequently, the provincial administration has allocated emergency infrastructure grants to resolve these transit bottlenecks before the upcoming 2027 tourism cycle.'",
+          "annotated": "Strategy Analysis (Unit 6 Model):\n• [Phase 1: Pre-Reading Preview]: Surveying title & journal source reveals subject: Community-based Khmer cultural heritage tourism in southern Buriram.\n• [Phase 2: Skimming for Gist]: Captures the core dilemma and response: Erratic rainfall reduced crop revenue, prompting farming communities to create homestay enterprises.\n• [Phase 2: Scanning for Specific Data]: Pinpoints empirical metrics: established in '2023', 'three-year assessment', and '36% rise in supplemental annual income'.\n• [Phase 2: Context Clues]: Decodes 'bottlenecks' via surrounding clue 'rural road access and multilingual signage remains inadequate' -> transit obstacles/delays.\n• [Phase 2: Text Organization & Reference]: Tracks Problem-Solution and Cause-Effect connectives ('In response', 'however', 'Consequently').\n• [Phase 2: Making Inferences]: Deduces that provincial government financial intervention was vital to prevent homestay tourism from collapsing during peak festival seasons.\n• [Phase 3: Post-Reading Synthesis]: Combining these 5 strategies synthesizes the entire 150-word research abstract into a coherent, highly actionable 2-sentence summary!",
+          "takeaway": "Orchestrating strategies transforms complex academic research into crystal-clear comprehension in under 60 seconds."
         },
         {
-          stepNum: 6,
-          title: "Guided Practice",
-          thaiTitle: "ฝึกปฏิบัติ",
-          icon: "user-check",
-          content: "Scenario: You are given a 12-page research report on renewable bioenergy in Isan with 15 comprehension questions to answer in 20 minutes.",
-          question: "Which sequential workflow represents the most effective integration of reading strategies under strict time pressure?",
-          options: [
-          "Preview title & headings -> Skim introduction & conclusion for gist -> Scan for question keywords to locate answers -> Use context clues & inference for analytical questions",
-          "Start reading word-for-word from page 1 and look up every unknown word in an English-Thai dictionary",
-          "Answer all 15 questions by guessing without looking at the text at all",
-          "Read only the last sentence of each page and ignore headings and charts"
+          "stepNum": 6,
+          "title": "Guided Practice",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "icon": "user-check",
+          "content": "Scenario: You are given a 12-page research report on renewable bioenergy in Isan with 15 comprehension questions to answer in 20 minutes.",
+          "question": "Which sequential workflow represents the most effective integration of reading strategies under strict time pressure?",
+          "options": [
+            "Preview title & headings -> Skim introduction & conclusion for gist -> Scan for question keywords to locate answers -> Use context clues & inference for analytical questions",
+            "Start reading word-for-word from page 1 and look up every unknown word in an English-Thai dictionary",
+            "Answer all 15 questions by guessing without looking at the text at all",
+            "Read only the last sentence of each page and ignore headings and charts"
           ],
-          answer: 0,
-          explanation: "Master readers combine previewing to frame the topic, skimming for general structure, scanning to locate answers quickly, and context clues/inferencing to solve complex analytical questions."
+          "answer": 0,
+          "explanation": "Master readers combine previewing to frame the topic, skimming for general structure, scanning to locate answers quickly, and context clues/inferencing to solve complex analytical questions."
         },
         {
-          stepNum: 7,
-          title: "Apply to a Short Text",
-          thaiTitle: "นำไปใช้กับบทอ่านสั้น",
-          icon: "book-open",
-          passageTitle: "The Transformative Power of Strategic Reading",
-          passage: "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
-          audioText: "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
-          taskQuestion: "Explain how expert readers demonstrate flexibility according to this passage, and synthesize the ultimate benefit of mastering integrated reading strategies.",
-          taskAnswer: "Expert readers dynamically adjust their reading speed and strategy based on text demands (previewing, skimming, scanning, context clues, inferencing), which ultimately transforms them into autonomous, analytical, and confident lifelong scholars."
+          "stepNum": 7,
+          "title": "Apply to a Short Text",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
+          "icon": "book-open",
+          "passageTitle": "The Transformative Power of Strategic Reading",
+          "passage": "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
+          "audioText": "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
+          "taskQuestion": "Explain how expert readers demonstrate flexibility according to this passage, and synthesize the ultimate benefit of mastering integrated reading strategies.",
+          "taskAnswer": "Expert readers dynamically adjust their reading speed and strategy based on text demands (previewing, skimming, scanning, context clues, inferencing), which ultimately transforms them into autonomous, analytical, and confident lifelong scholars."
         },
         {
-          stepNum: 8,
-          title: "Strategy Quiz",
-          thaiTitle: "แบบทดสอบ",
-          icon: "trophy",
-          question: "Which scenario best exemplifies an autonomous reader applying integrated reading strategies in an academic setting?",
-          options: [
-          "A student who previews the abstract and subheadings of a research paper, skims to find relevant sections, scans for statistical data, uses context clues for technical terms, and verifies conclusions",
-          "A student who translates an entire 20-page textbook chapter word-by-word with a translation app",
-          "A student who skips reading entirely and relies solely on lecture slides",
-          "A student who reads every type of text—from poetry to bus schedules—at the exact same slow speed"
+          "stepNum": 8,
+          "title": "Strategy Quiz",
+          "thaiTitle": "แบบทดสอบ",
+          "icon": "trophy",
+          "question": "Which scenario best exemplifies an autonomous reader applying integrated reading strategies in an academic setting?",
+          "options": [
+            "A student who previews the abstract and subheadings of a research paper, skims to find relevant sections, scans for statistical data, uses context clues for technical terms, and verifies conclusions",
+            "A student who translates an entire 20-page textbook chapter word-by-word with a translation app",
+            "A student who skips reading entirely and relies solely on lecture slides",
+            "A student who reads every type of text—from poetry to bus schedules—at the exact same slow speed"
           ],
-          answer: 0,
-          explanation: "An autonomous reader flexibly selects, combines, and adapts reading strategies to match the specific reading purpose and complexity of the text."
+          "answer": 0,
+          "explanation": "An autonomous reader flexibly selects, combines, and adapts reading strategies to match the specific reading purpose and complexity of the text."
         }
       ]
     }
   ],
-
-  // Practice Quizzes & Educational Games (Module: Practice & Quiz)
-  practiceOptions: {
-    games: [
-      { id: "g1", title: "Word Matcher Challenge", description: "Match English reading terms with their Thai definitions in an interactive timed card match.", icon: "gamepad-2" },
-      { id: "g2", title: "Speed Main Idea Race", description: "Pick the correct main idea sentence within 15 seconds to earn bonus points!", icon: "zap" }
-    ],
-    quizzes: [
+  "practiceOptions": {
+    "games": [
       {
-        id: "q1",
-        code: "QUIZ 01",
-        title: "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
-        thaiTitle: "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
-        unitRef: "Unit 1: Main Ideas",
-        strategyRef: "Strategy 1: Previewing & Predicting",
-        timeMinutes: 10,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "The Tortoise and the Hare: Lessons on Perseverance and Overconfidence",
-          text: "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
-          audioText: "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
+        "id": "g1",
+        "title": "Word Matcher Challenge",
+        "description": "Match English reading terms with their Thai definitions in an interactive timed card match.",
+        "icon": "gamepad-2"
+      },
+      {
+        "id": "g2",
+        "title": "Speed Main Idea Race",
+        "description": "Pick the correct main idea sentence within 15 seconds to earn bonus points!",
+        "icon": "zap"
+      }
+    ],
+    "quizzes": [
+      {
+        "id": "q1",
+        "code": "QUIZ 01",
+        "title": "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
+        "thaiTitle": "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
+        "unitRef": "Unit 1: Main Ideas",
+        "strategyRef": "Strategy 1: Previewing & Predicting",
+        "timeMinutes": 10,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "The Tortoise and the Hare: Lessons on Perseverance and Overconfidence",
+          "text": "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
+          "audioText": "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 2: Strategy 1 (Previewing)",
-            question: "1. Before reading the full story, what previewing technique best reveals the central characters and conflict immediately?",
-            options: [
+            "id": 1,
+            "tag": "Module 2: Strategy 1 (Previewing)",
+            "question": "1. Before reading the full story, what previewing technique best reveals the central characters and conflict immediately?",
+            "options": [
               "Examining the title 'The Tortoise and the Hare: Lessons on Perseverance and Overconfidence'",
               "Counting how many verbs appear in the third sentence",
               "Reading only the punctuation marks in the last paragraph",
               "Translating every single adjective into another language"
             ],
-            answer: 0,
-            explanation: "Previewing the title immediately identifies the key characters and the contrasting themes (perseverance vs. overconfidence)."
+            "answer": 0,
+            "explanation": "Previewing the title immediately identifies the key characters and the contrasting themes (perseverance vs. overconfidence)."
           },
           {
-            id: 2,
-            tag: "Module 1: Unit 1 (Main Idea)",
-            question: "2. What is the stated main idea of the fable as expressed in the concluding sentence?",
-            options: [
+            "id": 2,
+            "tag": "Module 1: Unit 1 (Main Idea)",
+            "question": "2. What is the stated main idea of the fable as expressed in the concluding sentence?",
+            "options": [
               "Sleeping under oak trees is the best way to spend an afternoon",
               "Steady determination and consistent effort often lead to unexpected success over careless natural talent",
               "Fast animals always win every race without effort",
               "Running races during hot weather is strictly prohibited"
             ],
-            answer: 1,
-            explanation: "The final sentence explicitly states the core moral: steady determination and consistent effort overcome careless talent."
+            "answer": 1,
+            "explanation": "The final sentence explicitly states the core moral: steady determination and consistent effort overcome careless talent."
           },
           {
-            id: 3,
-            tag: "Module 2: Strategy 1 (Predicting)",
-            question: "3. If an accompanying illustration showed the Hare sleeping peacefully while the Tortoise crept past the milestone, what prediction is confirmed?",
-            options: [
+            "id": 3,
+            "tag": "Module 2: Strategy 1 (Predicting)",
+            "question": "3. If an accompanying illustration showed the Hare sleeping peacefully while the Tortoise crept past the milestone, what prediction is confirmed?",
+            "options": [
               "The patient Tortoise will overtake the sleeping Hare and win the race",
               "The Hare decided to quit the race to become a doctor",
               "The Tortoise woke up the Hare so they could run together as friends",
               "A storm cancelled the race before anyone finished"
             ],
-            answer: 0,
-            explanation: "Visual clues of the sleeping Hare and advancing Tortoise confirm the prediction of the Tortoise taking the lead."
+            "answer": 0,
+            "explanation": "Visual clues of the sleeping Hare and advancing Tortoise confirm the prediction of the Tortoise taking the lead."
           },
           {
-            id: 4,
-            tag: "Module 1: Unit 1 (Topic Sentence)",
-            question: "4. In the narrative paragraph describing the race, which sentence establishes the core controlling idea of persistence defeating talent?",
-            options: [
+            "id": 4,
+            "tag": "Module 1: Unit 1 (Topic Sentence)",
+            "question": "4. In the narrative paragraph describing the race, which sentence establishes the core controlling idea of persistence defeating talent?",
+            "options": [
               "The concluding sentence: 'Steady determination and consistent effort often lead to unexpected success over careless natural talent.'",
               "The opening phrase describing the teasing",
               "The middle detail about the oak tree having pleasant shade",
               "There is no topic sentence or main idea anywhere in the text"
             ],
-            answer: 0,
-            explanation: "The concluding sentence encapsulates the controlling idea and moral lesson that governs the entire narrative."
+            "answer": 0,
+            "explanation": "The concluding sentence encapsulates the controlling idea and moral lesson that governs the entire narrative."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 1 + Strategy 1)",
-            question: "5. By combining previewing and predicting with main idea identification, how does an active reader benefit?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 1 + Strategy 1)",
+            "question": "5. By combining previewing and predicting with main idea identification, how does an active reader benefit?",
+            "options": [
               "Saves reading time, anticipates plot outcomes, and grasps the core moral without unnecessary rereading",
               "Guarantees that words never have to be pronounced correctly",
               "Replaces the requirement to read any complete sentences",
               "Proves that stories should only be listened to as audio"
             ],
-            answer: 0,
-            explanation: "Previewing sets up expectations and mental schema, allowing readers to identify main ideas and themes with high speed and comprehension accuracy."
+            "answer": 0,
+            "explanation": "Previewing sets up expectations and mental schema, allowing readers to identify main ideas and themes with high speed and comprehension accuracy."
           }
         ]
       },
       {
-        id: "q2",
-        code: "QUIZ 02",
-        title: "Unit 2: Supporting Details + Strategy 2: Skimming & Scanning",
-        thaiTitle: "แบบทดสอบรวม: Unit 2 (รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด) + Strategy 2 (การอ่านแบบกวาดสายตาและค้นหาข้อมูล)",
-        unitRef: "Unit 2: Supporting Details & Idea Relationships",
-        strategyRef: "Strategy 2: Skimming & Scanning",
-        timeMinutes: 10,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "Smart Agriculture and IoT Irrigation in Buriram Province",
-          text: "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually.",
-          audioText: "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually."
+        "id": "q2",
+        "code": "QUIZ 02",
+        "title": "Unit 2: Supporting Details + Strategy 2: Skimming & Scanning",
+        "thaiTitle": "แบบทดสอบรวม: Unit 2 (รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด) + Strategy 2 (การอ่านแบบกวาดสายตาและค้นหาข้อมูล)",
+        "unitRef": "Unit 2: Supporting Details & Idea Relationships",
+        "strategyRef": "Strategy 2: Skimming & Scanning",
+        "timeMinutes": 10,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "Smart Agriculture and IoT Irrigation in Buriram Province",
+          "text": "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually.",
+          "audioText": "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 2: Strategy 2 (Skimming for Gist)",
-            question: "1. When skimming the passage in 10 seconds, which parts should you focus on to grasp the general gist quickly?",
-            options: [
+            "id": 1,
+            "tag": "Module 2: Strategy 2 (Skimming for Gist)",
+            "question": "1. When skimming the passage in 10 seconds, which parts should you focus on to grasp the general gist quickly?",
+            "options": [
               "The first sentence, keywords like 'IoT' and 'smart agriculture', and the final outcome sentence",
               "Every footnote and citation number",
               "Only the prepositions and conjunctions",
               "Counting how many letters are capitalized"
             ],
-            answer: 0,
-            explanation: "Skimming focuses on the opening topic sentence, major keywords, and concluding result to extract the gist."
+            "answer": 0,
+            "explanation": "Skimming focuses on the opening topic sentence, major keywords, and concluding result to extract the gist."
           },
           {
-            id: 2,
-            tag: "Module 1: Unit 2 (Supporting Details)",
-            question: "2. Which of the following is a specific factual supporting detail provided in the text?",
-            options: [
+            "id": 2,
+            "tag": "Module 1: Unit 2 (Supporting Details)",
+            "question": "2. Which of the following is a specific factual supporting detail provided in the text?",
+            "options": [
               "Sensors automatically trigger drip irrigation when soil moisture drops below 30%",
               "Rice farming was completely abolished in Buriram",
               "Buriram has the highest rainfall in Southeast Asia",
               "IoT sensors are operated entirely by hand"
             ],
-            answer: 0,
-            explanation: "The text specifies that intelligent sensors automatically trigger drip irrigation when humidity falls below 30%."
+            "answer": 0,
+            "explanation": "The text specifies that intelligent sensors automatically trigger drip irrigation when humidity falls below 30%."
           },
           {
-            id: 3,
-            tag: "Module 2: Strategy 2 (Scanning for Specific Information)",
-            question: "3. Scan the text quickly to locate the exact percentage increase in crop yield achieved by the farmers.",
-            options: [
+            "id": 3,
+            "tag": "Module 2: Strategy 2 (Scanning for Specific Information)",
+            "question": "3. Scan the text quickly to locate the exact percentage increase in crop yield achieved by the farmers.",
+            "options": [
               "25%",
               "40%",
               "30%",
               "10%"
             ],
-            answer: 0,
-            explanation: "Scanning quickly for the '%' symbol and the word 'crop yields' immediately pinpoints '25%'."
+            "answer": 0,
+            "explanation": "Scanning quickly for the '%' symbol and the word 'crop yields' immediately pinpoints '25%'."
           },
           {
-            id: 4,
-            tag: "Module 1: Unit 2 (Idea Relationships: Cause & Effect)",
-            question: "4. What is the cause-and-effect relationship established between soil moisture sensors and water conservation?",
-            options: [
+            "id": 4,
+            "tag": "Module 1: Unit 2 (Idea Relationships: Cause & Effect)",
+            "question": "4. What is the cause-and-effect relationship established between soil moisture sensors and water conservation?",
+            "options": [
               "Sensors activate drip irrigation only when humidity drops below 30%, which directly results in saving 1.2 million liters of water annually",
               "Sensors increase rainfall across Buriram province",
               "Water shortages cause sensors to break down permanently",
               "Farmers stopped watering rice paddies altogether"
             ],
-            answer: 0,
-            explanation: "The text explains that targeted drip irrigation directly leads to conserving 1.2 million liters of water annually."
+            "answer": 0,
+            "explanation": "The text explains that targeted drip irrigation directly leads to conserving 1.2 million liters of water annually."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 2 + Strategy 2)",
-            question: "5. How does combining skimming and scanning with identifying supporting details enhance reading efficiency?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 2 + Strategy 2)",
+            "question": "5. How does combining skimming and scanning with identifying supporting details enhance reading efficiency?",
+            "options": [
               "Skimming provides the overall framework so that specific supporting data points can be scanned and verified swiftly",
               "It prevents the reader from understanding the author's purpose",
               "It forces the reader to memorize the entire dictionary",
               "It eliminates the need to verify facts"
             ],
-            answer: 0,
-            explanation: "Skimming establishes context, allowing the reader to scan for and evaluate specific supporting evidence quickly."
+            "answer": 0,
+            "explanation": "Skimming establishes context, allowing the reader to scan for and evaluate specific supporting evidence quickly."
           }
         ]
       },
       {
-        id: "q3",
-        code: "QUIZ 03",
-        title: "Unit 3: Vocabulary in Context + Strategy 3: Using Context Clues",
-        thaiTitle: "แบบทดสอบรวม: Unit 3 (คำศัพท์ในบริบทและความหมายของประโยค) + Strategy 3 (การใช้คำศัพท์ในบริบท)",
-        unitRef: "Unit 3: Vocabulary in Context & Sentence Meaning",
-        strategyRef: "Strategy 3: Using Context Clues",
-        timeMinutes: 10,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "Preserving Ancient Khmer Architecture in Southern Isan",
-          text: "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity.",
-          audioText: "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity."
+        "id": "q3",
+        "code": "QUIZ 03",
+        "title": "Unit 3: Vocabulary in Context + Strategy 3: Using Context Clues",
+        "thaiTitle": "แบบทดสอบรวม: Unit 3 (คำศัพท์ในบริบทและความหมายของประโยค) + Strategy 3 (การใช้คำศัพท์ในบริบท)",
+        "unitRef": "Unit 3: Vocabulary in Context & Sentence Meaning",
+        "strategyRef": "Strategy 3: Using Context Clues",
+        "timeMinutes": 10,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "Preserving Ancient Khmer Architecture in Southern Isan",
+          "text": "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity.",
+          "audioText": "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 2: Strategy 3 (Using Context Clues)",
-            question: "1. Based on context clues in the opening sentence ('sanctuary atop an extinct volcano'), what is the meaning of the word 'imposing'?",
-            options: [
+            "id": 1,
+            "tag": "Module 2: Strategy 3 (Using Context Clues)",
+            "question": "1. Based on context clues in the opening sentence ('sanctuary atop an extinct volcano'), what is the meaning of the word 'imposing'?",
+            "options": [
               "Grand, impressive, and commanding admiration",
               "Hidden, tiny, and unnoticeable",
               "Fragile, modern, and easily broken",
               "Dangerous and strictly forbidden to visit"
             ],
-            answer: 0,
-            explanation: "Nearby context clues describing a prominent sanctuary atop an extinct volcano indicate that 'imposing' means grand and impressive."
+            "answer": 0,
+            "explanation": "Nearby context clues describing a prominent sanctuary atop an extinct volcano indicate that 'imposing' means grand and impressive."
           },
           {
-            id: 2,
-            tag: "Module 1: Unit 3 (Vocabulary in Context)",
-            question: "2. In the sentence 'Conservators remain vigilant, constantly monitoring stone decay...', what does 'vigilant' mean based on surrounding clues?",
-            options: [
+            "id": 2,
+            "tag": "Module 1: Unit 3 (Vocabulary in Context)",
+            "question": "2. In the sentence 'Conservators remain vigilant, constantly monitoring stone decay...', what does 'vigilant' mean based on surrounding clues?",
+            "options": [
               "Carefully watchful and alert to danger or damage",
               "Careless and inattentive",
               "Fast asleep during work hours",
               "Angry and hostile"
             ],
-            answer: 0,
-            explanation: "The subsequent phrase 'constantly monitoring stone decay' clarifies that vigilant means alert and watchful."
+            "answer": 0,
+            "explanation": "The subsequent phrase 'constantly monitoring stone decay' clarifies that vigilant means alert and watchful."
           },
           {
-            id: 3,
-            tag: "Module 2: Strategy 3 (Types of Context Clues)",
-            question: "3. What type of context clue helps define the word 'weathering' in 'endured centuries of weathering'?",
-            options: [
+            "id": 3,
+            "tag": "Module 2: Strategy 3 (Types of Context Clues)",
+            "question": "3. What type of context clue helps define the word 'weathering' in 'endured centuries of weathering'?",
+            "options": [
               "Cause-and-effect / Explanation clue linked to monsoon humidity and environmental erosion",
               "Antonym contrast clue introduced by 'however'",
               "Direct dictionary citation in parentheses",
               "Rhyming sound pattern"
             ],
-            answer: 0,
-            explanation: "The text explains decay caused by 'monsoon humidity and environmental erosion', acting as an explanation context clue for weathering."
+            "answer": 0,
+            "explanation": "The text explains decay caused by 'monsoon humidity and environmental erosion', acting as an explanation context clue for weathering."
           },
           {
-            id: 4,
-            tag: "Module 1: Unit 3 (Sentence Meaning)",
-            question: "4. What does the word 'intricate' mean in the phrase 'intricate sandstone carvings that have endured centuries'?",
-            options: [
+            "id": 4,
+            "tag": "Module 1: Unit 3 (Sentence Meaning)",
+            "question": "4. What does the word 'intricate' mean in the phrase 'intricate sandstone carvings that have endured centuries'?",
+            "options": [
               "Very complicated, detailed, and finely crafted",
               "Completely plain and unadorned",
               "Broken beyond repair",
               "Made of modern plastic"
             ],
-            answer: 0,
-            explanation: "'Intricate' describes detailed, sophisticated craftsmanship in ancient sandstone sculptures."
+            "answer": 0,
+            "explanation": "'Intricate' describes detailed, sophisticated craftsmanship in ancient sandstone sculptures."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 3 + Strategy 3)",
-            question: "5. How does applying context clue strategies support the overall comprehension of sentence meaning?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 3 + Strategy 3)",
+            "question": "5. How does applying context clue strategies support the overall comprehension of sentence meaning?",
+            "options": [
               "It enables readers to deduce unfamiliar words from sentence syntax and neighboring clues without interrupting their reading flow",
               "It requires readers to memorize every dictionary entry",
               "It translates all English sentences into grammar rules",
               "It allows students to skip reading full paragraphs"
             ],
-            answer: 0,
-            explanation: "Context clues allow readers to unlock vocabulary meaning smoothly within the sentence context, maintaining active comprehension."
+            "answer": 0,
+            "explanation": "Context clues allow readers to unlock vocabulary meaning smoothly within the sentence context, maintaining active comprehension."
           }
         ]
       },
       {
-        id: "q4",
-        code: "QUIZ 04",
-        title: "Unit 4: References & Connectives + Strategy 4: Identifying Text Organization",
-        thaiTitle: "แบบทดสอบรวม: Unit 4 (คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ) + Strategy 4 (การระบุโครงสร้างข้อความ)",
-        unitRef: "Unit 4: References, Connectives & Text Organization",
-        strategyRef: "Strategy 4: Identifying Text Organization",
-        timeMinutes: 10,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "Digital Literacy versus Traditional Learning in Higher Education",
-          text: "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended university courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters.",
-          audioText: "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended university courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters."
+        "id": "q4",
+        "code": "QUIZ 04",
+        "title": "Unit 4: References & Connectives + Strategy 4: Identifying Text Organization",
+        "thaiTitle": "แบบทดสอบรวม: Unit 4 (คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ) + Strategy 4 (การระบุโครงสร้างข้อความ)",
+        "unitRef": "Unit 4: References, Connectives & Text Organization",
+        "strategyRef": "Strategy 4: Identifying Text Organization",
+        "timeMinutes": 10,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "Digital Literacy versus Traditional Learning in Higher Education",
+          "text": "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended university courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters.",
+          "audioText": "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended university courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 1: Unit 4 (Pronoun Reference)",
-            question: "1. In the phrase 'Although some learners initially struggle with self-directed pacing, they ultimately develop...', what does the pronoun 'they' refer to?",
-            options: ["Some learners", "Teacher-centered lectures", "Multimedia modules", "In-person class time"],
-            answer: 0,
-            explanation: "The pronoun 'they' refers back to the plural subject 'some learners' in the preceding dependent clause."
+            "id": 1,
+            "tag": "Module 1: Unit 4 (Pronoun Reference)",
+            "question": "1. In the phrase 'Although some learners initially struggle with self-directed pacing, they ultimately develop...', what does the pronoun 'they' refer to?",
+            "options": [
+              "Some learners",
+              "Teacher-centered lectures",
+              "Multimedia modules",
+              "In-person class time"
+            ],
+            "answer": 0,
+            "explanation": "The pronoun 'they' refers back to the plural subject 'some learners' in the preceding dependent clause."
           },
           {
-            id: 2,
-            tag: "Module 2: Strategy 4 (Identifying Text Organization)",
-            question: "2. What is the primary organizational pattern established in the opening sentence?",
-            options: ["Compare and Contrast", "Chronological Timeline", "Classification of Animals", "Geographic Mapping"],
-            answer: 0,
-            explanation: "The signal word 'Unlike' sets up an explicit comparison and contrast between conventional lectures and digital learning."
+            "id": 2,
+            "tag": "Module 2: Strategy 4 (Identifying Text Organization)",
+            "question": "2. What is the primary organizational pattern established in the opening sentence?",
+            "options": [
+              "Compare and Contrast",
+              "Chronological Timeline",
+              "Classification of Animals",
+              "Geographic Mapping"
+            ],
+            "answer": 0,
+            "explanation": "The signal word 'Unlike' sets up an explicit comparison and contrast between conventional lectures and digital learning."
           },
           {
-            id: 3,
-            tag: "Module 1: Unit 4 (Connectives & Transitions)",
-            question: "3. What logical relationship is signaled by the connective transition word 'Consequently' in sentence 3?",
-            options: [
+            "id": 3,
+            "tag": "Module 1: Unit 4 (Connectives & Transitions)",
+            "question": "3. What logical relationship is signaled by the connective transition word 'Consequently' in sentence 3?",
+            "options": [
               "A cause-and-effect relationship showing the result of students reviewing modules prior to class",
               "A time order indicating the next century",
               "A negation that cancels all previous statements",
               "An introduction of a character's dialogue"
             ],
-            answer: 0,
-            explanation: "'Consequently' signifies that what follows is a direct outcome or effect of the preceding cause."
+            "answer": 0,
+            "explanation": "'Consequently' signifies that what follows is a direct outcome or effect of the preceding cause."
           },
           {
-            id: 4,
-            tag: "Module 2: Strategy 4 (Transition Signals)",
-            question: "4. Which transition word in the final sentence signals an unexpected contrast or concession?",
-            options: ["Although", "Prior to", "Modern", "Rarely"],
-            answer: 0,
-            explanation: "'Although' is a concession connective used to contrast initial struggles with ultimate positive development."
+            "id": 4,
+            "tag": "Module 2: Strategy 4 (Transition Signals)",
+            "question": "4. Which transition word in the final sentence signals an unexpected contrast or concession?",
+            "options": [
+              "Although",
+              "Prior to",
+              "Modern",
+              "Rarely"
+            ],
+            "answer": 0,
+            "explanation": "'Although' is a concession connective used to contrast initial struggles with ultimate positive development."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 4 + Strategy 4)",
-            question: "5. Why is recognizing reference pronouns and transitional connectives essential for analyzing text organization?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 4 + Strategy 4)",
+            "question": "5. Why is recognizing reference pronouns and transitional connectives essential for analyzing text organization?",
+            "options": [
               "They act as grammatical signposts connecting ideas, sentences, and paragraphs in logical sequences",
               "They help students avoid reading the whole passage",
               "They only indicate punctuation errors",
               "They are used solely for counting syllables"
             ],
-            answer: 0,
-            explanation: "Connectives and referents form cohesive ties that reveal the underlying structural architecture of the text."
+            "answer": 0,
+            "explanation": "Connectives and referents form cohesive ties that reveal the underlying structural architecture of the text."
           }
         ]
       },
       {
-        id: "q5",
-        code: "QUIZ 05",
-        title: "Unit 5: Paraphrase & Meaning + Strategy 5: Making Inferences",
-        thaiTitle: "แบบทดสอบรวม: Unit 5 (การตีความและความหมายที่เรียบเรียงใหม่) + Strategy 5 (การอนุมานความหมาย)",
-        unitRef: "Unit 5: Text Interpretation & Paraphrased Meaning",
-        strategyRef: "Strategy 5: Making Inferences",
-        timeMinutes: 10,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "University Library Transformation in the Information Age",
-          text: "The university central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards.",
-          audioText: "The university central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards."
+        "id": "q5",
+        "code": "QUIZ 05",
+        "title": "Unit 5: Paraphrase & Meaning + Strategy 5: Making Inferences",
+        "thaiTitle": "แบบทดสอบรวม: Unit 5 (การตีความและความหมายที่เรียบเรียงใหม่) + Strategy 5 (การอนุมานความหมาย)",
+        "unitRef": "Unit 5: Text Interpretation & Paraphrased Meaning",
+        "strategyRef": "Strategy 5: Making Inferences",
+        "timeMinutes": 10,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "University Library Transformation in the Information Age",
+          "text": "The university central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards.",
+          "audioText": "The university central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 2: Strategy 5 (Making Inferences)",
-            question: "1. What can you logically infer about modern university students' academic research habits?",
-            options: [
+            "id": 1,
+            "tag": "Module 2: Strategy 5 (Making Inferences)",
+            "question": "1. What can you logically infer about modern university students' academic research habits?",
+            "options": [
               "Students increasingly rely on digital databases and collaborative digital tools rather than physical paper books",
               "Students no longer conduct research at all",
               "Students prefer index cards over computers",
               "The university has forbidden electronic devices"
             ],
-            answer: 0,
-            explanation: "The fivefold surge in digital downloads and group whiteboard discussions logically implies a shift toward digital collaboration."
+            "answer": 0,
+            "explanation": "The fivefold surge in digital downloads and group whiteboard discussions logically implies a shift toward digital collaboration."
           },
           {
-            id: 2,
-            tag: "Module 1: Unit 5 (Valid Paraphrase)",
-            question: "2. Which of the following represents an accurate paraphrase of 'While physical book checkouts have declined by 35%... digital journal downloads have surged fivefold'?",
-            options: [
+            "id": 2,
+            "tag": "Module 1: Unit 5 (Valid Paraphrase)",
+            "question": "2. Which of the following represents an accurate paraphrase of 'While physical book checkouts have declined by 35%... digital journal downloads have surged fivefold'?",
+            "options": [
               "Borrowing of print books has dropped substantially, whereas digital article usage has multiplied dramatically",
               "Print books are 35% more popular than online journals",
               "Students have stopped using the library completely",
               "Digital downloads declined by 35% over five years"
             ],
-            answer: 0,
-            explanation: "It restates the factual core accurately using synonyms ('borrowing of print books', 'multiplied dramatically') without distorting meaning."
+            "answer": 0,
+            "explanation": "It restates the factual core accurately using synonyms ('borrowing of print books', 'multiplied dramatically') without distorting meaning."
           },
           {
-            id: 3,
-            tag: "Module 2: Strategy 5 (Inferring Implied Purpose)",
-            question: "3. Based on the rearrangement of bookshelves into 'collaborative learning zones with multimedia suites', what can be inferred about the changing role of academic libraries?",
-            options: [
+            "id": 3,
+            "tag": "Module 2: Strategy 5 (Inferring Implied Purpose)",
+            "question": "3. Based on the rearrangement of bookshelves into 'collaborative learning zones with multimedia suites', what can be inferred about the changing role of academic libraries?",
+            "options": [
               "Libraries are transforming from quiet solitary book repositories into active social and digital learning spaces",
               "Libraries are being turned into commercial shopping malls",
               "Libraries are eliminating staff members entirely",
               "Libraries will no longer serve university students"
             ],
-            answer: 0,
-            explanation: "The physical design changes point to an evolving mission toward collaborative, technology-enabled learning."
+            "answer": 0,
+            "explanation": "The physical design changes point to an evolving mission toward collaborative, technology-enabled learning."
           },
           {
-            id: 4,
-            tag: "Module 1: Unit 5 (Distorted Paraphrase Identification)",
-            question: "4. Which statement is a flawed paraphrase that introduces false facts?",
-            options: [
+            "id": 4,
+            "tag": "Module 1: Unit 5 (Distorted Paraphrase Identification)",
+            "question": "4. Which statement is a flawed paraphrase that introduces false facts?",
+            "options": [
               "The university decided to burn all physical books because paper is outdated",
               "Electronic databases have experienced significant growth in recent years",
               "Collaborative areas now feature interactive digital screens",
               "Traditional card catalogs are no longer the primary search tool"
             ],
-            answer: 0,
-            explanation: "Claiming books were burned is an unfounded distortion not supported by the original text."
+            "answer": 0,
+            "explanation": "Claiming books were burned is an unfounded distortion not supported by the original text."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 5 + Strategy 5)",
-            question: "5. How does combining inference with paraphrased meaning verify true reading comprehension?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 5 + Strategy 5)",
+            "question": "5. How does combining inference with paraphrased meaning verify true reading comprehension?",
+            "options": [
               "Inferring uncovers unstated implications while paraphrasing confirms that core ideas can be restated accurately in one's own words",
               "It allows students to copy sentences word-for-word on exams",
               "It replaces the need for critical thinking",
               "It proves that all reading passages have identical meanings"
             ],
-            answer: 0,
-            explanation: "Inference checks deep interpretive reading, while paraphrase demonstrates genuine expressive understanding."
+            "answer": 0,
+            "explanation": "Inference checks deep interpretive reading, while paraphrase demonstrates genuine expressive understanding."
           }
         ]
       },
       {
-        id: "q6",
-        code: "QUIZ 06",
-        title: "Unit 6: Integrated Practice + Strategy 6: Integrated Strategy Review",
-        thaiTitle: "แบบทดสอบรวม: Unit 6 (การฝึกอ่านแบบบูรณาการ) + Strategy 6 (การทบทวนกลยุทธ์แบบบูรณาการ)",
-        unitRef: "Unit 6: Integrated Reading Practice",
-        strategyRef: "Strategy 6: Integrated Strategy Review",
-        timeMinutes: 15,
-        questionsCount: 5,
-        passingScore: 70,
-        passage: {
-          title: "The Impact of Explicit Reading Strategy Instruction on EFL Learners",
-          text: "Research conducted at Buriram Rajabhat University demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success.",
-          audioText: "Research conducted at Buriram Rajabhat University demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success."
+        "id": "q6",
+        "code": "QUIZ 06",
+        "title": "Unit 6: Integrated Practice + Strategy 6: Integrated Strategy Review",
+        "thaiTitle": "แบบทดสอบรวม: Unit 6 (การฝึกอ่านแบบบูรณาการ) + Strategy 6 (การทบทวนกลยุทธ์แบบบูรณาการ)",
+        "unitRef": "Unit 6: Integrated Reading Practice",
+        "strategyRef": "Strategy 6: Integrated Strategy Review",
+        "timeMinutes": 15,
+        "questionsCount": 5,
+        "passingScore": 70,
+        "passage": {
+          "title": "The Impact of Explicit Reading Strategy Instruction on EFL Learners",
+          "text": "Research conducted at Buriram Rajabhat University demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success.",
+          "audioText": "Research conducted at Buriram Rajabhat University demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success."
         },
-        questions: [
+        "questions": [
           {
-            id: 1,
-            tag: "Module 2: Strategy 6 (Integrated Strategy Review)",
-            question: "1. Which statement represents the best overall synthesis and review of the entire passage?",
-            options: [
+            "id": 1,
+            "tag": "Module 2: Strategy 6 (Integrated Strategy Review)",
+            "question": "1. Which statement represents the best overall synthesis and review of the entire passage?",
+            "options": [
               "Explicit instruction in reading strategies substantially boosts EFL students' comprehension, reduces reading anxiety, and fosters autonomous learning",
               "English majors at BRU prefer reading short texts rather than taking comprehension tests",
               "Standardized tests are the only valid measurement of student intellect",
               "Reading strategies are only beneficial for primary school students"
             ],
-            answer: 0,
-            explanation: "It accurately synthesizes the main intervention (explicit strategy instruction) with both measured outcomes (28% test gain, 91% anxiety drop) without bias."
+            "answer": 0,
+            "explanation": "It accurately synthesizes the main intervention (explicit strategy instruction) with both measured outcomes (28% test gain, 91% anxiety drop) without bias."
           },
           {
-            id: 2,
-            tag: "Module 1: Unit 6 (Evaluating Empirical Evidence)",
-            question: "2. According to the text, what two measurable benefits did students experience after receiving structured strategy instruction?",
-            options: [
+            "id": 2,
+            "tag": "Module 1: Unit 6 (Evaluating Empirical Evidence)",
+            "question": "2. According to the text, what two measurable benefits did students experience after receiving structured strategy instruction?",
+            "options": [
               "A 28% comprehension score increase and reduced reading anxiety reported by 91% of students",
               "Free textbooks and an immediate university graduation",
               "Zero hours of homework and higher exam absences",
               "Automatic English teaching certificates"
             ],
-            answer: 0,
-            explanation: "The passage explicitly provides two empirical metrics: 28% test score improvement and 91% reduced anxiety."
+            "answer": 0,
+            "explanation": "The passage explicitly provides two empirical metrics: 28% test score improvement and 91% reduced anxiety."
           },
           {
-            id: 3,
-            tag: "Module 2: Strategy 6 (Applying Multiple Strategies Together)",
-            question: "3. How does combining multiple strategies (previewing, predicting, and identifying text organization) benefit readers of complex academic texts?",
-            options: [
+            "id": 3,
+            "tag": "Module 2: Strategy 6 (Applying Multiple Strategies Together)",
+            "question": "3. How does combining multiple strategies (previewing, predicting, and identifying text organization) benefit readers of complex academic texts?",
+            "options": [
               "It enables readers to scaffold their comprehension before, during, and after reading for maximum retention and accuracy",
               "It slows down reading speed so that students cannot finish on time",
               "It eliminates the need to understand English vocabulary",
               "It guarantees that texts never need to be reread"
             ],
-            answer: 0,
-            explanation: "Integrating multiple reading strategies creates a complete scaffolding system from initial preview to deep post-reading evaluation."
+            "answer": 0,
+            "explanation": "Integrating multiple reading strategies creates a complete scaffolding system from initial preview to deep post-reading evaluation."
           },
           {
-            id: 4,
-            tag: "Module 1: Unit 6 (Integrated Reading Framework)",
-            question: "4. How do the three instructional stages (Pre-, While-, and Post-Reading) function together in integrated reading?",
-            options: [
+            "id": 4,
+            "tag": "Module 1: Unit 6 (Integrated Reading Framework)",
+            "question": "4. How do the three instructional stages (Pre-, While-, and Post-Reading) function together in integrated reading?",
+            "options": [
               "They provide a sequential framework guiding the learner before, during, and after engagement with the text",
               "They are completely isolated and should never be used together",
               "They only apply to listening exercises",
               "They replace the need to understand English vocabulary"
             ],
-            answer: 0,
-            explanation: "The three-stage framework scaffolds reading comprehension before, during, and after text interaction."
+            "answer": 0,
+            "explanation": "The three-stage framework scaffolds reading comprehension before, during, and after text interaction."
           },
           {
-            id: 5,
-            tag: "Integrated Skill (Unit 6 + Strategy 6 Capstone)",
-            question: "5. Why is the integrated application of reading lessons and strategies considered the capstone of autonomous reading development?",
-            options: [
+            "id": 5,
+            "tag": "Integrated Skill (Unit 6 + Strategy 6 Capstone)",
+            "question": "5. Why is the integrated application of reading lessons and strategies considered the capstone of autonomous reading development?",
+            "options": [
               "It empowers students to independently select and apply appropriate comprehension strategies based on text type and reading purpose",
               "It allows students to skip reading the last paragraph",
               "It replaces the need to attend university lectures",
               "It proves that memorizing words is unnecessary"
             ],
-            answer: 0,
-            explanation: "Autonomous reading mastery occurs when learners flexibly orchestrate multiple strategies tailored to the text and purpose."
+            "answer": 0,
+            "explanation": "Autonomous reading mastery occurs when learners flexibly orchestrate multiple strategies tailored to the text and purpose."
           }
         ]
       }
     ]
   },
-
-  // Unit 1 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
-  unit1Quiz: {
-    title: "Unit 1 Graded Quiz: Main Ideas & Topic Sentences",
-    thaiTitle: "แบบทดสอบประเมินผลการเรียนรู้ Unit 1: ใจความสำคัญ (40 ข้อ)",
-    totalQuestions: 40,
-    passages: [
+  "unit1Quiz": {
+    "title": "Unit 1 Graded Quiz: Main Ideas & Topic Sentences",
+    "thaiTitle": "แบบทดสอบประเมินผลการเรียนรู้ Unit 1: ใจความสำคัญ (40 ข้อ)",
+    "totalQuestions": 40,
+    "passages": [
       {
-        id: "quiz-p1",
-        title: "Passage 1: The Crow and the Pitcher",
-        thaiTitle: "บทอ่านที่ 1: อีกากับคนโทน้ำ (การแก้ปัญหาด้วยความพากเพียร)",
-        genre: "Classic Narrative Fable",
-        audioText: "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water. After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage. Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom. However, the pitcher's neck was extremely narrow, and his beak could not reach the refreshing liquid. Giving up would mean dying of thirst, but the steadfast bird refused to surrender to despair. Looking around the garden, he noticed a heap of small pebbles on the dry ground. One by one, with patient determination, the clever Crow picked up the stones and dropped them directly into the pitcher. As the heavy pebbles filled the vessel, the water slowly rose to the top rim. Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life.",
-        sentences: [
+        "id": "quiz-p1",
+        "title": "Passage 1: The Crow and the Pitcher",
+        "thaiTitle": "บทอ่านที่ 1: อีกากับคนโทน้ำ (การแก้ปัญหาด้วยความพากเพียร)",
+        "genre": "Classic Narrative Fable",
+        "audioText": "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water. After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage. Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom. However, the pitcher's neck was extremely narrow, and his beak could not reach the refreshing liquid. Giving up would mean dying of thirst, but the steadfast bird refused to surrender to despair. Looking around the garden, he noticed a heap of small pebbles on the dry ground. One by one, with patient determination, the clever Crow picked up the stones and dropped them directly into the pitcher. As the heavy pebbles filled the vessel, the water slowly rose to the top rim. Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life.",
+        "sentences": [
           "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water.",
           "After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage.",
           "Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom.",
@@ -3073,120 +1425,130 @@ window.ReadSkillsData = {
           "As the heavy pebbles filled the vessel, the water slowly rose to the top rim.",
           "Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life."
         ],
-        questions: [
+        "questions": [
           {
-            id: 1,
-            type: "mc",
-            prompt: "What is the primary Topic (หัวข้อเรื่อง) of this passage?",
-            options: [
+            "id": 1,
+            "type": "mc",
+            "prompt": "What is the primary Topic (หัวข้อเรื่อง) of this passage?",
+            "options": [
               "Types of glass pitchers in ancient gardens",
               "The clever problem-solving of a thirsty crow",
               "How summer droughts affect wild birds",
               "The physical weight of small garden pebbles"
             ],
-            correctAnswer: 1,
-            explanation: "เรื่องนี้เน้นที่ความพยายามและการแก้ปัญหาอย่างชาญฉลาดของอีกาที่กระหายน้ำ จึงเป็น Topic ที่ถูกต้องที่สุด"
+            "correctAnswer": 1,
+            "explanation": "เรื่องนี้เน้นที่ความพยายามและการแก้ปัญหาอย่างชาญฉลาดของอีกาที่กระหายน้ำ จึงเป็น Topic ที่ถูกต้องที่สุด"
           },
           {
-            id: 2,
-            type: "highlight",
-            prompt: "Tap/Select the sentence that serves as the Concluding Topic Sentence / Stated Main Idea of the story (ประโยคใจความสำคัญท้ายเรื่อง).",
-            targetSentenceIndex: 8,
-            explanation: "ประโยคสุดท้าย (ประโยคที่ 9) ทำหน้าที่เป็น Stated Main Idea ที่รวบยอดคติธรรมเรื่องความเฉลียวฉลาดและความเพียรพยายามที่ทำให้อีการอดชีวิต"
+            "id": 2,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that serves as the Concluding Topic Sentence / Stated Main Idea of the story (ประโยคใจความสำคัญท้ายเรื่อง).",
+            "targetSentenceIndex": 8,
+            "explanation": "ประโยคสุดท้าย (ประโยคที่ 9) ทำหน้าที่เป็น Stated Main Idea ที่รวบยอดคติธรรมเรื่องความเฉลียวฉลาดและความเพียรพยายามที่ทำให้อีการอดชีวิต"
           },
           {
-            id: 3,
-            type: "mc",
-            prompt: "What obstacle prevented the crow from drinking the water initially?",
-            options: [
+            "id": 3,
+            "type": "mc",
+            "prompt": "What obstacle prevented the crow from drinking the water initially?",
+            "options": [
               "The water was contaminated with mud",
               "The pitcher was guarded by an eagle",
               "The pitcher's neck was too narrow for his beak",
               "The water froze into solid ice"
             ],
-            correctAnswer: 2,
-            explanation: "บทอ่านระบุชัดเจนในประโยคที่ 4 ว่าคอคนโทแคบมากจนจงอยปากเอื้อมไม่ถึงน้ำ"
+            "correctAnswer": 2,
+            "explanation": "บทอ่านระบุชัดเจนในประโยคที่ 4 ว่าคอคนโทแคบมากจนจงอยปากเอื้อมไม่ถึงน้ำ"
           },
           {
-            id: 4,
-            type: "fillBlank",
-            prompt: "Choose the correct vocabulary word meaning 'firm, resolute, and refusing to surrender':",
-            sentenceWithBlank: "Giving up would mean dying of thirst, but the [ _______ ] bird refused to surrender to despair.",
-            choices: ["arrogant", "steadfast", "frivolous", "complacent"],
-            correctWord: "steadfast",
-            explanation: "'steadfast' หมายถึง มั่นคงแน่วแน่ ไม่ย่อท้อต่ออุปสรรค ซึ่งสอดคล้องกับพฤติกรรมของอีกา"
+            "id": 4,
+            "type": "fillBlank",
+            "prompt": "Choose the correct vocabulary word meaning 'firm, resolute, and refusing to surrender':",
+            "sentenceWithBlank": "Giving up would mean dying of thirst, but the [ _______ ] bird refused to surrender to despair.",
+            "choices": [
+              "arrogant",
+              "steadfast",
+              "frivolous",
+              "complacent"
+            ],
+            "correctWord": "steadfast",
+            "explanation": "'steadfast' หมายถึง มั่นคงแน่วแน่ ไม่ย่อท้อต่ออุปสรรค ซึ่งสอดคล้องกับพฤติกรรมของอีกา"
           },
           {
-            id: 5,
-            type: "mc",
-            prompt: "What role does sentence 6 ('Looking around the garden, he noticed a heap of small pebbles on the dry ground.') play?",
-            options: [
+            "id": 5,
+            "type": "mc",
+            "prompt": "What role does sentence 6 ('Looking around the garden, he noticed a heap of small pebbles on the dry ground.') play?",
+            "options": [
               "It is the Main Idea of the story",
               "It is a Major Supporting Detail that introduces the solution",
               "It is a counterargument against the crow",
               "It is a definition of garden tools"
             ],
-            correctAnswer: 1,
-            explanation: "การสังเกตเห็นกองก้อนหินกรวดเป็น Major Supporting Detail ที่เป็นจุดเปลี่ยนสำคัญนำไปสู่วิธีการแก้ปัญหา"
+            "correctAnswer": 1,
+            "explanation": "การสังเกตเห็นกองก้อนหินกรวดเป็น Major Supporting Detail ที่เป็นจุดเปลี่ยนสำคัญนำไปสู่วิธีการแก้ปัญหา"
           },
           {
-            id: 6,
-            type: "highlight",
-            prompt: "Tap/Select the sentence that describes the crow's central conflict or physical barrier in reaching the water.",
-            targetSentenceIndex: 3,
-            explanation: "ประโยคที่ 4 ('However, the pitcher's neck was extremely narrow...') ระบุปมปัญหาและอุปสรรคทางกายภาพที่อีกาเผชิญ"
+            "id": 6,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that describes the crow's central conflict or physical barrier in reaching the water.",
+            "targetSentenceIndex": 3,
+            "explanation": "ประโยคที่ 4 ('However, the pitcher's neck was extremely narrow...') ระบุปมปัญหาและอุปสรรคทางกายภาพที่อีกาเผชิญ"
           },
           {
-            id: 7,
-            type: "fillBlank",
-            prompt: "Complete the sentence with the key vocabulary word meaning 'continued steady effort':",
-            sentenceWithBlank: "Through calm ingenuity and tireless [ _______ ], the Crow quenched his thirst and saved his own life.",
-            choices: ["perseverance", "ridicule", "arrogance", "prudence"],
-            correctWord: "perseverance",
-            explanation: "'perseverance' หมายถึง ความเพียรพยายามอย่างไม่หยุดยั้ง เป็นคำศัพท์หัวใจของบทเรียนนี้"
+            "id": 7,
+            "type": "fillBlank",
+            "prompt": "Complete the sentence with the key vocabulary word meaning 'continued steady effort':",
+            "sentenceWithBlank": "Through calm ingenuity and tireless [ _______ ], the Crow quenched his thirst and saved his own life.",
+            "choices": [
+              "perseverance",
+              "ridicule",
+              "arrogance",
+              "prudence"
+            ],
+            "correctWord": "perseverance",
+            "explanation": "'perseverance' หมายถึง ความเพียรพยายามอย่างไม่หยุดยั้ง เป็นคำศัพท์หัวใจของบทเรียนนี้"
           },
           {
-            id: 8,
-            type: "mc",
-            prompt: "What does the word 'quenched' mean in the phrase 'quenched his thirst'?",
-            options: [
+            "id": 8,
+            "type": "mc",
+            "prompt": "What does the word 'quenched' mean in the phrase 'quenched his thirst'?",
+            "options": [
               "Ignored or forgot completely",
               "Satisfied or relieved by drinking",
               "Increased and intensified",
               "Measured scientifically"
             ],
-            correctAnswer: 1,
-            explanation: "'quench thirst' เป็นสำนวนหมายถึง ดับกระหาย หรือดื่มน้ำจนหายหิวน้ำ"
+            "correctAnswer": 1,
+            "explanation": "'quench thirst' เป็นสำนวนหมายถึง ดับกระหาย หรือดื่มน้ำจนหายหิวน้ำ"
           },
           {
-            id: 9,
-            type: "mc",
-            prompt: "Which statement is an example of a 'TOO BROAD' (กว้างเกินไป) trap for this passage?",
-            options: [
+            "id": 9,
+            "type": "mc",
+            "prompt": "Which statement is an example of a 'TOO BROAD' (กว้างเกินไป) trap for this passage?",
+            "options": [
               "Animals are fascinating living organisms on planet Earth",
               "The crow dropped small pebbles into a tall glass pitcher",
               "Clever thinking and persistent effort help overcome difficult challenges",
               "The neck of the pitcher was very narrow"
             ],
-            correctAnswer: 0,
-            explanation: "'Animals are fascinating living organisms' เป็นกับดักประเภท Too Broad เพราะกว้างเกินไปจนไม่ระบุสาระสำคัญของเรื่องอีกา"
+            "correctAnswer": 0,
+            "explanation": "'Animals are fascinating living organisms' เป็นกับดักประเภท Too Broad เพราะกว้างเกินไปจนไม่ระบุสาระสำคัญของเรื่องอีกา"
           },
           {
-            id: 10,
-            type: "highlight",
-            prompt: "Tap/Select the sentence demonstrating the crow taking patient, repetitive physical action to solve his problem.",
-            targetSentenceIndex: 6,
-            explanation: "ประโยคที่ 7 ('One by one, with patient determination, the clever Crow picked up the stones...') แสดงการลงมือทำอย่างเป็นขั้นตอนและอดทน"
+            "id": 10,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence demonstrating the crow taking patient, repetitive physical action to solve his problem.",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคที่ 7 ('One by one, with patient determination, the clever Crow picked up the stones...') แสดงการลงมือทำอย่างเป็นขั้นตอนและอดทน"
           }
         ]
       },
       {
-        id: "quiz-p2",
-        title: "Passage 2: The Benefits of Regular Morning Exercise",
-        thaiTitle: "บทอ่านที่ 2: ประโยชน์ของการออกกำลังกายตอนเช้า (บทความเชิงข้อมูล)",
-        genre: "Expository / Health & Student Life",
-        audioText: "Starting each day with thirty minutes of light physical exercise provides immense benefits for university students. First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures. Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late. Second, regular morning activity helps regulate natural sleep cycles, allowing learners to fall asleep faster and enjoy deeper rest each night. In contrast, students who remain completely sedentary often struggle with chronic fatigue and academic stress. Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success. Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence.",
-        sentences: [
+        "id": "quiz-p2",
+        "title": "Passage 2: The Benefits of Regular Morning Exercise",
+        "thaiTitle": "บทอ่านที่ 2: ประโยชน์ของการออกกำลังกายตอนเช้า (บทความเชิงข้อมูล)",
+        "genre": "Expository / Health & Student Life",
+        "audioText": "Starting each day with thirty minutes of light physical exercise provides immense benefits for university students. First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures. Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late. Second, regular morning activity helps regulate natural sleep cycles, allowing learners to fall asleep faster and enjoy deeper rest each night. In contrast, students who remain completely sedentary often struggle with chronic fatigue and academic stress. Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success. Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence.",
+        "sentences": [
           "Starting each day with thirty minutes of light physical exercise provides immense benefits for university students.",
           "First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures.",
           "Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late.",
@@ -3195,115 +1557,130 @@ window.ReadSkillsData = {
           "Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success.",
           "Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence."
         ],
-        questions: [
+        "questions": [
           {
-            id: 11,
-            type: "mc",
-            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 2?",
-            options: [
+            "id": 11,
+            "type": "mc",
+            "prompt": "What is the primary Topic (หัวข้อเรื่อง) of Passage 2?",
+            "options": [
               "High-protein breakfast recipes for athletes",
               "The benefits of morning physical exercise for university students",
               "The history of modern Olympic sports",
               "How professors evaluate lecture attendance"
             ],
-            correctAnswer: 1,
-            explanation: "บทความทั้งหมดพูดถึงผลดีของการออกกำลังกายตอนเช้าสำหรับนักศึกษามหาวิทยาลัย"
+            "correctAnswer": 1,
+            "explanation": "บทความทั้งหมดพูดถึงผลดีของการออกกำลังกายตอนเช้าสำหรับนักศึกษามหาวิทยาลัย"
           },
           {
-            id: 12,
-            type: "highlight",
-            prompt: "Tap/Select the Topic Sentence located at the BEGINNING of this passage.",
-            targetSentenceIndex: 0,
-            explanation: "ประโยคแรก (ประโยคที่ 1) คือ Topic Sentence ต้นย่อหน้าที่ประกาศประเด็นหลักเรื่องประโยชน์อันมหาศาลของการออกกำลังกายตอนเช้า"
+            "id": 12,
+            "type": "highlight",
+            "prompt": "Tap/Select the Topic Sentence located at the BEGINNING of this passage.",
+            "targetSentenceIndex": 0,
+            "explanation": "ประโยคแรก (ประโยคที่ 1) คือ Topic Sentence ต้นย่อหน้าที่ประกาศประเด็นหลักเรื่องประโยชน์อันมหาศาลของการออกกำลังกายตอนเช้า"
           },
           {
-            id: 13,
-            type: "mc",
-            prompt: "What transition word in sentence 2 introduces the first major supporting detail?",
-            options: ["However", "First", "Therefore", "In contrast"],
-            correctAnswer: 1,
-            explanation: "คำว่า 'First' เป็นคำสัญญาณบอกลำดับ (Sequence/Addition) ที่แนะนำเหตุผลสนับสนุนข้อแรก"
+            "id": 13,
+            "type": "mc",
+            "prompt": "What transition word in sentence 2 introduces the first major supporting detail?",
+            "options": [
+              "However",
+              "First",
+              "Therefore",
+              "In contrast"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำว่า 'First' เป็นคำสัญญาณบอกลำดับ (Sequence/Addition) ที่แนะนำเหตุผลสนับสนุนข้อแรก"
           },
           {
-            id: 14,
-            type: "fillBlank",
-            prompt: "Fill in the blank with the vocabulary word meaning 'the mental strength to bounce back under pressure':",
-            sentenceWithBlank: "Finally, dedicating time to exercise every morning builds self-discipline and mental [ _______ ]...",
-            choices: ["resilience", "complacency", "arrogance", "fatigue"],
-            correctWord: "resilience",
-            explanation: "'resilience' หมายถึง ความยืดหยุ่นทางจิตใจหรือความสามารถในการฟื้นตัวเมื่อเผชิญแรงกดดัน"
+            "id": 14,
+            "type": "fillBlank",
+            "prompt": "Fill in the blank with the vocabulary word meaning 'the mental strength to bounce back under pressure':",
+            "sentenceWithBlank": "Finally, dedicating time to exercise every morning builds self-discipline and mental [ _______ ]...",
+            "choices": [
+              "resilience",
+              "complacency",
+              "arrogance",
+              "fatigue"
+            ],
+            "correctWord": "resilience",
+            "explanation": "'resilience' หมายถึง ความยืดหยุ่นทางจิตใจหรือความสามารถในการฟื้นตัวเมื่อเผชิญแรงกดดัน"
           },
           {
-            id: 15,
-            type: "mc",
-            prompt: "According to the passage, what negative effect do 'sedentary' students often experience?",
-            options: [
+            "id": 15,
+            "type": "mc",
+            "prompt": "According to the passage, what negative effect do 'sedentary' students often experience?",
+            "options": [
               "Loss of appetite during lunch",
               "Chronic fatigue and academic stress",
               "Inability to borrow library books",
               "Sudden memory loss of childhood events"
             ],
-            correctAnswer: 1,
-            explanation: "ประโยคที่ 5 ระบุตรงไปตรงมาว่า นักศึกษาที่ไม่ค่อยขยับตัวมักเผชิญภาวะเหนื่อยล้าเรื้อรังและความเครียดจากการเรียน"
+            "correctAnswer": 1,
+            "explanation": "ประโยคที่ 5 ระบุตรงไปตรงมาว่า นักศึกษาที่ไม่ค่อยขยับตัวมักเผชิญภาวะเหนื่อยล้าเรื้อรังและความเครียดจากการเรียน"
           },
           {
-            id: 16,
-            type: "highlight",
-            prompt: "Tap/Select the sentence that introduces a DIRECT CONTRAST between active students and inactive students.",
-            targetSentenceIndex: 4,
-            explanation: "ประโยคที่ 5 ('In contrast, students who remain completely sedentary...') ใช้คำว่า In contrast เพื่อเปรียบเทียบข้อแตกต่างโดยตรง"
+            "id": 16,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that introduces a DIRECT CONTRAST between active students and inactive students.",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 ('In contrast, students who remain completely sedentary...') ใช้คำว่า In contrast เพื่อเปรียบเทียบข้อแตกต่างโดยตรง"
           },
           {
-            id: 17,
-            type: "mc",
-            prompt: "Which choice represents a 'Detail Trap (Too Narrow)' if chosen as the Main Idea?",
-            options: [
+            "id": 17,
+            "type": "mc",
+            "prompt": "Which choice represents a 'Detail Trap (Too Narrow)' if chosen as the Main Idea?",
+            "options": [
               "Morning exercise benefits both physical wellness and academic performance",
               "Exercise stimulates blood circulation and releases endorphins",
               "Daily physical activity has no effect on sleep quality",
               "University life involves attending morning lectures"
             ],
-            correctAnswer: 1,
-            explanation: "การกระตุ้นการไหลเวียนเลือดและหลั่งเอนดอร์ฟินเป็นเพียงรายละเอียดทางชีววิทยาข้อเดียว (Detail Trap) ไม่ใช่ใจความสำคัญของทั้งบทความ"
+            "correctAnswer": 1,
+            "explanation": "การกระตุ้นการไหลเวียนเลือดและหลั่งเอนดอร์ฟินเป็นเพียงรายละเอียดทางชีววิทยาข้อเดียว (Detail Trap) ไม่ใช่ใจความสำคัญของทั้งบทความ"
           },
           {
-            id: 18,
-            type: "fillBlank",
-            prompt: "Complete the sentence with the word meaning 'absolutely necessary and extremely important':",
-            sentenceWithBlank: "Overall, incorporating moderate morning exercise into your daily routine is an [ _______ ] habit for achieving wellness.",
-            choices: ["essential", "frivolous", "arrogant", "harsh"],
-            correctWord: "essential",
-            explanation: "'essential' แปลว่า จำเป็นอย่างยิ่ง หรือขาดไม่ได้"
+            "id": 18,
+            "type": "fillBlank",
+            "prompt": "Complete the sentence with the word meaning 'absolutely necessary and extremely important':",
+            "sentenceWithBlank": "Overall, incorporating moderate morning exercise into your daily routine is an [ _______ ] habit for achieving wellness.",
+            "choices": [
+              "essential",
+              "frivolous",
+              "arrogant",
+              "harsh"
+            ],
+            "correctWord": "essential",
+            "explanation": "'essential' แปลว่า จำเป็นอย่างยิ่ง หรือขาดไม่ได้"
           },
           {
-            id: 19,
-            type: "highlight",
-            prompt: "Tap/Select the CONCLUDING sentence that restates the Main Idea at the very end of the passage.",
-            targetSentenceIndex: 6,
-            explanation: "ประโยคสุดท้าย (ประโยคที่ 7) ขึ้นต้นด้วย 'Overall' และสรุปย้ำ Main Idea ของบทความอย่างสมบูรณ์"
+            "id": 19,
+            "type": "highlight",
+            "prompt": "Tap/Select the CONCLUDING sentence that restates the Main Idea at the very end of the passage.",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคสุดท้าย (ประโยคที่ 7) ขึ้นต้นด้วย 'Overall' และสรุปย้ำ Main Idea ของบทความอย่างสมบูรณ์"
           },
           {
-            id: 20,
-            type: "mc",
-            prompt: "What does the word 'sedentary' mean in sentence 5?",
-            options: [
+            "id": 20,
+            "type": "mc",
+            "prompt": "What does the word 'sedentary' mean in sentence 5?",
+            "options": [
               "Highly athletic and energetic",
               "Inactive, sitting down much of the time",
               "Sleeping outdoors in tents",
               "Traveling frequently across provinces"
             ],
-            correctAnswer: 1,
-            explanation: "'sedentary' หมายถึง มีพฤติกรรมเนือยนิ่ง หรือนั่งอยู่กับที่เป็นเวลานานโดยไม่ได้ออกกำลังกาย"
+            "correctAnswer": 1,
+            "explanation": "'sedentary' หมายถึง มีพฤติกรรมเนือยนิ่ง หรือนั่งอยู่กับที่เป็นเวลานานโดยไม่ได้ออกกำลังกาย"
           }
         ]
       },
       {
-        id: "quiz-p3",
-        title: "Passage 3: The Shepherd Boy and the Wolf",
-        thaiTitle: "บทอ่านที่ 3: เด็กเลี้ยงแกะกับหมาป่า (ผลลัพธ์ของความไม่ซื่อสัตย์)",
-        genre: "Classic Narrative Fable",
-        audioText: "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest. Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers. Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock. The alarmed villagers dropped their tools and rushed up the hill to help, only to find the boastful boy laughing loudly at their panic. A few days later, the arrogant boy repeated the deceitful prank, once again mocking the foolish villagers who came running. However, on the following evening, an actual hungry wolf emerged from the shadows and attacked the terrified sheep. When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke. The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth.",
-        sentences: [
+        "id": "quiz-p3",
+        "title": "Passage 3: The Shepherd Boy and the Wolf",
+        "thaiTitle": "บทอ่านที่ 3: เด็กเลี้ยงแกะกับหมาป่า (ผลลัพธ์ของความไม่ซื่อสัตย์)",
+        "genre": "Classic Narrative Fable",
+        "audioText": "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest. Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers. Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock. The alarmed villagers dropped their tools and rushed up the hill to help, only to find the boastful boy laughing loudly at their panic. A few days later, the arrogant boy repeated the deceitful prank, once again mocking the foolish villagers who came running. However, on the following evening, an actual hungry wolf emerged from the shadows and attacked the terrified sheep. When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke. The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth.",
+        "sentences": [
           "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest.",
           "Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers.",
           "Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock.",
@@ -3313,120 +1690,130 @@ window.ReadSkillsData = {
           "When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke.",
           "The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth."
         ],
-        questions: [
+        "questions": [
           {
-            id: 21,
-            type: "mc",
-            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 3?",
-            options: [
+            "id": 21,
+            "type": "mc",
+            "prompt": "What is the primary Topic (หัวข้อเรื่อง) of Passage 3?",
+            "options": [
               "Farming techniques in ancient European villages",
               "The shepherd boy's deceitful pranks and their consequence",
               "The hunting instincts of wild wolves in dark forests",
               "How to weave wool sweaters from sheep"
             ],
-            correctAnswer: 1,
-            explanation: "เนื้อเรื่องทั้งหมดมุ่งเน้นไปที่การแกล้งโกหกของเด็กเลี้ยงแกะและผลลัพธ์ที่ตามมาจากการกระทำนั้น"
+            "correctAnswer": 1,
+            "explanation": "เนื้อเรื่องทั้งหมดมุ่งเน้นไปที่การแกล้งโกหกของเด็กเลี้ยงแกะและผลลัพธ์ที่ตามมาจากการกระทำนั้น"
           },
           {
-            id: 22,
-            type: "highlight",
-            prompt: "Tap/Select the Stated Moral / Main Idea sentence located at the END of the passage.",
-            targetSentenceIndex: 7,
-            explanation: "ประโยคสุดท้าย (ประโยคที่ 8) ทำหน้าที่เป็น Stated Moral สรุปข้อคิดสำคัญว่าคนโกหกเป็นอาจิณจะไม่ได้รับความเชื่อถือแม้ในยามที่พูดความจริง"
+            "id": 22,
+            "type": "highlight",
+            "prompt": "Tap/Select the Stated Moral / Main Idea sentence located at the END of the passage.",
+            "targetSentenceIndex": 7,
+            "explanation": "ประโยคสุดท้าย (ประโยคที่ 8) ทำหน้าที่เป็น Stated Moral สรุปข้อคิดสำคัญว่าคนโกหกเป็นอาจิณจะไม่ได้รับความเชื่อถือแม้ในยามที่พูดความจริง"
           },
           {
-            id: 23,
-            type: "fillBlank",
-            prompt: "In sentence 4, the boy is described as [ _______ ] because he loudly bragged and laughed at others' panic:",
-            sentenceWithBlank: "...only to find the [ _______ ] boy laughing loudly at their panic.",
-            choices: ["boastful", "humble", "industrious", "steadfast"],
-            correctWord: "boastful",
-            explanation: "'boastful' แปลว่า ขี้คุย ขี้อวด หรือชอบโอ้อวด"
+            "id": 23,
+            "type": "fillBlank",
+            "prompt": "In sentence 4, the boy is described as [ _______ ] because he loudly bragged and laughed at others' panic:",
+            "sentenceWithBlank": "...only to find the [ _______ ] boy laughing loudly at their panic.",
+            "choices": [
+              "boastful",
+              "humble",
+              "industrious",
+              "steadfast"
+            ],
+            "correctWord": "boastful",
+            "explanation": "'boastful' แปลว่า ขี้คุย ขี้อวด หรือชอบโอ้อวด"
           },
           {
-            id: 24,
-            type: "mc",
-            prompt: "Why did the villagers ignore the boy's cries when an actual wolf attacked?",
-            options: [
+            "id": 24,
+            "type": "mc",
+            "prompt": "Why did the villagers ignore the boy's cries when an actual wolf attacked?",
+            "options": [
               "They were away visiting another town",
               "They believed it was merely another deceitful joke",
               "They wanted the wolf to eat the sheep",
               "They were sleeping deeply during the night"
             ],
-            correctAnswer: 1,
-            explanation: "ชาวบ้านเพิกเฉยเพราะคิดว่าเป็นเพียงเรื่องโกหกหลอกเล่นอีกครั้งของเด็กเลี้ยงแกะ"
+            "correctAnswer": 1,
+            "explanation": "ชาวบ้านเพิกเฉยเพราะคิดว่าเป็นเพียงเรื่องโกหกหลอกเล่นอีกครั้งของเด็กเลี้ยงแกะ"
           },
           {
-            id: 25,
-            type: "highlight",
-            prompt: "Tap/Select the TURNING POINT sentence when real danger actually appeared.",
-            targetSentenceIndex: 5,
-            explanation: "ประโยคที่ 6 ('However, on the following evening, an actual hungry wolf emerged...') คือจุดเปลี่ยนที่หมาป่าตัวจริงปรากฏขึ้น"
+            "id": 25,
+            "type": "highlight",
+            "prompt": "Tap/Select the TURNING POINT sentence when real danger actually appeared.",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ 6 ('However, on the following evening, an actual hungry wolf emerged...') คือจุดเปลี่ยนที่หมาป่าตัวจริงปรากฏขึ้น"
           },
           {
-            id: 26,
-            type: "fillBlank",
-            prompt: "Fill in the blank with the vocabulary word meaning 'having an exaggerated sense of one's own superiority':",
-            sentenceWithBlank: "A few days later, the [ _______ ] boy repeated the deceitful prank, once again mocking the villagers.",
-            choices: ["arrogant", "diligent", "prudent", "modest"],
-            correctWord: "arrogant",
-            explanation: "'arrogant' หมายถึง หยิ่งยะโส หรืออวดดี"
+            "id": 26,
+            "type": "fillBlank",
+            "prompt": "Fill in the blank with the vocabulary word meaning 'having an exaggerated sense of one's own superiority':",
+            "sentenceWithBlank": "A few days later, the [ _______ ] boy repeated the deceitful prank, once again mocking the villagers.",
+            "choices": [
+              "arrogant",
+              "diligent",
+              "prudent",
+              "modest"
+            ],
+            "correctWord": "arrogant",
+            "explanation": "'arrogant' หมายถึง หยิ่งยะโส หรืออวดดี"
           },
           {
-            id: 27,
-            type: "mc",
-            prompt: "What is the Main Idea of this fable?",
-            options: [
+            "id": 27,
+            "type": "mc",
+            "prompt": "What is the Main Idea of this fable?",
+            "options": [
               "Wolves prefer hunting sheep rather than birds in mountain forests",
               "Repeated dishonesty causes people to lose trust in you completely",
               "Herding sheep on a hillside is a tedious job for young teenagers",
               "Villagers should run uphill without bringing farming tools"
             ],
-            correctAnswer: 1,
-            explanation: "ใจความสำคัญคือ การโกหกซ้ำๆ ทำลายความไว้วางใจจนไม่มีใครเชื่อถืออีกต่อไป"
+            "correctAnswer": 1,
+            "explanation": "ใจความสำคัญคือ การโกหกซ้ำๆ ทำลายความไว้วางใจจนไม่มีใครเชื่อถืออีกต่อไป"
           },
           {
-            id: 28,
-            type: "highlight",
-            prompt: "Tap/Select the sentence explaining the boy's initial MOTIVE for playing the mischievous trick.",
-            targetSentenceIndex: 1,
-            explanation: "ประโยคที่ 2 ('Finding his daily duties dull and repetitive...') อธิบายแรงจูงใจว่าเขาเบื่อหน้าที่ประจำที่ซ้ำซากจึงอยากหาเรื่องสนุก"
+            "id": 28,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence explaining the boy's initial MOTIVE for playing the mischievous trick.",
+            "targetSentenceIndex": 1,
+            "explanation": "ประโยคที่ 2 ('Finding his daily duties dull and repetitive...') อธิบายแรงจูงใจว่าเขาเบื่อหน้าที่ประจำที่ซ้ำซากจึงอยากหาเรื่องสนุก"
           },
           {
-            id: 29,
-            type: "mc",
-            prompt: "What does the word 'deceitful' mean in the phrase 'deceitful prank'?",
-            options: [
+            "id": 29,
+            "type": "mc",
+            "prompt": "What does the word 'deceitful' mean in the phrase 'deceitful prank'?",
+            "options": [
               "Honest and well-planned",
               "Misleading, untruthful, and dishonest",
               "Generous and community-oriented",
               "Related to mathematical numbers"
             ],
-            correctAnswer: 1,
-            explanation: "'deceitful' แปลว่า หลอกลวง ไม่ซื่อสัตย์ หรือมีเจตนาตบตาผู้อื่น"
+            "correctAnswer": 1,
+            "explanation": "'deceitful' แปลว่า หลอกลวง ไม่ซื่อสัตย์ หรือมีเจตนาตบตาผู้อื่น"
           },
           {
-            id: 30,
-            type: "mc",
-            prompt: "If a student chooses 'The boy tended sheep on a hillside' as the Main Idea, what error did they make?",
-            options: [
+            "id": 30,
+            "type": "mc",
+            "prompt": "If a student chooses 'The boy tended sheep on a hillside' as the Main Idea, what error did they make?",
+            "options": [
               "Too Broad trap",
               "Too Narrow / Minor Detail trap",
               "Correct interpretation",
               "Irrelevant invented fact"
             ],
-            correctAnswer: 1,
-            explanation: "การบอกว่าเด็กเลี้ยงแกะอยู่บนเนินเขาเป็นเพียง Minor Detail (ฉากหลังของเรื่อง) ซึ่งแคบเกินไปที่จะเป็น Main Idea"
+            "correctAnswer": 1,
+            "explanation": "การบอกว่าเด็กเลี้ยงแกะอยู่บนเนินเขาเป็นเพียง Minor Detail (ฉากหลังของเรื่อง) ซึ่งแคบเกินไปที่จะเป็น Main Idea"
           }
         ]
       },
       {
-        id: "quiz-p4",
-        title: "Passage 4: How Modern Public Libraries Are Evolving",
-        thaiTitle: "บทอ่านที่ 4: การปรับเปลี่ยนของห้องสมุดประชาชนยุคใหม่ (บทความเชิงสารคดีร่วมสมัย)",
-        genre: "Expository / Modern Society & Technology",
-        audioText: "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers. In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision. Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers. Furthermore, many modern urban libraries offer free coding workshops, 3D printing equipment, and professional development seminars to empower local residents. These innovative technological resources bridge the digital divide for underprivileged families who cannot afford expensive computers at home. Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society. By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education.",
-        sentences: [
+        "id": "quiz-p4",
+        "title": "Passage 4: How Modern Public Libraries Are Evolving",
+        "thaiTitle": "บทอ่านที่ 4: การปรับเปลี่ยนของห้องสมุดประชาชนยุคใหม่ (บทความเชิงสารคดีร่วมสมัย)",
+        "genre": "Expository / Modern Society & Technology",
+        "audioText": "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers. In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision. Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers. Furthermore, many modern urban libraries offer free coding workshops, 3D printing equipment, and professional development seminars to empower local residents. These innovative technological resources bridge the digital divide for underprivileged families who cannot afford expensive computers at home. Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society. By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education.",
+        "sentences": [
           "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers.",
           "In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision.",
           "Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers.",
@@ -3435,1248 +1822,1328 @@ window.ReadSkillsData = {
           "Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society.",
           "By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education."
         ],
-        questions: [
+        "questions": [
           {
-            id: 31,
-            type: "mc",
-            prompt: "What is the primary Topic (หัวข้อเรื่อง) of Passage 4?",
-            options: [
+            "id": 31,
+            "type": "mc",
+            "prompt": "What is the primary Topic (หัวข้อเรื่อง) of Passage 4?",
+            "options": [
               "The manufacturing process of 3D printers",
               "The transformation of modern public libraries into digital community centers",
               "The biographies of famous classical novelists",
               "Monthly subscription fees for internet service providers"
             ],
-            correctAnswer: 1,
-            explanation: "บทความมุ่งเน้นเรื่องการปรับโฉมของห้องสมุดประชาชนสู่ศูนย์กลางเทคโนโลยีเพื่อชุมชน"
+            "correctAnswer": 1,
+            "explanation": "บทความมุ่งเน้นเรื่องการปรับโฉมของห้องสมุดประชาชนสู่ศูนย์กลางเทคโนโลยีเพื่อชุมชน"
           },
           {
-            id: 32,
-            type: "highlight",
-            prompt: "Tap/Select the Topic Sentence in sentence 1 stating the overall transformation of public libraries.",
-            targetSentenceIndex: 0,
-            explanation: "ประโยคแรก ('Across the globe, modern public libraries are transforming...') คือ Topic Sentence ที่แถลงประเด็นการเปลี่ยนแปลงใหญ่ของห้องสมุด"
+            "id": 32,
+            "type": "highlight",
+            "prompt": "Tap/Select the Topic Sentence in sentence 1 stating the overall transformation of public libraries.",
+            "targetSentenceIndex": 0,
+            "explanation": "ประโยคแรก ('Across the globe, modern public libraries are transforming...') คือ Topic Sentence ที่แถลงประเด็นการเปลี่ยนแปลงใหญ่ของห้องสมุด"
           },
           {
-            id: 33,
-            type: "fillBlank",
-            prompt: "Fill in the blank with the vocabulary word meaning 'outdated or no longer in use because something newer exists':",
-            sentenceWithBlank: "Rather than becoming [ _______ ] in the internet age, public libraries have successfully adapted their core mission...",
-            choices: ["obsolete", "industrious", "arrogant", "steadfast"],
-            correctWord: "obsolete",
-            explanation: "'obsolete' หมายถึง ล้าสมัย หรือเลิกใช้ไปแล้วเพราะมีสิ่งใหม่มาแทนที่"
+            "id": 33,
+            "type": "fillBlank",
+            "prompt": "Fill in the blank with the vocabulary word meaning 'outdated or no longer in use because something newer exists':",
+            "sentenceWithBlank": "Rather than becoming [ _______ ] in the internet age, public libraries have successfully adapted their core mission...",
+            "choices": [
+              "obsolete",
+              "industrious",
+              "arrogant",
+              "steadfast"
+            ],
+            "correctWord": "obsolete",
+            "explanation": "'obsolete' หมายถึง ล้าสมัย หรือเลิกใช้ไปแล้วเพราะมีสิ่งใหม่มาแทนที่"
           },
           {
-            id: 34,
-            type: "mc",
-            prompt: "What transition phrase in sentence 3 signals the shift from historical libraries to contemporary ones?",
-            options: ["For instance", "Today, however", "In conclusion", "First of all"],
-            correctAnswer: 1,
-            explanation: "'Today, however' ทำหน้าที่เป็นคำเชื่อมบอกความขัดแย้ง (Contrast Transition) ระหว่างอดีตกับปัจจุบัน"
+            "id": 34,
+            "type": "mc",
+            "prompt": "What transition phrase in sentence 3 signals the shift from historical libraries to contemporary ones?",
+            "options": [
+              "For instance",
+              "Today, however",
+              "In conclusion",
+              "First of all"
+            ],
+            "correctAnswer": 1,
+            "explanation": "'Today, however' ทำหน้าที่เป็นคำเชื่อมบอกความขัดแย้ง (Contrast Transition) ระหว่างอดีตกับปัจจุบัน"
           },
           {
-            id: 35,
-            type: "highlight",
-            prompt: "Tap/Select the sentence explaining how libraries help UNDERPRIVILEGED FAMILIES access modern technology.",
-            targetSentenceIndex: 4,
-            explanation: "ประโยคที่ 5 ('These innovative technological resources bridge the digital divide for underprivileged families...') ระบุการช่วยเหลือครอบครัวที่ขาดแคลนทุนทรัพย์"
+            "id": 35,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence explaining how libraries help UNDERPRIVILEGED FAMILIES access modern technology.",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 ('These innovative technological resources bridge the digital divide for underprivileged families...') ระบุการช่วยเหลือครอบครัวที่ขาดแคลนทุนทรัพย์"
           },
           {
-            id: 36,
-            type: "fillBlank",
-            prompt: "Complete the sentence with the correct skill term mentioned in the text:",
-            sentenceWithBlank: "Furthermore, many modern urban libraries offer free [ _______ ] workshops, 3D printing equipment, and seminars.",
-            choices: ["coding", "hunting", "complacent", "swimming"],
-            correctWord: "coding",
-            explanation: "เนื้อเรื่องระบุว่าห้องสมุดมีเวิร์กช็อปสอน 'coding' (การเขียนโค้ดคอมพิวเตอร์) และอุปกรณ์พิมพ์ 3 มิติ"
+            "id": 36,
+            "type": "fillBlank",
+            "prompt": "Complete the sentence with the correct skill term mentioned in the text:",
+            "sentenceWithBlank": "Furthermore, many modern urban libraries offer free [ _______ ] workshops, 3D printing equipment, and seminars.",
+            "choices": [
+              "coding",
+              "hunting",
+              "complacent",
+              "swimming"
+            ],
+            "correctWord": "coding",
+            "explanation": "เนื้อเรื่องระบุว่าห้องสมุดมีเวิร์กช็อปสอน 'coding' (การเขียนโค้ดคอมพิวเตอร์) และอุปกรณ์พิมพ์ 3 มิติ"
           },
           {
-            id: 37,
-            type: "mc",
-            prompt: "What is the Main Idea of Passage 4?",
-            options: [
+            "id": 37,
+            "type": "mc",
+            "prompt": "What is the Main Idea of Passage 4?",
+            "options": [
               "Printed paper books will soon be completely prohibited worldwide",
               "Libraries stay vital by adopting digital technology and community services for lifelong learning",
               "3D printing machines are too expensive for ordinary citizens to purchase",
               "Freelancers dislike using internet connections when working on campus"
             ],
-            correctAnswer: 1,
-            explanation: "Main Idea คือ ห้องสมุดยังคงเป็นสถาบันสำคัญเพราะปรับตัวนำเทคโนโลยีดิจิทัลมาให้บริการการเรียนรู้ตลอดชีวิตแก่ประชาชน"
+            "correctAnswer": 1,
+            "explanation": "Main Idea คือ ห้องสมุดยังคงเป็นสถาบันสำคัญเพราะปรับตัวนำเทคโนโลยีดิจิทัลมาให้บริการการเรียนรู้ตลอดชีวิตแก่ประชาชน"
           },
           {
-            id: 38,
-            type: "highlight",
-            prompt: "Tap/Select the CONCLUDING sentence summarizing why community libraries remain vital institutions.",
-            targetSentenceIndex: 6,
-            explanation: "ประโยคสุดท้าย (ประโยคที่ 7) สรุปภาพรวมว่าห้องสมุดยังเป็นสถาบันที่มีชีวิตชีวาสำหรับการศึกษาและความเท่าเทียม"
+            "id": 38,
+            "type": "highlight",
+            "prompt": "Tap/Select the CONCLUDING sentence summarizing why community libraries remain vital institutions.",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคสุดท้าย (ประโยคที่ 7) สรุปภาพรวมว่าห้องสมุดยังเป็นสถาบันที่มีชีวิตชีวาสำหรับการศึกษาและความเท่าเทียม"
           },
           {
-            id: 39,
-            type: "mc",
-            prompt: "What does the phrase 'bridge the digital divide' mean in sentence 5?",
-            options: [
+            "id": 39,
+            "type": "mc",
+            "prompt": "What does the phrase 'bridge the digital divide' mean in sentence 5?",
+            "options": [
               "Build a physical concrete bridge for high-speed fiber cables",
               "Reduce the gap between people who have digital access and those who do not",
               "Separate engineering majors from humanities majors",
               "Permanently delete all social media websites from library computers"
             ],
-            correctAnswer: 1,
-            explanation: "'bridge the digital divide' หมายถึง การลดช่องว่างทางดิจิทัล เพื่อให้ทุกคนสามารถเข้าถึงเทคโนโลยีได้อย่างเท่าเทียม"
+            "correctAnswer": 1,
+            "explanation": "'bridge the digital divide' หมายถึง การลดช่องว่างทางดิจิทัล เพื่อให้ทุกคนสามารถเข้าถึงเทคโนโลยีได้อย่างเท่าเทียม"
           },
           {
-            id: 40,
-            type: "mc",
-            prompt: "Which choice is a MINOR SUPPORTING DETAIL rather than the Main Idea?",
-            options: [
+            "id": 40,
+            "type": "mc",
+            "prompt": "Which choice is a MINOR SUPPORTING DETAIL rather than the Main Idea?",
+            "options": [
               "Public libraries have adapted their core mission to meet modern societal needs",
               "Libraries offer 3D printing equipment and free coding workshops",
               "Modern libraries remain vital institutions for lifelong learning and equal opportunity",
               "Libraries transformed from quiet book repositories into dynamic community centers"
             ],
-            correctAnswer: 1,
-            explanation: "การเสนออุปกรณ์พิมพ์ 3 มิติและเวิร์กช็อปโค้ดดิ้งเป็นเพียงตัวอย่างย่อย (Minor Supporting Detail) สนับสนุนการบริการ"
+            "correctAnswer": 1,
+            "explanation": "การเสนออุปกรณ์พิมพ์ 3 มิติและเวิร์กช็อปโค้ดดิ้งเป็นเพียงตัวอย่างย่อย (Minor Supporting Detail) สนับสนุนการบริการ"
           }
         ]
       }
     ]
   },
-
-  // Student Database Records for Teacher Admin Report Dashboard
-  studentsReport: [
-    { id: "STD-6501", name: "Somsak Jaidee", email: "somsak@bru.ac.th", onlineHours: "14.5 hrs", onlineSeconds: 52200, completedUnits: "5/6 Units", quizAvg: "88%", lastActive: "2026-09-21 14:15" },
-    { id: "STD-6502", name: "Kanya Wongsuwan", email: "kanya@bru.ac.th", onlineHours: "18.2 hrs", onlineSeconds: 65520, completedUnits: "6/6 Units", quizAvg: "94%", lastActive: "2026-09-21 13:40" },
-    { id: "STD-6503", name: "Niran Suwannarat", email: "niran@bru.ac.th", onlineHours: "9.8 hrs", onlineSeconds: 35280, completedUnits: "3/6 Units", quizAvg: "76%", lastActive: "2026-09-20 18:22" },
-    { id: "STD-6504", name: "Ploypailin Rattana", email: "ploy@bru.ac.th", onlineHours: "22.0 hrs", onlineSeconds: 79200, completedUnits: "6/6 Units", quizAvg: "96%", lastActive: "2026-09-21 15:00" },
-    { id: "STD-6505", name: "Chaiwat Prasert", email: "chaiwat@bru.ac.th", onlineHours: "6.4 hrs", onlineSeconds: 23040, completedUnits: "2/6 Units", quizAvg: "68%", lastActive: "2026-09-19 11:05" }
-  ]
-,
-
-  // Unit 2 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
-  unit2Quiz: {
-      "title": "Unit 2 Graded Quiz: Supporting Details & Idea Relationships",
-      "thaiTitle": "แบบทดสอบประเมินผลการเรียนรู้ Unit 2: รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด (40 ข้อ)",
-      "totalQuestions": 40,
-      "passages": [
+  "studentsReport": [
+    {
+      "id": "STD-6501",
+      "name": "Somsak Jaidee",
+      "email": "somsak@bru.ac.th",
+      "onlineHours": "14.5 hrs",
+      "onlineSeconds": 52200,
+      "completedUnits": "5/6 Units",
+      "quizAvg": "88%",
+      "lastActive": "2026-09-21 14:15"
+    },
+    {
+      "id": "STD-6502",
+      "name": "Kanya Wongsuwan",
+      "email": "kanya@bru.ac.th",
+      "onlineHours": "18.2 hrs",
+      "onlineSeconds": 65520,
+      "completedUnits": "6/6 Units",
+      "quizAvg": "94%",
+      "lastActive": "2026-09-21 13:40"
+    },
+    {
+      "id": "STD-6503",
+      "name": "Niran Suwannarat",
+      "email": "niran@bru.ac.th",
+      "onlineHours": "9.8 hrs",
+      "onlineSeconds": 35280,
+      "completedUnits": "3/6 Units",
+      "quizAvg": "76%",
+      "lastActive": "2026-09-20 18:22"
+    },
+    {
+      "id": "STD-6504",
+      "name": "Ploypailin Rattana",
+      "email": "ploy@bru.ac.th",
+      "onlineHours": "22.0 hrs",
+      "onlineSeconds": 79200,
+      "completedUnits": "6/6 Units",
+      "quizAvg": "96%",
+      "lastActive": "2026-09-21 15:00"
+    },
+    {
+      "id": "STD-6505",
+      "name": "Chaiwat Prasert",
+      "email": "chaiwat@bru.ac.th",
+      "onlineHours": "6.4 hrs",
+      "onlineSeconds": 23040,
+      "completedUnits": "2/6 Units",
+      "quizAvg": "68%",
+      "lastActive": "2026-09-19 11:05"
+    }
+  ],
+  "unit2Quiz": {
+    "title": "Unit 2 Graded Quiz: Supporting Details & Idea Relationships",
+    "thaiTitle": "แบบทดสอบประเมินผลการเรียนรู้ Unit 2: รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด (40 ข้อ)",
+    "totalQuestions": 40,
+    "passages": [
+      {
+        "id": "u2-quiz-p1",
+        "title": "Passage 1: The Global Honeybee Crisis and Pollination Technology",
+        "thaiTitle": "บทอ่านที่ 1: วิกฤตประชากรผึ้งโลกและเทคโนโลยีโดรนผสมเกสร [U2-5.1..5.6, 6.3.3]",
+        "genre": "Agricultural Science & Ecology",
+        "audioText": "The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops. First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity. Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas. Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles. For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar. Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared. Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor. Consequently, pilot orchards adopting robotic pollination reported a thirty-one percent improvement in fruit-setting rates alongside a nineteen percent reduction in seasonal labor expenditure.",
+        "sentences": [
+          "(1) The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops.",
+          "(2) First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity.",
+          "(3) Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas.",
+          "(4) Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles.",
+          "(5) For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
+          "(6) Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared.",
+          "(7) Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor.",
+          "(8) Consequently, pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure."
+        ],
+        "questions": [
           {
-              "id": "u2-quiz-p1",
-              "title": "Passage 1: The Global Honeybee Crisis and Pollination Technology",
-              "thaiTitle": "บทอ่านที่ 1: วิกฤตประชากรผึ้งโลกและเทคโนโลยีโดรนผสมเกสร [U2-5.1..5.6, 6.3.3]",
-              "genre": "Agricultural Science & Ecology",
-              "audioText": "The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops. First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity. Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas. Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles. For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar. Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared. Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor. Consequently, pilot orchards adopting robotic pollination reported a thirty-one percent improvement in fruit-setting rates alongside a nineteen percent reduction in seasonal labor expenditure.",
-              "sentences": [
-                  "(1) The rapid global decline of wild honeybee populations is threatening food security by undermining natural pollination across commercial fruit and vegetable crops.",
-                  "(2) First, widespread agricultural use of neonicotinoid pesticides has devastated wild bee colonies by damaging their navigational memory and reproductive capacity.",
-                  "(3) Field research across twelve European countries documented a forty-seven percent reduction in wild bee diversity in intensively farmed regions compared to organic farming areas.",
-                  "(4) Second, extreme seasonal temperature fluctuations caused by climate change have disrupted the synchronization between spring flower blooming and bee foraging cycles.",
-                  "(5) For instance, cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
-                  "(6) Third, robotic micro-drone pollination systems offer a promising technological solution where natural pollinators have disappeared.",
-                  "(7) Traditional hand pollination of a single apple orchard requires six workers and ten full days; in contrast, a fleet of miniaturized autonomous drones completes the identical task within eighteen hours with zero human labor.",
-                  "(8) Consequently, pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure."
-              ],
-              "questions": [
-                  {
-                      "id": 1,
-                      "type": "mc",
-                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 1? [U2-5.1, 5.3]",
-                      "options": [
-                          "Hand pollination is significantly faster and cheaper than using autonomous micro-drones in apple orchards",
-                          "Declining honeybee populations threaten global crop yields due to pesticides and climate shifts, while robotic pollination drones offer an effective technological alternative",
-                          "Cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average",
-                          "Organic farming areas in Europe no longer grow commercial fruits or vegetables"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ประโยคที่ (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 2,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that functions as the FIRST Major Supporting Detail explaining how agricultural chemicals harm wild bees. [U2-5.1]",
-                      "targetSentenceIndex": 1,
-                      "explanation": "ประโยคที่ (2) ที่ขึ้นต้นด้วย 'First,' คือ Major Supporting Detail ข้อที่ 1 ที่อธิบายสาเหตุหลักเรื่องสารกำจัดศัตรูพืชทำลายระบบนำทางและการสืบพันธุ์ของผึ้ง"
-                  },
-                  {
-                      "id": 3,
-                      "type": "mc",
-                      "prompt": "What is the structural role of Sentence (3) regarding the 47% reduction across twelve European countries? [U2-5.1]",
-                      "options": [
-                          "Main Idea — it summarizes the entire passage's argument about robotic drones",
-                          "Major Supporting Detail — it introduces a brand-new fourth reason for climate change",
-                          "Minor Supporting Detail — it provides concrete statistical evidence to prove how pesticides harm bee diversity",
-                          "Concluding Summary — it wraps up the economic benefits of apple orchards"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยคที่ (2) (ตัวเลือก C)"
-                  },
-                  {
-                      "id": 4,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (5) with the signal phrase that introduces a Minor Supporting Detail example: [U2-5.1, 5.2]",
-                      "sentenceWithBlank": "[ _______ ], cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
-                      "choices": [
-                          "For instance",
-                          "In contrast",
-                          "Consequently",
-                          "Whereas"
-                      ],
-                      "correctWord": "For instance",
-                      "explanation": "'For instance' (ยกตัวอย่างเช่น) เป็นคำสัญญาณที่ใช้เปิดตัว Minor Supporting Detail เพื่อยกตัวอย่างสวนเชอร์รีในญี่ปุ่น"
-                  },
-                  {
-                      "id": 5,
-                      "type": "mc",
-                      "prompt": "Which signal words in Passage 1 are used to organize the three primary Major Supporting Details? [U2-5.2, 6.2.4]",
-                      "options": [
-                          "For instance, in contrast, consequently",
-                          "Compared to, within, alongside",
-                          "Twelve, nine, eighteen",
-                          "First, Second, Third"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญหลัก (Sequence / Listing of Major Details) (ตัวเลือก D)"
-                  },
-                  {
-                      "id": 6,
-                      "type": "mc",
-                      "prompt": "In Sentence (3), what idea relationship is signaled by the phrase 'compared to'? [U2-5.2]",
-                      "options": [
-                          "Compare and Contrast — contrasting bee diversity in intensively farmed regions versus organic farming areas",
-                          "Cause and Effect — showing how organic farming causes pesticide pollution",
-                          "Chronological Sequence — listing historical events from earliest to latest",
-                          "Definition — defining the biological meaning of queen bees"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์ (ตัวเลือก A)"
-                  },
-                  {
-                      "id": 7,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses the contrast signal 'in contrast' to compare manual hand pollination (10 days) with autonomous drones (18 hours). [U2-5.2]",
-                      "targetSentenceIndex": 6,
-                      "explanation": "ประโยคที่ (7) ใช้คำเชื่อม '; in contrast,' เพื่อเปรียบเทียบความแตกต่างอย่างชัดเจนระหว่างแรงงานคน 6 คนทำ 10 วัน กับฝูงโดรนอัตโนมัติที่ใช้เวลาเพียง 18 ชั่วโมง"
-                  },
-                  {
-                      "id": 8,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (8) with the Cause-and-Effect transition word showing the positive results of adopting robotic pollination: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ], pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure.",
-                      "choices": [
-                          "Consequently",
-                          "Unlike",
-                          "Initially",
-                          "Whereas"
-                      ],
-                      "correctWord": "Consequently",
-                      "explanation": "'Consequently' (ดังนั้น/ส่งผลให้) เป็นคำเชื่อมบอกเหตุและผล (Cause & Effect) ชี้ผลลัพธ์จากการนำโดรนมาใช้"
-                  },
-                  {
-                      "id": 9,
-                      "type": "mc",
-                      "prompt": "Scanning for Specific Facts: According to Sentence (5), how many days earlier did cherry orchards in central Japan bloom in 2024 compared to the historical average? [U2-5.4]",
-                      "options": [
-                          "Six days earlier",
-                          "Nine days earlier",
-                          "Twelve days earlier",
-                          "Eighteen days earlier"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "จากการสแกนประโยคที่ (5) พบข้อมูลเฉพาะเจาะจงว่า 'bloomed nine days earlier in 2024' (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 10,
-                      "type": "mc",
-                      "prompt": "Scanning for Numbers: How much seasonal labor expenditure did pilot orchards save by adopting robotic pollination? [U2-5.4]",
-                      "options": [
-                          "47%",
-                          "31%",
-                          "19%",
-                          "50%"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "จากการสแกนประโยคที่ (8) พบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คืออัตราการติดผลที่ดีขึ้น) (ตัวเลือก C)"
-                  }
-              ]
+            "id": 1,
+            "type": "mc",
+            "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 1? [U2-5.1, 5.3]",
+            "options": [
+              "Hand pollination is significantly faster and cheaper than using autonomous micro-drones in apple orchards",
+              "Declining honeybee populations threaten global crop yields due to pesticides and climate shifts, while robotic pollination drones offer an effective technological alternative",
+              "Cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average",
+              "Organic farming areas in Europe no longer grow commercial fruits or vegetables"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ประโยคที่ (1) และภาพรวมของย่อหน้าชี้ให้เห็นวิกฤตการลดลงของผึ้งจากสารเคมีและสภาพอากาศ พร้อมนำเสนอทางออกด้วยโดรนผสมเกสร (ตัวเลือก B)"
           },
           {
-              "id": "u2-quiz-p2",
-              "title": "Passage 2: Deep-Sea Hydrothermal Vents and Extreme Marine Life",
-              "thaiTitle": "บทอ่านที่ 2: ปล่องน้ำพุร้อนใต้ทะเลลึกและสิ่งมีชีวิตในสภาพแวดล้อมสุดขั้ว [U2-5.1..5.6, 6.3.3]",
-              "genre": "Oceanography & Astrobiology",
-              "audioText": "Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight. First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy. Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius. Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures. Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition. Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons. Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity. Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
-              "sentences": [
-                  "(1) Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight.",
-                  "(2) First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy.",
-                  "(3) Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius.",
-                  "(4) Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
-                  "(5) Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition.",
-                  "(6) Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons.",
-                  "(7) Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity.",
-                  "(8) Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures."
-              ],
-              "questions": [
-                  {
-                      "id": 11,
-                      "type": "mc",
-                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 2? [U2-5.1, 5.3]",
-                      "options": [
-                          "Giant tube worms are the largest predators living in shallow tropical coral reefs",
-                          "Surface plants cannot survive without solar radiation and warm temperatures",
-                          "Robotic space probes have already landed on Saturn's moon Enceladus",
-                          "Deep-sea hydrothermal vents sustain unique sunless ecosystems through chemosynthesis and help scientists understand potential life on icy moons"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "ประโยคที่ (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก (ตัวเลือก D)"
-                  },
-                  {
-                      "id": 12,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the Topic Sentence that states the overarching Main Idea of Passage 2. [U2-5.1]",
-                      "targetSentenceIndex": 0,
-                      "explanation": "ประโยคที่ (1) ทำหน้าที่เป็น Topic Sentence เปิดเรื่องที่สรุปใจความหลักของทั้งย่อหน้า"
-                  },
-                  {
-                      "id": 13,
-                      "type": "mc",
-                      "prompt": "Which sentence functions as a Major Supporting Detail introducing the role of bacteria as the base of the deep-sea food web? [U2-5.1]",
-                      "options": [
-                          "Sentence (3): Whereas surface plants rely on solar radiation to manufacture nutrients...",
-                          "Sentence (4): Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
-                          "Sentence (5): Giant tube worms measuring up to two meters tall lack mouths...",
-                          "Sentence (7): Planetary scientists note that Jupiter's moon Europa..."
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' คือ Major Supporting Detail ข้อที่ 2 ที่ระบุว่าแบคทีเรียเหล่านี้เป็นฐานห่วงโซ่อาหารของสัตว์ทะเลลึก (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 14,
-                      "type": "mc",
-                      "prompt": "What is the role of Sentence (5) about two-meter-tall giant tube worms? [U2-5.1]",
-                      "options": [
-                          "Minor Supporting Detail — it provides a specific biological example of a bizarre creature that relies on vent bacteria",
-                          "Main Idea — it states the primary topic of planetary space exploration",
-                          "Major Supporting Detail — it introduces the fourth reason why volcanoes erupt underwater",
-                          "Concluding Summary — it summarizes the entire passage"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยคที่ (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยคที่ (4) (ตัวเลือก A)"
-                  },
-                  {
-                      "id": 15,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (3) with the signal word that contrasts solar-powered surface plants with deep-sea vent microbes: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ] surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys.",
-                      "choices": [
-                          "Whereas",
-                          "Therefore",
-                          "Second",
-                          "Because"
-                      ],
-                      "correctWord": "Whereas",
-                      "explanation": "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Compare & Contrast) ระหว่างพืชผิวน้ำกับจุลินทรีย์ก้นทะเล"
-                  },
-                  {
-                      "id": 16,
-                      "type": "mc",
-                      "prompt": "In Sentence (5), what relationship does the transition word 'instead' express? [U2-5.2]",
-                      "options": [
-                          "Time Order — listing the steps a scientist takes to measure a tube worm",
-                          "Effect — proving that bacteria destroy the tissues of giant tube worms",
-                          "Contrast / Alternative — showing how tube worms obtain nutrition internally rather than eating with a mouth",
-                          "Similarity — comparing tube worms to surface trees"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน (ตัวเลือก C)"
-                  },
-                  {
-                      "id": 17,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the Minor Supporting Detail sentence that names specific icy moons (Europa and Enceladus) where subsurface oceans exist. [U2-5.1, 5.4]",
-                      "targetSentenceIndex": 6,
-                      "explanation": "ประโยคที่ (7) เป็น Minor Supporting Detail ที่ระบุชื่อดวงจันทร์ Europa ของดาวพฤหัสบดี และ Enceladus ของดาวเสาร์ เพื่อสนับสนุนประโยคที่ (6)"
-                  },
-                  {
-                      "id": 18,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (8) with the Cause-and-Effect signal word that introduces the concluding result of the passage: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ], understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
-                      "choices": [
-                          "Therefore",
-                          "Unlike",
-                          "Whereas",
-                          "Initially"
-                      ],
-                      "correctWord": "Therefore",
-                      "explanation": "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect) ปิดท้ายย่อหน้า"
-                  },
-                  {
-                      "id": 19,
-                      "type": "mc",
-                      "prompt": "Scanning for Specific Facts: What chemical gas do hydrothermal vent microbes oxidize to produce energy? [U2-5.4]",
-                      "options": [
-                          "Carbon monoxide gas",
-                          "Hydrogen sulfide gas",
-                          "Pure atmospheric nitrogen",
-                          "Liquid helium"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "จากการสแกนประโยคที่ (3) พบคำว่า 'oxidize hydrogen sulfide gas gushing from seafloor chimneys' (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 20,
-                      "type": "mc",
-                      "prompt": "Scanning for Numbers: What temperature do the volcanic seafloor chimneys exceed? [U2-5.4]",
-                      "options": [
-                          "100 degrees Celsius",
-                          "220 degrees Celsius",
-                          "350 degrees Celsius",
-                          "500 degrees Celsius"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยคที่ (3) พบคำว่า 'exceeding 350 degrees Celsius' (ตัวเลือก C)"
-                  }
-              ]
+            "id": 2,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that functions as the FIRST Major Supporting Detail explaining how agricultural chemicals harm wild bees. [U2-5.1]",
+            "targetSentenceIndex": 1,
+            "explanation": "ประโยคที่ (2) ที่ขึ้นต้นด้วย 'First,' คือ Major Supporting Detail ข้อที่ 1 ที่อธิบายสาเหตุหลักเรื่องสารกำจัดศัตรูพืชทำลายระบบนำทางและการสืบพันธุ์ของผึ้ง"
           },
           {
-              "id": "u2-quiz-p3",
-              "title": "Passage 3: The Psychology of Color in Retail and Interior Design",
-              "thaiTitle": "บทอ่านที่ 3: จิตวิทยาการใช้สีและแสงในการออกแบบพื้นที่ค้าปลีกและสถาปัตยกรรมภายใน [U2-5.1..5.6, 6.3.3]",
-              "genre": "Consumer Psychology & Design",
-              "audioText": "Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior. First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency. Consumer marketing studies reveal that red clearance signage increases impulse buying by twenty-eight percent in fashion boutiques because it elevates heart rate and captures immediate visual attention. In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security. Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to thirty-five percent during long waits. Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms. Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing. By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments.",
-              "sentences": [
-                  "(1) Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior.",
-                  "(2) First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
-                  "(3) Consumer marketing studies reveal that red clearance signage increases impulse buying by 28% in fashion boutiques because it elevates heart rate and captures immediate visual attention.",
-                  "(4) In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
-                  "(5) Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to 35% during long waits.",
-                  "(6) Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms.",
-                  "(7) Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing.",
-                  "(8) By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments."
-              ],
-              "questions": [
-                  {
-                      "id": 21,
-                      "type": "mc",
-                      "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 3? [U2-5.1, 5.3]",
-                      "options": [
-                          "Healthcare clinics should only use bright red paint in their waiting rooms to excite patients",
-                          "Fashion boutiques close at 18:00 PM every evening to save electricity",
-                          "Strategic color choices and dynamic lighting in interior design strongly shape human emotions, physiology, and shopping behavior",
-                          "Financial institutions refuse to use LED lighting in their waiting lounges"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "ประโยคที่ (1) และประโยคสรุปที่ (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค (ตัวเลือก C)"
-                  },
-                  {
-                      "id": 22,
-                      "type": "mc",
-                      "prompt": "Which sentence functions as a Major Supporting Detail introducing the effect of warm colors? [U2-5.1]",
-                      "options": [
-                          "Sentence (2): First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
-                          "Sentence (3): Consumer marketing studies reveal that red clearance signage increases impulse buying by 28%...",
-                          "Sentence (5): Consequently, financial institutions and healthcare clinics predominantly paint...",
-                          "Sentence (7): Initially, bright daylight-balanced white LEDs energize morning shoppers..."
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "ประโยคที่ (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues) (ตัวเลือก A)"
-                  },
-                  {
-                      "id": 23,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the Minor Supporting Detail sentence that provides the 28% impulse-buying statistic in fashion boutiques. [U2-5.1]",
-                      "targetSentenceIndex": 2,
-                      "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่อ้างอิงสถิติงานวิจัยการตลาด (28%) เพื่อพิสูจน์ประโยคที่ (2)"
-                  },
-                  {
-                      "id": 24,
-                      "type": "mc",
-                      "prompt": "In Sentence (3), what relationship does the signal word 'because' establish? [U2-5.2]",
-                      "options": [
-                          "Compare and Contrast — comparing red clearance signs with blue bank logos",
-                          "Cause and Effect — explaining why red signage increases impulse buying (it elevates heart rate and grabs attention)",
-                          "Chronological Sequence — showing the time of day when signs are printed",
-                          "Opposition — proving that red signage reduces store sales"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28% (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 25,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (4) with the transition phrase that shifts from stimulating warm colors to calming cool colors: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ], cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
-                      "choices": [
-                          "In contrast",
-                          "For instance",
-                          "Therefore",
-                          "Subsequently"
-                      ],
-                      "correctWord": "In contrast",
-                      "explanation": "'In contrast' (ในทางตรงกันข้าม) ใช้เชื่อมโยงแบบเปรียบเทียบความต่างระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย"
-                  },
-                  {
-                      "id": 26,
-                      "type": "mc",
-                      "prompt": "What is the relationship between Sentence (4) and Sentence (5), signaled by 'Consequently'? [U2-5.2]",
-                      "options": [
-                          "Sequence — banks paint their walls blue before building their roofs",
-                          "Contrast — clinics refuse to use blue paint despite its calming effects",
-                          "Definition — defining the medical meaning of blood pressure",
-                          "Cause and Effect — because blue promotes calm and trust (Cause), banks and clinics use pale blue lounges to reduce anxiety by up to 35% (Effect)"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "ประโยคที่ (4) บอกคุณสมบัติของสีฟ้า (สาเหตุ) และ 'Consequently' ในประโยคที่ (5) ชี้ผลลัพธ์ที่ธนาคารและคลินิกนำสีฟ้าไปใช้ลดความกังวลได้ถึง 35% (ตัวเลือก D)"
-                  },
-                  {
-                      "id": 27,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses the chronological sequence markers 'Initially' and 'subsequently' to trace store lighting changes from 09:00 AM to 18:00 PM. [U2-5.2]",
-                      "targetSentenceIndex": 6,
-                      "explanation": "ประโยคที่ (7) ใช้คำสัญญาณบอกลำดับเวลา 'Initially' (ในตอนเช้า 09:00 AM) และ 'subsequently' (ต่อมาหลัง 18:00 PM)"
-                  },
-                  {
-                      "id": 28,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (7) with the sequence signal word meaning 'afterward or later in time': [U2-5.2]",
-                      "sentenceWithBlank": "Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; [ _______ ], stores transition to warm amber illumination after 18:00 PM.",
-                      "choices": [
-                          "subsequently",
-                          "whereas",
-                          "unlike",
-                          "because"
-                      ],
-                      "correctWord": "subsequently",
-                      "explanation": "'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเหตุการณ์ตามเวลา (Sequence)"
-                  },
-                  {
-                      "id": 29,
-                      "type": "mc",
-                      "prompt": "Scanning for Numbers: By what percentage do pale blue waiting lounges reduce patient anxiety during long waits? [U2-5.4]",
-                      "options": [
-                          "Up to 18%",
-                          "Up to 28%",
-                          "Up to 35%",
-                          "Up to 50%"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "จากการสแกนประโยคที่ (5) พบตัวเลข 'reduce patient anxiety by up to 35%' (ส่วน 28% คือการซื้อฉับพลันจากป้ายสีแดง) (ตัวเลือก C)"
-                  },
-                  {
-                      "id": 30,
-                      "type": "mc",
-                      "prompt": "Summary & Synthesis: Which statement best summarizes Passage 3? [U2-6.3.3]",
-                      "options": [
-                          "Designers use warm colors to stimulate urgency, cool colors to foster calm and trust, and timed lighting shifts to match human rhythms and shape consumer behavior",
-                          "Red clearance signage increases impulse purchases by 28%, while pale blue waiting rooms reduce anxiety by 35%",
-                          "Store managers switch LED lighting from white to amber at 18:00 PM every day",
-                          "Only fashion boutiques and banks care about interior architecture"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "ตัวเลือก A สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา) ส่วน B และ C เป็นเพียง Minor Details"
-                  }
-              ]
+            "id": 3,
+            "type": "mc",
+            "prompt": "What is the structural role of Sentence (3) regarding the 47% reduction across twelve European countries? [U2-5.1]",
+            "options": [
+              "Main Idea — it summarizes the entire passage's argument about robotic drones",
+              "Major Supporting Detail — it introduces a brand-new fourth reason for climate change",
+              "Minor Supporting Detail — it provides concrete statistical evidence to prove how pesticides harm bee diversity",
+              "Concluding Summary — it wraps up the economic benefits of apple orchards"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ตัวเลขสถิติ 47% ใน 12 ประเทศยุโรป เป็น Minor Supporting Detail ที่ให้หลักฐานเชิงประจักษ์รองรับประโยคที่ (2) (ตัวเลือก C)"
           },
           {
-              "id": "u2-quiz-p4",
-              "title": "Passage 4: High-Speed Rail Expansion and Regional Eco-Tourism",
-              "thaiTitle": "บทอ่านที่ 4: การขยายโครงข่ายรถไฟความเร็วสูงและการท่องเที่ยวเชิงนิเวศ [U2-5.1..5.6, 6.3.3]",
-              "genre": "Transportation & Regional Economics",
-              "audioText": "The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions. First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights. Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets. Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach. For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds. Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks. Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers. Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds.",
-              "sentences": [
-                  "(1) The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions.",
-                  "(2) First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights.",
-                  "(3) Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets.",
-                  "(4) Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach.",
-                  "(5) For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds.",
-                  "(6) Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks.",
-                  "(7) Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers.",
-                  "(8) Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds."
-              ],
-              "questions": [
-                  {
-                      "id": 31,
-                      "type": "mc",
-                      "prompt": "Skimming for Main Idea: What is the primary Main Idea of Passage 4? [U2-5.1, 5.3]",
-                      "options": [
-                          "Commercial jets are faster and more environmentally friendly than electric trains",
-                          "Electric high-speed rail expansion transforms regional eco-tourism, cuts carbon emissions, protects wildlife corridors, and streamlines travel",
-                          "First-class train cabins cost 2,450 baht while standard berths cost 980 baht",
-                          "Wild elephants and deer are afraid of elevated railway viaducts"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ประโยคที่ (1) และโครงสร้าง Major Details ทั้ง 3 ประการสรุปใจความสำคัญว่ารถไฟความเร็วสูงพลังงานไฟฟ้ายกระดับการท่องเที่ยว ลดคาร์บอน และเป็นมิตรต่อระบบนิเวศ (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 32,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the Minor Supporting Detail sentence that gives specific statistics about the Emerald Express (Train No. 908), its 160 km/h speed, and 62% lower emissions. [U2-5.1, 5.4]",
-                      "targetSentenceIndex": 2,
-                      "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่ให้ข้อมูลตัวเลขและสถิติของขบวนรถไฟ Emerald Express (Train No. 908) เพื่อสนับสนุนประโยคที่ (2)"
-                  },
-                  {
-                      "id": 33,
-                      "type": "mc",
-                      "prompt": "Scanning for Specific Facts: How long does the Emerald Express (Train No. 908) take to complete the 750-kilometer northern route? [U2-5.4]",
-                      "options": [
-                          "3 hours and 45 minutes",
-                          "5 hours and 30 minutes",
-                          "6 hours and 15 minutes",
-                          "9 hours and 20 minutes"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "จากการสแกนประโยคที่ (3) พบข้อมูลเวลาเดินทาง 'in just 6 hours and 15 minutes' (ตัวเลือก C)"
-                  },
-                  {
-                      "id": 34,
-                      "type": "mc",
-                      "prompt": "What is the structural role of Sentence (4) ('Second, convenient rail connectivity revitalizes secondary nature reserves...')? [U2-5.1]",
-                      "options": [
-                          "Major Supporting Detail — it introduces the second primary benefit of high-speed rail (boosting eco-tourism in nature reserves)",
-                          "Minor Supporting Detail — it gives the exact ticket price of a sleeper berth",
-                          "Main Idea — it summarizes the entire history of aviation",
-                          "Contrast Detail — it argues that tourists dislike nature reserves"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' ทำหน้าที่เป็น Major Supporting Detail ข้อที่ 2 ของย่อหน้า (ตัวเลือก A)"
-                  },
-                  {
-                      "id": 35,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (5) with the signal phrase that introduces a concrete example of a revitalized nature reserve: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ], following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists.",
-                      "choices": [
-                          "For example",
-                          "In contrast",
-                          "Whereas",
-                          "Finally"
-                      ],
-                      "correctWord": "For example",
-                      "explanation": "'For example' ใช้เปิดตัว Minor Supporting Detail ที่ยกตัวอย่างเทศกาลดูนกอพยพที่เชียงราย"
-                  },
-                  {
-                      "id": 36,
-                      "type": "mc",
-                      "prompt": "Scanning for Numbers: How much money did the Annual Migratory Bird Festival generate for local conservation funds? [U2-5.4]",
-                      "options": [
-                          "2.45 million baht",
-                          "6.2 million baht",
-                          "14.5 million baht",
-                          "8.2 million baht"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "จากการสแกนประโยคที่ (5) พบคำว่า 'generating 8.2 million baht for local conservation funds' (ส่วน 14,500 คือจำนวนนักท่องเที่ยว) (ตัวเลือก D)"
-                  },
-                  {
-                      "id": 37,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses 'Whereas' to contrast habitat-fragmenting highways with wildlife-friendly elevated railway viaducts. [U2-5.2]",
-                      "targetSentenceIndex": 5,
-                      "explanation": "ประโยคที่ (6) ใช้คำเชื่อม 'Whereas' เปรียบเทียบความแตกต่างระหว่างถนนทางหลวงที่ตัดแบ่งป่า กับสะพานรถไฟยกระดับที่ให้ช้างและกวางเดินลอดได้อย่างปลอดภัย"
-                  },
-                  {
-                      "id": 38,
-                      "type": "mc",
-                      "prompt": "Scanning for Specific Facts: In Sentence (8), what is the price of a first-class private cabin versus a standard berth? [U2-5.4]",
-                      "options": [
-                          "1,600 baht for first class / 750 baht for standard",
-                          "2,450 baht for first class / 980 baht for standard",
-                          "3,500 baht for first class / 1,200 baht for standard",
-                          "980 baht for first class / 2,450 baht for standard"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "จากการสแกนประโยคที่ (8) พบข้อมูลราคาตั๋ว 'priced at 2,450 baht for first class or 980 baht for standard berths' (ตัวเลือก B)"
-                  },
-                  {
-                      "id": 39,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (7) with the sequence signal word that introduces the third and last Major Supporting Detail: [U2-5.2]",
-                      "sentenceWithBlank": "[ _______ ], integrated digital ticketing systems streamline multi-city travel for independent passengers.",
-                      "choices": [
-                          "Finally",
-                          "Whereas",
-                          "Unlike",
-                          "Because"
-                      ],
-                      "correctWord": "Finally",
-                      "explanation": "'Finally' เป็น Signal Word บอกลำดับประเด็นหลักข้อสุดท้าย (First -> Second -> Finally)"
-                  },
-                  {
-                      "id": 40,
-                      "type": "mc",
-                      "prompt": "In Sentence (8), what idea relationship is signaled by the pair of words 'Initially ... ; subsequently, ...'? [U2-5.2, 6.2.4]",
-                      "options": [
-                          "Compare and Contrast — contrasting mobile apps with paper tickets",
-                          "Cause and Effect — explaining why trains are delayed at Platform 4",
-                          "Chronological Sequence — showing the step-by-step order from booking on the app to passing through the biometric gate",
-                          "Definition — defining the meaning of biometric gates"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "'Initially ... ; subsequently, ...' แสดงลำดับขั้นตอนตามเวลา (Sequence) ตั้งแต่การจองตั๋วผ่านแอปไปจนถึงการสแกนผ่านประตูอัตโนมัติที่ชานชาลา 4 (ตัวเลือก C)"
-                  }
-              ]
+            "id": 4,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (5) with the signal phrase that introduces a Minor Supporting Detail example: [U2-5.1, 5.2]",
+            "sentenceWithBlank": "[ _______ ], cherry orchards in central Japan bloomed nine days earlier in 2024 than the fifty-year historical average, leaving emerging queen bees without vital early-season nectar.",
+            "choices": [
+              "For instance",
+              "In contrast",
+              "Consequently",
+              "Whereas"
+            ],
+            "correctWord": "For instance",
+            "explanation": "'For instance' (ยกตัวอย่างเช่น) เป็นคำสัญญาณที่ใช้เปิดตัว Minor Supporting Detail เพื่อยกตัวอย่างสวนเชอร์รีในญี่ปุ่น"
+          },
+          {
+            "id": 5,
+            "type": "mc",
+            "prompt": "Which signal words in Passage 1 are used to organize the three primary Major Supporting Details? [U2-5.2, 6.2.4]",
+            "options": [
+              "For instance, in contrast, consequently",
+              "Compared to, within, alongside",
+              "Twelve, nine, eighteen",
+              "First, Second, Third"
+            ],
+            "correctAnswer": 3,
+            "explanation": "คำว่า First, Second, Third เป็น Signal Words บอกลำดับประเด็นสำคัญหลัก (Sequence / Listing of Major Details) (ตัวเลือก D)"
+          },
+          {
+            "id": 6,
+            "type": "mc",
+            "prompt": "In Sentence (3), what idea relationship is signaled by the phrase 'compared to'? [U2-5.2]",
+            "options": [
+              "Compare and Contrast — contrasting bee diversity in intensively farmed regions versus organic farming areas",
+              "Cause and Effect — showing how organic farming causes pesticide pollution",
+              "Chronological Sequence — listing historical events from earliest to latest",
+              "Definition — defining the biological meaning of queen bees"
+            ],
+            "correctAnswer": 0,
+            "explanation": "'compared to' แสดงการเปรียบเทียบความแตกต่าง (Compare & Contrast) ระหว่างพื้นที่เกษตรเคมีเข้มข้นกับเกษตรอินทรีย์ (ตัวเลือก A)"
+          },
+          {
+            "id": 7,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses the contrast signal 'in contrast' to compare manual hand pollination (10 days) with autonomous drones (18 hours). [U2-5.2]",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคที่ (7) ใช้คำเชื่อม '; in contrast,' เพื่อเปรียบเทียบความแตกต่างอย่างชัดเจนระหว่างแรงงานคน 6 คนทำ 10 วัน กับฝูงโดรนอัตโนมัติที่ใช้เวลาเพียง 18 ชั่วโมง"
+          },
+          {
+            "id": 8,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (8) with the Cause-and-Effect transition word showing the positive results of adopting robotic pollination: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ], pilot orchards adopting robotic pollination reported a 31% improvement in fruit-setting rates alongside a 19% reduction in seasonal labor expenditure.",
+            "choices": [
+              "Consequently",
+              "Unlike",
+              "Initially",
+              "Whereas"
+            ],
+            "correctWord": "Consequently",
+            "explanation": "'Consequently' (ดังนั้น/ส่งผลให้) เป็นคำเชื่อมบอกเหตุและผล (Cause & Effect) ชี้ผลลัพธ์จากการนำโดรนมาใช้"
+          },
+          {
+            "id": 9,
+            "type": "mc",
+            "prompt": "Scanning for Specific Facts: According to Sentence (5), how many days earlier did cherry orchards in central Japan bloom in 2024 compared to the historical average? [U2-5.4]",
+            "options": [
+              "Six days earlier",
+              "Nine days earlier",
+              "Twelve days earlier",
+              "Eighteen days earlier"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากการสแกนประโยคที่ (5) พบข้อมูลเฉพาะเจาะจงว่า 'bloomed nine days earlier in 2024' (ตัวเลือก B)"
+          },
+          {
+            "id": 10,
+            "type": "mc",
+            "prompt": "Scanning for Numbers: How much seasonal labor expenditure did pilot orchards save by adopting robotic pollination? [U2-5.4]",
+            "options": [
+              "47%",
+              "31%",
+              "19%",
+              "50%"
+            ],
+            "correctAnswer": 2,
+            "explanation": "จากการสแกนประโยคที่ (8) พบว่า 'a 19% reduction in seasonal labor expenditure' (ส่วน 31% คืออัตราการติดผลที่ดีขึ้น) (ตัวเลือก C)"
           }
-      ]
+        ]
+      },
+      {
+        "id": "u2-quiz-p2",
+        "title": "Passage 2: Deep-Sea Hydrothermal Vents and Extreme Marine Life",
+        "thaiTitle": "บทอ่านที่ 2: ปล่องน้ำพุร้อนใต้ทะเลลึกและสิ่งมีชีวิตในสภาพแวดล้อมสุดขั้ว [U2-5.1..5.6, 6.3.3]",
+        "genre": "Oceanography & Astrobiology",
+        "audioText": "Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight. First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy. Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius. Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures. Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition. Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons. Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity. Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
+        "sentences": [
+          "(1) Deep-sea hydrothermal vents along volcanic ocean ridges support extraordinary ecosystems that thrive in complete darkness without sunlight.",
+          "(2) First, specialized bacteria near these vents use chemosynthesis rather than photosynthesis to convert toxic volcanic minerals into life-sustaining organic energy.",
+          "(3) Whereas surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys at temperatures exceeding 350 degrees Celsius.",
+          "(4) Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
+          "(5) Giant tube worms measuring up to two meters tall lack mouths and digestive tracts entirely; instead, they house billions of symbiotic bacteria inside their tissues to generate internal nutrition.",
+          "(6) Third, studying hydrothermal vent organisms provides astrobiologists with vital clues about how extraterrestrial life might survive on icy moons.",
+          "(7) Planetary scientists note that Jupiter's moon Europa and Saturn's moon Enceladus possess subsurface liquid oceans heated by similar hydrothermal activity.",
+          "(8) Therefore, understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures."
+        ],
+        "questions": [
+          {
+            "id": 11,
+            "type": "mc",
+            "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 2? [U2-5.1, 5.3]",
+            "options": [
+              "Giant tube worms are the largest predators living in shallow tropical coral reefs",
+              "Surface plants cannot survive without solar radiation and warm temperatures",
+              "Robotic space probes have already landed on Saturn's moon Enceladus",
+              "Deep-sea hydrothermal vents sustain unique sunless ecosystems through chemosynthesis and help scientists understand potential life on icy moons"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ประโยคที่ (1) คือ Topic Sentence ที่ครอบคลุมระบบนิเวศปล่องน้ำพุร้อนใต้ทะเลลึกและการต่อยอดสู่การศึกษาสิ่งมีชีวิตนอกโลก (ตัวเลือก D)"
+          },
+          {
+            "id": 12,
+            "type": "highlight",
+            "prompt": "Tap/Select the Topic Sentence that states the overarching Main Idea of Passage 2. [U2-5.1]",
+            "targetSentenceIndex": 0,
+            "explanation": "ประโยคที่ (1) ทำหน้าที่เป็น Topic Sentence เปิดเรื่องที่สรุปใจความหลักของทั้งย่อหน้า"
+          },
+          {
+            "id": 13,
+            "type": "mc",
+            "prompt": "Which sentence functions as a Major Supporting Detail introducing the role of bacteria as the base of the deep-sea food web? [U2-5.1]",
+            "options": [
+              "Sentence (3): Whereas surface plants rely on solar radiation to manufacture nutrients...",
+              "Sentence (4): Second, these microscopic bacteria form the foundational food web for bizarre, uniquely adapted deep-ocean creatures.",
+              "Sentence (5): Giant tube worms measuring up to two meters tall lack mouths...",
+              "Sentence (7): Planetary scientists note that Jupiter's moon Europa..."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' คือ Major Supporting Detail ข้อที่ 2 ที่ระบุว่าแบคทีเรียเหล่านี้เป็นฐานห่วงโซ่อาหารของสัตว์ทะเลลึก (ตัวเลือก B)"
+          },
+          {
+            "id": 14,
+            "type": "mc",
+            "prompt": "What is the role of Sentence (5) about two-meter-tall giant tube worms? [U2-5.1]",
+            "options": [
+              "Minor Supporting Detail — it provides a specific biological example of a bizarre creature that relies on vent bacteria",
+              "Main Idea — it states the primary topic of planetary space exploration",
+              "Major Supporting Detail — it introduces the fourth reason why volcanoes erupt underwater",
+              "Concluding Summary — it summarizes the entire passage"
+            ],
+            "correctAnswer": 0,
+            "explanation": "เรื่องหนอนท่อยักษ์ (Giant tube worms) ในประโยคที่ (5) เป็น Minor Supporting Detail ที่ยกตัวอย่างสัตว์ทะเลลึกเพื่อขยายความประโยคที่ (4) (ตัวเลือก A)"
+          },
+          {
+            "id": 15,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (3) with the signal word that contrasts solar-powered surface plants with deep-sea vent microbes: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ] surface plants rely on solar radiation to manufacture nutrients, vent microbes oxidize hydrogen sulfide gas gushing from seafloor chimneys.",
+            "choices": [
+              "Whereas",
+              "Therefore",
+              "Second",
+              "Because"
+            ],
+            "correctWord": "Whereas",
+            "explanation": "'Whereas' (ในขณะที่) เป็น Signal Word บอกการเปรียบเทียบความต่าง (Compare & Contrast) ระหว่างพืชผิวน้ำกับจุลินทรีย์ก้นทะเล"
+          },
+          {
+            "id": 16,
+            "type": "mc",
+            "prompt": "In Sentence (5), what relationship does the transition word 'instead' express? [U2-5.2]",
+            "options": [
+              "Time Order — listing the steps a scientist takes to measure a tube worm",
+              "Effect — proving that bacteria destroy the tissues of giant tube worms",
+              "Contrast / Alternative — showing how tube worms obtain nutrition internally rather than eating with a mouth",
+              "Similarity — comparing tube worms to surface trees"
+            ],
+            "correctAnswer": 2,
+            "explanation": "'instead' (แทนที่จะเป็นเช่นนั้น) แสดงความขัดแย้งหรือทางเลือกที่ต่างออกไป คือไม่มีปากแต่ใช้แบคทีเรียสร้างอาหารภายในแทน (ตัวเลือก C)"
+          },
+          {
+            "id": 17,
+            "type": "highlight",
+            "prompt": "Tap/Select the Minor Supporting Detail sentence that names specific icy moons (Europa and Enceladus) where subsurface oceans exist. [U2-5.1, 5.4]",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคที่ (7) เป็น Minor Supporting Detail ที่ระบุชื่อดวงจันทร์ Europa ของดาวพฤหัสบดี และ Enceladus ของดาวเสาร์ เพื่อสนับสนุนประโยคที่ (6)"
+          },
+          {
+            "id": 18,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (8) with the Cause-and-Effect signal word that introduces the concluding result of the passage: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ], understanding deep-sea survival mechanisms on Earth directly guides the design of future robotic space probes searching for alien biosignatures.",
+            "choices": [
+              "Therefore",
+              "Unlike",
+              "Whereas",
+              "Initially"
+            ],
+            "correctWord": "Therefore",
+            "explanation": "'Therefore' (ดังนั้น) เป็นคำเชื่อมแสดงผลลัพธ์หรือข้อสรุปเชิงเหตุผล (Cause & Effect) ปิดท้ายย่อหน้า"
+          },
+          {
+            "id": 19,
+            "type": "mc",
+            "prompt": "Scanning for Specific Facts: What chemical gas do hydrothermal vent microbes oxidize to produce energy? [U2-5.4]",
+            "options": [
+              "Carbon monoxide gas",
+              "Hydrogen sulfide gas",
+              "Pure atmospheric nitrogen",
+              "Liquid helium"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากการสแกนประโยคที่ (3) พบคำว่า 'oxidize hydrogen sulfide gas gushing from seafloor chimneys' (ตัวเลือก B)"
+          },
+          {
+            "id": 20,
+            "type": "mc",
+            "prompt": "Scanning for Numbers: What temperature do the volcanic seafloor chimneys exceed? [U2-5.4]",
+            "options": [
+              "100 degrees Celsius",
+              "220 degrees Celsius",
+              "350 degrees Celsius",
+              "500 degrees Celsius"
+            ],
+            "correctAnswer": 2,
+            "explanation": "จากการสแกนหาตัวเลขอ้างอิงอุณหภูมิในประโยคที่ (3) พบคำว่า 'exceeding 350 degrees Celsius' (ตัวเลือก C)"
+          }
+        ]
+      },
+      {
+        "id": "u2-quiz-p3",
+        "title": "Passage 3: The Psychology of Color in Retail and Interior Design",
+        "thaiTitle": "บทอ่านที่ 3: จิตวิทยาการใช้สีและแสงในการออกแบบพื้นที่ค้าปลีกและสถาปัตยกรรมภายใน [U2-5.1..5.6, 6.3.3]",
+        "genre": "Consumer Psychology & Design",
+        "audioText": "Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior. First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency. Consumer marketing studies reveal that red clearance signage increases impulse buying by twenty-eight percent in fashion boutiques because it elevates heart rate and captures immediate visual attention. In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security. Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to thirty-five percent during long waits. Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms. Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing. By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments.",
+        "sentences": [
+          "(1) Strategic color selection in retail and interior architecture powerfully influences human emotions, physiological responses, and consumer purchasing behavior.",
+          "(2) First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
+          "(3) Consumer marketing studies reveal that red clearance signage increases impulse buying by 28% in fashion boutiques because it elevates heart rate and captures immediate visual attention.",
+          "(4) In contrast, cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
+          "(5) Consequently, financial institutions and healthcare clinics predominantly paint their waiting lounges in pale blue palettes to reduce patient anxiety by up to 35% during long waits.",
+          "(6) Finally, chronological lighting adjustments throughout the business day help retail environments align with natural human circadian rhythms.",
+          "(7) Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; subsequently, stores transition to warm amber illumination after 18:00 PM to encourage relaxed evening browsing.",
+          "(8) By combining psychological color theory with dynamic lighting sequences, modern designers transform ordinary commercial spaces into highly persuasive environments."
+        ],
+        "questions": [
+          {
+            "id": 21,
+            "type": "mc",
+            "prompt": "Skimming for Main Idea: What is the overarching Main Idea of Passage 3? [U2-5.1, 5.3]",
+            "options": [
+              "Healthcare clinics should only use bright red paint in their waiting rooms to excite patients",
+              "Fashion boutiques close at 18:00 PM every evening to save electricity",
+              "Strategic color choices and dynamic lighting in interior design strongly shape human emotions, physiology, and shopping behavior",
+              "Financial institutions refuse to use LED lighting in their waiting lounges"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ประโยคที่ (1) และประโยคสรุปที่ (8) ชี้ใจความหลักว่าการใช้สีและแสงเชิงกลยุทธ์ส่งผลต่ออารมณ์ สรีรวิทยา และพฤติกรรมผู้บริโภค (ตัวเลือก C)"
+          },
+          {
+            "id": 22,
+            "type": "mc",
+            "prompt": "Which sentence functions as a Major Supporting Detail introducing the effect of warm colors? [U2-5.1]",
+            "options": [
+              "Sentence (2): First, warm spectrum hues such as vibrant red and energetic orange stimulate the autonomic nervous system and create a sense of urgency.",
+              "Sentence (3): Consumer marketing studies reveal that red clearance signage increases impulse buying by 28%...",
+              "Sentence (5): Consequently, financial institutions and healthcare clinics predominantly paint...",
+              "Sentence (7): Initially, bright daylight-balanced white LEDs energize morning shoppers..."
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประโยคที่ (2) คือ Major Supporting Detail ที่นำเสนอประเด็นหลักข้อแรกเกี่ยวกับโทนสีร้อน (warm spectrum hues) (ตัวเลือก A)"
+          },
+          {
+            "id": 23,
+            "type": "highlight",
+            "prompt": "Tap/Select the Minor Supporting Detail sentence that provides the 28% impulse-buying statistic in fashion boutiques. [U2-5.1]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่อ้างอิงสถิติงานวิจัยการตลาด (28%) เพื่อพิสูจน์ประโยคที่ (2)"
+          },
+          {
+            "id": 24,
+            "type": "mc",
+            "prompt": "In Sentence (3), what relationship does the signal word 'because' establish? [U2-5.2]",
+            "options": [
+              "Compare and Contrast — comparing red clearance signs with blue bank logos",
+              "Cause and Effect — explaining why red signage increases impulse buying (it elevates heart rate and grabs attention)",
+              "Chronological Sequence — showing the time of day when signs are printed",
+              "Opposition — proving that red signage reduces store sales"
+            ],
+            "correctAnswer": 1,
+            "explanation": "'because' เป็นคำเชื่อมบอกสาเหตุ (Cause & Effect) อธิบายว่าทำไมป้ายสีแดงจึงกระตุ้นการซื้อฉับพลันได้ถึง 28% (ตัวเลือก B)"
+          },
+          {
+            "id": 25,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (4) with the transition phrase that shifts from stimulating warm colors to calming cool colors: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ], cool spectrum tones like soft blue and forest green lower blood pressure and promote feelings of trust, calm, and security.",
+            "choices": [
+              "In contrast",
+              "For instance",
+              "Therefore",
+              "Subsequently"
+            ],
+            "correctWord": "In contrast",
+            "explanation": "'In contrast' (ในทางตรงกันข้าม) ใช้เชื่อมโยงแบบเปรียบเทียบความต่างระหว่างสีโทนร้อนที่กระตุ้นความตื่นตัว กับสีโทนเย็นที่ช่วยผ่อนคลาย"
+          },
+          {
+            "id": 26,
+            "type": "mc",
+            "prompt": "What is the relationship between Sentence (4) and Sentence (5), signaled by 'Consequently'? [U2-5.2]",
+            "options": [
+              "Sequence — banks paint their walls blue before building their roofs",
+              "Contrast — clinics refuse to use blue paint despite its calming effects",
+              "Definition — defining the medical meaning of blood pressure",
+              "Cause and Effect — because blue promotes calm and trust (Cause), banks and clinics use pale blue lounges to reduce anxiety by up to 35% (Effect)"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ประโยคที่ (4) บอกคุณสมบัติของสีฟ้า (สาเหตุ) และ 'Consequently' ในประโยคที่ (5) ชี้ผลลัพธ์ที่ธนาคารและคลินิกนำสีฟ้าไปใช้ลดความกังวลได้ถึง 35% (ตัวเลือก D)"
+          },
+          {
+            "id": 27,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses the chronological sequence markers 'Initially' and 'subsequently' to trace store lighting changes from 09:00 AM to 18:00 PM. [U2-5.2]",
+            "targetSentenceIndex": 6,
+            "explanation": "ประโยคที่ (7) ใช้คำสัญญาณบอกลำดับเวลา 'Initially' (ในตอนเช้า 09:00 AM) และ 'subsequently' (ต่อมาหลัง 18:00 PM)"
+          },
+          {
+            "id": 28,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (7) with the sequence signal word meaning 'afterward or later in time': [U2-5.2]",
+            "sentenceWithBlank": "Initially, bright daylight-balanced white LEDs energize morning shoppers at 09:00 AM; [ _______ ], stores transition to warm amber illumination after 18:00 PM.",
+            "choices": [
+              "subsequently",
+              "whereas",
+              "unlike",
+              "because"
+            ],
+            "correctWord": "subsequently",
+            "explanation": "'subsequently' (ต่อมา/หลังจากนั้น) เป็นคำเชื่อมบอกลำดับเหตุการณ์ตามเวลา (Sequence)"
+          },
+          {
+            "id": 29,
+            "type": "mc",
+            "prompt": "Scanning for Numbers: By what percentage do pale blue waiting lounges reduce patient anxiety during long waits? [U2-5.4]",
+            "options": [
+              "Up to 18%",
+              "Up to 28%",
+              "Up to 35%",
+              "Up to 50%"
+            ],
+            "correctAnswer": 2,
+            "explanation": "จากการสแกนประโยคที่ (5) พบตัวเลข 'reduce patient anxiety by up to 35%' (ส่วน 28% คือการซื้อฉับพลันจากป้ายสีแดง) (ตัวเลือก C)"
+          },
+          {
+            "id": 30,
+            "type": "mc",
+            "prompt": "Summary & Synthesis: Which statement best summarizes Passage 3? [U2-6.3.3]",
+            "options": [
+              "Designers use warm colors to stimulate urgency, cool colors to foster calm and trust, and timed lighting shifts to match human rhythms and shape consumer behavior",
+              "Red clearance signage increases impulse purchases by 28%, while pale blue waiting rooms reduce anxiety by 35%",
+              "Store managers switch LED lighting from white to amber at 18:00 PM every day",
+              "Only fashion boutiques and banks care about interior architecture"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ตัวเลือก A สรุปครบทั้ง Main Idea และ Major Details ทั้ง 3 ด้าน (สีโทนร้อน สีโทนเย็น และการปรับแสงตามเวลา) ส่วน B และ C เป็นเพียง Minor Details"
+          }
+        ]
+      },
+      {
+        "id": "u2-quiz-p4",
+        "title": "Passage 4: High-Speed Rail Expansion and Regional Eco-Tourism",
+        "thaiTitle": "บทอ่านที่ 4: การขยายโครงข่ายรถไฟความเร็วสูงและการท่องเที่ยวเชิงนิเวศ [U2-5.1..5.6, 6.3.3]",
+        "genre": "Transportation & Regional Economics",
+        "audioText": "The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions. First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights. Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets. Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach. For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds. Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks. Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers. Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds.",
+        "sentences": [
+          "(1) The expansion of electric high-speed rail networks across Southeast Asia is transforming regional tourism while significantly reducing aviation carbon emissions.",
+          "(2) First, modern sleeper and express trains provide a rapid, energy-efficient alternative to short-haul domestic flights.",
+          "(3) Operating at a maximum cruising speed of 160 kilometers per hour, the Emerald Express (Train No. 908) completes the 750-kilometer northern route in just 6 hours and 15 minutes while generating 62% fewer greenhouse gas emissions per passenger than commercial jets.",
+          "(4) Second, convenient rail connectivity revitalizes secondary nature reserves that were previously difficult for international visitors to reach.",
+          "(5) For example, following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists, generating 8.2 million baht for local conservation funds.",
+          "(6) Whereas traditional highway expansion fragments wildlife habitats with noisy asphalt roads, elevated railway viaducts allow wild elephants and deer to migrate freely underneath the tracks.",
+          "(7) Finally, integrated digital ticketing systems streamline multi-city travel for independent passengers.",
+          "(8) Initially, travelers book their seat or private cabin—priced at 2,450 baht for first class or 980 baht for standard berths—via a mobile app; subsequently, automated biometric gates at Platform 4 verify boarding passes in under three seconds."
+        ],
+        "questions": [
+          {
+            "id": 31,
+            "type": "mc",
+            "prompt": "Skimming for Main Idea: What is the primary Main Idea of Passage 4? [U2-5.1, 5.3]",
+            "options": [
+              "Commercial jets are faster and more environmentally friendly than electric trains",
+              "Electric high-speed rail expansion transforms regional eco-tourism, cuts carbon emissions, protects wildlife corridors, and streamlines travel",
+              "First-class train cabins cost 2,450 baht while standard berths cost 980 baht",
+              "Wild elephants and deer are afraid of elevated railway viaducts"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ประโยคที่ (1) และโครงสร้าง Major Details ทั้ง 3 ประการสรุปใจความสำคัญว่ารถไฟความเร็วสูงพลังงานไฟฟ้ายกระดับการท่องเที่ยว ลดคาร์บอน และเป็นมิตรต่อระบบนิเวศ (ตัวเลือก B)"
+          },
+          {
+            "id": 32,
+            "type": "highlight",
+            "prompt": "Tap/Select the Minor Supporting Detail sentence that gives specific statistics about the Emerald Express (Train No. 908), its 160 km/h speed, and 62% lower emissions. [U2-5.1, 5.4]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ (3) เป็น Minor Supporting Detail ที่ให้ข้อมูลตัวเลขและสถิติของขบวนรถไฟ Emerald Express (Train No. 908) เพื่อสนับสนุนประโยคที่ (2)"
+          },
+          {
+            "id": 33,
+            "type": "mc",
+            "prompt": "Scanning for Specific Facts: How long does the Emerald Express (Train No. 908) take to complete the 750-kilometer northern route? [U2-5.4]",
+            "options": [
+              "3 hours and 45 minutes",
+              "5 hours and 30 minutes",
+              "6 hours and 15 minutes",
+              "9 hours and 20 minutes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "จากการสแกนประโยคที่ (3) พบข้อมูลเวลาเดินทาง 'in just 6 hours and 15 minutes' (ตัวเลือก C)"
+          },
+          {
+            "id": 34,
+            "type": "mc",
+            "prompt": "What is the structural role of Sentence (4) ('Second, convenient rail connectivity revitalizes secondary nature reserves...')? [U2-5.1]",
+            "options": [
+              "Major Supporting Detail — it introduces the second primary benefit of high-speed rail (boosting eco-tourism in nature reserves)",
+              "Minor Supporting Detail — it gives the exact ticket price of a sleeper berth",
+              "Main Idea — it summarizes the entire history of aviation",
+              "Contrast Detail — it argues that tourists dislike nature reserves"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประโยคที่ (4) ที่ขึ้นต้นด้วย 'Second,' ทำหน้าที่เป็น Major Supporting Detail ข้อที่ 2 ของย่อหน้า (ตัวเลือก A)"
+          },
+          {
+            "id": 35,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (5) with the signal phrase that introduces a concrete example of a revitalized nature reserve: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ], following the opening of the Chiang Rai Wildlife Reserve station in April 2026, attendance at the Annual Migratory Bird Festival rose to 14,500 eco-tourists.",
+            "choices": [
+              "For example",
+              "In contrast",
+              "Whereas",
+              "Finally"
+            ],
+            "correctWord": "For example",
+            "explanation": "'For example' ใช้เปิดตัว Minor Supporting Detail ที่ยกตัวอย่างเทศกาลดูนกอพยพที่เชียงราย"
+          },
+          {
+            "id": 36,
+            "type": "mc",
+            "prompt": "Scanning for Numbers: How much money did the Annual Migratory Bird Festival generate for local conservation funds? [U2-5.4]",
+            "options": [
+              "2.45 million baht",
+              "6.2 million baht",
+              "14.5 million baht",
+              "8.2 million baht"
+            ],
+            "correctAnswer": 3,
+            "explanation": "จากการสแกนประโยคที่ (5) พบคำว่า 'generating 8.2 million baht for local conservation funds' (ส่วน 14,500 คือจำนวนนักท่องเที่ยว) (ตัวเลือก D)"
+          },
+          {
+            "id": 37,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses 'Whereas' to contrast habitat-fragmenting highways with wildlife-friendly elevated railway viaducts. [U2-5.2]",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ (6) ใช้คำเชื่อม 'Whereas' เปรียบเทียบความแตกต่างระหว่างถนนทางหลวงที่ตัดแบ่งป่า กับสะพานรถไฟยกระดับที่ให้ช้างและกวางเดินลอดได้อย่างปลอดภัย"
+          },
+          {
+            "id": 38,
+            "type": "mc",
+            "prompt": "Scanning for Specific Facts: In Sentence (8), what is the price of a first-class private cabin versus a standard berth? [U2-5.4]",
+            "options": [
+              "1,600 baht for first class / 750 baht for standard",
+              "2,450 baht for first class / 980 baht for standard",
+              "3,500 baht for first class / 1,200 baht for standard",
+              "980 baht for first class / 2,450 baht for standard"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากการสแกนประโยคที่ (8) พบข้อมูลราคาตั๋ว 'priced at 2,450 baht for first class or 980 baht for standard berths' (ตัวเลือก B)"
+          },
+          {
+            "id": 39,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (7) with the sequence signal word that introduces the third and last Major Supporting Detail: [U2-5.2]",
+            "sentenceWithBlank": "[ _______ ], integrated digital ticketing systems streamline multi-city travel for independent passengers.",
+            "choices": [
+              "Finally",
+              "Whereas",
+              "Unlike",
+              "Because"
+            ],
+            "correctWord": "Finally",
+            "explanation": "'Finally' เป็น Signal Word บอกลำดับประเด็นหลักข้อสุดท้าย (First -> Second -> Finally)"
+          },
+          {
+            "id": 40,
+            "type": "mc",
+            "prompt": "In Sentence (8), what idea relationship is signaled by the pair of words 'Initially ... ; subsequently, ...'? [U2-5.2, 6.2.4]",
+            "options": [
+              "Compare and Contrast — contrasting mobile apps with paper tickets",
+              "Cause and Effect — explaining why trains are delayed at Platform 4",
+              "Chronological Sequence — showing the step-by-step order from booking on the app to passing through the biometric gate",
+              "Definition — defining the meaning of biometric gates"
+            ],
+            "correctAnswer": 2,
+            "explanation": "'Initially ... ; subsequently, ...' แสดงลำดับขั้นตอนตามเวลา (Sequence) ตั้งแต่การจองตั๋วผ่านแอปไปจนถึงการสแกนผ่านประตูอัตโนมัติที่ชานชาลา 4 (ตัวเลือก C)"
+          }
+        ]
+      }
+    ]
   },
-
-  // Unit 3 Graded Quiz Database (4 Passages x 10 Questions = 40 Questions)
-  unit3Quiz: {
-      "title": "Unit 3 Graded Quiz: Vocabulary in Context & Sentence Meaning",
-      "thaiTitle": "แบบทดสอบประเมินผลการเรียนรู้ Unit 3: คำศัพท์ในบริบทและความหมายประโยค (40 ข้อ)",
-      "totalQuestions": 40,
-      "passages": [
+  "unit3Quiz": {
+    "title": "Unit 3 Graded Quiz: Vocabulary in Context & Sentence Meaning (Short Stories)",
+    "thaiTitle": "แบบทดสอบท้ายบทที่ 3: การเดาคำศัพท์จากบริบทและประโยคจากเรื่องสั้น (40 ข้อ • 4 เรื่องสั้น)",
+    "passages": [
+      {
+        "id": 1,
+        "title": "Story 1: Crazy Paella (A Trip to Barcelona)",
+        "thaiTitle": "เรื่องสั้นที่ 1: ข้าวผัดสเปนสุดป่วน (Crazy Paella) [U3-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Daniel and his younger sister Julia travelled from London to Barcelona for a summer holiday, and their father gave them a wad of cash—a big pile of paper money—to help pay for their trip.",
+          "Unlike Daniel who loved meeting new people, Julia was very shy and became quiet with a red face when Daniel's friend Armando greeted them at the airport.",
+          "At lunchtime, they wanted to eat paella, which is a traditional Spanish dish made of chicken, rice, seafood, and vegetables, at a famous restaurant called La Paella Loca.",
+          "A helpful man on the street told them that the number 35 bus was normally packed, or very full of people, so Julia walked to a fish restaurant while Daniel took the bus.",
+          "Because Daniel was very tired, he fell asleep on an express bus (a fast bus that travels between big cities without stopping) and woke up in Valencia with a dead mobile battery!",
+          "The next morning, Daniel had a clever solution: he rode back to Barcelona in the back of a rice lorry, where he met an old man who turned out to be Armando's father."
+        ],
+        "audioText": "Daniel and his younger sister Julia travelled from London to Barcelona for a summer holiday, and their father gave them a wad of cash—a big pile of paper money—to help pay for their trip. Unlike Daniel who loved meeting new people, Julia was very shy and became quiet with a red face when Daniel's friend Armando greeted them at the airport. At lunchtime, they wanted to eat paella, which is a traditional Spanish dish made of chicken, rice, seafood, and vegetables, at a famous restaurant called La Paella Loca. A helpful man on the street told them that the number 35 bus was normally packed, or very full of people, so Julia walked to a fish restaurant while Daniel took the bus. Because Daniel was very tired, he fell asleep on an express bus (a fast bus that travels between big cities without stopping) and woke up in Valencia with a dead mobile battery! The next morning, Daniel had a clever solution: he rode back to Barcelona in the back of a rice lorry, where he met an old man who turned out to be Armando's father.",
+        "questions": [
           {
-              "id": "u3-quiz-p1",
-              "title": "Passage 1: The Mystery of Bioluminescent Oceans",
-              "thaiTitle": "บทอ่านที่ 1: ความลับของสิ่งมีชีวิตเรืองแสงใต้ท้องทะเลลึก [U3-5.1..5.6, 6.3.3]",
-              "genre": "Marine Biology & Science",
-              "audioText": "Across tropical coastlines and deep oceanic trenches, sailors have long marveled at bioluminescence—the biochemical emission of visible light by living marine organisms. Unlike superficial surface reflections caused by moonlight, this endogenous glow is generated internally within specialized cells containing a light-emitting compound called luciferin. Marine predators, such as the deep-sea anglerfish, viperfish, and cookie-cutter shark, utilize glowing lures to entice curious prey into striking distance. Conversely, microscopic plankton known as dinoflagellates flash brilliantly when disturbed by swimming fish; in other words, their sudden illumination acts as a burglar alarm that startles attackers. Because sunlight vanishes completely below two hundred meters, life in the abyssal zone—the deepest, pitch-black layer of the ocean—depends heavily on these visual signals for survival. In addition, some squid species expel a luminous cloud, or glowing ink mist, to confuse hungry sharks before darting away into the darkness. Although producing biological light requires significant metabolic energy, the evolutionary advantages of camouflaging one's silhouette against faint overhead light outweigh the physiological costs. Ultimately, decoding the chemical efficiency of marine light production enables biomedical researchers to track cellular activity inside human tissues without invasive surgery.",
-              "sentences": [
-                  "(1) Across tropical coastlines and deep oceanic trenches, sailors have long marveled at bioluminescence—the biochemical emission of visible light by living marine organisms.",
-                  "(2) Unlike superficial surface reflections caused by moonlight, this endogenous glow is generated internally within specialized cells containing a light-emitting compound called luciferin.",
-                  "(3) Marine predators, such as the deep-sea anglerfish, viperfish, and cookie-cutter shark, utilize glowing lures to entice curious prey into striking distance.",
-                  "(4) Conversely, microscopic plankton known as dinoflagellates flash brilliantly when disturbed by swimming fish; in other words, their sudden illumination acts as a burglar alarm that startles attackers.",
-                  "(5) Because sunlight vanishes completely below two hundred meters, life in the abyssal zone—the deepest, pitch-black layer of the ocean—depends heavily on these visual signals for survival.",
-                  "(6) In addition, some squid species expel a luminous cloud, or glowing ink mist, to confuse hungry sharks before darting away into the darkness.",
-                  "(7) Although producing biological light requires significant metabolic energy, the evolutionary advantages of camouflaging one's silhouette against faint overhead light outweigh the physiological costs.",
-                  "(8) Ultimately, decoding the chemical efficiency of marine light production enables biomedical researchers to track cellular activity inside human tissues without invasive surgery."
-              ],
-              "questions": [
-                  {
-                      "id": 1,
-                      "type": "mc",
-                      "prompt": "Based on the dash punctuation in Sentence (1), what is the exact meaning of 'bioluminescence'? [U3-5.1, 5.2]",
-                      "options": [
-                          "The reflection of silver moonlight on shallow ocean waves",
-                          "The biochemical emission of visible light by living marine organisms",
-                          "The warming of tropical currents caused by underwater volcanoes",
-                          "The migration of whales across deep oceanic trenches"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "เครื่องหมายขีดยาว (—) ในประโยคที่ 1 ทำหน้าที่เป็น Definition Clue นิยามว่า bioluminescence คือการเปล่งแสงที่มองเห็นได้ทางชีวเคมีโดยสิ่งมีชีวิตในทะเล"
-                  },
-                  {
-                      "id": 2,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence in the passage that uses the signal phrase 'in other words' to restate how glowing plankton protect themselves like a burglar alarm. [U3-5.2]",
-                      "targetSentenceIndex": 3,
-                      "explanation": "ประโยคที่ (4) ใช้คำสัญญาณ 'in other words' เพื่อกล่าวซ้ำขยายความว่าการกะพริบแสงของแพลงก์ตอนทำหน้าที่เหมือนสัญญาณกันขโมยที่ทำให้ผู้ล่าตกใจ"
-                  },
-                  {
-                      "id": 3,
-                      "type": "mc",
-                      "prompt": "In Sentence (2), using the contrast word 'Unlike' and surrounding clues, what does 'endogenous' mean? [U3-5.1, 5.4]",
-                      "options": [
-                          "Reflected from external moonlight on the surface",
-                          "Artificially manufactured by submarine floodlights",
-                          "Produced or originating from within an organism internally",
-                          "Floating near sandy tropical beaches"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "คำว่า 'Unlike superficial surface reflections' และคำอธิบายตามหลังว่า 'generated internally within specialized cells' ชี้ว่า endogenous แปลว่า เกิดขึ้นจากภายในสิ่งมีชีวิต"
-                  },
-                  {
-                      "id": 4,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (3) with the correct vocabulary word meaning 'to attract, tempt, or lure closer': [U3-4.2.4]",
-                      "sentenceWithBlank": "Marine predators, such as the deep-sea anglerfish, viperfish, and cookie-cutter shark, utilize glowing lures to [ _______ ] curious prey into striking distance.",
-                      "choices": [
-                          "entice",
-                          "vanish",
-                          "expel",
-                          "outweigh"
-                      ],
-                      "correctWord": "entice",
-                      "explanation": "'entice' หมายถึง ดึงดูดหรือล่อลวงเหยื่อที่อยากรู้อยากเห็นให้เข้ามาในระยะจู่โจมด้วยอวัยวะเรืองแสง"
-                  },
-                  {
-                      "id": 5,
-                      "type": "mc",
-                      "prompt": "Why does the author include 'such as the deep-sea anglerfish, viperfish, and cookie-cutter shark' in Sentence (3)? [U3-5.1, 5.2]",
-                      "options": [
-                          "To give an Antonym Clue contrasting sharks with freshwater frogs",
-                          "To state the concluding summary of the entire passage",
-                          "To define the chemical formula of luciferin",
-                          "To provide an Example Clue illustrating specific marine predators that use glowing lures"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "วลี 'such as...' ที่คั่นด้วยคอมมา ทำหน้าที่เป็น Example Clue ยกตัวอย่างนักล่าใต้ทะเลลึกที่ใช้แสงล่อเหยื่อ"
-                  },
-                  {
-                      "id": 6,
-                      "type": "mc",
-                      "prompt": "Based on the double dashes (— ... —) in Sentence (5), what does 'abyssal' mean? [U3-5.1, 5.2]",
-                      "options": [
-                          "Relating to the deepest, pitch-black layer of the ocean where sunlight vanishes",
-                          "Relating to shallow, sunlit coral reefs near sandy beaches",
-                          "Relating to high mountain lakes above the clouds",
-                          "Relating to warm coastal tide pools"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "ข้อความในเครื่องหมายขีดคู่ '—the deepest, pitch-black layer of the ocean—' นิยามคำว่า abyssal ไว้อย่างชัดเจน"
-                  },
-                  {
-                      "id": 7,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses a Synonym Clue introduced by ', or' to explain the word 'luminous'. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 5,
-                      "explanation": "ประโยคที่ (6) มีวลี ', or glowing ink mist,' คั่นด้วยคอมมาเพื่อแปลความหมายของ 'a luminous cloud' ว่าคือหมอกหมึกเรืองแสง"
-                  },
-                  {
-                      "id": 8,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (7) with the correct word meaning 'exceeds in value or importance': [U3-5.3]",
-                      "sentenceWithBlank": "Although producing biological light requires significant metabolic energy, the evolutionary advantages of camouflaging one's silhouette [ _______ ] the physiological costs.",
-                      "choices": [
-                          "marvel",
-                          "outweigh",
-                          "disturb",
-                          "vanish"
-                      ],
-                      "correctWord": "outweigh",
-                      "explanation": "'outweigh' เป็นกริยาหลัก (Main Verb) ของประโยคที่ 7 หมายถึง มีน้ำหนักหรือมีความสำคัญมากกว่าต้นทุนทางสรีรวิทยา"
-                  },
-                  {
-                      "id": 9,
-                      "type": "mc",
-                      "prompt": "Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (7) ('Although producing biological light requires..., the evolutionary advantages of camouflaging... outweigh the physiological costs'): [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Core Subject: 'producing biological light' | Main Verb: 'requires'",
-                          "Core Subject: 'faint overhead light' | Main Verb: 'camouflaging'",
-                          "Core Subject: 'the evolutionary advantages' | Main Verb: 'outweigh'",
-                          "Core Subject: 'significant metabolic energy' | Main Verb: 'producing'"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "อนุประโยคที่ขึ้นต้นด้วย Although เป็นส่วนขยายรอง ประโยคหลัก (Main Clause) มีประธานหลักคือ 'the evolutionary advantages' และกริยาหลักคือ 'outweigh'"
-                  },
-                  {
-                      "id": 10,
-                      "type": "mc",
-                      "prompt": "What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Biomedical researchers must perform surgery on deep-sea sharks to extract luciferin",
-                          "Understanding how marine creatures produce light helps medical scientists observe human cells without performing invasive surgery",
-                          "Human tissues naturally glow in the dark when exposed to tropical seawater",
-                          "Sailors no longer travel across tropical coastlines at night"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ประธานหลักคือ 'decoding the chemical efficiency...' กริยาหลักคือ 'enables' และใจความสำคัญคือช่วยให้แพทย์ติดตามการทำงานของเซลล์มนุษย์ได้โดยไม่ต้องผ่าตัด"
-                  }
-              ]
+            "id": 1,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue)",
+            "prompt": "Based on the dashes (— ... —) in Sentence (1), what is a 'wad of cash'? [U3-5.1, 5.2]",
+            "options": [
+              "A small leather suitcase for clothes",
+              "A big pile of paper money",
+              "A plane ticket to Barcelona",
+              "A map of Spanish restaurants"
+            ],
+            "correctAnswer": 1,
+            "explanation": "เครื่องหมายขีดคู่ (—a big pile of paper money—) นิยามคำว่า wad of cash ไว้ตรงตัวว่าหมายถึง ปึกธนบัตรหรือเงินสดจำนวนมาก (ข้อ B)"
           },
           {
-              "id": "u3-quiz-p2",
-              "title": "Passage 2: The Pompeii of the East — Ancient Cave Preservation",
-              "thaiTitle": "บทอ่านที่ 2: การอนุรักษ์ถ้ำจิตรกรรมโบราณกลางทะเลทรายบนเส้นทางสายไหม [U3-5.1..5.6, 6.3.3]",
-              "genre": "Cultural Heritage & Conservation",
-              "audioText": "Carved into sheer sandstone cliffs along the Silk Road, the Mogao Caves contain a priceless—that is, immeasurably valuable and irreplaceable—collection of ancient Buddhist murals and manuscripts. For over a millennium, the region's arid desert climate, characterized by bone-dry air and less than forty millimeters of annual rainfall, naturally preserved the delicate mineral pigments from rotting. However, rapid modern tourism has introduced a detrimental new threat; specifically, the warm moisture exhaled by thousands of daily visitors causes mural plaster to blister and flake off. Whereas ancient monks worked in solitude (complete isolation and quiet seclusion), modern conservationists collaborate in international scientific teams to rescue the deteriorating artwork. Fragile organic artifacts, including silk banners, hemp paper scrolls, and wooden sculptures, are particularly vulnerable to sudden humidity spikes. To combat this degradation, engineers installed autonomous environmental sensors, or self-operating digital monitors, inside every grotto. Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry and diverts tourists to replicas—exact full-scale reconstructions of the original caves. By balancing public cultural education with stringent microclimate control, heritage specialists ensure that these ancient masterpieces endure for future generations.",
-              "sentences": [
-                  "(1) Carved into sheer sandstone cliffs along the Silk Road, the Mogao Caves contain a priceless—that is, immeasurably valuable and irreplaceable—collection of ancient Buddhist murals and manuscripts.",
-                  "(2) For over a millennium, the region's arid desert climate, characterized by bone-dry air and less than forty millimeters of annual rainfall, naturally preserved the delicate mineral pigments from rotting.",
-                  "(3) However, rapid modern tourism has introduced a detrimental new threat; specifically, the warm moisture exhaled by thousands of daily visitors causes mural plaster to blister and flake off.",
-                  "(4) Whereas ancient monks worked in solitude (complete isolation and quiet seclusion), modern conservationists collaborate in international scientific teams to rescue the deteriorating artwork.",
-                  "(5) Fragile organic artifacts, including silk banners, hemp paper scrolls, and wooden sculptures, are particularly vulnerable to sudden humidity spikes.",
-                  "(6) To combat this degradation, engineers installed autonomous environmental sensors, or self-operating digital monitors, inside every grotto.",
-                  "(7) Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry and diverts tourists to replicas—exact full-scale reconstructions of the original caves.",
-                  "(8) By balancing public cultural education with stringent microclimate control, heritage specialists ensure that these ancient masterpieces endure for future generations."
-              ],
-              "questions": [
-                  {
-                      "id": 11,
-                      "type": "mc",
-                      "prompt": "In Sentence (1), what does the word 'priceless' mean based on the signal phrase 'that is'? [U3-5.1, 5.2]",
-                      "options": [
-                          "Having zero financial or historical worth",
-                          "Recently painted by modern tourists",
-                          "Carved out of soft desert sand",
-                          "Immeasurably valuable and irreplaceable"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "คำสัญญาณ '—that is, immeasurably valuable and irreplaceable—' นิยามความหมายของ priceless ไว้อย่างชัดเจนว่า ประเมินค่ามิได้และไม่อาจทดแทนได้"
-                  },
-                  {
-                      "id": 12,
-                      "type": "mc",
-                      "prompt": "In Sentence (2), which clue explains the meaning of the word 'arid'? [U3-5.1, 5.2]",
-                      "options": [
-                          "The phrase 'Carved into sheer sandstone cliffs' in Sentence (1)",
-                          "The appositive phrase between commas: 'characterized by bone-dry air and less than forty millimeters of annual rainfall'",
-                          "The word 'monks' in Sentence (4)",
-                          "The word 'tourists' in Sentence (7)"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "วลีขยายที่คั่นด้วยเครื่องหมายคอมมา (bone-dry air และฝนตกน้อยกว่า 40 มม. ต่อปี) ชี้ชัดว่า arid แปลว่า แห้งแล้งจัด"
-                  },
-                  {
-                      "id": 13,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (3) with the vocabulary word meaning 'harmful or damaging': [U3-5.1, 5.4]",
-                      "sentenceWithBlank": "However, rapid modern tourism has introduced a [ _______ ] new threat; specifically, the warm moisture exhaled by thousands of daily visitors causes mural plaster to blister and flake off.",
-                      "choices": [
-                          "priceless",
-                          "autonomous",
-                          "detrimental",
-                          "arid"
-                      ],
-                      "correctWord": "detrimental",
-                      "explanation": "ประโยคขยายความหลังคำว่า specifically บอกว่าความชื้นจากลมหายใจนักท่องเที่ยวทำให้ปูนภาพจิตรกรรมพองและหลุดลอก ดังนั้น detrimental จึงแปลว่า ซึ่งเป็นผลเสีย/เป็นอันตราย"
-                  },
-                  {
-                      "id": 14,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses BOTH parentheses ( ... ) and the contrast signal word 'Whereas' to explain the word 'solitude'. [U3-5.2]",
-                      "targetSentenceIndex": 3,
-                      "explanation": "ประโยคที่ (4) ให้ทั้งคำนิยามในวงเล็บ '(complete isolation and quiet seclusion)' และใช้คำเชื่อม 'Whereas' เปรียบเทียบความสันโดษกับการทำงานร่วมกันเป็นทีม"
-                  },
-                  {
-                      "id": 15,
-                      "type": "mc",
-                      "prompt": "In Sentence (5), why does the author list 'silk banners, hemp paper scrolls, and wooden sculptures'? [U3-5.1, 5.2]",
-                      "options": [
-                          "As an Example Clue (signaled by 'including') to show what kinds of 'fragile organic artifacts' exist in the caves",
-                          "As an Antonym Clue proving that stone cliffs are softer than paper",
-                          "As a Definition Clue for computer sensors",
-                          "To argue that ancient monks did not know how to weave silk"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "คำสัญญาณ 'including' ที่คั่นด้วยคอมมา เป็นการยกตัวอย่าง (Example Clue) ของโบราณวัตถุอินทรีย์ที่เปราะบาง"
-                  },
-                  {
-                      "id": 16,
-                      "type": "mc",
-                      "prompt": "In Sentence (6), the phrase ', or self-operating digital monitors,' provides which type of context clue for 'autonomous'? [U3-5.1, 5.2]",
-                      "options": [
-                          "Antonym clue signaled by 'however'",
-                          "Chronological sequence clue",
-                          "Synonym / Restatement clue signaled by ', or'",
-                          "Cause and effect clue signaled by 'because'"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "การใช้เครื่องหมายคอมมาตามด้วยคำว่า 'or' เป็นรูปแบบมาตรฐานของ Synonym / Restatement Clue (autonomous = ทำงานได้เองโดยอัตโนมัติ)"
-                  },
-                  {
-                      "id": 17,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses a dash (—) at the end to define the word 'replicas'. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 6,
-                      "explanation": "ประโยคที่ (7) มีเครื่องหมายขีดยาวท้ายประโยค '—exact full-scale reconstructions of the original caves' เพื่อนิยามคำว่า replicas"
-                  },
-                  {
-                      "id": 18,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (8) with the vocabulary word meaning 'strict, precise, and tightly regulated': [U3-4.2.4]",
-                      "sentenceWithBlank": "By balancing public cultural education with [ _______ ] microclimate control, heritage specialists ensure that these ancient masterpieces endure for future generations.",
-                      "choices": [
-                          "fragile",
-                          "stringent",
-                          "delicate",
-                          "vulnerable"
-                      ],
-                      "correctWord": "stringent",
-                      "explanation": "เชื่อมโยงจากประโยค (6)-(7) ที่มีการใช้เซ็นเซอร์ตรวจวัดและจำกัดคนเข้าอย่างเข้มงวด คำว่า stringent จึงหมายถึง เข้มงวด/รัดกุม"
-                  },
-                  {
-                      "id": 19,
-                      "type": "mc",
-                      "prompt": "Sentence Meaning Analysis: In Sentence (7) ('Whenever carbon dioxide or humidity levels exceed safe thresholds, the computer network automatically restricts visitor entry...'), what is the Core Subject and Main Verb? [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Core Subject: 'safe thresholds' | Main Verb: 'exceed'",
-                          "Core Subject: 'the computer network' | Main Verb: 'restricts (and diverts)'",
-                          "Core Subject: 'original caves' | Main Verb: 'reconstructions'",
-                          "Core Subject: 'carbon dioxide' | Main Verb: 'whenever'"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ส่วนที่ขึ้นต้นด้วย Whenever เป็นอนุประโยคบอกเงื่อนไข ส่วนประโยคหลักมี Core Subject คือ 'the computer network' และ Main Verb คือ 'restricts'"
-                  },
-                  {
-                      "id": 20,
-                      "type": "mc",
-                      "prompt": "What is the main meaning of Sentence (8)? [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Heritage specialists decided to close all museums permanently to stop public education",
-                          "Future generations will no longer be interested in viewing Buddhist murals",
-                          "Combining public education with strict climate control allows experts to protect ancient cave art for the future",
-                          "Sandstone cliffs along the Silk Road are immune to humidity"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "แก่นของประโยคที่ (8) คือการสร้างสมดุลระหว่างการให้ความรู้แก่สาธารณชนกับการควบคุมสภาพอากาศอย่างเข้มงวด ช่วยรักษามรดกโลกไว้ให้คนรุ่นหลัง"
-                  }
-              ]
+            "id": 2,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Contrast Clue)",
+            "prompt": "In Sentence (2), using the contrast word 'Unlike' and the clues 'became quiet with a red face', what does 'shy' mean? [U3-5.1]",
+            "options": [
+              "Nervous and not comfortable when meeting new people",
+              "Angry and loud in public places",
+              "Very hungry after a long flight",
+              "Excited to talk to everyone at the airport"
+            ],
+            "correctAnswer": 0,
+            "explanation": "คำว่า Unlike เปรียบเทียบตรงข้ามกับแดเนียลที่ชอบพบปะผู้คน ร่วมกับอาการหน้าแดงและเงียบลง ชี้ว่า shy แปลว่า ขี้อาย/ประหม่าเมื่อเจอคนแปลกหน้า (ข้อ A)"
           },
           {
-              "id": "u3-quiz-p3",
-              "title": "Passage 3: The Architecture of Vertical Forests in Modern Cities",
-              "thaiTitle": "บทอ่านที่ 3: สถาปัตยกรรมตึกป่าแนวตั้งในมหานครยุคใหม่ [U3-5.1..5.6, 6.3.3]",
-              "genre": "Sustainable Urban Architecture",
-              "audioText": "As metropolitan populations swell and horizontal land becomes scarce, visionary architects are constructing arboricultural skyscrapers—high-rise residential towers covered in thousands of living trees and shrubs. Pioneered in Milan, Italy, the famous Bosco Verticale houses nine hundred trees across its cantilevered balconies; in other words, the building functions as a vertical forest equivalent to two hectares of flat woodland. These suspended ecosystems mitigate urban air pollution by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles on their leaves. Furthermore, dense foliage acts as a natural thermal buffer: whereas bare glass facades amplify scorching summer heat, leafy balconies shade interior apartments and reduce air-conditioning demand by thirty percent. Botanical engineers select hardy plant species—such as holm oaks, wild olives, and rosemary—that can withstand fierce high-altitude winds. To prevent falling branches during severe gales, giant steel safety cages anchor (securely fasten and hold down) the root bulbs to the reinforced concrete floor slabs. Irrigation is managed through a closed-loop hydrological system, which recycles greywater from residents' sinks and showers to nourish the balcony gardens. Consequently, integrating living nature directly into high-density housing restores urban biodiversity while significantly improving residents' respiratory and psychological health.",
-              "sentences": [
-                  "(1) As metropolitan populations swell and horizontal land becomes scarce, visionary architects are constructing arboricultural skyscrapers—high-rise residential towers covered in thousands of living trees and shrubs.",
-                  "(2) Pioneered in Milan, Italy, the famous Bosco Verticale houses nine hundred trees across its cantilevered balconies; in other words, the building functions as a vertical forest equivalent to two hectares of flat woodland.",
-                  "(3) These suspended ecosystems mitigate urban air pollution by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles on their leaves.",
-                  "(4) Furthermore, dense foliage acts as a natural thermal buffer: whereas bare glass facades amplify scorching summer heat, leafy balconies shade interior apartments and reduce air-conditioning demand by thirty percent.",
-                  "(5) Botanical engineers select hardy plant species—such as holm oaks, wild olives, and rosemary—that can withstand fierce high-altitude winds.",
-                  "(6) To prevent falling branches during severe gales, giant steel safety cages anchor (securely fasten and hold down) the root bulbs to the reinforced concrete floor slabs.",
-                  "(7) Irrigation is managed through a closed-loop hydrological system, which recycles greywater from residents' sinks and showers to nourish the balcony gardens.",
-                  "(8) Consequently, integrating living nature directly into high-density housing restores urban biodiversity while significantly improving residents' respiratory and psychological health."
-              ],
-              "questions": [
-                  {
-                      "id": 21,
-                      "type": "mc",
-                      "prompt": "Using the dash clue in Sentence (1), what does 'arboricultural' mean when describing skyscrapers? [U3-5.1, 5.2]",
-                      "options": [
-                          "Constructed entirely out of recycled ocean plastic",
-                          "Built underground beneath subway tunnels",
-                          "Involving the cultivation and integration of living trees and shrubs",
-                          "Designed exclusively for commercial helicopter landing pads"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "หลังเครื่องหมายขีดยาว (—) อธิบายไว้ชัดเจนว่า 'high-rise residential towers covered in thousands of living trees and shrubs'"
-                  },
-                  {
-                      "id": 22,
-                      "type": "mc",
-                      "prompt": "In Sentence (2), why does the author use the signal phrase 'in other words'? [U3-5.2]",
-                      "options": [
-                          "To restate the scale of the 900 balcony trees by comparing them to two hectares of flat woodland",
-                          "To introduce an opposite opinion that criticizes Italian architects",
-                          "To list the names of the residents living in Milan",
-                          "To define the price of apartment rent in Italy"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "'in other words' ใช้ขยายความเปรียบเทียบให้เห็นภาพชัดเจนขึ้นว่าต้นไม้ 900 ต้นบนตึกนั้นเทียบเท่ากับป่าแนวราบถึง 2 เฮกตาร์"
-                  },
-                  {
-                      "id": 23,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (3) with the verb meaning 'to reduce, lessen, or make less severe': [U3-5.1, 5.4]",
-                      "sentenceWithBlank": "These suspended ecosystems [ _______ ] urban air pollution by absorbing thirty tons of carbon dioxide annually and trapping microscopic dust particles on their leaves.",
-                      "choices": [
-                          "amplify",
-                          "mitigate",
-                          "swell",
-                          "construct"
-                      ],
-                      "correctWord": "mitigate",
-                      "explanation": "การดูดซับก๊าซคาร์บอนไดออกไซด์ 30 ตันและดักจับฝุ่นละออง เป็นเบาะแส General Clue ที่ชี้ว่า mitigate urban air pollution หมายถึง ช่วยบรรเทาหรือลดมลพิษทางอากาศ"
-                  },
-                  {
-                      "id": 24,
-                      "type": "mc",
-                      "prompt": "In Sentence (4), what context clue helps explain how 'leafy balconies' work as a 'thermal buffer'? [U3-5.1, 5.2]",
-                      "options": [
-                          "A Parentheses clue giving the Latin name of oak trees",
-                          "A Synonym clue signaled by ', or'",
-                          "An Antonym / Contrast clue signaled by 'whereas', contrasting heat-amplifying glass facades with shade-providing leafy balconies",
-                          "A numerical list of European capitals"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "คำว่า 'whereas' เปรียบเทียบความต่างระหว่างผนังกระจกเปลือยที่สะสมความร้อน กับระเบียงต้นไม้ที่ช่วยบังแดดและลดการใช้แอร์ลง 30%"
-                  },
-                  {
-                      "id": 25,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses double dashes (—such as ...—) to give Examples of 'hardy plant species' that withstand fierce winds. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 4,
-                      "explanation": "ประโยคที่ (5) ใช้เครื่องหมายขีดคู่ '—such as holm oaks, wild olives, and rosemary—' ยกตัวอย่างพันธุ์ไม้ที่แข็งแรงทนทานต่อลมแรงบนตึกสูง"
-                  },
-                  {
-                      "id": 26,
-                      "type": "mc",
-                      "prompt": "In Sentence (5), what does the word 'hardy' mean based on the clause 'that can withstand fierce high-altitude winds'? [U3-4.2.4, 5.4]",
-                      "options": [
-                          "Delicate, fragile, and easily killed by a light breeze",
-                          "Robust, resilient, and able to survive harsh weather conditions",
-                          "Artificial and made of green plastic",
-                          "Requiring indoor heating twenty-four hours a day"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "วลีขยายข้างหลัง 'that can withstand fierce high-altitude winds' (ที่สามารถต้านทานลมแรงบนที่สูงได้) ชี้ว่า hardy แปลว่า แข็งแรงทนทาน"
-                  },
-                  {
-                      "id": 27,
-                      "type": "fillBlank",
-                      "prompt": "Based on the parentheses clue in Sentence (6), choose the correct verb meaning 'securely fasten and hold down': [U3-5.1, 5.2]",
-                      "sentenceWithBlank": "To prevent falling branches during severe gales, giant steel safety cages [ _______ ] (securely fasten and hold down) the root bulbs to the reinforced concrete floor slabs.",
-                      "choices": [
-                          "anchor",
-                          "recycle",
-                          "nourish",
-                          "restore"
-                      ],
-                      "correctWord": "anchor",
-                      "explanation": "ข้อความในวงเล็บ '(securely fasten and hold down)' แปลความหมายของคำกริยา anchor (ยึดตรึงไว้) โดยตรง"
-                  },
-                  {
-                      "id": 28,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses a ', which ...' relative clause to explain how a 'closed-loop hydrological system' recycles water. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 6,
-                      "explanation": "ประโยคที่ (7) มีอนุประโยคหลังคอมมา ', which recycles greywater from residents' sinks and showers to nourish the balcony gardens' อธิบายการทำงานของระบบน้ำหมุนเวียนแบบวงจรปิด"
-                  },
-                  {
-                      "id": 29,
-                      "type": "mc",
-                      "prompt": "Sentence Meaning Analysis: Identify the Core Subject and Main Verb of Sentence (8) ('Consequently, integrating living nature directly into high-density housing restores urban biodiversity while...'): [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Core Subject: 'urban biodiversity' | Main Verb: 'improving'",
-                          "Core Subject: 'psychological health' | Main Verb: 'integrating'",
-                          "Core Subject: 'high-density housing' | Main Verb: 'consequently'",
-                          "Core Subject: 'integrating living nature (directly into high-density housing)' | Main Verb: 'restores'"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "ประธานหลักของประโยคคือ Gerund phrase 'integrating living nature directly into high-density housing' และกริยาหลักคือ 'restores' (ช่วยฟื้นฟู)"
-                  },
-                  {
-                      "id": 30,
-                      "type": "mc",
-                      "prompt": "Which statement best captures the main meaning of Passage 3 as a whole? [U3-5.3, 6.3.3]",
-                      "options": [
-                          "High-altitude winds in Milan are too dangerous for any plants to grow on apartment balconies",
-                          "Vertical forest skyscrapers integrate living trees into high-rise buildings to clean urban air, save energy, recycle water, and boost human and ecological health",
-                          "Residents of Bosco Verticale must carry water buckets up the stairs every morning to water 900 oak trees",
-                          "Bare glass facades are much cooler in summer than leafy balconies"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ตัวเลือก B รวบยอดใจความสำคัญและประโยคสรุปของเรื่อง Vertical Forests ได้ครบทุกมิติ"
-                  }
-              ]
+            "id": 3,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Definition Clue)",
+            "prompt": "Tap/Select the sentence in the story that uses ', which is' to define the Spanish word 'paella'. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้ ', which is a traditional Spanish dish made of chicken, rice, seafood, and vegetables,' เพื่อนิยามคำว่า paella"
           },
           {
-              "id": "u3-quiz-p4",
-              "title": "Passage 4: The Neuroscience of Bilingualism and the Aging Brain",
-              "thaiTitle": "บทอ่านที่ 4: ประสาทวิทยาศาสตร์ของการพูดสองภาษากับสมองที่เยาว์วัย [U3-5.1..5.6, 6.3.3]",
-              "genre": "Cognitive Neuroscience",
-              "audioText": "Neuroscientists using advanced brain-imaging technology have overturned the outdated misconception that speaking two languages causes cognitive confusion—mental disorder or intellectual delay—in young children. On the contrary, managing two active linguistic systems simultaneously strengthens the brain's executive control network, which governs attention, task-switching, and impulse inhibition. Because both languages remain active in a bilingual person's mind, the prefrontal cortex must constantly select the target word while suppressing intrusion (unwanted interference) from the other language. This lifelong mental workout builds cognitive reserve, or extra neural resilience that helps the brain compensate for age-related tissue decline. Clinical longitudinal studies—such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad—reveal a striking protective benefit. Specifically, lifelong bilinguals develop symptoms of dementia, a severe loss of memory and reasoning ability, an average of four to five years later than monolingual adults. Whereas physical exercise fortifies cardiovascular muscles, juggling multiple vocabularies enhances neuroplasticity by forging denser white-matter connections between brain hemispheres. Even adults who acquire a second language in middle age experience measurable improvements in mental agility, meaning quickness and flexibility of thought, proving that it is never too late to reshape the human brain.",
-              "sentences": [
-                  "(1) Neuroscientists using advanced brain-imaging technology have overturned the outdated misconception that speaking two languages causes cognitive confusion—mental disorder or intellectual delay—in young children.",
-                  "(2) On the contrary, managing two active linguistic systems simultaneously strengthens the brain's executive control network, which governs attention, task-switching, and impulse inhibition.",
-                  "(3) Because both languages remain active in a bilingual person's mind, the prefrontal cortex must constantly select the target word while suppressing intrusion (unwanted interference) from the other language.",
-                  "(4) This lifelong mental workout builds cognitive reserve, or extra neural resilience that helps the brain compensate for age-related tissue decline.",
-                  "(5) Clinical longitudinal studies—such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad—reveal a striking protective benefit.",
-                  "(6) Specifically, lifelong bilinguals develop symptoms of dementia, a severe loss of memory and reasoning ability, an average of four to five years later than monolingual adults.",
-                  "(7) Whereas physical exercise fortifies cardiovascular muscles, juggling multiple vocabularies enhances neuroplasticity by forging denser white-matter connections between brain hemispheres.",
-                  "(8) Even adults who acquire a second language in middle age experience measurable improvements in mental agility, meaning quickness and flexibility of thought, proving that it is never too late to reshape the human brain."
-              ],
-              "questions": [
-                  {
-                      "id": 31,
-                      "type": "mc",
-                      "prompt": "Based on the dash clue in Sentence (1), 'cognitive confusion' refers to: [U3-5.1, 5.2]",
-                      "options": [
-                          "Physical muscle fatigue in the legs",
-                          "Fluency in speaking multiple regional dialects",
-                          "Mental disorder or intellectual delay",
-                          "High-speed brain-imaging technology"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "ข้อความในเครื่องหมายขีดคู่ '—mental disorder or intellectual delay—' ให้คำนิยามของ cognitive confusion ไว้อย่างตรงไปตรงมา"
-                  },
-                  {
-                      "id": 32,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses parentheses ( ... ) to define the word 'intrusion'. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 2,
-                      "explanation": "ประโยคที่ (3) มีวงเล็บ '(unwanted interference)' แปลความหมายของคำว่า intrusion (การแทรกแซงที่ไม่พึงประสงค์) ไว้โดยตรง"
-                  },
-                  {
-                      "id": 33,
-                      "type": "mc",
-                      "prompt": "In Sentence (2), how does the author explain what the 'executive control network' does? [U3-5.1, 5.2]",
-                      "options": [
-                          "Using parentheses to list three cities in India",
-                          "Using a comma and the relative clause 'which governs attention, task-switching, and impulse inhibition'",
-                          "Using an antonym comparing children with elderly patients",
-                          "Using a footnote at the bottom of the page"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "อนุประโยคหลังคอมมา ', which governs attention, task-switching, and impulse inhibition' ทำหน้าที่นิยามหน้าที่ของระบบบริหารจัดการสมอง"
-                  },
-                  {
-                      "id": 34,
-                      "type": "mc",
-                      "prompt": "In Sentence (4), which context clue unlocks the meaning of 'cognitive reserve'? [U3-5.1, 5.2]",
-                      "options": [
-                          "An Example clue listing hospital equipment",
-                          "An Antonym clue signaled by 'however'",
-                          "A Synonym / Definition clue signaled by ', or extra neural resilience that helps the brain compensate for age-related tissue decline'",
-                          "A time sequence clue signaled by 'finally'"
-                      ],
-                      "correctAnswer": 2,
-                      "explanation": "วลีหลังเครื่องหมายคอมมาและคำว่า ', or ...' ให้คำนิยามพ้องความหมายว่าหมายถึง ความยืดหยุ่นสำรองของระบบประสาทที่ช่วยชดเชยความเสื่อมตามวัย"
-                  },
-                  {
-                      "id": 35,
-                      "type": "highlight",
-                      "prompt": "Tap/Select the sentence that uses double dashes (—such as ...—) to give concrete Examples of clinical longitudinal studies across three global cities. [U3-5.1, 5.2]",
-                      "targetSentenceIndex": 4,
-                      "explanation": "ประโยคที่ (5) ใช้เครื่องหมายขีดคู่ '—such as research tracking elderly patients in Montreal, Edinburgh, and Hyderabad—' ยกตัวอย่างงานวิจัยระยะยาว"
-                  },
-                  {
-                      "id": 36,
-                      "type": "mc",
-                      "prompt": "In Sentence (6), what does 'dementia' mean, and how do we know? [U3-5.1, 5.2]",
-                      "options": [
-                          "'A severe loss of memory and reasoning ability' — explained by the appositive phrase between commas",
-                          "'Speaking a single language' — explained by the word 'monolingual'",
-                          "'Strong cardiovascular muscles' — explained by Sentence (7)",
-                          "'Childhood language acquisition' — explained by Sentence (1)"
-                      ],
-                      "correctAnswer": 0,
-                      "explanation": "วลีคั่นด้วยคอมมา ', a severe loss of memory and reasoning ability,' นิยามความหมายของโรคสมองเสื่อม (dementia) ไว้ชัดเจน"
-                  },
-                  {
-                      "id": 37,
-                      "type": "mc",
-                      "prompt": "Using Sentence (1) ('speaking two languages') and Sentence (6) ('four to five years later than monolingual adults'), what does 'monolingual' mean? [U3-5.1, 5.4]",
-                      "options": [
-                          "Speaking four or five languages fluently",
-                          "Suffering from severe hearing loss",
-                          "Living in Montreal or Edinburgh",
-                          "Speaking or using only one single language (contrasted with 'bilingual')"
-                      ],
-                      "correctAnswer": 3,
-                      "explanation": "จากการเปรียบเทียบกับคำว่า 'bilinguals' (คนที่พูดสองภาษา) และรากศัพท์ mono- คำว่า monolingual จึงหมายถึง คนที่พูดเพียงภาษาเดียว"
-                  },
-                  {
-                      "id": 38,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (7) with the verb meaning 'improves, strengthens, or increases in quality': [U3-4.2.4]",
-                      "sentenceWithBlank": "Whereas physical exercise fortifies cardiovascular muscles, juggling multiple vocabularies [ _______ ] neuroplasticity by forging denser white-matter connections.",
-                      "choices": [
-                          "overturns",
-                          "suppresses",
-                          "enhances",
-                          "declines"
-                      ],
-                      "correctWord": "enhances",
-                      "explanation": "ประโยคเปรียบเทียบว่าการออกกำลังกายสร้างกล้ามเนื้อหัวใจฉันใด การสลับใช้คำศัพท์หลายภาษาก็ช่วย 'เสริมสร้าง/เพิ่มพูน' (enhances) ความยืดหยุ่นของสมองฉันนั้น"
-                  },
-                  {
-                      "id": 39,
-                      "type": "fillBlank",
-                      "prompt": "Complete Sentence (8) with the vocabulary word defined by ', meaning quickness and flexibility of thought,': [U3-5.1, 5.2]",
-                      "sentenceWithBlank": "Even adults who acquire a second language in middle age experience measurable improvements in mental [ _______ ], meaning quickness and flexibility of thought.",
-                      "choices": [
-                          "agility",
-                          "dementia",
-                          "intrusion",
-                          "misconception"
-                      ],
-                      "correctWord": "agility",
-                      "explanation": "วลี ', meaning quickness and flexibility of thought,' นิยามคำว่า agility (ความคล่องแคล่วว่องไวทางความคิด) ไว้โดยตรง"
-                  },
-                  {
-                      "id": 40,
-                      "type": "mc",
-                      "prompt": "Sentence Meaning Analysis: Identify the Core Subject, Main Verb, and Main Meaning of Sentence (8) ('Even adults who acquire a second language in middle age experience measurable improvements in mental agility...'): [U3-5.3, 6.2.4]",
-                      "options": [
-                          "Core Subject: 'middle age' | Main Verb: 'acquire' | Meaning: Only young children can learn a second language",
-                          "Core Subject: 'adults' | Main Verb: 'experience' | Meaning: Learning a second language in middle age still significantly improves mental quickness and brain flexibility",
-                          "Core Subject: 'the human brain' | Main Verb: 'reshape' | Meaning: Adults lose their memory when studying vocabulary",
-                          "Core Subject: 'flexibility of thought' | Main Verb: 'proving' | Meaning: Brain imaging technology is outdated"
-                      ],
-                      "correctAnswer": 1,
-                      "explanation": "ประธานหลักคือ 'adults' (ที่มีอนุประโยค 'who acquire a second language in middle age' ขยาย) กริยาหลักคือ 'experience' และกรรมคือ 'measurable improvements in mental agility'"
-                  }
-              ]
+            "id": 4,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Synonym Clue)",
+            "prompt": "In Sentence (4), what does the word 'packed' mean based on the synonym clue ', or ...'? [U3-5.1, 5.2]",
+            "options": [
+              "Broken and unable to move",
+              "Empty with no passengers inside",
+              "Very full of people / crowded",
+              "Very expensive to ride"
+            ],
+            "correctAnswer": 2,
+            "explanation": "วลี ', or very full of people,' เป็น Synonym Clue ที่แปลคำว่า packed ไว้ชัดเจนว่า แน่นขนัดหรือเต็มไปด้วยผู้คน (ข้อ C)"
+          },
+          {
+            "id": 5,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Context Signal)",
+            "prompt": "Complete Sentence (4) with the synonym clue word that means 'very full of people': [U3-5.2]",
+            "sentenceWithBlank": "A helpful man on the street told them that the number 35 bus was normally [ _______ ], or very full of people.",
+            "choices": [
+              "packed",
+              "quiet",
+              "empty",
+              "slow"
+            ],
+            "correctWord": "packed",
+            "explanation": "คำว่า packed มีความหมายพ้องกับ 'very full of people' ตามที่ขยายไว้หลังคำว่า or"
+          },
+          {
+            "id": 6,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Parentheses Clue)",
+            "prompt": "According to the parentheses ( ... ) in Sentence (5), what is an 'express bus'? [U3-5.1, 5.2]",
+            "options": [
+              "A small taxi that drives around one neighbourhood",
+              "A school bus that stops at every corner",
+              "A slow tour bus for taking photos",
+              "A fast bus that travels between big cities without stopping"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ข้อความในวงเล็บ '(a fast bus that travels between big cities without stopping)' นิยามคำว่า express bus ไว้ตรงตัว (ข้อ D)"
+          },
+          {
+            "id": 7,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (General Context Clue)",
+            "prompt": "In Sentence (5), Daniel woke up with a 'dead mobile battery'. What does 'dead' mean in this context? [U3-5.1]",
+            "options": [
+              "Brand new and working fast",
+              "Having no power left so the phone cannot turn on",
+              "Ringing very loudly in his pocket",
+              "Full of new text messages"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ในบริบทของแบตเตอรี่โทรศัพท์ (mobile battery) คำว่า dead หมายถึง แบตเตอรี่หมดเกลี้ยงจนเปิดเครื่องไม่ได้ (ข้อ B)"
+          },
+          {
+            "id": 8,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Cause & Effect)",
+            "prompt": "Tap/Select the sentence that explains WHY Daniel ended up in Valencia instead of the restaurant in Barcelona. [U3-5.3]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 (S5) ระบุสาเหตุด้วยคำว่า Because Daniel was very tired, he fell asleep on an express bus... and woke up in Valencia"
+          },
+          {
+            "id": 9,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Vocabulary in Context)",
+            "prompt": "Complete Sentence (6) with the word that means 'the answer to a problem': [U3-5.1]",
+            "sentenceWithBlank": "The next morning, Daniel had a clever [ _______ ]: he rode back to Barcelona in the back of a rice lorry.",
+            "choices": [
+              "problem",
+              "solution",
+              "accident",
+              "mistake"
+            ],
+            "correctWord": "solution",
+            "explanation": "คำว่า solution หมายถึง ทางออกหรือวิธีแก้ปัญหา (การขอติดรถบรรทุกข้าวกลับบาร์เซโลนา)"
+          },
+          {
+            "id": 10,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Sentence Meaning)",
+            "prompt": "Sentence Meaning Analysis: What is the Core Subject and Main Verb of the main clause in Sentence (5) ('Because Daniel was very tired, he fell asleep on an express bus...')? [U3-5.3, 6.2.4]",
+            "options": [
+              "Subject: Valencia | Verb: woke",
+              "Subject: a dead mobile battery | Verb: travels",
+              "Subject: he (Daniel) | Verb: fell asleep / woke up",
+              "Subject: big cities | Verb: stopping"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ตัดอนุประโยคบอกสาเหตุ 'Because Daniel was very tired,' ออก ประธานหลักคือ he (Daniel) และกริยาหลักคือ fell asleep ... and woke up (ข้อ C)"
           }
-      ]
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Story 2: A Very Unusual Excursion (The Lake Cabin)",
+        "thaiTitle": "เรื่องสั้นที่ 2: ทริปเดินป่าสุดประหลาด (A Very Unusual Excursion) [U3-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Lake Ullswater in the north-west of England has very mild weather—weather that is quite warm and comfortable, not too hot—so hikers love walking there in summer.",
+          "Last weekend, Sylvia and her friend George went on an excursion, or a short trip and outing, along a narrow path through the woods near the lake.",
+          "Near the shore of the lake, they entered an old wooden house and saw large footprints (marks left by feet on the dusty floor) before a big hairy creature ran out the back door!",
+          "When George disappeared in a thicket—a small, thick group of trees—and Sylvia's mobile phone had no service, she felt scared and worried.",
+          "The next afternoon, Sylvia returned to the cabin cautiously, or slowly and with great care, and saw orange lights shining inside the house.",
+          "Finally, the hairy creature took off its costume to reveal Sylvia's father, and her parents announced that they bought the old cabin as her birthday present to renovate (repair and make new) together!"
+        ],
+        "audioText": "Lake Ullswater in the north-west of England has very mild weather—weather that is quite warm and comfortable, not too hot—so hikers love walking there in summer. Last weekend, Sylvia and her friend George went on an excursion, or a short trip and outing, along a narrow path through the woods near the lake. Near the shore of the lake, they entered an old wooden house and saw large footprints (marks left by feet on the dusty floor) before a big hairy creature ran out the back door! When George disappeared in a thicket—a small, thick group of trees—and Sylvia's mobile phone had no service, she felt scared and worried. The next afternoon, Sylvia returned to the cabin cautiously, or slowly and with great care, and saw orange lights shining inside the house. Finally, the hairy creature took off its costume to reveal Sylvia's father, and her parents announced that they bought the old cabin as her birthday present to renovate (repair and make new) together!",
+        "questions": [
+          {
+            "id": 11,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue)",
+            "prompt": "In Sentence (1), what does 'mild weather' mean based on the dashes (— ... —)? [U3-5.1, 5.2]",
+            "options": [
+              "Weather that is freezing cold with heavy snow",
+              "Weather that is quite warm and comfortable, not too hot",
+              "Stormy weather with dangerous wind and rain",
+              "Extremely hot desert weather"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ข้อความในเครื่องหมายขีดคู่ '—weather that is quite warm and comfortable, not too hot—' นิยามคำว่า mild weather ไว้อย่างชัดเจน (ข้อ B)"
+          },
+          {
+            "id": 12,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Synonym Clue)",
+            "prompt": "In Sentence (2), which clue tells you that an 'excursion' is 'a short trip and outing'? [U3-5.1, 5.2]",
+            "options": [
+              "An antonym clue introduced by 'Unlike'",
+              "A question mark at the end of the sentence",
+              "A synonym clue introduced by ', or a short trip and outing,'",
+              "A list of numbers and dates"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ผู้เขียนใช้เครื่องหมายคอมมาตามด้วย ', or a short trip and outing,' ซึ่งเป็น Synonym Clue บอกความหมายของ excursion (ข้อ C)"
+          },
+          {
+            "id": 13,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Parentheses Clue)",
+            "prompt": "Tap/Select the sentence that uses parentheses ( ... ) to explain the word 'footprints'. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้วงเล็บ '(marks left by feet on the dusty floor)' เพื่ออธิบายความหมายของ footprints"
+          },
+          {
+            "id": 14,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue)",
+            "prompt": "According to Sentence (4), what is a 'thicket'? [U3-5.1, 5.2]",
+            "options": [
+              "A small, thick group of trees",
+              "A large restaurant in a town",
+              "A wooden boat on a lake",
+              "A birthday cake with candles"
+            ],
+            "correctAnswer": 0,
+            "explanation": "หลังเครื่องหมายขีดยาวในประโยคที่ 4 นิยามไว้ตรงๆ ว่า '—a small, thick group of trees—' (พุ่มไม้หรือกลุ่มต้นไม้ทึบ) (ข้อ A)"
+          },
+          {
+            "id": 15,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Synonym Clue)",
+            "prompt": "Complete Sentence (5) with the adverb that means 'slowly and with great care': [U3-5.1, 5.2]",
+            "sentenceWithBlank": "The next afternoon, Sylvia returned to the cabin [ _______ ], or slowly and with great care.",
+            "choices": [
+              "loudly",
+              "cautiously",
+              "angrily",
+              "carelessly"
+            ],
+            "correctWord": "cautiously",
+            "explanation": "คำว่า cautiously แปลว่า อย่างระมัดระวัง ซึ่งสอดคล้องกับ Synonym Clue หลังคำว่า ', or slowly and with great care'"
+          },
+          {
+            "id": 16,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (General Context Clue)",
+            "prompt": "In Sentence (6), the hairy creature 'took off its costume to reveal Sylvia's father'. What is a 'costume'? [U3-5.1]",
+            "options": [
+              "A pair of sunglasses for driving",
+              "A set of clothes worn to make someone look like another person or creature",
+              "A mobile phone charger",
+              "A ticket for an express bus"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากบริบทที่สัตว์ประหลาดถอดชุดออกแล้วกลายเป็นคุณพ่อของซิลเวีย คำว่า costume จึงหมายถึง ชุดปลอมตัวหรือชุดแฟนซี (ข้อ B)"
+          },
+          {
+            "id": 17,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Parentheses Clue)",
+            "prompt": "In Sentence (6), what does the word 'renovate' mean? [U3-5.1, 5.2]",
+            "options": [
+              "To burn down an old building",
+              "To sell a house to a stranger",
+              "To lock all the doors and windows",
+              "To repair and make a building new and better"
+            ],
+            "correctAnswer": 3,
+            "explanation": "วงเล็บท้ายประโยคที่ 6 '(repair and make new)' แปลความหมายของคำกริยา renovate (ซ่อมแซมและปรับปรุงบ้านใหม่) ไว้ตรงตัว (ข้อ D)"
+          },
+          {
+            "id": 18,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Synonym Clue)",
+            "prompt": "Tap/Select the sentence that uses ', or slowly and with great care,' to explain how Sylvia walked back to the cabin. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 (S5) ใช้ ', or slowly and with great care,' ขยายคำว่า cautiously"
+          },
+          {
+            "id": 19,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Vocabulary in Context)",
+            "prompt": "Complete Sentence (4): When George disappeared and Sylvia's phone had no service, she felt [ _______ ] and worried. [U3-5.1]",
+            "sentenceWithBlank": "When George disappeared in a thicket and Sylvia's mobile phone had no service, she felt [ _______ ] and worried.",
+            "choices": [
+              "scared",
+              "relaxed",
+              "lucky",
+              "sleepy"
+            ],
+            "correctWord": "scared",
+            "explanation": "เมื่อเพื่อนหายตัวไปและโทรศัพท์ไม่มีสัญญาณในป่า ซิลเวียจึงรู้สึกกลัวและกังวล (scared and worried)"
+          },
+          {
+            "id": 20,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Sentence Meaning)",
+            "prompt": "What is the main meaning of Sentence (6)? [U3-5.3, 6.2.4]",
+            "options": [
+              "A real bear chased Sylvia's father out of the old cabin.",
+              "Sylvia's father dressed up as the creature for a birthday surprise, and her parents gave her the cabin as a gift.",
+              "Sylvia decided to sell the old wooden house because she was afraid of the lake.",
+              "George bought a new boat for Sylvia's birthday."
+            ],
+            "correctAnswer": 1,
+            "explanation": "แก่นความหมายของประโยคที่ 6 คือ คุณพ่อปลอมตัวเป็นสัตว์ประหลาดเพื่อเซอร์ไพรส์วันเกิด และมอบบ้านไม้ริมทะเลสาบเป็นของขวัญวันเกิดให้ซิลเวีย (ข้อ B)"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Story 3: The Watch (The Time-Travelling Pirate)",
+        "thaiTitle": "เรื่องสั้นที่ 3: นาฬิกาโจรสลัดข้ามเวลา (The Watch) [U3-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Carl was a skilled watchmaker—a person who makes and repairs watches—who lived near Eastern Green Beach in the south-west of England.",
+          "One evening on the beach, Carl's friend Susan, who worked as a security guard, showed him an antique watch that she had found in the sand.",
+          "In Carl's workshop, they read an old book about pirates (sailors who attack and steal from other ships at sea) and learned a legend about Captain Eric el Kraken's magic time-travelling watch.",
+          "Suddenly, a stout man, or a round and heavy man, wearing old-fashioned seventeenth-century clothes stole the watch and ran towards the beach!",
+          "When Carl, Susan, and the pirate Eric touched the watch together, they were transported to a pirate camp in the Caribbean Sea, where thirty English ships were preparing to attack.",
+          "During the cannon battle at the helm (the steering wheel of the ship), Carl and Susan grabbed the watch, returned to the twenty-first century, and made Eric promise to destroy the dangerous watch."
+        ],
+        "audioText": "Carl was a skilled watchmaker—a person who makes and repairs watches—who lived near Eastern Green Beach in the south-west of England. One evening on the beach, Carl's friend Susan, who worked as a security guard, showed him an antique watch that she had found in the sand. In Carl's workshop, they read an old book about pirates (sailors who attack and steal from other ships at sea) and learned a legend about Captain Eric el Kraken's magic time-travelling watch. Suddenly, a stout man, or a round and heavy man, wearing old-fashioned seventeenth-century clothes stole the watch and ran towards the beach! When Carl, Susan, and the pirate Eric touched the watch together, they were transported to a pirate camp in the Caribbean Sea, where thirty English ships were preparing to attack. During the cannon battle at the helm (the steering wheel of the ship), Carl and Susan grabbed the watch, returned to the twenty-first century, and made Eric promise to destroy the dangerous watch.",
+        "questions": [
+          {
+            "id": 21,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue)",
+            "prompt": "Based on the dashes (— ... —) in Sentence (1), what is a 'watchmaker'? [U3-5.1, 5.2]",
+            "options": [
+              "A person who makes and repairs watches",
+              "A sailor who steers a large ship",
+              "A guard who watches boats on the beach",
+              "A writer who writes books about pirates"
+            ],
+            "correctAnswer": 0,
+            "explanation": "เครื่องหมายขีดคู่ในประโยคที่ 1 '—a person who makes and repairs watches—' นิยามคำว่า watchmaker ไว้โดยตรง (ข้อ A)"
+          },
+          {
+            "id": 22,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Parentheses Clue)",
+            "prompt": "Tap/Select the sentence that uses parentheses ( ... ) to define the word 'pirates'. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้วงเล็บ '(sailors who attack and steal from other ships at sea)' เพื่อนิยามคำว่า pirates"
+          },
+          {
+            "id": 23,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Synonym Clue)",
+            "prompt": "In Sentence (4), what does the word 'stout' mean based on the clue ', or a round and heavy man,'? [U3-5.1, 5.2]",
+            "options": [
+              "Very tall and thin",
+              "Young and fast",
+              "Round, heavy, and solidly built",
+              "Weak and sick"
+            ],
+            "correctAnswer": 2,
+            "explanation": "วลี ', or a round and heavy man,' เป็น Synonym Clue ที่อธิบายว่า stout แปลว่า รูปร่างอ้วนท้วมและกำยำ (ข้อ C)"
+          },
+          {
+            "id": 24,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (General Context Clue)",
+            "prompt": "In Sentence (5), Carl, Susan, and Eric touched the watch and 'were transported to a pirate camp in the Caribbean Sea'. What does 'transported' mean? [U3-5.1]",
+            "options": [
+              "Locked inside a dark room in Penzance",
+              "Moved or carried from one place (or time) to another",
+              "Given a new job at a watch shop",
+              "Asked to write a story in a book"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากบริบทการแตะนาฬิกาวิเศษแล้วข้ามเวลาไปโผล่ที่ค่ายโจรสลัดในทะเลแคริบเบียน คำว่า transported จึงหมายถึง ถูกเคลื่อนย้ายหรือพาไปอีกสถานที่หนึ่ง (ข้อ B)"
+          },
+          {
+            "id": 25,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Definition Clue)",
+            "prompt": "Complete Sentence (6) with the ship part defined as '(the steering wheel of the ship)': [U3-5.1, 5.2]",
+            "sentenceWithBlank": "During the cannon battle at the [ _______ ] (the steering wheel of the ship), Carl and Susan grabbed the watch.",
+            "choices": [
+              "helm",
+              "sand",
+              "tent",
+              "pocket"
+            ],
+            "correctWord": "helm",
+            "explanation": "คำว่า helm มีวงเล็บขยายความหมายไว้ข้างหลังว่า '(the steering wheel of the ship)' คือพังงาหรือพวงมาลัยบังคับเรือ"
+          },
+          {
+            "id": 26,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (General Context Clue)",
+            "prompt": "In Sentence (6), Carl and Susan 'grabbed the watch' during the battle. What does 'grabbed' mean? [U3-5.1]",
+            "options": [
+              "Looked at something from far away",
+              "Cleaned something slowly with a cloth",
+              "Forgot where something was hidden",
+              "Took hold of something suddenly and quickly"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ในฉากการต่อสู้ที่ชุลมุน คำว่า grabbed หมายถึง คว้าหรือฉวยเอาไว้อย่างรวดเร็ว (ข้อ D)"
+          },
+          {
+            "id": 27,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Synonym Clue)",
+            "prompt": "Tap/Select the sentence in the story that uses ', or' to explain the word 'stout'. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 3,
+            "explanation": "ประโยคที่ 4 (S4) มีวลี 'a stout man, or a round and heavy man,' ซึ่งใช้ ', or' บอกความหมายพ้อง"
+          },
+          {
+            "id": 28,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Vocabulary in Context)",
+            "prompt": "Complete Sentence (6) with the verb that means 'to damage something so badly that it can never be used again': [U3-5.1]",
+            "sentenceWithBlank": "Carl and Susan returned to the twenty-first century and made Eric promise to [ _______ ] the dangerous watch.",
+            "choices": [
+              "destroy",
+              "polish",
+              "borrow",
+              "wear"
+            ],
+            "correctWord": "destroy",
+            "explanation": "เพราะนาฬิกาเป็นสิ่งอันตราย ซูซานจึงให้โจรสลัดอีริคสัญญาว่าจะทำลาย (destroy) นาฬิกาทิ้งเมื่อกลับถึงยุคของตน"
+          },
+          {
+            "id": 29,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Sentence Meaning)",
+            "prompt": "Sentence Meaning Analysis: In Sentence (2) ('One evening on the beach, Carl's friend Susan, who worked as a security guard, showed him an antique watch...'), what is the Core Subject and Main Verb? [U3-5.3, 6.2.4]",
+            "options": [
+              "Subject: One evening | Verb: worked",
+              "Subject: a security guard | Verb: found",
+              "Subject: Carl's friend Susan | Verb: showed",
+              "Subject: the beach | Verb: showed"
+            ],
+            "correctAnswer": 2,
+            "explanation": "เมื่อตัดส่วนขยาย 'who worked as a security guard' ที่คั่นด้วยคอมมาออก จะเห็นประธานหลักคือ Carl's friend Susan และกริยาหลักคือ showed (ข้อ C)"
+          },
+          {
+            "id": 30,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Sentence Meaning)",
+            "prompt": "Why did Carl and Susan want Eric to destroy the watch at the end of the story? [U3-5.3]",
+            "options": [
+              "Because the watch was too heavy to carry.",
+              "Because the watch's time-travel power was dangerous and caused battles.",
+              "Because Carl wanted to sell a new watch to Eric.",
+              "Because the watch could only tell time in London."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ใจความสำคัญตอนจบระบุว่านาฬิกาข้ามเวลานั้นอันตรายและเป็นต้นเหตุของสงครามแย่งชิง จึงต้องทำลายทิ้งเพื่อความปลอดภัย (ข้อ B)"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Story 4: The Chest (The Secret of the Three Numbers)",
+        "thaiTitle": "เรื่องสั้นที่ 4: หีบปริศนากับตัวเลขทั้งสาม (The Chest) [U3-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Walter was a kind elderly man from Scotland who had a long white beard and an important mission—a special task that he believed he must complete.",
+          "Walter showed a young man named David a photograph of an old wooden chest (a large, strong box used for storing valuable things) that had a three-number lock.",
+          "After searching his tidy garage in Edinburgh, David unwrapped an old cloth and found a gold necklace with the first secret number inside.",
+          "Next, Walter travelled to Belfast to visit Lucy, a wealthy designer who grew impatient—easily annoyed because she did not like waiting—while Walter searched his jacket pockets for the photo.",
+          "After finding the second number in Lucy's necklace and the third number on Alan's ring in London, Walter gave all three people identical, or exactly the same, letters inviting them to his home.",
+          "When David, Lucy, and Alan unlocked the chest together, they read an emotional letter and realized that they were siblings (brothers and sister) and that Walter was their loving uncle!"
+        ],
+        "audioText": "Walter was a kind elderly man from Scotland who had a long white beard and an important mission—a special task that he believed he must complete. Walter showed a young man named David a photograph of an old wooden chest (a large, strong box used for storing valuable things) that had a three-number lock. After searching his tidy garage in Edinburgh, David unwrapped an old cloth and found a gold necklace with the first secret number inside. Next, Walter travelled to Belfast to visit Lucy, a wealthy designer who grew impatient—easily annoyed because she did not like waiting—while Walter searched his jacket pockets for the photo. After finding the second number in Lucy's necklace and the third number on Alan's ring in London, Walter gave all three people identical, or exactly the same, letters inviting them to his home. When David, Lucy, and Alan unlocked the chest together, they read an emotional letter and realized that they were siblings (brothers and sister) and that Walter was their loving uncle!",
+        "questions": [
+          {
+            "id": 31,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue)",
+            "prompt": "Based on the dash (—) in Sentence (1), what is a 'mission'? [U3-5.1, 5.2]",
+            "options": [
+              "A special task or important job that someone believes they must complete",
+              "A long white beard on an old man's chin",
+              "A train ticket from Scotland to London",
+              "A local newspaper in a city park"
+            ],
+            "correctAnswer": 0,
+            "explanation": "หลังเครื่องหมายขีดยาวในประโยคที่ 1 นิยามไว้ชัดเจนว่า '—a special task that he believed he must complete' คือภารกิจสำคัญที่ต้องทำสำเร็จ (ข้อ A)"
+          },
+          {
+            "id": 32,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Parentheses Clue)",
+            "prompt": "Tap/Select the sentence that uses parentheses ( ... ) to explain what a 'chest' is. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 1,
+            "explanation": "ประโยคที่ 2 (S2) ใช้วงเล็บ '(a large, strong box used for storing valuable things)' เพื่อนิยามคำว่า chest (หีบเก็บของมีค่า)"
+          },
+          {
+            "id": 33,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Word Parts & Context Clue)",
+            "prompt": "In Sentence (3), David 'unwrapped an old cloth and found a gold necklace...'. What does 'unwrapped' mean? [U3-5.1]",
+            "options": [
+              "Bought a new piece of cloth at a store",
+              "Removed or opened the cloth covering something",
+              "Threw the necklace into the rubbish bin",
+              "Painted a picture on the garage wall"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำว่า unwrapped (un- + wrap) ร่วมกับบริบทการพบสร้อยคอทองคำที่อยู่ข้างใน หมายถึง คลี่หรือแกะผ้าที่ห่อไว้ออก (ข้อ B)"
+          },
+          {
+            "id": 34,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Definition Clue via Dashes)",
+            "prompt": "According to Sentence (4), what does 'impatient' mean? [U3-5.1, 5.2]",
+            "options": [
+              "Very calm and happy to wait all day",
+              "Sleepy after drinking hot afternoon tea",
+              "Easily annoyed or restless because you do not like waiting",
+              "Afraid of dogs in the garden"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ข้อความในเครื่องหมายขีดคู่ '—easily annoyed because she did not like waiting—' นิยามคำว่า impatient (ใจร้อน/ไม่ชอบรอคอย) ไว้โดยตรง (ข้อ C)"
+          },
+          {
+            "id": 35,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Synonym Clue)",
+            "prompt": "Complete Sentence (5) with the word that means 'exactly the same': [U3-5.1, 5.2]",
+            "sentenceWithBlank": "Walter gave all three people [ _______ ], or exactly the same, letters inviting them to his home.",
+            "choices": [
+              "different",
+              "identical",
+              "broken",
+              "empty"
+            ],
+            "correctWord": "identical",
+            "explanation": "คำว่า identical มี Synonym Clue ขยายอยู่ข้างหลังว่า ', or exactly the same,' แปลว่า เหมือนกันทุกประการ"
+          },
+          {
+            "id": 36,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Parentheses Clue)",
+            "prompt": "In Sentence (6), what does the word 'siblings' mean? [U3-5.1, 5.2]",
+            "options": [
+              "Strangers who meet on a train",
+              "Business partners in a design company",
+              "Neighbours who live on the same street",
+              "Brothers and sisters who share the same parents"
+            ],
+            "correctAnswer": 3,
+            "explanation": "วงเล็บ '(brothers and sister)' ในประโยคที่ 6 นิยามคำว่า siblings (พี่น้องท้องเดียวกัน) ไว้ตรงตัว (ข้อ D)"
+          },
+          {
+            "id": 37,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (General Context Clue)",
+            "prompt": "In Sentence (6), they read the letter and 'realized' that they were siblings. What does 'realized' mean? [U3-5.1]",
+            "options": [
+              "Forgot something they knew a long time ago",
+              "Came to know and understand a truth that they did not know before",
+              "Refused to believe what was written in the letter",
+              "Wrote a new letter to the adoption agency"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากบริบทการเปิดหีบอ่านจดหมายของลุงวอลเตอร์ คำว่า realized จึงหมายถึง ตระหนักรู้หรือเข้าใจความจริงที่ไม่เคยรู้มาก่อน (ข้อ B)"
+          },
+          {
+            "id": 38,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Synonym Clue)",
+            "prompt": "Tap/Select the sentence that uses ', or' to define the word 'identical'. [U3-5.1, 5.2]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 (S5) ใช้ ', or exactly the same,' เพื่อบอกความหมายพ้องของคำว่า identical"
+          },
+          {
+            "id": 39,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Vocabulary in Context)",
+            "prompt": "Complete Sentence (6): They read the letter and realized that they were [ _______ ] (brothers and sister). [U3-5.1]",
+            "sentenceWithBlank": "They read an emotional letter and realized that they were [ _______ ] (brothers and sister) and that Walter was their loving uncle!",
+            "choices": [
+              "siblings",
+              "tourists",
+              "guards",
+              "traders"
+            ],
+            "correctWord": "siblings",
+            "explanation": "คำว่า siblings หมายถึง พี่น้อง (brothers and sister) ตามที่ระบุไว้ในวงเล็บ"
+          },
+          {
+            "id": 40,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Sentence Meaning)",
+            "prompt": "Sentence Meaning Analysis: What is the main takeaway of Sentence (6)? [U3-5.3, 6.2.4]",
+            "options": [
+              "The chest contained gold coins that made David, Lucy, and Alan rich.",
+              "Walter was a stranger who wanted to buy their antique necklaces.",
+              "Opening the chest revealed the family truth: David, Lucy, and Alan are brothers and sister, and Walter is their uncle.",
+              "David, Lucy, and Alan decided to move to Belfast together."
+            ],
+            "correctAnswer": 2,
+            "explanation": "ใจความสำคัญของประโยคสุดท้ายคือ เมื่อทั้งสามคนเปิดหีบออกและอ่านจดหมาย พวกเขาก็ได้รู้ความจริงว่าเป็นพี่น้องกัน และวอลเตอร์คือคุณลุงของพวกเขา (ข้อ C)"
+          }
+        ]
+      }
+    ]
   }
 };
