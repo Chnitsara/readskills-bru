@@ -540,7 +540,6 @@ h1, h2, h3, .nb-display {
   box-shadow: var(--nb-shadow-sm);
   background: #fff;
   color: var(--nb-ink);
-  transform: rotate(-2deg);
 }
 .nb-chip-yellow { background: var(--nb-yellow); }
 
@@ -646,20 +645,14 @@ div.rounded-full[class*="bg-gradient-to-r"] {
   background: var(--nb-purple) !important;
 }
 
-/* ---------- Icon tiles: little ink-outlined squares ---------- */
-.glass-card div.rounded-xl[class*="bg-purple-100"],
-.glass-card div.rounded-xl[class*="bg-pink-100"],
-.glass-card div.rounded-xl[class*="bg-amber-100"],
-.glass-card div.rounded-xl[class*="bg-emerald-100"] {
+/* ---------- Icon tiles: little ink-outlined squares (no rotation/hover animation) ---------- */
+.glass-card div.w-10.rounded-xl[class*="bg-purple-100"],
+.glass-card div.w-10.rounded-xl[class*="bg-pink-100"],
+.glass-card div.w-10.rounded-xl[class*="bg-amber-100"],
+.glass-card div.w-10.rounded-xl[class*="bg-emerald-100"],
+.glass-card div.w-12.rounded-xl[class*="bg-purple-100"] {
   border: 2px solid var(--nb-ink) !important;
   box-shadow: var(--nb-shadow-sm);
-  transition: transform .2s ease;
-}
-.glass-card:hover div.rounded-xl[class*="bg-purple-100"],
-.glass-card:hover div.rounded-xl[class*="bg-pink-100"],
-.glass-card:hover div.rounded-xl[class*="bg-amber-100"],
-.glass-card:hover div.rounded-xl[class*="bg-emerald-100"] {
-  transform: rotate(-6deg) scale(1.05);
 }
 
 /* ---------- Dark passage boxes ---------- */
