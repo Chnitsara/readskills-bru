@@ -483,18 +483,10 @@ h1, h2, h3, .nb-display {
   box-shadow: var(--nb-shadow) !important;
 }
 .glass-card {
-  transition: transform .15s ease, box-shadow .15s ease !important;
+  transition: box-shadow .15s ease !important;
 }
 .glass-card:hover {
-  transform: translate(-2px, -2px) !important;
-  box-shadow: var(--nb-shadow-lg) !important;
-}
-/* Cards that hold quizzes / long content shouldn't jump */
-.glass-card.min-h-\[300px\]:hover,
-.glass-card:has(input):hover,
-.glass-card:has(canvas):hover {
   transform: none !important;
-  box-shadow: var(--nb-shadow) !important;
 }
 
 /* Colored top-stripe cards keep their accent as a thick top bar */
@@ -516,19 +508,9 @@ h1, h2, h3, .nb-display {
   border-radius: 18px;
   box-shadow: var(--nb-shadow-lg);
 }
-.nb-sticker { display: none; transform: rotate(-12deg); animation: nb-bob 3s ease-in-out infinite; }
+.nb-sticker { display: none; }
 @media (min-width: 640px) { .nb-sticker { display: block; } }
-.nb-wave { transform-origin: 70% 70%; animation: nb-wave 2.4s ease-in-out infinite; }
-
-@keyframes nb-bob {
-  0%, 100% { transform: rotate(-12deg) translateY(0); }
-  50% { transform: rotate(-6deg) translateY(-6px); }
-}
-@keyframes nb-wave {
-  0%, 60%, 100% { transform: rotate(0); }
-  10%, 30% { transform: rotate(16deg); }
-  20%, 40% { transform: rotate(-8deg); }
-}
+.nb-wave { display: inline-block; }
 
 /* ---------- Chips / pills ---------- */
 .nb-chip {
@@ -540,6 +522,7 @@ h1, h2, h3, .nb-display {
   box-shadow: var(--nb-shadow-sm);
   background: #fff;
   color: var(--nb-ink);
+  transform: none !important;
 }
 .nb-chip-yellow { background: var(--nb-yellow); }
 
@@ -557,10 +540,10 @@ span.rounded-full[class*="bg-"]:not([class*="h-2"]):not([class*="w-2"]):not([cla
   border-radius: 12px;
   box-shadow: var(--nb-shadow);
   cursor: pointer;
-  transition: transform .1s ease, box-shadow .1s ease;
+  transition: box-shadow .1s ease;
 }
-.nb-btn:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--nb-ink); }
-.nb-btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--nb-ink); }
+.nb-btn:hover { transform: none !important; box-shadow: 5px 5px 0 var(--nb-ink); }
+.nb-btn:active { transform: none !important; box-shadow: 1px 1px 0 var(--nb-ink); }
 .nb-btn-purple { background: var(--nb-purple); color: #fff; }
 .nb-btn-white { background: #fff; color: var(--nb-ink); }
 
@@ -579,16 +562,16 @@ button[class*="bg-rose-6"],
 .stage-tab-active {
   border: 2px solid var(--nb-ink) !important;
   box-shadow: var(--nb-shadow-sm) !important;
-  transition: transform .1s ease, box-shadow .1s ease !important;
+  transition: box-shadow .1s ease !important;
 }
 button[class*="bg-purple-6"]:not(:disabled):hover,
 button[class*="bg-purple-7"]:not(:disabled):hover,
 button[class*="bg-slate-9"]:not(:disabled):hover,
 .btn-purple-primary:hover {
-  transform: translate(-1px, -1px) !important;
+  transform: none !important;
   box-shadow: 4px 4px 0 var(--nb-ink) !important;
 }
-button:not(:disabled):active { transform: translate(2px, 2px) !important; box-shadow: none !important; }
+button:not(:disabled):active { transform: none !important; box-shadow: none !important; }
 
 button[class*="bg-purple-6"], button[class*="bg-purple-7"], .btn-purple-primary,
 .auth-tab-active, .stage-tab-active {
@@ -603,7 +586,7 @@ button.border[class*="border-slate-"] {
 }
 button.border[class*="border-purple-"]:not(:disabled):hover {
   box-shadow: var(--nb-shadow-sm);
-  transform: translate(-1px, -1px);
+  transform: none !important;
 }
 /* Keep correct/wrong feedback colors visible */
 button[class*="border-emerald-"] { border-color: #059669 !important; border-width: 2px !important; }
@@ -645,14 +628,10 @@ div.rounded-full[class*="bg-gradient-to-r"] {
   background: var(--nb-purple) !important;
 }
 
-/* ---------- Icon tiles: little ink-outlined squares (no rotation/hover animation) ---------- */
-.glass-card div.w-10.rounded-xl[class*="bg-purple-100"],
-.glass-card div.w-10.rounded-xl[class*="bg-pink-100"],
-.glass-card div.w-10.rounded-xl[class*="bg-amber-100"],
-.glass-card div.w-10.rounded-xl[class*="bg-emerald-100"],
-.glass-card div.w-12.rounded-xl[class*="bg-purple-100"] {
-  border: 2px solid var(--nb-ink) !important;
-  box-shadow: var(--nb-shadow-sm);
+/* ---------- Force zero rotation/transform on any inner boxes on hover ---------- */
+.glass-card div,
+.glass-card:hover div {
+  transform: none !important;
 }
 
 /* ---------- Dark passage boxes ---------- */
@@ -667,10 +646,6 @@ div[class*="bg-slate-900"], div[class*="bg-purple-950"] {
 
 @media (max-width: 640px) {
   :root { --nb-shadow: 3px 3px 0 var(--nb-ink); --nb-shadow-lg: 4px 4px 0 var(--nb-ink); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .nb-sticker, .nb-wave { animation: none; }
 }
 
 /* Header nav: keep labels on one line */
