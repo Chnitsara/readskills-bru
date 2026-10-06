@@ -125,37 +125,27 @@ window.ReadSkillsData = {
     {
       "id": 4,
       "code": "UNIT-04",
-      "title": "References, Connectives & Text Organization",
-      "thaiTitle": "คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ",
-      "scope": "Reference words, connectives, paragraph organization, text structure practice",
-      "description": "Identify pronoun references (it, they, which) and logical transitions (however, furthermore, as a result).",
-      "cefr": "B1",
+      "title": "References, Connectives, and Text Organization",
+      "thaiTitle": "การแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างบทอ่าน (Tracing Logical Connections)",
+      "scope": "Reference words (personal, demonstrative, relative, substitute), connectives, text organization patterns (description, sequence, cause-effect, compare-contrast, problem-solution), text mapping",
+      "description": "Trace reference words, understand logical connectives, recognize 5 text organization patterns, and create visual text maps using Level 4 stories.",
+      "cefr": "A2-B1",
       "stages": {
         "preReading": {
           "title": "Pre-Reading Stage",
           "steps": {
-            "overview": "Pronouns like 'it', 'they', 'this', and 'these' refer back to nouns mentioned earlier.",
-            "learn": "Find the antecedent by matching number (singular/plural) and meaning in the previous sentence."
+            "overview": "\n<div class=\"space-y-6\">\n  <!-- Unit Header & Syllabus Ref -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 04</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U4-6.1.1 &bull; U4-6.1.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Level 4 Passages</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Overview & Warm-Up</h3>\n      <p class=\"text-xs text-slate-500\">บทนำสู่บทเรียนและกิจกรรมอุ่นเครื่อง: การแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างบทอ่าน (Tracing Logical Connections)</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">\n      Course 2031103 &bull; Section 6.1\n    </span>\n  </div>\n\n  <!-- Objectives & Concept Model Grid [U4-4, U4-6.1.1] -->\n  <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n    <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n        <i data-lucide=\"target\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit Learning Objectives (วัตถุประสงค์การเรียนรู้) [U4-4, U4-6.1.1]</span>\n      </div>\n      <ul class=\"text-xs text-slate-700 space-y-2 leading-relaxed\">\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">1</span>\n          <span><strong>Reference Words (คำอ้างอิง):</strong> ระบุและเชื่อมโยงคำสรรพนามและคำอ้างอิง (Personal Pronouns, Demonstratives, Relative Pronouns, Substitute Words) กลับไปยังคำนามหลักได้อย่างแม่นยำ <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U4-4.2.1, 4.2.3, 5.1]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">2</span>\n          <span><strong>Connectives & Transition Words (คำเชื่อม):</strong> อธิบายหน้าที่ของคำเชื่อมบอกการเสริมความ การขัดแย้ง เหตุและผล เงื่อนไข ลำดับขั้นตอน และการยกตัวอย่าง <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U4-4.2.1, 5.2]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">3</span>\n          <span><strong>Text Organization & Text Maps (โครงสร้างและผังข้อความ):</strong> จำแนกรูปแบบการจัดเรียงบทอ่าน 5 รูปแบบ (Description, Sequence, Cause & Effect, Compare & Contrast, Problem & Solution) และสร้างผังความคิดได้ <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U4-4.2.2, 4.2.4, 5.3, 5.4]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">4</span>\n          <span><strong>Graded Mastery (Indicator 3.3):</strong> ทำกิจกรรม Reference Matching Task และ Text Structure Practice ผ่านเกณฑ์ความถูกต้องไม่ต่ำกว่า 70% <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U4-3.3, 4.2.5, 5.5, 5.6]</span></span>\n        </li>\n      </ul>\n    </div>\n\n    <!-- 3-Pillar Cohesion Model Card [U4-6.1.1] -->\n    <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 to-indigo-50/90 rounded-2xl border border-purple-200/80 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n          <i data-lucide=\"git-merge\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>Tracing Logical Connections Model [U4-6.1.1]</span>\n        </div>\n        <span class=\"text-[10px] font-mono bg-purple-200/80 text-purple-900 px-2 py-0.5 rounded font-bold\">3-Pillar Model</span>\n      </div>\n      \n      <div class=\"space-y-2.5 text-xs\">\n        <div class=\"p-2.5 bg-amber-100 border border-amber-300 rounded-xl text-amber-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-amber-500 text-white flex items-center justify-center font-bold text-[10px]\">1</span>\n            <span><strong>Yellow Pillar: Reference Words (คำอ้างอิง) [U4-5.1]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-amber-900 pl-7\">it, they, their, this, these, who, which, one, do so ➔ ชี้กลับไปหาคำนามข้างหน้า</p>\n        </div>\n\n        <div class=\"p-2.5 bg-emerald-100 border border-emerald-300 rounded-xl text-emerald-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]\">2</span>\n            <span><strong>Green Pillar: Connectives (คำเชื่อมความคิด) [U4-5.2]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-emerald-900 pl-7\">first, next, however, because, so, as a result, in addition, for example</p>\n        </div>\n\n        <div class=\"p-2.5 bg-sky-100 border border-sky-300 rounded-xl text-sky-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-sky-600 text-white flex items-center justify-center font-bold text-[10px]\">3</span>\n            <span><strong>Blue Pillar: Text Organization (โครงสร้างบทอ่าน) [U4-5.3, 5.4]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-sky-900 pl-7\">Description &bull; Sequence &bull; Cause-Effect &bull; Compare-Contrast &bull; Problem-Solution</p>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Warm-Up Activity: Paragraph with Missing Reference Words & Connectives [U4-6.1.2] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-200 shadow-sm space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"w-6 h-6 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">⚡</span>\n        <h4 class=\"font-bold text-slate-900 text-sm sm:text-base\">Warm-Up Activity: Missing Links in the Story [U4-6.1.2]</h4>\n      </div>\n      <span class=\"text-[11px] font-bold text-pink-700 bg-pink-100 px-2.5 py-1 rounded-full\">Story: The Thirsty Crow (Level 4)</span>\n    </div>\n\n    <p class=\"text-xs text-slate-600\">\n      ลองอ่านย่อหน้าจากนิทานเรื่อง <em>\"The Thirsty Crow\"</em> ที่ถูกตัด <strong>คำอ้างอิง (Reference Words)</strong> และ <strong>คำเชื่อม (Connectives)</strong> ออกไป แล้วสังเกตว่าเมื่อคำเหล่านี้หายไป เนื้อเรื่องขาดความเชื่อมโยงอย่างไร:\n    </p>\n\n    <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n      <div class=\"text-[10px] font-sans font-bold text-purple-300 uppercase tracking-wider mb-1\">Paragraph with Missing Reference Words & Connectives [U4-6.1.2]</div>\n      <p>\n        \"One day a thirsty crow was flying in rings above a roadside when <span class=\"text-amber-300 font-bold underline\">[ 1. ___ ]</span> spotted a pitcher in the middle of the road. The crow dipped her beak into the narrow neck of the pitcher, <span class=\"text-emerald-300 font-bold underline\">[ 2. ___ ]</span> there was only a little water at the very bottom. <span class=\"text-emerald-300 font-bold underline\">[ 3. ___ ]</span>, she picked up little pebbles and dropped <span class=\"text-amber-300 font-bold underline\">[ 4. ___ ]</span> one by one into the pitcher so the water rose to the top!\"\n      </p>\n    </div>\n\n    <!-- Warm-Up Question -->\n    <div class=\"p-4 bg-purple-50/80 rounded-xl border border-purple-200/90 space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n          <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>ควรเติมคำอ้างอิงและคำเชื่อมชุดใดลงในช่องว่าง [1], [2], [3], [4] เพื่อให้ประโยคไหลลื่นและได้ใจความสมบูรณ์?</span>\n        </span>\n        <span class=\"text-[10px] font-mono bg-purple-200 text-purple-900 px-2 py-0.5 rounded font-bold\">U4-6.1.2</span>\n      </div>\n\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.checkUnit4Warmup(1)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">A</span>\n          <span>[1] it &bull; [2] because &bull; [3] For example &bull; [4] her</span>\n        </button>\n        <button onclick=\"app.checkUnit4Warmup(2)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">B</span>\n          <span>[1] she (the crow) &bull; [2] but &bull; [3] Finally &bull; [4] them (the pebbles)</span>\n        </button>\n        <button onclick=\"app.checkUnit4Warmup(3)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">C</span>\n          <span>[1] they &bull; [2] similarly &bull; [3] First &bull; [4] it</span>\n        </button>\n        <button onclick=\"app.checkUnit4Warmup(4)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">D</span>\n          <span>[1] who &bull; [2] therefore &bull; [3] Instead &bull; [4] us</span>\n        </button>\n      </div>\n\n      <div id=\"u4-warmup-feedback\" class=\"hidden p-3 rounded-xl text-xs font-medium\"></div>\n    </div>\n\n    <div class=\"flex justify-end pt-2\">\n      <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n        <span>Next: Key Concepts & Reference Matching Task</span>\n        <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n",
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 04</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U4-6.1.3..6.1.5 &bull; U4-5.1..5.3</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Key Concepts</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Reference Words, Connectives & Organization Patterns</h3>\n      <p class=\"text-xs text-slate-500\">เรียนรู้คำอ้างอิง 4 ชนิด, คำเชื่อม 6 กลุ่ม, โครงสร้างบทอ่าน 5 รูปแบบ และทำกิจกรรม Reference Matching Task [U4-5.1..5.5, 6.1.3..6.1.5]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 2 in Pre-Reading</span>\n  </div>\n\n  <!-- 1. Types of Reference Words [U4-5.1, U4-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"link\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">1. Four Types of Reference Words (คำอ้างอิง 4 ประเภท) [U4-5.1, U4-6.1.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold\">Content 5.1</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n      <div class=\"p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-amber-950\">\n          <span>1. Personal Pronouns (บุรุษสรรพนาม)</span>\n          <span class=\"text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded\">he, she, it, they, them, its, their</span>\n        </div>\n        <p class=\"text-slate-700\">ใช้แทนคำนามเอกพจน์หรือพหูพจน์ที่กล่าวถึงข้างหน้า (ต้องดูพจน์ Singular/Plural ให้ตรงกัน)</p>\n        <div class=\"p-2 bg-white rounded-lg border border-amber-100 text-[11px] text-slate-800\">\n          <strong>Ex (Geckos):</strong> \"Most <strong>geckos</strong> have no eyelids, so <u>they</u> must lick <u>their</u> big eyes.\" (<em>they/their</em> = geckos)\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-purple-50/70 border border-purple-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-purple-950\">\n          <span>2. Demonstratives (คำสรรพนามชี้เฉพาะ)</span>\n          <span class=\"text-[10px] bg-purple-200 text-purple-900 px-2 py-0.5 rounded\">this, that, these, those</span>\n        </div>\n        <p class=\"text-slate-700\">ใช้ชี้เฉพาะคำนามหรือชี้กลับไปยังแนวคิดทั้งประโยคก่อนหน้า</p>\n        <div class=\"p-2 bg-white rounded-lg border border-purple-100 text-[11px] text-slate-800\">\n          <strong>Ex (Papyrus):</strong> \"Slices were laid out lengthwise. Crosswise slices were laid on top of <u>those</u>.\" (<em>those</em> = lengthwise slices)\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-emerald-950\">\n          <span>3. Relative Pronouns (ประพันธสรรพนาม)</span>\n          <span class=\"text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded\">who, whom, whose, which, that, where</span>\n        </div>\n        <p class=\"text-slate-700\">ทำหน้าที่เชื่อมอนุประโยคขยายคำนามที่อยู่ติดกันข้างหน้าทันที</p>\n        <div class=\"p-2 bg-white rounded-lg border border-emerald-100 text-[11px] text-slate-800\">\n          <strong>Ex (Service Dog):</strong> \"Ziggy went to a <strong>training center</strong> <u>where</u> she learned advanced skills.\" (<em>where</em> = training center)\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-sky-50/70 border border-sky-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-sky-950\">\n          <span>4. Substitute Words (คำแทนคำนาม/กริยา)</span>\n          <span class=\"text-[10px] bg-sky-200 text-sky-900 px-2 py-0.5 rounded\">one, ones, another, do so, such</span>\n        </div>\n        <p class=\"text-slate-700\">ใช้แทนคำนามหรือวลีกริยาเพื่อไม่ให้เขียนคำเดิมซ้ำซาก</p>\n        <div class=\"p-2 bg-white rounded-lg border border-sky-100 text-[11px] text-slate-800\">\n          <strong>Ex (Cousins):</strong> \"Tad works hard in math class, but Brent does not need to <u>do so</u>.\" (<em>do so</em> = work hard in math class)\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 2. Common Connectives & Transition Words [U4-5.2, U4-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"git-branch\" class=\"w-4 h-4 text-emerald-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">2. Six Groups of Connectives & Transition Words (คำเชื่อม 6 กลุ่ม) [U4-5.2]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-bold\">Content 5.2</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs\">\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-purple-900 block mb-1\">1. Addition (เสริมข้อมูล)</strong>\n        <span class=\"font-mono text-[11px] text-purple-700\">in addition, furthermore, also, moreover, besides that</span>\n      </div>\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-rose-900 block mb-1\">2. Contrast (เปรียบต่าง/ขัดแย้ง)</strong>\n        <span class=\"font-mono text-[11px] text-rose-700\">however, but, by contrast, on the other hand, even though</span>\n      </div>\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-amber-900 block mb-1\">3. Cause & Effect (เหตุและผล)</strong>\n        <span class=\"font-mono text-[11px] text-amber-800\">because, since, so, therefore, as a result, consequently</span>\n      </div>\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-indigo-900 block mb-1\">4. Condition (เงื่อนไข)</strong>\n        <span class=\"font-mono text-[11px] text-indigo-700\">if, unless, when, otherwise</span>\n      </div>\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-emerald-900 block mb-1\">5. Sequence (ลำดับเวลา/ขั้นตอน)</strong>\n        <span class=\"font-mono text-[11px] text-emerald-700\">first, next, then, after that, later, finally</span>\n      </div>\n      <div class=\"p-3 bg-slate-50 rounded-xl border border-slate-200\">\n        <strong class=\"text-sky-900 block mb-1\">6. Examples (ยกตัวอย่าง)</strong>\n        <span class=\"font-mono text-[11px] text-sky-700\">for example, such as, including, in particular</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- 3. Five Common Text Organization Patterns [U4-5.3, U4-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"layout-grid\" class=\"w-4 h-4 text-sky-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">3. Five Text Organization Patterns (รูปแบบโครงสร้างบทอ่าน 5 แบบ) [U4-5.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold\">Content 5.3</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-5 gap-2.5 text-xs\">\n      <div class=\"p-3 bg-sky-50/80 border border-sky-200 rounded-xl space-y-1\">\n        <strong class=\"text-sky-950 block\">1. Description</strong>\n        <p class=\"text-[11px] text-slate-600\">อธิบายลักษณะ คุณสมบัติ หรือองค์ประกอบของสิ่งใดสิ่งหนึ่ง (เช่น <em>The Mighty Mongoose</em>)</p>\n      </div>\n      <div class=\"p-3 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1\">\n        <strong class=\"text-emerald-950 block\">2. Sequence</strong>\n        <p class=\"text-[11px] text-slate-600\">เรียงลำดับขั้นตอนหรือเหตุการณ์ตามเวลา 1 ➔ 2 ➔ 3 (เช่น <em>The Paper Plant / Ziggy</em>)</p>\n      </div>\n      <div class=\"p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1\">\n        <strong class=\"text-amber-950 block\">3. Cause & Effect</strong>\n        <p class=\"text-[11px] text-slate-600\">อธิบายสาเหตุและผลลัพธ์ที่ตามมา (เช่น <em>The Dust Bowl / Hydrothermal Vents</em>)</p>\n      </div>\n      <div class=\"p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1\">\n        <strong class=\"text-purple-950 block\">4. Compare & Contrast</strong>\n        <p class=\"text-[11px] text-slate-600\">เปรียบเทียบความเหมือนและความต่างของ 2 สิ่ง (เช่น <em>Soccer vs. Football / Earth's Layers</em>)</p>\n      </div>\n      <div class=\"p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1\">\n        <strong class=\"text-rose-950 block\">5. Problem & Solution</strong>\n        <p class=\"text-[11px] text-slate-600\">ระบุปัญหาที่เกิดขึ้นและวิธีแก้ไขปัญหานั้น (เช่น <em>Erosion / Man Makes Daring Cat Rescue</em>)</p>\n      </div>\n    </div>\n  </div>\n\n  <!-- 4. Pre-Reading Reference Matching Task [U4-5.5, U4-6.1.4] -->\n  <div class=\"p-4 sm:p-6 bg-gradient-to-r from-purple-900 to-indigo-950 text-white rounded-2xl shadow-md space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-800 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-amber-400 text-slate-950 font-bold text-[10px] rounded font-mono\">REFERENCE MATCHING TASK</span>\n          <span class=\"px-2 py-0.5 bg-purple-800 text-purple-200 font-bold text-[10px] rounded font-mono\">U4-6.1.4 &bull; U4-5.5</span>\n        </div>\n        <h4 class=\"text-base font-bold mt-1 text-white flex items-center space-x-2\">\n          <i data-lucide=\"check-square\" class=\"w-5 h-5 text-amber-400\"></i>\n          <span>Reference Matching Activity (จับคู่คำอ้างอิงกับคำนามที่ถูกต้อง 5 ข้อ)</span>\n        </h4>\n        <p class=\"text-xs text-purple-200\">อ่านประโยคจากบทอ่าน Level 4 แล้วเลือกคำนามที่คำอ้างอิงขีดเส้นใต้ชี้กลับไปหา</p>\n      </div>\n      <div class=\"bg-purple-950/80 px-3.5 py-2 rounded-xl border border-purple-700 text-xs font-bold text-amber-300 shrink-0\">\n        Matching Score: <span id=\"u4-pregame-score\">0 / 5</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-3 text-xs text-slate-900\">\n      <!-- Q1 (ans: 1 = B) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          1. \"If you pick up a gecko by its tail, the tail may break off so <strong class=\"text-purple-800 underline\">it</strong> can easily escape.\" (from <em>Geckos</em>)\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit4PreGame(1, 0)\" class=\"u4-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. the broken tail</button>\n          <button onclick=\"app.submitUnit4PreGame(1, 1)\" class=\"u4-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. the gecko</button>\n          <button onclick=\"app.submitUnit4PreGame(1, 2)\" class=\"u4-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. a windowpane</button>\n        </div>\n        <div id=\"u4-pg1-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q2 (ans: 0 = A) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          2. \"The bottoms of a gecko's toes are covered with thousands of little bristles. <strong class=\"text-purple-800 underline\">These bristles</strong> enable the gecko to cling to glass.\" (from <em>Geckos</em>)\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit4PreGame(2, 0)\" class=\"u4-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. the thousands of little stiff hairs on the gecko's toes</button>\n          <button onclick=\"app.submitUnit4PreGame(2, 1)\" class=\"u4-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. the insects inside Hawaiian homes</button>\n          <button onclick=\"app.submitUnit4PreGame(2, 2)\" class=\"u4-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. the hot and humid tropics</button>\n        </div>\n        <div id=\"u4-pg2-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q3 (ans: 2 = C) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          3. \"Some people plant grass and trees on their hillside land so that <strong class=\"text-purple-800 underline\">their</strong> strong root systems will hold the earth in place.\" (from <em>Erosion</em>)\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit4PreGame(3, 0)\" class=\"u4-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. wind and rain</button>\n          <button onclick=\"app.submitUnit4PreGame(3, 1)\" class=\"u4-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. houses on the cliff</button>\n          <button onclick=\"app.submitUnit4PreGame(3, 2)\" class=\"u4-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. the grass and trees (plants)</button>\n        </div>\n        <div id=\"u4-pg3-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q4 (ans: 1 = B) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          4. \"First, Ziggy went to live with a puppy raiser <strong class=\"text-purple-800 underline\">who</strong> taught Ziggy how to obey basic commands.\" (from <em>Ziggy the Service Dog</em>)\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit4PreGame(4, 0)\" class=\"u4-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Ziggy the dog</button>\n          <button onclick=\"app.submitUnit4PreGame(4, 1)\" class=\"u4-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. the puppy raiser</button>\n          <button onclick=\"app.submitUnit4PreGame(4, 2)\" class=\"u4-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. a light switch</button>\n        </div>\n        <div id=\"u4-pg4-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q5 (ans: 2 = C) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          5. \"Huge rolls of recycled paper are shipped to printers, <strong class=\"text-purple-800 underline\">who</strong> print phone books for the new year.\" (from <em>Recycling Phone Books</em>)\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit4PreGame(5, 0)\" class=\"u4-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. trucks and trains</button>\n          <button onclick=\"app.submitUnit4PreGame(5, 1)\" class=\"u4-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. supermarkets</button>\n          <button onclick=\"app.submitUnit4PreGame(5, 2)\" class=\"u4-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. the printers (printing companies/workers)</button>\n        </div>\n        <div id=\"u4-pg5-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 5. Previewing the Text [U4-6.1.5] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 text-xs space-y-2\">\n    <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n      <i data-lucide=\"eye\" class=\"w-4 h-4 text-purple-700\"></i>\n      <span>Previewing the Text: Predicting Organization from Signals [U4-6.1.5]</span>\n    </div>\n    <p class=\"text-purple-900 leading-relaxed\">\n      ก่อนเข้าสู่ขั้น While-Reading: กวาดสายตาสำรวจบทอ่านเรื่อง <em>\"The Paper Plant (Making Papyrus Paper)\"</em> และ <em>\"The Dust Bowl\"</em> มองหาคำเชื่อมบอกลำดับเวลา (<strong>first, after that, next, later, then, final step</strong>) และคำเชื่อมบอกเหตุผล (<strong>but, so, because</strong>) เพื่อคาดเดาว่าแต่ละบทอ่านจัดเรียงโครงสร้างแบบใด!\n    </p>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('overview')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Overview & Warm-Up\n    </button>\n    <button onclick=\"app.selectStageAndStep('whileReading', 'learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: While-Reading Guided Demo & Text Map</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
           }
         },
         "whileReading": {
           "title": "While-Reading Stage",
           "steps": {
-            "learn": "Notice headings and transition words to predict where the author's argument is heading.",
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 04</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U4-6.2.1 &bull; U4-6.2.4 &bull; U4-5.4</span>\n        <span class=\"px-2.5 py-0.5 bg-indigo-100 text-indigo-800 rounded-md text-[10px] font-bold\">Guided Demo & Text Mapping</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Guided Reading & Text Mapping Demonstration</h3>\n      <p class=\"text-xs text-slate-500\">สาธิตการแกะรอยคำอ้างอิง คำเชื่อม และการสร้างผังข้อความ (Text Map) จากบทอ่าน \"The Paper Plant\" [U4-6.2.1, 6.2.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 1 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Audio Player & Worked Passage Box [U4-6.2.1] -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n      <div>\n        <span class=\"text-[10px] font-bold text-pink-300 uppercase tracking-wider block\">Worked Example Passage [U4-6.2.1] &bull; Saddleback Level 4 (p. 79)</span>\n        <h4 class=\"text-base font-bold text-white mt-0.5\">The Paper Plant: How Ancient Egyptians Made Papyrus Paper</h4>\n      </div>\n\n      <div class=\"flex items-center space-x-2\">\n        <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\">\n          <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300\"></i>\n          <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n            <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n            <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n            <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n            <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n          </select>\n        </div>\n\n        <button onclick=\"app.togglePassageAudio(encodeURIComponent('Ancient Egyptians used the papyrus plant for making things such as sandals, boxes, and ropes. However, the plant was mainly used for making paper. The stem of the plant was first peeled to reveal the pith, or core. After that, the pith was thinly sliced. Slices were laid out next to each other lengthwise. Next, other slices were laid crosswise on top of those. Later the whole piece was moistened with water. Then it was pressed and dried. The final step was to use a piece of ivory to rub the papyrus paper smooth. The Egyptians wrote poetry and verse on it.'))\" class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer shadow-md\">\n          <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n          <span id=\"audio-btn-label\">Listen Passage</span>\n        </button>\n      </div>\n    </div>\n\n    <!-- Passage Breakdown with Unit 4 Color Scheme (Yellow = Reference, Green = Connective, Blue = Main Idea/Organization) -->\n    <div class=\"space-y-4 font-serif text-xs sm:text-sm leading-relaxed text-slate-200\">\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-sky-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-sky-300 uppercase tracking-wider\">[Main Idea & Contrast Connective]</span>\n          <span class=\"bg-sky-400/20 text-sky-200 px-2 py-0.5 rounded font-mono text-[10px]\">U4-6.2.1</span>\n        </div>\n        <p>\n          Ancient Egyptians used the papyrus plant for making things <span class=\"highlighter-pen highlighter-green\">such as</span> sandals, boxes, and ropes. <span class=\"highlighter-pen highlighter-green\">However</span>, <span class=\"highlighter-pen highlighter-blue\">the plant was mainly used for making paper.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-sky-500/30 font-sans text-xs text-sky-200\">\n          <strong>Analysis:</strong> คำเชื่อม <em>\"such as\"</em> (สีเขียว) ยกตัวอย่างสิ่งของทั่วไป ส่วน <em>\"However\"</em> (สีเขียว) ตัดเข้าสู่ <strong>ใจความสำคัญและโครงสร้างหลักของเรื่อง (สีฟ้า)</strong> คือขั้นตอนการทำกระดาษปาปิรุส\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-emerald-300 uppercase tracking-wider\">[Sequence Connectives & Reference Chains]</span>\n          <span class=\"bg-emerald-500/20 text-emerald-200 px-2 py-0.5 rounded font-mono text-[10px]\">U4-5.1 &bull; 5.2</span>\n        </div>\n        <p>\n          The stem of the plant was <span class=\"highlighter-pen highlighter-green\">first</span> peeled to reveal the pith, or core. <span class=\"highlighter-pen highlighter-green\">After that</span>, the pith was thinly sliced. Slices were laid out next to each other lengthwise. <span class=\"highlighter-pen highlighter-green\">Next</span>, other slices were laid crosswise on top of <span class=\"highlighter-pen highlighter-yellow\">those</span>. <span class=\"highlighter-pen highlighter-green\">Later</span> the whole piece was moistened with water. <span class=\"highlighter-pen highlighter-green\">Then</span> <span class=\"highlighter-pen highlighter-yellow\">it</span> was pressed and dried. <span class=\"highlighter-pen highlighter-green\">The final step</span> was to use a piece of ivory to rub the papyrus paper smooth. The Egyptians wrote poetry and verse on <span class=\"highlighter-pen highlighter-yellow\">it</span>.\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200\">\n          <strong>Reference & Connective Analysis:</strong><br>\n          &bull; <strong>Green (Connectives):</strong> <em>first ➔ After that ➔ Next ➔ Later ➔ Then ➔ The final step</em> ชี้ชัดว่าบทอ่านนี้จัดโครงสร้างแบบ <strong>Sequence / Process Pattern</strong><br>\n          &bull; <strong>Yellow (References):</strong> คำว่า <strong>those</strong> อ้างถึง <em>lengthwise slices</em> | คำว่า <strong>it</strong> (ตัวแรก) อ้างถึง <em>the whole piece</em> | คำว่า <strong>it</strong> (ตัวท้าย) อ้างถึง <em>the smooth papyrus paper</em>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Text Mapping Demonstration [U4-5.4, U4-6.2.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"network\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">Text Mapping Demonstration: Visual Flow of Ideas [U4-5.4, U4-6.2.4]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Activity 6.2.4</span>\n    </div>\n\n    <p class=\"text-xs text-slate-700 leading-relaxed\">\n      การสร้าง <strong>Text Map (ผังโครงสร้างข้อความ)</strong> ช่วยให้เราเห็นความเชื่อมโยงของความคิดทั้งหมดในพริบตาเดียว ดูตัวอย่างการแปลงบทอ่าน <em>\"The Paper Plant\"</em> เป็นผังลำดับขั้นตอน (Sequence Map):\n    </p>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 text-xs\">\n      <div class=\"p-3 bg-purple-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-emerald-200 text-emerald-950 font-bold rounded text-[10px]\">1. FIRST</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Peel the Stem</p>\n        <p class=\"text-[11px] text-slate-600\">ปอกเปลือกลำต้นปาปิรุสเพื่อเอาไส้ใน (pith)</p>\n      </div>\n      <div class=\"p-3 bg-purple-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-emerald-200 text-emerald-950 font-bold rounded text-[10px]\">2. AFTER THAT</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Slice & Lay Lengthwise</p>\n        <p class=\"text-[11px] text-slate-600\">หั่นไส้ในเป็นแผ่นบางๆ แล้ววางเรียงตามยาว</p>\n      </div>\n      <div class=\"p-3 bg-purple-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-emerald-200 text-emerald-950 font-bold rounded text-[10px]\">3. NEXT</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Lay Crosswise</p>\n        <p class=\"text-[11px] text-slate-600\">วางแผ่นปาปิรุสอีกชั้นซ้อนทับตามขวางบน <em>those</em></p>\n      </div>\n      <div class=\"p-3 bg-purple-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-emerald-200 text-emerald-950 font-bold rounded text-[10px]\">4. LATER</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Moisten with Water</p>\n        <p class=\"text-[11px] text-slate-600\">พรมน้ำให้ชุ่มทั่วทั้งแผ่น (whole piece)</p>\n      </div>\n      <div class=\"p-3 bg-purple-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-emerald-200 text-emerald-950 font-bold rounded text-[10px]\">5. THEN</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Press & Dry</p>\n        <p class=\"text-[11px] text-slate-600\">นำ <em>it</em> (แผ่นปาปิรุส) ไปกดทับและตากจนแห้ง</p>\n      </div>\n      <div class=\"p-3 bg-amber-50 border-2 border-slate-900 rounded-xl space-y-1\">\n        <span class=\"px-2 py-0.5 bg-amber-300 text-slate-950 font-bold rounded text-[10px]\">6. FINAL STEP</span>\n        <p class=\"font-bold text-slate-900 mt-1\">Rub Smooth with Ivory</p>\n        <p class=\"text-[11px] text-slate-600\">ขัดด้วยงาช้างจนเรียบ พร้อมใช้เขียนบทกวีบน <em>it</em></p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('preReading', 'learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Pre-Reading Stage\n    </button>\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: 3-Colour Highlighting Tool</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
             "passage": "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
             "audioText": "Traffic congestion in city centers creates severe air pollution. To address this challenge, urban planners introduced electric bus lanes and bicycle paths.",
-            "example": "Pattern: Problem ('Traffic congestion... air pollution') -> Solution ('introduced electric bus lanes...').",
-            "practice": {
-              "question": "What organizational pattern does the passage follow?",
-              "options": [
-                "Chronological / Timeline",
-                "Problem and Solution",
-                "Classification / Division",
-                "Narrative Story"
-              ],
-              "answer": 1,
-              "explanation": "The text identifies a problem (traffic & pollution) and offers concrete solutions (bus lanes, bike paths)."
-            }
+            "example": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 04</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U4-6.2.2</span>\n        <span class=\"px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded-md text-[10px] font-bold\">Interactive Highlighting</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: 3-Colour Highlighting Practice</h3>\n      <p class=\"text-xs text-slate-500\">ฝึกแยกสีจากเรื่อง \"The Dust Bowl\" (Level 4): สีเหลือง (Reference words) • สีเขียว (Connectives) • สีฟ้า (Main ideas & Text organization) [U4-6.2.2]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Color Key Legend [U4-6.2.2] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 space-y-3\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n        <i data-lucide=\"highlighter\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit 4 Highlighting Color Code (เกณฑ์การระบายสี 3 ประเภทตามแผนการสอน 6.2.2):</span>\n      </span>\n      <div class=\"flex items-center space-x-2\">\n        <button onclick=\"app.revealUnit4Highlights()\" class=\"px-3 py-1 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-[11px] font-bold cursor-pointer transition\">Show Model Key</button>\n        <button onclick=\"app.resetUnit4Highlights()\" class=\"px-3 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-lg text-[11px] font-semibold cursor-pointer transition\">Reset</button>\n      </div>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs\">\n      <div class=\"p-2.5 bg-amber-100 border border-amber-400 rounded-xl text-amber-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-amber-400 shrink-0\"></span>\n        <span><strong>Yellow (สีเหลือง):</strong> Reference Words (คำอ้างอิง/สรรพนาม)</span>\n      </div>\n      <div class=\"p-2.5 bg-emerald-100 border border-emerald-400 rounded-xl text-emerald-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-emerald-400 shrink-0\"></span>\n        <span><strong>Green (สีเขียว):</strong> Connectives & Transitions (คำเชื่อม)</span>\n      </div>\n      <div class=\"p-2.5 bg-sky-100 border border-sky-400 rounded-xl text-sky-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-sky-400 shrink-0\"></span>\n        <span><strong>Blue (สีฟ้า):</strong> Main Ideas & Text Organization (ใจความหลัก/โครงสร้าง)</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- Interactive Passage Box -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"border-b border-slate-700 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <div>\n        <span class=\"text-[10px] font-bold text-amber-300 uppercase tracking-wider\">Interactive Passage [U4-6.2.2] &bull; Saddleback Level 4 (p. 95)</span>\n        <h4 class=\"text-base font-bold text-white\">The Dust Bowl (Cause & Effect Organization)</h4>\n      </div>\n      <span class=\"text-[11px] text-slate-300\">คลิกปุ่มสี (Yellow / Green / Blue) ให้ตรงกับบทบาทของแต่ละส่วน</span>\n    </div>\n\n    <div class=\"space-y-3 font-serif text-xs sm:text-sm leading-relaxed\">\n      <!-- Segment 1 (Blue: Main Idea & Organization) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (1):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit4Sentence(1, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Reference)</button>\n            <button onclick=\"app.highlightUnit4Sentence(1, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Connective)</button>\n            <button onclick=\"app.highlightUnit4Sentence(1, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Idea/Org)</button>\n          </div>\n        </div>\n        <p id=\"u4-s1-text\" class=\"text-slate-100 transition p-1 rounded\">\n          In the 1930s, exposed soil and a severe drought turned the Great Plains into the Dust Bowl, forcing thousands of farm families to leave their land.\n        </p>\n        <div id=\"u4-s1-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 2 (Yellow: Reference Words) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (2):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit4Sentence(2, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Reference)</button>\n            <button onclick=\"app.highlightUnit4Sentence(2, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Connective)</button>\n            <button onclick=\"app.highlightUnit4Sentence(2, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Idea/Org)</button>\n          </div>\n        </div>\n        <p id=\"u4-s2-text\" class=\"text-slate-100 transition p-1 rounded\">\n          They (the farmers), that (eating the prairie grasses), their (people's homes), During that time (the 1930s Dust Bowl years)\n        </p>\n        <div id=\"u4-s2-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 3 (Green: Connectives & Transition Words) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (3):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit4Sentence(3, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Reference)</button>\n            <button onclick=\"app.highlightUnit4Sentence(3, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Connective)</button>\n            <button onclick=\"app.highlightUnit4Sentence(3, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Idea/Org)</button>\n          </div>\n        </div>\n        <p id=\"u4-s3-text\" class=\"text-slate-100 transition p-1 rounded\">\n          but (the roots of the wheat did not hold the soil together well), Then (a long drought occurred), so (families were forced to pack up and leave)\n        </p>\n        <div id=\"u4-s3-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 4 (Green: Causal Connective Signal) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (4):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit4Sentence(4, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Reference)</button>\n            <button onclick=\"app.highlightUnit4Sentence(4, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Connective)</button>\n            <button onclick=\"app.highlightUnit4Sentence(4, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Idea/Org)</button>\n          </div>\n        </div>\n        <p id=\"u4-s4-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Because of the terrible drought and choking dust clouds, as a result, consequently\n        </p>\n        <div id=\"u4-s4-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 5 (Blue: Overall Text Structure Conclusion) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (5):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit4Sentence(5, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Reference)</button>\n            <button onclick=\"app.highlightUnit4Sentence(5, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Connective)</button>\n            <button onclick=\"app.highlightUnit4Sentence(5, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Main Idea/Org)</button>\n          </div>\n        </div>\n        <p id=\"u4-s5-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Overall Text Structure: Cause and Effect Pattern showing how cattle grazing, weak wheat roots, and drought caused the Dust Bowl migration.\n        </p>\n        <div id=\"u4-s5-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Guided Demo & Text Map\n    </button>\n    <button onclick=\"app.selectActivityStep('practice')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Text Structure Practice (8 Items)</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
+            "practice": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 04</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U4-6.2.3 &bull; U4-6.2.5 &bull; U4-6.2.6</span>\n        <span class=\"px-2.5 py-0.5 bg-pink-100 text-pink-800 rounded-md text-[10px] font-bold\">Indicator 3.3 (&ge; 70%)</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Text Structure Practice & Reference Challenge</h3>\n      <p class=\"text-xs text-slate-500\">แบบฝึกหัดวิเคราะห์โครงสร้างบทอ่าน คำเชื่อม และคำอ้างอิงจากเรื่องสั้น Level 4 จำนวน 8 ข้อ (เกณฑ์ผ่าน 70% = 6/8 ข้อ) [U4-5.5, 5.6, 6.2.3, 6.2.5]</p>\n    </div>\n    <div class=\"bg-purple-100 text-purple-950 px-4 py-2 rounded-xl border border-purple-200 text-xs font-bold shrink-0 self-start sm:self-auto\">\n      Practice Score: <span id=\"u4-game-score\" class=\"text-purple-700 font-extrabold\">0 / 8</span>\n    </div>\n  </div>\n\n  <!-- Pair Activity Info Banner [U4-6.2.5] -->\n  <div class=\"p-3.5 bg-indigo-50 border border-indigo-200 rounded-2xl text-xs text-indigo-950 flex items-start space-x-2.5\">\n    <i data-lucide=\"users\" class=\"w-4 h-4 text-indigo-700 shrink-0 mt-0.5\"></i>\n    <div>\n      <strong>Pair Activity & Feedback [U4-6.2.5, U4-6.2.6]:</strong> นักศึกษาสามารถทำร่วมกับคู่บัดดี้เพื่อวิเคราะห์ผังโครงสร้างข้อความ (Text Structure) คำอ้างอิง (References) และคำเชื่อม (Connectives) จากบทอ่าน Level 4 ด้านล่าง พร้อมรับผลป้อนกลับทันที\n    </div>\n  </div>\n\n  <!-- 8-Question Interactive Practice Container -->\n  <div class=\"space-y-4\">\n    <!-- Q1 (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 1 of 8 &bull; Story: Earth's Layer Cake (Level 4, p. 40) [U4-5.3]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Geologists who study the earth think the outer core is all liquid made up of melted iron and nickel. <strong class=\"text-emerald-700 underline\">By contrast</strong>, the inner core is solid nickel and iron, and has a temperature of about 12,000°F.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Based on the signal phrase \"By contrast\", which text organization pattern is used here?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(1, 0)\" class=\"u4-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Chronological Sequence (Time Order)</button>\n        <button onclick=\"app.submitUnit4Game(1, 1)\" class=\"u4-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Compare and Contrast Pattern</button>\n        <button onclick=\"app.submitUnit4Game(1, 2)\" class=\"u4-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Problem and Solution Pattern</button>\n        <button onclick=\"app.submitUnit4Game(1, 3)\" class=\"u4-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Personal Letter Greeting</button>\n      </div>\n      <div id=\"u4-g1-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q2 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 2 of 8 &bull; Story: Hydrothermal Vents (Level 4, p. 96) [U4-5.2, 5.3]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Cold water leaks into deep cracks in the ocean floor and hits hot liquid magma. <strong class=\"text-emerald-700 underline\">Consequently</strong>, the vent begins to form; <strong class=\"text-emerald-700 underline\">as a result</strong>, hot, murky water shoots upward from the ocean floor.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What relationship do the connectives \"Consequently\" and \"as a result\" show?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(2, 0)\" class=\"u4-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Contrasting two opposite sports</button>\n        <button onclick=\"app.submitUnit4Game(2, 1)\" class=\"u4-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Listing ingredients for a banana recipe</button>\n        <button onclick=\"app.submitUnit4Game(2, 2)\" class=\"u4-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Cause and Effect (showing the result of cold water hitting hot magma)</button>\n        <button onclick=\"app.submitUnit4Game(2, 3)\" class=\"u4-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Describing a fictional fairy tale setting</button>\n      </div>\n      <div id=\"u4-g2-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q3 (ans: 0 = A) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 3 of 8 &bull; Story: Trent's Wrong Car (Level 4, p. 65) [U4-5.3]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Trent stuck his key into the door lock of his red sports car, <strong class=\"text-emerald-700 underline\">but</strong> <strong class=\"text-amber-700 underline\">it</strong> wouldn't turn. After standing there helplessly, he peered through the car window and spotted a blue jacket on the seat. He realized this car looked like his, but he had the wrong car!\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">How is this story paragraph organized?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(3, 0)\" class=\"u4-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Problem and Solution (Complication: key won't turn ➔ Resolution: spots blue jacket & realizes it's the wrong car)</button>\n        <button onclick=\"app.submitUnit4Game(3, 1)\" class=\"u4-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Historical Timeline from 1800 to 1989</button>\n        <button onclick=\"app.submitUnit4Game(3, 2)\" class=\"u4-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Classification of ocean floor geography</button>\n        <button onclick=\"app.submitUnit4Game(3, 3)\" class=\"u4-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Dictionary glossary of amphibians</button>\n      </div>\n      <div id=\"u4-g3-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q4 (ans: 3 = D) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 4 of 8 &bull; Story: Celine & Jean's Climbing Party (Level 4, p. 130) [U4-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"<strong class=\"text-emerald-700 underline\">First</strong>, their eight party guests put on special shoes. <strong class=\"text-emerald-700 underline\">Next</strong>, <strong class=\"text-amber-700 underline\">they</strong> each snapped on a climbing harness and a helmet. <strong class=\"text-emerald-700 underline\">Then</strong> the relay race began... <strong class=\"text-emerald-700 underline\">Finally</strong>, everyone enjoyed the girls' birthday cake.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does the pronoun \"they\" refer to, and what pattern do \"First, Next, Then, Finally\" create?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(4, 0)\" class=\"u4-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. \"they\" = the climbing ropes | Pattern: Compare and Contrast</button>\n        <button onclick=\"app.submitUnit4Game(4, 1)\" class=\"u4-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. \"they\" = the birthday cakes | Pattern: Problem and Solution</button>\n        <button onclick=\"app.submitUnit4Game(4, 2)\" class=\"u4-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. \"they\" = the helmets | Pattern: Cause and Effect</button>\n        <button onclick=\"app.submitUnit4Game(4, 3)\" class=\"u4-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. \"they\" = the eight party guests | Pattern: Sequence of Events</button>\n      </div>\n      <div id=\"u4-g4-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q5 (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 5 of 8 &bull; Story: The Mighty Mongoose (Level 4, p. 125) [U4-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Most of the time this small gray mammal runs on the ground, <strong class=\"text-emerald-700 underline\">but</strong> <strong class=\"text-amber-700 underline\">it</strong> can also run backwards, and climb walls and trees. <strong class=\"text-emerald-700 underline\">In addition</strong>, <strong class=\"text-amber-700 underline\">it</strong> can leap high into the air.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What is the function of the connective \"In addition\" and what does \"it\" refer to?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(5, 0)\" class=\"u4-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Shows a tragic problem; \"it\" refers to a deadly cobra</button>\n        <button onclick=\"app.submitUnit4Game(5, 1)\" class=\"u4-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Adds another special talent/feature to the description; \"it\" refers to the mongoose</button>\n        <button onclick=\"app.submitUnit4Game(5, 2)\" class=\"u4-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Shows a time sequence in 1803; \"it\" refers to a wall</button>\n        <button onclick=\"app.submitUnit4Game(5, 3)\" class=\"u4-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Shows an opposite opinion; \"it\" refers to bird eggs</button>\n      </div>\n      <div id=\"u4-g5-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q6 (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 6 of 8 &bull; Story: Great Salt Lake vs. Lake Okeechobee (Level 4, p. 90) [U4-5.1, 5.3]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"The Great Salt Lake in Utah is a saltwater lake that is eight times saltier than the ocean; only brine shrimp and algae can live in <strong class=\"text-amber-700 underline\">its</strong> salty waters. Lake Okeechobee in Florida, <strong class=\"text-emerald-700 underline\">however</strong>, is a freshwater lake that is home to bass, deer, turkey, and ducks.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What does \"its\" refer to, and what organization pattern structures these two sentences?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(6, 0)\" class=\"u4-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. \"its\" = Florida | Pattern: Step-by-Step Recipe</button>\n        <button onclick=\"app.submitUnit4Game(6, 1)\" class=\"u4-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. \"its\" = brine shrimp | Pattern: Problem and Solution</button>\n        <button onclick=\"app.submitUnit4Game(6, 2)\" class=\"u4-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. \"its\" = the Great Salt Lake | Pattern: Compare and Contrast</button>\n        <button onclick=\"app.submitUnit4Game(6, 3)\" class=\"u4-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. \"its\" = Lake Okeechobee | Pattern: Chronological Timeline</button>\n      </div>\n      <div id=\"u4-g6-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q7 (ans: 0 = A) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 7 of 8 &bull; Text Mapping: Miss Peters and the Wolf Spider (Level 4, p. 135) [U4-5.4, 6.2.4]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.4</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"A wolf spider was nesting in one of Miss Peters' garden boots, and <strong class=\"text-amber-700 underline\">it</strong> refused to find another home. <strong class=\"text-emerald-700 underline\">So</strong> she dug the spider a hole to encourage <strong class=\"text-amber-700 underline\">it</strong> to move in. <strong class=\"text-emerald-700 underline\">Then</strong> she hid and waited until the spider left the boot and moved into the hole <strong class=\"text-amber-700 underline\">she</strong> dug. <strong class=\"text-emerald-700 underline\">Finally</strong>, Miss Peters stole back her boot!\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Which Text Map correctly represents the Problem ➔ Action ➔ Solution structure of this story?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(7, 0)\" class=\"u4-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Problem: Spider nests in boot ➔ Action: Digs hole & waits ➔ Solution: Spider moves to hole & she gets boot back</button>\n        <button onclick=\"app.submitUnit4Game(7, 1)\" class=\"u4-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Problem: Miss Peters loses her garden ➔ Action: Calls the police ➔ Solution: Buys new shoes</button>\n        <button onclick=\"app.submitUnit4Game(7, 2)\" class=\"u4-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Compare: Wolf spiders vs. Honey bees</button>\n        <button onclick=\"app.submitUnit4Game(7, 3)\" class=\"u4-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Timeline: 1816 ➔ 1839 ➔ 1873 ➔ 1996</button>\n      </div>\n      <div id=\"u4-g7-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q8 (ans: 3 = D) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 8 of 8 &bull; Story: Saber-Toothed Tiger (Level 4, p. 57) [U4-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U4-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"The saber-toothed tiger walked flat-footed, much the same way a bear walks. <strong class=\"text-emerald-700 underline\">By comparison</strong>, all modern cats walk on <strong class=\"text-amber-700 underline\">their</strong> toes. <strong class=\"text-amber-700 underline\">Its</strong> legs were short, <strong class=\"text-amber-700 underline\">which</strong> means it couldn't run fast or far like most cats can.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What do \"their\" and \"Its\" refer to in this passage?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit4Game(8, 0)\" class=\"u4-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. \"their\" = bears | \"Its\" = modern cats</button>\n        <button onclick=\"app.submitUnit4Game(8, 1)\" class=\"u4-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. \"their\" = scientists | \"Its\" = the Ice Age</button>\n        <button onclick=\"app.submitUnit4Game(8, 2)\" class=\"u4-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. \"their\" = saber-toothed tigers | \"Its\" = a bear</button>\n        <button onclick=\"app.submitUnit4Game(8, 3)\" class=\"u4-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. \"their\" = all modern cats | \"Its\" = the saber-toothed tiger's</button>\n      </div>\n      <div id=\"u4-g8-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n  </div>\n\n  <!-- Final Score Summary Banner -->\n  <div id=\"u4-game-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: 3-Colour Highlighting Tool\n    </button>\n    <button onclick=\"app.selectStageAndStep('postReading', 'quiz')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: Post-Reading 40-Item Quiz</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
           }
         },
         "postReading": {
@@ -3141,6 +3131,596 @@ window.ReadSkillsData = {
             ],
             "correctAnswer": 2,
             "explanation": "ใจความสำคัญของประโยคสุดท้ายคือ เมื่อทั้งสามคนเปิดหีบออกและอ่านจดหมาย พวกเขาก็ได้รู้ความจริงว่าเป็นพี่น้องกัน และวอลเตอร์คือคุณลุงของพวกเขา (ข้อ C)"
+          }
+        ]
+      }
+    ]
+  },
+  "unit4Quiz": {
+    "title": "Unit 4 Graded Quiz: References, Connectives, and Text Organization (Level 4 Stories)",
+    "thaiTitle": "แบบทดสอบท้ายบทที่ 4: คำอ้างอิง คำเชื่อม และโครงสร้างบทอ่าน (40 ข้อ • 4 เรื่องจาก Level 4)",
+    "passages": [
+      {
+        "id": 1,
+        "title": "Passage 1: Ziggy's Journey to Become a Service Dog (Level 4)",
+        "thaiTitle": "เรื่องที่ 1: เส้นทางการฝึกของสุนัขช่วยเหลือชื่อซิกกี้ (Sequence & Reference Chains) [U4-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Ziggy is a special service dog for someone with a disability, and her training started when she was just seven weeks old.",
+          "First, she went to live with a puppy raiser who taught Ziggy how to get along with others and obey basic commands.",
+          "After staying with the puppy raiser for a year and a half, Ziggy was taken to a training center where she learned advanced skills such as opening doors and turning on light switches.",
+          "It took Ziggy eight months to finish the advanced training, but learning new things was fun for her.",
+          "Next, graduation day arrived; however, Ziggy and her new owner still had to complete team training—a special two-week class in which they learned to work together.",
+          "When that was completed, Ziggy was finally ready to become a loyal friend and constant companion for the person who needed her."
+        ],
+        "audioText": "Ziggy is a special service dog for someone with a disability, and her training started when she was just seven weeks old. First, she went to live with a puppy raiser who taught Ziggy how to get along with others and obey basic commands. After staying with the puppy raiser for a year and a half, Ziggy was taken to a training center where she learned advanced skills such as opening doors and turning on light switches. It took Ziggy eight months to finish the advanced training, but learning new things was fun for her. Next, graduation day arrived; however, Ziggy and her new owner still had to complete team training—a special two-week class in which they learned to work together. When that was completed, Ziggy was finally ready to become a loyal friend and constant companion for the person who needed her.",
+        "questions": [
+          {
+            "id": 1,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Word)",
+            "prompt": "In Sentence (1), what do the personal pronouns 'her' and 'she' refer to? [U4-5.1]",
+            "options": [
+              "A puppy raiser",
+              "Ziggy the service dog",
+              "A training center",
+              "A light switch"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำสรรพนาม 'her' และ 'she' ในประโยคที่ 1 ชี้กลับไปที่ประธานเอกพจน์ข้างหน้าคือ Ziggy the service dog (ข้อ B)"
+          },
+          {
+            "id": 2,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Relative Pronoun)",
+            "prompt": "In Sentence (2), 'she went to live with a puppy raiser who taught Ziggy...', what does the relative pronoun 'who' refer to? [U4-5.1]",
+            "options": [
+              "The puppy raiser",
+              "Seven weeks",
+              "Basic commands",
+              "Other dogs"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประพันธสรรพนาม 'who' ทำหน้าที่ขยายคำนามที่บอกบุคคลที่อยู่ข้างหน้าติดกันคือ a puppy raiser (ผู้เลี้ยงดูลูกสุนัข) (ข้อ A)"
+          },
+          {
+            "id": 3,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Relative & Example Signals)",
+            "prompt": "Tap/Select the sentence that uses the relative pronoun 'where' to refer to 'a training center' AND 'such as' to give examples of advanced skills. [U4-5.1, 5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้ 'where' ขยาย 'a training center' และใช้ 'such as' ยกตัวอย่างทักษะการเปิดประตูและเปิดสวิตช์ไฟ"
+          },
+          {
+            "id": 4,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Connective Function)",
+            "prompt": "In Sentence (4), 'It took Ziggy eight months to finish the advanced training, but learning new things was fun for her', what does the connective 'but' show? [U4-5.2]",
+            "options": [
+              "A chronological list of dog foods",
+              "A geographical location",
+              "A contrast between the long, hard time (8 months) and how enjoyable the learning was",
+              "A chemical cause and effect"
+            ],
+            "correctAnswer": 2,
+            "explanation": "คำเชื่อม 'but' แสดงความขัดแย้ง (Contrast) ว่าแม้การฝึกขั้นสูงจะใช้เวลานานถึง 8 เดือน แต่การเรียนรู้สิ่งใหม่ๆ ก็สนุกสำหรับซิกกี้ (ข้อ C)"
+          },
+          {
+            "id": 5,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Contrast Connective)",
+            "prompt": "Complete Sentence (5) with the transition word that signals an unexpected remaining step after graduation day: [U4-5.2]",
+            "sentenceWithBlank": "Next, graduation day arrived; [ _______ ], Ziggy and her new owner still had to complete team training.",
+            "choices": [
+              "however",
+              "for example",
+              "because",
+              "similarly"
+            ],
+            "correctWord": "however",
+            "explanation": "คำว่า 'however' (อย่างไรก็ตาม) ใช้เชื่อมความขัดแย้งว่าแม้จะถึงวันจบการศึกษาแล้ว แต่ซิกกี้กับเจ้าของใหม่ยังต้องเข้าคลาสฝึกทำงานร่วมกันต่ออีก 2 สัปดาห์"
+          },
+          {
+            "id": 6,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Tracking)",
+            "prompt": "In Sentence (5), '...a special two-week class in which they learned to work together', who does the pronoun 'they' refer to? [U4-5.1]",
+            "options": [
+              "The puppy raiser and the teacher",
+              "Doors and light switches",
+              "Eight months and two weeks",
+              "Ziggy and her new owner"
+            ],
+            "correctAnswer": 3,
+            "explanation": "สรรพนามพหูพจน์ 'they' อ้างถึงประธานคู่ในประโยคเดียวกันคือ Ziggy and her new owner (ข้อ D)"
+          },
+          {
+            "id": 7,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Demonstrative Reference)",
+            "prompt": "In Sentence (6), 'When that was completed, Ziggy was finally ready...', what does the demonstrative word 'that' refer to? [U4-5.1]",
+            "options": [
+              "Living with the puppy raiser at seven weeks old",
+              "Team training (the special two-week class where Ziggy and her new owner learned to work together)",
+              "Turning off a light switch",
+              "Being born at a kennel"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำสรรพนามชี้เฉพาะ 'that' ในประโยคที่ 6 ชี้กลับไปยังเหตุการณ์ในประโยคที่ 5 คือการฝึกทำงานเป็นทีม (team training / the special two-week class) (ข้อ B)"
+          },
+          {
+            "id": 8,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Final Sequence Step)",
+            "prompt": "Tap/Select the sentence that uses the demonstrative reference 'that' and the sequence word 'finally' to conclude Ziggy's training. [U4-5.1, 5.2]",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ 6 (S6) ขึ้นต้นด้วย 'When that was completed, Ziggy was finally ready...' เพื่อสรุปขั้นตอนสุดท้ายของการฝึก"
+          },
+          {
+            "id": 9,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Relative Pronoun)",
+            "prompt": "Complete Sentence (6) with the relative pronoun that refers to 'the person': [U4-5.1]",
+            "sentenceWithBlank": "Ziggy was finally ready to become a loyal friend and constant companion for the person [ _______ ] needed her.",
+            "choices": [
+              "which",
+              "where",
+              "who",
+              "whose"
+            ],
+            "correctWord": "who",
+            "explanation": "ใช้ประพันธสรรพนาม 'who' เพื่อขยายคำนามบอกบุคคล 'the person' ที่ทำหน้าที่เป็นประธานของกริยา needed"
+          },
+          {
+            "id": 10,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Text Organization & Map)",
+            "prompt": "What is the overall text organization pattern of Passage 1, and what is the correct Text Map sequence? [U4-5.3, 5.4]",
+            "options": [
+              "Compare & Contrast: Dogs vs. Cats",
+              "Problem & Solution: Lost Dog ➔ Found in Closet",
+              "Chronological / Sequence Pattern: 1) Puppy Raiser (7 wks–1.5 yrs) ➔ 2) Training Center (8 mos) ➔ 3) Team Training (2 wks) ➔ 4) Full Service Dog",
+              "Cause & Effect: Storm Winds ➔ Dust Bowl"
+            ],
+            "correctAnswer": 2,
+            "explanation": "บทอ่านจัดเรียงตามลำดับเวลาและขั้นตอนการฝึก (Chronological / Sequence Pattern) ตั้งแต่ขั้นที่ 1 ถึงขั้นที่ 4 อย่างชัดเจน (ข้อ C)"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Passage 2: Comparing Soccer and American Football (Level 4)",
+        "thaiTitle": "เรื่องที่ 2: เปรียบเทียบกีฬาฟุตบอล (Soccer) กับอเมริกันฟุตบอล (Compare & Contrast) [U4-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Soccer and American football are both popular team sports that began in England and are played by two teams of eleven players.",
+          "In both games, the main object is to move the ball down the field and score into the opponent's goal.",
+          "However, the two sports use very different balls: a soccer ball is round and black-and-white, whereas a football is brown and oval-shaped.",
+          "During a soccer match, players can kick the ball or hit it with their forehead, but they may not touch it with their hands.",
+          "In contrast, American football players may carry, throw, or kick the ball as they move it across a 120-yard field.",
+          "Furthermore, soccer players wear only shin guards to protect their legs, while football players wear heavy padding all over their bodies and helmets with face guards."
+        ],
+        "audioText": "Soccer and American football are both popular team sports that began in England and are played by two teams of eleven players. In both games, the main object is to move the ball down the field and score into the opponent's goal. However, the two sports use very different balls: a soccer ball is round and black-and-white, whereas a football is brown and oval-shaped. During a soccer match, players can kick the ball or hit it with their forehead, but they may not touch it with their hands. In contrast, American football players may carry, throw, or kick the ball as they move it across a 120-yard field. Furthermore, soccer players wear only shin guards to protect their legs, while football players wear heavy padding all over their bodies and helmets with face guards.",
+        "questions": [
+          {
+            "id": 11,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Text Organization)",
+            "prompt": "What is the primary text organization pattern of Passage 2? [U4-5.3]",
+            "options": [
+              "Compare and Contrast Pattern (showing similarities and differences between soccer and football)",
+              "Problem and Solution Pattern (how to fix a flat soccer ball)",
+              "Chronological Biography of one famous player",
+              "Cause and Effect of sports injuries"
+            ],
+            "correctAnswer": 0,
+            "explanation": "บทอ่านเปรียบเทียบความเหมือน (both, in both games) และความต่าง (However, whereas, In contrast, while) ระหว่างกีฬา 2 ชนิด จึงเป็น Compare and Contrast Pattern (ข้อ A)"
+          },
+          {
+            "id": 12,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Word)",
+            "prompt": "In Sentence (2), 'In both games, the main object is to move the ball...', what does the phrase 'both games' refer to? [U4-5.1]",
+            "options": [
+              "Tennis and basketball",
+              "Soccer and American football",
+              "Chess and checkers",
+              "Running and swimming"
+            ],
+            "correctAnswer": 1,
+            "explanation": "วลีอ้างอิง 'both games' ชี้กลับไปยังกีฬาทั้งสองชนิดที่กล่าวถึงในประโยคที่ 1 คือ Soccer and American football (ข้อ B)"
+          },
+          {
+            "id": 13,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Contrast Transition)",
+            "prompt": "Tap/Select the sentence that shifts from similarities to differences using 'However' and 'whereas' to contrast the shape and color of the balls. [U4-5.2, 5.3]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้คำเชื่อม 'However' และ 'whereas' เพื่อเปลี่ยนจากความเหมือนเข้าสู่การเปรียบเทียบความต่างของลูกบอล"
+          },
+          {
+            "id": 14,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Pronoun Reference)",
+            "prompt": "In Sentence (4), '...players can kick the ball or hit it with their forehead, but they may not touch it with their hands', what do 'it' and 'they' refer to? [U4-5.1]",
+            "options": [
+              "'it' = the forehead | 'they' = the goalposts",
+              "'it' = England | 'they' = the referees",
+              "'it' = the soccer ball | 'they' = the soccer players",
+              "'it' = the field | 'they' = the shin guards"
+            ],
+            "correctAnswer": 2,
+            "explanation": "เอกพจน์ 'it' แทนคำนาม 'the ball' (ลูกฟุตบอล) ส่วนพหูพจน์ 'they' แทนคำนาม 'players' (ผู้เล่นฟุตบอล) (ข้อ C)"
+          },
+          {
+            "id": 15,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Contrast Connective)",
+            "prompt": "Complete Sentence (5) with the transition phrase that contrasts football rules with soccer rules: [U4-5.2]",
+            "sentenceWithBlank": "[ _______ ], American football players may carry, throw, or kick the ball as they move it across a 120-yard field.",
+            "choices": [
+              "In contrast",
+              "For instance",
+              "As a result",
+              "Afterward"
+            ],
+            "correctWord": "In contrast",
+            "explanation": "ใช้ 'In contrast' (ในทางตรงกันข้าม) เพื่อเปรียบเทียบความต่างว่าผู้เล่นอเมริกันฟุตบอลสามารถอุ้มและขว้างลูกบอลด้วยมือได้ ต่างจากซอกเกอร์ในประโยคก่อนหน้า"
+          },
+          {
+            "id": 16,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Addition & Contrast Signals)",
+            "prompt": "In Sentence (6), why does the author use 'Furthermore' at the beginning and 'while' in the middle of the sentence? [U4-5.2]",
+            "options": [
+              "'Furthermore' adds another point of comparison (protective gear), and 'while' contrasts soccer shin guards with football helmets and padding.",
+              "'Furthermore' shows the end of a story, and 'while' shows a cause.",
+              "Both words are used to define an unknown medical word.",
+              "Both words indicate a problem that has no solution."
+            ],
+            "correctAnswer": 0,
+            "explanation": "'Furthermore' ใช้เพิ่มประเด็นเปรียบเทียบใหม่ (เรื่องอุปกรณ์ป้องกันตัว) ส่วน 'while' ใช้เปรียบต่างระหว่างสนับแข้งของซอกเกอร์กับชุดเกราะและหมวกกันน็อกของอเมริกันฟุตบอล (ข้อ A)"
+          },
+          {
+            "id": 17,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Tracking)",
+            "prompt": "In Sentence (6), '...while football players wear heavy padding all over their bodies...', whose bodies does 'their' refer to? [U4-5.1]",
+            "options": [
+              "Soccer players' bodies",
+              "The coaches' bodies",
+              "The spectators' bodies",
+              "Football players' bodies"
+            ],
+            "correctAnswer": 3,
+            "explanation": "คำสรรพนามแสดงความเป็นเจ้าของ 'their' อยู่หลังประธานของอนุประโยคหลังคือ football players จึงหมายถึงร่างกายของผู้เล่นอเมริกันฟุตบอล (ข้อ D)"
+          },
+          {
+            "id": 18,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Shared Similarities)",
+            "prompt": "Tap/Select Sentence (1) which uses the word 'both' to introduce how soccer and American football are alike. [U4-5.2, 5.3]",
+            "targetSentenceIndex": 0,
+            "explanation": "ประโยคที่ 1 (S1) ใช้คำว่า 'both' เพื่อระบุความเหมือนกันของกีฬาทั้งสองชนิด (เริ่มต้นในอังกฤษและมีผู้เล่นฝั่งละ 11 คน)"
+          },
+          {
+            "id": 19,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Contrast Signal)",
+            "prompt": "Complete Sentence (3) with the contrast connective: A soccer ball is round, [ _______ ] a football is brown and oval-shaped. [U4-5.2]",
+            "sentenceWithBlank": "However, the two sports use very different balls: a soccer ball is round and black-and-white, [ _______ ] a football is brown and oval-shaped.",
+            "choices": [
+              "whereas",
+              "therefore",
+              "because",
+              "finally"
+            ],
+            "correctWord": "whereas",
+            "explanation": "คำเชื่อม 'whereas' (ในขณะที่) ใช้เชื่อมอนุประโยคเปรียบเทียบความแตกต่างระหว่างรูปร่างและสีของลูกบอลทั้งสองชนิด"
+          },
+          {
+            "id": 20,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Text Mapping)",
+            "prompt": "If you organize Passage 2 into a Venn Diagram Text Map, which item belongs in the MIDDLE overlapping section (Alike / Both)? [U4-5.4, 6.2.4]",
+            "options": [
+              "Players wear helmets with face guards",
+              "Played by two teams of 11 players trying to move the ball into the opponent's goal",
+              "Players may not touch the ball with their hands",
+              "Played with a brown oval-shaped ball"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ช่องตรงกลางของ Venn Diagram คือสิ่งที่เหมือนกัน (Alike) ซึ่งได้แก่ มีผู้เล่น 2 ทีม ทีมละ 11 คน และมีเป้าหมายนำลูกบอลเข้าประตูฝ่ายตรงข้าม (ข้อ B)"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Passage 3: Battling Soil Erosion on Hillsides (Level 4)",
+        "thaiTitle": "เรื่องที่ 3: ปัญหาการกัดเซาะหน้าดินและแนวทางป้องกัน (Problem-Solution & Cause-Effect) [U4-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Soil erosion is a serious environmental problem that happens when rock and soil break down into small pieces and slide down a hill, a cliff, or a mountain.",
+          "This gradual wearing away of the earth is caused by natural forces such as strong wind, heavy rain, and changing temperatures.",
+          "If a family's home is built on a steep hill that is eroding, then the house may be in danger of sliding down the slope as well!",
+          "Fortunately, homeowners and engineers have found effective solutions to battle erosion and protect their hillside property.",
+          "First, many people plant thick grass and trees on their land so that the plants' strong root systems will hold the soil firmly in place.",
+          "In addition, other people lay a special protective netting over bare slopes to stop rainwater from washing the earth away."
+        ],
+        "audioText": "Soil erosion is a serious environmental problem that happens when rock and soil break down into small pieces and slide down a hill, a cliff, or a mountain. This gradual wearing away of the earth is caused by natural forces such as strong wind, heavy rain, and changing temperatures. If a family's home is built on a steep hill that is eroding, then the house may be in danger of sliding down the slope as well! Fortunately, homeowners and engineers have found effective solutions to battle erosion and protect their hillside property. First, many people plant thick grass and trees on their land so that the plants' strong root systems will hold the soil firmly in place. In addition, other people lay a special protective netting over bare slopes to stop rainwater from washing the earth away.",
+        "questions": [
+          {
+            "id": 21,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Demonstrative Noun Phrase)",
+            "prompt": "In Sentence (2), 'This gradual wearing away of the earth is caused by natural forces...', what does the reference phrase 'This gradual wearing away of the earth' refer back to? [U4-5.1]",
+            "options": [
+              "Building a new house on a flat road",
+              "Planting trees in a city park",
+              "Soil erosion (rock and soil breaking down and sliding down a hill)",
+              "Snow falling on a mountain peak"
+            ],
+            "correctAnswer": 2,
+            "explanation": "วลีชี้เฉพาะ 'This gradual wearing away of the earth' อ้างกลับไปสรุปความหมายของคำว่า Soil erosion ในประโยคที่ 1 (ข้อ C)"
+          },
+          {
+            "id": 22,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Connective Function)",
+            "prompt": "In Sentence (2), what is the function of the connective phrase 'such as'? [U4-5.2]",
+            "options": [
+              "To give concrete examples of the natural forces that cause erosion (wind, rain, temperature)",
+              "To show an opposite opinion about mountains",
+              "To show the final step in a recipe",
+              "To replace a plural pronoun"
+            ],
+            "correctAnswer": 0,
+            "explanation": "คำเชื่อม 'such as' ทำหน้าที่ยกตัวอย่าง (Examples) ของพลังธรรมชาติที่ทำให้เกิดการกัดเซาะหน้าดิน ได้แก่ ลมแรง ฝนตกหนัก และอุณหภูมิที่เปลี่ยนไป (ข้อ A)"
+          },
+          {
+            "id": 23,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Condition & Cause-Effect)",
+            "prompt": "Tap/Select the sentence that uses the conditional connective pair 'If ... then ...' to warn about the danger to a house built on an eroding hill. [U4-5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 (S3) ใช้โครงสร้างเงื่อนไข 'If a family's home is built on a steep hill..., then the house may be in danger...'"
+          },
+          {
+            "id": 24,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Structural Pivot)",
+            "prompt": "How does Sentence (4) ('Fortunately, homeowners and engineers have found effective solutions to battle erosion...') function in the organization of the passage? [U4-5.3]",
+            "options": [
+              "It introduces a brand new problem about ocean sharks.",
+              "It shifts the passage from the Problem (dangers of soil erosion) to the Solutions (ways to prevent erosion).",
+              "It compares two different countries in Europe.",
+              "It tells a funny joke about weather forecasters."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ประโยคที่ 4 เป็นจุดเปลี่ยนสำคัญ (Transition Sentence) ที่เชื่อมจากส่วน Problem (ประโยค 1–3) ไปสู่ส่วน Solutions (ประโยค 4–6) (ข้อ B)"
+          },
+          {
+            "id": 25,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Purpose / Result Connective)",
+            "prompt": "Complete Sentence (5) with the connective phrase that explains the purpose/effect of planting grass and trees: [U4-5.2]",
+            "sentenceWithBlank": "First, many people plant thick grass and trees on their land [ _______ ] the plants' strong root systems will hold the soil firmly in place.",
+            "choices": [
+              "so that",
+              "however",
+              "by contrast",
+              "unless"
+            ],
+            "correctWord": "so that",
+            "explanation": "คำเชื่อม 'so that' (เพื่อที่ว่า/ส่งผลให้) ใช้เชื่อมเหตุผลและผลลัพธ์ของการปลูกหญ้าและต้นไม้เพื่อยึดหน้าดินไว้"
+          },
+          {
+            "id": 26,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Word)",
+            "prompt": "In Sentence (4), '...homeowners and engineers have found effective solutions to battle erosion and protect their hillside property', who does 'their' refer to? [U4-5.1]",
+            "options": [
+              "Strong winds and heavy rains",
+              "Rocks and small pieces of soil",
+              "Trees and grass",
+              "Homeowners (and people living on the hillside)"
+            ],
+            "correctAnswer": 3,
+            "explanation": "คำสรรพนาม 'their' อ้างถึงคำนามพหูพจน์ข้างหน้าคือ homeowners (เจ้าของบ้านบนเนินเขา) (ข้อ D)"
+          },
+          {
+            "id": 27,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Addition Connective)",
+            "prompt": "Tap/Select the sentence that uses 'In addition' to introduce the second solution for stopping hillside erosion. [U4-5.2, 5.3]",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ 6 (S6) ขึ้นต้นด้วย 'In addition' เพื่อเสริมแนวทางแก้ปัญหาวิธีที่สอง (การใช้ตาข่ายคลุมดิน)"
+          },
+          {
+            "id": 28,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Addition Signal)",
+            "prompt": "Complete Sentence (6) with the connective that adds a second solution to the first one: [U4-5.2]",
+            "sentenceWithBlank": "[ _______ ], other people lay a special protective netting over bare slopes to stop rainwater from washing the earth away.",
+            "choices": [
+              "In addition",
+              "Because",
+              "On the contrary",
+              "Otherwise"
+            ],
+            "correctWord": "In addition",
+            "explanation": "ใช้ 'In addition' (นอกจากนี้/ยิ่งไปกว่านั้น) เพื่อเสริมวิธีแก้ปัญหาที่สองต่อจาก 'First' ในประโยคที่ 5"
+          },
+          {
+            "id": 29,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Relative Pronoun)",
+            "prompt": "In Sentence (3), 'If a family's home is built on a steep hill that is eroding...', what does the relative pronoun 'that' refer to? [U4-5.1]",
+            "options": [
+              "A steep hill",
+              "A special netting",
+              "Rainwater",
+              "An engineer"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประพันธสรรพนาม 'that' อยู่หลังคำนาม 'a steep hill' ทำหน้าที่ขยายว่าเนินเขาสูงชันลูกนั้นกำลังถูกกัดเซาะ (ข้อ A)"
+          },
+          {
+            "id": 30,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Text Organization & Map)",
+            "prompt": "Which Text Map best summarizes the overarching structure of Passage 3? [U4-5.3, 5.4]",
+            "options": [
+              "Sequence: Morning ➔ Noon ➔ Afternoon ➔ Night",
+              "Problem & Solution: [Problem] Wind & rain erode hillside soil & threaten homes ➔ [Solutions] 1) Plant grass/trees with strong roots + 2) Lay protective netting over slopes",
+              "Compare & Contrast: Arizona Grand Canyon vs. Florida Lakes",
+              "Classification: Mammals vs. Reptiles"
+            ],
+            "correctAnswer": 1,
+            "explanation": "โครงสร้างหลักของบทอ่านที่ 3 คือ Problem and Solution (ปัญหาการกัดเซาะหน้าดินที่คุกคามบ้านเรือน ➔ แนวทางแก้ไข 2 วิธีคือปลูกพืชยึดดินและปูตาข่ายคลุมดิน) (ข้อ B)"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Passage 4: How Old Phone Books Get Recycled (Level 4)",
+        "thaiTitle": "เรื่องที่ 4: กระบวนการรีไซเคิลสมุดโทรศัพท์เก่าสู่เล่มใหม่ (Process Sequence & Referents) [U4-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Each year, countless numbers of old phone books get recycled into brand-new phone books through a well-organized process.",
+          "First, people take their old phone books to drop-off locations at local stores and supermarkets, and the collected books are transported to a central warehouse.",
+          "Here, workers load them onto large trucks and trains to be shipped to a recycling paper mill.",
+          "At the mill, heavy machines process millions of pounds of old paper into pulp, which is a soft, mushy mixture like oatmeal.",
+          "Next, the pulp is made into huge rolls of yellow and white recycled paper, and these are shipped to printing companies, who print phone books for the new year.",
+          "Finally, the new phone books are delivered to homes and businesses across the community, and next year the cycle starts all over again."
+        ],
+        "audioText": "Each year, countless numbers of old phone books get recycled into brand-new phone books through a well-organized process. First, people take their old phone books to drop-off locations at local stores and supermarkets, and the collected books are transported to a central warehouse. Here, workers load them onto large trucks and trains to be shipped to a recycling paper mill. At the mill, heavy machines process millions of pounds of old paper into pulp, which is a soft, mushy mixture like oatmeal. Next, the pulp is made into huge rolls of yellow and white recycled paper, and these are shipped to printing companies, who print phone books for the new year. Finally, the new phone books are delivered to homes and businesses across the community, and next year the cycle starts all over again.",
+        "questions": [
+          {
+            "id": 31,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Place Reference Word)",
+            "prompt": "In Sentence (3), 'Here, workers load them onto large trucks and trains...', what does the reference word 'Here' refer to? [U4-5.1]",
+            "options": [
+              "At the central warehouse (mentioned at the end of Sentence 2)",
+              "Inside people's homes",
+              "On a mountain trail",
+              "Inside a mailbox"
+            ],
+            "correctAnswer": 0,
+            "explanation": "คำอ้างอิงสถานที่ 'Here' (ที่นี่) ชี้กลับไปยังสถานที่ที่เพิ่งกล่าวถึงท้ายประโยคที่ 2 คือ a central warehouse (โกดังกลาง) (ข้อ A)"
+          },
+          {
+            "id": 32,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Personal Pronoun Reference)",
+            "prompt": "In Sentence (3), 'Here, workers load them onto large trucks and trains...', what does the pronoun 'them' refer to? [U4-5.1]",
+            "options": [
+              "Local stores and supermarkets",
+              "The collected old phone books",
+              "Printing companies",
+              "Oatmeal bowls"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำสรรพนามพหูพจน์ 'them' อ้างถึง 'the collected books / old phone books' ที่ถูกรวบรวมมาไว้ที่โกดัง (ข้อ B)"
+          },
+          {
+            "id": 33,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Relative Pronoun Definition)",
+            "prompt": "Tap/Select the sentence that uses the relative pronoun ', which' to define what 'pulp' is. [U4-5.1]",
+            "targetSentenceIndex": 3,
+            "explanation": "ประโยคที่ 4 (S4) ใช้ ', which is a soft, mushy mixture like oatmeal' เพื่อขยายและนิยามคำนาม 'pulp' (เยื่อกระดาษ)"
+          },
+          {
+            "id": 34,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Demonstrative Pronoun)",
+            "prompt": "In Sentence (5), 'Next, the pulp is made into huge rolls of yellow and white recycled paper, and these are shipped to printing companies...', what does 'these' refer to? [U4-5.1]",
+            "options": [
+              "Old trucks and trains",
+              "Supermarket drop-off boxes",
+              "The huge rolls of yellow and white recycled paper",
+              "Oatmeal mixtures"
+            ],
+            "correctAnswer": 2,
+            "explanation": "คำสรรพนามชี้เฉพาะพหูพจน์ 'these' แทนคำนามพหูพจน์ที่อยู่ข้างหน้าคือ huge rolls of yellow and white recycled paper (ม้วนกระดาษรีไซเคิลขนาดใหญ่) (ข้อ C)"
+          },
+          {
+            "id": 35,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Sequence Connective)",
+            "prompt": "Complete Sentence (5) with the sequence transition word that follows the pulping stage: [U4-5.2]",
+            "sentenceWithBlank": "[ _______ ], the pulp is made into huge rolls of yellow and white recycled paper.",
+            "choices": [
+              "Next",
+              "However",
+              "Unless",
+              "Because"
+            ],
+            "correctWord": "Next",
+            "explanation": "ใช้คำเชื่อมบอกลำดับขั้นตอน 'Next' (ถัดมา) เพื่อบอกขั้นตอนการแปรรูปเยื่อกระดาษเป็นม้วนกระดาษรีไซเคิล"
+          },
+          {
+            "id": 36,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Relative Pronoun)",
+            "prompt": "In Sentence (5), '...shipped to printing companies, who print phone books for the new year', what does 'who' refer to? [U4-5.1]",
+            "options": [
+              "The huge rolls of paper",
+              "The printing companies / printers",
+              "The warehouse trucks",
+              "The supermarket shoppers"
+            ],
+            "correctAnswer": 1,
+            "explanation": "คำว่า 'who' ขยายคำนามที่อยู่ติดกันข้างหน้าคือ printing companies (บริษัทโรงพิมพ์/ช่างพิมพ์) (ข้อ B)"
+          },
+          {
+            "id": 37,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Topic Sentence & Pattern)",
+            "prompt": "Tap/Select the Topic Sentence (Sentence 1) that introduces the overall recycling process. [U4-5.3]",
+            "targetSentenceIndex": 0,
+            "explanation": "ประโยคที่ 1 (S1) เป็น Topic Sentence ที่ระบุใจความสำคัญและเกริ่นนำว่าจะอธิบายกระบวนการรีไซเคิล (through a well-organized process)"
+          },
+          {
+            "id": 38,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Final Sequence Signal)",
+            "prompt": "Complete Sentence (6) with the sequence transition word that introduces the last stage of the process: [U4-5.2]",
+            "sentenceWithBlank": "[ _______ ], the new phone books are delivered to homes and businesses across the community.",
+            "choices": [
+              "Finally",
+              "Whereas",
+              "For example",
+              "Instead"
+            ],
+            "correctWord": "Finally",
+            "explanation": "ใช้คำเชื่อม 'Finally' (ในที่สุด/ขั้นตอนสุดท้าย) เพื่อสรุปขั้นตอนการนำสมุดโทรศัพท์เล่มใหม่ไปส่งตามบ้านและร้านค้า"
+          },
+          {
+            "id": 39,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Reference Word)",
+            "prompt": "In Sentence (2), 'First, people take their old phone books to drop-off locations...', who does 'their' refer to? [U4-5.1]",
+            "options": [
+              "The paper mill machines'",
+              "The trains'",
+              "The printing companies'",
+              "The people's (community members')"
+            ],
+            "correctAnswer": 3,
+            "explanation": "คำว่า 'their' ชี้กลับไปหาประธานของประโยคคือ people (ผู้คนทั่วไปที่นำสมุดโทรศัพท์ของตนมาส่งคืน) (ข้อ D)"
+          },
+          {
+            "id": 40,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Text Organization & Process Map)",
+            "prompt": "What is the correct 5-step Sequence Text Map for Passage 4? [U4-5.3, 5.4]",
+            "options": [
+              "1) Print books ➔ 2) Turn into pulp ➔ 3) Drop off at stores ➔ 4) Ship to warehouse ➔ 5) Deliver",
+              "1) Drop off at stores ➔ 2) Transport to warehouse & ship to mill ➔ 3) Process into pulp ➔ 4) Make paper rolls & print new books ➔ 5) Deliver to homes",
+              "1) Plant trees ➔ 2) Cut wood ➔ 3) Build houses ➔ 4) Paint walls ➔ 5) Sell homes",
+              "1) Buy a phone ➔ 2) Charge battery ➔ 3) Call friends ➔ 4) Lose phone ➔ 5) Buy new phone"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ผังลำดับขั้นตอนที่ถูกต้องตามบทอ่านคือ 1) นำไปหย่อนที่จุดรับคืนตามร้านค้า ➔ 2) ขนไปโกดังและส่งเข้าโรงงานกระดาษ ➔ 3) ปั่นเป็นเยื่อกระดาษ (pulp) ➔ 4) ม้วนเป็นกระดาษรีไซเคิลและส่งโรงพิมพ์ ➔ 5) แจกจ่ายสมุดเล่มใหม่สู่บ้านเรือน (ข้อ B)"
           }
         ]
       }

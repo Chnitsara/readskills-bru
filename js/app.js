@@ -100,6 +100,22 @@ class ReadSkillsApp {
       lastScore: savedU3QuizScore ? parseInt(savedU3QuizScore) : null
     };
 
+    // Unit 4 State (References, Connectives, and Text Organization)
+    this.unit4PreGameAnswers = {};
+    this.unit4Highlights = {};
+    this.unit4GameAnswers = JSON.parse(localStorage.getItem('bru_unit4_game_answers') || '{}');
+    this.unit4GameScore = localStorage.getItem('bru_unit4_game_score') ? parseInt(localStorage.getItem('bru_unit4_game_score')) : null;
+    const savedU4QuizScore = localStorage.getItem('bru_unit4_quiz_score');
+    this.unit4QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedU4QuizScore ? parseInt(savedU4QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -772,6 +788,23 @@ class ReadSkillsApp {
           { key: 'quiz', num: 1, label: 'Vocabulary Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบท 40 ข้อ [6.3.3-6.3.4]' }
         ];
       }
+    } else if (this.currentUnitId === 4) {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & คำอ้างอิงที่หายไป [6.1.1-6.1.2]' },
+          { key: 'learn', num: 2, label: 'References & Matching', sub: 'คำอ้างอิง คำเชื่อม & จับคู่ [6.1.3-6.1.5]' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Guided Demo & Text Map', sub: 'สาธิตวิเคราะห์ & แผนผังเรื่อง [6.2.1, 6.2.4]' },
+          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี [6.2.2]' },
+          { key: 'practice', num: 3, label: 'Text Structure Practice', sub: 'ฝึกโครงสร้าง & คำอ้างอิง (70%) [6.2.3-6.2.6]' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบโครงสร้างและคำอ้างอิง [U4-6.3.3]' }
+        ];
+      }
     } else {
       if (stage === 'preReading') {
         steps = [
@@ -1004,7 +1037,7 @@ class ReadSkillsApp {
     const currentStep = this.currentActivityStep;
 
     if (currentStep === 'quiz') {
-      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3) {
+      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3 || this.currentUnitId === 4) {
         return this.renderQuizStep();
       }
       if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
@@ -1324,6 +1357,18 @@ class ReadSkillsApp {
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์โครงสร้างประโยคซับซ้อนได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
       };
     }
+    if (this.currentUnitId === 4) {
+      return {
+        unitId: 4,
+        quizData: ReadSkillsData.unit4Quiz,
+        state: this.unit4QuizState,
+        storageKey: 'bru_unit4_quiz_score',
+        cefrLabel: 'CEFR Target: B1 Level (Level 4)',
+        unitTitle: 'Unit 4 Assessment Results (ผลคะแนนแบบทดสอบคำอ้างอิง คำเชื่อม และโครงสร้าง 40 ข้อ)',
+        unitSub: 'คะแนนแบบทดสอบวัดผลการแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างบทอ่าน Unit 4 (40 ข้อ • Indicator 3.3)',
+        passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถแกะรอย Reference Words, วิเคราะห์ Connectives และจำแนก Text Organization Patterns ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
+      };
+    }
     return {
       unitId: 1,
       quizData: ReadSkillsData.unit1Quiz,
@@ -1345,6 +1390,9 @@ class ReadSkillsApp {
       if (this.currentUnitId === 3 && this.updateUnit3SummaryDashboard) {
         this.updateUnit3SummaryDashboard();
       }
+      if (this.currentUnitId === 4 && this.updateUnit4SummaryDashboard) {
+        this.updateUnit4SummaryDashboard();
+      }
     }, 30);
 
     const ctx = this.getActiveUnitQuizContext();
@@ -1355,7 +1403,7 @@ class ReadSkillsApp {
 
     const state = ctx.state;
 
-    // Extra In-Class Cards & Wrap-Up Footer for Unit 2 & Unit 3
+    // Extra In-Class Cards & Wrap-Up Footer for Unit 2, Unit 3 & Unit 4
     let unit3TopCards = '';
     if (ctx.unitId === 2) {
       unit3TopCards = `
@@ -1399,6 +1447,29 @@ class ReadSkillsApp {
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Group Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบและอธิบายวิธีใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายประโยคหน้าชั้นเรียน
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 4) {
+      unit3TopCards = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+          <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold">
+              <i data-lucide="git-merge" class="w-4 h-4 text-purple-700"></i>
+              <span>In-class activity: Group Text Mapping [U4-6.3.1]</span>
+            </div>
+            <p class="text-purple-900 leading-relaxed">
+              <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อวาดผังโครงสร้างบทอ่าน (Text Map / Graphic Organizer) แสดงการเชื่อมโยงความคิด คำเชื่อม และคำอ้างอิงสำคัญในบทอ่าน
+            </p>
+          </div>
+          <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+              <i data-lucide="presentation" class="w-4 h-4 text-indigo-700"></i>
+              <span>In-class activity: Group Presentation [U4-6.3.2]</span>
+            </div>
+            <p class="text-indigo-900 leading-relaxed">
+              <strong>Group Presentation:</strong> ตัวแทนกลุ่มนำเสนอแผนผัง Text Map หน้าชั้นเรียน พร้อมอธิบายรูปแบบการจัดระเบียบเนื้อหา (Sequence, Compare-Contrast, Cause-Effect, Problem-Solution)
             </p>
           </div>
         </div>
@@ -1450,6 +1521,30 @@ class ReadSkillsApp {
             <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
               <strong class="font-bold block text-purple-900">3. หลงในส่วนขยายประโยคยาว</strong>
               <p class="leading-relaxed">ให้ตัดอนุประโยคคั่นกลาง (เช่น <em>, which ...,</em> หรือ <em>Although ...,</em>) ออกชั่วคราวเพื่อล็อกหา Core Subject + Main Verb</p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 4) {
+      unit3BottomWrapup = `
+        <!-- Lesson Wrap-up & Common Mistakes [U4-6.3.4] -->
+        <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+          <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U4-6.3.4]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+              <strong class="font-bold block text-rose-900">1. โยง Reference ข้ามพจน์ (เอกพจน์/พหูพจน์)</strong>
+              <p class="leading-relaxed">เวลาเจอ <em>they / them / their</em> ต้องมองหาคำนามพหูพจน์ข้างหน้าเท่านั้น ห้ามโยงไปหาคำนามเอกพจน์ที่อยู่ใกล้ที่สุดโดยไม่ตรวจสอบพจน์</p>
+            </div>
+            <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+              <strong class="font-bold block text-amber-900">2. สับสน Cause-Effect กับ Problem-Solution</strong>
+              <p class="leading-relaxed"><em>Cause-Effect</em> อธิบายเพียงว่าทำไมสิ่งหนึ่งจึงเกิดขึ้นและส่งผลอย่างไร แต่ <em>Problem-Solution</em> ต้องมีการเสนอวิธีแก้ไขปัญหาอย่างชัดเจน</p>
+            </div>
+            <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+              <strong class="font-bold block text-purple-900">3. ลืมดูการอ้างอิงทั้งประโยคของ This / That</strong>
+              <p class="leading-relaxed">คำชี้เฉพาะอย่าง <em>This</em> หรือวลี <em>This process / This problem</em> มักไม่ได้แทนคำนามคำเดียว แต่แทนเหตุการณ์หรือขั้นตอนทั้งหมดในประโยคก่อนหน้า</p>
             </div>
           </div>
         </div>
@@ -1833,7 +1928,9 @@ class ReadSkillsApp {
         state.isCompleted = true;
         const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
         localStorage.setItem(ctx.storageKey, totalScore);
-        if (ctx.unitId === 3) {
+        if (ctx.unitId === 4) {
+          localStorage.setItem('bru_unit4_test_score', totalScore);
+        } else if (ctx.unitId === 3) {
           localStorage.setItem('bru_unit3_test_score', totalScore);
         } else if (ctx.unitId === 2) {
           localStorage.setItem('bru_unit2_test_score', totalScore);
@@ -1855,7 +1952,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: localStorage.getItem(ctx.storageKey) ? parseInt(localStorage.getItem(ctx.storageKey)) : null
     };
-    if (ctx.unitId === 3) {
+    if (ctx.unitId === 4) {
+      this.unit4QuizState = freshState;
+    } else if (ctx.unitId === 3) {
       this.unit3QuizState = freshState;
     } else if (ctx.unitId === 2) {
       this.unit2QuizState = freshState;
@@ -3711,6 +3810,212 @@ class ReadSkillsApp {
 
     const sc2 = document.getElementById('summary-u3-test');
     const bg2 = document.getElementById('badge-u3-test');
+    if (sc2 && bg2 && tScore !== null) {
+      const val = parseInt(tScore);
+      sc2.textContent = `${val} / 40`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 28 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 28 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+  }
+
+  /* ------------------- Unit 4 Interactive Methods (References, Connectives & Text Organization) ------------------- */
+
+  // 1. Warm-Up Missing Reference & Connective Guessing [U4-6.1.2]
+  checkUnit4Warmup(selectedNum) {
+    const fb = document.getElementById('u4-warmup-feedback');
+    if (!fb) return;
+    fb.classList.remove('hidden');
+    if (selectedNum === 2) {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉 ((1) He / (2) However / (3) Finally):</strong> (1) <strong>He</strong> เป็นคำสรรพนามเอกพจน์แทน <em>A thirsty crow</em>, (2) <strong>However</strong> แสดงความขัดแย้งว่ามีน้ำแต่คอยาวไม่ถึงก้นเหยือก และ (3) <strong>Finally</strong> บอกลำดับขั้นตอนสุดท้ายเมื่อน้ำสูงขึ้นจนดื่มได้';
+    } else {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300';
+      fb.innerHTML = '<strong>ลองสังเกตความเชื่อมโยงอีกครั้ง:</strong> ประธานคือ <em>A thirsty crow</em> (เอกพจน์) จึงใช้ <strong>He</strong> ส่วนประโยคที่สองขัดแย้งกันจึงใช้ <strong>However</strong> และตอนจบเป็นลำดับสุดท้ายจึงใช้ <strong>Finally</strong> (ตัวเลือกที่ 2)';
+    }
+  }
+
+  // 2. Pre-Reading Reference Matching Activity (5 Items) [U4-5.5, 6.1.4]
+  submitUnit4PreGame(qNum, choiceIdx) {
+    if (!this.unit4PreGameAnswers) this.unit4PreGameAnswers = {};
+    this.unit4PreGameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "คำว่า 'they' เป็นคำสรรพนามพหูพจน์ที่อ้างอิงย้อนกลับไปหาประธานพหูพจน์ 'Geckos' ในประโยคแรก (ข้อ B)" },
+      2: { ans: 0, exp: "คำว่า 'which' เป็น Relative Pronoun ที่ขยายคำนามพหูพจน์ที่อยู่ติดกันข้างหน้าคือ 'millions of tiny bristles' (ข้อ A)" },
+      3: { ans: 2, exp: "คำว่า 'its' เป็นคำสรรพนามแสดงความเป็นเจ้าของเอกพจน์ ซึ่งอ้างถึงสัตว์ผู้ล่าเอกพจน์ 'a predator' (ข้อ C)" },
+      4: { ans: 1, exp: "วลีชี้เฉพาะ 'This clever trick' สรุปอ้างอิงถึงกลไกการสลัดหางทิ้งแล้วงอกใหม่ของตุ๊กแกในประโยคก่อนหน้า (ข้อ B)" },
+      5: { ans: 2, exp: "คำแทนนามพหูพจน์ 'those' ใช้แทน 'the eyes' (ดวงตาของสัตว์เลื้อยคลานชนิดอื่น) เพื่อหลีกเลี่ยงการใช้คำซ้ำ (ข้อ C)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u4-pg${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u4-pg${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u4-pg${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u4-pg${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u4-pg${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u4-pg${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit4PreGameAnswers[k] === key[k].ans) score++;
+    });
+    const scoreEl = document.getElementById('u4-pregame-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 5`;
+  }
+
+  // 3. While-Reading 3-Colour Highlighting Practice [U4-6.2.2]
+  // Yellow = Reference words, Green = Connectives and transition words, Blue = Main ideas and text organization
+  highlightUnit4Sentence(segNum, color) {
+    const expected = {
+      1: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Text Organization (สีฟ้า) ที่เปิดประเด็นหลักและบอกโครงสร้างการเปรียบเทียบชั้นของโลกกับเค้ก 4 ชั้น' },
+      2: { role: 'yellow', exp: 'Segment (2) คือ Reference Words (สีเหลือง) มีการใช้วลีชี้เฉพาะ This rocky layer และคำสรรพนาม it อ้างกลับไปยัง the crust' },
+      3: { role: 'green', exp: 'Segment (3) คือ Connectives & Transition Words (สีเขียว) ใช้คำเชื่อม Next, และ Because เพื่อบอกลำดับชั้นถัดไปและความสัมพันธ์เหตุ-ผล' },
+      4: { role: 'green', exp: 'Segment (4) คือ Connectives & Transition Words (สีเขียว) ใช้คำเชื่อมความขัดแย้ง However, เพื่อเปรียบเทียบความต่างของแก่นโลกชั้นนอกที่เป็นของเหลว' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Main Idea & Text Organization (สีฟ้า) ที่ปิดท้ายลำดับชั้นในสุดของโครงสร้างโลกและสรุปใจความสำคัญ' }
+    };
+
+    const textEl = document.getElementById(`u4-s${segNum}-text`);
+    const fbEl = document.getElementById(`u4-s${segNum}-feedback`);
+    if (!textEl || !fbEl) return;
+
+    const hlMap = {
+      yellow: 'highlighter-pen highlighter-yellow',
+      green: 'highlighter-pen highlighter-green',
+      blue: 'highlighter-pen highlighter-blue'
+    };
+
+    const rawText = textEl.textContent.trim();
+    textEl.innerHTML = `<span class="${hlMap[color]}">${rawText}</span>`;
+
+    const isCorrect = expected[segNum].role === color;
+    fbEl.classList.remove('hidden');
+    fbEl.className = `text-[11px] font-sans pt-1 ${isCorrect ? 'text-emerald-300' : 'text-amber-300'}`;
+    fbEl.innerHTML = isCorrect
+      ? `✅ <strong>ถูกต้อง!</strong> ${expected[segNum].exp}`
+      : `💡 <strong>คำแนะนำ:</strong> ${expected[segNum].exp}`;
+  }
+
+  resetUnit4Highlights() {
+    for (let i = 1; i <= 5; i++) {
+      const textEl = document.getElementById(`u4-s${i}-text`);
+      const fbEl = document.getElementById(`u4-s${i}-feedback`);
+      if (textEl) textEl.innerHTML = textEl.textContent.trim();
+      if (fbEl) fbEl.classList.add('hidden');
+    }
+  }
+
+  revealUnit4Highlights() {
+    const roles = { 1: 'blue', 2: 'yellow', 3: 'green', 4: 'green', 5: 'blue' };
+    Object.keys(roles).forEach(k => this.highlightUnit4Sentence(Number(k), roles[k]));
+  }
+
+  // 4. While-Reading Graded Text Structure & Reference Practice (8 Items) [U4-5.6, 6.2.3, 6.2.5]
+  submitUnit4Game(qNum, choiceIdx) {
+    if (!this.unit4GameAnswers) this.unit4GameAnswers = {};
+    this.unit4GameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "คำเชื่อม 'However' แสดงความขัดแย้ง (Contrast) ระหว่างความคาดหวังของ Trent กับความจริงที่พบว่าเป็นรถผิดคัน (ข้อ B)" },
+      2: { ans: 2, exp: "ย่อหน้านี้เล่าลำดับเหตุการณ์ตามเวลา โดยมีคำสัญญาณ After..., Then, และ Finally จึงเป็นแบบ Sequence / Chronological Order (ข้อ C)" },
+      3: { ans: 0, exp: "คำสรรพนามพหูพจน์ 'They' อ้างถึงเด็กหญิงทั้งสองคนคือ Celine and Jean (ข้อ A)" },
+      4: { ans: 3, exp: "คำเชื่อม 'Because' แสดงสาเหตุ และ 'Therefore' แสดงผลลัพธ์ที่ตามมาของเหตุการณ์ (ข้อ D)" },
+      5: { ans: 1, exp: "คำสรรพนามกรรมเอกพจน์ 'it' อ้างถึงคำนามเอกพจน์ 'a venomous cobra' (งูเห่าพิษ) ในประโยคแรก (ข้อ B)" },
+      6: { ans: 2, exp: "บทอ่านเปรียบเทียบความเหมือนและความต่างของทะเลสาบ 2 แห่งด้วยคำว่า Both, However, และ Unlike จึงเป็น Compare and Contrast (ข้อ C)" },
+      7: { ans: 0, exp: "ผู้เขียนระบุปัญหาความกลัวของนักเรียน แล้วเสนอวิธีแก้ไขของครู Peters จนสำเร็จ จึงเป็นโครงสร้าง Problem and Solution (ข้อ A)" },
+      8: { ans: 3, exp: "บทอ่านอธิบายสาเหตุที่เหยื่อสูญพันธุ์และส่งผลให้เสือเขี้ยวดาบสูญพันธุ์ตามไปด้วย จึงเป็นโครงสร้าง Cause and Effect (ข้อ D)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u4-g${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u4-g${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u4-g${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u4-g${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u4-g${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u4-g${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>ยังไม่ถูกต้อง:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit4GameAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit4GameAnswers[k] === key[k].ans) score++;
+      }
+    });
+
+    const scoreEl = document.getElementById('u4-game-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 8`;
+
+    this.unit4GameScore = score;
+    localStorage.setItem('bru_unit4_game_score', score);
+    localStorage.setItem('bru_unit4_game_answers', JSON.stringify(this.unit4GameAnswers));
+
+    if (answered === 8) {
+      const finalBox = document.getElementById('u4-game-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 6;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านเกณฑ์ Text Structure & Reference Practice (Indicator 3.3 &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (ต้องได้ 6/8 ข้อขึ้นไป)'}</span>
+          </div>
+          <p class="text-xs">คะแนนที่ได้: <strong>${score} / 8 (${Math.round((score/8)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit4SummaryDashboard();
+  }
+
+  // 5. Unit 4 Score Dashboard [U4-6.3.4]
+  updateUnit4SummaryDashboard() {
+    const gScore = localStorage.getItem('bru_unit4_game_score');
+    const tScore = localStorage.getItem('bru_unit4_test_score') || localStorage.getItem('bru_unit4_quiz_score');
+
+    const sc1 = document.getElementById('summary-u4-game');
+    const bg1 = document.getElementById('badge-u4-game');
+    if (sc1 && bg1 && gScore !== null) {
+      const val = parseInt(gScore);
+      sc1.textContent = `${val} / 8`;
+      bg1.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 6 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg1.textContent = val >= 6 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc2 = document.getElementById('summary-u4-test');
+    const bg2 = document.getElementById('badge-u4-test');
     if (sc2 && bg2 && tScore !== null) {
       const val = parseInt(tScore);
       sc2.textContent = `${val} / 40`;
