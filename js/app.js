@@ -116,6 +116,22 @@ class ReadSkillsApp {
       lastScore: savedU4QuizScore ? parseInt(savedU4QuizScore) : null
     };
 
+    // Unit 5 State (Text Interpretation and Paraphrased Meaning)
+    this.unit5PreGameAnswers = {};
+    this.unit5Highlights = {};
+    this.unit5GameAnswers = JSON.parse(localStorage.getItem('bru_unit5_game_answers') || '{}');
+    this.unit5GameScore = localStorage.getItem('bru_unit5_game_score') ? parseInt(localStorage.getItem('bru_unit5_game_score')) : null;
+    const savedU5QuizScore = localStorage.getItem('bru_unit5_quiz_score');
+    this.unit5QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedU5QuizScore ? parseInt(savedU5QuizScore) : null
+    };
+
     // Module 2: Reading Strategies Unit 1 State (Navigating Main Ideas & 30-Question Strategy Quiz)
     this.strat1PretestAnswers = {};
     this.strat1VocabAnswers = JSON.parse(localStorage.getItem('bru_strat1_vocab_answers') || '{}');
@@ -826,6 +842,23 @@ class ReadSkillsApp {
           { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบโครงสร้างและคำอ้างอิง [U4-6.3.3]' }
         ];
       }
+    } else if (this.currentUnitId === 5) {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Overview & Warm-Up', sub: 'เป้าหมาย & เปรียบเทียบ Paraphrase [6.1.1-6.1.2]' },
+          { key: 'learn', num: 2, label: 'Key Concepts & Detective', sub: 'การตีความ การถอดความ & นักสืบ [6.1.3-6.1.5]' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Guided Demo & Paraphrase', sub: 'สาธิตตีความ & ถอดความ [6.2.1, 6.2.4]' },
+          { key: 'example', num: 2, label: 'Interactive Highlight', sub: 'ฝึกแยกสี Stated vs Clues [6.2.2]' },
+          { key: 'practice', num: 3, label: 'Detective & Paraphrase', sub: 'ฝึกตีความ & ถอดความ (70%) [6.2.3-6.2.6]' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบการตีความและถอดความ [U5-6.3.3]' }
+        ];
+      }
     } else {
       if (stage === 'preReading') {
         steps = [
@@ -1058,7 +1091,7 @@ class ReadSkillsApp {
     const currentStep = this.currentActivityStep;
 
     if (currentStep === 'quiz') {
-      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3 || this.currentUnitId === 4) {
+      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3 || this.currentUnitId === 4 || this.currentUnitId === 5) {
         return this.renderQuizStep();
       }
       if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
@@ -1390,6 +1423,18 @@ class ReadSkillsApp {
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถแกะรอย Reference Words, วิเคราะห์ Connectives และจำแนก Text Organization Patterns ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
       };
     }
+    if (this.currentUnitId === 5) {
+      return {
+        unitId: 5,
+        quizData: ReadSkillsData.unit5Quiz,
+        state: this.unit5QuizState,
+        storageKey: 'bru_unit5_quiz_score',
+        cefrLabel: 'CEFR Target: B1 Level (Level 5)',
+        unitTitle: 'Unit 5 Assessment Results (ผลคะแนนแบบทดสอบการตีความและถอดความ 40 ข้อ)',
+        unitSub: 'คะแนนแบบทดสอบวัดผลการตีความหมายโดยนัยและการถอดความ Unit 5 (40 ข้อ • Indicator 3.3)',
+        passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถตีความหมายโดยนัยจากคำใบ้ (Making Inferences) และถอดความประโยคด้วยภาษาของตนเอง (Paraphrasing) ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
+      };
+    }
     return {
       unitId: 1,
       quizData: ReadSkillsData.unit1Quiz,
@@ -1414,6 +1459,9 @@ class ReadSkillsApp {
       if (this.currentUnitId === 4 && this.updateUnit4SummaryDashboard) {
         this.updateUnit4SummaryDashboard();
       }
+      if (this.currentUnitId === 5 && this.updateUnit5SummaryDashboard) {
+        this.updateUnit5SummaryDashboard();
+      }
     }, 30);
 
     const ctx = this.getActiveUnitQuizContext();
@@ -1424,7 +1472,7 @@ class ReadSkillsApp {
 
     const state = ctx.state;
 
-    // Extra In-Class Cards & Wrap-Up Footer for Unit 2, Unit 3 & Unit 4
+    // Extra In-Class Cards & Wrap-Up Footer for Unit 2, Unit 3, Unit 4 & Unit 5
     let unit3TopCards = '';
     if (ctx.unitId === 2) {
       unit3TopCards = `
@@ -1491,6 +1539,29 @@ class ReadSkillsApp {
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Group Presentation:</strong> ตัวแทนกลุ่มนำเสนอแผนผัง Text Map หน้าชั้นเรียน พร้อมอธิบายรูปแบบการจัดระเบียบเนื้อหา (Sequence, Compare-Contrast, Cause-Effect, Problem-Solution)
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 5) {
+      unit3TopCards = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+          <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold">
+              <i data-lucide="search-check" class="w-4 h-4 text-purple-700"></i>
+              <span>In-class activity: Group Inference & Paraphrase Task [U5-6.3.1]</span>
+            </div>
+            <p class="text-purple-900 leading-relaxed">
+              <strong>Group Activity:</strong> แบ่งกลุ่มทำ 2 ภารกิจ: <strong>Task 1</strong> เขียนข้อสรุปเชิงอนุมาน (Logical Inferences) 2 ข้อพร้อมระบุหลักฐานจากบทอ่าน และ <strong>Task 2</strong> ถอดความย่อหน้าสั้นๆ ด้วยภาษาของกลุ่มตนเองโดยคงความหมายเดิม
+            </p>
+          </div>
+          <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+              <i data-lucide="users" class="w-4 h-4 text-indigo-700"></i>
+              <span>In-class activity: Peer Review & Rubric Check [U5-6.3.2]</span>
+            </div>
+            <p class="text-indigo-900 leading-relaxed">
+              <strong>Peer Review:</strong> แลกเปลี่ยนผลงานกับกลุ่มเพื่อนเพื่อตรวจสอบความสมเหตุสมผลของ Inferences และคุณภาพการ Paraphrase ตามเกณฑ์ 4 ด้าน (Evidence Extraction, Logical Deduction, Semantic Accuracy, Structural Originality)
             </p>
           </div>
         </div>
@@ -1566,6 +1637,30 @@ class ReadSkillsApp {
             <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
               <strong class="font-bold block text-purple-900">3. ลืมดูการอ้างอิงทั้งประโยคของ This / That</strong>
               <p class="leading-relaxed">คำชี้เฉพาะอย่าง <em>This</em> หรือวลี <em>This process / This problem</em> มักไม่ได้แทนคำนามคำเดียว แต่แทนเหตุการณ์หรือขั้นตอนทั้งหมดในประโยคก่อนหน้า</p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 5) {
+      unit3BottomWrapup = `
+        <!-- Lesson Wrap-up & Common Mistakes [U5-6.3.4] -->
+        <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+          <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U5-6.3.4]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+              <strong class="font-bold block text-rose-900">1. เดาเกินหลักฐาน (Unsupported Ideas)</strong>
+              <p class="leading-relaxed">การทำ <em>Inference</em> ที่ดีต้องอ้างอิงจากคำใบ้ในบทอ่าน (Text Clues) เสมอ ห้ามสมมติเรื่องราวที่ไม่มีหลักฐานในบทอ่านมารองรับ</p>
+            </div>
+            <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+              <strong class="font-bold block text-amber-900">2. ถอดความแบบเปลี่ยนแค่ 1–2 คำ (Patchwriting)</strong>
+              <p class="leading-relaxed">การลอกโครงสร้างประโยคเดิมเกือบทั้งหมดแล้วเปลี่ยนคำศัพท์เพียงหนึ่งคำ ยังไม่ถือเป็นการ <em>Paraphrase</em> ที่ดี ต้องปรับโครงสร้างประโยคควบคู่กับการใช้ Synonyms</p>
+            </div>
+            <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+              <strong class="font-bold block text-purple-900">3. ถอดความแล้วความหมายเพี้ยน (Distorted Meaning)</strong>
+              <p class="leading-relaxed">ระวังการสลับประธาน-กรรม หรือสลับเหตุและผลระหว่างการเขียนใหม่ ต้องตรวจสอบเสมอว่าใจความสำคัญยังตรงกับต้นฉบับ 100%</p>
             </div>
           </div>
         </div>
@@ -1949,7 +2044,9 @@ class ReadSkillsApp {
         state.isCompleted = true;
         const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
         localStorage.setItem(ctx.storageKey, totalScore);
-        if (ctx.unitId === 4) {
+        if (ctx.unitId === 5) {
+          localStorage.setItem('bru_unit5_test_score', totalScore);
+        } else if (ctx.unitId === 4) {
           localStorage.setItem('bru_unit4_test_score', totalScore);
         } else if (ctx.unitId === 3) {
           localStorage.setItem('bru_unit3_test_score', totalScore);
@@ -1973,7 +2070,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: localStorage.getItem(ctx.storageKey) ? parseInt(localStorage.getItem(ctx.storageKey)) : null
     };
-    if (ctx.unitId === 4) {
+    if (ctx.unitId === 5) {
+      this.unit5QuizState = freshState;
+    } else if (ctx.unitId === 4) {
       this.unit4QuizState = freshState;
     } else if (ctx.unitId === 3) {
       this.unit3QuizState = freshState;
@@ -4765,6 +4864,212 @@ class ReadSkillsApp {
 
     const sc2 = document.getElementById('summary-u4-test');
     const bg2 = document.getElementById('badge-u4-test');
+    if (sc2 && bg2 && tScore !== null) {
+      const val = parseInt(tScore);
+      sc2.textContent = `${val} / 40`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 28 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 28 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+  }
+
+  /* ------------------- Unit 5 Interactive Methods (Text Interpretation & Paraphrased Meaning) ------------------- */
+
+  // 1. Paraphrasing Practice Warm-Up [U5-6.1.2]
+  checkUnit5Warmup(selectedNum) {
+    const fb = document.getElementById('u5-warmup-feedback');
+    if (!fb) return;
+    fb.classList.remove('hidden');
+    if (selectedNum === 2) {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉 (ตัวเลือก B):</strong> <strong>Version 1</strong> ลอกโครงสร้างประโยคเดิมแล้วเปลี่ยนคำแค่ 2 คำ (Too similar / Patchwriting) • <strong>Version 2</strong> ใช้คำพ้องความหมาย (<em>antique ➔ vintage, babysit cranky twin boys ➔ taking care of two fussy young brothers</em>) และเปลี่ยนโครงสร้างประโยคโดยรักษาความหมายเดิม 100% • <strong>Version 3</strong> ความหมายเพี้ยน (Changes meaning)';
+    } else {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300';
+      fb.innerHTML = '<strong>ลองเปรียบเทียบอีกครั้ง:</strong> สังเกตว่า <strong>Version 1</strong> แทบจะลอกคำเดิมทั้งหมด ส่วน <strong>Version 2</strong> ปรับโครงสร้างและใช้ Synonyms อย่างเหมาะสมโดยคงความหมายเดิม และ <strong>Version 3</strong> บิดเบือนเนื้อเรื่อง (คำตอบที่ถูกต้องคือข้อ B)';
+    }
+  }
+
+  // 2. Warm-Up Short Inference Detective Activity (5 Items) [U5-5.5, 6.1.4]
+  submitUnit5PreGame(qNum, choiceIdx) {
+    if (!this.unit5PreGameAnswers) this.unit5PreGameAnswers = {};
+    this.unit5PreGameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "คำใบ้ 'small velvet box' และ 'fastened the antique gold links around her wrist' ชี้ชัดว่าของขวัญคือสร้อยข้อมือทองคำโบราณ (antique gold bracelet) (ข้อ B)" },
+      2: { ans: 0, exp: "คำใบ้ว่าทุกครั้งที่แมว 7 ตัวมาถูขา Wanda จะจามไม่หยุดและตาบวมแดง สรุปได้ว่าเธอแพ้ขนแมว (allergic to cats) (ข้อ A)" },
+      3: { ans: 2, exp: "การเอาการ์ดหายากมูลค่าหลายร้อยดอลลาร์ไปแลกกับการ์ดธรรมดา สรุปได้ว่า Henry แลกเปลี่ยนอย่างน่าเสียดายและรู้สึกเสียใจภายหลัง (ข้อ C)" },
+      4: { ans: 1, exp: "รอยเท้าเหนียวๆ ที่พื้นครัวไปถึงระเบียง บวกกับคราบสีน้ำตาลที่หนวดและอุ้งเท้าของแมว Buttercup ชี้ว่าแมวเป็นตัวการที่กินกระต่ายช็อกโกแลต (ข้อ B)" },
+      5: { ans: 2, exp: "เงินเก็บ $347 รวมกับเงินสมทบจากพ่ออีก $347 ได้ $694 แต่ป้ายราคาคือ $899 ทำให้เงินยังขาดอีก $205 (ข้อ C)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u5-pg${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u5-pg${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u5-pg${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u5-pg${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u5-pg${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u5-pg${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit5PreGameAnswers[k] === key[k].ans) score++;
+    });
+    const scoreEl = document.getElementById('u5-pregame-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 5`;
+  }
+
+  // 3. While-Reading Interactive Highlighting Practice [U5-6.2.2]
+  // Yellow = Directly Stated Info, Green = Inference Clues, Blue = Implied Conclusion & Paraphrase
+  highlightUnit5Sentence(segNum, color) {
+    const expected = {
+      1: { role: 'yellow', exp: 'Segment (1) คือ Directly Stated Information (สีเหลือง) ที่ระบุข้อเท็จจริงตรงๆ ว่า Reid แวะดูจักรยานสีแดงหน้าร้านทุกวันหลังเลิกเรียน' },
+      2: { role: 'green', exp: 'Segment (2) คือ Inference Clues (สีเขียว) คำใบ้ที่ว่าเขาถอนหายใจเมื่อดูป้ายราคาและนับธนบัตรยับๆ ไม่กี่ใบในกระเป๋า ช่วยให้ตีความได้ว่าเขาไม่มีเงินพอซื้อจักรยาน' },
+      3: { role: 'yellow', exp: 'Segment (3) คือ Directly Stated Information (สีเหลือง) ระบุข้อเท็จจริงตรงๆ ว่า Mr. Eason เสนอให้ยืมจักรยานไปแข่งในวันเสาร์โดยไม่คิดเงิน' },
+      4: { role: 'green', exp: 'Segment (4) คือ Inference Clues (สีเขียว) คำใบ้เรื่องเสื้อและหมวกกันน็อกที่มีชื่อร้านตัวใหญ่ ช่วยให้ตีความแรงจูงใจของเจ้าของร้านได้ว่าต้องการใช้การแข่งเป็นป้ายโฆษณาร้าน' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Logical Inference & Paraphrase (สีฟ้า) ที่สรุปความหมายแฝงและถอดความข้อตกลงของทั้งสองฝ่ายด้วยภาษาใหม่ได้อย่างครบถ้วน' }
+    };
+
+    const textEl = document.getElementById(`u5-s${segNum}-text`);
+    const fbEl = document.getElementById(`u5-s${segNum}-feedback`);
+    if (!textEl || !fbEl) return;
+
+    const hlMap = {
+      yellow: 'highlighter-pen highlighter-yellow',
+      green: 'highlighter-pen highlighter-green',
+      blue: 'highlighter-pen highlighter-blue'
+    };
+
+    const rawText = textEl.textContent.trim();
+    textEl.innerHTML = `<span class="${hlMap[color]}">${rawText}</span>`;
+
+    const isCorrect = expected[segNum].role === color;
+    fbEl.classList.remove('hidden');
+    fbEl.className = `text-[11px] font-sans pt-1 ${isCorrect ? 'text-emerald-300' : 'text-amber-300'}`;
+    fbEl.innerHTML = isCorrect
+      ? `✅ <strong>ถูกต้อง!</strong> ${expected[segNum].exp}`
+      : `💡 <strong>คำแนะนำ:</strong> ${expected[segNum].exp}`;
+  }
+
+  resetUnit5Highlights() {
+    for (let i = 1; i <= 5; i++) {
+      const textEl = document.getElementById(`u5-s${i}-text`);
+      const fbEl = document.getElementById(`u5-s${i}-feedback`);
+      if (textEl) textEl.innerHTML = textEl.textContent.trim();
+      if (fbEl) fbEl.classList.add('hidden');
+    }
+  }
+
+  revealUnit5Highlights() {
+    const roles = { 1: 'yellow', 2: 'green', 3: 'yellow', 4: 'green', 5: 'blue' };
+    Object.keys(roles).forEach(k => this.highlightUnit5Sentence(Number(k), roles[k]));
+  }
+
+  // 4. While-Reading Graded Inference Detective & Paraphrasing Practice (8 Items) [U5-5.5, 5.6, 6.2.3, 6.2.5]
+  submitUnit5Game(qNum, choiceIdx) {
+    if (!this.unit5GameAnswers) this.unit5GameAnswers = {};
+    this.unit5GameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "จากคำใบ้เสียงคำรามกึกก้องที่สั่นสะเทือนกระท่อมบนภูเขา และกำแพงหิมะอัดแน่นที่ปิดกั้นประตูและหน้าต่างทั้งหมด สรุปได้ว่าเกิดหิมะถล่ม (avalanche) ทับกระท่อม (ข้อ B)" },
+      2: { ans: 2, exp: "มดดูถูกดักแด้ที่อยู่นิ่งๆ ในเปลือก แต่ไม่กี่อึดใจต่อมาดักแด้ก็กลายเป็นผีเสื้อแสนสวยบินขึ้นฟ้า สอนให้รู้ว่าอย่าตัดสินหรือดูแคลนผู้อื่นจากรูปลักษณ์ภายนอกชั่วคราว (ข้อ C)" },
+      3: { ans: 0, exp: "การเล่าว่า Pecos Bill โตมากับหมาป่า ใช้หางกระดิ่งเป็นบ่วงบาศ และขี่พายุทอร์นาโดข้าม 3 รัฐ เป็นนิทานพื้นบ้านแนว Tall Tale ที่ใช้การกล่าวเกินจริง (hyperbole) เพื่อความสนุกสนาน (ข้อ A)" },
+      4: { ans: 3, exp: "ดาวหางฮัลเลย์โคจรกลับมาทุกๆ 75–76 ปี เมื่อครั้งล่าสุดคือปี 1986 จึงสรุปได้ว่าจะปรากฏให้เห็นอีกครั้งราวปี 2061 หรือ 2062 (1986 + 75/76) (ข้อ D)" },
+      5: { ans: 1, exp: "ข้อ B ถอดความโดยใช้ Synonyms (Trojans ➔ citizens of Troy, giant wooden horse ➔ massive timber statue, dragged ➔ pulled, unaware ➔ not realizing, hiding ➔ concealed) และเปลี่ยนโครงสร้างประโยคโดยคงความหมายเดิม 100%" },
+      6: { ans: 2, exp: "ข้อ C ปรับโครงสร้างโดยย้ายอนุประโยคเวลาขึ้นต้น (Shortly before the pupa transformed...) และใช้คำพ้องความหมาย (arrogant ➔ boastful, mocked ➔ ridiculed, trapped in its shell ➔ unable to move inside its casing)" },
+      7: { ans: 0, exp: "ข้อ A เปลี่ยน Although clause เป็นวลี Despite losing electrical power during the severe blizzard และใช้คำพ้องความหมายอย่างแม่นยำโดยคงความหมายเดิม" },
+      8: { ans: 3, exp: "ข้อ D สลับอนุประโยคเงื่อนไขขึ้นต้นด้วย Provided that Reid promoted the store by wearing its logo gear... และใช้ Synonyms (borrow for free ➔ lend at no charge, expensive ➔ high-priced) ได้อย่างสมบูรณ์" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u5-g${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u5-g${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u5-g${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u5-g${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u5-g${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u5-g${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>ยังไม่ถูกต้อง:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit5GameAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit5GameAnswers[k] === key[k].ans) score++;
+      }
+    });
+
+    const scoreEl = document.getElementById('u5-game-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 8`;
+
+    this.unit5GameScore = score;
+    localStorage.setItem('bru_unit5_game_score', score);
+    localStorage.setItem('bru_unit5_game_answers', JSON.stringify(this.unit5GameAnswers));
+
+    if (answered === 8) {
+      const finalBox = document.getElementById('u5-game-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 6;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านเกณฑ์ Inference Detective & Paraphrasing Practice (Indicator 3.3 &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (ต้องได้ 6/8 ข้อขึ้นไป)'}</span>
+          </div>
+          <p class="text-xs">คะแนนที่ได้: <strong>${score} / 8 (${Math.round((score/8)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit5SummaryDashboard();
+  }
+
+  // 5. Unit 5 Score Dashboard [U5-6.3.4]
+  updateUnit5SummaryDashboard() {
+    const gScore = localStorage.getItem('bru_unit5_game_score');
+    const tScore = localStorage.getItem('bru_unit5_test_score') || localStorage.getItem('bru_unit5_quiz_score');
+
+    const sc1 = document.getElementById('summary-u5-game');
+    const bg1 = document.getElementById('badge-u5-game');
+    if (sc1 && bg1 && gScore !== null) {
+      const val = parseInt(gScore);
+      sc1.textContent = `${val} / 8`;
+      bg1.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 6 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg1.textContent = val >= 6 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc2 = document.getElementById('summary-u5-test');
+    const bg2 = document.getElementById('badge-u5-test');
     if (sc2 && bg2 && tScore !== null) {
       const val = parseInt(tScore);
       sc2.textContent = `${val} / 40`;

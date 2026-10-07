@@ -169,37 +169,27 @@ window.ReadSkillsData = {
     {
       "id": 5,
       "code": "UNIT-05",
-      "title": "Text Interpretation & Paraphrased Meaning",
-      "thaiTitle": "การตีความและความหมายที่เรียบเรียงใหม่",
-      "scope": "Interpretation, paraphrased meaning, understanding meaning across sentences, guided practice",
-      "description": "Recognize valid paraphrases, infer author's tone, and distinguish fact from opinion.",
-      "cefr": "B1-B2",
+      "title": "Text Interpretation and Paraphrased Meaning",
+      "thaiTitle": "การตีความหมายโดยนัยและการถอดความ (Reading Between the Lines)",
+      "scope": "Stated information vs. implied meaning vs. unsupported ideas, making inferences from text clues and background knowledge, paraphrasing techniques (synonyms, sentence structure changes)",
+      "description": "Make logical inferences from text clues and background knowledge, and paraphrase sentences accurately using synonyms and varied sentence structures with Level 5 stories.",
+      "cefr": "B1",
       "stages": {
         "preReading": {
           "title": "Pre-Reading Stage",
           "steps": {
-            "overview": "Paraphrasing means restating an author's ideas in your own words while retaining the original meaning.",
-            "learn": "Change sentence structure and use accurate synonyms without altering the factual core."
+            "overview": "\n<div class=\"space-y-6\">\n  <!-- Unit Header & Syllabus Ref -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 05</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U5-6.1.1 &bull; U5-6.1.2</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Level 5 Passages</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Overview & Paraphrasing Warm-Up</h3>\n      <p class=\"text-xs text-slate-500\">บทนำสู่บทเรียนและกิจกรรมอุ่นเครื่อง: การตีความหมายโดยนัยและการถอดความ (Reading Between the Lines)</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">\n      Course 2031103 &bull; Section 6.1\n    </span>\n  </div>\n\n  <!-- Objectives & Concept Model Grid [U5-4, U5-6.1.1] -->\n  <div class=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n    <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n        <i data-lucide=\"target\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit Learning Objectives (วัตถุประสงค์การเรียนรู้) [U5-4, U5-6.1.1]</span>\n      </div>\n      <ul class=\"text-xs text-slate-700 space-y-2 leading-relaxed\">\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">1</span>\n          <span><strong>Making Inferences (การตีความหมายโดยนัย):</strong> อธิบายวิธีใช้คำใบ้ในบทอ่าน (Text Clues) การเลือกใช้คำ (Word Choice) และความรู้เดิม (Background Knowledge) เพื่อค้นหาความหมายแฝงและสรุปผลอย่างสมเหตุสมผล <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U5-3.1, 4.2.1, 4.2.3, 5.1, 5.2]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">2</span>\n          <span><strong>Paraphrasing Techniques (เทคนิคการถอดความ):</strong> ระบุและใช้เทคนิคการถอดความ ได้แก่ การใช้คำพ้องความหมาย (Synonyms) และการปรับเปลี่ยนโครงสร้างประโยค/ชนิดของคำ (Sentence Structure & Word Forms) <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U5-3.2, 4.2.2, 5.3]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">3</span>\n          <span><strong>Accurate Rewriting (การเขียนถอดความอย่างแม่นยำ):</strong> เขียนประโยคและย่อหน้าใหม่ด้วยภาษาของตนเองโดยคงความหมายเดิมของผู้เขียนอย่างครบถ้วน <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U5-4.2.4, 5.4]</span></span>\n        </li>\n        <li class=\"flex items-start space-x-2\">\n          <span class=\"w-4 h-4 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">4</span>\n          <span><strong>Graded Mastery (Indicator 3.3):</strong> ทำกิจกรรม Inference Detective และ Paraphrasing Practice ผ่านเกณฑ์ความถูกต้องไม่ต่ำกว่า 70% <span class=\"text-[10px] font-mono text-purple-600 font-bold\">[U5-3.3, 4.2.5, 5.5, 5.6]</span></span>\n        </li>\n      </ul>\n    </div>\n\n    <!-- Reading Between the Lines Model Card [U5-6.1.1] -->\n    <div class=\"p-4 sm:p-5 bg-gradient-to-br from-purple-50/90 to-indigo-50/90 rounded-2xl border border-purple-200/80 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <div class=\"flex items-center space-x-2 text-purple-900 font-bold text-sm\">\n          <i data-lucide=\"search\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>Reading Between the Lines Framework [U5-6.1.1]</span>\n        </div>\n        <span class=\"text-[10px] font-mono bg-purple-200/80 text-purple-900 px-2 py-0.5 rounded font-bold\">Core Concept</span>\n      </div>\n      \n      <div class=\"space-y-2.5 text-xs\">\n        <div class=\"p-2.5 bg-amber-100 border border-amber-300 rounded-xl text-amber-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-amber-500 text-white flex items-center justify-center font-bold text-[10px]\">1</span>\n            <span><strong>Yellow Pillar: Stated Information (ข้อมูลที่ระบุตรงๆ) [U5-5.1]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-amber-900 pl-7\">ข้อเท็จจริงที่ผู้เขียนบอกไว้ชัดเจนบนบรรทัด (Right there in the text)</p>\n        </div>\n\n        <div class=\"p-2.5 bg-emerald-100 border border-emerald-300 rounded-xl text-emerald-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-emerald-600 text-white flex items-center justify-center font-bold text-[10px]\">2</span>\n            <span><strong>Green Pillar: Inference Clues + Background Knowledge [U5-5.2]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-emerald-900 pl-7\">คำใบ้ การเลือกใช้คำ (Word Choice) + ความรู้เดิม ➔ สรุปความหมายแฝง (Implied Meaning)</p>\n        </div>\n\n        <div class=\"p-2.5 bg-sky-100 border border-sky-300 rounded-xl text-sky-950 font-semibold space-y-1\">\n          <div class=\"flex items-center space-x-2\">\n            <span class=\"w-5 h-5 rounded-md bg-sky-600 text-white flex items-center justify-center font-bold text-[10px]\">3</span>\n            <span><strong>Blue Pillar: Accurate Paraphrase (การถอดความหมาย) [U5-5.3, 5.4]</strong></span>\n          </div>\n          <p class=\"text-[11px] text-sky-900 pl-7\">Synonyms + New Sentence Structure = ประโยคใหม่ที่รักษาใจความเดิม 100%</p>\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Paraphrasing Practice Warm-Up [U5-6.1.2] -->\n  <div class=\"p-4 sm:p-6 bg-white rounded-2xl border border-purple-200 shadow-sm space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3\">\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"w-6 h-6 rounded-lg bg-pink-600 text-white flex items-center justify-center font-bold text-xs\">⚡</span>\n        <h4 class=\"font-bold text-slate-900 text-sm sm:text-base\">Paraphrasing Practice Warm-Up: Compare 3 Versions [U5-6.1.2]</h4>\n      </div>\n      <span class=\"text-[11px] font-bold text-pink-700 bg-pink-100 px-2.5 py-1 rounded-full\">Story: Clara's Birthday Gift (Level 5, p. 14)</span>\n    </div>\n\n    <p class=\"text-xs text-slate-600\">\n      อ่านประโยคต้นฉบับ (Original Sentence) จากเรื่อง <em>\"Clara's Birthday Gift\"</em> แล้วเปรียบเทียบประโยคที่ถอดความทั้ง 3 แบบด้านล่าง เพื่อดูว่าแบบใด <strong>รักษาความหมายเดิม (Keeps Original Meaning)</strong>, แบบใด <strong>ความหมายเพี้ยน (Changes Meaning)</strong>, และแบบใด <strong>ลอกคำเดิมมากเกินไป (Too Similar to Original)</strong>:\n    </p>\n\n    <div class=\"p-4 sm:p-5 bg-slate-900 text-slate-100 rounded-xl font-serif text-xs sm:text-sm leading-relaxed space-y-2 shadow-inner\">\n      <div class=\"text-[10px] font-sans font-bold text-amber-300 uppercase tracking-wider mb-1\">Original Sentence [U5-6.1.2]</div>\n      <p>\n        \"To pay for the antique gold bracelet on layaway, Clara agreed to babysit the neighbors' cranky twin boys and collected aluminum cans for recycling.\"\n      </p>\n    </div>\n\n    <!-- 3 Paraphrased Versions Comparison -->\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-purple-100 text-purple-900 rounded font-bold text-[10px]\">Version 1</span>\n        <p class=\"font-serif text-slate-800\">\"To pay for the old gold bracelet on layaway, Clara agreed to babysit the neighbors' cranky twin boys and gathered cans for recycling.\"</p>\n      </div>\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-purple-100 text-purple-900 rounded font-bold text-[10px]\">Version 2</span>\n        <p class=\"font-serif text-slate-800\">\"Clara earned enough money to buy a vintage gold bracelet by taking care of two fussy young brothers next door and recycling metal cans.\"</p>\n      </div>\n      <div class=\"p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-purple-100 text-purple-900 rounded font-bold text-[10px]\">Version 3</span>\n        <p class=\"font-serif text-slate-800\">\"Clara gave her antique gold bracelet to the neighbors' twin boys because they helped her collect aluminum cans.\"</p>\n      </div>\n    </div>\n\n    <!-- Warm-Up Question -->\n    <div class=\"p-4 bg-purple-50/80 rounded-xl border border-purple-200/90 space-y-3\">\n      <div class=\"flex items-center justify-between\">\n        <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n          <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n          <span>ข้อใดวิเคราะห์ความแตกต่างของ Version 1, Version 2 และ Version 3 ได้ถูกต้องตามหลักการถอดความ (Paraphrasing)?</span>\n        </span>\n        <span class=\"text-[10px] font-mono bg-purple-200 text-purple-900 px-2 py-0.5 rounded font-bold\">U5-6.1.2</span>\n      </div>\n\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.checkUnit5Warmup(1)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">A</span>\n          <span>Version 1 = ดีที่สุด &bull; Version 2 = ความหมายเพี้ยน &bull; Version 3 = เหมือนต้นฉบับเกินไป</span>\n        </button>\n        <button onclick=\"app.checkUnit5Warmup(2)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">B</span>\n          <span>Version 1 = เหมือนต้นฉบับเกินไป (Too similar) &bull; Version 2 = ถอดความถูกต้องและคงความหมายเดิม (Keeps original meaning) &bull; Version 3 = ความหมายเปลี่ยน (Changes meaning)</span>\n        </button>\n        <button onclick=\"app.checkUnit5Warmup(3)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">C</span>\n          <span>Version 1 = ความหมายเปลี่ยน &bull; Version 2 = เหมือนต้นฉบับเกินไป &bull; Version 3 = ถอดความถูกต้อง</span>\n        </button>\n        <button onclick=\"app.checkUnit5Warmup(4)\" class=\"p-3 bg-white rounded-xl border border-purple-200 hover:border-purple-600 text-left transition font-medium cursor-pointer flex items-start space-x-2\">\n          <span class=\"w-5 h-5 rounded-full bg-purple-100 text-purple-800 flex items-center justify-center font-bold text-[10px] shrink-0 mt-0.5\">D</span>\n          <span>ทั้ง 3 Versions ถอดความได้ถูกต้องเหมือนกันทั้งหมด</span>\n        </button>\n      </div>\n\n      <div id=\"u5-warmup-feedback\" class=\"hidden p-3 rounded-xl text-xs font-medium\"></div>\n    </div>\n\n    <div class=\"flex justify-end pt-2\">\n      <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n        <span>Next: Key Concepts & Warm-Up Inference Detective</span>\n        <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n      </button>\n    </div>\n  </div>\n</div>\n",
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 05</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U5-6.1.3..6.1.5 &bull; U5-5.1..5.5</span>\n        <span class=\"px-2.5 py-0.5 bg-emerald-100 text-emerald-800 rounded-md text-[10px] font-bold\">Key Concepts</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">Pre-Reading Stage: Inference Clues, Paraphrasing Techniques & Detective Warm-Up</h3>\n      <p class=\"text-xs text-slate-500\">ความแตกต่างระหว่าง Stated / Implied / Unsupported, เทคนิคการถอดความ และกิจกรรม Warm-Up Inference Detective 5 ข้อ [U5-5.1..5.5, 6.1.3..6.1.5]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 2 in Pre-Reading</span>\n  </div>\n\n  <!-- 1. Stated Information vs. Implied Meaning vs. Unsupported Ideas [U5-5.1, U5-5.2, U5-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"compass\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">1. Stated Information vs. Implied Meaning vs. Unsupported Ideas [U5-5.1, 5.2, 6.1.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-amber-100 text-amber-900 px-2 py-0.5 rounded font-bold\">Content 5.1 &bull; 5.2</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3.5 bg-amber-50/70 border border-amber-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-amber-950\">\n          <span>1. Stated Information</span>\n          <span class=\"text-[10px] bg-amber-200 text-amber-900 px-2 py-0.5 rounded\">Literal Fact</span>\n        </div>\n        <p class=\"text-slate-700\">ข้อมูลที่ผู้เขียนระบุไว้ชัดเจนในประโยค ไม่ต้องเดาหรือตีความเพิ่ม</p>\n        <div class=\"p-2 bg-white rounded-lg border border-amber-100 text-[11px] text-slate-800\">\n          <strong>Ex (Marshall's Basket, p. 78):</strong> \"Marshall found sticky footprints leading away from his Easter basket, and Buttercup the cat was sitting on the porch with brown spots on her face and paws.\"\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-emerald-950\">\n          <span>2. Implied Meaning (Inference)</span>\n          <span class=\"text-[10px] bg-emerald-200 text-emerald-900 px-2 py-0.5 rounded\">Clues + Logic</span>\n        </div>\n        <p class=\"text-slate-700\">ความหมายแฝงที่ผู้เขียนไม่ได้บอกตรงๆ แต่สรุปได้จากคำใบ้ (Text Clues) + ความรู้เดิม (Background Knowledge)</p>\n        <div class=\"p-2 bg-white rounded-lg border border-emerald-100 text-[11px] text-slate-800\">\n          <strong>Logical Inference:</strong> Buttercup the cat ate or licked Marshall's missing solid chocolate bunny! (รอยเท้าเหนียวๆ + คราบสีน้ำตาลที่หน้าและอุ้งเท้าแมว)\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-rose-50/70 border border-rose-200 rounded-xl space-y-1.5\">\n        <div class=\"flex items-center justify-between font-bold text-rose-950\">\n          <span>3. Unsupported Idea</span>\n          <span class=\"text-[10px] bg-rose-200 text-rose-900 px-2 py-0.5 rounded\">No Evidence ❌</span>\n        </div>\n        <p class=\"text-slate-700\">การคาดเดาเกินจริงหรือข้อสรุปที่ไม่มีหลักฐานหรือคำใบ้ใดๆ ในบทอ่านมารองรับ</p>\n        <div class=\"p-2 bg-white rounded-lg border border-rose-100 text-[11px] text-slate-800\">\n          <strong>Unsupported Idea:</strong> \"A burglar broke into Marshall's house and sold the chocolate bunny at a candy store.\" (ไม่มีหลักฐานในเรื่องเลย)\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 2. Three Core Paraphrasing Techniques [U5-5.3, U5-5.4, U5-6.1.3] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"repeat\" class=\"w-4 h-4 text-sky-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">2. Paraphrasing Techniques (เทคนิคการถอดความโดยคงความหมายเดิม) [U5-5.3, 5.4, 6.1.3]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-sky-100 text-sky-800 px-2 py-0.5 rounded font-bold\">Content 5.3 &bull; 5.4</span>\n    </div>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3.5 bg-sky-50/80 border border-sky-200 rounded-xl space-y-1.5\">\n        <strong class=\"text-sky-950 block\">Technique 1: Use Appropriate Synonyms</strong>\n        <p class=\"text-[11px] text-slate-700\">แทนที่คำศัพท์เดิมด้วยคำพ้องความหมายที่ให้ความหมายตรงกันในบริบทนั้น</p>\n        <div class=\"p-2 bg-white rounded border border-sky-100 font-mono text-[11px] text-sky-900\">\n          &bull; <em>cranky</em> ➔ fussy / irritable<br>\n          &bull; <em>sleek</em> ➔ smooth and shiny<br>\n          &bull; <em>frantically</em> ➔ desperately / in a panic<br>\n          &bull; <em>livid</em> ➔ furious / extremely angry\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1.5\">\n        <strong class=\"text-purple-950 block\">Technique 2: Change Sentence Structure & Word Forms</strong>\n        <p class=\"text-[11px] text-slate-700\">สลับลำดับอนุประโยค (Cause ➔ Effect เป็น Effect ➔ Cause), เปลี่ยน Active ↔ Passive หรือเปลี่ยนชนิดของคำ (Verb ↔ Noun)</p>\n        <div class=\"p-2 bg-white rounded border border-purple-100 text-[11px] text-purple-900\">\n          <strong>Orig:</strong> \"Because the snow buried the cabin, they stayed inside.\"<br>\n          <strong>New:</strong> \"They remained indoors due to the heavy snow covering the cabin.\"\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1.5\">\n        <strong class=\"text-emerald-950 block\">Technique 3: Keep the Original Meaning Intact</strong>\n        <p class=\"text-[11px] text-slate-700\">ตรวจสอบว่าใจความสำคัญ ความสัมพันธ์ของเหตุผล และน้ำเสียงของผู้เขียนยังคงเดิม 100% ไม่เติมความเห็นส่วนตัว</p>\n        <div class=\"p-2 bg-white rounded border border-emerald-100 text-[11px] text-emerald-900\">\n          ✅ Same core message<br>\n          ✅ Different wording & syntax<br>\n          ❌ No added or omitted key facts\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 3. Warm-Up Activity: Short Inference Detective (5 Items) [U5-5.5, U5-6.1.4] -->\n  <div class=\"p-4 sm:p-6 bg-gradient-to-r from-purple-900 to-indigo-950 text-white rounded-2xl shadow-md space-y-4\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-800 pb-3\">\n      <div>\n        <div class=\"flex items-center space-x-2\">\n          <span class=\"px-2 py-0.5 bg-amber-400 text-slate-950 font-bold text-[10px] rounded font-mono\">INFERENCE DETECTIVE WARM-UP</span>\n          <span class=\"px-2 py-0.5 bg-purple-800 text-purple-200 font-bold text-[10px] rounded font-mono\">U5-6.1.4 &bull; U5-5.5</span>\n        </div>\n        <h4 class=\"text-base font-bold mt-1 text-white flex items-center space-x-2\">\n          <i data-lucide=\"search-check\" class=\"w-5 h-5 text-amber-400\"></i>\n          <span>Short Inference Detective Activity (สวมบทนักสืบตีความจากคำใบ้ 5 ข้อ)</span>\n        </h4>\n        <p class=\"text-xs text-purple-200\">อ่านคำใบ้จากเรื่องสั้น Level 5 แล้วเลือกข้อสรุปที่สมเหตุสมผลที่สุด (Logical Inference)</p>\n      </div>\n      <div class=\"bg-purple-950/80 px-3.5 py-2 rounded-xl border border-purple-700 text-xs font-bold text-amber-300 shrink-0\">\n        Detective Score: <span id=\"u5-pregame-score\">0 / 5</span>\n      </div>\n    </div>\n\n    <div class=\"space-y-3 text-xs text-slate-900\">\n      <!-- Q1 (ans: 1 = B) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          1. \"Clara handed a small velvet box to her mother and beamed with pride as her mother fastened the antique gold links around her wrist.\" (from <em>Clara's Gift</em>, Level 5 p. 14) — <strong class=\"text-purple-800\">What can you infer the gift was?</strong>\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit5PreGame(1, 0)\" class=\"u5-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. A pair of winter boots</button>\n          <button onclick=\"app.submitUnit5PreGame(1, 1)\" class=\"u5-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. An antique gold bracelet</button>\n          <button onclick=\"app.submitUnit5PreGame(1, 2)\" class=\"u5-pg1-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. A bicycle helmet</button>\n        </div>\n        <div id=\"u5-pg1-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q2 (ans: 0 = A) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          2. \"Whenever Wanda visits Aunt Trudy's house, Aunt Trudy's seven cats rub against Wanda's legs. Within minutes, Wanda starts sneezing uncontrollably and her eyes turn red and puffy.\" (from Level 5, p. 53) — <strong class=\"text-purple-800\">What can you infer about Wanda?</strong>\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit5PreGame(2, 0)\" class=\"u5-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Wanda is allergic to cats</button>\n          <button onclick=\"app.submitUnit5PreGame(2, 1)\" class=\"u5-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Wanda owns ten cats of her own</button>\n          <button onclick=\"app.submitUnit5PreGame(2, 2)\" class=\"u5-pg2-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Aunt Trudy has no pets</button>\n        </div>\n        <div id=\"u5-pg2-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q3 (ans: 2 = C) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          3. \"Henry traded his rare rookie baseball card to Sam in exchange for a common card. Later that night, Henry read that the rookie player had just won his third championship and the card was worth hundreds of dollars.\" (from Level 5, p. 53) — <strong class=\"text-purple-800\">What conclusion can we draw?</strong>\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit5PreGame(3, 0)\" class=\"u5-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Henry made a very profitable trade</button>\n          <button onclick=\"app.submitUnit5PreGame(3, 1)\" class=\"u5-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Sam dislikes collecting baseball cards</button>\n          <button onclick=\"app.submitUnit5PreGame(3, 2)\" class=\"u5-pg3-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Henry made a foolish trade and regretted giving away a valuable card</button>\n        </div>\n        <div id=\"u5-pg3-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q4 (ans: 1 = B) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          4. \"Marshall's solid chocolate bunny was missing from his basket. Sticky footprints led across the kitchen floor to the porch, where Buttercup the cat was licking brown smudges off her whiskers and paws.\" (from Level 5, p. 78) — <strong class=\"text-purple-800\">What can you infer happened?</strong>\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit5PreGame(4, 0)\" class=\"u5-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. Buttercup fell into a bucket of mud outside</button>\n          <button onclick=\"app.submitUnit5PreGame(4, 1)\" class=\"u5-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. Buttercup the cat took and ate the chocolate bunny</button>\n          <button onclick=\"app.submitUnit5PreGame(4, 2)\" class=\"u5-pg4-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Marshall never had a chocolate bunny</button>\n        </div>\n        <div id=\"u5-pg4-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n\n      <!-- Q5 (ans: 2 = C) -->\n      <div class=\"p-3.5 bg-white rounded-xl space-y-2\">\n        <p class=\"font-serif text-xs sm:text-sm text-slate-800\">\n          5. \"Kenny saved $347 from mowing lawns, and his dad promised to match every dollar Kenny saved—giving him $694 in total. At the beach shop, Kenny's heart sank when he saw the $899 price tag on the Surf Dude windsurfer.\" (from Level 5, p. 68) — <strong class=\"text-purple-800\">Why did Kenny's heart sink?</strong>\n        </p>\n        <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2\">\n          <button onclick=\"app.submitUnit5PreGame(5, 0)\" class=\"u5-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">A. The shop was closed for the summer</button>\n          <button onclick=\"app.submitUnit5PreGame(5, 1)\" class=\"u5-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">B. He had $200 more than he needed</button>\n          <button onclick=\"app.submitUnit5PreGame(5, 2)\" class=\"u5-pg5-btn p-2 rounded-lg border border-slate-200 hover:bg-purple-50 text-left font-medium cursor-pointer\">C. Even with his dad's matching money ($694), he was still $205 short of the $899 price</button>\n        </div>\n        <div id=\"u5-pg5-fb\" class=\"hidden text-[11px] p-2 rounded\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- 4. Previewing the Text [U5-6.1.5] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 text-xs space-y-2\">\n    <div class=\"flex items-center space-x-2 text-purple-950 font-bold\">\n      <i data-lucide=\"eye\" class=\"w-4 h-4 text-purple-700\"></i>\n      <span>Previewing the Text: Key Vocabulary & Clues Before Reading [U5-6.1.5]</span>\n    </div>\n    <p class=\"text-purple-900 leading-relaxed\">\n      ก่อนเข้าสู่ขั้น While-Reading: สังเกตคำศัพท์และคำใบ้สำคัญในเรื่อง <em>\"Mrs. Hooper's Missing Dog Snuggles\"</em> (<strong>frantically, strange sawing noise, hiding in the closet, covering his ears</strong>) และเรื่อง <em>\"Reid and the Sleek Red Racer\"</em> (<strong>gleaming, out of his price range, business proposition, living advertisement</strong>) เพื่อเตรียมตีความความหมายแฝงและถอดความเป็นภาษาของเราเอง!\n    </p>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('overview')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Overview & Warm-Up\n    </button>\n    <button onclick=\"app.selectStageAndStep('whileReading', 'learn')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: While-Reading Guided Demo & Paraphrasing</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
           }
         },
         "whileReading": {
           "title": "While-Reading Stage",
           "steps": {
-            "learn": "Look for value words like 'best', 'should', 'beautiful', or 'terrible' that signal opinions.",
+            "learn": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 05</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U5-6.2.1 &bull; U5-6.2.4 &bull; U5-5.2..5.4</span>\n        <span class=\"px-2.5 py-0.5 bg-indigo-100 text-indigo-800 rounded-md text-[10px] font-bold\">Guided Reading & Paraphrasing Demo</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Guided Inference & Paraphrasing Demonstration</h3>\n      <p class=\"text-xs text-slate-500\">สาธิตการหาคำใบ้เพื่อสรุปความหมายโดยนัย และการถอดความ (Paraphrasing) จากเรื่อง \"Mrs. Hooper's Missing Dog Snuggles\" [U5-6.2.1, 6.2.4]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 1 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Audio Player & Worked Passage Box [U5-6.2.1] -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n      <div>\n        <span class=\"text-[10px] font-bold text-pink-300 uppercase tracking-wider block\">Worked Example Passage [U5-6.2.1] &bull; Saddleback Level 5 (p. 41)</span>\n        <h4 class=\"text-base font-bold text-white mt-0.5\">Mrs. Hooper's Midnight Mystery: Where Is Snuggles?</h4>\n      </div>\n\n      <div class=\"flex items-center space-x-2\">\n        <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\">\n          <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300\"></i>\n          <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n            <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n            <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n            <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n            <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n          </select>\n        </div>\n\n        <button onclick=\"app.togglePassageAudio(encodeURIComponent('At midnight, Mrs. Hooper frantically phoned the police to report that her beloved dog, Snuggles, had vanished while she was asleep. When Officer Miller arrived, Mrs. Hooper explained that she had woken up to a strange sawing noise just before noticing Snuggles was gone. Suddenly, Officer Miller heard a muffled whimper coming from the hallway closet. When he opened the closet door, they found Snuggles curled up under a pile of blankets with his paws pressed tightly over his ears!'))\" class=\"px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-xl text-xs font-bold transition flex items-center space-x-1.5 cursor-pointer shadow-md\">\n          <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n          <span id=\"audio-btn-label\">Listen Passage</span>\n        </button>\n      </div>\n    </div>\n\n    <!-- Passage Breakdown with Unit 5 Color Scheme (Yellow = Stated Info, Green = Inference Clues, Blue = Implied Conclusion / Paraphrase) -->\n    <div class=\"space-y-4 font-serif text-xs sm:text-sm leading-relaxed text-slate-200\">\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-amber-400 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-amber-300 uppercase tracking-wider\">[Stated Information vs. Word Choice Clues]</span>\n          <span class=\"bg-amber-400/20 text-amber-200 px-2 py-0.5 rounded font-mono text-[10px]\">U5-6.2.1 &bull; 5.1</span>\n        </div>\n        <p>\n          <span class=\"highlighter-pen highlighter-yellow\">At midnight, Mrs. Hooper frantically phoned the police to report that her beloved dog, Snuggles, had vanished while she was asleep.</span> When Officer Miller arrived, Mrs. Hooper explained that <span class=\"highlighter-pen highlighter-green\">she had woken up to a strange sawing noise just before noticing Snuggles was gone.</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-amber-500/30 font-sans text-xs text-amber-200\">\n          <strong>Guided Analysis:</strong><br>\n          &bull; <strong>Yellow (Stated Info):</strong> นางฮูเปอร์โทรแจ้งตำรวจตอนเที่ยงคืนเพราะสุนัขชื่อ Snuggles หายไปขณะเธอหลับ<br>\n          &bull; <strong>Green (Inference Clue 1):</strong> เธอตื่นขึ้นมาเพราะได้ยิน <em>\"เสียงคล้ายเลื่อยไม้แปลกๆ\" (a strange sawing noise)</em> ขณะที่เธอกำลังนอนหลับอยู่คนเดียว\n        </div>\n      </div>\n\n      <div class=\"p-3.5 bg-slate-800/80 rounded-xl border-l-4 border-emerald-500 space-y-2\">\n        <div class=\"flex items-center justify-between text-[11px] font-sans\">\n          <span class=\"font-bold text-emerald-300 uppercase tracking-wider\">[Clues Leading to Logical Inference]</span>\n          <span class=\"bg-emerald-500/20 text-emerald-200 px-2 py-0.5 rounded font-mono text-[10px]\">U5-5.2</span>\n        </div>\n        <p>\n          Suddenly, Officer Miller heard a muffled whimper coming from the hallway closet. When he opened the closet door, <span class=\"highlighter-pen highlighter-green\">they found Snuggles curled up under a pile of blankets with his paws pressed tightly over his ears!</span>\n        </p>\n        <div class=\"bg-slate-900/90 p-2.5 rounded-lg border border-emerald-500/30 font-sans text-xs text-emerald-200\">\n          <strong>Logical Inference (การตีความหมายโดยนัย):</strong><br>\n          &bull; <strong>Clues:</strong> เสียงเหมือนเลื่อยไม้ตอนนางฮูเปอร์หลับ + สุนัขหนีไปมุดใต้กองผ้าห่มในตู้เสื้อผ้าและเอาอุ้งเท้าปิดหูแน่น<br>\n          &bull; <strong>Conclusion (Implied Meaning):</strong> เสียงเลื่อยไม้นั้นคือ <strong>เสียงกรนอย่างดังของนางฮูเปอร์เอง (Mrs. Hooper's loud snoring)</strong> และเจ้า Snuggles ทนเสียงกรนไม่ไหวจึงหนีไปซ่อนในตู้เสื้อผ้า!\n        </div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Paraphrasing Demonstration [U5-5.3, U5-5.4, U5-6.2.4] -->\n  <div class=\"p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-4\">\n    <div class=\"flex items-center justify-between border-b border-slate-100 pb-2.5\">\n      <div class=\"flex items-center space-x-2\">\n        <i data-lucide=\"pen-tool\" class=\"w-4 h-4 text-purple-700\"></i>\n        <h4 class=\"text-sm sm:text-base font-bold text-slate-900\">Paraphrasing Demonstration: Step-by-Step Rewriting [U5-5.3, 5.4, 6.2.4]</h4>\n      </div>\n      <span class=\"text-[10px] font-mono bg-purple-100 text-purple-800 px-2 py-0.5 rounded font-bold\">Activity 6.2.4</span>\n    </div>\n\n    <p class=\"text-xs text-slate-700 leading-relaxed\">\n      ดูขั้นตอนการถอดความ (Paraphrasing) ประโยคจากเรื่อง <em>\"Mrs. Hooper's Missing Dog\"</em> โดยใช้ <strong>คำพ้องความหมาย (Synonyms)</strong> และ <strong>เปลี่ยนโครงสร้างประโยค (Sentence Structure)</strong> โดยไม่ให้ความหมายเพี้ยน:\n    </p>\n\n    <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-xs\">\n      <div class=\"p-3.5 bg-amber-50 border border-amber-200 rounded-xl space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-amber-300 text-slate-950 font-bold rounded text-[10px]\">STEP 1: ORIGINAL SENTENCE</span>\n        <p class=\"font-serif text-slate-900 mt-1\">\n          \"At midnight, Mrs. Hooper <strong>frantically phoned</strong> the police to report that her <strong>beloved dog</strong>, Snuggles, <strong>had vanished</strong> while she was asleep.\"\n        </p>\n      </div>\n\n      <div class=\"p-3.5 bg-purple-50 border border-purple-200 rounded-xl space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-purple-200 text-purple-950 font-bold rounded text-[10px]\">STEP 2: SYNONYMS & STRUCTURE</span>\n        <ul class=\"text-[11px] text-slate-700 space-y-1 mt-1\">\n          <li>&bull; <em>At midnight</em> ➔ Late at night</li>\n          <li>&bull; <em>frantically phoned</em> ➔ anxiously called</li>\n          <li>&bull; <em>beloved dog</em> ➔ cherished pet</li>\n          <li>&bull; <em>had vanished</em> ➔ had disappeared</li>\n          <li>&bull; <strong>Structure shift:</strong> ย้ายอนุประโยคเวลา/สาเหตุขึ้นต้นประโยค</li>\n        </ul>\n      </div>\n\n      <div class=\"p-3.5 bg-emerald-50 border border-emerald-300 rounded-xl space-y-1.5\">\n        <span class=\"px-2 py-0.5 bg-emerald-300 text-slate-950 font-bold rounded text-[10px]\">STEP 3: ACCURATE PARAPHRASE ✅</span>\n        <p class=\"font-serif text-emerald-950 font-semibold mt-1\">\n          \"Discovering that her cherished pet Snuggles had disappeared during her sleep, Mrs. Hooper anxiously called the police late at night.\"\n        </p>\n        <p class=\"text-[11px] text-emerald-800\">✔ ใช้คำศัพท์ใหม่ + โครงสร้างประโยคใหม่ แต่ความหมายเดิมครบถ้วน 100%</p>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectStageAndStep('preReading', 'learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Pre-Reading Stage\n    </button>\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Interactive Highlighting Practice</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
             "passage": "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
             "audioText": "Buriram Rajabhat University was established in 1971. In my view, it is the most inspiring institution in northeastern Thailand.",
-            "example": "Fact: 'established in 1971' (historical record). Opinion: 'most inspiring institution' ('In my view').",
-            "practice": {
-              "question": "Which of the following statements is a FACT?",
-              "options": [
-                "English is the most enjoyable subject to study",
-                "Thailand's capital city is Bangkok",
-                "Online tests are much better than paper tests",
-                "Everyone should read two novels per week"
-              ],
-              "answer": 1,
-              "explanation": "'Thailand's capital city is Bangkok' can be verified objectively as an established geographical fact."
-            }
+            "example": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 05</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U5-6.2.2</span>\n        <span class=\"px-2.5 py-0.5 bg-amber-100 text-amber-900 rounded-md text-[10px] font-bold\">Interactive Highlighting</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Highlighting Stated Info vs. Inference Clues</h3>\n      <p class=\"text-xs text-slate-500\">ฝึกแยกแยะสีจากเรื่อง \"Reid and the Sleek Red Racer\" (Level 5, p. 52): สีเหลือง (Stated Info) • สีเขียว (Inference Clues) • สีฟ้า (Implied Conclusion & Paraphrase) [U5-6.2.2]</p>\n    </div>\n    <span class=\"text-xs font-bold text-purple-900 bg-purple-100/80 px-3 py-1.5 rounded-xl shrink-0 self-start sm:self-auto\">Step 2 of 3 in While-Reading</span>\n  </div>\n\n  <!-- Color Key Legend [U5-6.2.2] -->\n  <div class=\"p-4 bg-purple-50/90 rounded-2xl border border-purple-200 space-y-3\">\n    <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <span class=\"text-xs font-bold text-purple-950 flex items-center space-x-1.5\">\n        <i data-lucide=\"highlighter\" class=\"w-4 h-4 text-purple-700\"></i>\n        <span>Unit 5 Highlighting Color Code (เกณฑ์การระบายสีตามหัวข้อ 6.2.2):</span>\n      </span>\n      <div class=\"flex items-center space-x-2\">\n        <button onclick=\"app.revealUnit5Highlights()\" class=\"px-3 py-1 bg-purple-700 hover:bg-purple-800 text-white rounded-lg text-[11px] font-bold cursor-pointer transition\">Show Model Key</button>\n        <button onclick=\"app.resetUnit5Highlights()\" class=\"px-3 py-1 bg-white hover:bg-slate-100 text-slate-700 border border-slate-300 rounded-lg text-[11px] font-semibold cursor-pointer transition\">Reset</button>\n      </div>\n    </div>\n\n    <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs\">\n      <div class=\"p-2.5 bg-amber-100 border border-amber-400 rounded-xl text-amber-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-amber-400 shrink-0\"></span>\n        <span><strong>Yellow (สีเหลือง):</strong> Directly Stated Information (ข้อมูลที่ระบุตรงๆ)</span>\n      </div>\n      <div class=\"p-2.5 bg-emerald-100 border border-emerald-400 rounded-xl text-emerald-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-emerald-400 shrink-0\"></span>\n        <span><strong>Green (สีเขียว):</strong> Clues for Implied Meaning (คำใบ้ช่วยตีความหมายโดยนัย)</span>\n      </div>\n      <div class=\"p-2.5 bg-sky-100 border border-sky-400 rounded-xl text-sky-950 flex items-center space-x-2 font-semibold\">\n        <span class=\"w-4 h-4 rounded bg-sky-400 shrink-0\"></span>\n        <span><strong>Blue (สีฟ้า):</strong> Logical Inference & Paraphrase (ข้อสรุปและประโยคถอดความ)</span>\n      </div>\n    </div>\n  </div>\n\n  <!-- Interactive Passage Box -->\n  <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 shadow-lg\">\n    <div class=\"border-b border-slate-700 pb-3 flex flex-col sm:flex-row sm:items-center justify-between gap-2\">\n      <div>\n        <span class=\"text-[10px] font-bold text-amber-300 uppercase tracking-wider\">Interactive Passage [U5-6.2.2] &bull; Saddleback Level 5 (p. 52)</span>\n        <h4 class=\"text-base font-bold text-white\">Reid and the Sleek Red Racer at Backstreet Bikes</h4>\n      </div>\n      <span class=\"text-[11px] text-slate-300\">คลิกปุ่มสี (Yellow / Green / Blue) ให้ตรงกับบทบาทของแต่ละส่วน</span>\n    </div>\n\n    <div class=\"space-y-3 font-serif text-xs sm:text-sm leading-relaxed\">\n      <!-- Segment 1 (Yellow: Directly Stated Info) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (1):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit5Sentence(1, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Stated Info)</button>\n            <button onclick=\"app.highlightUnit5Sentence(1, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Inference Clue)</button>\n            <button onclick=\"app.highlightUnit5Sentence(1, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Paraphrase/Inference)</button>\n          </div>\n        </div>\n        <p id=\"u5-s1-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Directly Stated Fact: Every afternoon after school, Reid stopped outside Backstreet Bikes to admire a gleaming red racing bicycle in the front window.\n        </p>\n        <div id=\"u5-s1-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 2 (Green: Inference Clues about Reid's budget) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (2):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit5Sentence(2, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Stated Info)</button>\n            <button onclick=\"app.highlightUnit5Sentence(2, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Inference Clue)</button>\n            <button onclick=\"app.highlightUnit5Sentence(2, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Paraphrase/Inference)</button>\n          </div>\n        </div>\n        <p id=\"u5-s2-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Text Clues: Reid sighed deeply when he looked at the price tag and counted the few crumpled dollar bills in his pocket, knowing the upcoming Saturday race was only days away.\n        </p>\n        <div id=\"u5-s2-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 3 (Yellow: Directly Stated Offer from Mr. Eason) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (3):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit5Sentence(3, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Stated Info)</button>\n            <button onclick=\"app.highlightUnit5Sentence(3, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Inference Clue)</button>\n            <button onclick=\"app.highlightUnit5Sentence(3, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Paraphrase/Inference)</button>\n          </div>\n        </div>\n        <p id=\"u5-s3-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Directly Stated Fact: The shop owner, Mr. Eason, stepped outside and offered to let Reid ride the red racer in Saturday's competition at no cost.\n        </p>\n        <div id=\"u5-s3-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 4 (Green: Clues explaining Mr. Eason's motive) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (4):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit5Sentence(4, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Stated Info)</button>\n            <button onclick=\"app.highlightUnit5Sentence(4, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Inference Clue)</button>\n            <button onclick=\"app.highlightUnit5Sentence(4, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Paraphrase/Inference)</button>\n          </div>\n        </div>\n        <p id=\"u5-s4-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Text Clues: In return, Mr. Eason handed Reid a bright jersey and helmet with \"Backstreet Bikes\" printed in bold letters across the front and back for all the race spectators to see.\n        </p>\n        <div id=\"u5-s4-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n\n      <!-- Segment 5 (Blue: Logical Inference & Accurate Paraphrase) -->\n      <div class=\"p-3.5 bg-slate-800/90 rounded-xl border border-slate-700 space-y-2\">\n        <div class=\"flex flex-wrap items-center justify-between gap-2 font-sans text-[11px]\">\n          <span class=\"font-bold text-purple-300\">Segment (5):</span>\n          <div class=\"flex items-center space-x-1.5\">\n            <button onclick=\"app.highlightUnit5Sentence(5, 'yellow')\" class=\"px-2.5 py-1 rounded bg-amber-400/20 hover:bg-amber-400 text-amber-200 hover:text-slate-950 font-bold transition cursor-pointer\">Yellow (Stated Info)</button>\n            <button onclick=\"app.highlightUnit5Sentence(5, 'green')\" class=\"px-2.5 py-1 rounded bg-emerald-400/20 hover:bg-emerald-400 text-emerald-200 hover:text-slate-950 font-bold transition cursor-pointer\">Green (Inference Clue)</button>\n            <button onclick=\"app.highlightUnit5Sentence(5, 'blue')\" class=\"px-2.5 py-1 rounded bg-sky-400/20 hover:bg-sky-400 text-sky-200 hover:text-slate-950 font-bold transition cursor-pointer\">Blue (Paraphrase/Inference)</button>\n          </div>\n        </div>\n        <p id=\"u5-s5-text\" class=\"text-slate-100 transition p-1 rounded\">\n          Implied Meaning & Paraphrase: Although Reid could not afford the expensive bicycle, Mr. Eason lent it to him so Reid's racing performance would advertise the bike shop to the crowd.\n        </p>\n        <div id=\"u5-s5-feedback\" class=\"hidden text-[11px] font-sans pt-1\"></div>\n      </div>\n    </div>\n  </div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('learn')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Guided Demo & Paraphrasing\n    </button>\n    <button onclick=\"app.selectActivityStep('practice')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next: Inference Detective & Paraphrasing Practice (8 Items)</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n",
+            "practice": "\n<div class=\"space-y-6\">\n  <!-- Header -->\n  <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-4\">\n    <div>\n      <div class=\"flex items-center space-x-2\">\n        <span class=\"px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold font-mono\">UNIT 05</span>\n        <span class=\"px-2.5 py-0.5 bg-purple-100 text-purple-800 rounded-md text-[10px] font-bold font-mono\">U5-6.2.3 &bull; U5-6.2.5 &bull; U5-6.2.6</span>\n        <span class=\"px-2.5 py-0.5 bg-pink-100 text-pink-800 rounded-md text-[10px] font-bold\">Indicator 3.3 (&ge; 70%)</span>\n      </div>\n      <h3 class=\"text-lg sm:text-xl font-bold text-slate-900 mt-1\">While-Reading Stage: Inference Detective & Paraphrasing Practice</h3>\n      <p class=\"text-xs text-slate-500\">แบบฝึกหัด Inference Detective (ข้อ 1–4) และ Paraphrasing Practice (ข้อ 5–8) จากเรื่องสั้น Level 5 จำนวน 8 ข้อ (เกณฑ์ผ่าน 70% = 6/8 ข้อ) [U5-5.5, 5.6, 6.2.3, 6.2.5]</p>\n    </div>\n    <div class=\"bg-purple-100 text-purple-950 px-4 py-2 rounded-xl border border-purple-200 text-xs font-bold shrink-0 self-start sm:self-auto\">\n      Practice Score: <span id=\"u5-game-score\" class=\"text-purple-700 font-extrabold\">0 / 8</span>\n    </div>\n  </div>\n\n  <!-- Feedback & Support Info Banner [U5-6.2.6] -->\n  <div class=\"p-3.5 bg-indigo-50 border border-indigo-200 rounded-2xl text-xs text-indigo-950 flex items-start space-x-2.5\">\n    <i data-lucide=\"shield-check\" class=\"w-4 h-4 text-indigo-700 shrink-0 mt-0.5\"></i>\n    <div>\n      <strong>Feedback & Support [U5-6.2.6]:</strong> ข้อ 1–4 ฝึกสวมบทบาท <em>Inference Detective</em> วิเคราะห์ความหมายโดยนัยจากคำใบ้ ส่วนข้อ 5–8 ฝึก <em>Paraphrasing Practice</em> เลือกประโยคที่เปลี่ยนคำพ้องความหมายและโครงสร้างประโยคโดยรักษาความหมายเดิมได้อย่างแม่นยำ\n    </div>\n  </div>\n\n  <!-- 8-Question Interactive Practice Container -->\n  <div class=\"space-y-4\">\n    <!-- Q1: Inference Detective (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 1 of 8 &bull; Inference Detective: The Mountain Cabin (Level 5, p. 61) [U5-5.2, 5.5]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"A thunderous rumble shook the mountain cabin. When Jennifer and Ronnie tried to open the front door, a solid wall of packed white snow blocked the exit and covered the windows completely.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What logical conclusion can you draw from the clues in this passage?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(1, 0)\" class=\"u5-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. A summer heatwave melted the glacier</button>\n        <button onclick=\"app.submitUnit5Game(1, 1)\" class=\"u5-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. An avalanche buried the cabin and trapped Jennifer and Ronnie inside</button>\n        <button onclick=\"app.submitUnit5Game(1, 2)\" class=\"u5-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Someone painted the cabin windows white</button>\n        <button onclick=\"app.submitUnit5Game(1, 3)\" class=\"u5-g1-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Jennifer and Ronnie forgot the key to the cabin</button>\n      </div>\n      <div id=\"u5-g1-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q2: Inference Detective (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 2 of 8 &bull; Inference Detective: The Ant and the Chrysalis (Level 5, p. 116) [U5-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"An ant nimbly running about in the sunshine in search of food came across a chrysalis that was very near its time to change. Looking at the poor creature encased in its shell, the ant boasted proudly, 'What a sad, helpless life you lead while I can run wherever I please!' A few moments later, the shell split open, and a magnificent butterfly spread its painted wings and floated into the sky above the ant.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What is the implied moral (บทเรียนโดยนัย) of this fable?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(2, 0)\" class=\"u5-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Ants are faster flyers than butterflies</button>\n        <button onclick=\"app.submitUnit5Game(2, 1)\" class=\"u5-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Butterflies should never leave their shells</button>\n        <button onclick=\"app.submitUnit5Game(2, 2)\" class=\"u5-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Appearances are deceptive—do not look down on others based on their temporary outward state</button>\n        <button onclick=\"app.submitUnit5Game(2, 3)\" class=\"u5-g2-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Sunshine is dangerous for insects in the forest</button>\n      </div>\n      <div id=\"u5-g2-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q3: Inference Detective (ans: 0 = A) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 3 of 8 &bull; Inference Detective: Pecos Bill's Tall Tale (Level 5, p. 112) [U5-5.2, 5.5]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"According to cowboy folklore, Pecos Bill was raised by coyotes, used a live rattlesnake as a lasso, and once roped a raging tornado and rode it across three states until it rained itself out.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">What can the reader infer about the author's purpose and the nature of this story?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(3, 0)\" class=\"u5-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. It is a humorous \"tall tale\" that uses wild exaggeration (hyperbole) to entertain readers rather than state literal facts</button>\n        <button onclick=\"app.submitUnit5Game(3, 1)\" class=\"u5-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. It is a scientific weather report explaining how tornadoes form</button>\n        <button onclick=\"app.submitUnit5Game(3, 2)\" class=\"u5-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. It is a veterinary guide for raising coyotes</button>\n        <button onclick=\"app.submitUnit5Game(3, 3)\" class=\"u5-g3-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. It is an eyewitness news article from yesterday's paper</button>\n      </div>\n      <div id=\"u5-g3-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q4: Inference Detective (ans: 3 = D) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-purple-900 bg-purple-100 px-2.5 py-0.5 rounded-md\">Item 4 of 8 &bull; Inference Detective: Halley's Comet (Level 5, p. 131) [U5-5.1, 5.2]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.3</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        \"Astronomer Edmond Halley discovered that the bright comet seen in 1531, 1607, and 1682 was actually the exact same comet returning to Earth's sky every 75 to 76 years. Its most recent visit occurred in 1986.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Based on the information in the passage, what logical conclusion can we draw about Halley's Comet?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(4, 0)\" class=\"u5-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. The comet appears every summer in July</button>\n        <button onclick=\"app.submitUnit5Game(4, 1)\" class=\"u5-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Edmond Halley was born in 1986</button>\n        <button onclick=\"app.submitUnit5Game(4, 2)\" class=\"u5-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Three different comets crashed into the sun in 1682</button>\n        <button onclick=\"app.submitUnit5Game(4, 3)\" class=\"u5-g4-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Halley's Comet is expected to become visible from Earth again around 2061 or 2062</button>\n      </div>\n      <div id=\"u5-g4-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q5: Paraphrasing Practice (ans: 1 = B) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 5 of 8 &bull; Paraphrasing Practice: The Trojan Horse (Level 5, p. 114) [U5-5.3, 5.4, 5.6]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        <strong>Original Sentence:</strong> \"Believing that the giant wooden horse was a peace offering, the Trojans dragged it inside their city walls, unaware that Greek soldiers were hiding inside its hollow belly.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Which choice is the best paraphrase (uses synonyms and a new sentence structure while keeping the exact meaning)?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(5, 0)\" class=\"u5-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. The Trojans built a giant wooden horse to give to the Greek soldiers as a peace gift.</button>\n        <button onclick=\"app.submitUnit5Game(5, 1)\" class=\"u5-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. The citizens of Troy pulled the massive timber statue into their fortress because they mistook it for a gift of peace, not realizing Greek warriors were concealed within it.</button>\n        <button onclick=\"app.submitUnit5Game(5, 2)\" class=\"u5-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Believing that the big wooden horse was a peace offering, the Trojans pulled it inside their city walls, unaware that Greek soldiers were hiding inside.</button>\n        <button onclick=\"app.submitUnit5Game(5, 3)\" class=\"u5-g5-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Greek soldiers refused to enter the wooden horse because the city walls were locked.</button>\n      </div>\n      <div id=\"u5-g5-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q6: Paraphrasing Practice (ans: 2 = C) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 6 of 8 &bull; Paraphrasing Practice: The Ant and the Chrysalis (Level 5, p. 116) [U5-5.3, 5.4, 5.6]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        <strong>Original Sentence:</strong> \"The arrogant ant mocked the motionless chrysalis for being trapped in its shell, just moments before it emerged as a graceful butterfly.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Which sentence accurately paraphrases the original statement?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(6, 0)\" class=\"u5-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. The butterfly laughed at the ant because the ant was stuck inside a hard shell.</button>\n        <button onclick=\"app.submitUnit5Game(6, 1)\" class=\"u5-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. The arrogant ant mocked the motionless chrysalis for being stuck in its shell, right before it came out as a graceful butterfly.</button>\n        <button onclick=\"app.submitUnit5Game(6, 2)\" class=\"u5-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Shortly before the pupa transformed into an elegant butterfly, the boastful ant ridiculed it for being unable to move inside its casing.</button>\n        <button onclick=\"app.submitUnit5Game(6, 3)\" class=\"u5-g6-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Ants and butterflies always work together to find food in the summer sunshine.</button>\n      </div>\n      <div id=\"u5-g6-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q7: Paraphrasing Practice (ans: 0 = A) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 7 of 8 &bull; Paraphrasing Practice: Avalanche Rescue (Level 5, p. 61) [U5-5.3, 5.4, 5.6]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        <strong>Original Sentence:</strong> \"Although the heavy snowstorm cut off the cabin's electricity, Jennifer and Ronnie stayed warm by burning firewood in the stone hearth.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Choose the most accurate paraphrase of this sentence:</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(7, 0)\" class=\"u5-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Despite losing electrical power during the severe blizzard, the two friends kept themselves warm by lighting a wood fire in the fireplace.</button>\n        <button onclick=\"app.submitUnit5Game(7, 1)\" class=\"u5-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Jennifer and Ronnie froze in the dark cabin because they had no firewood or electricity.</button>\n        <button onclick=\"app.submitUnit5Game(7, 2)\" class=\"u5-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Because they burned firewood in the stone hearth, the heavy snowstorm cut off the cabin's electricity.</button>\n        <button onclick=\"app.submitUnit5Game(7, 3)\" class=\"u5-g7-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Electric heaters are much safer than stone fireplaces during a winter storm.</button>\n      </div>\n      <div id=\"u5-g7-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n\n    <!-- Q8: Paraphrasing Practice (ans: 3 = D) -->\n    <div class=\"p-4 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3\">\n      <div class=\"flex items-center justify-between text-xs\">\n        <span class=\"font-bold text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-md\">Item 8 of 8 &bull; Paraphrasing Practice: Backstreet Bikes Deal (Level 5, p. 52) [U5-5.3, 5.4, 5.6]</span>\n        <span class=\"text-[11px] text-slate-500 font-mono\">U5-6.2.5</span>\n      </div>\n      <p class=\"font-serif text-xs sm:text-sm text-slate-800 bg-slate-50 p-3 rounded-xl border border-slate-200\">\n        <strong>Original Sentence:</strong> \"Mr. Eason allowed Reid to borrow the expensive racing bike for free on the condition that Reid wore the shop's branded helmet and jacket during the race.\"\n      </p>\n      <p class=\"text-xs font-bold text-slate-900\">Which option rewrites the sentence in new words without changing its original meaning?</p>\n      <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs\">\n        <button onclick=\"app.submitUnit5Game(8, 0)\" class=\"u5-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">A. Reid bought the shop's helmet and jacket so Mr. Eason would give him a discount on the bike.</button>\n        <button onclick=\"app.submitUnit5Game(8, 1)\" class=\"u5-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">B. Mr. Eason refused to let Reid ride the bicycle unless Reid paid for the helmet first.</button>\n        <button onclick=\"app.submitUnit5Game(8, 2)\" class=\"u5-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">C. Reid lent his own racing bicycle to Mr. Eason for the Saturday competition.</button>\n        <button onclick=\"app.submitUnit5Game(8, 3)\" class=\"u5-g8-btn p-2.5 rounded-xl border border-slate-200 hover:border-purple-600 text-left font-medium cursor-pointer\">D. Provided that Reid promoted the store by wearing its logo gear in the competition, the shop owner agreed to lend him the high-priced bicycle at no charge.</button>\n      </div>\n      <div id=\"u5-g8-fb\" class=\"hidden text-xs p-2.5 rounded-lg\"></div>\n    </div>\n  </div>\n\n  <!-- Final Score Summary Banner -->\n  <div id=\"u5-game-final-box\" class=\"hidden p-4 rounded-2xl border text-center space-y-2\"></div>\n\n  <!-- Navigation -->\n  <div class=\"flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-2\">\n    <button onclick=\"app.selectActivityStep('example')\" class=\"w-full sm:w-auto px-5 py-2.5 bg-slate-200/80 hover:bg-slate-300 text-slate-700 font-semibold rounded-xl text-xs cursor-pointer text-center\">\n      ⬅ Back: Interactive Highlighting Practice\n    </button>\n    <button onclick=\"app.selectStageAndStep('postReading', 'quiz')\" class=\"w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-2 shadow-md\">\n      <span>Next Stage: Post-Reading 40-Item Quiz</span>\n      <i data-lucide=\"arrow-right\" class=\"w-4 h-4\"></i>\n    </button>\n  </div>\n</div>\n"
           }
         },
         "postReading": {
@@ -4155,6 +4145,595 @@ window.ReadSkillsData = {
         ]
       }
     ]
+  },
+  "unit5Quiz": {
+    "title": "Unit 5 Graded Quiz: Text Interpretation and Paraphrased Meaning (Level 5 Stories)",
+    "thaiTitle": "แบบทดสอบท้ายบทที่ 5: การตีความหมายโดยนัยและการถอดความ (40 ข้อ • 4 เรื่องจาก Level 5)",
+    "passages": [
+      {
+        "id": 1,
+        "title": "Passage 1: Detective Declan and the Rings & Things Robbery (Level 5)",
+        "thaiTitle": "เรื่องที่ 1: นักสืบเดคลันกับคดีโจรกรรมร้านเครื่องประดับ (Making Inferences & Paraphrasing Clues) [U5-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "When Detective Declan arrived at the Rings & Things jewelry store, the back storage room was pitch-black because someone had unscrewed the overhead lightbulb.",
+          "Shining his flashlight across the floor, Declan noticed a trail of glittering gold chains and diamond rings that the thief had dropped in a frantic hurry.",
+          "Upon closer inspection, Declan discovered tiny smudges of wet bright-pink nail polish on several of the velvet ring boxes left behind on the counter.",
+          "Stepping outside to interview the store employees, Declan found the cashier, Ms. Pearl, sitting nervously on a bench and blowing on her fingernails.",
+          "As Declan walked closer, he saw that Ms. Pearl's nails were freshly painted bright pink—and the polish on two of her fingers was badly smudged.",
+          "Smiling calmly, Detective Declan took out his handcuffs and told Ms. Pearl that he knew exactly who had staged the robbery."
+        ],
+        "audioText": "When Detective Declan arrived at the Rings and Things jewelry store, the back storage room was pitch-black because someone had unscrewed the overhead lightbulb. Shining his flashlight across the floor, Declan noticed a trail of glittering gold chains and diamond rings that the thief had dropped in a frantic hurry. Upon closer inspection, Declan discovered tiny smudges of wet bright-pink nail polish on several of the velvet ring boxes left behind on the counter. Stepping outside to interview the store employees, Declan found the cashier, Ms. Pearl, sitting nervously on a bench and blowing on her fingernails. As Declan walked closer, he saw that Ms. Pearl's nails were freshly painted bright pink—and the polish on two of her fingers was badly smudged. Smiling calmly, Detective Declan took out his handcuffs and told Ms. Pearl that he knew exactly who had staged the robbery.",
+        "questions": [
+          {
+            "id": 1,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Clues)",
+            "prompt": "Based on the clues in Sentences (3), (4), and (5), what logical conclusion did Detective Declan draw? [U5-5.1, 5.2]",
+            "options": [
+              "A customer accidentally dropped pink paint on the sidewalk outside",
+              "Ms. Pearl, the cashier, was the thief who had smudged her wet pink nail polish on the ring boxes during the robbery",
+              "The store manager forgot to pay the electric bill for the storage room",
+              "Detective Declan wanted to buy a diamond ring for his wife"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากคำใบ้รอยยาทาเล็บสีชมพูที่ยังไม่แห้งบนกล่องแหวนกำมะหยี่ (S3) บวกกับเล็บสีชมพูที่เพิ่งทาและมีรอยเปื้อน 2 นิ้วของ Ms. Pearl (S4-S5) สรุปได้ว่า Ms. Pearl คือคนร้ายที่จัดฉากขโมยของเอง (ข้อ B)"
+          },
+          {
+            "id": 2,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Physical Clue)",
+            "prompt": "Tap/Select the sentence where Detective Declan first discovers the physical clue (wet pink nail polish smudges) on the velvet ring boxes. [U5-5.2, 6.2.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 ('Upon closer inspection, Declan discovered tiny smudges of wet bright-pink nail polish on several of the velvet ring boxes...') คือจุดที่พบหลักฐานสำคัญชิ้นแรก"
+          },
+          {
+            "id": 3,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Stated vs. Implied vs. Unsupported)",
+            "prompt": "Which of the following is DIRECTLY STATED in Sentence (1) rather than implied? [U5-5.1]",
+            "options": [
+              "The back storage room was pitch-black because someone had unscrewed the overhead lightbulb.",
+              "The thief unscrewed the lightbulb so the security camera would not record her face.",
+              "Ms. Pearl hid the stolen jewelry inside her purse under the bench.",
+              "Rings & Things is the largest jewelry store in the state."
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประโยคที่ 1 ระบุไว้ตรงๆ (Stated Information) ว่าห้องเก็บของด้านหลังมืดสนิทเพราะมีคนหมุนหลอดไฟด้านบนออก (ข้อ A)"
+          },
+          {
+            "id": 4,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Synonym & Context Clue)",
+            "prompt": "In Sentence (2), '...dropped in a [ _______ ] hurry,' which word shows that the thief was acting in a desperate, panicked rush? [U5-5.2, 5.3]",
+            "sentenceWithBlank": "Declan noticed a trail of glittering gold chains and diamond rings that the thief had dropped in a [ _______ ] hurry.",
+            "choices": [
+              "frantic",
+              "leisurely",
+              "calm",
+              "sleepy"
+            ],
+            "correctWord": "frantic",
+            "explanation": "'frantic' หมายถึง ลนลาน รีบเร่งอย่างตื่นตระหนก ซึ่งสอดคล้องกับการทำสร้อยทองและแหวนเพชรตกเรี่ยราดตามพื้น"
+          },
+          {
+            "id": 5,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Practice)",
+            "prompt": "Which choice is the best PARAPHRASE of Sentence (2): 'Shining his flashlight across the floor, Declan noticed a trail of glittering gold chains and diamond rings that the thief had dropped in a frantic hurry'? [U5-5.3, 5.4]",
+            "options": [
+              "Declan dropped his flashlight on the floor and broke several gold chains and diamond rings.",
+              "The robber carefully packed every single gold necklace and diamond ring into a velvet bag.",
+              "As the detective swept his beam of light over the ground, he spotted sparkling jewelry scattered behind by the rushing burglar.",
+              "Shining his flashlight across the floor, Declan noticed a trail of glittering gold chains and diamond rings dropped in a hurry."
+            ],
+            "correctAnswer": 2,
+            "explanation": "ข้อ C ถอดความได้ถูกต้องโดยใช้คำพ้องความหมาย (flashlight ➔ beam of light, floor ➔ ground, noticed ➔ spotted, glittering chains and rings ➔ sparkling jewelry, thief in a frantic hurry ➔ rushing burglar) และปรับโครงสร้างประโยคใหม่โดยคงความหมายเดิมครบถ้วน"
+          },
+          {
+            "id": 6,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Character Action)",
+            "prompt": "Why was the overhead lightbulb unscrewed in the back storage room? (What can you infer?) [U5-5.2]",
+            "options": [
+              "The store wanted to save electricity during daytime hours",
+              "The thief intentionally darkened the room so no one could see the crime taking place",
+              "Detective Declan unscrewed the bulb when he arrived",
+              "There were no lightbulbs sold in the town"
+            ],
+            "correctAnswer": 1,
+            "explanation": "อนุมานได้ว่าคนร้ายจงใจหมุนหลอดไฟออกเพื่อให้ห้องมืดสนิท จะได้ไม่มีใครเห็นขณะลงมือขโมยเครื่องประดับ (ข้อ B)"
+          },
+          {
+            "id": 7,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Matching Evidence Clue)",
+            "prompt": "Tap/Select the sentence that reveals the matching evidence on two of Ms. Pearl's fingers. [U5-5.2]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 ('As Declan walked closer, he saw that Ms. Pearl's nails were freshly painted bright pink—and the polish on two of her fingers was badly smudged.') คือหลักฐานที่ตรงกับรอยเปื้อนบนกล่องแหวน"
+          },
+          {
+            "id": 8,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Paraphrasing Synonym)",
+            "prompt": "Choose the best synonym to paraphrase the word 'staged' in Sentence (6) ('...who had staged the robbery'): [U5-5.3]",
+            "sentenceWithBlank": "Detective Declan knew that the cashier had [ _______ ] and faked the break-in herself.",
+            "choices": [
+              "arranged",
+              "prevented",
+              "forgotten",
+              "forgiven"
+            ],
+            "correctWord": "arranged",
+            "explanation": "คำว่า 'staged' ในบริบทอาชญากรรม หมายถึง จัดฉากหรือวางแผนสร้างเรื่องขึ้น (arranged / orchestrated)"
+          },
+          {
+            "id": 9,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Identifying Unsupported Ideas)",
+            "prompt": "Which statement is an UNSUPPORTED IDEA that cannot be inferred from Passage 1? [U5-5.1]",
+            "options": [
+              "Ms. Pearl had painted her nails bright pink shortly before the robbery.",
+              "The thief was in such a rush that some jewelry fell onto the floor.",
+              "Ms. Pearl had an accomplice waiting in a red getaway boat at the harbor.",
+              "Detective Declan used physical evidence to solve the case."
+            ],
+            "correctAnswer": 2,
+            "explanation": "ในบทอ่านไม่มีข้อมูลหรือคำใบ้ใดๆ ที่กล่าวถึงผู้สมรู้ร่วมคิดหรือเรือสีแดงที่ท่าเรือเลย จึงเป็น Unsupported Idea (ข้อ C)"
+          },
+          {
+            "id": 10,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Structure & Meaning)",
+            "prompt": "Which option best paraphrases Sentence (6): 'Smiling calmly, Detective Declan took out his handcuffs and told Ms. Pearl that he knew exactly who had staged the robbery'? [U5-5.3, 5.4]",
+            "options": [
+              "Detective Declan calmly smiled and gave his handcuffs to Ms. Pearl so she could arrest the robber.",
+              "Ms. Pearl smiled calmly as she confessed to Detective Declan that she had stolen the rings.",
+              "Detective Declan was angry because he had no idea who had robbed the jewelry store.",
+              "With a composed smile, the detective pulled out his handcuffs and informed the cashier that he had figured out she was behind the fake break-in."
+            ],
+            "correctAnswer": 3,
+            "explanation": "ข้อ D เปลี่ยนโครงสร้างวลีและใช้คำพ้องความหมาย (Smiling calmly ➔ With a composed smile, took out ➔ pulled out, told Ms. Pearl ➔ informed the cashier, knew exactly who had staged ➔ figured out she was behind the fake break-in) โดยรักษาความหมายเดิมได้อย่างสมบูรณ์"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Passage 2: King Tutankhamen and the Pharaohs' Tombs (Level 5)",
+        "thaiTitle": "เรื่องที่ 2: ฟาโรห์ตุตันคาเมนกับความลับแห่งสุสานอียิปต์โบราณ (Implied Meaning & Historical Paraphrasing) [U5-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "King Tutankhamen became the ruler of ancient Egypt when he was only a young boy and died unexpectedly at the age of nineteen.",
+          "Because ancient Egyptians believed that a pharaoh needed his earthly treasures in the afterlife, priests filled King Tut's tomb with solid gold chariots, furniture, and jewelry.",
+          "Before sealing the royal burial chamber, embalmers carefully wrapped the young king's body in linen bandages to preserve it as a mummy.",
+          "To protect the priceless treasures from greedy grave robbers, builders blocked the passages with massive stone boulders and constructed secret false doorways.",
+          "Furthermore, ancient inscriptions carved above the tomb entrance warned that a terrible curse would strike anyone who dared to disturb the pharaoh's eternal rest.",
+          "While modern scientists attribute the illnesses of early tomb explorers to ancient mold and bacteria inside the sealed rooms, the legend of the mummy's curse remains famous today."
+        ],
+        "audioText": "King Tutankhamen became the ruler of ancient Egypt when he was only a young boy and died unexpectedly at the age of nineteen. Because ancient Egyptians believed that a pharaoh needed his earthly treasures in the afterlife, priests filled King Tut's tomb with solid gold chariots, furniture, and jewelry. Before sealing the royal burial chamber, embalmers carefully wrapped the young king's body in linen bandages to preserve it as a mummy. To protect the priceless treasures from greedy grave robbers, builders blocked the passages with massive stone boulders and constructed secret false doorways. Furthermore, ancient inscriptions carved above the tomb entrance warned that a terrible curse would strike anyone who dared to disturb the pharaoh's eternal rest. While modern scientists attribute the illnesses of early tomb explorers to ancient mold and bacteria inside the sealed rooms, the legend of the mummy's curse remains famous today.",
+        "questions": [
+          {
+            "id": 11,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Text Clues)",
+            "prompt": "Based on Sentence (1), what can we logically infer about King Tutankhamen's reign? [U5-5.1, 5.2]",
+            "options": [
+              "His reign was relatively brief because he took the throne as a child and passed away at just nineteen.",
+              "He ruled Egypt for more than eighty years.",
+              "He built all the pyramids in Egypt by himself.",
+              "He abdicated the throne to become a sailor."
+            ],
+            "correctAnswer": 0,
+            "explanation": "จากข้อมูลว่าเขาขึ้นครองราชย์ตั้งแต่ยังเป็นเด็กและเสียชีวิตกะทันหันเมื่ออายุเพียง 19 ปี จึงอนุมานได้ว่าระยะเวลาการครองราชย์ของเขานั้นสั้นมาก (ข้อ A)"
+          },
+          {
+            "id": 12,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Practice)",
+            "prompt": "Which option is the most accurate PARAPHRASE of Sentence (2)? [U5-5.3, 5.4]",
+            "options": [
+              "King Tutankhamen sold all his gold chariots and jewelry to the priests before he died.",
+              "Priests packed the young pharaoh's burial site with golden valuables and furnishings because Egyptians thought rulers would use their possessions in the next world.",
+              "Because ancient Egyptians believed that a pharaoh needed his earthly treasures in the afterlife, priests filled King Tut's tomb with gold chariots and jewelry.",
+              "Ancient Egyptians did not believe in an afterlife, so they left tombs completely empty."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ข้อ B สลับลำดับอนุประโยค (Effect ➔ Cause) และใช้คำพ้องความหมาย (filled tomb ➔ packed burial site, gold chariots/furniture/jewelry ➔ golden valuables and furnishings, afterlife ➔ the next world) โดยคงความหมายเดิมครบถ้วน"
+          },
+          {
+            "id": 13,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Implied Purpose of Warnings)",
+            "prompt": "Tap/Select the sentence that explains how written warnings (inscriptions of a curse) were used to frighten intruders away from the tomb. [U5-5.2]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 ('Furthermore, ancient inscriptions carved above the tomb entrance warned that a terrible curse would strike anyone...') กล่าวถึงคำจารึกสาปแช่งเหนือทางเข้าสุสานเพื่อขู่ผู้บุกรุก"
+          },
+          {
+            "id": 14,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Paraphrasing Vocabulary)",
+            "prompt": "In Sentence (3), '...wrapped the young king's body in linen bandages to [ _______ ] it as a mummy,' which word means 'keep safe from decay'? [U5-5.3]",
+            "sentenceWithBlank": "Embalmers carefully wrapped the young king's body in linen bandages to [ _______ ] it as a mummy.",
+            "choices": [
+              "preserve",
+              "destroy",
+              "abandon",
+              "scatter"
+            ],
+            "correctWord": "preserve",
+            "explanation": "'preserve' หมายถึง เก็บรักษาหรือคงสภาพไว้ไม่ให้เน่าเปื่อย"
+          },
+          {
+            "id": 15,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Drawing Logical Conclusions)",
+            "prompt": "Why did ancient Egyptian builders construct false doorways and block corridors with giant boulders (Sentence 4)? What can you infer? [U5-5.2]",
+            "options": [
+              "They ran out of bricks while building the palace",
+              "They wanted tourists to easily find the burial chamber",
+              "Tomb looting by treasure hunters was a serious and common threat in ancient Egypt",
+              "They needed extra rooms to store grain for the winter"
+            ],
+            "correctAnswer": 2,
+            "explanation": "การต้องสร้างประตูลวงและใช้ก้อนหินยักษ์ปิดกั้นทางเดินเพื่อป้องกันโจรปล้นสุสาน (greedy grave robbers) สะท้อนให้เห็นว่าปัญหาการลักลอบขุดปล้นสมบัติในสุสานเป็นภัยคุกคามที่รุนแรงในยุคนั้น (ข้อ C)"
+          },
+          {
+            "id": 16,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Technique Analysis)",
+            "prompt": "Look at this paraphrase of Sentence (4): 'Massive stone barriers and hidden fake doors were built by workers to keep precious royal items safe from thieves.' Which two paraphrasing techniques were used? [U5-5.3]",
+            "options": [
+              "Copying the sentence word-for-word and adding personal opinions",
+              "Deleting the main idea and changing the historical facts",
+              "Translating the sentence into ancient Egyptian hieroglyphs",
+              "Changing Active Voice to Passive Voice AND replacing key words with synonyms (boulders ➔ stone barriers, false doorways ➔ fake doors, grave robbers ➔ thieves)"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ประโยคถอดความนี้ใช้เทคนิคการเปลี่ยนโครงสร้างประโยคจาก Active เป็น Passive Voice ('Massive stone barriers... were built by workers') ร่วมกับการใช้คำพ้องความหมาย (Synonyms) (ข้อ D)"
+          },
+          {
+            "id": 17,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Scientific Explanation vs. Legend)",
+            "prompt": "Tap/Select the sentence that contrasts the scientific explanation for explorers' illnesses with the popular legend of the curse. [U5-5.1, 5.2]",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ 6 (S6) เปรียบเทียบคำอธิบายทางวิทยาศาสตร์ (เชื้อราและแบคทีเรียโบราณในห้องที่ปิดตาย) กับตำนานคำสาปมัมมี่ที่ผู้คนยังเล่าขาน"
+          },
+          {
+            "id": 18,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Synonym Substitution)",
+            "prompt": "Complete the paraphrase of Sentence (6) with an accurate synonym for 'attribute ... to' (give credit or cause to): [U5-5.3]",
+            "sentenceWithBlank": "Modern researchers [ _______ ] the sicknesses of early archaeologists to toxic mold and bacteria trapped inside the tomb.",
+            "choices": [
+              "link",
+              "forbid",
+              "hide",
+              "borrow"
+            ],
+            "correctWord": "link",
+            "explanation": "คำว่า 'attribute A to B' (ระบุว่า A เกิดจากสาเหตุ B) สามารถถอดความด้วยคำว่า 'link A to B' หรือ 'connect A to B'"
+          },
+          {
+            "id": 19,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Stated vs. Implied Meaning)",
+            "prompt": "Based on Sentence (6), what do modern scientists imply actually made early tomb explorers sick? [U5-5.1, 5.2]",
+            "options": [
+              "Breathing in harmful mold spores and bacteria that had grown inside the sealed burial chamber over thousands of years",
+              "Magical spells cast by ancient gold chariots",
+              "Drinking cold water from a modern refrigerator",
+              "Getting lost in the desert sandstorms outside Cairo"
+            ],
+            "correctAnswer": 0,
+            "explanation": "นักวิทยาศาสตร์ยุคใหม่ชี้ว่าอาการป่วยของนักสำรวจเกิดจากเชื้อราและแบคทีเรียโบราณที่สะสมอยู่ในห้องสุสานที่ถูกปิดตาย (ข้อ A)"
+          },
+          {
+            "id": 20,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Evaluating Paraphrase Quality)",
+            "prompt": "Why is the statement 'King Tut died at nineteen because he inhaled ancient mold in his tomb' a BAD paraphrase of the passage? [U5-5.4, 6.1.2]",
+            "options": [
+              "It uses too many difficult synonyms",
+              "It is written in passive voice",
+              "It is too short to be an English sentence",
+              "It distorts/changes the original meaning by mixing up King Tut's death (S1) with the mold that sickened modern tomb explorers (S6)"
+            ],
+            "correctAnswer": 3,
+            "explanation": "ประโยคนี้บิดเบือนความหมายเดิม (Changes/Distorts Meaning) เพราะนำเรื่องการเสียชีวิตของฟาโรห์ตุตันคาเมนในประโยคที่ 1 ไปปนกับเรื่องเชื้อราที่ทำให้นักสำรวจยุคใหม่ป่วยในประโยคที่ 6 (ข้อ D)"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Passage 3: Spider Silk and Nocturnal Survival in Nature (Level 5)",
+        "thaiTitle": "เรื่องที่ 3: ความมหัศจรรย์ของใยแมงมุมและการปรับตัวของสัตว์หากินกลางคืน (Scientific Inference & Paraphrasing) [U5-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "Pound for pound, spider silk is five times stronger than steel and can stretch up to forty percent of its length without snapping.",
+          "Because this natural fiber is both lightweight and remarkably tough, engineers have long dreamed of using it to manufacture bulletproof vests and surgical thread.",
+          "However, farming spiders like silkworms is impossible because spiders are territorial predators that attack and eat one another when kept in crowded enclosures.",
+          "In addition to spinning silk traps, many arachnids and desert creatures are nocturnal—remaining hidden in cool burrows all day and emerging to hunt only after nightfall.",
+          "By contrast, diurnal animals are active during daylight hours and rest at night.",
+          "Through specialized adaptations such as heat-sensing organs and silent flight, nocturnal hunters thrive in darkness where daytime predators cannot compete."
+        ],
+        "audioText": "Pound for pound, spider silk is five times stronger than steel and can stretch up to forty percent of its length without snapping. Because this natural fiber is both lightweight and remarkably tough, engineers have long dreamed of using it to manufacture bulletproof vests and surgical thread. However, farming spiders like silkworms is impossible because spiders are territorial predators that attack and eat one another when kept in crowded enclosures. In addition to spinning silk traps, many arachnids and desert creatures are nocturnal—remaining hidden in cool burrows all day and emerging to hunt only after nightfall. By contrast, diurnal animals are active during daylight hours and rest at night. Through specialized adaptations such as heat-sensing organs and silent flight, nocturnal hunters thrive in darkness where daytime predators cannot compete.",
+        "questions": [
+          {
+            "id": 21,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Scientific Facts)",
+            "prompt": "Based on Sentences (1) and (2), what can we infer makes spider silk superior to steel for making protective vests? [U5-5.1, 5.2]",
+            "options": [
+              "Spider silk is heavier and stiffer than iron bars",
+              "Spider silk combines extraordinary strength and flexibility with very light weight",
+              "Spider silk melts immediately when exposed to air",
+              "Spider silk is much cheaper to mine from the ground than coal"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากคำใบ้ว่าใยแมงมุมแข็งแรงกว่าเหล็ก 5 เท่า ยืดหยุ่นได้ถึง 40% โดยไม่ขาด (S1) และมีน้ำหนักเบาแต่เหนียวทนทาน (S2) จึงอนุมานได้ว่าคุณสมบัติความแข็งแรง+ยืดหยุ่น+น้ำหนักเบา ทำให้เหมาะแก่การทำเสื้อเกราะกันกระสุน (ข้อ B)"
+          },
+          {
+            "id": 22,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Implied Obstacle)",
+            "prompt": "Tap/Select the sentence that explains WHY humans cannot mass-produce spider silk on spider farms. [U5-5.1, 5.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 ('However, farming spiders like silkworms is impossible because spiders are territorial predators that attack and eat one another...') อธิบายสาเหตุที่เพาะเลี้ยงแมงมุมรวมกันไม่ได้"
+          },
+          {
+            "id": 23,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Practice)",
+            "prompt": "Which choice is the most accurate PARAPHRASE of Sentence (3)? [U5-5.3, 5.4]",
+            "options": [
+              "Silkworms are territorial predators that attack and eat spiders when kept in crowded cages.",
+              "However, farming spiders like silkworms is impossible because spiders are territorial predators that attack and eat each other.",
+              "Spiders and silkworms live peacefully together on large commercial silk farms.",
+              "Unlike silkworms, spiders cannot be raised together on commercial farms because they fiercely defend their space and devour each other in confined areas."
+            ],
+            "correctAnswer": 3,
+            "explanation": "ข้อ D ถอดความโดยปรับโครงสร้างประโยคและใช้คำพ้องความหมาย (farming spiders like silkworms is impossible ➔ Unlike silkworms, spiders cannot be raised together on commercial farms; territorial predators that attack and eat one another ➔ fiercely defend their space and devour each other; crowded enclosures ➔ confined areas)"
+          },
+          {
+            "id": 24,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Synonym in Paraphrase)",
+            "prompt": "In Sentence (1), '...stretch up to forty percent of its length without [ _______ ],' which word is a synonym for 'breaking suddenly'? [U5-5.3]",
+            "sentenceWithBlank": "Spider silk can stretch up to forty percent of its length without [ _______ ].",
+            "choices": [
+              "snapping",
+              "glowing",
+              "freezing",
+              "sinking"
+            ],
+            "correctWord": "snapping",
+            "explanation": "'snapping' ในบริบทของเส้นใย หมายถึง ขาดผึงออก (breaking suddenly under tension)"
+          },
+          {
+            "id": 25,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Animal Behavior)",
+            "prompt": "Why do desert arachnids and creatures stay hidden in underground burrows during the day (Sentence 4)? What can you infer? [U5-5.2]",
+            "options": [
+              "To escape the intense daytime desert heat and conserve moisture until the cooler night arrives",
+              "Because they are afraid of the moon and stars",
+              "Because there are no burrows available at night",
+              "To watch television inside their burrows"
+            ],
+            "correctAnswer": 0,
+            "explanation": "จากคำใบ้ 'remaining hidden in cool burrows all day and emerging to hunt only after nightfall' ของสัตว์ทะเลทราย อนุมานได้ว่าพวกมันหลบความร้อนระอุตอนกลางวันอยู่ในโพรงที่เย็นกว่า และออกมาล่าเหยื่อในเวลากลางคืน (ข้อ A)"
+          },
+          {
+            "id": 26,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Vocabulary & Contrast Inference)",
+            "prompt": "Based on Sentences (4) and (5), if a hawk hunts during the sunny afternoon and sleeps all night, how would biologists classify the hawk? [U5-5.2]",
+            "options": [
+              "As a nocturnal predator",
+              "As an underground burrower",
+              "As a diurnal animal",
+              "As a silk-spinning arachnid"
+            ],
+            "correctAnswer": 2,
+            "explanation": "ประโยคที่ 5 ระบุว่า 'diurnal animals are active during daylight hours and rest at night' ดังนั้นเหยี่ยวที่ล่าเหยื่อตอนกลางวันและนอนตอนกลางคืนจึงจัดเป็นสัตว์หากินกลางวัน (diurnal animal) (ข้อ C)"
+          },
+          {
+            "id": 27,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Contrast Definition)",
+            "prompt": "Tap/Select the sentence that directly defines 'diurnal animals' in contrast to nocturnal creatures. [U5-5.1]",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ 5 ('By contrast, diurnal animals are active during daylight hours and rest at night.') นิยามความหมายของสัตว์หากินกลางวันเปรียบต่างกับสัตว์หากินกลางคืน"
+          },
+          {
+            "id": 28,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Paraphrasing Word Form)",
+            "prompt": "Complete the paraphrase of Sentence (2) by choosing the synonym for 'manufacture' (produce on a large scale): [U5-5.3]",
+            "sentenceWithBlank": "Scientists hope to use this strong, lightweight fiber to [ _______ ] protective body armor and medical sutures.",
+            "choices": [
+              "produce",
+              "demolish",
+              "ignore",
+              "conceal"
+            ],
+            "correctWord": "produce",
+            "explanation": "คำว่า 'manufacture' (ผลิต) ถอดความด้วยคำพ้องความหมายว่า 'produce' หรือ 'create'"
+          },
+          {
+            "id": 29,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Sentence 6)",
+            "prompt": "Which option best paraphrases Sentence (6): 'Through specialized adaptations such as heat-sensing organs and silent flight, nocturnal hunters thrive in darkness where daytime predators cannot compete'? [U5-5.3, 5.4]",
+            "options": [
+              "Daytime predators have heat-sensing organs and silent flight, so nocturnal hunters cannot survive in the dark.",
+              "Nocturnal animals cannot see or fly at night, which makes it hard for them to compete with daytime hunters.",
+              "Through specialized adaptations such as heat-sensing organs and silent flight, nocturnal hunters thrive in darkness.",
+              "Special traits like thermal detection and noiseless wings allow nighttime predators to succeed in the dark without competition from daytime hunters."
+            ],
+            "correctAnswer": 3,
+            "explanation": "ข้อ D เปลี่ยนโครงสร้างประโยคและใช้คำพ้องความหมายอย่างแม่นยำ (specialized adaptations ➔ special traits, heat-sensing organs ➔ thermal detection, silent flight ➔ noiseless wings, nocturnal hunters thrive ➔ nighttime predators succeed) โดยคงความหมายเดิม 100%"
+          },
+          {
+            "id": 30,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Stated vs. Unsupported Conclusion)",
+            "prompt": "Which conclusion is SUPPORTED by Passage 3? [U5-5.1, 5.2]",
+            "options": [
+              "Every hospital in the world already uses spider silk for all surgeries today.",
+              "Although spider silk has ideal properties for human technology, the aggressive behavior of spiders makes natural mass production impractical.",
+              "Spiders only spin webs when they are kept inside crowded glass jars.",
+              "Diurnal animals have no adaptations for survival."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ข้อ B สรุปใจความสำคัญจากย่อหน้าได้อย่างสมเหตุสมผลว่า แม้ใยแมงมุมจะมีคุณสมบัติยอดเยี่ยมเพียงใด แต่พฤติกรรมดุร้ายที่กินกันเองของแมงมุมทำให้ไม่สามารถเพาะเลี้ยงเพื่อผลิตในระดับอุตสาหกรรมได้ตามธรรมชาติ"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Passage 4: Sydney's History Test and the Cheating Classmate (Level 5)",
+        "thaiTitle": "เรื่องที่ 4: การสอบวิชาประวัติศาสตร์ของซิดนีย์กับเพื่อนร่วมชั้นจอมลอก (Character Inference & Paraphrasing) [U5-5.1..5.6, 6.3.3]",
+        "sentences": [
+          "For three evenings in a row, Sydney reviewed her history flashcards and outlined every chapter in her notebook to prepare for Friday's major exam.",
+          "When the teacher distributed the test booklets on Friday morning, Sydney's palms were sweaty, yet she felt confident as she began answering the questions.",
+          "By the time Sydney reached Question 5, she noticed Ryan in the next aisle craning his neck and peering over her shoulder at her answer sheet.",
+          "Annoyed by Ryan's dishonesty, Sydney casually leaned forward and shielded her test paper with her left arm so he could no longer see her work.",
+          "When Sydney glanced back a few minutes later at Question 10, Ryan was glaring at her lividly and tapping his pencil in frustration.",
+          "Without saying a word, Sydney raised her hand and asked the teacher for permission to move to an empty desk at the very front of the classroom."
+        ],
+        "audioText": "For three evenings in a row, Sydney reviewed her history flashcards and outlined every chapter in her notebook to prepare for Friday's major exam. When the teacher distributed the test booklets on Friday morning, Sydney's palms were sweaty, yet she felt confident as she began answering the questions. By the time Sydney reached Question 5, she noticed Ryan in the next aisle craning his neck and peering over her shoulder at her answer sheet. Annoyed by Ryan's dishonesty, Sydney casually leaned forward and shielded her test paper with her left arm so he could no longer see her work. When Sydney glanced back a few minutes later at Question 10, Ryan was glaring at her lividly and tapping his pencil in frustration. Without saying a word, Sydney raised her hand and asked the teacher for permission to move to an empty desk at the very front of the classroom.",
+        "questions": [
+          {
+            "id": 31,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inference from Character Behavior)",
+            "prompt": "In Sentence (2), why were Sydney's palms sweaty when the teacher handed out the test booklets, even though she had studied hard? [U5-5.2]",
+            "options": [
+              "The classroom heater was broken and it was snowing inside",
+              "She had just washed her hands with warm paint",
+              "She felt natural test anxiety and nervousness because Friday's history exam was an important test",
+              "She had not read any chapters in her history textbook"
+            ],
+            "correctAnswer": 2,
+            "explanation": "คำใบ้ 'palms were sweaty, yet she felt confident' สำหรับการสอบครั้งสำคัญ (major exam) สะท้อนอาการตื่นเต้นประหม่าตามธรรมชาติก่อนเริ่มทำข้อสอบ แม้ว่าจะเตรียมตัวมาดีก็ตาม (ข้อ C)"
+          },
+          {
+            "id": 32,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Clue of Cheating)",
+            "prompt": "Tap/Select the sentence that provides the visual clues showing Ryan was trying to copy Sydney's answers. [U5-5.2, 6.2.2]",
+            "targetSentenceIndex": 2,
+            "explanation": "ประโยคที่ 3 ('...she noticed Ryan in the next aisle craning his neck and peering over her shoulder at her answer sheet.') คือคำใบ้ที่แสดงพฤติกรรมชะเง้อคอลอกข้อสอบอย่างชัดเจน"
+          },
+          {
+            "id": 33,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Sentence 1)",
+            "prompt": "Which option is the most accurate PARAPHRASE of Sentence (1)? [U5-5.3, 5.4]",
+            "options": [
+              "Sydney spent three consecutive nights studying her history cards and summarizing the textbook chapters to get ready for the big Friday test.",
+              "Sydney forgot to study for three evenings in a row, so she had to outline her notebook on Friday morning.",
+              "For three evenings in a row, Sydney reviewed her history flashcards and outlined every chapter in her notebook.",
+              "Sydney's teacher gave the class three flashcards to memorize during Friday's history test."
+            ],
+            "correctAnswer": 0,
+            "explanation": "ข้อ A ถอดความได้อย่างแม่นยำโดยใช้คำพ้องความหมาย (three evenings in a row ➔ three consecutive nights, reviewed flashcards ➔ studying her history cards, outlined every chapter ➔ summarizing the textbook chapters, prepare for Friday's major exam ➔ get ready for the big Friday test) และเปลี่ยนโครงสร้างประโยค"
+          },
+          {
+            "id": 34,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Vocabulary in Context)",
+            "prompt": "In Sentence (5), 'Ryan was glaring at her [ _______ ] and tapping his pencil in frustration,' what does 'lividly' mean? [U5-5.2, 5.3]",
+            "sentenceWithBlank": "Ryan was glaring at her [ _______ ] (furiously / angrily) because she blocked his view of her paper.",
+            "choices": [
+              "furiously",
+              "cheerfully",
+              "sleepily",
+              "politely"
+            ],
+            "correctWord": "furiously",
+            "explanation": "'lividly' มาจากคำว่า livid หมายถึง โกรธจัดหรือโมโหอย่างมาก (furiously / angrily)"
+          },
+          {
+            "id": 35,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inferring Character Motive)",
+            "prompt": "Based on Sentences (4) and (5), what can you infer about Ryan? [U5-5.2]",
+            "options": [
+              "Ryan had studied flashcards with Sydney for three nights",
+              "Ryan had already finished the entire history test and was bored",
+              "Ryan wanted to borrow an extra pencil from Sydney",
+              "Ryan was unprepared for the test and became angry when Sydney blocked him from copying her answers"
+            ],
+            "correctAnswer": 3,
+            "explanation": "จากคำใบ้ว่า Ryan ชะเง้อมองกระดาษคำตอบของ Sydney พอถูกบังก็จ้องตาขวางอย่างโกรธจัดและเคาะดินสอด้วยความหงุดหงิด อนุมานได้ว่าเขาไม่ได้เตรียมตัวมาสอบและหงุดหงิดที่ลอกคำตอบไม่ได้ (ข้อ D)"
+          },
+          {
+            "id": 36,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Paraphrasing Sentence 4)",
+            "prompt": "Which choice best paraphrases Sentence (4): 'Annoyed by Ryan's dishonesty, Sydney casually leaned forward and shielded her test paper with her left arm so he could no longer see her work'? [U5-5.3, 5.4]",
+            "options": [
+              "Sydney was happy to help Ryan, so she moved her left arm away from her test booklet.",
+              "Irritated that her classmate was trying to cheat, Sydney quietly used her arm to cover her answer sheet and block his view.",
+              "Ryan leaned forward and covered his test paper with his left arm because he was annoyed at Sydney.",
+              "Sydney stood up and shouted at Ryan in front of the whole history class."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ข้อ B ถอดความโดยใช้คำพ้องความหมาย (Annoyed by Ryan's dishonesty ➔ Irritated that her classmate was trying to cheat, shielded her test paper with her left arm ➔ used her arm to cover her answer sheet, so he could no longer see ➔ block his view) และรักษาใจความเดิมไว้ครบถ้วน"
+          },
+          {
+            "id": 37,
+            "type": "highlight",
+            "questionTypeLabel": "Sentence Selection (Problem Resolution Without Disruption)",
+            "prompt": "Tap/Select the sentence where Sydney resolves the cheating problem maturedly without causing a loud scene in class. [U5-5.2]",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ 6 ('Without saying a word, Sydney raised her hand and asked the teacher for permission to move to an empty desk at the very front...') แสดงการแก้ปัญหาอย่างมีวุฒิภาวะโดยไม่ส่งเสียงรบกวนชั้นเรียน"
+          },
+          {
+            "id": 38,
+            "type": "fillBlank",
+            "questionTypeLabel": "Fill in the Blank (Paraphrasing Synonym)",
+            "prompt": "In Sentence (4), 'Sydney ... [ _______ ] her test paper with her left arm,' choose the best word meaning 'protected / covered from view': [U5-5.3]",
+            "sentenceWithBlank": "Sydney casually leaned forward and [ _______ ] her test paper with her left arm.",
+            "choices": [
+              "shielded",
+              "displayed",
+              "ripped",
+              "advertised"
+            ],
+            "correctWord": "shielded",
+            "explanation": "'shielded' หมายถึง กำบังหรือป้องไว้ไม่ให้ผู้อื่นมองเห็น"
+          },
+          {
+            "id": 39,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Inferring Why Sydney Moved)",
+            "prompt": "Why did Sydney ask to move to an empty desk at the very front of the classroom in Sentence (6)? [U5-5.2]",
+            "options": [
+              "Because she could not see the clock at the back of the room",
+              "Because she wanted to sit closer to Ryan",
+              "Because sitting at the very front prevented Ryan from looking over her shoulder while allowing her to finish her exam in peace",
+              "Because the teacher punished Sydney for talking during the test"
+            ],
+            "correctAnswer": 2,
+            "explanation": "การย้ายไปนั่งโต๊ะว่างแถวหน้าสุดทำให้ไม่มีใครชะเง้อมองจากด้านหน้าได้ และช่วยให้ Sydney มีสมาธิทำข้อสอบจนเสร็จโดยไม่ต้องปะทะคารมกับ Ryan (ข้อ C)"
+          },
+          {
+            "id": 40,
+            "type": "mc",
+            "questionTypeLabel": "Multiple Choice (Overall Passage Paraphrase)",
+            "prompt": "Which statement is the best overall summary and paraphrase of Passage 4? [U5-5.3, 5.4]",
+            "options": [
+              "After preparing thoroughly for her history exam, Sydney noticed an unprepared classmate trying to copy her answers, so she covered her paper and quietly relocated to a front desk.",
+              "Sydney and Ryan studied history flashcards together for three days and both earned perfect scores on Friday's exam.",
+              "Ryan asked the history teacher to move to the front row because Sydney was tapping her pencil loudly.",
+              "History exams are much harder than science tests unless students use flashcards."
+            ],
+            "correctAnswer": 0,
+            "explanation": "ข้อ A ถอดความและสรุปใจความสำคัญของเรื่องทั้ง 6 ประโยคด้วยภาษาใหม่ได้อย่างครบถ้วนและคงความหมายเดิม 100%"
+          }
+        ]
+      }
+    ]
   }
 };
-const ReadSkillsData = window.ReadSkillsData;
