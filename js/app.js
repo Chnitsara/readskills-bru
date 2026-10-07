@@ -132,6 +132,23 @@ class ReadSkillsApp {
       lastScore: savedU5QuizScore ? parseInt(savedU5QuizScore) : null
     };
 
+    // Unit 6 State (Integrated Reading Practice: Reviewing Reading Strategies Units 1-5)
+    this.unit6MatchAnswers = {};
+    this.unit6PreGameAnswers = {};
+    this.unit6Highlights = {};
+    this.unit6GameAnswers = JSON.parse(localStorage.getItem('bru_unit6_game_answers') || '{}');
+    this.unit6GameScore = localStorage.getItem('bru_unit6_game_score') ? parseInt(localStorage.getItem('bru_unit6_game_score')) : null;
+    const savedU6QuizScore = localStorage.getItem('bru_unit6_quiz_score');
+    this.unit6QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedU6QuizScore ? parseInt(savedU6QuizScore) : null
+    };
+
     // Module 2: Reading Strategies Unit 1 State (Navigating Main Ideas & 30-Question Strategy Quiz)
     this.strat1PretestAnswers = {};
     this.strat1VocabAnswers = JSON.parse(localStorage.getItem('bru_strat1_vocab_answers') || '{}');
@@ -859,6 +876,23 @@ class ReadSkillsApp {
           { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบการตีความและถอดความ [U5-6.3.3]' }
         ];
       }
+    } else if (this.currentUnitId === 6) {
+      if (stage === 'preReading') {
+        steps = [
+          { key: 'overview', num: 1, label: 'Mind Map & Goal Setting', sub: 'ทบทวน 5 กลยุทธ์ & ตั้งเป้าหมาย [6.1.1, 6.1.4]' },
+          { key: 'learn', num: 2, label: 'Matching & Warm-up Quiz', sub: 'จับคู่กลยุทธ์ & ควิซอุ่นเครื่อง 10 ข้อ [6.1.2-6.1.3]' }
+        ];
+      } else if (stage === 'whileReading') {
+        steps = [
+          { key: 'learn', num: 1, label: 'Guided Reading Demo', sub: 'สาธิตบูรณาการ 5 กลยุทธ์ [6.2.1]' },
+          { key: 'example', num: 2, label: '5-Colour Annotation', sub: 'ฝึกไฮไลต์ดิจิทัล 5 สี [6.2.2]' },
+          { key: 'practice', num: 3, label: 'Units 1–5 Review Challenge', sub: 'แบบฝึกทบทวนบูรณาการ (70%) [6.2.3-6.2.5]' }
+        ];
+      } else if (stage === 'postReading') {
+        steps = [
+          { key: 'quiz', num: 1, label: 'Cumulative Quiz (40 ข้อ)', sub: 'แบบทดสอบรวบยอด Units 1–5 [U6-6.3.1-6.3.4]' }
+        ];
+      }
     } else {
       if (stage === 'preReading') {
         steps = [
@@ -1091,7 +1125,7 @@ class ReadSkillsApp {
     const currentStep = this.currentActivityStep;
 
     if (currentStep === 'quiz') {
-      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3 || this.currentUnitId === 4 || this.currentUnitId === 5) {
+      if (this.currentUnitId === 1 || this.currentUnitId === 2 || this.currentUnitId === 3 || this.currentUnitId === 4 || this.currentUnitId === 5 || this.currentUnitId === 6) {
         return this.renderQuizStep();
       }
       if (s && s.quiz && typeof s.quiz === 'string' && s.quiz.trim().startsWith('<div')) {
@@ -1144,7 +1178,12 @@ class ReadSkillsApp {
     }
 
     if (s && s[currentStep] && typeof s[currentStep] === 'string' && s[currentStep].trim().startsWith('<div')) {
-      setTimeout(() => { if (window.lucide) lucide.createIcons(); }, 30);
+      setTimeout(() => {
+        if (window.lucide) lucide.createIcons();
+        if (this.currentUnitId === 6 && this.updateUnit6SummaryDashboard) {
+          this.updateUnit6SummaryDashboard();
+        }
+      }, 30);
       return s[currentStep];
     }
 
@@ -1435,6 +1474,18 @@ class ReadSkillsApp {
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถตีความหมายโดยนัยจากคำใบ้ (Making Inferences) และถอดความประโยคด้วยภาษาของตนเอง (Paraphrasing) ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
       };
     }
+    if (this.currentUnitId === 6) {
+      return {
+        unitId: 6,
+        quizData: ReadSkillsData.unit6Quiz,
+        state: this.unit6QuizState,
+        storageKey: 'bru_unit6_quiz_score',
+        cefrLabel: 'CEFR Target: B1 Level (Level 5 — Integrated Units 1–5)',
+        unitTitle: 'Unit 6 Cumulative Assessment Results (ผลคะแนนแบบทดสอบรวบยอด 40 ข้อ)',
+        unitSub: 'คะแนนแบบทดสอบวัดผลการบูรณาการกลยุทธ์การอ่านทั้ง 5 ด้าน Unit 6 (40 ข้อ • Indicator 3.3)',
+        passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถบูรณาการกลยุทธ์การอ่านครบทั้ง 5 บท (Main Idea, Details/Scanning, Context Clues, Text Structure/References และ Inferences/Paraphrasing) ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
+      };
+    }
     return {
       unitId: 1,
       quizData: ReadSkillsData.unit1Quiz,
@@ -1462,6 +1513,9 @@ class ReadSkillsApp {
       if (this.currentUnitId === 5 && this.updateUnit5SummaryDashboard) {
         this.updateUnit5SummaryDashboard();
       }
+      if (this.currentUnitId === 6 && this.updateUnit6SummaryDashboard) {
+        this.updateUnit6SummaryDashboard();
+      }
     }, 30);
 
     const ctx = this.getActiveUnitQuizContext();
@@ -1472,7 +1526,7 @@ class ReadSkillsApp {
 
     const state = ctx.state;
 
-    // Extra In-Class Cards & Wrap-Up Footer for Unit 2, Unit 3, Unit 4 & Unit 5
+    // Extra In-Class Cards & Wrap-Up Footer for Unit 2, Unit 3, Unit 4, Unit 5 & Unit 6
     let unit3TopCards = '';
     if (ctx.unitId === 2) {
       unit3TopCards = `
@@ -1562,6 +1616,29 @@ class ReadSkillsApp {
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Peer Review:</strong> แลกเปลี่ยนผลงานกับกลุ่มเพื่อนเพื่อตรวจสอบความสมเหตุสมผลของ Inferences และคุณภาพการ Paraphrase ตามเกณฑ์ 4 ด้าน (Evidence Extraction, Logical Deduction, Semantic Accuracy, Structural Originality)
+            </p>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 6) {
+      unit3TopCards = `
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+          <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-purple-950 font-bold">
+              <i data-lucide="compass" class="w-4 h-4 text-purple-700"></i>
+              <span>In-class activity: Reading Strategy Blueprint [U6-6.3.1]</span>
+            </div>
+            <p class="text-purple-900 leading-relaxed">
+              <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยสร้างโปสเตอร์ <strong>“My Reading Strategy Blueprint”</strong> สรุปขั้นตอนการอ่านตั้งแต่ก่อนอ่าน ระหว่างอ่าน และหลังอ่าน พร้อมยกตัวอย่างการนำกลยุทธ์ทั้ง 5 ด้านไปใช้จริง
+            </p>
+          </div>
+          <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
+            <div class="flex items-center space-x-2 text-indigo-950 font-bold">
+              <i data-lucide="award" class="w-4 h-4 text-indigo-700"></i>
+              <span>In-class activity: Gallery Walk & Peer Voting [U6-6.3.2]</span>
+            </div>
+            <p class="text-indigo-900 leading-relaxed">
+              <strong>Gallery Walk:</strong> ติดแสดงผลงานรอบห้องเรียนให้เพื่อนเดินชม แลกเปลี่ยนความคิดเห็น และโหวตผลงานที่สรุปกลยุทธ์ได้ชัดเจนและนำไปใช้ได้จริงมากที่สุด
             </p>
           </div>
         </div>
@@ -1661,6 +1738,30 @@ class ReadSkillsApp {
             <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
               <strong class="font-bold block text-purple-900">3. ถอดความแล้วความหมายเพี้ยน (Distorted Meaning)</strong>
               <p class="leading-relaxed">ระวังการสลับประธาน-กรรม หรือสลับเหตุและผลระหว่างการเขียนใหม่ ต้องตรวจสอบเสมอว่าใจความสำคัญยังตรงกับต้นฉบับ 100%</p>
+            </div>
+          </div>
+        </div>
+      `;
+    } else if (ctx.unitId === 6) {
+      unit3BottomWrapup = `
+        <!-- Learning Reflection & Course Wrap-up [U6-6.3.3, U6-6.3.4] -->
+        <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+          <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+            <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
+            <span>Learning Reflection & Integrated Reading Checklist (สะท้อนคิดและสรุปการบูรณาการกลยุทธ์) [U6-6.3.3, U6-6.3.4]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1 text-emerald-950">
+              <strong class="font-bold block text-emerald-900">1. Before Reading (Preview & Skim)</strong>
+              <p class="leading-relaxed">สำรวจชื่อเรื่องและประโยคแรกสุดของย่อหน้าเพื่อจับ <em>Topic</em> และ <em>Main Idea</em> ก่อนลงลึกในรายละเอียด</p>
+            </div>
+            <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+              <strong class="font-bold block text-amber-900">2. While Reading (Clues, Signals & Pronouns)</strong>
+              <p class="leading-relaxed">ใช้ <em>Context Clues</em> แปลศัพท์ยาก สังเกต <em>Signal Words</em> เพื่อดูโครงสร้างเรื่อง และโยง <em>Pronouns</em> ย้อนหาคำนามข้างหน้า</p>
+            </div>
+            <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+              <strong class="font-bold block text-purple-900">3. After Reading (Infer & Paraphrase)</strong>
+              <p class="leading-relaxed">รวมหลักฐานจากบทอ่านเพื่อสรุป <em>Inferences</em> และตรวจสอบความเข้าใจด้วยการ <em>Paraphrase</em> เป็นภาษาของตนเอง</p>
             </div>
           </div>
         </div>
@@ -2044,7 +2145,9 @@ class ReadSkillsApp {
         state.isCompleted = true;
         const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
         localStorage.setItem(ctx.storageKey, totalScore);
-        if (ctx.unitId === 5) {
+        if (ctx.unitId === 6) {
+          localStorage.setItem('bru_unit6_test_score', totalScore);
+        } else if (ctx.unitId === 5) {
           localStorage.setItem('bru_unit5_test_score', totalScore);
         } else if (ctx.unitId === 4) {
           localStorage.setItem('bru_unit4_test_score', totalScore);
@@ -2070,7 +2173,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: localStorage.getItem(ctx.storageKey) ? parseInt(localStorage.getItem(ctx.storageKey)) : null
     };
-    if (ctx.unitId === 5) {
+    if (ctx.unitId === 6) {
+      this.unit6QuizState = freshState;
+    } else if (ctx.unitId === 5) {
       this.unit5QuizState = freshState;
     } else if (ctx.unitId === 4) {
       this.unit4QuizState = freshState;
@@ -5070,6 +5175,332 @@ class ReadSkillsApp {
 
     const sc2 = document.getElementById('summary-u5-test');
     const bg2 = document.getElementById('badge-u5-test');
+    if (sc2 && bg2 && tScore !== null) {
+      const val = parseInt(tScore);
+      sc2.textContent = `${val} / 40`;
+      bg2.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 28 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg2.textContent = val >= 28 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+  }
+
+  /* ------------------- Unit 6 Interactive Learning Engines ------------------- */
+
+  // 1. Personal Goal Setting [U6-6.1.4]
+  setUnit6Goal(goalText) {
+    localStorage.setItem('bru_unit6_goal', goalText);
+    const fb = document.getElementById('u6-goal-fb');
+    if (fb) {
+      fb.classList.remove('hidden');
+      fb.className = 'text-xs font-medium p-3 rounded-xl bg-emerald-100 text-emerald-950 border border-emerald-300 block';
+      fb.innerHTML = `🎯 <strong>บันทึกเป้าหมายของฉันเรียบร้อยแล้ว [U6-6.1.4]:</strong> "${goalText}" — ขอให้โฟกัสการใช้กลยุทธ์นี้ระหว่างฝึกทำกิจกรรมใน Unit 6 ครับ!`;
+    }
+  }
+
+  // 2. Strategy Matching Activity (5 Reading Situations) [U6-6.1.2]
+  submitUnit6Match(qNum, choiceIdx) {
+    if (!this.unit6MatchAnswers) this.unit6MatchAnswers = {};
+    this.unit6MatchAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 0, exp: "เมื่อต้องการหาตัวเลขเฉพาะเจาะจง (เช่น 250°C) อย่างรวดเร็วโดยไม่อ่านทุกคำ ต้องใช้ Scanning for Specific Details (Unit 2) (ข้อ A)" },
+      2: { ans: 1, exp: "เมื่อเจอคำศัพท์ยากในประโยคที่มีเครื่องหมายขีดยาว (—) อธิบายความหมายไว้ข้างหลัง ให้ใช้ Punctuation / Definition Context Clues (Unit 3) (ข้อ B)" },
+      3: { ans: 2, exp: "เมื่อต้องการรู้ว่าคำสรรพนามพหูพจน์ 'they' แทนใครหรือสิ่งใด ต้องใช้ Reference Word Tracking ย้อนกลับไปหาคำนามพหูพจน์ข้างหน้า (Unit 4) (ข้อ C)" },
+      4: { ans: 1, exp: "เมื่อผู้เขียนบอกเพียงอาการและคำใบ้ (แมวขดตัวใกล้เตาผิง หิมะเกาะกระจก) ต้องใช้ Making Inferences (Text Clues + Prior Knowledge) (Unit 5) (ข้อ B)" },
+      5: { ans: 2, exp: "เมื่อต้องการรู้หัวข้อหลักและใจความสำคัญคร่าวๆ ของบทความภายในเวลาสั้นๆ ต้องใช้ Previewing & Skimming (Unit 1) (ข้อ C)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u6-m${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u6-m${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u6-m${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u6-m${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u6-m${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u6-m${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำแนะนำ:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit6MatchAnswers[k] === key[k].ans) score++;
+    });
+
+    const scoreEl = document.getElementById('u6-match-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 5`;
+
+    localStorage.setItem('bru_unit6_match_answers', JSON.stringify(this.unit6MatchAnswers));
+  }
+
+  // 3. App Warm-Up Quiz (10 Questions Reviewing Units 1–5) [U6-6.1.3]
+  submitUnit6PreGame(qNum, choiceIdx) {
+    if (!this.unit6PreGameAnswers) this.unit6PreGameAnswers = {};
+    this.unit6PreGameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "พาดหัวข่าว 'Plant Life Discovered Beyond Earth!' บอกหัวข้อหลักทันทีว่าเป็นเรื่องการค้นพบสิ่งมีชีวิตประเภทพืชบนดาวดวงอื่นนอกโลก (ข้อ B)" },
+      2: { ans: 2, exp: "สแกนหาคำว่า Jupiter แล้วอ่านคำขยายข้างหน้าจะพบตัวเลข 'four moons of Jupiter' (ข้อ C)" },
+      3: { ans: 0, exp: "ประโยคแรกสุดสรุปใจความสำคัญว่า Shelby เดินทางถึงชิคาโกอย่างปลอดภัยแต่กระเป๋าสัมภาระหายที่สนามบิน ส่วนประโยคอื่นๆ เป็นรายละเอียดสนับสนุน (ข้อ A)" },
+      4: { ans: 1, exp: "คำเชื่อม 'because' แสดงความสัมพันธ์แบบสาเหตุและผลลัพธ์ (Cause and Effect) อธิบายสาเหตุที่ Jacob ไม่มีความสุขหลังชนะการแข่งขัน (ข้อ B)" },
+      5: { ans: 2, exp: "คำว่า 'that is, showing poor sportsmanship' หลังเครื่องหมายขีดยาว (—) เป็นคำนิยามตรงตัวของคำว่า 'unsportsmanlike' (ข้อ C)" },
+      6: { ans: 0, exp: "ตัวเชื่อม 'Unlike' แสดงการเปรียบเทียบความต่าง (Antonym Clue): แม่น้ำในเมืองชิคาโกไหลย้อนกลับได้ ต่างจากแม่น้ำทั่วไปที่ไหลไปในทิศทางเดียวเสมอ ดังนั้น 'reversible' จึงแปลว่าสามารถไหลย้อนกลับทิศทางได้ (ข้อ A)" },
+      7: { ans: 1, exp: "คำสรรพนามพหูพจน์ 'They' ในประโยคถัดมาอ้างอิงย้อนกลับไปหาคำนามพหูพจน์ 'The brothers' ในประโยคแรก (ข้อ B)" },
+      8: { ans: 2, exp: "คำเชื่อมลำดับเวลา 'First, Next, Finally' แสดงการจัดระเบียบเนื้อหาแบบเรียงตามลำดับขั้นตอน (Sequence / Chronological Order) (ข้อ C)" },
+      9: { ans: 0, exp: "จากคำใบ้ที่ Laura เชิญเพื่อนทั้งชั้นยกเว้น Andre และบอกเพื่อนว่า 'Don't say anything to Andre' สรุปได้ว่าพวกเขากำลังจัดงานเลี้ยงวันเกิดเซอร์ไพรส์ให้ Andre (ข้อ A)" },
+      10: { ans: 2, exp: "ข้อ C ถอดความโดยใช้ Synonyms (bundle of sticks ➔ group of tied twigs, single twig ➔ individual stick, snaps easily ➔ breaks Effortlessly) และคงความหมายเปรียบเปรยเรื่องความสามัคคีไว้ครบถ้วน" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u6-pg${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u6-pg${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u6-pg${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u6-pg${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u6-pg${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u6-pg${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit6PreGameAnswers[k] === key[k].ans) score++;
+    });
+
+    const scoreEl = document.getElementById('u6-pregame-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 10`;
+
+    localStorage.setItem('bru_unit6_pregame_answers', JSON.stringify(this.unit6PreGameAnswers));
+  }
+
+  // 4. 5-Colour Digital Annotation Activity [U6-6.2.2]
+  highlightUnit6Sentence(segNum, color) {
+    if (!this.unit6Highlights) this.unit6Highlights = {};
+    this.unit6Highlights[segNum] = color;
+
+    const el = document.getElementById(`u6-hl-s${segNum}`);
+    const fb = document.getElementById('u6-hl-feedback');
+
+    const roles = {
+      1: {
+        role: 'yellow',
+        msg: 'ถูกต้องครับ! 🟡 Segment [1] เป็น Topic Sentence & Main Idea (Unit 1) ที่แนะนำว่าเมือง St. Augustine รัฐฟลอริดา คือเมืองที่มีผู้คนตั้งถิ่นฐานอย่างต่อเนื่องที่เก่าแก่ที่สุดในสหรัฐอเมริกา'
+      },
+      2: {
+        role: 'green',
+        msg: 'ถูกต้องครับ! 🟢 Segment [2] มี Context Clue (Unit 3) ใช้ขีดยาว (—) นิยามคำว่า "fortifications" ว่าหมายถึงกำแพงหินป้องกันเมืองที่แข็งแกร่ง'
+      },
+      3: {
+        role: 'purple',
+        msg: 'ถูกต้องครับ! 🟣 Segment [3] มี Transition Signal "Subsequently" (ต่อมา) และ "However" (อย่างไรก็ตาม) ที่บอกลำดับเวลาและความขัดแย้ง (Units 2 & 4)'
+      },
+      4: {
+        role: 'blue',
+        msg: 'ถูกต้องครับ! 🔵 Segment [4] มีคำสรรพนามอ้างอิง "They" และ "their" (Unit 4) ซึ่งอ้างอิงย้อนกลับไปหา "Spanish settlers" (ผู้ตั้งถิ่นฐานชาวสเปน)'
+      },
+      5: {
+        role: 'red',
+        msg: 'ถูกต้องครับ! 🔴 Segment [5] ให้หลักฐานคำใบ้ (ป้อมหินโบราณ ถนนอิฐแคบๆ และบ้านสไตล์สเปนที่ยังมีนักท่องเที่ยวมาชมไม่ขาดสาย) ซึ่งนำไปสู่การสรุป Inference & Paraphrase (Unit 5) ว่าเมืองนี้อนุรักษ์มรดกทางประวัติศาสตร์ไว้ได้อย่างยอดเยี่ยม'
+      }
+    };
+
+    const colorClasses = {
+      yellow: 'highlighter-pen highlighter-yellow font-bold text-slate-900',
+      green: 'highlighter-pen highlighter-green font-bold text-slate-900',
+      purple: 'highlighter-pen highlighter-purple font-bold text-slate-900',
+      blue: 'highlighter-pen highlighter-blue font-bold text-slate-900',
+      red: 'highlighter-pen highlighter-pink font-bold text-slate-900'
+    };
+
+    if (el) {
+      el.className = `${colorClasses[color]} px-1 rounded transition`;
+    }
+
+    const expected = roles[segNum];
+    if (fb && expected) {
+      const isCorrect = expected.role === color;
+      fb.classList.remove('hidden');
+      fb.className = `p-3.5 rounded-xl border text-xs font-medium ${isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+      const colorNames = {
+        yellow: '🟡 สีเหลือง (Main Idea)',
+        green: '🟢 สีเขียว (Vocabulary & Context Clues)',
+        purple: '🟣 สีม่วง (Text Structure & Transition Signals)',
+        blue: '🔵 สีฟ้า (Reference Words & Pronouns)',
+        red: '🔴 สีแดง/ชมพู (Inference Clues & Paraphrased Ideas)'
+      };
+      fb.innerHTML = isCorrect
+        ? `<strong>ยอดเยี่ยม! 🎉</strong> ${expected.msg}`
+        : `<strong>ลองดูอีกครั้งครับ! 💡</strong> Segment [${segNum}] ไม่ใช่ ${colorNames[color]} — ลองสังเกตคำสำคัญในประโยคแล้วเลือกสีที่ตรงกับหน้าที่ของ Segment [${segNum}] (${colorNames[expected.role]})`;
+    }
+  }
+
+  resetUnit6Highlights() {
+    this.unit6Highlights = {};
+    for (let i = 1; i <= 5; i++) {
+      const el = document.getElementById(`u6-hl-s${i}`);
+      if (el) el.className = 'transition px-1 rounded';
+    }
+    const fb = document.getElementById('u6-hl-feedback');
+    if (fb) fb.classList.add('hidden');
+  }
+
+  revealUnit6Highlights() {
+    this.highlightUnit6Sentence(1, 'yellow');
+    this.highlightUnit6Sentence(2, 'green');
+    this.highlightUnit6Sentence(3, 'purple');
+    this.highlightUnit6Sentence(4, 'blue');
+    this.highlightUnit6Sentence(5, 'red');
+    const fb = document.getElementById('u6-hl-feedback');
+    if (fb) {
+      fb.classList.remove('hidden');
+      fb.className = 'p-3.5 rounded-xl border bg-purple-50 border-purple-200 text-purple-950 text-xs space-y-1';
+      fb.innerHTML = `
+        <div class="font-bold">✨ เฉลยการไฮไลต์ดิจิทัล 5 สี (5-Colour Digital Annotation):</div>
+        <p>• <strong>[1] 🟡 สีเหลือง (Main Idea — Unit 1):</strong> แนะนำเมือง St. Augustine ว่าเป็นเมืองที่ตั้งถิ่นฐานอย่างต่อเนื่องเก่าแก่ที่สุดในสหรัฐฯ</p>
+        <p>• <strong>[2] 🟢 สีเขียว (Context Clues — Unit 3):</strong> มีเครื่องหมายขีดยาว <code>— massive stone walls —</code> นิยามคำว่า <em>fortifications</em></p>
+        <p>• <strong>[3] 🟣 สีม่วง (Structure & Signals — Units 2 & 4):</strong> มีคำเชื่อม <em>Subsequently</em> (ลำดับเวลา) และ <em>However</em> (ความขัดแย้ง)</p>
+        <p>• <strong>[4] 🔵 สีฟ้า (Reference Words — Unit 4):</strong> คำสรรพนาม <em>They</em> และ <em>their</em> อ้างอิงย้อนกลับไปหา <em>Spanish settlers</em></p>
+        <p>• <strong>[5] 🔴 สีแดง/ชมพู (Inferences & Paraphrasing — Unit 5):</strong> คำใบ้เรื่องสถาปัตยกรรมโบราณและนักท่องเที่ยวหลายล้านคนช่วยสรุปว่าเมืองนี้อนุรักษ์ประวัติศาสตร์ไว้ได้อย่างมีชีวิตชีวา</p>
+      `;
+    }
+  }
+
+  // 5. Units 1–5 Review Challenge & Progress Check (10 Items) [U6-6.2.3, 6.2.4, 6.2.5]
+  submitUnit6Game(qNum, choiceIdx) {
+    if (!this.unit6GameAnswers) this.unit6GameAnswers = {};
+    this.unit6GameAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "ย่อหน้าแรกอธิบายการที่นายพล Han Hsin ใช้ว่าววัดระยะทางเพื่อขุดอุโมงค์เข้าสู่ปราสาทข้าศึกอย่างชาญฉลาด จึงเป็นใจความสำคัญของเรื่อง (ข้อ B)" },
+      2: { ans: 2, exp: "สแกนหาตัวเลขหลังคำว่า 'measuring' หรือ 'dug a tunnel' จะพบระยะทาง '1,500 feet long' (ข้อ C)" },
+      3: { ans: 0, exp: "คำเชื่อม 'Instead of' แสดงการเปรียบเทียบวิธีแก้ปัญหา: แทนที่จะบุกโจมตีป้อมปราการโดยตรง นายพลเลือกขุดอุโมงค์ลอดกำแพงแทน (ข้อ A)" },
+      4: { ans: 3, exp: "ข้อความในเครื่องหมายขีดยาว '— an underground passage —' ให้คำนิยามตรงตัวว่า 'tunnel' คือทางเดินใต้ดิน (ข้อ D)" },
+      5: { ans: 1, exp: "ในบริบทของเรื่อง เหรียญโรมันมีภาพจักรพรรดิและเทพเจ้า ส่วนคำว่า 'minted' ตามด้วยวลี 'from gold, silver, and bronze' จึงหมายถึงถูกผลิตหรือหล่อขึ้นเป็นเหรียญ (ข้อ B)" },
+      6: { ans: 2, exp: "คำสรรพนามพหูพจน์ 'them' ในประโยค 'used them to buy food' อ้างอิงย้อนกลับไปหาคำนามพหูพจน์ 'Roman coins' (ข้อ C)" },
+      7: { ans: 0, exp: "ย่อหน้าเปรียบเทียบความเหมือนและความต่างระหว่าง Tropical Rainforests กับ Temperate Rainforests จึงจัดโครงสร้างแบบ Compare and Contrast (ข้อ A)" },
+      8: { ans: 3, exp: "คำชี้เฉพาะ 'This tradition' สรุปการกระทำทั้งหมดในประโยคก่อนหน้า คือการที่นายจ้างมอบกล่องของขวัญและเงินโบนัสให้คนงานในวันหลังคริสต์มาส (ข้อ D)" },
+      9: { ans: 1, exp: "จากการที่สมาชิกวง The Money Magnets ซ้อมดนตรีทุกเย็นหลังเลิกเรียนและเก็บเงินค่าตั๋วเพื่อซื้อเครื่องดนตรีใหม่ สรุปได้ว่าพวกเขามีความมุ่งมั่นและรับผิดชอบสูง (ข้อ B)" },
+      10: { ans: 2, exp: "ข้อ C ถอดความโดยใช้ Synonyms (judges ➔ panel, awarded first prize ➔ gave the top award, secret blend of roasted peppers ➔ unique mixture of fire-roasted chilies) และคงความหมายเดิมครบถ้วน" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`u6-g${qNum}-fb`);
+    const btns = document.querySelectorAll(`.u6-g${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `u6-g${qNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `u6-g${qNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `u6-g${qNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `u6-g${qNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs font-medium p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 block'
+        : 'text-xs font-medium p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>ยังไม่ถูกต้อง:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    let answered = 0;
+    Object.keys(key).forEach(k => {
+      if (this.unit6GameAnswers[k] !== undefined) {
+        answered++;
+        if (this.unit6GameAnswers[k] === key[k].ans) score++;
+      }
+    });
+
+    const scoreEl = document.getElementById('u6-game-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 10`;
+
+    this.unit6GameScore = score;
+    localStorage.setItem('bru_unit6_game_score', score);
+    localStorage.setItem('bru_unit6_game_answers', JSON.stringify(this.unit6GameAnswers));
+
+    if (answered === 10) {
+      const finalBox = document.getElementById('u6-game-final-box');
+      if (finalBox) {
+        finalBox.classList.remove('hidden');
+        const pass = score >= 7;
+        finalBox.className = `p-4 rounded-2xl border text-center space-y-2 block ${pass ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
+        finalBox.innerHTML = `
+          <div class="text-base font-bold flex items-center justify-center space-x-2">
+            <i data-lucide="${pass ? 'check-circle' : 'alert-circle'}" class="w-5 h-5 ${pass ? 'text-emerald-600' : 'text-amber-600'}"></i>
+            <span>${pass ? 'ผ่านเกณฑ์ Units 1–5 Review Challenge (Indicator 3.3 &ge; 70%) 🎉' : 'คะแนนยังไม่ถึงเกณฑ์ 70% (ต้องได้ 7/10 ข้อขึ้นไป)'}</span>
+          </div>
+          <p class="text-xs">คะแนนที่ได้: <strong>${score} / 10 (${Math.round((score/10)*100)}%)</strong></p>
+        `;
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+    this.updateUnit6SummaryDashboard();
+  }
+
+  // 6. Unit 6 Score & Previous Units Dashboard [U6-6.1.4, U6-6.3.4]
+  updateUnit6SummaryDashboard() {
+    // Populate Previous Units 1-5 Scores if elements exist
+    for (let u = 1; u <= 5; u++) {
+      const prevEl = document.getElementById(`u6-prev-u${u}`);
+      if (prevEl) {
+        const sc = localStorage.getItem(`bru_unit${u}_quiz_score`) || localStorage.getItem(`bru_unit${u}_test_score`);
+        if (sc !== null) {
+          prevEl.textContent = `${sc} / 40 (${Math.round((parseInt(sc)/40)*100)}%)`;
+        }
+      }
+    }
+
+    const savedGoal = localStorage.getItem('bru_unit6_goal');
+    const goalFb = document.getElementById('u6-goal-fb');
+    if (goalFb && savedGoal) {
+      goalFb.classList.remove('hidden');
+      goalFb.className = 'text-xs font-medium p-3 rounded-xl bg-emerald-100 text-emerald-950 border border-emerald-300 block';
+      goalFb.innerHTML = `🎯 <strong>เป้าหมายของฉันในบทนี้ [U6-6.1.4]:</strong> "${savedGoal}"`;
+    }
+
+    const gScore = localStorage.getItem('bru_unit6_game_score');
+    const tScore = localStorage.getItem('bru_unit6_test_score') || localStorage.getItem('bru_unit6_quiz_score');
+
+    const sc1 = document.getElementById('summary-u6-game');
+    const bg1 = document.getElementById('badge-u6-game');
+    if (sc1 && bg1 && gScore !== null) {
+      const val = parseInt(gScore);
+      sc1.textContent = `${val} / 10`;
+      bg1.className = `text-[10px] font-bold px-2 py-0.5 rounded ${val >= 7 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800'}`;
+      bg1.textContent = val >= 7 ? 'Passed (>=70%)' : 'Needs Retake';
+    }
+
+    const sc2 = document.getElementById('summary-u6-test');
+    const bg2 = document.getElementById('badge-u6-test');
     if (sc2 && bg2 && tScore !== null) {
       const val = parseInt(tScore);
       sc2.textContent = `${val} / 40`;
