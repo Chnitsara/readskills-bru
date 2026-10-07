@@ -471,12 +471,13 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Router Navigation ------------------- */
-  navigate(viewName) {
+  navigate(viewName, preserveScroll = false) {
     if (!this.isLoggedIn) {
       this.renderLoginView();
       return;
     }
 
+    const savedScrollY = window.scrollY;
     this.currentView = viewName;
 
     // Update active nav button styles (Desktop)
@@ -552,7 +553,11 @@ class ReadSkillsApp {
     }
 
     if (window.lucide) lucide.createIcons();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (preserveScroll) {
+      window.scrollTo(0, savedScrollY);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   /* ------------------- View Renderers ------------------- */
@@ -1896,7 +1901,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate(this.currentView);
+    this.navigate(this.currentView, true);
   }
 
   answerQuizHighlight(sentIndex) {
@@ -1912,7 +1917,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate(this.currentView);
+    this.navigate(this.currentView, true);
   }
 
   answerQuizFillBlank(word) {
@@ -1928,7 +1933,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate(this.currentView);
+    this.navigate(this.currentView, true);
   }
 
   nextQuizQuestion() {
@@ -1954,7 +1959,7 @@ class ReadSkillsApp {
         state.lastScore = totalScore;
       }
     }
-    this.navigate(this.currentView);
+    this.navigate(this.currentView, !state.isCompleted);
   }
 
   resetUnit1Quiz() {
@@ -2853,77 +2858,37 @@ class ReadSkillsApp {
         ${topCards}
 
         <!-- Top Header & Overall Progress (30 Questions) -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-purple-100 pb-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
           <div>
-            <div class="flex items-center space-x-2 mb-1">
-              <span class="px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold uppercase tracking-wider">
-                8. Strategy Quiz (30 Questions) [S1-3.3, 5.5, 5.6, 8.1]
-              </span>
-              <span class="text-xs font-semibold text-purple-700">
-                CEFR Target: A2-B1 • Pass Threshold: &ge; 70% (21/30)
-              </span>
+            <div class="flex items-center space-x-2">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">8. Strategy Quiz (30 ข้อ) [S1-3.3, 5.5, 5.6, 8.1]</span>
+              <span class="text-xs font-semibold text-slate-500">Passage ${pIdx + 1} of 3</span>
             </div>
-            <h4 class="text-lg font-bold text-slate-900">${currentPassage.title}</h4>
-            <p class="text-xs text-slate-500">${currentPassage.thaiTitle} &bull; <span class="text-purple-700 font-medium">${currentPassage.genre}</span></p>
+            <h4 class="text-base sm:text-lg font-bold text-slate-900 mt-0.5">${currentPassage.title}</h4>
+            <p class="text-xs text-slate-500">${currentPassage.thaiTitle}</p>
           </div>
 
-          <div class="flex items-center space-x-3 bg-purple-50/90 px-4 py-2.5 rounded-2xl border border-purple-200 shrink-0">
-            <div class="text-right">
-              <span class="text-[10px] font-bold text-purple-800 uppercase block">Question Progress</span>
-              <span class="text-sm font-extrabold text-purple-950">ข้อที่ ${globalQuestionNum} / ${totalQ}</span>
+          <div class="flex items-center space-x-3 self-start sm:self-auto">
+            <div class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl text-right">
+              <span class="text-[10px] text-purple-600 block font-semibold">Quiz Score</span>
+              <span class="text-xs font-bold text-purple-900">${state.passageScores.reduce((a, b) => a + b, 0)} / ${totalQ}</span>
             </div>
-            <div class="w-10 h-10 rounded-xl bg-purple-700 text-white flex items-center justify-center font-bold text-xs shadow">
-              ${Math.round((globalQuestionNum / totalQ) * 100)}%
-            </div>
+
+            <button onclick="app.playStrat1QuizPassageAudio(${pIdx})" class="px-3 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shadow-sm" title="Listen to Passage Audio">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span class="hidden sm:inline">Listen</span>
+            </button>
           </div>
         </div>
 
-        <!-- 3 Passage Selector Tabs (Passages 1-3) -->
-        <div class="grid grid-cols-3 gap-2">
-          ${quizData.passages.map((p, idx) => {
-            const isCurrent = idx === pIdx;
-            let answeredInPassage = 0;
-            for (let i = 0; i < 10; i++) {
-              if (state.answers[`${idx}-${i}`]) answeredInPassage++;
-            }
-            return `
-              <button 
-                onclick="app.selectStrat1QuizPassage(${idx})"
-                class="p-2.5 rounded-xl border text-left transition cursor-pointer ${isCurrent ? 'bg-purple-700 text-white border-purple-700 shadow-sm' : 'bg-white/80 hover:bg-white text-slate-700 border-purple-100'}"
-              >
-                <div class="flex items-center justify-between text-[10px] font-bold mb-0.5">
-                  <span>PASSAGE ${idx + 1} (ข้อ ${idx * 10 + 1}-${(idx + 1) * 10})</span>
-                  <span class="${isCurrent ? 'bg-white/20 text-white' : 'bg-purple-100 text-purple-800'} px-1.5 py-0.2 rounded">${answeredInPassage}/10</span>
-                </div>
-                <p class="text-[11px] font-semibold truncate ${isCurrent ? 'text-purple-100' : 'text-slate-500'}">${p.title.replace(/^Passage \d+:\s*/, '')}</p>
-              </button>
-            `;
-          }).join('')}
-        </div>
-
-        <!-- Question Number Pills inside Current Passage (1 to 10) -->
-        <div class="flex items-center justify-between bg-white/70 p-2.5 rounded-xl border border-purple-100 overflow-x-auto no-scrollbar">
-          <span class="text-[11px] font-bold text-slate-500 px-2 shrink-0">Passage ${pIdx + 1} Questions:</span>
-          <div class="flex items-center space-x-1.5">
-            ${currentPassage.questions.map((q, idx) => {
-              const ans = state.answers[`${pIdx}-${idx}`];
-              const isActive = idx === qIdx;
-              let pillClass = 'bg-slate-100 text-slate-600 hover:bg-purple-100';
-              if (ans) {
-                pillClass = ans.isCorrect ? 'bg-emerald-500 text-white font-bold' : 'bg-rose-500 text-white font-bold';
-              }
-              if (isActive) {
-                pillClass += ' ring-2 ring-purple-700 ring-offset-1 font-extrabold';
-              }
-              return `
-                <button 
-                  onclick="app.strat1QuizState.questionIndex = ${idx}; app.navigate('strategies');"
-                  class="w-7 h-7 rounded-lg text-xs flex items-center justify-center transition cursor-pointer shrink-0 ${pillClass}"
-                >
-                  ${pIdx * 10 + idx + 1}
-                </button>
-              `;
-            }).join('')}
+        <!-- Progress Bar -->
+        <div class="space-y-1">
+          <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500">
+            <span>Question ${qIdx + 1} of 10 in this Passage</span>
+            <span class="text-purple-700 font-bold">Overall: Question ${globalQuestionNum} of ${totalQ} (${Math.round((globalQuestionNum / totalQ) * 100)}%)</span>
+          </div>
+          <div class="w-full bg-slate-200/80 rounded-full h-2 overflow-hidden">
+            <div class="bg-gradient-to-r from-purple-600 to-pink-500 h-2 rounded-full transition-all duration-300" style="width: ${Math.round((globalQuestionNum / totalQ) * 100)}%"></div>
           </div>
         </div>
 
@@ -3112,23 +3077,22 @@ class ReadSkillsApp {
                 </div>
                 <p class="leading-relaxed">${currentQuestion.explanation}</p>
               </div>
-
-              <button 
-                onclick="app.nextStrat1QuizQuestion()"
-                class="w-full py-3.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-2xl transition flex items-center justify-center space-x-2 text-xs shadow-md cursor-pointer"
-              >
-                <span>${globalQuestionNum < totalQ ? 'ข้อต่อไป (Next Question)' : 'ดูผลคะแนนรวม 30 ข้อ (Finish & View Results)'}</span>
-                <i data-lucide="arrow-right" class="w-4 h-4"></i>
-              </button>
             ` : ''}
 
-            <div class="flex items-center justify-between pt-2 border-t border-slate-100">
-              <button onclick="app.prevStrategyStep()" class="text-xs font-semibold text-slate-500 hover:text-purple-700 cursor-pointer">
-                ⬅ Back to Step 7
-              </button>
-              <button onclick="app.resetStrat1Quiz()" class="text-xs font-semibold text-rose-600 hover:text-rose-700 cursor-pointer">
-                Reset Quiz
-              </button>
+            <!-- Bottom Controls / Next Button Only -->
+            <div class="pt-2 flex items-center justify-between border-t border-slate-100">
+              <div class="text-[11px] text-slate-400">
+                ${existingAnswer ? 'Ready to proceed' : 'Select an answer to continue'}
+              </div>
+              ${existingAnswer ? `
+                <button 
+                  onclick="app.nextStrat1QuizQuestion()"
+                  class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5"
+                >
+                  <span>${globalQuestionNum === totalQ ? 'Finish Quiz & View Score 🏆' : (qIdx === 9 ? 'Next Passage ➔' : 'Next Question ➔')}</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              ` : ''}
             </div>
           </div>
 
@@ -3141,7 +3105,7 @@ class ReadSkillsApp {
   selectStrat1QuizPassage(pIndex) {
     this.strat1QuizState.passageIndex = pIndex;
     this.strat1QuizState.questionIndex = 0;
-    this.navigate('strategies');
+    this.navigate('strategies', true);
   }
 
   answerStrat1QuizMC(optIndex) {
@@ -3156,7 +3120,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate('strategies');
+    this.navigate('strategies', true);
   }
 
   answerStrat1QuizHighlight(sentIndex) {
@@ -3171,7 +3135,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate('strategies');
+    this.navigate('strategies', true);
   }
 
   answerStrat1QuizFillBlank(word) {
@@ -3186,7 +3150,7 @@ class ReadSkillsApp {
     if (isCorrect) {
       state.passageScores[state.passageIndex]++;
     }
-    this.navigate('strategies');
+    this.navigate('strategies', true);
   }
 
   nextStrat1QuizQuestion() {
@@ -3204,7 +3168,7 @@ class ReadSkillsApp {
         state.lastScore = totalScore;
       }
     }
-    this.navigate('strategies');
+    this.navigate('strategies', !state.isCompleted);
   }
 
   resetStrat1Quiz() {
@@ -3218,7 +3182,7 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
-    this.navigate('strategies');
+    this.navigate('strategies', true);
   }
 
   playStrat1QuizPassageAudio(pIndex) {
@@ -3601,7 +3565,7 @@ class ReadSkillsApp {
 
   selectQuizAnswer(questionIndex, optionIndex) {
     this.activeQuizAnswers[questionIndex] = optionIndex;
-    this.navigate('practice');
+    this.navigate('practice', true);
   }
 
   submitStandaloneQuiz() {
