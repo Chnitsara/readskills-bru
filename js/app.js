@@ -116,6 +116,22 @@ class ReadSkillsApp {
       lastScore: savedU4QuizScore ? parseInt(savedU4QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 1 State (Navigating Main Ideas & 30-Question Strategy Quiz)
+    this.strat1PretestAnswers = {};
+    this.strat1VocabAnswers = JSON.parse(localStorage.getItem('bru_strat1_vocab_answers') || '{}');
+    this.strat1PredAnswers = JSON.parse(localStorage.getItem('bru_strat1_pred_answers') || '{}');
+    this.strat1PassageAnswers = JSON.parse(localStorage.getItem('bru_strat1_passage_answers') || '{}');
+    const savedS1QuizScore = localStorage.getItem('bru_strat1_quiz_score');
+    this.strat1QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS1QuizScore ? parseInt(savedS1QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -2096,6 +2112,8 @@ class ReadSkillsApp {
               <p class="leading-relaxed">${step.thaiExplanation}</p>
             </div>
 
+            ${step.customHtml || ''}
+
             <div class="flex justify-end pt-4">
               <button onclick="app.nextStrategyStep()" class="w-full sm:w-auto px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer flex items-center justify-center space-x-1.5 shadow-md">
                 <span>Next Step: Why use it?</span>
@@ -2128,6 +2146,8 @@ class ReadSkillsApp {
               </strong>
               <p class="leading-relaxed">${step.thaiExplanation}</p>
             </div>
+
+            ${step.customHtml || ''}
 
             <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
               <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
@@ -2164,6 +2184,8 @@ class ReadSkillsApp {
               </strong>
               <p class="leading-relaxed">${step.thaiExplanation}</p>
             </div>
+
+            ${step.customHtml || ''}
 
             <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
               <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
@@ -2202,6 +2224,8 @@ class ReadSkillsApp {
               `).join('')}
             </div>
 
+            ${step.customHtml || ''}
+
             <div class="flex flex-col-reverse sm:flex-row gap-2 sm:gap-0 justify-between pt-4">
               <button onclick="app.prevStrategyStep()" class="w-full sm:w-auto px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer text-center">
                 ⬅ Back
@@ -2226,10 +2250,12 @@ class ReadSkillsApp {
               <span class="text-[11px] font-bold px-3 py-1 bg-amber-100 text-amber-900 rounded-full shrink-0">Step 5 of 8</span>
             </div>
 
-            <div class="p-4 sm:p-5 bg-amber-50/70 border border-amber-200 rounded-2xl text-slate-900 text-sm space-y-2">
-              <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider block">Sample Text / Scenario</span>
-              <p class="leading-relaxed font-serif italic text-slate-800">"${step.content}"</p>
-            </div>
+            ${step.customHtml || `
+              <div class="p-4 sm:p-5 bg-amber-50/70 border border-amber-200 rounded-2xl text-slate-900 text-sm space-y-2">
+                <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider block">Sample Text / Scenario</span>
+                <p class="leading-relaxed font-serif italic text-slate-800">"${step.content}"</p>
+              </div>
+            `}
 
             <div class="p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs text-purple-950 space-y-2">
               <strong class="font-bold flex items-center space-x-1">
@@ -2274,6 +2300,8 @@ class ReadSkillsApp {
               ${step.content}
             </div>
 
+            ${step.customHtml || ''}
+
             <p class="text-sm font-bold text-slate-900">${step.question}</p>
 
             <div class="space-y-2.5">
@@ -2314,44 +2342,45 @@ class ReadSkillsApp {
               <span class="text-[11px] font-bold px-3 py-1 bg-purple-100 text-purple-800 rounded-full shrink-0">Step 7 of 8</span>
             </div>
 
-            <!-- Reading Passage Box with Audio Player -->
-            <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
-              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
-                <span class="text-xs font-bold text-pink-300 uppercase tracking-wider">${step.passageTitle || unit.title}</span>
-                
-                <div class="flex items-center space-x-2">
-                  <!-- Audio Speed Control -->
-                  <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
-                    <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
-                    <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
-                      <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
-                      <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
-                      <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
-                      <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
-                    </select>
+            ${step.customHtml ? step.customHtml : `
+              <!-- Reading Passage Box with Audio Player -->
+              <div class="bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
+                  <span class="text-xs font-bold text-pink-300 uppercase tracking-wider">${step.passageTitle || unit.title}</span>
+                  
+                  <div class="flex items-center space-x-2">
+                    <div class="flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5" title="Playback Speed (ความเร็วเสียงอ่าน)">
+                      <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300 shrink-0"></i>
+                      <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer">
+                        <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
+                        <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัดเจน ✨)</option>
+                        <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
+                        <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
+                      </select>
+                    </div>
+
+                    <button onclick="app.togglePassageAudio('${encodeURIComponent(step.audioText || step.passage || 'Reading text')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                      <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
+                      <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
+                    </button>
                   </div>
-
-                  <button onclick="app.togglePassageAudio('${encodeURIComponent(step.audioText || step.passage || 'Reading text')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
-                    <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
-                    <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
-                  </button>
                 </div>
-              </div>
 
-              <p class="text-sm italic leading-relaxed text-slate-200 font-serif">
-                "${step.passage}"
-              </p>
-            </div>
+                <p class="text-sm italic leading-relaxed text-slate-200 font-serif">
+                  "${step.passage}"
+                </p>
+              </div>
+            `}
 
             <!-- Task Card -->
             <div class="p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs space-y-2">
               <strong class="font-bold text-purple-950 flex items-center space-x-1">
                 <i data-lucide="check-circle-2" class="w-4 h-4 text-purple-700 shrink-0"></i>
-                <span>Strategy Application Task:</span>
+                <span>Strategy Application Summary:</span>
               </strong>
               <p class="text-slate-800">${step.taskQuestion}</p>
               <div class="p-3 bg-white rounded-xl border border-purple-100 text-purple-900 font-semibold text-xs">
-                💡 <strong>Expected Application:</strong> ${step.taskAnswer}
+                💡 <strong>Key Takeaways:</strong> ${step.taskAnswer}
               </div>
             </div>
 
@@ -2369,6 +2398,9 @@ class ReadSkillsApp {
 
       // 8. Strategy Quiz (แบบทดสอบ)
       case 8:
+        if (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) {
+          return this.renderStrategyUnit1QuizStep(step);
+        }
         return `
           <div class="space-y-5">
             <div class="flex items-center justify-between border-b border-purple-100 pb-3">
@@ -2441,6 +2473,759 @@ class ReadSkillsApp {
       this.isAudioPlaying = false;
       this.navigate('strategies');
     }
+  }
+
+  /* ------------------- Strategy Unit 1 Interactive Methods & 30-Item Quiz [S1-5.5, 5.6, 6.1–6.3, 8.1] ------------------- */
+
+  // 1. Diagnostic Pre-Test (3 Items) [S1-6.1.2]
+  submitStrat1Pretest(qNum, choiceIdx) {
+    if (!this.strat1PretestAnswers) this.strat1PretestAnswers = {};
+    this.strat1PretestAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "ก่อนอ่านบทความวิชาการ ควรใช้กลยุทธ์ Previewing สำรวจชื่อเรื่อง หัวข้อย่อย รูปภาพ และคำตัวหนาก่อนเสมอ (ข้อ B)" },
+      2: { ans: 0, exp: "Topic Sentence ทำหน้าที่ระบุใจความสำคัญ (Main Idea) และควบคุมขอบเขตของย่อหน้า (ข้อ A)" },
+      3: { ans: 2, exp: "จากชื่อเรื่อง 'How Rooftop Gardens Cool Modern Cities' และภาพต้นไม้บนดาดฟ้า คาดเดาได้ว่าการปลูกพืชบนหลังคาช่วยลดความร้อนในเมือง (ข้อ C)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`s1-pt${qNum}-fb`);
+    const btns = document.querySelectorAll(`.s1-pt${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `s1-pt${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `s1-pt${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `s1-pt${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `s1-pt${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.strat1PretestAnswers[k] === key[k].ans) score++;
+    });
+    const scoreEl = document.getElementById('s1-pretest-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 3`;
+  }
+
+  // 2. Warm-up Activity [S1-6.1.3]
+  checkStrat1Warmup(selectedNum) {
+    const fb = document.getElementById('s1-warmup-fb');
+    if (!fb) return;
+    fb.classList.remove('hidden');
+    if (selectedNum === 2) {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300 block';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉:</strong> จากการเชื่อมโยงภาพหน้าจอมือถือตอนตีหนึ่งครึ่ง + ชื่อเรื่อง <em>"Blue Light and the Sleepless Brain"</em> + คำตัวหนา <em>melatonin, circadian rhythm, sleep quality</em> ทำให้คาดเดาใจความหลักได้ทันทีว่าบทความพูดถึงผลกระทบของแสงสีฟ้าต่อฮอร์โมนการนอนหลับ';
+    } else {
+      fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300 block';
+      fb.innerHTML = '<strong>ลองสังเกตเบาะแสอีกครั้ง:</strong> ดูคำว่า <em>Blue Light, Sleepless Brain, melatonin</em> และ <em>sleep quality</em> ซึ่งชี้ไปที่ตัวเลือกที่ 2 (ผลกระทบของแสงสีฟ้าจากหน้าจอต่อการนอนหลับ)';
+    }
+  }
+
+  // 3. Vocabulary Preview Activity (6 Items) [S1-5.5, 6.1.5]
+  submitStrat1Vocab(qNum, choiceIdx) {
+    if (!this.strat1VocabAnswers) this.strat1VocabAnswers = {};
+    this.strat1VocabAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "sustainable (adj.) = ยั่งยืน สามารถดำเนินต่อไปได้ในระยะยาวโดยไม่ทำลายสิ่งแวดล้อม (ข้อ B)" },
+      2: { ans: 0, exp: "microplastics (n.) = เศษพลาสติกขนาดจิ๋วที่มีขนาดเล็กกว่า 5 มิลลิเมตร (ข้อ A)" },
+      3: { ans: 2, exp: "cognitive (adj.) = เกี่ยวกับกระบวนการคิด การรับรู้ การเรียนรู้ และความจำของสมอง (ข้อ C)" },
+      4: { ans: 1, exp: "biomimicry (n.) = การออกแบบนวัตกรรมหรือเทคโนโลยีโดยเลียนแบบโครงสร้างและระบบของธรรมชาติ (ข้อ B)" },
+      5: { ans: 0, exp: "circadian rhythm (n.) = นาฬิกาชีวภาพรอบ 24 ชั่วโมงภายในร่างกายที่ควบคุมการตื่นและการนอนหลับ (ข้อ A)" },
+      6: { ans: 2, exp: "biodiversity (n.) = ความหลากหลายทางชีวภาพของพืชและสัตว์ในระบบนิเวศ (ข้อ C)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`s1-v${qNum}-fb`);
+    const btns = document.querySelectorAll(`.s1-v${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `s1-v${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `s1-v${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `s1-v${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `s1-v${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.strat1VocabAnswers[k] === key[k].ans) score++;
+    });
+    localStorage.setItem('bru_strat1_vocab_answers', JSON.stringify(this.strat1VocabAnswers));
+    localStorage.setItem('bru_strat1_vocab_score', score);
+    const scoreEl = document.getElementById('s1-vocab-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 6`;
+  }
+
+  // 4. Prediction Quiz Activity (4 Items) [S1-5.6, 6.1.6, 6.2.3]
+  submitStrat1Pred(qNum, choiceIdx) {
+    if (!this.strat1PredAnswers) this.strat1PredAnswers = {};
+    this.strat1PredAnswers[qNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "จากชื่อเรื่อง 'Electric Public Transit: Clearing the Smog' และประโยคเปิด คาดเดาได้ว่าเรื่องนี้กล่าวถึงการใช้รถเมล์ไฟฟ้าเพื่อลดมลพิษทางอากาศและช่วยให้สุขภาพดีขึ้น (ข้อ B)" },
+      2: { ans: 0, exp: "จากหัวข้อย่อย 'Fear of Failure' และคำตัวหนา anxiety, perfectionism คาดเดาได้ว่าพูดถึงสาเหตุทางจิตวิทยาของการผัดวันประกันพรุ่ง (ข้อ A)" },
+      3: { ans: 2, exp: "จากชื่อเรื่อง 'Mangrove Forests: Nature's Coastal Shield' และภาพรากโกงกางรับคลื่น คาดเดาได้ว่าป่าชายเลนช่วยปกป้องชายฝั่งจากพายุและการกัดเซาะ (ข้อ C)" },
+      4: { ans: 0, exp: "จากประโยคเปิดเรื่องการสลับใช้ 2 ภาษาช่วยพัฒนาสมอง คาดเดาได้ว่าการพูดสองภาษาช่วยเพิ่มสมาธิและความยืดหยุ่นทางความคิด (ข้อ A)" }
+    };
+
+    const target = key[qNum];
+    const fb = document.getElementById(`s1-pr${qNum}-fb`);
+    const btns = document.querySelectorAll(`.s1-pr${qNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `s1-pr${qNum}-btn p-2 rounded-lg border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `s1-pr${qNum}-btn p-2 rounded-lg border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `s1-pr${qNum}-btn p-2 rounded-lg border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `s1-pr${qNum}-btn p-2 rounded-lg border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-[11px] p-2 rounded bg-emerald-100 text-emerald-950 font-medium block'
+        : 'text-[11px] p-2 rounded bg-rose-100 text-rose-950 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.strat1PredAnswers[k] === key[k].ans) score++;
+    });
+    localStorage.setItem('bru_strat1_pred_answers', JSON.stringify(this.strat1PredAnswers));
+    localStorage.setItem('bru_strat1_pred_score', score);
+    const scoreEl = document.getElementById('s1-pred-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 4`;
+  }
+
+  // 5. Interactive 3-Colour Highlighting Tool [S1-6.2.4, 6.2.5]
+  highlightStrat1Sentence(segNum, color) {
+    const expected = {
+      1: { role: 'yellow', exp: 'Segment (1) คือ Preview Clues (สีเหลือง) ได้แก่ Title, Subheading และ Bold Terms ที่ช่วยคาดเดาเนื้อหาก่อนอ่าน' },
+      2: { role: 'blue', exp: 'Segment (2) คือ Topic Sentence (สีฟ้า) ที่เปิดประเด็นหลักว่าการนอนหลับลึกทุกคืนจำเป็นต่อการเปลี่ยนความรู้ใหม่เป็นความจำระยะยาว' },
+      3: { role: 'green', exp: 'Segment (3) คือ Major Supporting Detail (สีเขียว) อธิบายกลไกของสมองส่วน hippocampus ขณะหลับลึก' },
+      4: { role: 'green', exp: 'Segment (4) คือ Minor Supporting Detail / Example (สีเขียว) ยกตัวอย่างผลการทดลองเปรียบเทียบการจำคำศัพท์ 35%' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Concluding Main Idea Restatement (สีฟ้า) ที่สรุปย้ำใจความสำคัญปิดท้ายย่อหน้า' }
+    };
+
+    const textEl = document.getElementById(`s1-hl-${segNum}-text`);
+    const fbEl = document.getElementById(`s1-hl-${segNum}-fb`);
+    if (!textEl || !fbEl) return;
+
+    const hlMap = {
+      yellow: 'highlighter-pen highlighter-yellow',
+      green: 'highlighter-pen highlighter-green',
+      blue: 'highlighter-pen highlighter-blue'
+    };
+
+    const rawText = textEl.textContent.trim();
+    textEl.innerHTML = `<span class="${hlMap[color]}">${rawText}</span>`;
+
+    const isCorrect = expected[segNum].role === color;
+    fbEl.classList.remove('hidden');
+    fbEl.className = `text-[11px] font-sans pt-1 ${isCorrect ? 'text-emerald-300' : 'text-amber-300'}`;
+    fbEl.innerHTML = isCorrect
+      ? `✅ <strong>ถูกต้อง!</strong> ${expected[segNum].exp}`
+      : `💡 <strong>คำแนะนำ:</strong> ${expected[segNum].exp}`;
+  }
+
+  resetStrat1Highlights() {
+    for (let i = 1; i <= 5; i++) {
+      const textEl = document.getElementById(`s1-hl-${i}-text`);
+      const fbEl = document.getElementById(`s1-hl-${i}-fb`);
+      if (textEl) textEl.innerHTML = textEl.textContent.trim();
+      if (fbEl) fbEl.classList.add('hidden');
+    }
+  }
+
+  revealStrat1Highlights() {
+    const roles = { 1: 'yellow', 2: 'blue', 3: 'green', 4: 'green', 5: 'blue' };
+    Object.keys(roles).forEach(k => this.highlightStrat1Sentence(Number(k), roles[k]));
+  }
+
+  // 6. While-Reading Passages 1–3 Check [S1-6.2.2, 6.2.6, 7.5]
+  submitStrat1PassageCheck(pNum, choiceIdx) {
+    if (!this.strat1PassageAnswers) this.strat1PassageAnswers = {};
+    this.strat1PassageAnswers[pNum] = choiceIdx;
+
+    const key = {
+      1: { ans: 1, exp: "ประโยค (1) คือ Topic Sentence และใจความหลักคือไมโครพลาสติกในมหาสมุทรเป็นภัยคุกคามต่อระบบนิเวศทางทะเลและสุขภาพมนุษย์ผ่านห่วงโซ่อาหาร (ข้อ B)" },
+      2: { ans: 0, exp: "จาก Topic Sentence (1) และประโยคสรุป (5) ใจความหลักคือการจดบันทึกด้วยมือช่วยให้สมองประมวลผล สรุปความ และจำได้ดีกว่าการพิมพ์ตามคำพูดทุกคำ (ข้อ A)" },
+      3: { ans: 1, exp: "ตัวอย่างจะงอยปากนกกระเต็นและจอมปลวกแอฟริกาในประโยค (3)–(4) ทำหน้าที่เป็น Supporting Details ที่ขยายความ Topic Sentence ในประโยค (1) (ข้อ B)" }
+    };
+
+    const target = key[pNum];
+    const fb = document.getElementById(`s1-p${pNum}-fb`);
+    const btns = document.querySelectorAll(`.s1-p${pNum}-btn`);
+
+    btns.forEach((b, idx) => {
+      if (idx === choiceIdx) {
+        b.className = idx === target.ans
+          ? `s1-p${pNum}-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-100 text-emerald-950 text-left font-bold cursor-pointer`
+          : `s1-p${pNum}-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-100 text-rose-950 text-left font-bold cursor-pointer`;
+      } else if (idx === target.ans) {
+        b.className = `s1-p${pNum}-btn p-2.5 rounded-xl border border-emerald-400 bg-emerald-50 text-emerald-900 text-left font-medium cursor-pointer`;
+      } else {
+        b.className = `s1-p${pNum}-btn p-2.5 rounded-xl border border-slate-200 bg-white text-slate-500 text-left font-medium cursor-pointer`;
+      }
+    });
+
+    if (fb && target) {
+      fb.classList.remove('hidden');
+      fb.className = choiceIdx === target.ans
+        ? 'text-xs p-2.5 rounded-lg bg-emerald-100 text-emerald-950 border border-emerald-300 font-medium block'
+        : 'text-xs p-2.5 rounded-lg bg-rose-100 text-rose-950 border border-rose-300 font-medium block';
+      fb.innerHTML = `${choiceIdx === target.ans ? '<strong>ถูกต้อง! 🎉</strong>' : '<strong>คำอธิบาย:</strong>'} ${target.exp}`;
+    }
+
+    let score = 0;
+    Object.keys(key).forEach(k => {
+      if (this.strat1PassageAnswers[k] === key[k].ans) score++;
+    });
+    localStorage.setItem('bru_strat1_passage_answers', JSON.stringify(this.strat1PassageAnswers));
+    const scoreEl = document.getElementById('s1-passages-score');
+    if (scoreEl) scoreEl.textContent = `${score} / 3 Completed`;
+  }
+
+  // 7. Step 8: 30-Question Strategy Quiz Renderer & Handlers [S1-3.3, 4.2.5, 5.5, 5.6, 6.3.1–6.3.4, 8.1.1, 8.1.2]
+  renderStrategyUnit1QuizStep(step) {
+    setTimeout(() => {
+      if (window.lucide) lucide.createIcons();
+    }, 30);
+
+    const quizData = ReadSkillsData.strategyUnit1Quiz;
+    const state = this.strat1QuizState;
+    const totalQ = 30;
+
+    const topCards = `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="users" class="w-4 h-4 text-purple-700"></i>
+            <span>Post-Reading Group Activity [S1-6.3.1]</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Small-Group Discussion:</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อเปรียบเทียบคำตอบจากการคาดเดา (Predictions) และอภิปรายประโยคใจความสำคัญ (Topic Sentences & Main Ideas) ที่ระบุได้ในบทอ่าน Passages 1–3
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Assessment & 70% Mastery Goal [S1-3.3, 6.3.2, 8.1]</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (30 ข้อ):</strong> ประเมินทักษะการสำรวจบทอ่าน (Previewing), การคาดเดา (Predicting), คำศัพท์ก่อนอ่าน (Vocabulary Preview) และการหาใจความสำคัญ (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    `;
+
+    const bottomReview = `
+      <!-- Lesson Review & Wrap-up [S1-6.3.3 & 6.3.4] -->
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Lesson Review & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [S1-6.3.3 & 6.3.4]</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. ข้ามการ Preview ก่อนอ่าน</strong>
+            <p class="leading-relaxed">นักศึกษาที่เริ่มอ่านบรรทัดแรกทันทีโดยไม่ดูชื่อเรื่อง หัวข้อย่อย หรือคำตัวหนา มักจับประเด็นหลักได้ช้าและหลงทางในคำศัพท์ยาก</p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. เลือก Supporting Detail เป็น Main Idea</strong>
+            <p class="leading-relaxed">ระวังกับดัก <em>Too Narrow</em> เช่น การเลือกประโยคที่มีตัวเลขสถิติสวยๆ (เช่น ประหยัดน้ำ 95%) ไปตอบเป็น Main Idea ทั้งที่เป็นเพียงรายละเอียดสนับสนุน</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. ไม่ตรวจสอบคำทำนายขณะอ่าน</strong>
+            <p class="leading-relaxed">การคาดเดา (Predicting) ที่ดีต้องนำไปเปรียบเทียบกับข้อมูลจริงในย่อหน้าเสมอ เพื่อยืนยันหรือปรับปรุงความเข้าใจให้ตรงกับผู้เขียน</p>
+          </div>
+        </div>
+      </div>
+    `;
+
+    if (state.isCompleted) {
+      const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
+      const percentage = Math.round((totalScore / totalQ) * 100);
+      const passed = percentage >= 70;
+
+      return `
+        <div class="max-w-2xl mx-auto space-y-6 text-center py-4">
+          <div class="w-20 h-20 mx-auto rounded-3xl ${passed ? 'bg-emerald-100 text-emerald-600' : 'bg-amber-100 text-amber-600'} flex items-center justify-center shadow-lg">
+            <i data-lucide="${passed ? 'trophy' : 'award'}" class="w-10 h-10"></i>
+          </div>
+
+          <div class="space-y-2">
+            <span class="text-xs font-bold uppercase tracking-wider ${passed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-3 py-1 rounded-full">
+              ${passed ? 'Strategy Unit 1 Passed (&ge; 70%)! 🎉' : 'Keep Practicing! 💪'}
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">${quizData.title}</h3>
+            <p class="text-xs text-slate-500">${quizData.thaiTitle}</p>
+          </div>
+
+          <div class="p-6 bg-gradient-to-br from-purple-900 via-purple-800 to-indigo-950 rounded-3xl text-white shadow-xl">
+            <p class="text-xs uppercase tracking-widest text-purple-200 mb-1">Total Strategy Quiz Score</p>
+            <div class="text-5xl font-extrabold mb-2">${totalScore} <span class="text-2xl text-purple-300 font-normal">/ ${totalQ}</span></div>
+            <div class="inline-flex items-center space-x-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-semibold">
+              <span>Accuracy: ${percentage}%</span>
+              <span>&bull;</span>
+              <span>Target: &ge; 70% (21/30) [Indicator 3.3]</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
+            ${quizData.passages.map((p, idx) => `
+              <div class="p-4 bg-white rounded-2xl border border-purple-100 shadow-sm flex items-center justify-between">
+                <div class="pr-2">
+                  <p class="text-[10px] font-bold text-purple-700 uppercase">Passage ${idx + 1}</p>
+                  <p class="text-xs font-bold text-slate-800 line-clamp-1">${p.title.replace(/^Passage \d+:\s*/, '')}</p>
+                </div>
+                <div class="text-right shrink-0">
+                  <span class="text-lg font-extrabold ${state.passageScores[idx] >= 7 ? 'text-emerald-600' : 'text-amber-600'}">${state.passageScores[idx]}/10</span>
+                  <span class="block text-[10px] text-slate-400">${state.passageScores[idx] * 10}%</span>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+
+          <div class="p-4 rounded-2xl ${passed ? 'bg-emerald-50 border border-emerald-200 text-emerald-900' : 'bg-amber-50 border border-amber-200 text-amber-900'} text-xs leading-relaxed">
+            ${passed
+              ? '🎉 <strong>ยอดเยี่ยมมากครับ!</strong> คุณผ่านเกณฑ์ตัวชี้วัด Indicator 3.3 (&ge; 70%) สำหรับกลยุทธ์การสำรวจบทอ่าน การคาดเดา คำศัพท์ก่อนอ่าน และการระบุประโยคใจความสำคัญในบทอ่านวิชาการ'
+              : '💡 <strong>คำแนะนำ:</strong> แนะนำให้ทบทวนกลยุทธ์การสังเกต Previewing Clues และตำแหน่งของ Topic Sentence ใน Step 1–7 แล้วลองทำแบบทดสอบอีกครั้งให้ผ่านเกณฑ์ 70% (21/30 ข้อ)'}
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button onclick="app.resetStrat1Quiz()" class="w-full sm:w-auto px-6 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 text-xs shadow-md cursor-pointer">
+              <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+              <span>ทำแบบทดสอบอีกครั้ง (Retake 30-Item Quiz)</span>
+            </button>
+            <button onclick="app.selectStrategyStep(0)" class="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 text-xs cursor-pointer">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>กลับไปทบทวน Step 1</span>
+            </button>
+          </div>
+          ${bottomReview}
+        </div>
+      `;
+    }
+
+    const pIdx = state.passageIndex;
+    const qIdx = state.questionIndex;
+    const currentPassage = quizData.passages[pIdx];
+    const currentQuestion = currentPassage.questions[qIdx];
+    const globalQuestionNum = pIdx * 10 + qIdx + 1;
+    const answerKey = `${pIdx}-${qIdx}`;
+    const existingAnswer = state.answers[answerKey];
+    const isHighlightMode = currentQuestion.type === 'highlight';
+
+    return `
+      <div class="space-y-6">
+        ${topCards}
+
+        <!-- Top Header & Overall Progress (30 Questions) -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-purple-100 pb-4">
+          <div>
+            <div class="flex items-center space-x-2 mb-1">
+              <span class="px-2.5 py-0.5 bg-purple-700 text-white rounded-md text-[10px] font-bold uppercase tracking-wider">
+                8. Strategy Quiz (30 Questions) [S1-3.3, 5.5, 5.6, 8.1]
+              </span>
+              <span class="text-xs font-semibold text-purple-700">
+                CEFR Target: A2-B1 • Pass Threshold: &ge; 70% (21/30)
+              </span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900">${currentPassage.title}</h4>
+            <p class="text-xs text-slate-500">${currentPassage.thaiTitle} &bull; <span class="text-purple-700 font-medium">${currentPassage.genre}</span></p>
+          </div>
+
+          <div class="flex items-center space-x-3 bg-purple-50/90 px-4 py-2.5 rounded-2xl border border-purple-200 shrink-0">
+            <div class="text-right">
+              <span class="text-[10px] font-bold text-purple-800 uppercase block">Question Progress</span>
+              <span class="text-sm font-extrabold text-purple-950">ข้อที่ ${globalQuestionNum} / ${totalQ}</span>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-purple-700 text-white flex items-center justify-center font-bold text-xs shadow">
+              ${Math.round((globalQuestionNum / totalQ) * 100)}%
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Passage Selector Tabs (Passages 1-3) -->
+        <div class="grid grid-cols-3 gap-2">
+          ${quizData.passages.map((p, idx) => {
+            const isCurrent = idx === pIdx;
+            let answeredInPassage = 0;
+            for (let i = 0; i < 10; i++) {
+              if (state.answers[`${idx}-${i}`]) answeredInPassage++;
+            }
+            return `
+              <button 
+                onclick="app.selectStrat1QuizPassage(${idx})"
+                class="p-2.5 rounded-xl border text-left transition cursor-pointer ${isCurrent ? 'bg-purple-700 text-white border-purple-700 shadow-sm' : 'bg-white/80 hover:bg-white text-slate-700 border-purple-100'}"
+              >
+                <div class="flex items-center justify-between text-[10px] font-bold mb-0.5">
+                  <span>PASSAGE ${idx + 1} (ข้อ ${idx * 10 + 1}-${(idx + 1) * 10})</span>
+                  <span class="${isCurrent ? 'bg-white/20 text-white' : 'bg-purple-100 text-purple-800'} px-1.5 py-0.2 rounded">${answeredInPassage}/10</span>
+                </div>
+                <p class="text-[11px] font-semibold truncate ${isCurrent ? 'text-purple-100' : 'text-slate-500'}">${p.title.replace(/^Passage \d+:\s*/, '')}</p>
+              </button>
+            `;
+          }).join('')}
+        </div>
+
+        <!-- Question Number Pills inside Current Passage (1 to 10) -->
+        <div class="flex items-center justify-between bg-white/70 p-2.5 rounded-xl border border-purple-100 overflow-x-auto no-scrollbar">
+          <span class="text-[11px] font-bold text-slate-500 px-2 shrink-0">Passage ${pIdx + 1} Questions:</span>
+          <div class="flex items-center space-x-1.5">
+            ${currentPassage.questions.map((q, idx) => {
+              const ans = state.answers[`${pIdx}-${idx}`];
+              const isActive = idx === qIdx;
+              let pillClass = 'bg-slate-100 text-slate-600 hover:bg-purple-100';
+              if (ans) {
+                pillClass = ans.isCorrect ? 'bg-emerald-500 text-white font-bold' : 'bg-rose-500 text-white font-bold';
+              }
+              if (isActive) {
+                pillClass += ' ring-2 ring-purple-700 ring-offset-1 font-extrabold';
+              }
+              return `
+                <button 
+                  onclick="app.strat1QuizState.questionIndex = ${idx}; app.navigate('strategies');"
+                  class="w-7 h-7 rounded-lg text-xs flex items-center justify-center transition cursor-pointer shrink-0 ${pillClass}"
+                >
+                  ${pIdx * 10 + idx + 1}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <!-- Main Two-Column Quiz Layout: Reading Passage (Left) & Active Question (Right) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left Column: Interactive Reading Passage (7 Cols) -->
+          <div class="lg:col-span-7 bg-slate-900 text-slate-100 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4 border border-slate-800">
+            <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+              <div class="flex items-center space-x-2">
+                <i data-lucide="book-open" class="w-4 h-4 text-pink-400"></i>
+                <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Academic Passage ${pIdx + 1} of 3</span>
+              </div>
+
+              <div class="flex items-center space-x-2">
+                <div class="flex items-center space-x-1 bg-slate-800 border border-slate-700 rounded-lg px-2 py-1">
+                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300"></i>
+                  <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-[11px] font-semibold focus:outline-none cursor-pointer">
+                    <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
+                    <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัด ✨)</option>
+                    <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
+                    <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
+                  </select>
+                </div>
+
+                <button 
+                  onclick="app.playStrat1QuizPassageAudio(${pIdx})"
+                  class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}"
+                >
+                  <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-3.5 h-3.5"></i>
+                  <span>${this.isAudioPlaying ? 'Stop' : 'Listen'}</span>
+                </button>
+              </div>
+            </div>
+
+            ${isHighlightMode ? `
+              <div class="p-3 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs flex items-center space-x-2">
+                <i data-lucide="mouse-pointer-click" class="w-4 h-4 shrink-0 text-amber-300"></i>
+                <span><strong>Interactive Highlight Mode:</strong> คลิกเลือกประโยคในบทอ่านด้านล่างที่ตรงกับคำถามข้อนี้โดยตรง</span>
+              </div>
+            ` : ''}
+
+            <!-- Numbered Sentences -->
+            <div class="space-y-2 text-sm sm:text-base leading-relaxed font-serif">
+              ${currentPassage.sentences.map((sent, sIdx) => {
+                let sentStyle = 'hover:bg-slate-800/80 text-slate-200';
+                if (isHighlightMode && !existingAnswer) {
+                  sentStyle = 'hover:bg-amber-500/30 hover:text-white cursor-pointer border border-transparent hover:border-amber-400/50';
+                }
+                if (existingAnswer && isHighlightMode) {
+                  if (sIdx === currentQuestion.targetSentenceIndex) {
+                    sentStyle = 'bg-emerald-500/30 border border-emerald-400 text-white font-semibold';
+                  } else if (sIdx === existingAnswer.selected) {
+                    sentStyle = 'bg-rose-500/30 border border-rose-400 text-rose-200 line-through';
+                  }
+                }
+                return `
+                  <div 
+                    ${isHighlightMode && !existingAnswer ? `onclick="app.answerStrat1QuizHighlight(${sIdx})"` : ''}
+                    class="p-2.5 rounded-xl transition ${sentStyle}"
+                  >
+                    <span class="text-[11px] font-sans font-bold text-purple-400 mr-1.5">[${sIdx + 1}]</span>
+                    <span>${sent}</span>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+
+          <!-- Right Column: Active Question Card (5 Cols) -->
+          <div class="lg:col-span-5 bg-white rounded-3xl p-5 sm:p-6 shadow-md border border-purple-100 space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full text-[11px] font-bold ${
+                currentQuestion.type === 'mc' ? 'bg-purple-100 text-purple-800' :
+                currentQuestion.type === 'highlight' ? 'bg-amber-100 text-amber-900' :
+                'bg-pink-100 text-pink-800'
+              }">
+                ${
+                  currentQuestion.type === 'mc' ? 'Multiple Choice' :
+                  currentQuestion.type === 'highlight' ? 'Highlight Sentence in Text' :
+                  'Vocabulary Fill-in-the-Blank'
+                }
+              </span>
+              <span class="text-xs font-bold text-slate-400">Question ${globalQuestionNum} of ${totalQ}</span>
+            </div>
+
+            <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+              ${currentQuestion.prompt}
+            </h5>
+
+            <!-- Question Body by Type -->
+            ${currentQuestion.type === 'mc' ? `
+              <div class="space-y-2.5">
+                ${currentQuestion.options.map((opt, oIdx) => {
+                  let btnStyle = 'border-purple-200 hover:border-purple-600 bg-purple-50/40 hover:bg-purple-50 text-slate-800';
+                  if (existingAnswer) {
+                    if (oIdx === currentQuestion.correctAnswer) {
+                      btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-200';
+                    } else if (oIdx === existingAnswer.selected && !existingAnswer.isCorrect) {
+                      btnStyle = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
+                    } else {
+                      btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-70';
+                    }
+                  }
+                  return `
+                    <button 
+                      ${!existingAnswer ? `onclick="app.answerStrat1QuizMC(${oIdx})"` : 'disabled'}
+                      class="w-full p-3.5 rounded-2xl border text-left text-xs sm:text-sm transition flex items-start space-x-3 cursor-pointer ${btnStyle}"
+                    >
+                      <span class="w-6 h-6 rounded-lg bg-white border border-purple-200 flex items-center justify-center font-bold text-xs text-purple-900 shrink-0 mt-0.5">
+                        ${String.fromCharCode(65 + oIdx)}
+                      </span>
+                      <span class="flex-1 leading-relaxed">${opt}</span>
+                    </button>
+                  `;
+                }).join('')}
+              </div>
+            ` : ''}
+
+            ${currentQuestion.type === 'highlight' ? `
+              <div class="space-y-2">
+                <p class="text-xs text-slate-600 bg-amber-50 border border-amber-200 p-3 rounded-xl">
+                  👈 คลิกเลือกประโยคคำตอบในบทอ่านด้านซ้ายมือ หรือเลือกหมายเลขประโยคด้านล่าง:
+                </p>
+                <div class="grid grid-cols-2 gap-2">
+                  ${currentPassage.sentences.map((s, sIdx) => {
+                    let btnStyle = 'border-amber-300 bg-amber-50/60 hover:bg-amber-100 text-amber-950';
+                    if (existingAnswer) {
+                      if (sIdx === currentQuestion.targetSentenceIndex) {
+                        btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold';
+                      } else if (sIdx === existingAnswer.selected && !existingAnswer.isCorrect) {
+                        btnStyle = 'border-rose-400 bg-rose-50 text-rose-900';
+                      } else {
+                        btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+                      }
+                    }
+                    return `
+                      <button 
+                        ${!existingAnswer ? `onclick="app.answerStrat1QuizHighlight(${sIdx})"` : 'disabled'}
+                        class="p-2.5 rounded-xl border text-xs font-semibold transition cursor-pointer ${btnStyle}"
+                      >
+                        Sentence [${sIdx + 1}]
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            ${currentQuestion.type === 'fillBlank' ? `
+              <div class="space-y-3">
+                <div class="p-3.5 bg-slate-900 text-slate-100 rounded-2xl text-xs sm:text-sm font-serif italic leading-relaxed">
+                  "${currentQuestion.sentenceWithBlank}"
+                </div>
+                <div class="grid grid-cols-2 gap-2.5">
+                  ${currentQuestion.choices.map((word) => {
+                    let btnStyle = 'border-pink-200 bg-pink-50/50 hover:bg-pink-100 text-pink-950 font-semibold';
+                    if (existingAnswer) {
+                      if (word.toLowerCase() === currentQuestion.correctWord.toLowerCase()) {
+                        btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold ring-2 ring-emerald-200';
+                      } else if (word === existingAnswer.selected && !existingAnswer.isCorrect) {
+                        btnStyle = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
+                      } else {
+                        btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
+                      }
+                    }
+                    return `
+                      <button 
+                        ${!existingAnswer ? `onclick="app.answerStrat1QuizFillBlank('${word}')"` : 'disabled'}
+                        class="p-3 rounded-xl border text-xs sm:text-sm transition cursor-pointer ${btnStyle}"
+                      >
+                        ${word}
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+              </div>
+            ` : ''}
+
+            <!-- Immediate Feedback & Next Button -->
+            ${existingAnswer ? `
+              <div class="p-4 rounded-2xl ${existingAnswer.isCorrect ? 'bg-emerald-50 border border-emerald-200 text-emerald-950' : 'bg-rose-50 border border-rose-200 text-rose-950'} text-xs space-y-1.5">
+                <div class="font-bold flex items-center space-x-1.5 text-sm">
+                  <i data-lucide="${existingAnswer.isCorrect ? 'check-circle-2' : 'x-circle'}" class="w-4 h-4 ${existingAnswer.isCorrect ? 'text-emerald-600' : 'text-rose-600'}"></i>
+                  <span>${existingAnswer.isCorrect ? 'ถูกต้องครับ! (Correct! 🎉)' : 'ยังไม่ถูกต้อง (Incorrect 💡)'}</span>
+                </div>
+                <p class="leading-relaxed">${currentQuestion.explanation}</p>
+              </div>
+
+              <button 
+                onclick="app.nextStrat1QuizQuestion()"
+                class="w-full py-3.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-2xl transition flex items-center justify-center space-x-2 text-xs shadow-md cursor-pointer"
+              >
+                <span>${globalQuestionNum < totalQ ? 'ข้อต่อไป (Next Question)' : 'ดูผลคะแนนรวม 30 ข้อ (Finish & View Results)'}</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            ` : ''}
+
+            <div class="flex items-center justify-between pt-2 border-t border-slate-100">
+              <button onclick="app.prevStrategyStep()" class="text-xs font-semibold text-slate-500 hover:text-purple-700 cursor-pointer">
+                ⬅ Back to Step 7
+              </button>
+              <button onclick="app.resetStrat1Quiz()" class="text-xs font-semibold text-rose-600 hover:text-rose-700 cursor-pointer">
+                Reset Quiz
+              </button>
+            </div>
+          </div>
+
+        </div>
+        ${bottomReview}
+      </div>
+    `;
+  }
+
+  selectStrat1QuizPassage(pIndex) {
+    this.strat1QuizState.passageIndex = pIndex;
+    this.strat1QuizState.questionIndex = 0;
+    this.navigate('strategies');
+  }
+
+  answerStrat1QuizMC(optIndex) {
+    const state = this.strat1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = optIndex === currentQ.correctAnswer;
+
+    state.answers[answerKey] = { selected: optIndex, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate('strategies');
+  }
+
+  answerStrat1QuizHighlight(sentIndex) {
+    const state = this.strat1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = sentIndex === currentQ.targetSentenceIndex;
+
+    state.answers[answerKey] = { selected: sentIndex, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate('strategies');
+  }
+
+  answerStrat1QuizFillBlank(word) {
+    const state = this.strat1QuizState;
+    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    if (state.answers[answerKey]) return;
+
+    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
+    const isCorrect = word.trim().toLowerCase() === currentQ.correctWord.trim().toLowerCase();
+
+    state.answers[answerKey] = { selected: word, isCorrect };
+    if (isCorrect) {
+      state.passageScores[state.passageIndex]++;
+    }
+    this.navigate('strategies');
+  }
+
+  nextStrat1QuizQuestion() {
+    const state = this.strat1QuizState;
+    if (state.questionIndex < 9) {
+      state.questionIndex++;
+    } else {
+      if (state.passageIndex < 2) {
+        state.passageIndex++;
+        state.questionIndex = 0;
+      } else {
+        state.isCompleted = true;
+        const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
+        localStorage.setItem('bru_strat1_quiz_score', totalScore);
+        state.lastScore = totalScore;
+      }
+    }
+    this.navigate('strategies');
+  }
+
+  resetStrat1Quiz() {
+    const saved = localStorage.getItem('bru_strat1_quiz_score');
+    this.strat1QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: saved ? parseInt(saved) : null
+    };
+    this.navigate('strategies');
+  }
+
+  playStrat1QuizPassageAudio(pIndex) {
+    const quizData = ReadSkillsData.strategyUnit1Quiz;
+    if (!quizData || !quizData.passages[pIndex]) return;
+    const passage = quizData.passages[pIndex];
+    this.togglePassageAudio(encodeURIComponent(passage.audioText));
   }
 
   // 4. Practice & Quiz View (Section D: Practice & Quiz)
