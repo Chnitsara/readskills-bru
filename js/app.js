@@ -816,13 +816,13 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'whileReading') {
         steps = [
-          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิต Skimming & Scanning [6.2.1]' },
-          { key: 'example', num: 2, label: 'Highlight & Signals', sub: 'เครื่องมือไฮไลต์ & คำเชื่อม [6.2.2-6.2.4]' },
-          { key: 'practice', num: 3, label: 'Main Idea Challenge', sub: 'ท้าทายเก็บคะแนน (70%) [6.2.3]' }
+          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิต Skimming & Scanning' },
+          { key: 'example', num: 2, label: 'Highlight & Signals', sub: 'เครื่องมือไฮไลต์ & คำเชื่อม' },
+          { key: 'practice', num: 3, label: 'Main Idea Challenge', sub: 'ท้าทายเก็บคะแนน (70%)' }
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบทเรียน [U2-6.3.3]' }
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบทเรียน' }
         ];
       }
     } else if (this.currentUnitId === 3) {
@@ -833,13 +833,13 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'whileReading') {
         steps = [
-          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิตบริบท & โครงสร้างประโยค [6.2.1]' },
-          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี [6.2.2]' },
-          { key: 'practice', num: 3, label: 'Context Clue Game', sub: 'เกมเก็บคะแนน (70%) [6.2.3-6.2.5]' }
+          { key: 'learn', num: 1, label: 'Guided Demo', sub: 'สาธิตบริบท & โครงสร้างประโยค' },
+          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี' },
+          { key: 'practice', num: 3, label: 'Context Clue Game', sub: 'เกมเก็บคะแนน (70%)' }
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Vocabulary Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบท 40 ข้อ [6.3.3-6.3.4]' }
+          { key: 'quiz', num: 1, label: 'Vocabulary Quiz (40 ข้อ)', sub: 'แบบทดสอบท้ายบท 40 ข้อ' }
         ];
       }
     } else if (this.currentUnitId === 4) {
@@ -850,13 +850,13 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'whileReading') {
         steps = [
-          { key: 'learn', num: 1, label: 'Guided Demo & Text Map', sub: 'สาธิตวิเคราะห์ & แผนผังเรื่อง [6.2.1, 6.2.4]' },
-          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี [6.2.2]' },
-          { key: 'practice', num: 3, label: 'Text Structure Practice', sub: 'ฝึกโครงสร้าง & คำอ้างอิง (70%) [6.2.3-6.2.6]' }
+          { key: 'learn', num: 1, label: 'Guided Demo & Text Map', sub: 'สาธิตวิเคราะห์ & แผนผังเรื่อง' },
+          { key: 'example', num: 2, label: '3-Colour Highlight', sub: 'ฝึกไฮไลต์ 3 สี' },
+          { key: 'practice', num: 3, label: 'Text Structure Practice', sub: 'ฝึกโครงสร้าง & คำอ้างอิง (70%)' }
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบโครงสร้างและคำอ้างอิง [U4-6.3.3]' }
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบโครงสร้างและคำอ้างอิง' }
         ];
       }
     } else if (this.currentUnitId === 5) {
@@ -867,13 +867,13 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'whileReading') {
         steps = [
-          { key: 'learn', num: 1, label: 'Guided Demo & Paraphrase', sub: 'สาธิตตีความ & ถอดความ [6.2.1, 6.2.4]' },
-          { key: 'example', num: 2, label: 'Interactive Highlight', sub: 'ฝึกแยกสี Stated vs Clues [6.2.2]' },
-          { key: 'practice', num: 3, label: 'Detective & Paraphrase', sub: 'ฝึกตีความ & ถอดความ (70%) [6.2.3-6.2.6]' }
+          { key: 'learn', num: 1, label: 'Guided Demo & Paraphrase', sub: 'สาธิตตีความ & ถอดความ' },
+          { key: 'example', num: 2, label: 'Interactive Highlight', sub: 'ฝึกแยกสี Stated vs Clues' },
+          { key: 'practice', num: 3, label: 'Detective & Paraphrase', sub: 'ฝึกตีความ & ถอดความ (70%)' }
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบการตีความและถอดความ [U5-6.3.3]' }
+          { key: 'quiz', num: 1, label: 'Quiz (40 ข้อ)', sub: 'แบบทดสอบการตีความและถอดความ' }
         ];
       }
     } else if (this.currentUnitId === 6) {
@@ -884,13 +884,13 @@ class ReadSkillsApp {
         ];
       } else if (stage === 'whileReading') {
         steps = [
-          { key: 'learn', num: 1, label: 'Guided Reading Demo', sub: 'สาธิตบูรณาการ 5 กลยุทธ์ [6.2.1]' },
-          { key: 'example', num: 2, label: '5-Colour Annotation', sub: 'ฝึกไฮไลต์ดิจิทัล 5 สี [6.2.2]' },
-          { key: 'practice', num: 3, label: 'Units 1–5 Review Challenge', sub: 'แบบฝึกทบทวนบูรณาการ (70%) [6.2.3-6.2.5]' }
+          { key: 'learn', num: 1, label: 'Guided Reading Demo', sub: 'สาธิตบูรณาการ 5 กลยุทธ์' },
+          { key: 'example', num: 2, label: '5-Colour Annotation', sub: 'ฝึกไฮไลต์ดิจิทัล 5 สี' },
+          { key: 'practice', num: 3, label: 'Units 1–5 Review Challenge', sub: 'แบบฝึกทบทวนบูรณาการ (70%)' }
         ];
       } else if (stage === 'postReading') {
         steps = [
-          { key: 'quiz', num: 1, label: 'Cumulative Quiz (40 ข้อ)', sub: 'แบบทดสอบรวบยอด Units 1–5 [U6-6.3.1-6.3.4]' }
+          { key: 'quiz', num: 1, label: 'Cumulative Quiz (40 ข้อ)', sub: 'แบบทดสอบรวบยอด Units 1–5' }
         ];
       }
     } else {
@@ -1534,7 +1534,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-purple-950 font-bold">
               <i data-lucide="layout-grid" class="w-4 h-4 text-purple-700"></i>
-              <span>In-class activity: Group Graphic Organizer [U2-6.3.1]</span>
+              <span>In-class activity: Group Graphic Organizer</span>
             </div>
             <p class="text-purple-900 leading-relaxed">
               <strong>Group Activity:</strong> แบ่งกลุ่มสร้างผังลำดับความคิด (Hierarchical Tree Diagram) เพื่อเชื่อมโยง Main Idea, Major Supporting Details และ Minor Details
@@ -1543,7 +1543,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-indigo-950 font-bold">
               <i data-lucide="presentation" class="w-4 h-4 text-indigo-700"></i>
-              <span>In-class activity: Group Presentation [U2-6.3.2]</span>
+              <span>In-class activity: Group Presentation</span>
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Group Presentation:</strong> แต่ละกลุ่มส่งตัวแทนนำเสนอผังความคิดหน้าชั้นเรียน โดยเน้นชี้แจงความสัมพันธ์ระหว่างความคิด (Cause/Effect, Contrast, Sequence)
@@ -1557,7 +1557,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-purple-950 font-bold">
               <i data-lucide="search" class="w-4 h-4 text-purple-700"></i>
-              <span>In-class activity: Vocabulary Detective [U3-6.3.1]</span>
+              <span>In-class activity: Vocabulary Detective</span>
             </div>
             <p class="text-purple-900 leading-relaxed">
               <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยทำใบงาน Vocabulary Detective เพื่อระบุคำศัพท์ใหม่ ชนิดของ Context Clues ความหมาย และใจความหลักของประโยค
@@ -1566,7 +1566,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-indigo-950 font-bold">
               <i data-lucide="message-square" class="w-4 h-4 text-indigo-700"></i>
-              <span>In-class activity: Group Discussion [U3-6.3.2]</span>
+              <span>In-class activity: Group Discussion</span>
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Group Presentation:</strong> แต่ละกลุ่มนำเสนอคำตอบและอธิบายวิธีใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์ความหมายประโยคหน้าชั้นเรียน
@@ -1580,7 +1580,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-purple-950 font-bold">
               <i data-lucide="git-merge" class="w-4 h-4 text-purple-700"></i>
-              <span>In-class activity: Group Text Mapping [U4-6.3.1]</span>
+              <span>In-class activity: Group Text Mapping</span>
             </div>
             <p class="text-purple-900 leading-relaxed">
               <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อวาดผังโครงสร้างบทอ่าน (Text Map / Graphic Organizer) แสดงการเชื่อมโยงความคิด คำเชื่อม และคำอ้างอิงสำคัญในบทอ่าน
@@ -1589,7 +1589,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-indigo-950 font-bold">
               <i data-lucide="presentation" class="w-4 h-4 text-indigo-700"></i>
-              <span>In-class activity: Group Presentation [U4-6.3.2]</span>
+              <span>In-class activity: Group Presentation</span>
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Group Presentation:</strong> ตัวแทนกลุ่มนำเสนอแผนผัง Text Map หน้าชั้นเรียน พร้อมอธิบายรูปแบบการจัดระเบียบเนื้อหา (Sequence, Compare-Contrast, Cause-Effect, Problem-Solution)
@@ -1603,7 +1603,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-purple-950 font-bold">
               <i data-lucide="search-check" class="w-4 h-4 text-purple-700"></i>
-              <span>In-class activity: Group Inference & Paraphrase Task [U5-6.3.1]</span>
+              <span>In-class activity: Group Inference & Paraphrase Task</span>
             </div>
             <p class="text-purple-900 leading-relaxed">
               <strong>Group Activity:</strong> แบ่งกลุ่มทำ 2 ภารกิจ: <strong>Task 1</strong> เขียนข้อสรุปเชิงอนุมาน (Logical Inferences) 2 ข้อพร้อมระบุหลักฐานจากบทอ่าน และ <strong>Task 2</strong> ถอดความย่อหน้าสั้นๆ ด้วยภาษาของกลุ่มตนเองโดยคงความหมายเดิม
@@ -1612,7 +1612,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-indigo-950 font-bold">
               <i data-lucide="users" class="w-4 h-4 text-indigo-700"></i>
-              <span>In-class activity: Peer Review & Rubric Check [U5-6.3.2]</span>
+              <span>In-class activity: Peer Review & Rubric Check</span>
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Peer Review:</strong> แลกเปลี่ยนผลงานกับกลุ่มเพื่อนเพื่อตรวจสอบความสมเหตุสมผลของ Inferences และคุณภาพการ Paraphrase ตามเกณฑ์ 4 ด้าน (Evidence Extraction, Logical Deduction, Semantic Accuracy, Structural Originality)
@@ -1626,7 +1626,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-purple-950 font-bold">
               <i data-lucide="compass" class="w-4 h-4 text-purple-700"></i>
-              <span>In-class activity: Reading Strategy Blueprint [U6-6.3.1]</span>
+              <span>In-class activity: Reading Strategy Blueprint</span>
             </div>
             <p class="text-purple-900 leading-relaxed">
               <strong>Group Activity:</strong> นักศึกษาทำงานกลุ่มย่อยสร้างโปสเตอร์ <strong>“My Reading Strategy Blueprint”</strong> สรุปขั้นตอนการอ่านตั้งแต่ก่อนอ่าน ระหว่างอ่าน และหลังอ่าน พร้อมยกตัวอย่างการนำกลยุทธ์ทั้ง 5 ด้านไปใช้จริง
@@ -1635,7 +1635,7 @@ class ReadSkillsApp {
           <div class="p-3.5 bg-indigo-100/70 border border-indigo-200 rounded-2xl space-y-1">
             <div class="flex items-center space-x-2 text-indigo-950 font-bold">
               <i data-lucide="award" class="w-4 h-4 text-indigo-700"></i>
-              <span>In-class activity: Gallery Walk & Peer Voting [U6-6.3.2]</span>
+              <span>In-class activity: Gallery Walk & Peer Voting</span>
             </div>
             <p class="text-indigo-900 leading-relaxed">
               <strong>Gallery Walk:</strong> ติดแสดงผลงานรอบห้องเรียนให้เพื่อนเดินชม แลกเปลี่ยนความคิดเห็น และโหวตผลงานที่สรุปกลยุทธ์ได้ชัดเจนและนำไปใช้ได้จริงมากที่สุด
@@ -1648,11 +1648,11 @@ class ReadSkillsApp {
     let unit3BottomWrapup = '';
     if (ctx.unitId === 2) {
       unit3BottomWrapup = `
-        <!-- Lesson Wrap-up & Common Mistakes [U2-6.3.4] -->
+        <!-- Lesson Wrap-up & Common Mistakes -->
         <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
           <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
             <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U2-6.3.4]</span>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
@@ -1672,11 +1672,11 @@ class ReadSkillsApp {
       `;
     } else if (ctx.unitId === 3) {
       unit3BottomWrapup = `
-        <!-- Lesson Wrap-up & Common Mistakes [U3-6.3.4] -->
+        <!-- Lesson Wrap-up & Common Mistakes -->
         <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
           <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
             <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U3-6.3.4]</span>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
@@ -1696,11 +1696,11 @@ class ReadSkillsApp {
       `;
     } else if (ctx.unitId === 4) {
       unit3BottomWrapup = `
-        <!-- Lesson Wrap-up & Common Mistakes [U4-6.3.4] -->
+        <!-- Lesson Wrap-up & Common Mistakes -->
         <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
           <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
             <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U4-6.3.4]</span>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
@@ -1720,11 +1720,11 @@ class ReadSkillsApp {
       `;
     } else if (ctx.unitId === 5) {
       unit3BottomWrapup = `
-        <!-- Lesson Wrap-up & Common Mistakes [U5-6.3.4] -->
+        <!-- Lesson Wrap-up & Common Mistakes -->
         <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
           <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
             <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [U5-6.3.4]</span>
+            <span>Lesson Wrap-Up & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
@@ -1744,11 +1744,11 @@ class ReadSkillsApp {
       `;
     } else if (ctx.unitId === 6) {
       unit3BottomWrapup = `
-        <!-- Learning Reflection & Course Wrap-up [U6-6.3.3, U6-6.3.4] -->
+        <!-- Learning Reflection & Course Wrap-up -->
         <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
           <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
             <i data-lucide="sparkles" class="w-4 h-4 text-purple-700"></i>
-            <span>Learning Reflection & Integrated Reading Checklist (สะท้อนคิดและสรุปการบูรณาการกลยุทธ์) [U6-6.3.3, U6-6.3.4]</span>
+            <span>Learning Reflection & Integrated Reading Checklist (สะท้อนคิดและสรุปการบูรณาการกลยุทธ์)</span>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
             <div class="p-3 bg-emerald-50/80 border border-emerald-200 rounded-xl space-y-1 text-emerald-950">
@@ -4022,7 +4022,7 @@ class ReadSkillsApp {
   }
 
   /* ==========================================================================
-     UNIT 2: INTERACTIVE METHODS & TIMED SCANNERS [U2-5.1..5.6, U2-6.1..6.3]
+     UNIT 2: INTERACTIVE METHODS & TIMED SCANNERS
      ========================================================================== */
 
   // 1. Warm-Up Checker
@@ -4056,7 +4056,7 @@ class ReadSkillsApp {
     if (window.lucide) lucide.createIcons();
   }
 
-  // 2. Pre-Reading Timed Scanning Task [U2-6.1.4, U2-5.6]
+  // 2. Pre-Reading Timed Scanning Task
   startUnit2PreTimer() {
     const btn = document.getElementById('u2-pre-timer-btn');
     const timerDisplay = document.getElementById('u2-pre-timer');
@@ -4119,7 +4119,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 3. Interactive Highlighting Tool [U2-6.2.2]
+  // 3. Interactive Highlighting Tool
   highlightSentence(sentenceId, role) {
     if (!this.unit2Highlights) this.unit2Highlights = {};
     this.unit2Highlights[sentenceId] = role;
@@ -4178,7 +4178,7 @@ class ReadSkillsApp {
     });
   }
 
-  // 4. Main Idea Challenge [U2-5.5, U2-6.2.3]
+  // 4. Main Idea Challenge
   submitUnit2Challenge(itemNum, choiceIdx) {
     if (!this.unit2ChallengeAnswers) this.unit2ChallengeAnswers = {};
     this.unit2ChallengeAnswers[itemNum] = choiceIdx;
@@ -4255,7 +4255,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 5. Post-Reading Timed Scanning Task [U2-5.6, U2-6.3.3]
+  // 5. Post-Reading Timed Scanning Task
   startUnit2PostTimer() {
     const btn = document.getElementById('u2-post-timer-btn');
     const timerDisplay = document.getElementById('u2-post-timer');
@@ -4327,7 +4327,7 @@ class ReadSkillsApp {
     this.updateUnit2SummaryDashboard();
   }
 
-  // 6. Supporting Details & Reading Comprehension Test (25 Questions across 3 Passages) [U2-6.3.3]
+  // 6. Supporting Details & Reading Comprehension Test (25 Questions across 3 Passages)
   submitUnit2Test(qNum, choiceIdx) {
     if (!this.unit2TestAnswers) this.unit2TestAnswers = {};
     this.unit2TestAnswers[qNum] = choiceIdx;
@@ -4424,7 +4424,7 @@ class ReadSkillsApp {
     this.updateUnit2SummaryDashboard();
   }
 
-  // 7. Unit 2 Score Dashboard [U2-6.3.4]
+  // 7. Unit 2 Score Dashboard
   updateUnit2SummaryDashboard() {
     const cScore = localStorage.getItem('bru_unit2_challenge_score');
     const sScore = localStorage.getItem('bru_unit2_scanning_score');
@@ -4460,7 +4460,7 @@ class ReadSkillsApp {
 
   /* ------------------- Unit 3 Interactive Methods (Vocabulary in Context & Sentence Meaning) ------------------- */
 
-  // 1. Warm-Up Detective Guessing [U3-6.1.2]
+  // 1. Warm-Up Detective Guessing
   checkUnit3Warmup(selectedNum) {
     const fb = document.getElementById('u3-warmup-feedback');
     if (!fb) return;
@@ -4474,7 +4474,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 2. Pre-Reading Short Context Clue Mini-Game (5 Items) [U3-6.1.4]
+  // 2. Pre-Reading Short Context Clue Mini-Game (5 Items)
   submitUnit3PreGame(qNum, choiceIdx) {
     if (!this.unit3PreGameAnswers) this.unit3PreGameAnswers = {};
     this.unit3PreGameAnswers[qNum] = choiceIdx;
@@ -4519,7 +4519,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 5`;
   }
 
-  // 3. While-Reading 3-Colour Highlighting Tool [U3-6.2.2]
+  // 3. While-Reading 3-Colour Highlighting Tool
   // Yellow = Unfamiliar vocabulary, Green = Context clues, Blue = Main ideas and sentence meaning
   highlightUnit3Sentence(segNum, color) {
     const expected = {
@@ -4565,7 +4565,7 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightUnit3Sentence(Number(k), roles[k]));
   }
 
-  // 4. While-Reading Graded Context Clue Game & Sentence Practice (8 Items) [U3-6.2.3, 6.2.4, 6.2.5]
+  // 4. While-Reading Graded Context Clue Game & Sentence Practice (8 Items)
   submitUnit3Game(qNum, choiceIdx) {
     if (!this.unit3GameAnswers) this.unit3GameAnswers = {};
     this.unit3GameAnswers[qNum] = choiceIdx;
@@ -4640,7 +4640,7 @@ class ReadSkillsApp {
     this.updateUnit3SummaryDashboard();
   }
 
-  // 5. Post-Reading 40-Question Vocabulary in Context & Sentence Meaning Quiz [U3-5.6, 6.3.3]
+  // 5. Post-Reading 40-Question Vocabulary in Context & Sentence Meaning Quiz
   submitUnit3Test(qNum, choiceIdx) {
     if (!this.unit3TestAnswers) this.unit3TestAnswers = {};
     this.unit3TestAnswers[qNum] = choiceIdx;
@@ -4747,7 +4747,7 @@ class ReadSkillsApp {
     this.updateUnit3SummaryDashboard();
   }
 
-  // 6. Unit 3 Score Dashboard [U3-6.3.4]
+  // 6. Unit 3 Score Dashboard
   updateUnit3SummaryDashboard() {
     const gScore = localStorage.getItem('bru_unit3_game_score');
     const tScore = localStorage.getItem('bru_unit3_test_score');
@@ -4773,7 +4773,7 @@ class ReadSkillsApp {
 
   /* ------------------- Unit 4 Interactive Methods (References, Connectives & Text Organization) ------------------- */
 
-  // 1. Warm-Up Missing Reference & Connective Guessing [U4-6.1.2]
+  // 1. Warm-Up Missing Reference & Connective Guessing
   checkUnit4Warmup(selectedNum) {
     const fb = document.getElementById('u4-warmup-feedback');
     if (!fb) return;
@@ -4787,7 +4787,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 2. Pre-Reading Reference Matching Activity (5 Items) [U4-5.5, 6.1.4]
+  // 2. Pre-Reading Reference Matching Activity (5 Items)
   submitUnit4PreGame(qNum, choiceIdx) {
     if (!this.unit4PreGameAnswers) this.unit4PreGameAnswers = {};
     this.unit4PreGameAnswers[qNum] = choiceIdx;
@@ -4832,7 +4832,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 5`;
   }
 
-  // 3. While-Reading 3-Colour Highlighting Practice [U4-6.2.2]
+  // 3. While-Reading 3-Colour Highlighting Practice
   // Yellow = Reference words, Green = Connectives and transition words, Blue = Main ideas and text organization
   highlightUnit4Sentence(segNum, color) {
     const expected = {
@@ -4878,7 +4878,7 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightUnit4Sentence(Number(k), roles[k]));
   }
 
-  // 4. While-Reading Graded Text Structure & Reference Practice (8 Items) [U4-5.6, 6.2.3, 6.2.5]
+  // 4. While-Reading Graded Text Structure & Reference Practice (8 Items)
   submitUnit4Game(qNum, choiceIdx) {
     if (!this.unit4GameAnswers) this.unit4GameAnswers = {};
     this.unit4GameAnswers[qNum] = choiceIdx;
@@ -4953,7 +4953,7 @@ class ReadSkillsApp {
     this.updateUnit4SummaryDashboard();
   }
 
-  // 5. Unit 4 Score Dashboard [U4-6.3.4]
+  // 5. Unit 4 Score Dashboard
   updateUnit4SummaryDashboard() {
     const gScore = localStorage.getItem('bru_unit4_game_score');
     const tScore = localStorage.getItem('bru_unit4_test_score') || localStorage.getItem('bru_unit4_quiz_score');
@@ -4979,7 +4979,7 @@ class ReadSkillsApp {
 
   /* ------------------- Unit 5 Interactive Methods (Text Interpretation & Paraphrased Meaning) ------------------- */
 
-  // 1. Paraphrasing Practice Warm-Up [U5-6.1.2]
+  // 1. Paraphrasing Practice Warm-Up
   checkUnit5Warmup(selectedNum) {
     const fb = document.getElementById('u5-warmup-feedback');
     if (!fb) return;
@@ -4993,7 +4993,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 2. Warm-Up Short Inference Detective Activity (5 Items) [U5-5.5, 6.1.4]
+  // 2. Warm-Up Short Inference Detective Activity (5 Items)
   submitUnit5PreGame(qNum, choiceIdx) {
     if (!this.unit5PreGameAnswers) this.unit5PreGameAnswers = {};
     this.unit5PreGameAnswers[qNum] = choiceIdx;
@@ -5038,7 +5038,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 5`;
   }
 
-  // 3. While-Reading Interactive Highlighting Practice [U5-6.2.2]
+  // 3. While-Reading Interactive Highlighting Practice
   // Yellow = Directly Stated Info, Green = Inference Clues, Blue = Implied Conclusion & Paraphrase
   highlightUnit5Sentence(segNum, color) {
     const expected = {
@@ -5084,7 +5084,7 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightUnit5Sentence(Number(k), roles[k]));
   }
 
-  // 4. While-Reading Graded Inference Detective & Paraphrasing Practice (8 Items) [U5-5.5, 5.6, 6.2.3, 6.2.5]
+  // 4. While-Reading Graded Inference Detective & Paraphrasing Practice (8 Items)
   submitUnit5Game(qNum, choiceIdx) {
     if (!this.unit5GameAnswers) this.unit5GameAnswers = {};
     this.unit5GameAnswers[qNum] = choiceIdx;
@@ -5159,7 +5159,7 @@ class ReadSkillsApp {
     this.updateUnit5SummaryDashboard();
   }
 
-  // 5. Unit 5 Score Dashboard [U5-6.3.4]
+  // 5. Unit 5 Score Dashboard
   updateUnit5SummaryDashboard() {
     const gScore = localStorage.getItem('bru_unit5_game_score');
     const tScore = localStorage.getItem('bru_unit5_test_score') || localStorage.getItem('bru_unit5_quiz_score');
@@ -5185,18 +5185,18 @@ class ReadSkillsApp {
 
   /* ------------------- Unit 6 Interactive Learning Engines ------------------- */
 
-  // 1. Personal Goal Setting [U6-6.1.4]
+  // 1. Personal Goal Setting
   setUnit6Goal(goalText) {
     localStorage.setItem('bru_unit6_goal', goalText);
     const fb = document.getElementById('u6-goal-fb');
     if (fb) {
       fb.classList.remove('hidden');
       fb.className = 'text-xs font-medium p-3 rounded-xl bg-emerald-100 text-emerald-950 border border-emerald-300 block';
-      fb.innerHTML = `🎯 <strong>บันทึกเป้าหมายของฉันเรียบร้อยแล้ว [U6-6.1.4]:</strong> "${goalText}" — ขอให้โฟกัสการใช้กลยุทธ์นี้ระหว่างฝึกทำกิจกรรมใน Unit 6 ครับ!`;
+      fb.innerHTML = `🎯 <strong>บันทึกเป้าหมายของฉันเรียบร้อยแล้ว:</strong> "${goalText}" — ขอให้โฟกัสการใช้กลยุทธ์นี้ระหว่างฝึกทำกิจกรรมใน Unit 6 ครับ!`;
     }
   }
 
-  // 2. Strategy Matching Activity (5 Reading Situations) [U6-6.1.2]
+  // 2. Strategy Matching Activity (5 Reading Situations)
   submitUnit6Match(qNum, choiceIdx) {
     if (!this.unit6MatchAnswers) this.unit6MatchAnswers = {};
     this.unit6MatchAnswers[qNum] = choiceIdx;
@@ -5244,7 +5244,7 @@ class ReadSkillsApp {
     localStorage.setItem('bru_unit6_match_answers', JSON.stringify(this.unit6MatchAnswers));
   }
 
-  // 3. App Warm-Up Quiz (10 Questions Reviewing Units 1–5) [U6-6.1.3]
+  // 3. App Warm-Up Quiz (10 Questions Reviewing Units 1–5)
   submitUnit6PreGame(qNum, choiceIdx) {
     if (!this.unit6PreGameAnswers) this.unit6PreGameAnswers = {};
     this.unit6PreGameAnswers[qNum] = choiceIdx;
@@ -5297,7 +5297,7 @@ class ReadSkillsApp {
     localStorage.setItem('bru_unit6_pregame_answers', JSON.stringify(this.unit6PreGameAnswers));
   }
 
-  // 4. 5-Colour Digital Annotation Activity [U6-6.2.2]
+  // 4. 5-Colour Digital Annotation Activity
   highlightUnit6Sentence(segNum, color) {
     if (!this.unit6Highlights) this.unit6Highlights = {};
     this.unit6Highlights[segNum] = color;
@@ -5389,7 +5389,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 5. Units 1–5 Review Challenge & Progress Check (10 Items) [U6-6.2.3, 6.2.4, 6.2.5]
+  // 5. Units 1–5 Review Challenge & Progress Check (10 Items)
   submitUnit6Game(qNum, choiceIdx) {
     if (!this.unit6GameAnswers) this.unit6GameAnswers = {};
     this.unit6GameAnswers[qNum] = choiceIdx;
@@ -5466,7 +5466,7 @@ class ReadSkillsApp {
     this.updateUnit6SummaryDashboard();
   }
 
-  // 6. Unit 6 Score & Previous Units Dashboard [U6-6.1.4, U6-6.3.4]
+  // 6. Unit 6 Score & Previous Units Dashboard
   updateUnit6SummaryDashboard() {
     // Populate Previous Units 1-5 Scores if elements exist
     for (let u = 1; u <= 5; u++) {
@@ -5484,7 +5484,7 @@ class ReadSkillsApp {
     if (goalFb && savedGoal) {
       goalFb.classList.remove('hidden');
       goalFb.className = 'text-xs font-medium p-3 rounded-xl bg-emerald-100 text-emerald-950 border border-emerald-300 block';
-      goalFb.innerHTML = `🎯 <strong>เป้าหมายของฉันในบทนี้ [U6-6.1.4]:</strong> "${savedGoal}"`;
+      goalFb.innerHTML = `🎯 <strong>เป้าหมายของฉันในบทนี้:</strong> "${savedGoal}"`;
     }
 
     const gScore = localStorage.getItem('bru_unit6_game_score');
