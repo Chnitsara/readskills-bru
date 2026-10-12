@@ -811,8 +811,8 @@ class ReadSkillsApp {
     if (this.currentUnitId === 2) {
       if (stage === 'preReading') {
         steps = [
-          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & อุ่นเครื่อง [6.1.1-6.1.2]' },
-          { key: 'learn', num: 2, label: 'Key Concepts & Scan', sub: 'แนวคิดหลัก & สแกน [6.1.3-6.1.5]' }
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'รายละเอียด & การสแกน' }
         ];
       } else if (stage === 'whileReading') {
         steps = [
@@ -828,8 +828,8 @@ class ReadSkillsApp {
     } else if (this.currentUnitId === 3) {
       if (stage === 'preReading') {
         steps = [
-          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & ทายศัพท์ [6.1.1-6.1.2]' },
-          { key: 'learn', num: 2, label: '5 Clues & Mini-Game', sub: 'บริบท 5 แบบ & เกม [6.1.3-6.1.5]' }
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'บริบท 5 แบบ & โครงสร้าง' }
         ];
       } else if (stage === 'whileReading') {
         steps = [
@@ -845,8 +845,8 @@ class ReadSkillsApp {
     } else if (this.currentUnitId === 4) {
       if (stage === 'preReading') {
         steps = [
-          { key: 'overview', num: 1, label: 'Overview & Warm-up', sub: 'เป้าหมาย & คำอ้างอิงที่หายไป [6.1.1-6.1.2]' },
-          { key: 'learn', num: 2, label: 'References & Matching', sub: 'คำอ้างอิง คำเชื่อม & จับคู่ [6.1.3-6.1.5]' }
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'คำอ้างอิง & คำเชื่อม' }
         ];
       } else if (stage === 'whileReading') {
         steps = [
@@ -862,8 +862,8 @@ class ReadSkillsApp {
     } else if (this.currentUnitId === 5) {
       if (stage === 'preReading') {
         steps = [
-          { key: 'overview', num: 1, label: 'Overview & Warm-Up', sub: 'เป้าหมาย & เปรียบเทียบ Paraphrase [6.1.1-6.1.2]' },
-          { key: 'learn', num: 2, label: 'Key Concepts & Detective', sub: 'การตีความ การถอดความ & นักสืบ [6.1.3-6.1.5]' }
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'การตีความ & ถอดความ' }
         ];
       } else if (stage === 'whileReading') {
         steps = [
@@ -879,8 +879,8 @@ class ReadSkillsApp {
     } else if (this.currentUnitId === 6) {
       if (stage === 'preReading') {
         steps = [
-          { key: 'overview', num: 1, label: 'Mind Map & Goal Setting', sub: 'ทบทวน 5 กลยุทธ์ & ตั้งเป้าหมาย [6.1.1, 6.1.4]' },
-          { key: 'learn', num: 2, label: 'Matching & Warm-up Quiz', sub: 'จับคู่กลยุทธ์ & ควิซอุ่นเครื่อง 10 ข้อ [6.1.2-6.1.3]' }
+          { key: 'overview', num: 1, label: 'Overview', sub: 'เป้าหมายและโครงสร้าง' },
+          { key: 'learn', num: 2, label: 'Learn (Part 1)', sub: 'ทบทวน 5 กลยุทธ์ & ควิซ' }
         ];
       } else if (stage === 'whileReading') {
         steps = [
@@ -4025,7 +4025,7 @@ class ReadSkillsApp {
      UNIT 2: INTERACTIVE METHODS & TIMED SCANNERS [U2-5.1..5.6, U2-6.1..6.3]
      ========================================================================== */
 
-  // 1. Warm-Up Checker [U2-6.1.2]
+  // 1. Warm-Up Checker
   checkUnit2Warmup(selectedNum) {
     const fb = document.getElementById('u2-warmup-feedback');
     if (!fb) return;
