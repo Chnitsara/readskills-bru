@@ -47,6 +47,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedScore ? parseInt(savedScore) : null
@@ -77,6 +78,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedU2QuizScore ? parseInt(savedU2QuizScore) : null
@@ -95,6 +97,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedU3QuizScore ? parseInt(savedU3QuizScore) : null
@@ -111,6 +114,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedU4QuizScore ? parseInt(savedU4QuizScore) : null
@@ -127,6 +131,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedU5QuizScore ? parseInt(savedU5QuizScore) : null
@@ -144,6 +149,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedU6QuizScore ? parseInt(savedU6QuizScore) : null
@@ -160,6 +166,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: savedS1QuizScore ? parseInt(savedS1QuizScore) : null
@@ -2017,6 +2024,27 @@ class ReadSkillsApp {
                     <div class="text-3xl font-black ${state.passageScores[pIdx] >= 7 ? 'text-emerald-700' : 'text-amber-700'}">${state.passageScores[pIdx]} <span class="text-lg opacity-70">/ 10</span></div>
                     <div class="text-[11px] font-bold text-slate-600">${state.passageScores[pIdx] * 10}% Accuracy</div>
                   </div>
+                </div>
+
+                <!-- 4-Passage Score Breakdown Mini-Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  ${quizData.passages.map((p, idx) => {
+                    const pSub = state.passageSubmitted && state.passageSubmitted[idx];
+                    const pSc = state.passageScores[idx] || 0;
+                    const isCurrent = idx === pIdx;
+                    return `
+                      <button onclick="app.goToQuizQuestion(${idx}, 0)" class="p-2.5 rounded-xl border text-left transition cursor-pointer ${
+                        isCurrent
+                          ? 'bg-purple-50 border-purple-400 ring-1 ring-purple-300'
+                          : pSub
+                            ? 'bg-emerald-50/60 border-emerald-200 hover:bg-emerald-50'
+                            : 'bg-slate-50 border-slate-200 hover:bg-purple-50/40'
+                      }">
+                        <div class="text-[10px] font-bold uppercase tracking-wider ${pSub ? 'text-emerald-700' : 'text-purple-700'}">Passage Quiz ${idx + 1}</div>
+                        <div class="text-sm font-black text-slate-900 mt-0.5">${pSub ? `${pSc} <span class="text-[10px] font-normal text-slate-500">/ 10</span>` : `<span class="text-[11px] font-semibold text-slate-400">ยังไม่ส่ง</span>`}</div>
+                      </button>
+                    `;
+                  }).join('')}
                 </div>
 
                 <!-- Action Buttons for this Passage Quiz -->
