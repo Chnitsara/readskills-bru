@@ -1768,7 +1768,11 @@ class ReadSkillsApp {
       `;
     }
 
-    // Completed Screen
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false, false];
+    }
+
+    // Completed Screen (Overall 40-question summary when user clicks View Overall Summary)
     if (state.isCompleted) {
       const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
       const percentage = Math.round((totalScore / 40) * 100);
@@ -1800,8 +1804,8 @@ class ReadSkillsApp {
           <!-- Per-Passage Score Breakdown -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-left">
             ${quizData.passages.map((p, idx) => `
-              <div class="p-3.5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-1">
-                <span class="text-[10px] font-bold text-slate-400 uppercase">Passage ${idx + 1}</span>
+              <div onclick="app.goToQuizQuestion(${idx}, 0)" class="p-3.5 bg-white hover:bg-purple-50/60 cursor-pointer transition rounded-2xl border border-purple-100 shadow-xs space-y-1">
+                <span class="text-[10px] font-bold text-slate-400 uppercase">Passage Quiz ${idx + 1}</span>
                 <div class="text-xs font-bold text-slate-800 line-clamp-1">${p.title.split(':')[1] || p.title}</div>
                 <div class="text-base font-extrabold text-purple-900">${state.passageScores[idx]} / 10</div>
               </div>
@@ -1812,7 +1816,7 @@ class ReadSkillsApp {
           <div class="text-left space-y-3">
             <div class="flex items-center space-x-2 text-purple-900 font-bold text-sm">
               <i data-lucide="list-checks" class="w-4 h-4 text-purple-700"></i>
-              <span>เฉลยคำตอบ (Answer Key)</span>
+              <span>เฉลยคำตอบทั้ง 4 Passages (Answer Key)</span>
             </div>
             ${quizData.passages.map((p, pIdx) => `
               <details class="bg-white rounded-2xl border border-purple-100 shadow-xs overflow-hidden" ${pIdx === 0 ? 'open' : ''}>
@@ -1829,7 +1833,7 @@ class ReadSkillsApp {
                       <div class="p-3 rounded-xl border ${ok ? 'bg-emerald-50/70 border-emerald-200' : 'bg-rose-50/70 border-rose-200'} space-y-1.5 text-xs">
                         <div class="flex items-start space-x-2">
                           <span class="w-5 h-5 rounded-full shrink-0 flex items-center justify-center font-bold text-[10px] ${ok ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">${ok ? '✓' : '✕'}</span>
-                          <span class="font-bold text-slate-900 leading-snug">${(pIdx * 10) + qIdx + 1}. ${q.prompt}</span>
+                          <span class="font-bold text-slate-900 leading-snug">ข้อที่ ${qIdx + 1}. ${q.prompt}</span>
                         </div>
                         <div class="pl-7 space-y-1 leading-relaxed">
                           <div class="${ok ? 'text-emerald-800' : 'text-rose-800'}"><strong>คำตอบของคุณ:</strong> ${this.getQuizAnswerText(q, p, sel)}</div>
@@ -1848,9 +1852,13 @@ class ReadSkillsApp {
 
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-4 border-t border-purple-100">
+            <button onclick="app.goToQuizQuestion(0, 0)" class="w-full sm:w-auto px-6 py-3 bg-white border border-purple-200 hover:bg-purple-50 text-purple-800 font-bold rounded-xl text-xs cursor-pointer transition flex items-center justify-center space-x-2">
+              <i data-lucide="layout-list" class="w-4 h-4"></i>
+              <span>กลับไปดูแยกแต่ละ Passage Quiz (1–4)</span>
+            </button>
             <button onclick="app.resetUnit1Quiz()" class="w-full sm:w-auto px-6 py-3 bg-slate-200/90 hover:bg-slate-300 text-slate-700 font-bold rounded-xl text-xs cursor-pointer transition flex items-center justify-center space-x-2">
               <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-              <span>Retake Quiz (ฝึกทำใหม่อีกครั้ง)</span>
+              <span>Retake All (เริ่มทำใหม่ทั้งหมด)</span>
             </button>
             <button onclick="app.selectStageAndStep('whileReading', 'learn')" class="w-full sm:w-auto px-8 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-md flex items-center justify-center space-x-2">
               <i data-lucide="book-open" class="w-4 h-4"></i>
@@ -1861,22 +1869,28 @@ class ReadSkillsApp {
       `;
     }
 
-    const currentPassage = quizData.passages[state.passageIndex] || quizData.passages[0];
+    const pIdx = state.passageIndex;
+    const currentPassage = quizData.passages[pIdx] || quizData.passages[0];
     const currentQ = currentPassage.questions[state.questionIndex] || currentPassage.questions[0];
-    const qGlobalNumber = (state.passageIndex * 10) + state.questionIndex + 1;
-    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
+    const qNumberInPassage = state.questionIndex + 1;
+    const answerKey = `${pIdx}-${state.questionIndex}`;
     const answeredState = state.answers[answerKey];
-    const totalAnswered = Object.keys(state.answers).filter(k => state.answers[k] && state.answers[k].selected !== undefined && state.answers[k].selected !== null).length;
-    const progressPercent = Math.round((totalAnswered / 40) * 100);
-    const countAnsweredInPassage = (pIdx) => {
+    const isPassageSubmitted = !!state.passageSubmitted[pIdx];
+    const allPassagesSubmitted = state.passageSubmitted.every(Boolean);
+
+    const countAnsweredInPassage = (idx) => {
       let c = 0;
       for (let i = 0; i < 10; i++) {
-        const a = state.answers[`${pIdx}-${i}`];
+        const a = state.answers[`${idx}-${i}`];
         if (a && a.selected !== undefined && a.selected !== null) c++;
       }
       return c;
     };
-    const isLastQuestion = state.passageIndex === 3 && state.questionIndex === 9;
+
+    const doneInCurrent = countAnsweredInPassage(pIdx);
+    const passageProgressPercent = Math.round((doneInCurrent / 10) * 100);
+    const totalScoreSoFar = state.passageScores.reduce((a, b) => a + b, 0);
+    const submittedCount = state.passageSubmitted.filter(Boolean).length;
 
     return `
       <div class="space-y-6">
@@ -1886,7 +1900,8 @@ class ReadSkillsApp {
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
           <div>
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">Post-Reading Quiz (40 ข้อ)</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">Passage Quiz ${pIdx + 1} (10 ข้อ)</span>
+              <span class="text-xs font-semibold text-slate-500">ชุดที่ ${pIdx + 1} จาก 4</span>
               <button onclick="app.selectStageAndStep('whileReading', 'practice')" class="text-[11px] text-purple-700 hover:text-purple-900 font-semibold cursor-pointer underline ml-2">⬅ Back to Practice</button>
             </div>
             <h4 class="text-base sm:text-lg font-bold text-slate-900 mt-0.5">${currentPassage.title}</h4>
@@ -1895,10 +1910,14 @@ class ReadSkillsApp {
 
           <div class="flex items-center space-x-3 self-start sm:self-auto">
             <div class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl text-right">
-              <span class="text-[10px] text-purple-600 block font-semibold">ตอบแล้ว</span>
-              <span class="text-xs font-bold text-purple-900">${totalAnswered} / 40</span>
+              <span class="text-[10px] text-purple-600 block font-semibold">${isPassageSubmitted ? `คะแนนชุดที่ ${pIdx + 1}` : `ตอบแล้ว (ชุดที่ ${pIdx + 1})`}</span>
+              <span class="text-xs font-bold text-purple-900">${isPassageSubmitted ? `${state.passageScores[pIdx]} / 10 คะแนน` : `${doneInCurrent} / 10 ข้อ`}</span>
             </div>
-            <button onclick="app.playQuizPassageAudio(${state.passageIndex})" class="px-3 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shadow-sm" title="Listen to Passage Audio">
+            <div class="bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl text-right">
+              <span class="text-[10px] text-emerald-700 block font-semibold">คะแนนรวม (${submittedCount}/4 ชุด)</span>
+              <span class="text-xs font-bold text-emerald-900">${totalScoreSoFar} / 40</span>
+            </div>
+            <button onclick="app.playQuizPassageAudio(${pIdx})" class="px-3 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shadow-sm" title="Listen to Passage Audio">
               <i data-lucide="volume-2" class="w-4 h-4"></i>
               <span class="hidden sm:inline">Listen</span>
             </button>
@@ -1907,26 +1926,38 @@ class ReadSkillsApp {
 
         <!-- Passage Quiz Tabs (1-4) -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-          ${quizData.passages.map((p, pIdx) => {
-            const done = countAnsweredInPassage(pIdx);
-            const active = pIdx === state.passageIndex;
+          ${quizData.passages.map((p, idx) => {
+            const done = countAnsweredInPassage(idx);
+            const active = idx === pIdx;
+            const sub = !!state.passageSubmitted[idx];
             return `
-              <button onclick="app.goToQuizQuestion(${pIdx}, 0)" class="p-2.5 rounded-xl border text-left transition cursor-pointer ${active ? 'bg-purple-700 border-purple-700 text-white shadow-md' : 'bg-white border-purple-200 text-purple-900 hover:bg-purple-50'}">
-                <div class="text-xs font-bold">Passage Quiz ${pIdx + 1}</div>
-                <div class="text-[10px] ${active ? 'text-purple-100' : 'text-slate-500'}">ตอบแล้ว ${done}/10 ${done === 10 ? '✓' : ''}</div>
+              <button onclick="app.goToQuizQuestion(${idx}, 0)" class="p-2.5 rounded-xl border text-left transition cursor-pointer ${
+                active
+                  ? 'bg-purple-700 border-purple-700 text-white shadow-md'
+                  : sub
+                    ? 'bg-emerald-50/90 border-emerald-300 text-emerald-950 hover:bg-emerald-100/80'
+                    : 'bg-white border-purple-200 text-purple-900 hover:bg-purple-50'
+              }">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold">Passage Quiz ${idx + 1}</span>
+                  ${sub ? `<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded ${active ? 'bg-white/20 text-white' : 'bg-emerald-200/80 text-emerald-900'}">${state.passageScores[idx]}/10 ✓</span>` : ''}
+                </div>
+                <div class="text-[10px] mt-0.5 ${active ? 'text-purple-100' : sub ? 'text-emerald-700 font-semibold' : 'text-slate-500'}">
+                  ${sub ? 'ส่งและเฉลยแล้ว' : `ตอบแล้ว ${done}/10 ข้อ`}
+                </div>
               </button>
             `;
           }).join('')}
         </div>
 
-        <!-- Progress Bar -->
+        <!-- Progress Bar for Current 10-Question Passage Quiz -->
         <div class="space-y-1">
           <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500">
-            <span>Passage Quiz ${state.passageIndex + 1} • Question ${state.questionIndex + 1} of 10</span>
-            <span class="text-purple-700 font-bold">ข้อที่ ${qGlobalNumber} / 40 • ตอบแล้ว ${progressPercent}%</span>
+            <span>${isPassageSubmitted ? `Passage Quiz ${pIdx + 1} • ส่งคำตอบและเฉลยครบทั้ง 10 ข้อแล้ว` : `Passage Quiz ${pIdx + 1} • ข้อที่ ${qNumberInPassage} จาก 10`}</span>
+            <span class="text-purple-700 font-bold">${isPassageSubmitted ? `ได้คะแนน ${state.passageScores[pIdx]} / 10 (${state.passageScores[pIdx] * 10}%)` : `ตอบแล้ว ${doneInCurrent} / 10 ข้อ (${passageProgressPercent}%)`}</span>
           </div>
           <div class="w-full bg-slate-200/80 rounded-full h-2 overflow-hidden">
-            <div class="bg-gradient-to-r from-purple-600 to-pink-500 h-2 rounded-full transition-all duration-300" style="width: ${progressPercent}%"></div>
+            <div class="bg-gradient-to-r ${isPassageSubmitted ? 'from-emerald-500 to-teal-500' : 'from-purple-600 to-pink-500'} h-2 rounded-full transition-all duration-300" style="width: ${isPassageSubmitted ? 100 : passageProgressPercent}%"></div>
           </div>
         </div>
 
@@ -1940,7 +1971,7 @@ class ReadSkillsApp {
                 <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
                 <span class="text-xs font-bold text-purple-300 uppercase tracking-wider">${currentPassage.genre}</span>
               </div>
-              ${currentQ.type === 'highlight' ? `
+              ${!isPassageSubmitted && currentQ.type === 'highlight' ? `
                 <span class="text-[10px] bg-pink-500/20 text-pink-300 border border-pink-500/40 px-2 py-0.5 rounded">
                   👆 Tap a sentence below to answer
                 </span>
@@ -1951,7 +1982,7 @@ class ReadSkillsApp {
               ${currentPassage.sentences.map((sent, sIdx) => {
                 let sentClass = 'inline transition-colors duration-200 p-1 rounded ';
                 let clickHandler = '';
-                if (currentQ.type === 'highlight') {
+                if (!isPassageSubmitted && currentQ.type === 'highlight') {
                   if (answeredState && answeredState.selected === sIdx) {
                     sentClass += 'bg-purple-500/40 text-white border-b-2 border-purple-300 font-medium cursor-pointer ';
                   } else {
@@ -1969,70 +2000,139 @@ class ReadSkillsApp {
             </div>
           </div>
 
-          <!-- Right: Question Card -->
+          <!-- Right: Question Card OR Submitted 10-Question Answer Key -->
           <div class="lg:col-span-6 space-y-4">
-            <div class="bg-white p-5 rounded-2xl border border-purple-100 shadow-sm space-y-4">
+            ${isPassageSubmitted ? `
+              <!-- Submitted Result & 10-Question Answer Key for this Passage Quiz -->
+              <div class="bg-white p-5 rounded-2xl border border-emerald-200 shadow-sm space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl ${state.passageScores[pIdx] >= 7 ? 'bg-emerald-50 border border-emerald-200' : 'bg-amber-50 border border-amber-200'}">
+                  <div class="space-y-1">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${state.passageScores[pIdx] >= 7 ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'}">
+                      ${state.passageScores[pIdx] >= 7 ? 'ผ่านเกณฑ์ (≥ 70%) 🎉' : 'ส่งคำตอบแล้ว 💪'}
+                    </span>
+                    <h5 class="text-base font-bold text-slate-900">ผลคะแนน Passage Quiz ${pIdx + 1}</h5>
+                    <p class="text-xs text-slate-600">${currentPassage.title}</p>
+                  </div>
+                  <div class="text-left sm:text-right shrink-0">
+                    <div class="text-3xl font-black ${state.passageScores[pIdx] >= 7 ? 'text-emerald-700' : 'text-amber-700'}">${state.passageScores[pIdx]} <span class="text-lg opacity-70">/ 10</span></div>
+                    <div class="text-[11px] font-bold text-slate-600">${state.passageScores[pIdx] * 10}% Accuracy</div>
+                  </div>
+                </div>
 
-              <!-- Question Navigator (1-10) -->
-              <div class="flex flex-wrap gap-1.5">
-                ${currentPassage.questions.map((qq, qIdx) => {
-                  const a = state.answers[`${state.passageIndex}-${qIdx}`];
-                  const answered = a && a.selected !== undefined && a.selected !== null;
-                  const isCur = qIdx === state.questionIndex;
-                  return `
-                    <button onclick="app.goToQuizQuestion(${state.passageIndex}, ${qIdx})" class="w-8 h-8 rounded-lg text-[11px] font-bold transition cursor-pointer border ${answered ? 'bg-purple-600 text-white border-purple-600' : 'bg-white text-slate-600 border-slate-200 hover:border-purple-400'} ${isCur ? 'ring-2 ring-pink-400 ring-offset-1' : ''}">
-                      ${(state.passageIndex * 10) + qIdx + 1}
+                <!-- Action Buttons for this Passage Quiz -->
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <button onclick="app.resetPassageQuiz(${pIdx})" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs cursor-pointer transition flex items-center space-x-1.5">
+                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    <span>ทำ Passage Quiz ${pIdx + 1} ใหม่</span>
+                  </button>
+                  <div class="flex flex-wrap items-center gap-2">
+                    ${pIdx < 3 ? `
+                      <button onclick="app.goToQuizQuestion(${pIdx + 1}, 0)" class="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-sm flex items-center space-x-1.5">
+                        <span>ไปทำ Passage Quiz ${pIdx + 2} (10 ข้อ)</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                      </button>
+                    ` : ''}
+                    ${allPassagesSubmitted ? `
+                      <button onclick="app.showUnitQuizSummary()" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-sm flex items-center space-x-1.5">
+                        <span>ดูสรุปคะแนนรวม 40 ข้อ 🏆</span>
+                      </button>
+                    ` : ''}
+                  </div>
+                </div>
+
+                <!-- 10-Question Answer Key List -->
+                <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-purple-900">เฉลยคำตอบ Passage Quiz ${pIdx + 1} (ข้อ 1–10)</span>
+                    <span class="text-[11px] text-slate-500">ตอบถูก ${state.passageScores[pIdx]} จาก 10 ข้อ</span>
+                  </div>
+                  <div class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1">
+                    ${currentPassage.questions.map((q, qIdx) => {
+                      const a = state.answers[`${pIdx}-${qIdx}`];
+                      const sel = a ? a.selected : undefined;
+                      const ok = this.isQuizAnswerCorrect(q, sel);
+                      return `
+                        <div class="p-3.5 rounded-xl border ${ok ? 'bg-emerald-50/70 border-emerald-200' : 'bg-rose-50/70 border-rose-200'} space-y-1.5 text-xs">
+                          <div class="flex items-start space-x-2">
+                            <span class="w-5 h-5 rounded-full shrink-0 flex items-center justify-center font-bold text-[10px] ${ok ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">${ok ? '✓' : '✕'}</span>
+                            <span class="font-bold text-slate-900 leading-snug">ข้อที่ ${qIdx + 1}. ${q.prompt}</span>
+                          </div>
+                          <div class="pl-7 space-y-1 leading-relaxed">
+                            <div class="${ok ? 'text-emerald-800' : 'text-rose-800'}"><strong>คำตอบของคุณ:</strong> ${this.getQuizAnswerText(q, currentPassage, sel)}</div>
+                            ${ok ? '' : `<div class="text-emerald-800"><strong>คำตอบที่ถูก:</strong> ${this.getQuizCorrectText(q, currentPassage)}</div>`}
+                            ${q.explanation ? `<div class="text-slate-600"><strong>คำอธิบาย:</strong> ${q.explanation}</div>` : ''}
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              </div>
+            ` : `
+              <!-- Active Question Card (10 Questions in this Passage Quiz) -->
+              <div class="bg-white p-5 rounded-2xl border border-purple-100 shadow-sm space-y-4">
+
+                <!-- Question Navigator (1-10) -->
+                <div class="flex flex-wrap gap-1.5">
+                  ${currentPassage.questions.map((qq, qIdx) => {
+                    const a = state.answers[`${pIdx}-${qIdx}`];
+                    const answered = a && a.selected !== undefined && a.selected !== null;
+                    const isCur = qIdx === state.questionIndex;
+                    return `
+                      <button onclick="app.goToQuizQuestion(${pIdx}, ${qIdx})" class="w-8 h-8 rounded-lg text-[11px] font-bold transition cursor-pointer border ${answered ? 'bg-purple-600 text-white border-purple-600' : 'bg-white text-slate-600 border-slate-200 hover:border-purple-400'} ${isCur ? 'ring-2 ring-pink-400 ring-offset-1' : ''}">
+                        ${qIdx + 1}
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
+                    currentQ.type === 'mc' ? 'bg-blue-100 text-blue-800' :
+                    currentQ.type === 'highlight' ? 'bg-pink-100 text-pink-800' : 'bg-amber-100 text-amber-800'
+                  }">
+                    ${currentQ.type === 'mc' ? 'Multiple Choice' : currentQ.type === 'highlight' ? 'Sentence Selection / Highlight' : 'Fill-in-the-Blank'}
+                  </span>
+                  <span class="text-xs text-purple-700 font-bold">ข้อที่ ${qNumberInPassage} / 10 • 1 Point</span>
+                </div>
+
+                <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                  ${currentQ.prompt}
+                </h5>
+
+                <div class="space-y-2.5">
+                  ${this.renderQuizQuestionInputs(currentQ, answeredState, currentPassage)}
+                </div>
+
+                <!-- Prev / Next Controls (within the 10 questions of this Passage Quiz) -->
+                <div class="pt-2 flex items-center justify-between gap-2">
+                  <button onclick="app.prevQuizQuestion()" ${state.questionIndex === 0 ? 'disabled' : ''} class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${state.questionIndex === 0 ? 'bg-slate-100 text-slate-300 cursor-default' : 'bg-slate-200/90 hover:bg-slate-300 text-slate-700 cursor-pointer'}">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>ข้อก่อนหน้า</span>
+                  </button>
+                  ${state.questionIndex === 9 ? `
+                    <button onclick="app.submitPassageQuiz(${pIdx})" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
+                      <span>ส่งคำตอบและดูเฉลย (10 ข้อ) 🏆</span>
                     </button>
-                  `;
-                }).join('')}
+                  ` : `
+                    <button onclick="app.nextQuizQuestion()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
+                      <span>ข้อถัดไป</span>
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  `}
+                </div>
               </div>
 
-              <div class="flex items-center justify-between">
-                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold ${
-                  currentQ.type === 'mc' ? 'bg-blue-100 text-blue-800' :
-                  currentQ.type === 'highlight' ? 'bg-pink-100 text-pink-800' : 'bg-amber-100 text-amber-800'
-                }">
-                  ${currentQ.type === 'mc' ? 'Multiple Choice' : currentQ.type === 'highlight' ? 'Sentence Selection / Highlight' : 'Fill-in-the-Blank'}
-                </span>
-                <span class="text-xs text-purple-700 font-bold">ข้อ ${qGlobalNumber} • 1 Point</span>
-              </div>
-
-              <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-                ${currentQ.prompt}
-              </h5>
-
-              <div class="space-y-2.5">
-                ${this.renderQuizQuestionInputs(currentQ, answeredState, currentPassage)}
-              </div>
-
-              <!-- Prev / Next Controls -->
-              <div class="pt-2 flex items-center justify-between gap-2">
-                <button onclick="app.prevQuizQuestion()" ${qGlobalNumber === 1 ? 'disabled' : ''} class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${qGlobalNumber === 1 ? 'bg-slate-100 text-slate-300 cursor-default' : 'bg-slate-200/90 hover:bg-slate-300 text-slate-700 cursor-pointer'}">
-                  <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                  <span>ข้อก่อนหน้า</span>
+              <!-- Submit Panel for this 10-Question Passage Quiz -->
+              <div class="p-4 bg-pink-50/70 border border-pink-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-[11px] text-pink-900 leading-relaxed">
+                  เมื่อทำครบ 10 ข้อของ <strong>Passage Quiz ${pIdx + 1}</strong> แล้ว กด <strong>ส่งคำตอบ</strong> เพื่อตรวจคะแนนและดูเฉลยของชุดนี้ทันที
+                </p>
+                <button onclick="app.submitPassageQuiz(${pIdx})" class="w-full sm:w-auto shrink-0 px-5 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md">
+                  ส่งคำตอบชุดที่ ${pIdx + 1} (${doneInCurrent}/10)
                 </button>
-                ${isLastQuestion ? `
-                  <button onclick="app.submitUnitQuiz()" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
-                    <span>ส่งคำตอบ 🏆</span>
-                  </button>
-                ` : `
-                  <button onclick="app.nextQuizQuestion()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
-                    <span>${state.questionIndex === 9 ? `ไป Passage Quiz ${state.passageIndex + 2} ➔` : 'ข้อถัดไป'}</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                  </button>
-                `}
               </div>
-            </div>
-
-            <!-- Submit Panel -->
-            <div class="p-4 bg-pink-50/70 border border-pink-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
-              <p class="text-[11px] text-pink-900 leading-relaxed">
-                ระบบจะยังไม่แสดงเฉลยระหว่างทำ สามารถย้อนกลับไปแก้คำตอบได้ทุกข้อ เมื่อทำครบแล้วกด <strong>ส่งคำตอบ</strong> เพื่อดูคะแนนและเฉลยทั้งหมด
-              </p>
-              <button onclick="app.submitUnitQuiz()" class="w-full sm:w-auto shrink-0 px-5 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md">
-                ส่งคำตอบ (${totalAnswered}/40)
-              </button>
-            </div>
+            `}
           </div>
 
         </div>
@@ -2113,7 +2213,7 @@ class ReadSkillsApp {
     return '';
   }
 
-  /* ---------- Quiz answer helpers (answers are revealed only after submit) ---------- */
+  /* ---------- Quiz answer helpers (answers are revealed per 10-question passage upon submit) ---------- */
   isQuizAnswerCorrect(q, selected) {
     if (selected === undefined || selected === null) return false;
     if (q.type === 'mc') return selected === q.correctAnswer;
@@ -2139,6 +2239,7 @@ class ReadSkillsApp {
     const ctx = this.getActiveUnitQuizContext();
     const state = ctx.state;
     if (state.isCompleted) return;
+    if (Array.isArray(state.passageSubmitted) && state.passageSubmitted[state.passageIndex]) return;
     state.answers[`${state.passageIndex}-${state.questionIndex}`] = { selected };
     this.navigate(this.currentView, true);
   }
@@ -2157,6 +2258,7 @@ class ReadSkillsApp {
 
   goToQuizQuestion(pIdx, qIdx) {
     const state = this.getActiveUnitQuizContext().state;
+    state.isCompleted = false;
     state.passageIndex = pIdx;
     state.questionIndex = qIdx;
     this.navigate(this.currentView, true);
@@ -2166,9 +2268,6 @@ class ReadSkillsApp {
     const state = this.getActiveUnitQuizContext().state;
     if (state.questionIndex > 0) {
       state.questionIndex--;
-    } else if (state.passageIndex > 0) {
-      state.passageIndex--;
-      state.questionIndex = 9;
     }
     this.navigate(this.currentView, true);
   }
@@ -2177,47 +2276,79 @@ class ReadSkillsApp {
     const state = this.getActiveUnitQuizContext().state;
     if (state.questionIndex < 9) {
       state.questionIndex++;
-    } else if (state.passageIndex < 3) {
-      state.passageIndex++;
-      state.questionIndex = 0;
     }
     this.navigate(this.currentView, true);
   }
 
-  submitUnitQuiz() {
+  submitPassageQuiz(pIdx) {
     const ctx = this.getActiveUnitQuizContext();
     const state = ctx.state;
     const quizData = ctx.quizData;
+    const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
+    const passage = quizData.passages[targetP];
+    if (!passage) return;
+
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false, false];
+    }
+
     let unanswered = 0;
-    quizData.passages.forEach((p, pIdx) => {
-      p.questions.forEach((q, qIdx) => {
-        const a = state.answers[`${pIdx}-${qIdx}`];
-        if (!a || a.selected === undefined || a.selected === null) unanswered++;
-      });
+    passage.questions.forEach((q, qIdx) => {
+      const a = state.answers[`${targetP}-${qIdx}`];
+      if (!a || a.selected === undefined || a.selected === null) unanswered++;
     });
-    if (unanswered > 0 && !confirm(`ยังมี ${unanswered} ข้อที่ยังไม่ได้ตอบ ต้องการส่งคำตอบเลยหรือไม่?`)) {
+    if (unanswered > 0 && !confirm(`ยังมี ${unanswered} ข้อใน Passage Quiz ${targetP + 1} ที่ยังไม่ได้ตอบ ต้องการส่งคำตอบเลยหรือไม่?`)) {
       return;
     }
 
-    const scores = [0, 0, 0, 0];
-    quizData.passages.forEach((p, pIdx) => {
-      p.questions.forEach((q, qIdx) => {
-        const key = `${pIdx}-${qIdx}`;
-        const a = state.answers[key];
-        const ok = a ? this.isQuizAnswerCorrect(q, a.selected) : false;
-        if (a) a.isCorrect = ok;
-        if (ok) scores[pIdx]++;
-      });
+    let pScore = 0;
+    passage.questions.forEach((q, qIdx) => {
+      const key = `${targetP}-${qIdx}`;
+      const a = state.answers[key];
+      const ok = a ? this.isQuizAnswerCorrect(q, a.selected) : false;
+      if (a) a.isCorrect = ok;
+      if (ok) pScore++;
     });
-    state.passageScores = scores;
-    state.isCompleted = true;
-    const totalScore = scores.reduce((a, b) => a + b, 0);
+
+    state.passageScores[targetP] = pScore;
+    state.passageSubmitted[targetP] = true;
+    state.passageIndex = targetP;
+
+    const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
     localStorage.setItem(ctx.storageKey, totalScore);
     if (ctx.unitId >= 2 && ctx.unitId <= 6) {
       localStorage.setItem(`bru_unit${ctx.unitId}_test_score`, totalScore);
     }
     state.lastScore = totalScore;
+    this.navigate(this.currentView, true);
+  }
+
+  resetPassageQuiz(pIdx) {
+    const ctx = this.getActiveUnitQuizContext();
+    const state = ctx.state;
+    const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false, false];
+    }
+    for (let i = 0; i < 10; i++) {
+      delete state.answers[`${targetP}-${i}`];
+    }
+    state.passageScores[targetP] = 0;
+    state.passageSubmitted[targetP] = false;
+    state.passageIndex = targetP;
+    state.questionIndex = 0;
+    state.isCompleted = false;
+    this.navigate(this.currentView, true);
+  }
+
+  showUnitQuizSummary() {
+    const state = this.getActiveUnitQuizContext().state;
+    state.isCompleted = true;
     this.navigate(this.currentView, false);
+  }
+
+  submitUnitQuiz() {
+    this.submitPassageQuiz(this.getActiveUnitQuizContext().state.passageIndex);
   }
 
   resetUnit1Quiz() {
@@ -2227,6 +2358,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0, 0],
+      passageSubmitted: [false, false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: localStorage.getItem(ctx.storageKey) ? parseInt(localStorage.getItem(ctx.storageKey)) : null
@@ -2993,13 +3125,16 @@ class ReadSkillsApp {
     const quizData = ReadSkillsData.strategyUnit1Quiz;
     const state = this.strat1QuizState;
     const totalQ = 30;
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false];
+    }
 
     const topCards = `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
         <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-purple-950 font-bold">
             <i data-lucide="users" class="w-4 h-4 text-purple-700"></i>
-            <span>Post-Reading Group Activity [S1-6.3.1]</span>
+            <span>Post-Reading Group Activity</span>
           </div>
           <p class="text-purple-900 leading-relaxed">
             <strong>Small-Group Discussion:</strong> นักศึกษาทำงานกลุ่มย่อยเพื่อเปรียบเทียบคำตอบจากการคาดเดา (Predictions) และอภิปรายประโยคใจความสำคัญ (Topic Sentences & Main Ideas) ที่ระบุได้ในบทอ่าน Passages 1–3
@@ -3008,21 +3143,20 @@ class ReadSkillsApp {
         <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-emerald-950 font-bold">
             <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
-            <span>Strategy Assessment & 70% Mastery Goal [S1-3.3, 6.3.2, 8.1]</span>
+            <span>Strategy Assessment & 70% Mastery Goal</span>
           </div>
           <p class="text-emerald-900 leading-relaxed">
-            <strong>Web-Based Strategy Quiz (30 ข้อ):</strong> ประเมินทักษะการสำรวจบทอ่าน (Previewing), การคาดเดา (Predicting), คำศัพท์ก่อนอ่าน (Vocabulary Preview) และการหาใจความสำคัญ (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินทักษะการสำรวจบทอ่าน (Previewing), การคาดเดา (Predicting), คำศัพท์ก่อนอ่าน (Vocabulary Preview) และการหาใจความสำคัญ (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
           </p>
         </div>
       </div>
     `;
 
     const bottomReview = `
-      <!-- Lesson Review & Wrap-up [S1-6.3.3 & 6.3.4] -->
       <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
         <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
           <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-          <span>Lesson Review & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย) [S1-6.3.3 & 6.3.4]</span>
+          <span>Lesson Review & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
           <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
@@ -3054,7 +3188,7 @@ class ReadSkillsApp {
 
           <div class="space-y-2">
             <span class="text-xs font-bold uppercase tracking-wider ${passed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-3 py-1 rounded-full">
-              ${passed ? 'Strategy Unit 1 Passed (&ge; 70%)! 🎉' : 'Keep Practicing! 💪'}
+              ${passed ? 'Strategy Unit 1 Passed (≥ 70%)! 🎉' : 'Keep Practicing! 💪'}
             </span>
             <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">${quizData.title}</h3>
             <p class="text-xs text-slate-500">${quizData.thaiTitle}</p>
@@ -3066,15 +3200,15 @@ class ReadSkillsApp {
             <div class="inline-flex items-center space-x-2 bg-white/15 px-4 py-1.5 rounded-full text-xs font-semibold">
               <span>Accuracy: ${percentage}%</span>
               <span>&bull;</span>
-              <span>Target: &ge; 70% (21/30) [Indicator 3.3]</span>
+              <span>Target: ≥ 70% (21/30)</span>
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
             ${quizData.passages.map((p, idx) => `
-              <div class="p-4 bg-white rounded-2xl border border-purple-100 shadow-sm flex items-center justify-between">
+              <div onclick="app.goToStrat1QuizQuestion(${idx}, 0)" class="p-4 bg-white hover:bg-purple-50/60 cursor-pointer transition rounded-2xl border border-purple-100 shadow-sm flex items-center justify-between">
                 <div class="pr-2">
-                  <p class="text-[10px] font-bold text-purple-700 uppercase">Passage ${idx + 1}</p>
+                  <p class="text-[10px] font-bold text-purple-700 uppercase">Passage Quiz ${idx + 1}</p>
                   <p class="text-xs font-bold text-slate-800 line-clamp-1">${p.title.replace(/^Passage \d+:\s*/, '')}</p>
                 </div>
                 <div class="text-right shrink-0">
@@ -3085,16 +3219,14 @@ class ReadSkillsApp {
             `).join('')}
           </div>
 
-          <div class="p-4 rounded-2xl ${passed ? 'bg-emerald-50 border border-emerald-200 text-emerald-900' : 'bg-amber-50 border border-amber-200 text-amber-900'} text-xs leading-relaxed">
-            ${passed
-              ? '🎉 <strong>ยอดเยี่ยมมากครับ!</strong> คุณผ่านเกณฑ์ตัวชี้วัด Indicator 3.3 (&ge; 70%) สำหรับกลยุทธ์การสำรวจบทอ่าน การคาดเดา คำศัพท์ก่อนอ่าน และการระบุประโยคใจความสำคัญในบทอ่านวิชาการ'
-              : '💡 <strong>คำแนะนำ:</strong> แนะนำให้ทบทวนกลยุทธ์การสังเกต Previewing Clues และตำแหน่งของ Topic Sentence ใน Step 1–7 แล้วลองทำแบบทดสอบอีกครั้งให้ผ่านเกณฑ์ 70% (21/30 ข้อ)'}
-          </div>
-
           <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+            <button onclick="app.goToStrat1QuizQuestion(0, 0)" class="w-full sm:w-auto px-6 py-3 bg-white border border-purple-200 hover:bg-purple-50 text-purple-800 font-bold rounded-xl transition flex items-center justify-center space-x-2 text-xs cursor-pointer">
+              <i data-lucide="layout-list" class="w-4 h-4"></i>
+              <span>กลับไปดูแยกแต่ละ Passage Quiz (1–3)</span>
+            </button>
             <button onclick="app.resetStrat1Quiz()" class="w-full sm:w-auto px-6 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 text-xs shadow-md cursor-pointer">
               <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
-              <span>ทำแบบทดสอบอีกครั้ง (Retake 30-Item Quiz)</span>
+              <span>ทำแบบทดสอบอีกครั้ง (Retake All)</span>
             </button>
             <button onclick="app.selectStrategyStep(0)" class="w-full sm:w-auto px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-xl transition flex items-center justify-center space-x-2 text-xs cursor-pointer">
               <i data-lucide="book-open" class="w-4 h-4"></i>
@@ -3110,21 +3242,35 @@ class ReadSkillsApp {
     const qIdx = state.questionIndex;
     const currentPassage = quizData.passages[pIdx];
     const currentQuestion = currentPassage.questions[qIdx];
-    const globalQuestionNum = pIdx * 10 + qIdx + 1;
     const answerKey = `${pIdx}-${qIdx}`;
     const existingAnswer = state.answers[answerKey];
     const isHighlightMode = currentQuestion.type === 'highlight';
+    const isPassageSubmitted = !!state.passageSubmitted[pIdx];
+    const allPassagesSubmitted = state.passageSubmitted.every(Boolean);
+
+    const countAnsweredInPassage = (idx) => {
+      let c = 0;
+      for (let i = 0; i < 10; i++) {
+        const a = state.answers[`${idx}-${i}`];
+        if (a && a.selected !== undefined && a.selected !== null) c++;
+      }
+      return c;
+    };
+    const doneInCurrent = countAnsweredInPassage(pIdx);
+    const passageProgressPercent = Math.round((doneInCurrent / 10) * 100);
+    const totalScoreSoFar = state.passageScores.reduce((a, b) => a + b, 0);
+    const submittedCount = state.passageSubmitted.filter(Boolean).length;
 
     return `
       <div class="space-y-6">
         ${topCards}
 
-        <!-- Top Header & Overall Progress (30 Questions) -->
+        <!-- Top Header -->
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-purple-100 pb-3">
           <div>
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">8. Strategy Quiz (30 ข้อ) [S1-3.3, 5.5, 5.6, 8.1]</span>
-              <span class="text-xs font-semibold text-slate-500">Passage ${pIdx + 1} of 3</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-pink-100 text-pink-800 uppercase tracking-wider">Passage Quiz ${pIdx + 1} (10 ข้อ)</span>
+              <span class="text-xs font-semibold text-slate-500">ชุดที่ ${pIdx + 1} จาก 3</span>
             </div>
             <h4 class="text-base sm:text-lg font-bold text-slate-900 mt-0.5">${currentPassage.title}</h4>
             <p class="text-xs text-slate-500">${currentPassage.thaiTitle}</p>
@@ -3132,10 +3278,13 @@ class ReadSkillsApp {
 
           <div class="flex items-center space-x-3 self-start sm:self-auto">
             <div class="bg-purple-50 border border-purple-200 px-3 py-1.5 rounded-xl text-right">
-              <span class="text-[10px] text-purple-600 block font-semibold">Quiz Score</span>
-              <span class="text-xs font-bold text-purple-900">${state.passageScores.reduce((a, b) => a + b, 0)} / ${totalQ}</span>
+              <span class="text-[10px] text-purple-600 block font-semibold">${isPassageSubmitted ? `คะแนนชุดที่ ${pIdx + 1}` : `ตอบแล้ว (ชุดที่ ${pIdx + 1})`}</span>
+              <span class="text-xs font-bold text-purple-900">${isPassageSubmitted ? `${state.passageScores[pIdx]} / 10 คะแนน` : `${doneInCurrent} / 10 ข้อ`}</span>
             </div>
-
+            <div class="bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl text-right">
+              <span class="text-[10px] text-emerald-700 block font-semibold">คะแนนรวม (${submittedCount}/3 ชุด)</span>
+              <span class="text-xs font-bold text-emerald-900">${totalScoreSoFar} / ${totalQ}</span>
+            </div>
             <button onclick="app.playStrat1QuizPassageAudio(${pIdx})" class="px-3 py-2 bg-purple-700 hover:bg-purple-800 text-white rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer shadow-sm" title="Listen to Passage Audio">
               <i data-lucide="volume-2" class="w-4 h-4"></i>
               <span class="hidden sm:inline">Listen</span>
@@ -3143,75 +3292,83 @@ class ReadSkillsApp {
           </div>
         </div>
 
+        <!-- Passage Quiz Tabs (1-3) -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          ${quizData.passages.map((p, idx) => {
+            const done = countAnsweredInPassage(idx);
+            const active = idx === pIdx;
+            const sub = !!state.passageSubmitted[idx];
+            return `
+              <button onclick="app.goToStrat1QuizQuestion(${idx}, 0)" class="p-2.5 rounded-xl border text-left transition cursor-pointer ${
+                active
+                  ? 'bg-purple-700 border-purple-700 text-white shadow-md'
+                  : sub
+                    ? 'bg-emerald-50/90 border-emerald-300 text-emerald-950 hover:bg-emerald-100/80'
+                    : 'bg-white border-purple-200 text-purple-900 hover:bg-purple-50'
+              }">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold">Passage Quiz ${idx + 1}</span>
+                  ${sub ? `<span class="text-[10px] font-extrabold px-1.5 py-0.5 rounded ${active ? 'bg-white/20 text-white' : 'bg-emerald-200/80 text-emerald-900'}">${state.passageScores[idx]}/10 ✓</span>` : ''}
+                </div>
+                <div class="text-[10px] mt-0.5 ${active ? 'text-purple-100' : sub ? 'text-emerald-700 font-semibold' : 'text-slate-500'}">
+                  ${sub ? 'ส่งและเฉลยแล้ว' : `ตอบแล้ว ${done}/10 ข้อ`}
+                </div>
+              </button>
+            `;
+          }).join('')}
+        </div>
+
         <!-- Progress Bar -->
         <div class="space-y-1">
           <div class="flex items-center justify-between text-[11px] font-semibold text-slate-500">
-            <span>Question ${qIdx + 1} of 10 in this Passage</span>
-            <span class="text-purple-700 font-bold">Overall: Question ${globalQuestionNum} of ${totalQ} (${Math.round((globalQuestionNum / totalQ) * 100)}%)</span>
+            <span>${isPassageSubmitted ? `Passage Quiz ${pIdx + 1} • ส่งคำตอบและเฉลยครบทั้ง 10 ข้อแล้ว` : `Passage Quiz ${pIdx + 1} • ข้อที่ ${qIdx + 1} จาก 10`}</span>
+            <span class="text-purple-700 font-bold">${isPassageSubmitted ? `ได้คะแนน ${state.passageScores[pIdx]} / 10 (${state.passageScores[pIdx] * 10}%)` : `ตอบแล้ว ${doneInCurrent} / 10 ข้อ (${passageProgressPercent}%)`}</span>
           </div>
           <div class="w-full bg-slate-200/80 rounded-full h-2 overflow-hidden">
-            <div class="bg-gradient-to-r from-purple-600 to-pink-500 h-2 rounded-full transition-all duration-300" style="width: ${Math.round((globalQuestionNum / totalQ) * 100)}%"></div>
+            <div class="bg-gradient-to-r ${isPassageSubmitted ? 'from-emerald-500 to-teal-500' : 'from-purple-600 to-pink-500'} h-2 rounded-full transition-all duration-300" style="width: ${isPassageSubmitted ? 100 : passageProgressPercent}%"></div>
           </div>
         </div>
 
-        <!-- Main Two-Column Quiz Layout: Reading Passage (Left) & Active Question (Right) -->
+        <!-- Main Two-Column Quiz Layout -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           
-          <!-- Left Column: Interactive Reading Passage (7 Cols) -->
-          <div class="lg:col-span-7 bg-slate-900 text-slate-100 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4 border border-slate-800">
+          <!-- Left Column: Interactive Reading Passage (6 Cols) -->
+          <div class="lg:col-span-6 bg-slate-900 text-slate-100 rounded-3xl p-5 sm:p-6 shadow-xl space-y-4 border border-slate-800 lg:sticky lg:top-24">
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div class="flex items-center space-x-2">
                 <i data-lucide="book-open" class="w-4 h-4 text-pink-400"></i>
                 <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Academic Passage ${pIdx + 1} of 3</span>
               </div>
-
-              <div class="flex items-center space-x-2">
-                <div class="flex items-center space-x-1 bg-slate-800 border border-slate-700 rounded-lg px-2 py-1">
-                  <i data-lucide="gauge" class="w-3.5 h-3.5 text-purple-300"></i>
-                  <select onchange="app.setAudioSpeed(this.value)" class="bg-transparent text-purple-200 text-[11px] font-semibold focus:outline-none cursor-pointer">
-                    <option value="0.65" ${this.audioSpeed === 0.65 ? 'selected' : ''} class="bg-slate-900 text-white">0.65x (ช้ามาก)</option>
-                    <option value="0.75" ${this.audioSpeed === 0.75 ? 'selected' : ''} class="bg-slate-900 text-white">0.75x (ช้าชัด ✨)</option>
-                    <option value="0.85" ${this.audioSpeed === 0.85 ? 'selected' : ''} class="bg-slate-900 text-white">0.85x (ปานกลาง)</option>
-                    <option value="1.0" ${this.audioSpeed === 1.0 ? 'selected' : ''} class="bg-slate-900 text-white">1.0x (ปกติ)</option>
-                  </select>
-                </div>
-
-                <button 
-                  onclick="app.playStrat1QuizPassageAudio(${pIdx})"
-                  class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}"
-                >
-                  <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-3.5 h-3.5"></i>
-                  <span>${this.isAudioPlaying ? 'Stop' : 'Listen'}</span>
-                </button>
-              </div>
+              <button 
+                onclick="app.playStrat1QuizPassageAudio(${pIdx})"
+                class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white rounded-lg text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer"
+              >
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                <span>Listen</span>
+              </button>
             </div>
 
-            ${isHighlightMode ? `
+            ${!isPassageSubmitted && isHighlightMode ? `
               <div class="p-3 rounded-xl bg-amber-500/20 border border-amber-400/40 text-amber-200 text-xs flex items-center space-x-2">
                 <i data-lucide="mouse-pointer-click" class="w-4 h-4 shrink-0 text-amber-300"></i>
                 <span><strong>Interactive Highlight Mode:</strong> คลิกเลือกประโยคในบทอ่านด้านล่างที่ตรงกับคำถามข้อนี้โดยตรง</span>
               </div>
             ` : ''}
 
-            <!-- Numbered Sentences -->
-            <div class="space-y-2 text-sm sm:text-base leading-relaxed font-serif">
+            <div class="space-y-2 text-sm sm:text-base leading-relaxed font-serif max-h-[500px] overflow-y-auto pr-1">
               ${currentPassage.sentences.map((sent, sIdx) => {
                 let sentStyle = 'hover:bg-slate-800/80 text-slate-200';
-                if (isHighlightMode && !existingAnswer) {
-                  sentStyle = 'hover:bg-amber-500/30 hover:text-white cursor-pointer border border-transparent hover:border-amber-400/50';
-                }
-                if (existingAnswer && isHighlightMode) {
-                  if (sIdx === currentQuestion.targetSentenceIndex) {
-                    sentStyle = 'bg-emerald-500/30 border border-emerald-400 text-white font-semibold';
-                  } else if (sIdx === existingAnswer.selected) {
-                    sentStyle = 'bg-rose-500/30 border border-rose-400 text-rose-200 line-through';
+                let clickAttr = '';
+                if (!isPassageSubmitted && isHighlightMode) {
+                  if (existingAnswer && existingAnswer.selected === sIdx) {
+                    sentStyle = 'bg-purple-500/40 border border-purple-300 text-white font-semibold cursor-pointer';
+                  } else {
+                    sentStyle = 'hover:bg-amber-500/30 hover:text-white cursor-pointer border border-transparent hover:border-amber-400/50';
                   }
+                  clickAttr = `onclick="app.answerStrat1QuizHighlight(${sIdx})"`;
                 }
                 return `
-                  <div 
-                    ${isHighlightMode && !existingAnswer ? `onclick="app.answerStrat1QuizHighlight(${sIdx})"` : ''}
-                    class="p-2.5 rounded-xl transition ${sentStyle}"
-                  >
+                  <div ${clickAttr} class="p-2.5 rounded-xl transition ${sentStyle}">
                     <span class="text-[11px] font-sans font-bold text-purple-400 mr-1.5">[${sIdx + 1}]</span>
                     <span>${sent}</span>
                   </div>
@@ -3220,142 +3377,205 @@ class ReadSkillsApp {
             </div>
           </div>
 
-          <!-- Right Column: Active Question Card (5 Cols) -->
-          <div class="lg:col-span-5 bg-white rounded-3xl p-5 sm:p-6 shadow-md border border-purple-100 space-y-5">
-            <div class="flex items-center justify-between">
-              <span class="px-3 py-1 rounded-full text-[11px] font-bold ${
-                currentQuestion.type === 'mc' ? 'bg-purple-100 text-purple-800' :
-                currentQuestion.type === 'highlight' ? 'bg-amber-100 text-amber-900' :
-                'bg-pink-100 text-pink-800'
-              }">
-                ${
-                  currentQuestion.type === 'mc' ? 'Multiple Choice' :
-                  currentQuestion.type === 'highlight' ? 'Highlight Sentence in Text' :
-                  'Vocabulary Fill-in-the-Blank'
-                }
-              </span>
-              <span class="text-xs font-bold text-slate-400">Question ${globalQuestionNum} of ${totalQ}</span>
-            </div>
+          <!-- Right Column: Active Question OR Submitted 10-Question Answer Key (6 Cols) -->
+          <div class="lg:col-span-6 space-y-4">
+            ${isPassageSubmitted ? `
+              <div class="bg-white p-5 rounded-3xl border border-emerald-200 shadow-md space-y-4">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl ${state.passageScores[pIdx] >= 7 ? 'bg-emerald-50 border border-emerald-200' : 'bg-amber-50 border border-amber-200'}">
+                  <div class="space-y-1">
+                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase ${state.passageScores[pIdx] >= 7 ? 'bg-emerald-200 text-emerald-900' : 'bg-amber-200 text-amber-900'}">
+                      ${state.passageScores[pIdx] >= 7 ? 'ผ่านเกณฑ์ (≥ 70%) 🎉' : 'ส่งคำตอบแล้ว 💪'}
+                    </span>
+                    <h5 class="text-base font-bold text-slate-900">ผลคะแนน Passage Quiz ${pIdx + 1}</h5>
+                    <p class="text-xs text-slate-600">${currentPassage.title}</p>
+                  </div>
+                  <div class="text-left sm:text-right shrink-0">
+                    <div class="text-3xl font-black ${state.passageScores[pIdx] >= 7 ? 'text-emerald-700' : 'text-amber-700'}">${state.passageScores[pIdx]} <span class="text-lg opacity-70">/ 10</span></div>
+                    <div class="text-[11px] font-bold text-slate-600">${state.passageScores[pIdx] * 10}% Accuracy</div>
+                  </div>
+                </div>
 
-            <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
-              ${currentQuestion.prompt}
-            </h5>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <button onclick="app.resetStrat1PassageQuiz(${pIdx})" class="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-xs cursor-pointer transition flex items-center space-x-1.5">
+                    <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                    <span>ทำ Passage Quiz ${pIdx + 1} ใหม่</span>
+                  </button>
+                  <div class="flex flex-wrap items-center gap-2">
+                    ${pIdx < 2 ? `
+                      <button onclick="app.goToStrat1QuizQuestion(${pIdx + 1}, 0)" class="px-4 py-2 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-sm flex items-center space-x-1.5">
+                        <span>ไปทำ Passage Quiz ${pIdx + 2} (10 ข้อ)</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                      </button>
+                    ` : ''}
+                    ${allPassagesSubmitted ? `
+                      <button onclick="app.showStrat1QuizSummary()" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs cursor-pointer transition shadow-sm flex items-center space-x-1.5">
+                        <span>ดูสรุปคะแนนรวม 30 ข้อ 🏆</span>
+                      </button>
+                    ` : ''}
+                  </div>
+                </div>
 
-            <!-- Question Body by Type -->
-            ${currentQuestion.type === 'mc' ? `
-              <div class="space-y-2.5">
-                ${currentQuestion.options.map((opt, oIdx) => {
-                  let btnStyle = 'border-purple-200 hover:border-purple-600 bg-purple-50/40 hover:bg-purple-50 text-slate-800';
-                  if (existingAnswer) {
-                    if (oIdx === currentQuestion.correctAnswer) {
-                      btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-950 font-bold ring-2 ring-emerald-200';
-                    } else if (oIdx === existingAnswer.selected && !existingAnswer.isCorrect) {
-                      btnStyle = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
-                    } else {
-                      btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-70';
+                <div class="space-y-2.5 pt-2 border-t border-slate-100">
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold text-purple-900">เฉลยคำตอบ Passage Quiz ${pIdx + 1} (ข้อ 1–10)</span>
+                    <span class="text-[11px] text-slate-500">ตอบถูก ${state.passageScores[pIdx]} จาก 10 ข้อ</span>
+                  </div>
+                  <div class="space-y-2.5 max-h-[540px] overflow-y-auto pr-1">
+                    ${currentPassage.questions.map((q, idx) => {
+                      const a = state.answers[`${pIdx}-${idx}`];
+                      const sel = a ? a.selected : undefined;
+                      const ok = this.isQuizAnswerCorrect(q, sel);
+                      return `
+                        <div class="p-3.5 rounded-xl border ${ok ? 'bg-emerald-50/70 border-emerald-200' : 'bg-rose-50/70 border-rose-200'} space-y-1.5 text-xs">
+                          <div class="flex items-start space-x-2">
+                            <span class="w-5 h-5 rounded-full shrink-0 flex items-center justify-center font-bold text-[10px] ${ok ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'}">${ok ? '✓' : '✕'}</span>
+                            <span class="font-bold text-slate-900 leading-snug">ข้อที่ ${idx + 1}. ${q.prompt}</span>
+                          </div>
+                          <div class="pl-7 space-y-1 leading-relaxed">
+                            <div class="${ok ? 'text-emerald-800' : 'text-rose-800'}"><strong>คำตอบของคุณ:</strong> ${this.getQuizAnswerText(q, currentPassage, sel)}</div>
+                            ${ok ? '' : `<div class="text-emerald-800"><strong>คำตอบที่ถูก:</strong> ${this.getQuizCorrectText(q, currentPassage)}</div>`}
+                            ${q.explanation ? `<div class="text-slate-600"><strong>คำอธิบาย:</strong> ${q.explanation}</div>` : ''}
+                          </div>
+                        </div>
+                      `;
+                    }).join('')}
+                  </div>
+                </div>
+              </div>
+            ` : `
+              <div class="bg-white rounded-3xl p-5 sm:p-6 shadow-md border border-purple-100 space-y-4">
+                <!-- Question Navigator (1-10) -->
+                <div class="flex flex-wrap gap-1.5">
+                  ${currentPassage.questions.map((qq, idx) => {
+                    const a = state.answers[`${pIdx}-${idx}`];
+                    const answered = a && a.selected !== undefined && a.selected !== null;
+                    const isCur = idx === qIdx;
+                    return `
+                      <button onclick="app.goToStrat1QuizQuestion(${pIdx}, ${idx})" class="w-8 h-8 rounded-lg text-[11px] font-bold transition cursor-pointer border ${answered ? 'bg-purple-600 text-white border-purple-600' : 'bg-white text-slate-600 border-slate-200 hover:border-purple-400'} ${isCur ? 'ring-2 ring-pink-400 ring-offset-1' : ''}">
+                        ${idx + 1}
+                      </button>
+                    `;
+                  }).join('')}
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <span class="px-3 py-1 rounded-full text-[11px] font-bold ${
+                    currentQuestion.type === 'mc' ? 'bg-purple-100 text-purple-800' :
+                    currentQuestion.type === 'highlight' ? 'bg-amber-100 text-amber-900' :
+                    'bg-pink-100 text-pink-800'
+                  }">
+                    ${
+                      currentQuestion.type === 'mc' ? 'Multiple Choice' :
+                      currentQuestion.type === 'highlight' ? 'Highlight Sentence in Text' :
+                      'Vocabulary Fill-in-the-Blank'
                     }
-                  }
-                  return `
-                    <button 
-                      ${!existingAnswer ? `onclick="app.answerStrat1QuizMC(${oIdx})"` : 'disabled'}
-                      class="w-full p-3.5 rounded-2xl border text-left text-xs sm:text-sm transition flex items-start space-x-3 cursor-pointer ${btnStyle}"
-                    >
-                      <span class="w-6 h-6 rounded-lg bg-white border border-purple-200 flex items-center justify-center font-bold text-xs text-purple-900 shrink-0 mt-0.5">
-                        ${String.fromCharCode(65 + oIdx)}
-                      </span>
-                      <span class="flex-1 leading-relaxed">${opt}</span>
+                  </span>
+                  <span class="text-xs font-bold text-purple-700">ข้อที่ ${qIdx + 1} / 10 • 1 Point</span>
+                </div>
+
+                <h5 class="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                  ${currentQuestion.prompt}
+                </h5>
+
+                ${currentQuestion.type === 'mc' ? `
+                  <div class="space-y-2.5">
+                    ${currentQuestion.options.map((opt, oIdx) => {
+                      const isSel = existingAnswer && existingAnswer.selected === oIdx;
+                      const btnStyle = isSel
+                        ? 'border-purple-600 bg-purple-50 text-purple-950 font-bold shadow-xs'
+                        : 'border-purple-200 hover:border-purple-600 bg-white hover:bg-purple-50/50 text-slate-800';
+                      return `
+                        <button 
+                          onclick="app.answerStrat1QuizMC(${oIdx})"
+                          class="w-full p-3.5 rounded-2xl border text-left text-xs sm:text-sm transition flex items-start space-x-3 cursor-pointer ${btnStyle}"
+                        >
+                          <span class="w-6 h-6 rounded-lg ${isSel ? 'bg-purple-700 text-white' : 'bg-purple-100 text-purple-900'} flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+                            ${String.fromCharCode(65 + oIdx)}
+                          </span>
+                          <span class="flex-1 leading-relaxed">${opt}</span>
+                        </button>
+                      `;
+                    }).join('')}
+                  </div>
+                ` : ''}
+
+                ${currentQuestion.type === 'highlight' ? `
+                  <div class="space-y-2">
+                    <p class="text-xs text-slate-600 bg-amber-50 border border-amber-200 p-3 rounded-xl">
+                      👈 คลิกเลือกประโยคคำตอบในบทอ่านด้านซ้ายมือ หรือเลือกหมายเลขประโยคด้านล่าง:
+                    </p>
+                    <div class="grid grid-cols-2 gap-2">
+                      ${currentPassage.sentences.map((s, sIdx) => {
+                        const isSel = existingAnswer && existingAnswer.selected === sIdx;
+                        const btnStyle = isSel
+                          ? 'border-purple-600 bg-purple-700 text-white font-bold shadow-sm'
+                          : 'border-amber-300 bg-amber-50/60 hover:bg-amber-100 text-amber-950';
+                        return `
+                          <button 
+                            onclick="app.answerStrat1QuizHighlight(${sIdx})"
+                            class="p-2.5 rounded-xl border text-xs font-semibold transition cursor-pointer ${btnStyle}"
+                          >
+                            Sentence [${sIdx + 1}]
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+
+                ${currentQuestion.type === 'fillBlank' ? `
+                  <div class="space-y-3">
+                    <div class="p-3.5 bg-slate-900 text-slate-100 rounded-2xl text-xs sm:text-sm font-serif italic leading-relaxed">
+                      "${currentQuestion.sentenceWithBlank}"
+                    </div>
+                    <div class="grid grid-cols-2 gap-2.5">
+                      ${currentQuestion.choices.map((word) => {
+                        const isSel = existingAnswer && existingAnswer.selected === word;
+                        const btnStyle = isSel
+                          ? 'border-purple-700 bg-purple-700 text-white font-bold shadow-sm'
+                          : 'border-pink-200 bg-pink-50/50 hover:bg-pink-100 text-pink-950 font-semibold';
+                        return `
+                          <button 
+                            onclick="app.answerStrat1QuizFillBlank('${String(word).replace(/'/g, "\\'")}')"
+                            class="p-3 rounded-xl border text-xs sm:text-sm transition cursor-pointer ${btnStyle}"
+                          >
+                            ${word}
+                          </button>
+                        `;
+                      }).join('')}
+                    </div>
+                  </div>
+                ` : ''}
+
+                <!-- Prev / Next / Submit Controls -->
+                <div class="pt-2 flex items-center justify-between gap-2 border-t border-slate-100">
+                  <button onclick="app.prevStrat1QuizQuestion()" ${qIdx === 0 ? 'disabled' : ''} class="px-4 py-2.5 rounded-xl text-xs font-bold transition flex items-center space-x-1.5 ${qIdx === 0 ? 'bg-slate-100 text-slate-300 cursor-default' : 'bg-slate-200/90 hover:bg-slate-300 text-slate-700 cursor-pointer'}">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                    <span>ข้อก่อนหน้า</span>
+                  </button>
+                  ${qIdx === 9 ? `
+                    <button onclick="app.submitStrat1PassageQuiz(${pIdx})" class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
+                      <span>ส่งคำตอบและดูเฉลย (10 ข้อ) 🏆</span>
                     </button>
-                  `;
-                }).join('')}
+                  ` : `
+                    <button onclick="app.nextStrat1QuizQuestion()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5">
+                      <span>ข้อถัดไป</span>
+                      <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                  `}
+                </div>
               </div>
-            ` : ''}
 
-            ${currentQuestion.type === 'highlight' ? `
-              <div class="space-y-2">
-                <p class="text-xs text-slate-600 bg-amber-50 border border-amber-200 p-3 rounded-xl">
-                  👈 คลิกเลือกประโยคคำตอบในบทอ่านด้านซ้ายมือ หรือเลือกหมายเลขประโยคด้านล่าง:
+              <!-- Submit Panel for this 10-Question Passage Quiz -->
+              <div class="p-4 bg-pink-50/70 border border-pink-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-[11px] text-pink-900 leading-relaxed">
+                  เมื่อทำครบ 10 ข้อของ <strong>Passage Quiz ${pIdx + 1}</strong> แล้ว กด <strong>ส่งคำตอบ</strong> เพื่อตรวจคะแนนและดูเฉลยของชุดนี้ทันที
                 </p>
-                <div class="grid grid-cols-2 gap-2">
-                  ${currentPassage.sentences.map((s, sIdx) => {
-                    let btnStyle = 'border-amber-300 bg-amber-50/60 hover:bg-amber-100 text-amber-950';
-                    if (existingAnswer) {
-                      if (sIdx === currentQuestion.targetSentenceIndex) {
-                        btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold';
-                      } else if (sIdx === existingAnswer.selected && !existingAnswer.isCorrect) {
-                        btnStyle = 'border-rose-400 bg-rose-50 text-rose-900';
-                      } else {
-                        btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
-                      }
-                    }
-                    return `
-                      <button 
-                        ${!existingAnswer ? `onclick="app.answerStrat1QuizHighlight(${sIdx})"` : 'disabled'}
-                        class="p-2.5 rounded-xl border text-xs font-semibold transition cursor-pointer ${btnStyle}"
-                      >
-                        Sentence [${sIdx + 1}]
-                      </button>
-                    `;
-                  }).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            ${currentQuestion.type === 'fillBlank' ? `
-              <div class="space-y-3">
-                <div class="p-3.5 bg-slate-900 text-slate-100 rounded-2xl text-xs sm:text-sm font-serif italic leading-relaxed">
-                  "${currentQuestion.sentenceWithBlank}"
-                </div>
-                <div class="grid grid-cols-2 gap-2.5">
-                  ${currentQuestion.choices.map((word) => {
-                    let btnStyle = 'border-pink-200 bg-pink-50/50 hover:bg-pink-100 text-pink-950 font-semibold';
-                    if (existingAnswer) {
-                      if (word.toLowerCase() === currentQuestion.correctWord.toLowerCase()) {
-                        btnStyle = 'border-emerald-500 bg-emerald-50 text-emerald-900 font-bold ring-2 ring-emerald-200';
-                      } else if (word === existingAnswer.selected && !existingAnswer.isCorrect) {
-                        btnStyle = 'border-rose-400 bg-rose-50 text-rose-900 line-through';
-                      } else {
-                        btnStyle = 'border-slate-200 bg-slate-50 text-slate-400 opacity-60';
-                      }
-                    }
-                    return `
-                      <button 
-                        ${!existingAnswer ? `onclick="app.answerStrat1QuizFillBlank('${word}')"` : 'disabled'}
-                        class="p-3 rounded-xl border text-xs sm:text-sm transition cursor-pointer ${btnStyle}"
-                      >
-                        ${word}
-                      </button>
-                    `;
-                  }).join('')}
-                </div>
-              </div>
-            ` : ''}
-
-            <!-- Immediate Feedback & Next Button -->
-            ${existingAnswer ? `
-              <div class="p-4 rounded-2xl ${existingAnswer.isCorrect ? 'bg-emerald-50 border border-emerald-200 text-emerald-950' : 'bg-rose-50 border border-rose-200 text-rose-950'} text-xs space-y-1.5">
-                <div class="font-bold flex items-center space-x-1.5 text-sm">
-                  <i data-lucide="${existingAnswer.isCorrect ? 'check-circle-2' : 'x-circle'}" class="w-4 h-4 ${existingAnswer.isCorrect ? 'text-emerald-600' : 'text-rose-600'}"></i>
-                  <span>${existingAnswer.isCorrect ? 'ถูกต้องครับ! (Correct! 🎉)' : 'ยังไม่ถูกต้อง (Incorrect 💡)'}</span>
-                </div>
-                <p class="leading-relaxed">${currentQuestion.explanation}</p>
-              </div>
-            ` : ''}
-
-            <!-- Bottom Controls / Next Button Only -->
-            <div class="pt-2 flex items-center justify-between border-t border-slate-100">
-              <div class="text-[11px] text-slate-400">
-                ${existingAnswer ? 'Ready to proceed' : 'Select an answer to continue'}
-              </div>
-              ${existingAnswer ? `
-                <button 
-                  onclick="app.nextStrat1QuizQuestion()"
-                  class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md flex items-center space-x-1.5"
-                >
-                  <span>${globalQuestionNum === totalQ ? 'Finish Quiz & View Score 🏆' : (qIdx === 9 ? 'Next Passage ➔' : 'Next Question ➔')}</span>
-                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                <button onclick="app.submitStrat1PassageQuiz(${pIdx})" class="w-full sm:w-auto shrink-0 px-5 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-bold rounded-xl text-xs transition cursor-pointer shadow-md">
+                  ส่งคำตอบชุดที่ ${pIdx + 1} (${doneInCurrent}/10)
                 </button>
-              ` : ''}
-            </div>
+              </div>
+            `}
           </div>
 
         </div>
@@ -3365,52 +3585,40 @@ class ReadSkillsApp {
   }
 
   selectStrat1QuizPassage(pIndex) {
-    this.strat1QuizState.passageIndex = pIndex;
-    this.strat1QuizState.questionIndex = 0;
+    this.goToStrat1QuizQuestion(pIndex, 0);
+  }
+
+  goToStrat1QuizQuestion(pIdx, qIdx) {
+    this.strat1QuizState.isCompleted = false;
+    this.strat1QuizState.passageIndex = pIdx;
+    this.strat1QuizState.questionIndex = qIdx;
+    this.navigate('strategies', true);
+  }
+
+  setStrat1QuizAnswer(selected) {
+    const state = this.strat1QuizState;
+    if (state.isCompleted) return;
+    if (Array.isArray(state.passageSubmitted) && state.passageSubmitted[state.passageIndex]) return;
+    state.answers[`${state.passageIndex}-${state.questionIndex}`] = { selected };
     this.navigate('strategies', true);
   }
 
   answerStrat1QuizMC(optIndex) {
-    const state = this.strat1QuizState;
-    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
-    if (state.answers[answerKey]) return;
-
-    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
-    const isCorrect = optIndex === currentQ.correctAnswer;
-
-    state.answers[answerKey] = { selected: optIndex, isCorrect };
-    if (isCorrect) {
-      state.passageScores[state.passageIndex]++;
-    }
-    this.navigate('strategies', true);
+    this.setStrat1QuizAnswer(optIndex);
   }
 
   answerStrat1QuizHighlight(sentIndex) {
-    const state = this.strat1QuizState;
-    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
-    if (state.answers[answerKey]) return;
-
-    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
-    const isCorrect = sentIndex === currentQ.targetSentenceIndex;
-
-    state.answers[answerKey] = { selected: sentIndex, isCorrect };
-    if (isCorrect) {
-      state.passageScores[state.passageIndex]++;
-    }
-    this.navigate('strategies', true);
+    this.setStrat1QuizAnswer(sentIndex);
   }
 
   answerStrat1QuizFillBlank(word) {
+    this.setStrat1QuizAnswer(word);
+  }
+
+  prevStrat1QuizQuestion() {
     const state = this.strat1QuizState;
-    const answerKey = `${state.passageIndex}-${state.questionIndex}`;
-    if (state.answers[answerKey]) return;
-
-    const currentQ = ReadSkillsData.strategyUnit1Quiz.passages[state.passageIndex].questions[state.questionIndex];
-    const isCorrect = word.trim().toLowerCase() === currentQ.correctWord.trim().toLowerCase();
-
-    state.answers[answerKey] = { selected: word, isCorrect };
-    if (isCorrect) {
-      state.passageScores[state.passageIndex]++;
+    if (state.questionIndex > 0) {
+      state.questionIndex--;
     }
     this.navigate('strategies', true);
   }
@@ -3419,18 +3627,69 @@ class ReadSkillsApp {
     const state = this.strat1QuizState;
     if (state.questionIndex < 9) {
       state.questionIndex++;
-    } else {
-      if (state.passageIndex < 2) {
-        state.passageIndex++;
-        state.questionIndex = 0;
-      } else {
-        state.isCompleted = true;
-        const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
-        localStorage.setItem('bru_strat1_quiz_score', totalScore);
-        state.lastScore = totalScore;
-      }
     }
-    this.navigate('strategies', !state.isCompleted);
+    this.navigate('strategies', true);
+  }
+
+  submitStrat1PassageQuiz(pIdx) {
+    const state = this.strat1QuizState;
+    const quizData = ReadSkillsData.strategyUnit1Quiz;
+    const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
+    const passage = quizData.passages[targetP];
+    if (!passage) return;
+
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false];
+    }
+
+    let unanswered = 0;
+    passage.questions.forEach((q, qIdx) => {
+      const a = state.answers[`${targetP}-${qIdx}`];
+      if (!a || a.selected === undefined || a.selected === null) unanswered++;
+    });
+    if (unanswered > 0 && !confirm(`ยังมี ${unanswered} ข้อใน Passage Quiz ${targetP + 1} ที่ยังไม่ได้ตอบ ต้องการส่งคำตอบเลยหรือไม่?`)) {
+      return;
+    }
+
+    let pScore = 0;
+    passage.questions.forEach((q, qIdx) => {
+      const key = `${targetP}-${qIdx}`;
+      const a = state.answers[key];
+      const ok = a ? this.isQuizAnswerCorrect(q, a.selected) : false;
+      if (a) a.isCorrect = ok;
+      if (ok) pScore++;
+    });
+
+    state.passageScores[targetP] = pScore;
+    state.passageSubmitted[targetP] = true;
+    state.passageIndex = targetP;
+
+    const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
+    localStorage.setItem('bru_strat1_quiz_score', totalScore);
+    state.lastScore = totalScore;
+    this.navigate('strategies', true);
+  }
+
+  resetStrat1PassageQuiz(pIdx) {
+    const state = this.strat1QuizState;
+    const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
+    if (!Array.isArray(state.passageSubmitted)) {
+      state.passageSubmitted = [false, false, false];
+    }
+    for (let i = 0; i < 10; i++) {
+      delete state.answers[`${targetP}-${i}`];
+    }
+    state.passageScores[targetP] = 0;
+    state.passageSubmitted[targetP] = false;
+    state.passageIndex = targetP;
+    state.questionIndex = 0;
+    state.isCompleted = false;
+    this.navigate('strategies', true);
+  }
+
+  showStrat1QuizSummary() {
+    this.strat1QuizState.isCompleted = true;
+    this.navigate('strategies', false);
   }
 
   resetStrat1Quiz() {
@@ -3440,6 +3699,7 @@ class ReadSkillsApp {
       questionIndex: 0,
       answers: {},
       passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
       currentFeedback: null,
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
