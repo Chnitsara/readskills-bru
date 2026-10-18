@@ -177,6 +177,8 @@ class ReadSkillsApp {
 
   init() {
     this.startOnlineTimer();
+    this.sanitizeDataTree(window.ReadSkillsData);
+    this.installBracketDetector();
     this.createSnowfall();
 
     // Close user dropdown when clicking outside
@@ -194,6 +196,101 @@ class ReadSkillsApp {
     } else {
       this.showAppLayout(false);
       this.renderLoginView();
+    }
+  }
+
+  /* ------------------- Bracketed-Number Detector & Auto-Sanitizer ------------------- */
+  sanitizeBracketedNumbersInText(str, isHtmlString = false) {
+    if (typeof str !== 'string' || !str.includes('[')) return str;
+    return str.replace(/\[([^\]]+)\]/g, (match, inner, offset, fullStr) => {
+      if (isHtmlString) {
+        const before = fullStr.slice(Math.max(0, offset - 15), offset);
+        if (/[-:]$/.test(before)) return match; // Preserve Tailwind classes e.g. text-[11px]
+      }
+      if (match === '[ _______ ]') return match; // Preserve fill-in-the-blank placeholder
+      const trimmed = inner.trim();
+      // 1. Pure section/unit codes like [U1-6.1], [S1-5.2], [5.1], [4.2.1], [1.1–1.4] -> remove completely
+      if (/^(?:[US]\d+[-.]?|\d+\.\d+)[\d.\s,–\-&A-Za-z•:]*$/i.test(trimmed)) {
+        return '';
+      }
+      // 2. Prefix tags with S1/U1 codes like [Previewing Strategy • S1-5.2] -> remove completely
+      if (/[US]\d+-\d+/i.test(trimmed)) {
+        return '';
+      }
+      // 3. Standalone sentence index [1], [2] -> (1), (2)
+      if (/^\d+$/.test(trimmed)) {
+        return `(${trimmed})`;
+      }
+      // 4. Any other bracket containing a digit or label -> unwrap brackets
+      if (/\d/.test(trimmed)) {
+        return trimmed;
+      }
+      return trimmed;
+    });
+  }
+
+  sanitizeDataTree(obj) {
+    if (!obj) return obj;
+    if (typeof obj === 'string') {
+      return this.sanitizeBracketedNumbersInText(obj, true);
+    }
+    if (Array.isArray(obj)) {
+      for (let i = 0; i < obj.length; i++) {
+        obj[i] = this.sanitizeDataTree(obj[i]);
+      }
+      return obj;
+    }
+    if (typeof obj === 'object') {
+      for (const k of Object.keys(obj)) {
+        obj[k] = this.sanitizeDataTree(obj[k]);
+      }
+      return obj;
+    }
+    return obj;
+  }
+
+  sanitizeDOMBrackets(root) {
+    if (!root || typeof document === 'undefined' || !document.createTreeWalker) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let current;
+    while ((current = walker.nextNode())) {
+      if (current.nodeValue && current.nodeValue.includes('[') && current.nodeValue !== '[ _______ ]') {
+        textNodes.push(current);
+      }
+    }
+    textNodes.forEach(node => {
+      const cleaned = this.sanitizeBracketedNumbersInText(node.nodeValue, false);
+      if (cleaned !== node.nodeValue) {
+        node.nodeValue = cleaned;
+        if (cleaned.trim() === '' && node.parentElement && node.parentElement.tagName === 'SPAN' && node.parentElement.childNodes.length === 1) {
+          node.parentElement.remove();
+        }
+      }
+    });
+  }
+
+  installBracketDetector() {
+    if (typeof document === 'undefined' || !document.body) return;
+    this.sanitizeDOMBrackets(document.body);
+    if (typeof MutationObserver !== 'undefined' && !this._bracketObserver) {
+      this._bracketObserver = new MutationObserver((mutations) => {
+        for (const m of mutations) {
+          if (m.type === 'childList') {
+            m.addedNodes.forEach(n => {
+              if (n.nodeType === 1) this.sanitizeDOMBrackets(n);
+              else if (n.nodeType === 3 && n.nodeValue && n.nodeValue.includes('[')) {
+                const cleaned = this.sanitizeBracketedNumbersInText(n.nodeValue, false);
+                if (cleaned !== n.nodeValue) n.nodeValue = cleaned;
+              }
+            });
+          } else if (m.type === 'characterData' && m.target && m.target.nodeValue && m.target.nodeValue.includes('[')) {
+            const cleaned = this.sanitizeBracketedNumbersInText(m.target.nodeValue, false);
+            if (cleaned !== m.target.nodeValue) m.target.nodeValue = cleaned;
+          }
+        }
+      });
+      this._bracketObserver.observe(document.body, { childList: true, subtree: true, characterData: true });
     }
   }
 
@@ -592,6 +689,7 @@ class ReadSkillsApp {
       }
     }
 
+    this.sanitizeDOMBrackets(container);
     if (window.lucide) lucide.createIcons();
     if (preserveScroll) {
       window.scrollTo(0, savedScrollY);
@@ -1048,7 +1146,7 @@ class ReadSkillsApp {
       }
 
       let cleaned = line.replace(/^[•\-\*]\s*/, '').trim();
-      const tagMatch = cleaned.match(/^\[(.*?)\]:?\s*(.*)$/);
+      const tagMatch = cleaned.match(/^\[(.*?)\]:?\s*(.*)$/) || cleaned.match(/^([^:]{2,65}):\s+(.+)$/);
 
       if (tagMatch) {
         const tagName = tagMatch[1];
