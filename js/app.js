@@ -1073,7 +1073,7 @@ class ReadSkillsApp {
       } else {
         let inlineStyled = cleaned.replace(/\[(.*?)\]/g, (match, p1) => {
           const s = getTagStyle(p1);
-          return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded ${s.badge} text-[11px] font-bold shadow-2xs mx-1"><i data-lucide="${s.icon}" class="w-3 h-3"></i>[${p1}]</span>`;
+          return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded ${s.badge} text-[11px] font-bold shadow-2xs mx-1"><i data-lucide="${s.icon}" class="w-3 h-3"></i>${p1}</span>`;
         });
         inlineStyled = inlineStyled.replace(/'([^']+)'/g, '<span class="highlighter-pen highlighter-yellow">“$1”</span>');
         items.push({
@@ -1107,7 +1107,7 @@ class ReadSkillsApp {
                 <div class="flex items-center space-x-2">
                   <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md ${item.style.badge} font-bold text-xs shadow-2xs tracking-wide">
                     <i data-lucide="${item.style.icon}" class="w-3.5 h-3.5"></i>
-                    <span>[${item.tagName}]</span>
+                    <span>${item.tagName}</span>
                   </span>
                 </div>
               ` : ''}
@@ -2902,9 +2902,9 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Strategy Unit 1 Interactive Methods & 30-Item Quiz [S1-5.5, 5.6, 6.1–6.3, 8.1] ------------------- */
+  /* ------------------- Strategy Unit 1 Interactive Methods & 30-Item Quiz ------------------- */
 
-  // 1. Diagnostic Pre-Test (3 Items) [S1-6.1.2]
+  // 1. Diagnostic Pre-Test (3 Items)
   submitStrat1Pretest(qNum, choiceIdx) {
     if (!this.strat1PretestAnswers) this.strat1PretestAnswers = {};
     this.strat1PretestAnswers[qNum] = choiceIdx;
@@ -2947,7 +2947,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 3`;
   }
 
-  // 2. Warm-up Activity [S1-6.1.3]
+  // 2. Warm-up Activity
   checkStrat1Warmup(selectedNum) {
     const fb = document.getElementById('s1-warmup-fb');
     if (!fb) return;
@@ -2961,7 +2961,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 3. Vocabulary Preview Activity (6 Items) [S1-5.5, 6.1.5]
+  // 3. Vocabulary Preview Activity (6 Items)
   submitStrat1Vocab(qNum, choiceIdx) {
     if (!this.strat1VocabAnswers) this.strat1VocabAnswers = {};
     this.strat1VocabAnswers[qNum] = choiceIdx;
@@ -3009,7 +3009,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 6`;
   }
 
-  // 4. Prediction Quiz Activity (4 Items) [S1-5.6, 6.1.6, 6.2.3]
+  // 4. Prediction Quiz Activity (4 Items)
   submitStrat1Pred(qNum, choiceIdx) {
     if (!this.strat1PredAnswers) this.strat1PredAnswers = {};
     this.strat1PredAnswers[qNum] = choiceIdx;
@@ -3055,7 +3055,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 4`;
   }
 
-  // 5. Interactive 3-Colour Highlighting Tool [S1-6.2.4, 6.2.5]
+  // 5. Interactive 3-Colour Highlighting Tool
   highlightStrat1Sentence(segNum, color) {
     const expected = {
       1: { role: 'yellow', exp: 'Segment (1) คือ Preview Clues (สีเหลือง) ได้แก่ Title, Subheading และ Bold Terms ที่ช่วยคาดเดาเนื้อหาก่อนอ่าน' },
@@ -3100,7 +3100,7 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightStrat1Sentence(Number(k), roles[k]));
   }
 
-  // 6. While-Reading Passages 1–3 Check [S1-6.2.2, 6.2.6, 7.5]
+  // 6. While-Reading Passages 1–3 Check
   submitStrat1PassageCheck(pNum, choiceIdx) {
     if (!this.strat1PassageAnswers) this.strat1PassageAnswers = {};
     this.strat1PassageAnswers[pNum] = choiceIdx;
@@ -3144,7 +3144,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 3 Completed`;
   }
 
-  // 7. Step 8: 30-Question Strategy Quiz Renderer & Handlers [S1-3.3, 4.2.5, 5.5, 5.6, 6.3.1–6.3.4, 8.1.1, 8.1.2]
+  // 7. Step 8: 30-Question Strategy Quiz Renderer & Handlers
   renderStrategyUnit1QuizStep(step) {
     setTimeout(() => {
       if (window.lucide) lucide.createIcons();
@@ -3397,7 +3397,7 @@ class ReadSkillsApp {
                 }
                 return `
                   <div ${clickAttr} class="p-2.5 rounded-xl transition ${sentStyle}">
-                    <span class="text-[11px] font-sans font-bold text-purple-400 mr-1.5">[${sIdx + 1}]</span>
+                    <span class="text-[11px] font-sans font-bold text-purple-400 mr-1.5">(${sIdx + 1})</span>
                     <span>${sent}</span>
                   </div>
                 `;
@@ -3543,7 +3543,7 @@ class ReadSkillsApp {
                             onclick="app.answerStrat1QuizHighlight(${sIdx})"
                             class="p-2.5 rounded-xl border text-xs font-semibold transition cursor-pointer ${btnStyle}"
                           >
-                            Sentence [${sIdx + 1}]
+                            Sentence (${sIdx + 1})
                           </button>
                         `;
                       }).join('')}
