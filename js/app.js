@@ -2121,7 +2121,7 @@ class ReadSkillsApp {
             <div class="flex items-center justify-between border-b border-slate-800 pb-2">
               <div class="flex items-center space-x-2">
                 <i data-lucide="file-text" class="w-4 h-4 text-purple-400"></i>
-                <span class="text-xs font-bold text-purple-300 uppercase tracking-wider">${currentPassage.genre}</span>
+                <span class="text-xs font-bold text-purple-300 uppercase tracking-wider">${currentPassage.genre || currentPassage.title || 'Reading Passage'}</span>
               </div>
               ${!isPassageSubmitted && currentQ.type === 'highlight' ? `
                 <span class="text-[10px] bg-pink-500/20 text-pink-300 border border-pink-500/40 px-2 py-0.5 rounded">
@@ -2607,11 +2607,11 @@ class ReadSkillsApp {
         <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/80 via-pink-100/60 to-purple-50/80 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber}</span>
-            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr}</span>
+            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr || 'A2–B1'}</span>
           </div>
           <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
           <p class="text-xs text-purple-800 font-semibold mb-1">
-            <strong>Scope (ขอบเขตเนื้อหา):</strong> ${unit.scope}
+            <strong>Scope (ขอบเขตเนื้อหา):</strong> ${unit.scope || unit.thaiTitle}
           </p>
         </div>
 
@@ -2657,8 +2657,9 @@ class ReadSkillsApp {
     const sIdx = this.currentStrategyStepIndex;
     const isFirst = sIdx === 0;
     const isLast = sIdx === 7;
+    const stepNum = step.stepNum || step.stepNumber || (sIdx + 1);
 
-    switch (step.stepNum) {
+    switch (stepNum) {
       // 1. What is the strategy? (คืออะไร?)
       case 1:
         return `
@@ -2681,7 +2682,7 @@ class ReadSkillsApp {
                 <i data-lucide="book-open" class="w-4 h-4 text-purple-700 shrink-0"></i>
                 <span>คำอธิบายภาษาไทย (Thai Explanation):</span>
               </strong>
-              <p class="leading-relaxed">${step.thaiExplanation}</p>
+              <p class="leading-relaxed">${step.thaiExplanation || step.thaiContent || ''}</p>
             </div>
 
             ${step.customHtml || ''}
@@ -2716,7 +2717,7 @@ class ReadSkillsApp {
                 <i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0"></i>
                 <span>ประโยชน์หลักและเหตุผลที่ต้องใช้ (Key Benefits):</span>
               </strong>
-              <p class="leading-relaxed">${step.thaiExplanation}</p>
+              <p class="leading-relaxed">${step.thaiExplanation || step.thaiContent || ''}</p>
             </div>
 
             ${step.customHtml || ''}
@@ -2754,7 +2755,7 @@ class ReadSkillsApp {
                 <i data-lucide="compass" class="w-4 h-4 text-purple-700 shrink-0"></i>
                 <span>สถานการณ์ที่เหมาะสมในการนำไปใช้:</span>
               </strong>
-              <p class="leading-relaxed">${step.thaiExplanation}</p>
+              <p class="leading-relaxed">${step.thaiExplanation || step.thaiContent || ''}</p>
             </div>
 
             ${step.customHtml || ''}

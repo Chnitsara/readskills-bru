@@ -552,73 +552,92 @@ window.ReadSkillsData = {
       "unitNumber": 4,
       "title": "References, Connectives, and Text Organization: Tracing Logical Connections",
       "thaiTitle": "คำอ้างอิง คำเชื่อม และโครงสร้างการจัดระเบียบบทอ่าน: การแกะรอยความเชื่อมโยงทางความคิด",
+      "cefr": "A2–B1",
+      "scope": "4 Types of Reference Words, 6 Functions of Connectives, 5 Text Organization Patterns & Text Mapping (6 Hours / 2 Weeks)",
       "icon": "git-branch",
       "color": "purple",
       "steps": [
         {
-          "stepNumber": 1,
+          "stepNum": 1,
           "title": "What is the strategy?",
-          "thaiTitle": "กลยุทธ์นี้คืออะไร? (คำอ้างอิง คำเชื่อม โครงสร้างบทอ่าน + กิจกรรมนำเข้าสู่บทเรียน)",
-          "content": "Understanding how sentences and paragraphs connect through Reference Words, Connectives, and Text Organization Patterns.",
-          "thaiContent": "การทำความเข้าใจความเชื่อมโยงของประโยคและย่อหน้าผ่านคำอ้างอิง (Reference Words) คำเชื่อม (Connectives) และรูปแบบการจัดระเบียบโครงสร้างบทอ่าน (Text Organization Patterns)",
+          "thaiTitle": "คืออะไร?",
+          "content": "Tracing Logical Connections helps readers understand how ideas are connected across sentences and paragraphs. Learners identify reference words (personal pronouns, demonstratives, relative pronouns, substitute words), connectives (addition, contrast, cause and effect, condition, sequence, examples), and common text organization patterns.",
+          "thaiExplanation": "กลยุทธ์บทที่ 4 ช่วยให้ผู้เรียนเข้าใจความเชื่อมโยงของประโยคและย่อหน้าผ่านคำอ้างอิง (Reference Words 4 ประเภท) คำเชื่อม (Connectives 6 หน้าที่) และรูปแบบการจัดระเบียบโครงสร้างบทอ่าน (Text Organization Patterns 5 รูปแบบ) ในระดับภาษาพื้นฐาน A2–B1",
           "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Unit Course Banner -->\n          <div style=\"background:linear-gradient(135deg,#3B0764 0%,#581C87 60%,#4338CA 100%); color:#fff; border-radius:16px; padding:1.25rem 1.4rem; box-shadow:0 10px 25px -5px rgba(88,28,135,0.28);\">\n            <div style=\"display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n              <span style=\"background:rgba(255,255,255,0.18); padding:0.25rem 0.7rem; border-radius:999px; font-size:0.75rem; font-weight:700; letter-spacing:0.04em;\">\n                UNIT 4 • COURSE 2031103 • CEFR A2–B1\n              </span>\n              <span style=\"font-size:0.78rem; color:#E9D5FF; font-weight:600;\">Time Allocation: 6 Hours (2 Weeks)</span>\n            </div>\n            <h3 style=\"font-size:1.22rem; font-weight:800; margin:0 0 0.25rem 0;\">Unit 4: References, Connectives, and Text Organization</h3>\n            <p style=\"font-size:0.9rem; color:#F3E8FF; margin:0;\">Topic: Tracing Logical Connections (การแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างการจัดระเบียบบทอ่านระดับพื้นฐาน A2–B1)</p>\n          </div>\n\n          <!-- 4 Pillars Overview -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:0.9rem;\">\n            <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#854D0E; font-size:0.92rem; margin-bottom:0.35rem;\">1. Reference Words (คำอ้างอิง)</div>\n              <p style=\"font-size:0.83rem; color:#713F12; line-height:1.55; margin:0;\">\n                คำที่ใช้แทนคำนามที่กล่าวไปแล้วหรือข้างหน้า เพื่อไม่ให้พูดซ้ำ เช่น <strong>Personal Pronouns</strong> (<em>it, they, them</em>), <strong>Demonstratives</strong> (<em>this, these</em>), <strong>Relative Pronouns</strong> (<em>who, which</em>) และ <strong>Substitute Words</strong> (<em>one, ones</em>)\n              </p>\n            </div>\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#166534; font-size:0.92rem; margin-bottom:0.35rem;\">2. Connectives & Transitions (คำเชื่อม)</div>\n              <p style=\"font-size:0.83rem; color:#14532D; line-height:1.55; margin:0;\">\n                คำสัญญาณบอกทิศทางความคิด 6 หน้าที่ ได้แก่ <strong>Addition</strong> (<em>also</em>), <strong>Contrast</strong> (<em>however</em>), <strong>Cause & Effect</strong> (<em>because, so</em>), <strong>Condition</strong> (<em>if</em>), <strong>Sequence</strong> (<em>first, next</em>) และ <strong>Examples</strong> (<em>for example</em>)\n              </p>\n            </div>\n            <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#1E40AF; font-size:0.92rem; margin-bottom:0.35rem;\">3. Text Organization Patterns (5 โครงสร้าง)</div>\n              <p style=\"font-size:0.83rem; color:#1E3A8A; line-height:1.55; margin:0;\">\n                การจัดระเบียบย่อหน้า 5 รูปแบบหลัก ได้แก่ <strong>Description</strong>, <strong>Sequence</strong>, <strong>Cause & Effect</strong>, <strong>Compare & Contrast</strong> และ <strong>Problem & Solution</strong>\n              </p>\n            </div>\n            <div style=\"background:#FDF4FF; border:1.5px solid #F0ABFC; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#701A75; font-size:0.92rem; margin-bottom:0.35rem;\">4. Text Mapping & 3-Colour Coding</div>\n              <p style=\"font-size:0.83rem; color:#4A044E; line-height:1.55; margin:0;\">\n                การสร้างผังมโนทัศน์ (Text Map) และไฮไลต์ 3 สี: <strong>สีเหลือง</strong> = Reference Words • <strong>สีเขียว</strong> = Connectives • <strong>สีฟ้า</strong> = Main Ideas & Text Organization\n              </p>\n            </div>\n          </div>\n\n          <!-- Interactive Diagnostic Pre-Test (3 Items) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">🧭 Pre-Reading Activity 1: Diagnostic Pre-Test (3 ข้อ)</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">ทดสอบความรู้พื้นฐานเรื่องคำอ้างอิง (References) คำเชื่อม (Connectives) และโครงสร้างบทอ่านก่อนเริ่มเรียน</p>\n              </div>\n              <span style=\"background:#F3E8FF; color:#6B21A8; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Pre-Reading Stage</span>\n            </div>\n\n            <div style=\"display:grid; gap:0.9rem;\">\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  1. \"Sara bought <u>two glass bottles</u> at the shop because <strong>they</strong> are easy to clean.\" คำว่า <strong>they</strong> อ้างอิงถึงคำนามใด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-1\" value=\"0\"> A. Sara (ซาร่า)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-1\" value=\"1\"> B. two glass bottles (ขวดแก้วสองใบ)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-1\" value=\"2\"> C. the shop (ร้านค้า)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  2. \"The rain was very heavy; <strong>therefore</strong>, the outdoor football match was cancelled.\" คำเชื่อม <strong>therefore</strong> แสดงความสัมพันธ์แบบใด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-2\" value=\"0\"> A. Contrast (ความขัดแย้ง)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-2\" value=\"1\"> B. Cause and Effect (เหตุและผล — ดังนั้น)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-2\" value=\"2\"> C. Condition (เงื่อนไข)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  3. ย่อหน้าที่เริ่มจากการอธิบายปัญหาขยะริมชายหาด แล้วเสนอวิธีแก้ไขโดยการตั้งถังขยะแยกประเภท จัดเป็นโครงสร้างบทอ่าน (Text Organization Pattern) แบบใด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-3\" value=\"0\"> A. Sequence (การเรียงลำดับเวลา)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-3\" value=\"1\"> B. Problem and Solution (การระบุปัญหาและแนวทางแก้ไข)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s4-pre-3\" value=\"2\"> C. Compare and Contrast (การเปรียบเทียบความเหมือนและความต่าง)</label>\n                </div>\n              </div>\n            </div>\n\n            <div style=\"margin-top:0.85rem; display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;\">\n              <button onclick=\"app.submitStrat4Pretest()\" style=\"background:#6D28D9; color:#fff; border:none; padding:0.55rem 1.1rem; border-radius:10px; font-size:0.83rem; font-weight:700; cursor:pointer;\">\n                ตรวจคำตอบ Pre-Test\n              </button>\n            </div>\n            <div id=\"strat4-pretest-feedback\" style=\"display:none; margin-top:0.75rem;\"></div>\n          </div>\n\n          <!-- Warm-up Activity: Missing Reference Words & Connectives Paragraph -->\n          <div style=\"background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:16px; padding:1.2rem;\">\n            <h4 style=\"font-size:0.98rem; font-weight:800; color:#92400E; margin:0 0 0.35rem 0;\">\n              💡 Pre-Reading Activity 2: Warm-Up — Paragraph with Missing References & Connectives\n            </h4>\n            <p style=\"font-size:0.82rem; color:#78350F; margin:0 0 0.75rem 0;\">\n              อ่านย่อหน้าด้านล่างที่มีช่องว่าง (เมื่อคำอ้างอิงและคำเชื่อมหายไป บทอ่านจะสะดุดและเข้าใจยาก) ลองเลือกคำที่ถูกต้องเพื่อเชื่อมประโยคให้สมบูรณ์:\n            </p>\n            <div style=\"background:#fff; border:1px dashed #F59E0B; border-radius:12px; padding:0.9rem; margin-bottom:0.8rem; font-size:0.88rem; color:#1E293B; line-height:1.65;\">\n              \"Many people enjoy riding <u>bicycles</u> in the morning park. <strong>(1) _______</strong> are quiet and do not make dirty smoke. <strong>(2) _______</strong>, riding a bicycle every day helps people stay strong and healthy.\"\n            </div>\n            <p style=\"font-size:0.84rem; font-weight:700; color:#78350F; margin:0 0 0.5rem 0;\">\n              ควรเติมคำอ้างอิง (Reference Word) และคำเชื่อม (Connective) คู่ใดลงในช่องว่าง (1) และ (2)?\n            </p>\n            <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.55rem;\">\n              <button onclick=\"app.checkStrat4Warmup(0)\" style=\"background:#fff; border:1.5px solid #F59E0B; border-radius:10px; padding:0.6rem 0.8rem; text-align:left; font-size:0.82rem; font-weight:600; color:#78350F; cursor:pointer;\">\n                A. (1) It • (2) However\n              </button>\n              <button onclick=\"app.checkStrat4Warmup(1)\" style=\"background:#fff; border:1.5px solid #F59E0B; border-radius:10px; padding:0.6rem 0.8rem; text-align:left; font-size:0.82rem; font-weight:600; color:#78350F; cursor:pointer;\">\n                B. (1) They • (2) In addition\n              </button>\n              <button onclick=\"app.checkStrat4Warmup(2)\" style=\"background:#fff; border:1.5px solid #F59E0B; border-radius:10px; padding:0.6rem 0.8rem; text-align:left; font-size:0.82rem; font-weight:600; color:#78350F; cursor:pointer;\">\n                C. (1) Who • (2) Unless\n              </button>\n            </div>\n            <div id=\"strat4-warmup-feedback\" style=\"display:none; margin-top:0.75rem;\"></div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 2,
+          "stepNum": 2,
           "title": "Why use it?",
-          "thaiTitle": "ทำไมต้องใช้กลยุทธ์นี้? (แนวคิดหลัก ตัวชี้วัด และจุดประสงค์การเรียนรู้)",
+          "thaiTitle": "ทำไมต้องใช้?",
           "content": "Tracing reference words, connectives, and text organization helps readers follow the flow of ideas smoothly without getting lost between sentences.",
-          "thaiContent": "การแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างการจัดระเบียบบทอ่านช่วยให้ผู้เรียนติดตามกระแสความคิดของผู้เขียนได้อย่างต่อเนื่อง ไม่หลงทางระหว่างประโยค และเข้าใจภาพรวมของบทอ่านได้แม่นยำขึ้น",
+          "thaiExplanation": "การแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างการจัดระเบียบบทอ่านช่วยให้ผู้เรียนติดตามกระแสความคิดของผู้เขียนได้อย่างต่อเนื่อง ไม่หลงทางระหว่างประโยค และเข้าใจภาพรวมของบทอ่านได้แม่นยำขึ้น",
           "customHtml": "\n        <div class=\"space-y-5\">\n          <!-- Core Concept -->\n          <div style=\"background:#F8FAFC; border-left:5px solid #7C3AED; border-radius:12px; padding:1.1rem 1.25rem;\">\n            <div style=\"font-size:0.76rem; font-weight:800; color:#6D28D9; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;\">\n              Core Concept (แนวคิดหลักประจำบทที่ 4)\n            </div>\n            <p style=\"font-size:0.88rem; color:#1E293B; line-height:1.65; margin:0 0 0.45rem 0;\">\n              This unit helps learners understand how ideas are connected in reading texts. Learners practice identifying <strong>reference words</strong>, <strong>connectives</strong>, and <strong>common text organization patterns</strong>. These skills help them follow the flow of ideas, understand relationships between sentences, and improve reading comprehension through interactive web activities.\n            </p>\n            <p style=\"font-size:0.83rem; color:#475569; line-height:1.6; margin:0;\">\n              <strong>สรุปภาษาไทย:</strong> บทเรียนนี้ช่วยให้ผู้เรียนเข้าใจวิธีที่ความคิดต่างๆ เชื่อมโยงเข้าด้วยกันในบทอ่าน ผู้เรียนจะได้ฝึกระบุคำอ้างอิง (Reference Words) คำเชื่อม (Connectives) และรูปแบบการจัดระเบียบโครงสร้างบทอ่าน (Text Organization Patterns) เพื่อติดตามลำดับความคิด เข้าใจความสัมพันธ์ระหว่างประโยค และพัฒนาความเข้าใจในการอ่านผ่านกิจกรรมบนเว็บแอปพลิเคชัน\n            </p>\n          </div>\n\n          <!-- Performance Indicators -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.15rem;\">\n            <h4 style=\"font-size:0.96rem; font-weight:800; color:#0F172A; margin:0 0 0.7rem 0;\">🎯 Performance Indicators (ตัวชี้วัดผลการเรียนรู้ 3 ด้าน)</h4>\n            <div style=\"display:grid; gap:0.6rem;\">\n              <div style=\"background:#F5F3FF; border:1px solid #DDD6FE; border-radius:10px; padding:0.75rem 0.9rem; font-size:0.84rem; color:#2E1065;\">\n                <strong>Indicator 1:</strong> Identify reference words and explain how connectives link ideas in reading texts. (ระบุคำอ้างอิงและอธิบายได้ว่าคำเชื่อมเชื่อมโยงความคิดในบทอ่านอย่างไร)\n              </div>\n              <div style=\"background:#EFF6FF; border:1px solid #BFDBFE; border-radius:10px; padding:0.75rem 0.9rem; font-size:0.84rem; color:#1E3A8A;\">\n                <strong>Indicator 2:</strong> Identify different text organization patterns by using structural clues and transition words. (ระบุรูปแบบการจัดระเบียบโครงสร้างบทอ่านโดยใช้คำสัญญาณและตัวชี้วัดโครงสร้าง)\n              </div>\n              <div style=\"background:#ECFDF5; border:1px solid #A7F3D0; border-radius:10px; padding:0.75rem 0.9rem; font-size:0.84rem; color:#064E3B;\">\n                <strong>Indicator 3:</strong> Complete the Reference Matching Task and Text Structure Practice activities on the Web-Based Reading Skills Application with at least <strong>70% accuracy</strong>. (ทำกิจกรรมจับคู่คำอ้างอิงและแบบฝึกหัดโครงสร้างบทอ่านบนเว็บแอปพลิเคชันได้ถูกต้องอย่างน้อยร้อยละ 70)\n              </div>\n            </div>\n          </div>\n\n          <!-- Terminal & Enabling Objectives -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:1rem;\">\n            <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:14px; padding:1.05rem;\">\n              <div style=\"font-weight:800; color:#854D0E; font-size:0.9rem; margin-bottom:0.4rem;\">🏁 Terminal Objective (จุดประสงค์ปลายทาง)</div>\n              <p style=\"font-size:0.84rem; color:#713F12; line-height:1.6; margin:0;\">\n                By the end of the unit, learners will be able to identify reference words, understand connectives, recognize text organization patterns, and complete the web-based learning activities.\n                <br><br>\n                <span style=\"color:#854D0E;\">เมื่อจบบทเรียน ผู้เรียนสามารถระบุคำอ้างอิง เข้าใจหน้าที่ของคำเชื่อม จำแนกรูปแบบโครงสร้างบทอ่าน และทำกิจกรรมการเรียนรู้บนเว็บได้อย่างครบถ้วน</span>\n              </p>\n            </div>\n\n            <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.05rem;\">\n              <div style=\"font-weight:800; color:#1E293B; font-size:0.9rem; margin-bottom:0.45rem;\">✅ Enabling Objectives (จุดประสงค์นำทาง 6 ข้อ)</div>\n              <ul style=\"font-size:0.81rem; color:#334155; line-height:1.55; margin:0; padding-left:1.15rem; display:grid; gap:0.3rem;\">\n                <li>Explain the functions of reference words and connectives in reading texts. (อธิบายหน้าที่ของคำอ้างอิงและคำเชื่อม)</li>\n                <li>Identify common text organization patterns: <em>cause and effect, compare and contrast, problem and solution, sequence, and description</em>. (ระบุโครงสร้างบทอ่านพื้นฐาน)</li>\n                <li>Identify the correct meaning of reference words and explain relationships shown by connectives. (หาคำนามที่คำอ้างอิงกล่าวถึงและอธิบายความสัมพันธ์ของคำเชื่อม)</li>\n                <li>Create simple text maps to show how ideas are organized. (สร้างผังมโนทัศน์ Text Map แสดงการจัดระเบียบความคิด)</li>\n                <li>Complete the Reference Matching Task and Text Structure Practice on the web application. (ทำกิจกรรมจับคู่คำอ้างอิงและฝึกโครงสร้างบทอ่านบนเว็บ)</li>\n                <li>Work responsibly and participate actively in pair and group activities. (ทำงานร่วมกับผู้อื่นอย่างมีความรับผิดชอบ)</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 3,
+          "stepNum": 3,
           "title": "When do I use it?",
-          "thaiTitle": "ควรใช้กลยุทธ์นี้เมื่อใด? (ระยะก่อนอ่าน ระหว่างอ่าน และหลังอ่าน)",
+          "thaiTitle": "ใช้เมื่อไหร่?",
           "content": "Use reference tracking, connective analysis, and text structure mapping across Pre-Reading, While-Reading, and Post-Reading stages.",
-          "thaiContent": "ใช้การแกะรอยคำอ้างอิง คำเชื่อม และการวิเคราะห์โครงสร้างบทอ่านอย่างเป็นระบบทั้งในระยะก่อนอ่าน (Pre-Reading) ระหว่างอ่าน (While-Reading) และหลังอ่าน (Post-Reading)",
+          "thaiExplanation": "ใช้การแกะรอยคำอ้างอิง คำเชื่อม และการวิเคราะห์โครงสร้างบทอ่านอย่างเป็นระบบทั้งในระยะก่อนอ่าน (Pre-Reading) ระหว่างอ่าน (While-Reading) และหลังอ่าน (Post-Reading)",
           "customHtml": "\n        <div class=\"space-y-5\">\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem;\">\n            <!-- Pre-Reading -->\n            <div style=\"background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:inline-block; background:#FEF3C7; color:#92400E; font-size:0.72rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px; margin-bottom:0.45rem;\">STAGE 1 • PRE-READING</div>\n              <h4 style=\"font-size:0.95rem; font-weight:800; color:#78350F; margin:0 0 0.4rem 0;\">ก่อนอ่าน: สำรวจคำเชื่อมและคาดเดาโครงสร้าง</h4>\n              <ul style=\"font-size:0.82rem; color:#78350F; line-height:1.55; margin:0; padding-left:1.1rem; display:grid; gap:0.3rem;\">\n                <li>สังเกตว่าหากขาด Reference Words และ Connectives ประโยคจะขาดความต่อเนื่องอย่างไร</li>\n                <li>กวาดสายตาดูคำสัญญาณ (Transition Signals) เช่น <em>First, Next, Because, However, Problem, Solution</em> เพื่อคาดเดาว่าย่อหน้าจัดโครงสร้างแบบใด</li>\n                <li>ฝึกจับคู่คำสรรพนามกับคำนามต้นทางใน <strong>Reference Matching Task</strong></li>\n              </ul>\n            </div>\n\n            <!-- While-Reading -->\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:inline-block; background:#DCFCE7; color:#166534; font-size:0.72rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px; margin-bottom:0.45rem;\">STAGE 2 • WHILE-READING</div>\n              <h4 style=\"font-size:0.95rem; font-weight:800; color:#14532D; margin:0 0 0.4rem 0;\">ระหว่างอ่าน: ไฮไลต์ 3 สีและแกะรอยคำอ้างอิง</h4>\n              <ul style=\"font-size:0.82rem; color:#14532D; line-height:1.55; margin:0; padding-left:1.1rem; display:grid; gap:0.3rem;\">\n                <li><strong style=\"background:#FEF08A; padding:0 0.3rem; border-radius:4px;\">Highlight สีเหลือง (Yellow):</strong> คำอ้างอิง (Reference words เช่น <em>it, they, this, who, one</em>) แล้วโยงกลับไปหาคำนามต้นทาง</li>\n                <li><strong style=\"background:#BBF7D0; padding:0 0.3rem; border-radius:4px;\">Highlight สีเขียว (Green):</strong> คำเชื่อมและคำเปลี่ยนผ่าน (Connectives & transitions)</li>\n                <li><strong style=\"background:#BFDBFE; padding:0 0.3rem; border-radius:4px;\">Highlight สีฟ้า (Blue):</strong> ใจความสำคัญและรูปแบบโครงสร้างบทอ่าน (Main ideas & text organization)</li>\n              </ul>\n            </div>\n\n            <!-- Post-Reading -->\n            <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:inline-block; background:#DBEAFE; color:#1E40AF; font-size:0.72rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px; margin-bottom:0.45rem;\">STAGE 3 • POST-READING</div>\n              <h4 style=\"font-size:0.95rem; font-weight:800; color:#1E3A8A; margin:0 0 0.4rem 0;\">หลังอ่าน: สร้าง Text Map และประเมินผล</h4>\n              <ul style=\"font-size:0.82rem; color:#1E3A8A; line-height:1.55; margin:0; padding-left:1.1rem; display:grid; gap:0.3rem;\">\n                <li>สร้างผังมโนทัศน์ (<strong>Text Map</strong>) แสดงความเชื่อมโยงของความคิด คำอ้างอิง และคำเชื่อม</li>\n                <li>ตรวจสอบความแม่นยำในการจำแนกโครงสร้างบทอ่าน 5 รูปแบบ</li>\n                <li>ทำแบบทดสอบท้ายบท <strong>Text Structure & Cohesion Quiz (30 ข้อ)</strong> ให้ผ่านเกณฑ์ 70%</li>\n              </ul>\n            </div>\n          </div>\n\n          <!-- Practical Triggers in A2-B1 Reading -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.1rem;\">\n            <h4 style=\"font-size:0.92rem; font-weight:800; color:#1E293B; margin:0 0 0.5rem 0;\">🔍 สถานการณ์จริงที่ควรใช้กลยุทธ์นี้ทันที (ระดับ A2–B1)</h4>\n            <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0.75rem; font-size:0.82rem; color:#334155;\">\n              <div style=\"background:#F8FAFC; padding:0.75rem; border-radius:10px; border:1px solid #E2E8F0;\">\n                <strong>1. เมื่อเจอคำว่า it, they, this, these, one:</strong> หยุดถามตัวเองทันทีว่า \"คำนี้แทนคำนามเอกพจน์หรือพหูพจน์ตัวไหนในประโยคก่อนหน้า?\"\n              </div>\n              <div style=\"background:#F8FAFC; padding:0.75rem; border-radius:10px; border:1px solid #E2E8F0;\">\n                <strong>2. เมื่อเจอคำเชื่อมกลางย่อหน้า:</strong> เช่น <em>However, Therefore, For example</em> ให้ดูว่าผู้เขียนกำลังจะแย้ง บอกผลลัพธ์ หรือยกตัวอย่าง\n              </div>\n              <div style=\"background:#F8FAFC; padding:0.75rem; border-radius:10px; border:1px solid #E2E8F0;\">\n                <strong>3. เมื่อต้องการจับภาพรวมทั้งบทความ:</strong> ดูคำสัญญาณเพื่อระบุว่าเป็นเรื่องเล่าตามลำดับขั้น (Sequence) เปรียบเทียบ (Compare/Contrast) หรือแก้ปัญหา (Problem/Solution)\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 4,
+          "stepNum": 4,
           "title": "How do I use it?",
-          "thaiTitle": "ใช้กลยุทธ์นี้อย่างไร? (4 ประเภทคำอ้างอิง + 6 คำเชื่อม + 5 โครงสร้าง + กิจกรรมจับคู่คำอ้างอิง)",
-          "content": "Learn the 4 types of reference words, 6 functions of connectives, and 5 text organization patterns, then complete the Reference Matching Task.",
-          "thaiContent": "เรียนรู้คำอ้างอิง 4 ประเภท คำเชื่อม 6 หน้าที่ และโครงสร้างบทอ่าน 5 รูปแบบ พร้อมทำกิจกรรมจับคู่คำอ้างอิง (Reference Matching Task)",
+          "thaiTitle": "ใช้อย่างไร?",
+          "content": "Follow these four steps to trace reference words, connectives, and text organization patterns, then practice with the Reference Matching Task.",
+          "checklist": [
+            "Step 1 (Spot Reference Words): Notice pronouns (it, they, them), demonstratives (this, these), relative pronouns (who, which), and substitute words (one, ones) and trace them back to their noun referents.",
+            "Step 2 (Identify Connective Signals): Check transition words to see if the next sentence adds information, contrasts, shows cause and effect, gives a condition, or lists a sequence.",
+            "Step 3 (Recognize the Text Organization Pattern): Use the transition signals to classify the passage as Description, Sequence, Cause & Effect, Compare & Contrast, or Problem & Solution.",
+            "Step 4 (Build a Simple Text Map): Connect the main idea, supporting points, reference links, and transitions into a clear visual flow."
+          ],
           "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Part 1: 4 Types of Reference Words -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem;\">\n            <h4 style=\"font-size:1rem; font-weight:800; color:#0F172A; margin:0 0 0.35rem 0;\">\n              📌 Part 1: 4 Types of Reference Words (คำอ้างอิง 4 ประเภทหลัก)\n            </h4>\n            <p style=\"font-size:0.82rem; color:#475569; margin:0 0 0.85rem 0;\">\n              เวลาอ่านพบคำอ้างอิง ให้ดูพจน์ (เอกพจน์/พหูพจน์) และชนิดของคำนามข้างหน้า (คน/สิ่งของ/สถานที่/แนวคิดทั้งประโยค):\n            </p>\n\n            <div style=\"overflow-x:auto;\">\n              <table style=\"width:100%; border-collapse:collapse; font-size:0.82rem;\">\n                <thead>\n                  <tr style=\"background:#FEF9C3; color:#854D0E; text-align:left;\">\n                    <th style=\"padding:0.65rem 0.8rem; border:1px solid #FDE047;\">ประเภทคำอ้างอิง (Type)</th>\n                    <th style=\"padding:0.65rem 0.8rem; border:1px solid #FDE047;\">คำที่พบบ่อย (Common Words)</th>\n                    <th style=\"padding:0.65rem 0.8rem; border:1px solid #FDE047;\">ตัวอย่างประโยค A2–B1 และการโยงความหมาย</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr style=\"background:#fff;\">\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0; font-weight:700; color:#854D0E;\">1. Personal Pronouns<br><span style=\"font-weight:400; font-size:0.76rem;\">(บุรุษสรรพนาม)</span></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\"><code>he, she, it, they, him, her, them, his, their, its</code></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\">\"<u>Fresh apples</u> are on the table. <strong>They</strong> are sweet.\"<br><span style=\"color:#047857;\">→ <strong>They</strong> = Fresh apples (พหูพจน์)</span></td>\n                  </tr>\n                  <tr style=\"background:#F8FAFC;\">\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0; font-weight:700; color:#854D0E;\">2. Demonstratives<br><span style=\"font-weight:400; font-size:0.76rem;\">(คำบ่งชี้เฉพาะ)</span></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\"><code>this, that, these, those</code></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\">\"<u>Walking thirty minutes a day</u> strengthens the heart. <strong>This habit</strong> is easy to start.\"<br><span style=\"color:#047857;\">→ <strong>This habit</strong> = Walking thirty minutes a day</span></td>\n                  </tr>\n                  <tr style=\"background:#fff;\">\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0; font-weight:700; color:#854D0E;\">3. Relative Pronouns<br><span style=\"font-weight:400; font-size:0.76rem;\">(ประพันธสรรพนาม)</span></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\"><code>who, which, that, where</code></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\">\"The <u>baker</u> <strong>who</strong> lives next door wakes up at 4 AM.\"<br><span style=\"color:#047857;\">→ <strong>who</strong> = The baker (คน)</span></td>\n                  </tr>\n                  <tr style=\"background:#F8FAFC;\">\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0; font-weight:700; color:#854D0E;\">4. Substitute Words<br><span style=\"font-weight:400; font-size:0.76rem;\">(คำแทนคำนาม/กริยา)</span></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\"><code>one, ones, do so, such</code></td>\n                    <td style=\"padding:0.65rem 0.8rem; border:1px solid #E2E8F0;\">\"My old <u>umbrella</u> broke, so I bought a new <strong>one</strong>.\"<br><span style=\"color:#047857;\">→ <strong>one</strong> = umbrella (ร่มคันใหม่)</span></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n\n          <!-- Part 2: 6 Connective Functions & 5 Text Organization Patterns -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:1rem;\">\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:16px; padding:1.15rem;\">\n              <h4 style=\"font-size:0.95rem; font-weight:800; color:#14532D; margin:0 0 0.55rem 0;\">\n                🔗 Part 2A: 6 Functions of Connectives (คำเชื่อม 6 หน้าที่)\n              </h4>\n              <div style=\"display:grid; gap:0.45rem; font-size:0.81rem; color:#14532D;\">\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>1. Addition (เสริมข้อมูล):</strong> <em>and, also, in addition, furthermore</em>\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>2. Contrast (ขัดแย้ง/ต่างกัน):</strong> <em>but, however, on the other hand, although</em>\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>3. Cause & Effect (เหตุและผล):</strong> <em>because, since, so, therefore, as a result</em>\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>4. Condition (เงื่อนไข):</strong> <em>if, unless, as long as</em>\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>5. Sequence (ลำดับขั้นตอน):</strong> <em>first, second, next, then, finally</em>\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>6. Examples (ยกตัวอย่าง):</strong> <em>for example, for instance, such as</em>\n                </div>\n              </div>\n            </div>\n\n            <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:16px; padding:1.15rem;\">\n              <h4 style=\"font-size:0.95rem; font-weight:800; color:#1E3A8A; margin:0 0 0.55rem 0;\">\n                🗂️ Part 2B: 5 Common Text Organization Patterns (5 โครงสร้างบทอ่าน)\n              </h4>\n              <div style=\"display:grid; gap:0.45rem; font-size:0.81rem; color:#1E3A8A;\">\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BFDBFE;\">\n                  <strong>1. Description (การบรรยายรายละเอียด):</strong> อธิบายลักษณะ คุณสมบัติ หรือองค์ประกอบของสิ่งใดสิ่งหนึ่ง (<em>characteristics, features, includes, such as</em>)\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BFDBFE;\">\n                  <strong>2. Sequence (การเรียงลำดับขั้นตอน/เวลา):</strong> เล่าขั้นตอนการทำสิ่งต่างๆ ตามลำดับก่อน-หลัง (<em>first, second, next, then, finally</em>)\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BFDBFE;\">\n                  <strong>3. Cause and Effect (เหตุและผล):</strong> อธิบายสาเหตุที่ทำให้เกิดผลลัพธ์ตามมา (<em>because, leads to, therefore, as a result</em>)\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BFDBFE;\">\n                  <strong>4. Compare and Contrast (เปรียบเทียบเหมือน-ต่าง):</strong> เปรียบเทียบสิ่งสองสิ่งว่าคล้ายหรือต่างกันอย่างไร (<em>both, similarly, however, on the other hand</em>)\n                </div>\n                <div style=\"background:#fff; padding:0.55rem 0.75rem; border-radius:8px; border:1px solid #BFDBFE;\">\n                  <strong>5. Problem and Solution (ปัญหาและทางแก้):</strong> ระบุปัญหาที่เกิดขึ้นพร้อมเสนอวิธีแก้ไข (<em>problem, issue, difficulty, solution, to solve this</em>)\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Part 3: Interactive Reference Matching Task (6 Items) -->\n          <div style=\"background:#F5F3FF; border:1.5px solid #C4B5FD; border-radius:16px; padding:1.2rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#4C1D95; margin:0;\">🎯 Part 3: Interactive Reference Matching Task (6 ข้อ)</h4>\n                <p style=\"font-size:0.8rem; color:#5B21B6; margin:0.15rem 0 0 0;\">เลือกคำนามหรือวลีต้นทาง (Referent) ที่คำอ้างอิงตัวหนาในแต่ละข้อกล่าวถึงให้ถูกต้อง (เกณฑ์ผ่าน 70%)</p>\n              </div>\n              <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Target: ≥ 70% Accuracy</span>\n            </div>\n\n            <div style=\"display:grid; gap:0.75rem;\">\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 1 (Personal Pronoun):</strong> \"Mr. Somchai grows <u>sweet mangoes</u> behind his house, and he sells <strong>them</strong> at the Sunday market.\"\n                </p>\n                <select id=\"s4-ref-1\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"them\" อ้างอิงถึงข้อใด? --</option>\n                  <option value=\"0\">sweet mangoes (มะม่วงรสหวาน)</option>\n                  <option value=\"1\">Mr. Somchai (คุณสมชาย)</option>\n                  <option value=\"2\">the Sunday market (ตลาดนัดวันอาทิตย์)</option>\n                </select>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 2 (Demonstrative):</strong> \"<u>Drinking warm milk before bed</u> helps the body relax. Doctors often recommend <strong>this simple habit</strong> to people who sleep late.\"\n                </p>\n                <select id=\"s4-ref-2\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"this simple habit\" อ้างอิงถึงข้อใด? --</option>\n                  <option value=\"0\">Doctors (คุณหมอ)</option>\n                  <option value=\"1\">Drinking warm milk before bed (การดื่มนมอุ่นก่อนนอน)</option>\n                  <option value=\"2\">People who sleep late (คนที่นอนดึก)</option>\n                </select>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 3 (Relative Pronoun):</strong> \"The town built a <u>new bicycle path</u> <strong>which</strong> runs safely along the river.\"\n                </p>\n                <select id=\"s4-ref-3\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"which\" อ้างอิงถึงข้อใด? --</option>\n                  <option value=\"0\">the town (เมือง)</option>\n                  <option value=\"1\">the river (แม่น้ำ)</option>\n                  <option value=\"2\">a new bicycle path (ทางปั่นจักรยานสายใหม่)</option>\n                </select>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 4 (Substitute Word):</strong> \"Green bananas are still hard, so my mother prefers to buy ripe yellow <strong>ones</strong>.\"\n                </p>\n                <select id=\"s4-ref-4\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"ones\" ใช้แทนคำนามใด? --</option>\n                  <option value=\"0\">mothers (คุณแม่)</option>\n                  <option value=\"1\">bananas (กล้วย)</option>\n                  <option value=\"2\">markets (ตลาด)</option>\n                </select>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 5 (Personal Pronoun):</strong> \"When the <u>portable fan</u> is fully charged, <strong>it</strong> can run for eight hours.\"\n                </p>\n                <select id=\"s4-ref-5\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"it\" อ้างอิงถึงข้อใด? --</option>\n                  <option value=\"0\">the portable fan (พัดลมพกพา)</option>\n                  <option value=\"1\">eight hours (แปดชั่วโมง)</option>\n                  <option value=\"2\">the battery charger (สายชาร์จ)</option>\n                </select>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #DDD6FE; border-radius:12px; padding:0.85rem;\">\n                <p style=\"font-size:0.85rem; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  <strong>Item 6 (Relative Pronoun):</strong> \"We thanked the <u>friendly nurse</u> <strong>who</strong> helped our grandmother at the clinic.\"\n                </p>\n                <select id=\"s4-ref-6\" style=\"width:100%; padding:0.45rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n                  <option value=\"\">-- คำว่า \"who\" อ้างอิงถึงข้อใด? --</option>\n                  <option value=\"0\">the clinic (คลินิก)</option>\n                  <option value=\"1\">the friendly nurse (พยาบาลที่ใจดี)</option>\n                  <option value=\"2\">our grandmother (คุณยายของเรา)</option>\n                </select>\n              </div>\n            </div>\n\n            <div style=\"margin-top:0.9rem;\">\n              <button onclick=\"app.submitStrat4RefTask()\" style=\"background:#5B21B6; color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:10px; font-size:0.84rem; font-weight:700; cursor:pointer;\">\n                ตรวจคำตอบ Reference Matching Task (6 ข้อ)\n              </button>\n            </div>\n            <div id=\"strat4-reftask-feedback\" style=\"display:none; margin-top:0.8rem;\"></div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 5,
+          "stepNum": 5,
           "title": "Worked Example",
-          "thaiTitle": "ตัวอย่างการวิเคราะห์คำอ้างอิง คำเชื่อม และผังโครงสร้างบทอ่าน (Guided Reading & Text Mapping)",
-          "content": "See how a skilled reader traces reference words (Yellow), connectives (Green), and text organization (Blue), then builds a visual Text Map.",
-          "thaiContent": "ดูตัวอย่างการแกะรอยคำอ้างอิง (สีเหลือง) คำเชื่อม (สีเขียว) และโครงสร้างบทอ่าน (สีฟ้า) พร้อมการสร้างผัง Text Map จากบทอ่านระดับ A2–B1",
+          "thaiTitle": "ตัวอย่างการใช้",
+          "content": "Read and listen to the A2–B1 passage \"Reducing Plastic Waste at the Town Market\" to see how Yellow (Reference Words), Green (Connectives), and Blue (Main Ideas & Text Organization) work together.",
+          "annotated": "Yellow = Reference Words (them, this problem, their, they, one, it) | Green = Connectives (because, before, As a result, If, Therefore) | Blue = Main Idea & Problem-Solution Pattern",
+          "takeaway": "Every reference word points clearly to a noun earlier in the text, and the connectives guide the reader from the plastic problem to the cloth-bag solution.",
           "customHtml": "\n        <div class=\"space-y-6\">\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.25rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.74rem; font-weight:800; padding:0.2rem 0.6rem; border-radius:999px;\">GUIDED READING & TEXT MAPPING DEMO • CEFR A2–B1</span>\n                <h4 style=\"font-size:1.05rem; font-weight:800; color:#0F172A; margin:0.35rem 0 0 0;\">Passage: Reducing Plastic Waste at the Town Market</h4>\n              </div>\n              <button onclick=\"app.speakText('Every weekend, the town market faces a serious plastic waste problem because shoppers use thousands of plastic bags. Most of them are used for only twenty minutes before people throw them in the trash. As a result, plastic bags often block street drains during heavy rain. To solve this problem, the market committee started a Cloth Bag Sharing Station at the main gate. If shoppers forget their own bags, they can borrow a clean cloth one for free and return it next week. Therefore, plastic trash at the market has dropped by half.')\" style=\"background:#6D28D9; color:#fff; border:none; padding:0.5rem 0.95rem; border-radius:10px; font-size:0.8rem; font-weight:700; cursor:pointer;\">\n                🔊 Listen to Passage\n              </button>\n            </div>\n\n            <!-- 3-Colour Legend -->\n            <div style=\"display:flex; flex-wrap:wrap; gap:0.6rem; margin-bottom:0.85rem; font-size:0.78rem; font-weight:700;\">\n              <span style=\"background:#FEF08A; color:#713F12; padding:0.25rem 0.65rem; border-radius:999px; border:1px solid #FACC15;\">🟨 Yellow = Reference Words</span>\n              <span style=\"background:#BBF7D0; color:#14532D; padding:0.25rem 0.65rem; border-radius:999px; border:1px solid #4ADE80;\">🟩 Green = Connectives & Transitions</span>\n              <span style=\"background:#BFDBFE; color:#1E3A8A; padding:0.25rem 0.65rem; border-radius:999px; border:1px solid #60A5FA;\">🟦 Blue = Main Idea & Text Organization (Problem & Solution)</span>\n            </div>\n\n            <!-- Annotated Passage -->\n            <div style=\"background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.1rem; font-size:0.9rem; line-height:1.85; color:#0F172A;\">\n              (1) <span style=\"background:#BFDBFE; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">Every weekend, the town market faces a serious plastic waste problem</span> <span style=\"background:#BBF7D0; padding:0.1rem 0.35rem; border-radius:5px;\">because</span> shoppers use thousands of plastic bags.\n              (2) Most of <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">them</span> are used for only twenty minutes <span style=\"background:#BBF7D0; padding:0.1rem 0.35rem; border-radius:5px;\">before</span> people throw <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">them</span> in the trash.\n              (3) <span style=\"background:#BBF7D0; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">As a result</span>, plastic bags often block street drains during heavy rain.\n              (4) <span style=\"background:#BFDBFE; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">To solve <span style=\"background:#FEF08A; padding:0.05rem 0.3rem; border-radius:4px;\">this problem</span>, the market committee started a Cloth Bag Sharing Station at the main gate.</span>\n              (5) <span style=\"background:#BBF7D0; padding:0.1rem 0.35rem; border-radius:5px;\">If</span> shoppers forget <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">their</span> own bags, <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">they</span> can borrow a clean cloth <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">one</span> for free and return <span style=\"background:#FEF08A; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">it</span> next week.\n              (6) <span style=\"background:#BBF7D0; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">Therefore</span>, <span style=\"background:#BFDBFE; padding:0.1rem 0.35rem; border-radius:5px; font-weight:700;\">plastic trash at the market has dropped by half.</span>\n            </div>\n\n            <!-- Step-by-Step Cohesion & Text Map Breakdown -->\n            <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0.85rem; margin-top:1rem;\">\n              <div style=\"background:#FEFCE8; border:1px solid #FDE047; border-radius:12px; padding:0.9rem; font-size:0.81rem; color:#713F12;\">\n                <div style=\"font-weight:800; margin-bottom:0.3rem;\">🟨 1. Reference Tracking</div>\n                • <strong>them</strong> (ประโยค 2) → <em>thousands of plastic bags</em><br>\n                • <strong>this problem</strong> (ประโยค 4) → <em>the plastic waste & blocked drains problem</em><br>\n                • <strong>their / they</strong> (ประโยค 5) → <em>shoppers</em><br>\n                • <strong>one / it</strong> (ประโยค 5) → <em>a clean cloth bag</em>\n              </div>\n\n              <div style=\"background:#F0FDF4; border:1px solid #86EFAC; border-radius:12px; padding:0.9rem; font-size:0.81rem; color:#14532D;\">\n                <div style=\"font-weight:800; margin-bottom:0.3rem;\">🟩 2. Connective Signaling</div>\n                • <strong>because</strong> → บอกสาเหตุ (Cause)<br>\n                • <strong>As a result / Therefore</strong> → บอกผลลัพธ์ (Effect)<br>\n                • <strong>To solve this problem</strong> → สัญญาณเข้าสู่ทางแก้ (Solution)<br>\n                • <strong>If</strong> → บอกเงื่อนไข (Condition)\n              </div>\n\n              <div style=\"background:#EFF6FF; border:1px solid #93C5FD; border-radius:12px; padding:0.9rem; font-size:0.81rem; color:#1E3A8A;\">\n                <div style=\"font-weight:800; margin-bottom:0.3rem;\">🟦 3. Visual Text Map (Problem & Solution)</div>\n                <strong>(PROBLEM)</strong> ผู้ซื้อใช้ถุงพลาสติกจำนวนมาก → ถุงพลาสติกอุดตันท่อระบายน้ำ<br>\n                ⬇️ <em>(To solve this problem)</em><br>\n                <strong>(SOLUTION)</strong> ตั้งจุดยืมถุงผ้าฟรีที่ประตูตลาด<br>\n                ⬇️ <em>(Therefore)</em><br>\n                <strong>(RESULT)</strong> ขยะพลาสติกในตลาดลดลงครึ่งหนึ่ง\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 6,
+          "stepNum": 6,
           "title": "Guided Practice",
-          "thaiTitle": "ฝึกปฏิบัติ: วิเคราะห์โครงสร้างบทอ่าน + ไฮไลต์ 3 สี (Text Structure Practice & Highlighting Lab)",
-          "content": "Practice identifying text organization patterns and highlighting reference words (Yellow), connectives (Green), and main ideas/structure (Blue).",
-          "thaiContent": "ฝึกจำแนกรูปแบบโครงสร้างบทอ่าน (Text Structure Practice) และฝึกไฮไลต์ 3 สีจากบทอ่านระดับ A2–B1",
+          "thaiTitle": "ฝึกปฏิบัติ",
+          "content": "Complete Part A (Text Structure Practice) and Part B (Interactive 3-Colour Highlighting Lab: Yellow = Reference Words, Green = Connectives & Transitions, Blue = Main Ideas & Text Organization).",
+          "question": "Quick Check: In the sentence \"My old umbrella broke in the wind, so I bought a new one,\" what does the substitute word \"one\" refer to?",
+          "options": [
+            "the wind",
+            "an umbrella (ร่มคันใหม่)",
+            "the rain",
+            "a coat"
+          ],
+          "answer": 1,
+          "explanation": "ถูกต้อง! คำว่า \"one\" เป็น Substitute Word ที่ใช้แทนคำนามเอกพจน์ข้างหน้าคือ umbrella เพื่อไม่ให้ต้องพูดคำว่า umbrella ซ้ำ (ข้อ B)",
           "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Part A: Text Structure Practice (4 Items) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#0F172A; margin:0;\">🧩 Part A: Text Structure Practice (4 ข้อ)</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">อ่านข้อความสั้นๆ สังเกตคำเชื่อม (Connectives) และคำอ้างอิง (References) แล้วเลือกรูปแบบโครงสร้างบทอ่านให้ถูกต้อง (เกณฑ์ผ่าน 70%)</p>\n              </div>\n              <span style=\"background:#DCFCE7; color:#166534; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">While-Reading Practice</span>\n            </div>\n\n            <div style=\"display:grid; gap:0.85rem;\">\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.85rem; font-weight:700; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  1. \"Making a cup of ginger tea is easy. <strong>First</strong>, wash a small piece of fresh ginger and slice <strong>it</strong> thinly. <strong>Next</strong>, boil the slices in hot water for five minutes. <strong>Finally</strong>, add a spoon of honey and enjoy <strong>it</strong>.\"\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.82rem;\">\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-1\" value=\"0\"> A. Sequence (การเรียงลำดับขั้นตอน — มีคำว่า First, Next, Finally)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-1\" value=\"1\"> B. Problem and Solution (การระบุปัญหาและทางแก้)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-1\" value=\"2\"> C. Compare and Contrast (การเปรียบเทียบความเหมือนและความต่าง)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.85rem; font-weight:700; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  2. \"<strong>Both</strong> city buses and taxis help people travel without driving. <strong>However</strong>, buses are much cheaper and carry many passengers, <strong>while</strong> taxis cost more money but take <strong>you</strong> directly to your door.\"\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.82rem;\">\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-2\" value=\"0\"> A. Cause and Effect (เหตุและผล)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-2\" value=\"1\"> B. Compare and Contrast (การเปรียบเทียบความเหมือนและความต่าง — มีคำว่า Both, However, while)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-2\" value=\"2\"> C. Sequence (การเรียงลำดับเวลา)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.85rem; font-weight:700; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  3. \"Many children spend too many hours looking at tablet screens at night. <strong>Because of this habit</strong>, <strong>they</strong> often have dry eyes and feel sleepy in the morning. <strong>Therefore</strong>, parents should set a screen-free hour before bedtime.\"\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.82rem;\">\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-3\" value=\"0\"> A. Cause and Effect (เหตุและผล — มีคำว่า Because of this habit, Therefore)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-3\" value=\"1\"> B. Description (การบรรยายสถานที่)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-3\" value=\"2\"> C. Sequence (การเรียงลำดับขั้นตอน)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.85rem; font-weight:700; color:#1E293B; margin:0 0 0.45rem 0;\">\n                  4. \"ในข้อ 3 คำว่า <strong>they</strong> ในประโยค <em>'they often have dry eyes'</em> อ้างอิงถึงคำนามใด?\"\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.82rem;\">\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-4\" value=\"0\"> A. tablet screens (หน้าจอแท็บเล็ต)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-4\" value=\"1\"> B. Many children (เด็กๆ จำนวนมาก)</label>\n                  <label style=\"cursor:pointer;\"><input type=\"radio\" name=\"s4-prac-4\" value=\"2\"> C. dry eyes (อาการตาแห้ง)</label>\n                </div>\n              </div>\n            </div>\n\n            <div style=\"margin-top:0.9rem;\">\n              <button onclick=\"app.submitStrat4StructurePractice()\" style=\"background:#059669; color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:10px; font-size:0.84rem; font-weight:700; cursor:pointer;\">\n                ตรวจคำตอบ Text Structure Practice (4 ข้อ)\n              </button>\n            </div>\n            <div id=\"strat4-practice-feedback\" style=\"display:none; margin-top:0.8rem;\"></div>\n          </div>\n\n          <!-- Part B: Interactive 3-Colour Highlighting Lab -->\n          <div style=\"background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:16px; padding:1.2rem;\">\n            <h4 style=\"font-size:1rem; font-weight:800; color:#92400E; margin:0 0 0.3rem 0;\">\n              🖍️ Part B: Interactive 3-Colour Highlighting Lab (ฝึกไฮไลต์ 3 สี)\n            </h4>\n            <p style=\"font-size:0.82rem; color:#78350F; margin:0 0 0.8rem 0;\">\n              เลือกปากกาไฮไลต์ด้านล่าง แล้วคลิกแต่ละส่วนของย่อหน้าเพื่อจำแนก: <strong>สีเหลือง (Yellow)</strong> = Reference Words • <strong>สีเขียว (Green)</strong> = Connectives & Transition Words • <strong>สีฟ้า (Blue)</strong> = Main Ideas & Text Organization\n            </p>\n\n            <div style=\"display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.9rem;\">\n              <button id=\"strat4-tool-yellow\" onclick=\"app.setStrat4HighlightTool('yellow')\" style=\"background:#FEF08A; color:#713F12; border:2px solid #EAB308; padding:0.45rem 0.9rem; border-radius:999px; font-size:0.8rem; font-weight:800; cursor:pointer; box-shadow:0 0 0 3px rgba(15,23,42,0.28);\">\n                🟨 Yellow: Reference Words\n              </button>\n              <button id=\"strat4-tool-green\" onclick=\"app.setStrat4HighlightTool('green')\" style=\"background:#DCFCE7; color:#14532D; border:2px solid #22C55E; padding:0.45rem 0.9rem; border-radius:999px; font-size:0.8rem; font-weight:800; cursor:pointer;\">\n                🟩 Green: Connectives & Transitions\n              </button>\n              <button id=\"strat4-tool-blue\" onclick=\"app.setStrat4HighlightTool('blue')\" style=\"background:#DBEAFE; color:#1E3A8A; border:2px solid #3B82F6; padding:0.45rem 0.9rem; border-radius:999px; font-size:0.8rem; font-weight:800; cursor:pointer;\">\n                🟦 Blue: Main Ideas & Text Organization\n              </button>\n              <button onclick=\"app.revealStrat4Highlights()\" style=\"background:#4F46E5; color:#fff; border:none; padding:0.45rem 0.9rem; border-radius:999px; font-size:0.8rem; font-weight:700; cursor:pointer;\">\n                ✨ เฉลยสีทั้งหมด\n              </button>\n              <button onclick=\"app.resetStrat4Highlights()\" style=\"background:#E2E8F0; color:#334155; border:none; padding:0.45rem 0.9rem; border-radius:999px; font-size:0.8rem; font-weight:700; cursor:pointer;\">\n                🔄 ล้างสี\n              </button>\n            </div>\n\n            <div style=\"display:grid; gap:0.5rem;\">\n              <div id=\"strat4-hl-sent-0\" onclick=\"app.highlightStrat4Sentence(0)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (1):</strong> Taking the city train vs. driving a car offers two very different travel experiences for daily workers. (Topic Sentence — Compare & Contrast Organization)\n              </div>\n              <div id=\"strat4-hl-sent-1\" onclick=\"app.highlightStrat4Sentence(1)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (2):</strong> First, the city train is fast and cheap; in addition, however, on the other hand, therefore\n              </div>\n              <div id=\"strat4-hl-sent-2\" onclick=\"app.highlightStrat4Sentence(2)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (3):</strong> it (the city train), they (passengers), this option (taking the train)\n              </div>\n              <div id=\"strat4-hl-sent-3\" onclick=\"app.highlightStrat4Sentence(3)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (4):</strong> On the other hand, because, as a result\n              </div>\n              <div id=\"strat4-hl-sent-4\" onclick=\"app.highlightStrat4Sentence(4)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (5):</strong> those who drive cars, their vehicles, ones (parking spaces)\n              </div>\n              <div id=\"strat4-hl-sent-5\" onclick=\"app.highlightStrat4Sentence(5)\" style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:10px; padding:0.7rem 0.9rem; font-size:0.86rem; cursor:pointer; transition:all 0.15s;\">\n                <strong>Segment (6):</strong> Both travel choices have clear benefits, so workers can choose the best pattern for their daily routine. (Concluding Main Idea & Organization Summary)\n              </div>\n            </div>\n            <div id=\"strat4-hl-feedback\" style=\"display:none; margin-top:0.75rem;\"></div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 7,
+          "stepNum": 7,
           "title": "Apply to a Short Text",
-          "thaiTitle": "นำไปใช้กับบทอ่านสั้น 3 เรื่อง + ตารางสร้างผัง Text Map",
+          "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
           "content": "Read three short A2–B1 passages with different text organization patterns, trace references and connectives, and review the Group Text Map.",
-          "thaiContent": "ฝึกอ่านบทความสั้นระดับ A2–B1 จำนวน 3 เรื่องที่มีโครงสร้างต่างกัน พร้อมแกะรอยคำอ้างอิง คำเชื่อม และสรุปเป็นผัง Text Map",
+          "taskQuestion": "How do reference words, connectives, and text organization patterns work together to help you understand a passage?",
+          "taskAnswer": "Reference words link pronouns back to earlier nouns, connectives signal the logical relationship between sentences, and text organization patterns show the overall flow (Sequence, Compare & Contrast, or Problem & Solution).",
           "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Passage 1: Sequence -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.15rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.55rem;\">\n              <h4 style=\"font-size:0.96rem; font-weight:800; color:#0F172A; margin:0;\">📖 Passage 1: How to Plant Sunflowers at Home</h4>\n              <button onclick=\"app.speakText('Growing bright yellow sunflowers in your garden is easy if you follow four simple steps. First, choose a sunny corner because sunflowers need six hours of sunlight every day. Second, dig small holes in the soil and put two seeds in each one. Next, water them gently every morning so the soil stays moist. Finally, after two months, tall green stems will grow and open into big yellow flowers that make your yard look cheerful.')\" style=\"background:#EDE9FE; color:#5B21B6; border:none; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 Listen</button>\n            </div>\n            <p style=\"font-size:0.86rem; color:#1E293B; line-height:1.75; background:#F8FAFC; padding:0.9rem; border-radius:10px; border:1px solid #E2E8F0; margin:0 0 0.7rem 0;\">\n              (1) Growing bright yellow sunflowers in your garden is easy <strong>if</strong> you follow four simple steps.\n              (2) <strong>First</strong>, choose a sunny corner <strong>because</strong> sunflowers need six hours of sunlight every day.\n              (3) <strong>Second</strong>, dig small holes in the soil and put two seeds in each <strong>one</strong>.\n              (4) <strong>Next</strong>, water <strong>them</strong> gently every morning <strong>so</strong> the soil stays moist.\n              (5) <strong>Finally</strong>, after two months, tall green stems will grow and open into big yellow flowers <strong>that</strong> make your yard look cheerful.\n            </p>\n            <label style=\"font-size:0.82rem; font-weight:700; color:#334155; display:block; margin-bottom:0.35rem;\">\n              คำถาม Passage 1: คำว่า \"one\" ในประโยคที่ (3) อ้างอิงถึงอะไร และย่อหน้านี้จัดโครงสร้างแบบใด?\n            </label>\n            <select id=\"s4-pass-1\" style=\"width:100%; padding:0.48rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n              <option value=\"\">-- เลือกคำตอบสำหรับ Passage 1 --</option>\n              <option value=\"0\">one = a sunny corner • โครงสร้างแบบ Compare and Contrast</option>\n              <option value=\"1\">one = small hole (หลุมเล็กๆ แต่ละหลุม) • โครงสร้างแบบ Sequence (ลำดับขั้นตอน First, Second, Next, Finally)</option>\n              <option value=\"2\">one = sunlight • โครงสร้างแบบ Problem and Solution</option>\n            </select>\n          </div>\n\n          <!-- Passage 2: Compare & Contrast -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.15rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.55rem;\">\n              <h4 style=\"font-size:0.96rem; font-weight:800; color:#0F172A; margin:0;\">📖 Passage 2: Bicycles vs. Electric Scooters for Short Trips</h4>\n              <button onclick=\"app.speakText('Many town residents use bicycles or electric scooters for short trips to the market. Both vehicles are small, easy to park, and produce zero smoke. However, they work in different ways. A bicycle needs leg power, so riding it gives the rider good daily exercise. On the other hand, an electric scooter runs on a battery, which helps tired workers travel without sweating.')\" style=\"background:#EDE9FE; color:#5B21B6; border:none; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 Listen</button>\n            </div>\n            <p style=\"font-size:0.86rem; color:#1E293B; line-height:1.75; background:#F8FAFC; padding:0.9rem; border-radius:10px; border:1px solid #E2E8F0; margin:0 0 0.7rem 0;\">\n              (1) Many town residents use bicycles or electric scooters for short trips to the market.\n              (2) <strong>Both</strong> vehicles are small, easy to park, and produce zero smoke.\n              (3) <strong>However</strong>, <strong>they</strong> work in different ways.\n              (4) A bicycle needs leg power, <strong>so</strong> riding <strong>it</strong> gives the rider good daily exercise.\n              (5) <strong>On the other hand</strong>, an electric scooter runs on a battery, <strong>which</strong> helps tired workers travel without sweating.\n            </p>\n            <label style=\"font-size:0.82rem; font-weight:700; color:#334155; display:block; margin-bottom:0.35rem;\">\n              คำถาม Passage 2: คำเชื่อม \"Both ... However ... On the other hand\" แสดงโครงสร้างบทอ่านแบบใด และคำว่า \"they\" ในประโยค (3) หมายถึงอะไร?\n            </label>\n            <select id=\"s4-pass-2\" style=\"width:100%; padding:0.48rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n              <option value=\"\">-- เลือกคำตอบสำหรับ Passage 2 --</option>\n              <option value=\"0\">โครงสร้าง Sequence • they = tired workers</option>\n              <option value=\"1\">โครงสร้าง Compare and Contrast (เปรียบเทียบความเหมือนและความต่าง) • they = bicycles and electric scooters</option>\n              <option value=\"2\">โครงสร้าง Problem and Solution • they = short trips</option>\n            </select>\n          </div>\n\n          <!-- Passage 3: Problem & Solution -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.15rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.55rem;\">\n              <h4 style=\"font-size:0.96rem; font-weight:800; color:#0F172A; margin:0;\">📖 Passage 3: Keeping Neighborhood Streets Well-Lit at Night</h4>\n              <button onclick=\"app.speakText('Last winter, several small streets in Green Valley had a safety problem because the old streetlights were broken. When residents walked home after dark, they could not see holes in the sidewalk. To solve this issue, the neighborhood group installed solar lamps on every corner. These lamps collect sunlight during the day and turn on automatically at sunset. As a result, families can now walk safely every evening.')\" style=\"background:#EDE9FE; color:#5B21B6; border:none; padding:0.4rem 0.8rem; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 Listen</button>\n            </div>\n            <p style=\"font-size:0.86rem; color:#1E293B; line-height:1.75; background:#F8FAFC; padding:0.9rem; border-radius:10px; border:1px solid #E2E8F0; margin:0 0 0.7rem 0;\">\n              (1) Last winter, several small streets in Green Valley had a safety <strong>problem</strong> <strong>because</strong> the old streetlights were broken.\n              (2) When residents walked home after dark, <strong>they</strong> could not see holes in the sidewalk.\n              (3) <strong>To solve this issue</strong>, the neighborhood group installed solar lamps on every corner.\n              (4) <strong>These lamps</strong> collect sunlight during the day and turn on automatically at sunset.\n              (5) <strong>As a result</strong>, families can now walk safely every evening.\n            </p>\n            <label style=\"font-size:0.82rem; font-weight:700; color:#334155; display:block; margin-bottom:0.35rem;\">\n              คำถาม Passage 3: คำว่า \"this issue\" ในประโยค (3) และ \"These lamps\" ในประโยค (4) อ้างอิงถึงอะไร และโครงสร้างย่อหน้าเป็นแบบใด?\n            </label>\n            <select id=\"s4-pass-3\" style=\"width:100%; padding:0.48rem 0.65rem; border-radius:8px; border:1px solid #CBD5E1; font-size:0.82rem;\">\n              <option value=\"\">-- เลือกคำตอบสำหรับ Passage 3 --</option>\n              <option value=\"0\">this issue = sunlight • These lamps = old streetlights • โครงสร้าง Description</option>\n              <option value=\"1\">this issue = ปัญหาถนนมืดเพราะไฟเก่าเสีย • These lamps = solar lamps • โครงสร้าง Problem and Solution</option>\n              <option value=\"2\">this issue = sunset • These lamps = holes in the sidewalk • โครงสร้าง Compare and Contrast</option>\n            </select>\n          </div>\n\n          <div>\n            <button onclick=\"app.submitStrat4PassageCheck()\" style=\"background:#6D28D9; color:#fff; border:none; padding:0.65rem 1.25rem; border-radius:10px; font-size:0.85rem; font-weight:700; cursor:pointer;\">\n              ตรวจคำตอบทั้ง 3 Passages\n            </button>\n            <div id=\"strat4-passages-feedback\" style=\"display:none; margin-top:0.8rem;\"></div>\n          </div>\n\n          <!-- Post-Reading Group Text Map Summary Table -->\n          <div style=\"background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:16px; padding:1.15rem;\">\n            <h4 style=\"font-size:0.95rem; font-weight:800; color:#0F172A; margin:0 0 0.4rem 0;\">\n              🗺️ Post-Reading Activity: Group Text Mapping Summary (สรุปผังความเชื่อมโยงทั้ง 3 เรื่อง)\n            </h4>\n            <p style=\"font-size:0.8rem; color:#475569; margin:0 0 0.75rem 0;\">\n              ตารางสรุป Reference Words, Connectives และ Text Organization Pattern จากบทอ่านทั้ง 3 เรื่อง:\n            </p>\n            <div style=\"overflow-x:auto;\">\n              <table style=\"width:100%; border-collapse:collapse; font-size:0.8rem; background:#fff;\">\n                <thead>\n                  <tr style=\"background:#EDE9FE; color:#4C1D95; text-align:left;\">\n                    <th style=\"padding:0.55rem 0.75rem; border:1px solid #DDD6FE;\">Passage</th>\n                    <th style=\"padding:0.55rem 0.75rem; border:1px solid #DDD6FE;\">Reference Words & Meaning</th>\n                    <th style=\"padding:0.55rem 0.75rem; border:1px solid #DDD6FE;\">Connectives Used</th>\n                    <th style=\"padding:0.55rem 0.75rem; border:1px solid #DDD6FE;\">Text Organization Pattern</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700;\">1. Sunflowers</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><code>one</code> = small hole<br><code>them</code> = two seeds<br><code>that</code> = big yellow flowers</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><em>if, First, because, Second, Next, so, Finally</em></td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700; color:#1E40AF;\">Sequence (เรียงลำดับขั้นตอน 1–4)</td>\n                  </tr>\n                  <tr style=\"background:#F8FAFC;\">\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700;\">2. Bicycles vs. Scooters</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><code>they</code> = bicycles & electric scooters<br><code>it</code> = a bicycle<br><code>which</code> = a battery</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><em>Both, However, so, On the other hand</em></td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700; color:#047857;\">Compare & Contrast (เปรียบเทียบเหมือน-ต่าง)</td>\n                  </tr>\n                  <tr>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700;\">3. Streetlights</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><code>they</code> = residents<br><code>this issue</code> = broken streetlights problem<br><code>These lamps</code> = solar lamps</td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0;\"><em>because, When, To solve this issue, As a result</em></td>\n                    <td style=\"padding:0.55rem 0.75rem; border:1px solid #E2E8F0; font-weight:700; color:#B45309;\">Problem & Solution (ปัญหาและทางแก้)</td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
-          "stepNumber": 8,
-          "title": "Strategy Quiz (30 Questions)",
-          "thaiTitle": "แบบทดสอบท้ายบทที่ 4 (30 ข้อ • แบ่งเป็น 3 ชุด ชุดละ 10 ข้อ ส่งแล้วเฉลยทันที)",
+          "stepNum": 8,
+          "title": "Strategy Quiz (30 ข้อ)",
+          "thaiTitle": "แบบทดสอบ 30 ข้อ",
           "question": "Complete the 30-question References, Connectives, and Text Organization Quiz across 3 A2–B1 reading passages (70% passing target).",
-          "options": [],
+          "options": [
+            "Start Quiz"
+          ],
           "answer": 0,
-          "explanation": ""
+          "explanation": "Complete all 3 Passage Quizzes (10 questions each)."
         }
       ]
     },
@@ -6111,139 +6130,149 @@ window.ReadSkillsData = {
         "id": "s4-p1",
         "title": "Passage 1: Making Homemade Fruit Popsicles on Hot Days",
         "thaiTitle": "บทอ่านชุดที่ 1: วิธีทำไอศกรีมแท่งผลไม้โฮมเมดในวันที่อากาศร้อน (10 ข้อ)",
+        "genre": "How-To Guide • Food & Health (A2–B1)",
         "audioText": "Summer afternoons in Thailand are very hot, so many families love eating cold snacks. However, store-bought ice cream often contains too much sugar. To enjoy a healthier treat, you can easily make fresh fruit popsicles at home. First, wash sweet fruits such as ripe mangoes, strawberries, and watermelons, and cut them into small pieces. Second, put the fruit pieces into a blender and add a cup of fresh orange juice. Next, blend the mixture until it becomes smooth, and pour it into plastic popsicle molds. Then, place wooden sticks in the center of each one. Finally, put the molds into the freezer for four hours until the juice turns into solid ice. When you take them out, these homemade popsicles are ready to eat. Because they are made from real fruit, they give your body natural vitamins without extra sugar.",
-        "paragraphs": [
-          "(1) Summer afternoons in Thailand are very hot, so many families love eating cold snacks. (2) However, store-bought ice cream often contains too much sugar. (3) To enjoy a healthier treat, you can easily make fresh fruit popsicles at home. (4) First, wash sweet fruits such as ripe mangoes, strawberries, and watermelons, and cut them into small pieces. (5) Second, put the fruit pieces into a blender and add a cup of fresh orange juice. (6) Next, blend the mixture until it becomes smooth, and pour it into plastic popsicle molds. (7) Then, place wooden sticks in the center of each one. (8) Finally, put the molds into the freezer for four hours until the juice turns into solid ice. (9) When you take them out, these homemade popsicles are ready to eat. (10) Because they are made from real fruit, they give your body natural vitamins without extra sugar."
+        "sentences": [
+          "Summer afternoons in Thailand are very hot, so many families love eating cold snacks.",
+          "However, store-bought ice cream often contains too much sugar.",
+          "To enjoy a healthier treat, you can easily make fresh fruit popsicles at home.",
+          "First, wash sweet fruits such as ripe mangoes, strawberries, and watermelons, and cut them into small pieces.",
+          "Second, put the fruit pieces into a blender and add a cup of fresh orange juice.",
+          "Next, blend the mixture until it becomes smooth, and pour it into plastic popsicle molds.",
+          "Then, place wooden sticks in the center of each one.",
+          "Finally, put the molds into the freezer for four hours until the juice turns into solid ice.",
+          "When you take them out, these homemade popsicles are ready to eat.",
+          "Because they are made from real fruit, they give your body natural vitamins without extra sugar."
         ],
         "questions": [
           {
             "id": 1,
-            "type": "multipleChoice",
-            "question": "What is the main text organization pattern of Sentences (4) to (8)?",
+            "type": "mc",
+            "prompt": "What is the main text organization pattern of Sentences (4) to (8)?",
             "options": [
               "Sequence (เรียงลำดับขั้นตอนการทำไอศกรีมแท่งผลไม้)",
               "Compare and Contrast (เปรียบเทียบผลไม้สองชนิด)",
               "Description of a city park (บรรยายสวนสาธารณะ)",
               "Biography of a famous chef (ประวัติของเชฟชื่อดัง)"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "ประโยคที่ (4)–(8) ใช้คำสัญญาณ First, Second, Next, Then, Finally เพื่อบอกลำดับขั้นตอนการทำไอศกรีมแท่งผลไม้ จึงเป็นโครงสร้างแบบ Sequence"
           },
           {
             "id": 2,
-            "type": "multipleChoice",
-            "question": "In Sentence (1), what relationship does the connective \"so\" show?",
+            "type": "mc",
+            "prompt": "In Sentence (1), what relationship does the connective \"so\" show?",
             "options": [
               "Contrast (ความขัดแย้ง)",
               "Cause and Effect (เหตุและผล — อากาศร้อนมาก ดังนั้นหลายครอบครัวจึงชอบกินของว่างเย็นๆ)",
               "Condition (เงื่อนไข)",
               "Example (การยกตัวอย่าง)"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "คำเชื่อม \"so\" แสดงความสัมพันธ์แบบ Cause and Effect (เหตุคือช่วงบ่ายหน้าร้อนอากาศร้อนมาก ผลคือหลายครอบครัวชอบกินของว่างเย็นๆ)"
           },
           {
             "id": 3,
-            "type": "multipleChoice",
-            "question": "In Sentence (2), why does the writer use the transition word \"However\"?",
+            "type": "mc",
+            "prompt": "In Sentence (2), why does the writer use the transition word \"However\"?",
             "options": [
               "To show a contrast that store-bought ice cream has too much sugar",
               "To give the final step of a recipe",
               "To list three types of fruit",
               "To explain the price of a freezer"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"However\" (อย่างไรก็ตาม) ใช้แสดงความขัดแย้ง (Contrast) ว่าแม้คนจะชอบของหวานเย็นๆ แต่ไอศกรีมที่ซื้อตามร้านมักมีน้ำตาลมากเกินไป"
           },
           {
             "id": 4,
-            "type": "multipleChoice",
-            "question": "In Sentence (4), what does the pronoun \"them\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (4), what does the pronoun \"them\" refer to?",
             "options": [
               "families",
               "sweet fruits (ripe mangoes, strawberries, and watermelons)",
               "plastic molds",
               "summer afternoons"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "ในประโยค \"wash sweet fruits such as ripe mangoes, strawberries, and watermelons, and cut them into small pieces\" คำว่า them อ้างอิงถึง sweet fruits"
           },
           {
             "id": 5,
-            "type": "multipleChoice",
-            "question": "In Sentence (4), what is the function of \"such as\"?",
+            "type": "mc",
+            "prompt": "In Sentence (4), what is the function of \"such as\"?",
             "options": [
               "To introduce examples of sweet fruits",
               "To show an opposite idea",
               "To show a condition",
               "To end the paragraph"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"such as\" เป็นคำสัญญาณสำหรับยกตัวอย่าง (Examples) ได้แก่ มะม่วงสุก สตรอว์เบอร์รี และแตงโม"
           },
           {
             "id": 6,
-            "type": "multipleChoice",
-            "question": "In Sentence (6), what does the pronoun \"it\" (in \"until it becomes smooth\") refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (6), what does the pronoun \"it\" (in \"until it becomes smooth\") refer to?",
             "options": [
               "the blender",
               "the mixture (ส่วนผสมของผลไม้และน้ำส้ม)",
               "the freezer",
               "a wooden stick"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "ในประโยค \"blend the mixture until it becomes smooth\" คำว่า it แทนคำนามเอกพจน์ข้างหน้าคือ the mixture"
           },
           {
             "id": 7,
-            "type": "multipleChoice",
-            "question": "In Sentence (7), \"place wooden sticks in the center of each one,\" what does the substitute word \"one\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (7), \"place wooden sticks in the center of each one,\" what does the substitute word \"one\" refer to?",
             "options": [
               "each plastic popsicle mold (พิมพ์ไอศกรีมแต่ละอัน)",
               "each summer afternoon",
               "each family member",
               "each blender"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "ประโยคที่ (6) กล่าวถึงการเทส่วนผสมลงใน plastic popsicle molds ดังนั้น each one ในประโยคที่ (7) จึงหมายถึง พิมพ์ไอศกรีมแต่ละอัน"
           },
           {
             "id": 8,
-            "type": "multipleChoice",
-            "question": "Which transition word introduces the LAST step of making the popsicles in Sentence (8)?",
+            "type": "mc",
+            "prompt": "Which transition word introduces the LAST step of making the popsicles in Sentence (8)?",
             "options": [
               "First",
               "Second",
               "Next",
               "Finally"
             ],
-            "answer": 3,
+            "correctAnswer": 3,
             "explanation": "\"Finally\" เป็นคำสัญญาณบอกขั้นตอนสุดท้าย (การนำพิมพ์ไปแช่ช่องแข็ง 4 ชั่วโมง)"
           },
           {
             "id": 9,
-            "type": "multipleChoice",
-            "question": "In Sentence (10), what does the pronoun \"they\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (10), what does the pronoun \"they\" refer to?",
             "options": [
               "wooden sticks",
               "these homemade popsicles (ไอศกรีมแท่งผลไม้ทำเอง)",
               "freezers",
               "stores"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "ประโยคที่ (9) พูดถึง these homemade popsicles ดังนั้น they ในประโยคที่ (10) จึงอ้างอิงถึง these homemade popsicles"
           },
           {
             "id": 10,
-            "type": "multipleChoice",
-            "question": "In Sentence (10), what relationship does the connective \"Because\" show?",
+            "type": "mc",
+            "prompt": "In Sentence (10), what relationship does the connective \"Because\" show?",
             "options": [
               "Cause and Effect (บอกสาเหตุว่าเพราะทำจากผลไม้แท้ จึงให้วิตามินตามธรรมชาติ)",
               "Contrast (บอกความตรงกันข้าม)",
               "Sequence (บอกลำดับก่อนหลัง)",
               "Comparison (บอกความเหมือนกัน)"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"Because\" นำหน้าสาเหตุ (ทำจากผลไม้แท้) ซึ่งส่งผลให้ร่างกายได้รับวิตามินธรรมชาติโดยไม่มีน้ำตาลส่วนเกิน"
           }
         ]
@@ -6252,139 +6281,148 @@ window.ReadSkillsData = {
         "id": "s4-p2",
         "title": "Passage 2: Shopping at a Morning Market vs. a Supermarket",
         "thaiTitle": "บทอ่านชุดที่ 2: การเปรียบเทียบการซื้อของที่ตลาดเช้ากับซูเปอร์มาร์เก็ต (10 ข้อ)",
+        "genre": "Comparison Article • Daily Life (A2–B1)",
         "audioText": "When buying food for the week, people often choose between a traditional morning market and a modern supermarket. Both places sell fresh vegetables, meat, and fruit for daily cooking. Similarly, both options are easy to find in most towns. However, they offer very different shopping experiences. At the morning market, local farmers sell vegetables that they picked just a few hours earlier. In addition, the prices there are usually lower, and buyers can talk directly with the sellers. On the other hand, a supermarket has cool air conditioning, which makes shopping comfortable on hot days. Furthermore, supermarkets stay open until late at night, while most morning markets close before noon. Therefore, people who wake up early often prefer the morning market, whereas busy office workers usually choose the supermarket.",
-        "paragraphs": [
-          "(1) When buying food for the week, people often choose between a traditional morning market and a modern supermarket. (2) Both places sell fresh vegetables, meat, and fruit for daily cooking. (3) Similarly, both options are easy to find in most towns. (4) However, they offer very different shopping experiences. (5) At the morning market, local farmers sell vegetables that they picked just a few hours earlier. (6) In addition, the prices there are usually lower, and buyers can talk directly with the sellers. (7) On the other hand, a supermarket has cool air conditioning, which makes shopping comfortable on hot days. (8) Furthermore, supermarkets stay open until late at night, while most morning markets close before noon. (9) Therefore, people who wake up early often prefer the morning market, whereas busy office workers usually choose the supermarket."
+        "sentences": [
+          "When buying food for the week, people often choose between a traditional morning market and a modern supermarket.",
+          "Both places sell fresh vegetables, meat, and fruit for daily cooking.",
+          "Similarly, both options are easy to find in most towns.",
+          "However, they offer very different shopping experiences.",
+          "At the morning market, local farmers sell vegetables that they picked just a few hours earlier.",
+          "In addition, the prices there are usually lower, and buyers can talk directly with the sellers.",
+          "On the other hand, a supermarket has cool air conditioning, which makes shopping comfortable on hot days.",
+          "Furthermore, supermarkets stay open until late at night, while most morning markets close before noon.",
+          "Therefore, people who wake up early often prefer the morning market, whereas busy office workers usually choose the supermarket."
         ],
         "questions": [
           {
             "id": 1,
-            "type": "multipleChoice",
-            "question": "What is the overall text organization pattern of Passage 2?",
+            "type": "mc",
+            "prompt": "What is the overall text organization pattern of Passage 2?",
             "options": [
               "Sequence of historical events",
               "Compare and Contrast (การเปรียบเทียบความเหมือนและความต่างระหว่างตลาดเช้ากับซูเปอร์มาร์เก็ต)",
               "Problem and Solution",
               "How-to recipe instructions"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "บทอ่านเปรียบเทียบความเหมือน (Both, Similarly) และความต่าง (However, On the other hand, while, whereas) ระหว่างตลาดเช้ากับซูเปอร์มาร์เก็ต จึงเป็น Compare and Contrast"
           },
           {
             "id": 2,
-            "type": "multipleChoice",
-            "question": "In Sentence (2), what do the words \"Both places\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (2), what do the words \"Both places\" refer to?",
             "options": [
               "farms and rivers",
               "a traditional morning market and a modern supermarket",
               "offices and parks",
               "restaurants and hotels"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "\"Both places\" อ้างอิงย้อนกลับไปหาสถานที่ 2 แห่งในประโยคที่ (1) คือ a traditional morning market and a modern supermarket"
           },
           {
             "id": 3,
-            "type": "multipleChoice",
-            "question": "In Sentence (3), what is the function of the transition word \"Similarly\"?",
+            "type": "mc",
+            "prompt": "In Sentence (3), what is the function of the transition word \"Similarly\"?",
             "options": [
               "To show another similarity between the two shopping places",
               "To show a problem",
               "To show the final step in a recipe",
               "To show a condition"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"Similarly\" (ในทำนองเดียวกัน) ใช้เชื่อมจุดที่มีความเหมือนกัน (Comparison) ของทั้งสองสถานที่"
           },
           {
             "id": 4,
-            "type": "multipleChoice",
-            "question": "In Sentence (4), \"However, they offer very different shopping experiences,\" what does \"they\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (4), \"However, they offer very different shopping experiences,\" what does \"they\" refer to?",
             "options": [
               "fresh vegetables",
               "the morning market and the supermarket",
               "hot days",
               "office workers"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "\"they\" อ้างอิงถึงทั้งสองสถานที่คือตลาดเช้าและซูเปอร์มาร์เก็ต"
           },
           {
             "id": 5,
-            "type": "multipleChoice",
-            "question": "In Sentence (5), \"local farmers sell vegetables that they picked,\" who does \"they\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (5), \"local farmers sell vegetables that they picked,\" who does \"they\" refer to?",
             "options": [
               "local farmers (เกษตรกรในท้องถิ่น)",
               "office workers",
               "supermarket cashiers",
               "air conditioners"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "ในประโยคที่ (5) ผู้ที่เก็บผักเมื่อไม่กี่ชั่วโมงก่อนหน้าคือ local farmers ดังนั้น they จึงแทน local farmers"
           },
           {
             "id": 6,
-            "type": "multipleChoice",
-            "question": "In Sentence (6), what does the place reference word \"there\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (6), what does the place reference word \"there\" refer to?",
             "options": [
               "at the morning market (ที่ตลาดเช้า)",
               "at the office",
               "inside the freezer",
               "on the train"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "ประโยคที่ (5) พูดถึง At the morning market ดังนั้นคำว่า there ในประโยคที่ (6) จึงหมายถึง ที่ตลาดเช้า"
           },
           {
             "id": 7,
-            "type": "multipleChoice",
-            "question": "In Sentence (6) and Sentence (8), what is the function of \"In addition\" and \"Furthermore\"?",
+            "type": "mc",
+            "prompt": "In Sentence (6) and Sentence (8), what is the function of \"In addition\" and \"Furthermore\"?",
             "options": [
               "Addition (การเพิ่มข้อมูลสนับสนุนในทิศทางเดียวกัน)",
               "Contrast (การแสดงความขัดแย้ง)",
               "Condition (การบอกเงื่อนไข)",
               "Example (การยกตัวอย่าง)"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"In addition\" และ \"Furthermore\" (นอกจากนี้ / ยิ่งไปกว่านั้น) ทำหน้าที่ Addition คือเสริมข้อมูลเพิ่มเติม"
           },
           {
             "id": 8,
-            "type": "multipleChoice",
-            "question": "In Sentence (7), why does the writer use \"On the other hand\"?",
+            "type": "mc",
+            "prompt": "In Sentence (7), why does the writer use \"On the other hand\"?",
             "options": [
               "To switch from the morning market to contrasting points about the supermarket",
               "To give an example of cheap vegetables",
               "To explain how to cook meat",
               "To repeat the exact same point"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"On the other hand\" (ในทางกลับกัน) ใช้สลับไปพูดถึงจุดที่แตกต่างของอีกฝั่งหนึ่ง คือ ซูเปอร์มาร์เก็ต"
           },
           {
             "id": 9,
-            "type": "multipleChoice",
-            "question": "In Sentence (7), what does the relative pronoun \"which\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (7), what does the relative pronoun \"which\" refer to?",
             "options": [
               "having cool air conditioning in the supermarket",
               "waking up early",
               "picking vegetables",
               "closing before noon"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"which\" ในที่นี้ขยายการที่ซูเปอร์มาร์เก็ตมีเครื่องปรับอากาศที่เย็นสบาย (cool air conditioning) ซึ่งทำให้การซื้อของในวันอากาศร้อนสบายขึ้น"
           },
           {
             "id": 10,
-            "type": "multipleChoice",
-            "question": "In Sentence (9), what does the relative pronoun \"who\" (in \"people who wake up early\") refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (9), what does the relative pronoun \"who\" (in \"people who wake up early\") refer to?",
             "options": [
               "people (ผู้คนที่ตื่นเช้า)",
               "supermarkets",
               "vegetables",
               "prices"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"who\" เป็น Relative Pronoun ที่ใช้แทนคำนามที่เป็นคนข้างหน้า คือ people"
           }
         ]
@@ -6393,139 +6431,147 @@ window.ReadSkillsData = {
         "id": "s4-p3",
         "title": "Passage 3: Solving the Evening Traffic Problem Near the Town Park",
         "thaiTitle": "บทอ่านชุดที่ 3: การแก้ปัญหารถติดช่วงเย็นบริเวณสวนสาธารณะประจำเมือง (10 ข้อ)",
+        "genre": "Community Report • Problem & Solution (A2–B1)",
         "audioText": "Every evening at five oclock, the narrow road in front of Lotus Park had a heavy traffic problem. Because hundreds of visitors parked their cars along both sides of the street, buses and bicycles could not pass easily. As a result, drivers honked their horns, and the noise disturbed families who lived nearby. To solve this problem, the town council created a new parking plan last month. First, they opened a free parking lot behind the post office, which is only a three-minute walk from the park gate. In addition, they painted a green lane on the road for bicycles only. If visitors arrive by bicycle, they can use this safe lane and park right inside the entrance. Consequently, the road in front of Lotus Park is now quiet, safe, and smooth for everyone.",
-        "paragraphs": [
-          "(1) Every evening at five o'clock, the narrow road in front of Lotus Park had a heavy traffic problem. (2) Because hundreds of visitors parked their cars along both sides of the street, buses and bicycles could not pass easily. (3) As a result, drivers honked their horns, and the noise disturbed families who lived nearby. (4) To solve this problem, the town council created a new parking plan last month. (5) First, they opened a free parking lot behind the post office, which is only a three-minute walk from the park gate. (6) In addition, they painted a green lane on the road for bicycles only. (7) If visitors arrive by bicycle, they can use this safe lane and park right inside the entrance. (8) Consequently, the road in front of Lotus Park is now quiet, safe, and smooth for everyone."
+        "sentences": [
+          "Every evening at five o'clock, the narrow road in front of Lotus Park had a heavy traffic problem.",
+          "Because hundreds of visitors parked their cars along both sides of the street, buses and bicycles could not pass easily.",
+          "As a result, drivers honked their horns, and the noise disturbed families who lived nearby.",
+          "To solve this problem, the town council created a new parking plan last month.",
+          "First, they opened a free parking lot behind the post office, which is only a three-minute walk from the park gate.",
+          "In addition, they painted a green lane on the road for bicycles only.",
+          "If visitors arrive by bicycle, they can use this safe lane and park right inside the entrance.",
+          "Consequently, the road in front of Lotus Park is now quiet, safe, and smooth for everyone."
         ],
         "questions": [
           {
             "id": 1,
-            "type": "multipleChoice",
-            "question": "What is the overall text organization pattern of Passage 3?",
+            "type": "mc",
+            "prompt": "What is the overall text organization pattern of Passage 3?",
             "options": [
               "Problem and Solution (การระบุปัญหารถติดหน้าสวนสาธารณะและแนวทางแก้ไขของสภาเมือง)",
               "Comparison of two different parks",
               "How to repair a bicycle tire",
               "Description of post office stamps"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "ประโยคที่ (1)–(3) ระบุปัญหารถติดและเสียงแตรรบกวน ส่วนประโยคที่ (4)–(8) ขึ้นต้นด้วย \"To solve this problem...\" เพื่อบอกแนวทางแก้ไขและผลลัพธ์ จึงเป็นโครงสร้างแบบ Problem and Solution"
           },
           {
             "id": 2,
-            "type": "multipleChoice",
-            "question": "In Sentence (2), what does the possessive word \"their\" (in \"parked their cars\") refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (2), what does the possessive word \"their\" (in \"parked their cars\") refer to?",
             "options": [
               "buses",
               "hundreds of visitors (ผู้มาเที่ยวสวนสาธารณะหลายร้อยคน)",
               "post office workers",
               "bicycles"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "คำว่า \"their\" แทนคำนามพหูพจน์ข้างหน้าคือ hundreds of visitors"
           },
           {
             "id": 3,
-            "type": "multipleChoice",
-            "question": "In Sentence (3), what relationship does the transition phrase \"As a result\" show?",
+            "type": "mc",
+            "prompt": "In Sentence (3), what relationship does the transition phrase \"As a result\" show?",
             "options": [
               "Cause and Effect (บอกผลลัพธ์ที่ตามมาจากรถติด คือคนขับบีบแตรและเสียงรบกวนครอบครัวใกล้เคียง)",
               "Contrast (บอกความขัดแย้ง)",
               "Condition (บอกเงื่อนไข)",
               "Addition (บอกข้อมูลเสริม)"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"As a result\" (ผลที่ตามมาคือ...) เชื่อมสาเหตุในประโยคที่ (2) เข้ากับผลลัพธ์ในประโยคที่ (3)"
           },
           {
             "id": 4,
-            "type": "multipleChoice",
-            "question": "In Sentence (3), what does the relative pronoun \"who\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (3), what does the relative pronoun \"who\" refer to?",
             "options": [
               "horns",
               "families (ครอบครัวที่อาศัยอยู่ในละแวกใกล้เคียง)",
               "streets",
               "gates"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "\"who\" ขยายคำนามที่เป็นคนข้างหน้าคือ families"
           },
           {
             "id": 5,
-            "type": "multipleChoice",
-            "question": "In Sentence (4), what does the demonstrative phrase \"this problem\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (4), what does the demonstrative phrase \"this problem\" refer to?",
             "options": [
               "The heavy traffic and horn noise in front of Lotus Park",
               "The cost of buying a new bicycle",
               "Rainy weather in the morning",
               "A broken gate at the post office"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"this problem\" สรุปอ้างอิงถึงปัญหารถติดหนักและเสียงบีบแตรหน้าสวนสาธารณะที่กล่าวไว้ในประโยค (1)–(3)"
           },
           {
             "id": 6,
-            "type": "multipleChoice",
-            "question": "In Sentence (5) and Sentence (6), who does the pronoun \"they\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (5) and Sentence (6), who does the pronoun \"they\" refer to?",
             "options": [
               "bicycles",
               "the town council (คณะกรรมการสภาเมือง)",
               "noisy drivers",
               "children"
             ],
-            "answer": 1,
+            "correctAnswer": 1,
             "explanation": "ในประโยคที่ (4) ประธานผู้วางแผนคือ the town council ดังนั้น they ในประโยคที่ (5) และ (6) จึงหมายถึงคณะกรรมการสภาเมือง"
           },
           {
             "id": 7,
-            "type": "multipleChoice",
-            "question": "In Sentence (5), what does the relative pronoun \"which\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (5), what does the relative pronoun \"which\" refer to?",
             "options": [
               "a free parking lot behind the post office (ลานจอดรถฟรีหลังที่ทำการไปรษณีย์)",
               "five o'clock",
               "a bicycle horn",
               "a narrow street"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"which\" อ้างอิงถึงสถานที่ข้างหน้าคือ a free parking lot behind the post office ซึ่งอยู่ห่างจากประตูสวนเพียงเดิน 3 นาที"
           },
           {
             "id": 8,
-            "type": "multipleChoice",
-            "question": "In Sentence (7), what does the connective \"If\" show?",
+            "type": "mc",
+            "prompt": "In Sentence (7), what does the connective \"If\" show?",
             "options": [
               "Condition (เงื่อนไข — หากผู้มาเยือนเดินทางมาด้วยจักรยาน)",
               "Contrast (ความขัดแย้ง)",
               "Past time sequence",
               "Apology"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"If\" เป็นคำเชื่อมแสดงเงื่อนไข (Condition)"
           },
           {
             "id": 9,
-            "type": "multipleChoice",
-            "question": "In Sentence (7), what does the demonstrative phrase \"this safe lane\" refer to?",
+            "type": "mc",
+            "prompt": "In Sentence (7), what does the demonstrative phrase \"this safe lane\" refer to?",
             "options": [
               "the green lane on the road for bicycles only (ช่องทางสีเขียวสำหรับจักรยานในประโยคที่ 6)",
               "the post office roof",
               "the bus station",
               "the highway"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"this safe lane\" อ้างอิงย้อนกลับไปหา a green lane on the road for bicycles only ในประโยคที่ (6)"
           },
           {
             "id": 10,
-            "type": "multipleChoice",
-            "question": "In Sentence (8), what is the meaning and function of \"Consequently\"?",
+            "type": "mc",
+            "prompt": "In Sentence (8), what is the meaning and function of \"Consequently\"?",
             "options": [
               "As a result / Therefore (บอกผลลัพธ์สุดท้ายว่าถนนหน้าสวนกลับมาเงียบ ปลอดภัย และคล่องตัว)",
               "For example (ยกตัวอย่าง)",
               "On the other hand (ในทางตรงกันข้าม)",
               "Unless (เว้นแต่ว่า)"
             ],
-            "answer": 0,
+            "correctAnswer": 0,
             "explanation": "\"Consequently\" มีความหมายเหมือน As a result / Therefore ใช้สรุปผลลัพธ์สุดท้ายที่เกิดจากการแก้ปัญหา"
           }
         ]
