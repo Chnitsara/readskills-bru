@@ -315,25 +315,54 @@ class ReadSkillsApp {
         }
       }
     });
+    this.sanitizeDOMUndefined(root);
+  }
+
+  sanitizeDOMUndefined(root) {
+    if (!root || typeof document === 'undefined' || !document.createTreeWalker) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const textNodes = [];
+    let current;
+    while ((current = walker.nextNode())) {
+      if (current.nodeValue && /\bundefined\b/i.test(current.nodeValue)) {
+        textNodes.push(current);
+      }
+    }
+    textNodes.forEach(node => {
+      node.nodeValue = node.nodeValue.replace(/\bundefined\b/gi, '');
+    });
   }
 
   installBracketDetector() {
     if (typeof document === 'undefined' || !document.body) return;
     this.sanitizeDOMBrackets(document.body);
+    this.sanitizeDOMUndefined(document.body);
     if (typeof MutationObserver !== 'undefined' && !this._bracketObserver) {
       this._bracketObserver = new MutationObserver((mutations) => {
         for (const m of mutations) {
           if (m.type === 'childList') {
             m.addedNodes.forEach(n => {
-              if (n.nodeType === 1) this.sanitizeDOMBrackets(n);
-              else if (n.nodeType === 3 && n.nodeValue && n.nodeValue.includes('[')) {
-                const cleaned = this.sanitizeBracketedNumbersInText(n.nodeValue, false);
-                if (cleaned !== n.nodeValue) n.nodeValue = cleaned;
+              if (n.nodeType === 1) {
+                this.sanitizeDOMBrackets(n);
+                this.sanitizeDOMUndefined(n);
+              } else if (n.nodeType === 3 && n.nodeValue) {
+                if (n.nodeValue.includes('[')) {
+                  const cleaned = this.sanitizeBracketedNumbersInText(n.nodeValue, false);
+                  if (cleaned !== n.nodeValue) n.nodeValue = cleaned;
+                }
+                if (/\bundefined\b/i.test(n.nodeValue)) {
+                  n.nodeValue = n.nodeValue.replace(/\bundefined\b/gi, '');
+                }
               }
             });
-          } else if (m.type === 'characterData' && m.target && m.target.nodeValue && m.target.nodeValue.includes('[')) {
-            const cleaned = this.sanitizeBracketedNumbersInText(m.target.nodeValue, false);
-            if (cleaned !== m.target.nodeValue) m.target.nodeValue = cleaned;
+          } else if (m.type === 'characterData' && m.target && m.target.nodeValue) {
+            if (m.target.nodeValue.includes('[')) {
+              const cleaned = this.sanitizeBracketedNumbersInText(m.target.nodeValue, false);
+              if (cleaned !== m.target.nodeValue) m.target.nodeValue = cleaned;
+            }
+            if (/\bundefined\b/i.test(m.target.nodeValue)) {
+              m.target.nodeValue = m.target.nodeValue.replace(/\bundefined\b/gi, '');
+            }
           }
         }
       });
@@ -2606,12 +2635,12 @@ class ReadSkillsApp {
         <!-- Unit Information Hero Card -->
         <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/80 via-pink-100/60 to-purple-50/80 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
-            <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber}</span>
-            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr || 'A2–B1'}</span>
+            <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber || (ReadSkillsData.strategies.indexOf(unit) + 1)}</span>
+            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${(unit.cefr && unit.cefr !== 'undefined') ? unit.cefr : 'A2–B1'}</span>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title || ''} (${unit.thaiTitle || ''})</h3>
           <p class="text-xs text-purple-800 font-semibold mb-1">
-            <strong>Scope (ขอบเขตเนื้อหา):</strong> ${unit.scope || unit.thaiTitle}
+            <strong>Scope (ขอบเขตเนื้อหา):</strong> ${(unit.scope && unit.scope !== 'undefined') ? unit.scope : (unit.thaiTitle || 'Strategy Learning Sequence')}
           </p>
         </div>
 
@@ -3013,6 +3042,19 @@ class ReadSkillsApp {
                 <i data-lucide="check-check" class="w-4 h-4"></i>
                 <span>Review Completed 🎉</span>
               </button>
+            </div>
+          </div>
+        `;
+
+      default:
+        return `
+          <div class="space-y-4 p-4 text-center">
+            <h4 class="text-base font-bold text-slate-800">${step.title || 'Step ' + (sIdx + 1)} (${step.thaiTitle || ''})</h4>
+            <div class="text-sm text-slate-700 leading-relaxed max-w-xl mx-auto">${step.content || step.englishConcept || step.thaiExplanation || ''}</div>
+            ${step.customHtml || ''}
+            <div class="flex justify-between pt-4 max-w-xl mx-auto">
+              ${sIdx > 0 ? `<button onclick="app.prevStrategyStep()" class="px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl text-xs transition cursor-pointer">⬅ Back</button>` : '<div></div>'}
+              ${sIdx < 7 ? `<button onclick="app.nextStrategyStep()" class="px-6 py-2.5 bg-purple-700 hover:bg-purple-800 text-white font-semibold rounded-xl text-xs transition cursor-pointer">Next Step ➡</button>` : ''}
             </div>
           </div>
         `;
