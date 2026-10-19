@@ -189,6 +189,21 @@ class ReadSkillsApp {
       lastScore: savedS2QuizScore ? parseInt(savedS2QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 3 State (Vocabulary in Context, Sentence Meaning & 30-Question Strategy Quiz)
+    this.strat3ActiveHighlightTool = 'yellow';
+    this.strat3HighlightColors = {};
+    const savedS3QuizScore = localStorage.getItem('bru_strat3_quiz_score');
+    this.strat3QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS3QuizScore ? parseInt(savedS3QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -2942,7 +2957,8 @@ class ReadSkillsApp {
       case 8:
         if (
           (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) ||
-          (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz)
+          (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz) ||
+          (unit.unitNumber === 3 && ReadSkillsData.strategyUnit3Quiz)
         ) {
           return this.renderStrategyUnit1QuizStep(step);
         }
@@ -3514,8 +3530,245 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1 & 2) ------------------- */
+  /* ------------------- Strategy Unit 3 Interactive Methods (A2-B1) ------------------- */
+
+  submitStrat3Pretest() {
+    const key = [1, 1, 1];
+    const exps = [
+      "ข้อ 1 ตอบ B: คำว่า 'or' หลังเครื่องหมายจุลภาค (, or easy to carry,) เป็น Synonym Context Clue ที่บอกความหมายของคำว่า portable ว่าพกพาสะดวก",
+      "ข้อ 2 ตอบ B: คำว่า 'such as' เป็นตัวนำ Example Context Clue (การยกตัวอย่าง apples, bananas, and oranges)",
+      "ข้อ 3 ตอบ B: ในการวิเคราะห์ Sentence Meaning เมื่อตัดส่วนขยายเวลาและสถานที่ออก โครงสร้างหลักคือ The local bakery (Subject) + sells (Verb) + fresh bread (Supporting Info)"
+    ];
+    let score = 0;
+    const details = [];
+    for (let i = 0; i < 3; i++) {
+      const checked = document.querySelector(`input[name="s3-pre-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      details.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat3-pretest-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #34D399' : '1.5px solid #FBBF24';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน Pre-Test (Unit 3): ${score} / 3 คะแนน</div>${details.join('')}`;
+    }
+  }
+
+  checkStrat3Warmup(choiceIdx) {
+    const fb = document.getElementById('strat3-warmup-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    fb.style.padding = '0.8rem';
+    fb.style.borderRadius = '10px';
+    fb.style.fontSize = '0.84rem';
+    if (choiceIdx === 1) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #34D399';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>ถูกต้อง! 🎉</strong> จากบริบท <em>"even after falling on the floor many times, it never breaks"</em> (ตกพื้นหลายครั้งแต่ไม่เคยแตก) ทำให้เดาได้ทันทีว่า <strong>durable</strong> แปลว่า <strong>แข็งแรงทนทาน</strong> (Strong and lasts a long time)';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #F87171';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '💡 <strong>ลองสังเกตเบาะแสหลังเครื่องหมายขีด (—) อีกครั้ง:</strong> <em>"even after falling on the floor many times, it never breaks"</em> แสดงว่ากระติกน้ำนี้แข็งแรงทนทานและใช้งานได้นาน (ข้อ B)';
+    }
+  }
+
+  submitStrat3Game() {
+    const key = [0, 1, 2, 1, 0, 1];
+    const exps = [
+      "Item 1 (fragile): มีคำว่า ', or easy to break,' เป็น Synonym Clue แปลว่า แตกหักง่าย",
+      "Item 2 (beverages): มีคำว่า 'such as iced tea, fresh milk, and orange juice' เป็น Example Clue แปลว่า เครื่องดื่ม",
+      "Item 3 (vacant): มีคำว่า 'Unlike the crowded train..., the night bus was almost vacant' เป็น Antonym Clue (ตรงข้ามกับ crowded) แปลว่า ว่างเปล่า",
+      "Item 4 (punctual): มีเครื่องหมายขีด '— always arriving five minutes before the meeting starts' เป็น Definition Clue แปลว่า ตรงต่อเวลา",
+      "Item 5 (exhausted): มีเหตุผลประกอบ 'After carrying heavy boxes up five floors..., Ken felt exhausted and went straight to bed' เป็น General Clue แปลว่า เหนื่อยล้ามาก",
+      "Item 6 (donated): มีวงเล็บ '(gave for free to help others)' เป็น Definition/Synonym Clue แปลว่า บริจาคหรือให้ฟรีเพื่อช่วยเหลือผู้อื่น"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 6; i++) {
+      const sel = document.getElementById(`s3-game-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 6) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat3-game-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🎉 ผ่านเกณฑ์ 70%!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน Context Clue Game: ${score} / 6 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  submitStrat3SentencePractice() {
+    const key = [0, 1, 0, 1];
+    const exps = [
+      "ข้อ 1 ตอบ A: เมื่อตัดส่วนขยายเวลาและสถานที่ออก ใจความหลักคือ The town clinic (Subject) + offers (Verb) + free health checks (Supporting Info)",
+      "ข้อ 2 ตอบ B: คำว่า 'Unlike' เปรียบเทียบความตรงกันข้ามกับพี่ชายที่ชอบงานปาร์ตี้เสียงดัง ดังนั้น timid จึงหมายถึง ขี้อายและเงียบขรึม (Antonym Clue)",
+      "ข้อ 3 ตอบ A: เครื่องหมายจุลภาค ', or a person who walks to work,' ให้คำจำกัดความสั้นๆ ว่า commuter คือผู้ที่เดินทางไปทำงาน",
+      "ข้อ 4 ตอบ B: ประโยคที่ (1) เป็นประโยคสรุปใจความสำคัญ (Main Idea) ว่าการอ่านนิทานสั้นภาษาอังกฤษทุกคืนช่วยให้ผู้เรียนจำคำศัพท์ใหม่ได้อย่างเป็นธรรมชาติ"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 4; i++) {
+      const checked = document.querySelector(`input[name="s3-prac-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 4) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat3-practice-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🏆 ผ่านเกณฑ์ 70%!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน Sentence Meaning Practice: ${score} / 4 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  setStrat3HighlightTool(color) {
+    this.strat3ActiveHighlightTool = color;
+    const tools = ['yellow', 'green', 'blue'];
+    tools.forEach(c => {
+      const btn = document.getElementById(`strat3-tool-${c}`);
+      if (btn) {
+        btn.style.boxShadow = c === color ? '0 0 0 3px rgba(15,23,42,0.28)' : 'none';
+        btn.style.transform = c === color ? 'scale(1.03)' : 'scale(1)';
+      }
+    });
+  }
+
+  highlightStrat3Sentence(sentIdx, forcedColor) {
+    const color = forcedColor || this.strat3ActiveHighlightTool || 'yellow';
+    if (!this.strat3HighlightColors) this.strat3HighlightColors = {};
+    this.strat3HighlightColors[sentIdx] = color;
+
+    const expected = {
+      0: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Sentence Meaning (สีฟ้า): ประโยคเปิดใจความหลักว่าสวนสาธารณะริมน้ำเป็นสถานที่พักผ่อนยอดนิยมของครอบครัว' },
+      1: { role: 'yellow', exp: 'Segment (2) คือ Unfamiliar Vocabulary (สีเหลือง): ประโยคที่มีคำศัพท์เป้าหมาย spacious และ serene ที่ต้องปลดล็อกความหมาย' },
+      2: { role: 'green', exp: 'Segment (3) คือ Context Clues (สีเขียว): เบาะแสขยายความ (, or very large and open, และ — quiet, peaceful, and free from traffic noise) ที่บอกความหมายของคำศัพท์' },
+      3: { role: 'yellow', exp: 'Segment (4) คือ Unfamiliar Vocabulary (สีเหลือง): ประโยคที่มีคำศัพท์เป้าหมาย vendors (ผู้ค้าขายในสวน)' },
+      4: { role: 'green', exp: 'Segment (5) คือ Context Clues (สีเขียว): เบาะแสในวงเล็บ (local sellers with small food carts) และตัวอย่าง such as grilled corn and coconut water' },
+      5: { role: 'blue', exp: 'Segment (6) คือ Concluding Sentence Meaning (สีฟ้า): ประโยคสรุปใจความสำคัญว่าสวนสาธารณะช่วยให้ผู้คนในเมืองมีความสุขและสุขภาพดี' }
+    };
+
+    const el = document.getElementById(`strat3-hl-sent-${sentIdx}`);
+    if (el) {
+      if (color === 'yellow') {
+        el.style.background = '#FEF08A';
+        el.style.borderColor = '#EAB308';
+      } else if (color === 'green') {
+        el.style.background = '#DCFCE7';
+        el.style.borderColor = '#22C55E';
+      } else {
+        el.style.background = '#DBEAFE';
+        el.style.borderColor = '#3B82F6';
+      }
+    }
+
+    const fb = document.getElementById('strat3-hl-feedback');
+    if (fb && expected[sentIdx]) {
+      const ok = expected[sentIdx].role === color;
+      fb.style.display = 'block';
+      fb.style.padding = '0.8rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = ok ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = ok ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `${ok ? '✅ <strong>เลือกสีถูกต้อง!</strong>' : '💡 <strong>คำแนะนำสีที่ถูกต้อง:</strong>'} ${expected[sentIdx].exp}`;
+    }
+  }
+
+  resetStrat3Highlights() {
+    this.strat3HighlightColors = {};
+    for (let i = 0; i < 6; i++) {
+      const el = document.getElementById(`strat3-hl-sent-${i}`);
+      if (el) {
+        el.style.background = '#fff';
+        el.style.borderColor = '#E2E8F0';
+      }
+    }
+    const fb = document.getElementById('strat3-hl-feedback');
+    if (fb) fb.style.display = 'none';
+  }
+
+  revealStrat3Highlights() {
+    const key = { 0: 'blue', 1: 'yellow', 2: 'green', 3: 'yellow', 4: 'green', 5: 'blue' };
+    Object.keys(key).forEach(k => this.highlightStrat3Sentence(Number(k), key[k]));
+    const fb = document.getElementById('strat3-hl-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>เฉลยครบทั้ง 6 ส่วนแล้ว:</strong> สีเหลือง (2, 4) = Unfamiliar Vocabulary • สีเขียว (3, 5) = Context Clues • สีฟ้า (1, 6) = Main Ideas & Sentence Meaning';
+    }
+  }
+
+  submitStrat3PassageCheck() {
+    const key = [1, 1, 1];
+    const exps = [
+      "Passage 1 (nutritious): มีคำว่า ', or full of vitamins that keep the body strong,' เป็น Synonym Clue และใจความหลักคือการทำสมูทตี้ผลไม้เองที่บ้านทั้งดีต่อสุขภาพและทำง่าย",
+      "Passage 2 (swap / genres): swap มีวงเล็บ '(trade one book for another without paying money)' แปลว่าแลกเปลี่ยน ส่วน genres มี 'such as mystery stories, history books, and cooking guides' แปลว่าประเภทของหนังสือ",
+      "Passage 3 (essential / waterproof): essential มีขีด '— very important and necessary —' แปลว่าจำเป็นอย่างยิ่ง ส่วน waterproof มี 'that keeps water out' แปลว่ากันน้ำได้"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 3; i++) {
+      const sel = document.getElementById(`s3-pass-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.3rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat3-passages-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน While-Reading Passages 1–3 (Unit 3): ${score} / 3 คะแนน</div>${rows.join('')}`;
+    }
+  }
+
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2 & 3) ------------------- */
   getActiveStrategyQuizContext() {
+    if (this.currentStrategyUnit === 3 && ReadSkillsData.strategyUnit3Quiz) {
+      return {
+        unitNum: 3,
+        quizData: ReadSkillsData.strategyUnit3Quiz,
+        state: this.strat3QuizState,
+        storageKey: 'bru_strat3_quiz_score'
+      };
+    }
     if (this.currentStrategyUnit === 2 && ReadSkillsData.strategyUnit2Quiz) {
       return {
         unitNum: 2,
@@ -3547,7 +3800,28 @@ class ReadSkillsApp {
       state.passageSubmitted = [false, false, false];
     }
 
-    const topCards = unitNum === 2 ? `
+    const topCards = unitNum === 3 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="key-round" class="w-4 h-4 text-purple-700"></i>
+            <span>Vocabulary in Context & Sentence Meaning</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Unlocking Textual Meaning (A2–B1):</strong> ใช้เบาะแสบริบททั้ง 5 ประเภท (<em>Definition, Synonym, Antonym, Example, General Clue</em>) ร่วมกับการแยกโครงสร้างประโยคหลัก <em>Subject + Verb + Supporting Info</em>
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Unit 3 Assessment & 70% Mastery Goal</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการเดาความหมายคำศัพท์จากบริบทและการตีความประโยคในระดับภาษา A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    ` : unitNum === 2 ? `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
         <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-purple-950 font-bold">
@@ -3591,7 +3865,28 @@ class ReadSkillsApp {
       </div>
     `;
 
-    const bottomReview = unitNum === 2 ? `
+    const bottomReview = unitNum === 3 ? `
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Unit 3 Review & Common Mistakes (สรุปบทที่ 3 และข้อควรระวัง)</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. หยุดอ่านทันทีเมื่อเจอคำศัพท์ไม่คุ้น</strong>
+            <p class="leading-relaxed">อย่าเพิ่งเปิดพจนานุกรมทุกคำ ให้มองดูคำข้างหน้าและข้างหลัง โดยเฉพาะหลังเครื่องหมาย <em>, or</em> • <em>—</em> • <em>( )</em> และคำว่า <em>such as</em></p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. มองข้ามคำบอกความตรงกันข้าม (Antonym Clues)</strong>
+            <p class="leading-relaxed">ระวังคำว่า <em>unlike, however, but, instead of</em> เพราะความหมายของคำศัพท์เป้าหมายจะตรงกันข้ามกับคำที่อยู่ข้างเคียง</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. หลงทางในประโยคที่ยาว</strong>
+            <p class="leading-relaxed">เมื่อเจอประโยคยาว ให้หา <strong>Subject (ใคร/อะไร) + Verb (ทำอะไร) + Supporting Info</strong> ก่อนเสมอ แล้วจึงค่อยดูส่วนขยายเวลาหรือสถานที่</p>
+          </div>
+        </div>
+      </div>
+    ` : unitNum === 2 ? `
       <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
         <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
           <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
@@ -4166,7 +4461,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
-    if (unitNum === 2) {
+    if (unitNum === 3) {
+      this.strat3QuizState = fresh;
+    } else if (unitNum === 2) {
       this.strat2QuizState = fresh;
     } else {
       this.strat1QuizState = fresh;

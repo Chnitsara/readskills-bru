@@ -456,102 +456,94 @@ window.ReadSkillsData = {
       ]
     },
     {
-      "id": "strat-u3",
       "unitNumber": 3,
-      "title": "Using Context Clues",
-      "thaiTitle": "การใช้คำศัพท์ในบริบท",
-      "scope": "Using context clues to find word meaning and sentence meaning",
-      "cefr": "B1",
-      "icon": "key",
+      "id": "strat-u3",
+      "title": "Vocabulary in Context and Sentence Meaning: Unlocking Textual Meaning",
+      "thaiTitle": "การเดาความหมายคำศัพท์จากบริบทและการตีความหมายของประโยค",
+      "cefr": "A2–B1",
+      "scope": "5 Types of Context Clues (Definitions, Synonyms, Antonyms, Examples, General Clues), Signal Words & Punctuation, and Sentence Meaning Analysis (6 Hours / 2 Weeks)",
       "steps": [
         {
           "stepNum": 1,
           "title": "What is the strategy?",
           "thaiTitle": "คืออะไร?",
-          "icon": "help-circle",
-          "content": "Using context clues means uncovering the meaning of unfamiliar words and complex sentences by analyzing surrounding words, phrases, and punctuation marks provided by the author in the same paragraph.\n\nThe 4 Major Types of Context Clues (The D-S-A-E Framework):\n1. Definition / Restatement Clues (การให้คำจำกัดความ/การกล่าวซ้ำ): The author directly defines the term using linking phrases (is defined as, means, refers to) or punctuation marks like commas, em-dashes, or parentheses.\n2. Synonym Clues (คำเหมือนหรือคำที่มีความหมายใกล้เคียง): The author pairs the unfamiliar word with a familiar synonym or rephrasing using signal markers such as 'or', 'that is', 'also known as', or 'in other words'.\n3. Antonym / Contrast Clues (คำตรงข้ามหรือข้อความที่ขัดแย้ง): The author clarifies the word by contrasting it with its opposite using transition words such as 'unlike', 'however', 'but', 'on the other hand', 'in contrast', 'whereas', or 'although'.\n4. Example / Illustration Clues (การยกตัวอย่างประกอบ): The author explains the word by listing concrete real-world examples using signal phrases such as 'such as', 'for example', 'for instance', 'including', or 'e.g.'.",
-          "thaiExplanation": "บริบท (Context Clues) คือเบาะแสหรือข้อความแวดล้อมที่ผู้เขียนใส่ไว้เพื่อช่วยให้ผู้อ่านเข้าใจคำศัพท์ที่ไม่คุ้นเคยโดยไม่ต้องเปิดพจนานุกรม ประกอบด้วย 4 ประเภทหลัก: 1. การให้คำจำกัดความ (Definition) 2. คำเหมือน (Synonym) 3. คำตรงข้าม/ข้อความขัดแย้ง (Antonym/Contrast) และ 4. การยกตัวอย่างประกอบ (Example)"
+          "content": "Unlocking Textual Meaning helps readers understand unfamiliar words by using clues from the surrounding text instead of depending only on a dictionary. Learners use five types of context clues (definitions, synonyms, antonyms, examples, and general clues), spot signal words and punctuation, and find the main meaning of sentences by identifying the subject, verb, and key information.",
+          "thaiExplanation": "กลยุทธ์บทที่ 3 ช่วยให้ผู้เรียนเดาความหมายของคำศัพท์ใหม่จากบริบท (Context Clues 5 ประเภท) สังเกตเครื่องหมายวรรคตอนและคำสัญญาณ รวมถึงแยกประธาน กริยา และส่วนขยายสำคัญเพื่อเข้าใจความหมายหลักของประโยคในระดับ A2–B1",
+          "customHtml": "\n      <div style=\"background:linear-gradient(135deg, #1E1B4B 0%, #312E81 60%, #4F46E5 100%); color:#fff; border-radius:14px; padding:1.25rem 1.4rem; margin-bottom:1.25rem; box-shadow:0 10px 25px -5px rgba(49,46,129,0.25);\">\n        <div style=\"display:flex; flex-wrap:wrap; gap:0.5rem; align-items:center; justify-content:space-between; margin-bottom:0.55rem;\">\n          <span style=\"background:rgba(255,255,255,0.18); color:#E0E7FF; padding:0.22rem 0.65rem; border-radius:999px; font-size:0.75rem; font-weight:800; letter-spacing:0.04em;\">COURSE 2031103 • ENGLISH READING STRATEGIES (UNIT 3)</span>\n          <span style=\"background:#10B981; color:#fff; padding:0.22rem 0.65rem; border-radius:999px; font-size:0.74rem; font-weight:800;\">CEFR A2–B1 • 6 Hours (2 Weeks)</span>\n        </div>\n        <h3 style=\"margin:0 0 0.3rem 0; font-size:1.18rem; font-weight:800; color:#fff;\">Unit 3: Vocabulary in Context and Sentence Meaning — Unlocking Textual Meaning</h3>\n        <p style=\"margin:0; font-size:0.88rem; color:#E0E7FF; line-height:1.55;\">\n          การเดาความหมายของคำศัพท์ใหม่จากบริบท (<strong>Context Clues 5 รูปแบบ</strong>) การสังเกตคำสัญญาณและเครื่องหมายวรรคตอน (<strong>Signal Words & Punctuation</strong>) และการแยกส่วนประกอบหลักของประโยค (<strong>Subject + Verb + Key Information</strong>) ในระดับภาษาพื้นฐาน <strong>CEFR A2–B1</strong>\n        </p>\n      </div>\n\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(225px, 1fr)); gap:0.9rem; margin-bottom:1.4rem;\">\n        <div style=\"background:linear-gradient(135deg, #EFF6FF, #DBEAFE); border:1.5px solid #93C5FD; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#1D4ED8; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Pillar 1 • 5 Context Clues</div>\n          <div style=\"font-weight:800; color:#1E3A8A; font-size:1rem; margin-bottom:0.35rem;\">🔍 5 Types of Context Clues</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#1E40AF; line-height:1.55;\">\n            เดาความหมายคำศัพท์ที่ไม่คุ้นเคยได้โดยไม่ต้องพึ่งพจนานุกรม ผ่านเบาะแส 5 แบบ: <strong>Definitions, Synonyms, Antonyms, Examples, และ General Clues</strong>\n          </p>\n        </div>\n\n        <div style=\"background:linear-gradient(135deg, #F0FDF4, #DCFCE7); border:1.5px solid #86EFAC; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#15803D; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Pillar 2 • Signals & Punctuation</div>\n          <div style=\"font-weight:800; color:#065F46; font-size:1rem; margin-bottom:0.35rem;\">🧷 Clues in Punctuation</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#065F46; line-height:1.55;\">\n            สังเกตเครื่องหมายและคำเชื่อมที่ซ่อนคำแปลไว้ข้างหลัง เช่น <strong>เครื่องหมายจุลภาค (, ... ,), ขีด (—), วงเล็บ ( )</strong> และคำว่า <em>such as, including, or, however, in other words</em>\n          </p>\n        </div>\n\n        <div style=\"background:linear-gradient(135deg, #FEFCE8, #FEF08A); border:1.5px solid #FDE047; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#B45309; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Pillar 3 • Sentence Core</div>\n          <div style=\"font-weight:800; color:#78350F; font-size:1rem; margin-bottom:0.35rem;\">🧩 Sentence Meaning</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#92400E; line-height:1.55;\">\n            เมื่อเจอประโยคยาวๆ ให้หา <strong>Subject (ประธาน: ใคร/อะไร) + Verb (กริยา: ทำอะไร) + Supporting Info (ข้อมูลสำคัญ)</strong> เพื่อจับใจความหลักของประโยค\n          </p>\n        </div>\n\n        <div style=\"background:linear-gradient(135deg, #FAF5FF, #F3E8FF); border:1.5px solid #D8B4FE; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#6D28D9; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Pillar 4 • Verify in Context</div>\n          <div style=\"font-weight:800; color:#4C1D95; font-size:1rem; margin-bottom:0.35rem;\">✅ Context Clue Game & Quiz</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#5B21B6; line-height:1.55;\">\n            ตรวจสอบความหมายที่เดาไว้กับประโยครอบข้าง และฝึกทำ <strong>Context Clue Game</strong> กับ <strong>Vocabulary Quiz</strong> ให้ผ่านเกณฑ์ <strong>70% ขึ้นไป</strong>\n          </p>\n        </div>\n      </div>\n\n      <!-- INTERACTIVE PRE-TEST -->\n      <div style=\"background:#F8FAFC; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.2rem; margin-bottom:1.25rem;\">\n        <div style=\"display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.75rem;\">\n          <div>\n            <span style=\"background:#E0E7FF; color:#3730A3; padding:0.2rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:800; text-transform:uppercase;\">Diagnostic Pre-Test • แบบทดสอบก่อนเรียน</span>\n            <h4 style=\"margin:0.3rem 0 0 0; font-size:1rem; font-weight:800; color:#1E293B;\">Quick Check: ตรวจสอบความเข้าใจเรื่อง Context Clues (3 ข้อ)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.submitStrat3Pretest()\" style=\"background:#4F46E5; color:#fff; border:none; border-radius:8px; padding:0.48rem 0.95rem; font-size:0.82rem; font-weight:700; cursor:pointer;\">ตรวจคำตอบ Pre-Test</button>\n        </div>\n\n        <div style=\"display:grid; gap:0.8rem;\">\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:700; font-size:0.88rem; color:#1E293B; margin-bottom:0.45rem;\">1. ในประโยค <em>\"Fresh vegetables are <u>nutritious</u>; in other words, they give your body healthy food to grow strong.\"</em> คำว่า <strong>nutritious</strong> แปลว่าอะไร และใช้เบาะแสชนิดใด?</div>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-1\" value=\"0\"> A. แปลว่า มีคุณค่าทางอาหาร/ดีต่อร่างกาย โดยใช้คำสัญญาณ \"in other words\" (Definition / Restatement Clue)</label>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-1\" value=\"1\"> B. แปลว่า ราคาแพงมาก โดยดูจากคำว่า fresh</label>\n            <label style=\"display:block; font-size:0.85rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-1\" value=\"2\"> C. แปลว่า รสชาติเผ็ดร้อน</label>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:700; font-size:0.88rem; color:#1E293B; margin-bottom:0.45rem;\">2. คำสัญญาณคู่ใดที่ช่วยบอกเบาะแสแบบ \"Example Clue\" (การยกตัวอย่าง)?</div>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-2\" value=\"0\"> A. however, but, unlike</label>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-2\" value=\"1\"> B. such as, including, for example</label>\n            <label style=\"display:block; font-size:0.85rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-2\" value=\"2\"> C. never, nothing, nobody</label>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:700; font-size:0.88rem; color:#1E293B; margin-bottom:0.45rem;\">3. เมื่อต้องการเข้าใจความหมายหลักของประโยคยาวๆ เราควรมองหาส่วนใดก่อนเป็นอันดับแรก?</div>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-3\" value=\"0\"> A. คำสุดท้ายของย่อหน้าเท่านั้น</label>\n            <label style=\"display:block; font-size:0.85rem; margin-bottom:0.25rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-3\" value=\"1\"> B. Subject (ประธานหลัก) + Verb (กริยาหลัก) และใจความสำคัญที่ตามมา</label>\n            <label style=\"display:block; font-size:0.85rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-pre-3\" value=\"2\"> C. นับจำนวนตัวอักษรในประโยค</label>\n          </div>\n        </div>\n        <div id=\"strat3-pretest-feedback\" style=\"margin-top:0.75rem; display:none;\"></div>\n      </div>\n\n      <!-- PRE-READING WARM-UP -->\n      <div style=\"background:linear-gradient(135deg, #FDF4FF, #FAE8FF); border:1.5px solid #E879F9; border-radius:14px; padding:1.2rem;\">\n        <div style=\"font-size:0.74rem; font-weight:800; color:#86198F; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Pre-Reading Warm-Up • กิจกรรมอุ่นเครื่องเดาคำศัพท์โดยไม่ใช้ดิกชันนารี</div>\n        <h4 style=\"margin:0 0 0.5rem 0; font-size:1rem; font-weight:800; color:#701A75;\">Warm-Up Detective: Guess the Meaning from Surrounding Words (A2–B1)</h4>\n        <p style=\"margin:0 0 0.75rem 0; font-size:0.86rem; color:#581C87; line-height:1.55;\">\n          ลองอ่านประโยคด้านล่างแล้วใช้ <strong>คำรอบข้าง (Context Clues)</strong> เดาความหมายของคำที่ขีดเส้นใต้โดยไม่ต้องเปิดพจนานุกรม:\n        </p>\n\n        <div style=\"background:#fff; border:1px solid #F0ABFC; border-radius:10px; padding:0.9rem; margin-bottom:0.85rem; font-size:0.9rem; line-height:1.7; color:#1E293B;\">\n          \"After walking in the hot sun for two hours without water, the hikers felt completely <strong><u>exhausted</u></strong>, <strong>or very tired</strong>, so they sat down under a big tree to rest.\"\n        </div>\n\n        <div style=\"font-weight:700; font-size:0.88rem; color:#4A044E; margin-bottom:0.45rem;\">\n          ❓ คำถาม Warm-Up: จากเบาะแสคำข้างเคียง คำว่า <strong><u>exhausted</u></strong> มีความหมายตรงกับข้อใด?\n        </div>\n        <div style=\"display:flex; flex-wrap:wrap; gap:0.5rem;\">\n          <button type=\"button\" onclick=\"window.app.checkStrat3Warmup(0)\" style=\"background:#fff; border:1.5px solid #D946EF; color:#86198F; border-radius:8px; padding:0.45rem 0.85rem; font-size:0.83rem; font-weight:700; cursor:pointer;\">A. ตื่นเต้นและอยากวิ่งต่อ</button>\n          <button type=\"button\" onclick=\"window.app.checkStrat3Warmup(1)\" style=\"background:#fff; border:1.5px solid #D946EF; color:#86198F; border-radius:8px; padding:0.45rem 0.85rem; font-size:0.83rem; font-weight:700; cursor:pointer;\">B. เหนื่อยล้ามาก (very tired) — สังเกตจากคำว่า \", or very tired,\" และ \"sat down... to rest\"</button>\n          <button type=\"button\" onclick=\"window.app.checkStrat3Warmup(2)\" style=\"background:#fff; border:1.5px solid #D946EF; color:#86198F; border-radius:8px; padding:0.45rem 0.85rem; font-size:0.83rem; font-weight:700; cursor:pointer;\">C. หนาวสั่นเพราะหิมะตก</button>\n        </div>\n        <div id=\"strat3-warmup-feedback\" style=\"margin-top:0.7rem; display:none;\"></div>\n      </div>\n"
         },
         {
           "stepNum": 2,
           "title": "Why use it?",
           "thaiTitle": "ทำไมต้องใช้?",
-          "icon": "lightbulb",
-          "content": "in daily learning-level reading and academic examinations, using context clues provides critical cognitive benefits:\n1. Preserves Reading Fluency & Momentum: Stopping to look up every single unknown word in a dictionary disrupts short-term memory, slows reading speed, and breaks your comprehension train of thought.\n2. Crucial for Timed Examinations: In standardized tests (like TOEIC, TOEFL, IELTS, and English proficiency exams), dictionaries and phones are strictly prohibited; context clues are your only tool to decode unknown terms.\n3. Unlocks Nuanced Academic Meanings: Many English words possess multiple definitions (polysemy); context clues reveal the precise shade of meaning intended by the author in that specific field.\n4. Accelerates Long-Term Vocabulary Acquisition: Research shows that discovering word meanings through authentic context leads to significantly stronger memory retention than memorizing word lists in isolation.",
-          "thaiExplanation": "ช่วยรักษาความต่อเนื่องในการอ่านโดยไม่ต้องหยุดเปิดพจนานุกรมบ่อยๆ เป็นทักษะชี้ขาดในห้องสอบที่ไม่อนุญาตให้นำอุปกรณ์ช่วยแปลเข้าไป ช่วยระบุความหมายเฉพาะทางของคำศัพท์ที่มีหลายความหมาย (Polysemy) และช่วยให้จดจำคำศัพท์ใหม่ได้อย่างยาวนานและเป็นธรรมชาติ"
+          "content": "Using context clues and sentence structure analysis lets you read smoothly without stopping at every new word. It builds vocabulary naturally, improves reading comprehension, and helps you achieve 70% or higher on the Context Clue Game and Vocabulary Quiz.",
+          "thaiExplanation": "ช่วยให้การอ่านไหลลื่นโดยไม่ต้องหยุดเปิดพจนานุกรมทุกคำ เพิ่มคลังคำศัพท์และความเข้าใจประโยคอย่างเป็นระบบ และช่วยให้ทำแบบทดสอบได้แม่นยำเกิน 70%",
+          "customHtml": "\n      <div style=\"background:linear-gradient(135deg, #EFF6FF, #E0E7FF); border-left:5px solid #4F46E5; border-radius:12px; padding:1.1rem 1.25rem; margin-bottom:1.2rem;\">\n        <div style=\"font-size:0.75rem; font-weight:800; color:#4338CA; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.3rem;\">Core Concept • แนวคิดหลักประจำหน่วยการเรียนที่ 3</div>\n        <p style=\"margin:0; font-size:0.92rem; color:#1E293B; line-height:1.68;\">\n          หน่วยการเรียนนี้ช่วยให้ผู้เรียนเข้าใจความหมายของคำศัพท์ที่ไม่คุ้นเคยโดยใช้ <strong>เบาะแสจากบริบท (Context Clues)</strong> ในบทอ่าน แทนการพึ่งพาพจนานุกรมเพียงอย่างเดียว ผู้เรียนจะได้เรียนรู้การใช้บริบทประเภทต่างๆ ได้แก่ <strong>คำจำกัดความ (Definitions), คำพ้องความหมาย (Synonyms), คำตรงข้าม (Antonyms), ตัวอย่าง (Examples), และบริบทแวดล้อมทั่วไป (General Clues)</strong> รวมถึงฝึกทำความเข้าใจความหมายของประโยคด้วยการแยกแยะส่วนประกอบหลักของประโยค (<strong>Main Parts of a Sentence: Subject, Verb, Supporting Information</strong>) เพื่อพัฒนาคลังคำศัพท์ ความเข้าใจในการอ่าน และความมั่นใจในการอ่านภาษาอังกฤษ\n        </p>\n      </div>\n\n      <h4 style=\"margin:0 0 0.65rem 0; font-size:1.02rem; font-weight:800; color:#1E293B;\">🎯 Performance Indicators (ตัวชี้วัดผลการเรียนรู้)</h4>\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:0.85rem; margin-bottom:1.3rem;\">\n        <div style=\"background:#fff; border:1.5px solid #BFDBFE; border-radius:12px; padding:0.95rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#1D4ED8; margin-bottom:0.25rem;\">INDICATOR 1 • Sentence & Context</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#334155; line-height:1.55;\">\n            ผู้เรียนสามารถระบุความหมายหลักของประโยคที่ซับซ้อน และใช้ <strong>Context Clues</strong> เพื่อเข้าใจคำศัพท์ที่ไม่คุ้นเคยได้\n          </p>\n        </div>\n        <div style=\"background:#fff; border:1.5px solid #A7F3D0; border-radius:12px; padding:0.95rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#047857; margin-bottom:0.25rem;\">INDICATOR 2 • 5 Clue Types</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#334155; line-height:1.55;\">\n            ผู้เรียนสามารถใช้ <strong>Context Clues รูปแบบต่างๆ</strong> (Definitions, Synonyms, Antonyms, Examples, General Clues) เพื่อหาความหมายของคำศัพท์ใหม่ได้\n          </p>\n        </div>\n        <div style=\"background:#fff; border:1.5px solid #FDE68A; border-radius:12px; padding:0.95rem;\">\n          <div style=\"font-size:0.74rem; font-weight:800; color:#B45309; margin-bottom:0.25rem;\">INDICATOR 3 • 70% Mastery Goal</div>\n          <p style=\"margin:0; font-size:0.86rem; color:#334155; line-height:1.55;\">\n            ผู้เรียนทำภารกิจ <strong>Context Clue Game</strong> และ <strong>Vocabulary Quiz</strong> บนเว็บแอปพลิเคชันได้ถูกต้องไม่น้อยกว่า <strong>70%</strong>\n          </p>\n        </div>\n      </div>\n\n      <div style=\"background:#F8FAFC; border:1.5px solid #E2E8F0; border-radius:14px; padding:1.15rem;\">\n        <div style=\"font-weight:800; color:#0F172A; font-size:0.98rem; margin-bottom:0.45rem;\">🏆 Terminal Objective (จุดประสงค์ปลายทาง)</div>\n        <p style=\"margin:0 0 0.9rem 0; font-size:0.88rem; color:#334155; line-height:1.6; background:#fff; padding:0.75rem 0.95rem; border-radius:9px; border-left:4px solid #10B981;\">\n          เมื่อจบบทเรียน ผู้เรียนสามารถใช้เบาะแสจากบริบท (Context Clues) เพื่อเข้าใจคำศัพท์ที่ไม่คุ้นเคย ระบุความหมายหลักของประโยค และทำกิจกรรมการเรียนรู้บนเว็บแอปพลิเคชันได้สำเร็จ\n        </p>\n\n        <div style=\"font-weight:800; color:#0F172A; font-size:0.95rem; margin-bottom:0.5rem;\">📌 Enabling Objectives (จุดประสงค์นำทาง 6 ข้อ)</div>\n        <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:0.6rem; font-size:0.85rem; color:#334155;\">\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>1.</strong> อธิบายประเภทของ Context Clues ทั้ง 5 แบบ (<strong>Definitions, Synonyms, Antonyms, Examples, General Clues</strong>) ได้</div>\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>2.</strong> ระบุคำสัญญาณ (<strong>Signal Words</strong>) และเครื่องหมายวรรคตอน (<strong>Punctuation</strong>) ที่ช่วยอธิบายความหมายของคำศัพท์ได้</div>\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>3.</strong> ใช้ Context Clues ทำความเข้าใจคำศัพท์ใหม่ และระบุความหมายหลักของประโยค (<strong>Subject + Verb + Key Info</strong>) ได้</div>\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>4.</strong> เลือกความหมายของคำศัพท์ที่เหมาะสมกับบริบทของประโยคได้ถูกต้อง</div>\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>5.</strong> ทำ <strong>Context Clue Game</strong> และ <strong>Vocabulary Quiz</strong> บน Web-Based Reading Skills Application ได้สำเร็จ</div>\n          <div style=\"background:#fff; border:1px solid #E2E8F0; border-radius:8px; padding:0.65rem 0.8rem;\"><strong>6.</strong> มีส่วนร่วมและทำงานอย่างมีความรับผิดชอบทั้งในกิจกรรมเดี่ยว คู่ และกลุ่ม (<strong>Vocabulary Detective</strong>)</div>\n        </div>\n      </div>\n"
         },
         {
           "stepNum": 3,
           "title": "When do I use it?",
           "thaiTitle": "ใช้เมื่อไหร่?",
-          "icon": "calendar",
-          "content": "Use context clues whenever you encounter:\n• Low-frequency or specialized technical terminology in academic journal articles and textbooks.\n• Polysemous words where the common everyday meaning does not make sense (e.g., 'yield' meaning crop output vs. give way; 'table' meaning to postpone a debate).\n• Descriptive adjectives, adverbs, and idiomatic expressions in literature, news editorials, and fables.\n• Timed comprehension quizzes, school midterm/final exams, and professional English certifications.",
-          "thaiExplanation": "ใช้เมื่อเจอคำศัพท์วิชาการยากๆ ในตำราเรียนและงานวิจัย คำศัพท์ที่มีหลายความหมายแต่บริบททำให้ความหมายเปลี่ยนไป สำนวนและคำคุณศัพท์ในการอ่านวรรณกรรม และเมื่อทำแบบทดสอบวัดระดับภาษาอังกฤษในห้องสอบ"
+          "content": "Use this strategy in all three reading stages: preview unfamiliar words and signal punctuation before reading, highlight vocabulary (yellow), context clues (green), and sentence meaning (blue) while reading, and complete the Vocabulary Detective table and Vocabulary Quiz after reading.",
+          "thaiExplanation": "ใช้เมื่อพบคำศัพท์ที่ไม่คุ้นเคยหรือประโยคที่ยาวซับซ้อน ทั้งในขั้นก่อนอ่าน (สำรวจคำและคำสัญญาณ) ระหว่างอ่าน (ไฮไลต์ 3 สีและแยก Subject + Verb) และหลังอ่าน (สรุปตาราง Vocabulary Detective)",
+          "customHtml": "\n      <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.9rem; margin-bottom:1.3rem;\">\n        <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.73rem; font-weight:800; color:#1D4ED8; text-transform:uppercase; margin-bottom:0.25rem;\">Stage 1 • Pre-Reading</div>\n          <div style=\"font-weight:800; color:#1E3A8A; font-size:0.98rem; margin-bottom:0.4rem;\">🔎 ก่อนอ่าน: สำรวจคำศัพท์ & คำสัญญาณ</div>\n          <ul style=\"margin:0; padding-left:1.15rem; font-size:0.85rem; color:#1E40AF; line-height:1.6;\">\n            <li>กวาดสายตาหาคำศัพท์ที่ไม่คุ้นเคยในบทอ่าน</li>\n            <li>สังเกตเครื่องหมาย <code>, ... ,</code> <code>—</code> <code>( )</code> และคำสัญญาณรอบคำนั้น</li>\n            <li>เล่น <strong>Pre-Reading Context Clue Game</strong> เพื่อทบทวนวิธีเดาคำศัพท์</li>\n          </ul>\n        </div>\n\n        <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.73rem; font-weight:800; color:#15803D; text-transform:uppercase; margin-bottom:0.25rem;\">Stage 2 • While-Reading</div>\n          <div style=\"font-weight:800; color:#065F46; font-size:0.98rem; margin-bottom:0.4rem;\">🎨 ระหว่างอ่าน: ไฮไลต์ 3 สี & แยกโครงสร้างประโยค</div>\n          <ul style=\"margin:0; padding-left:1.15rem; font-size:0.85rem; color:#065F46; line-height:1.6;\">\n            <li>ระบายสี 3 ระดับ: <strong>เหลือง</strong> (Unfamiliar Vocabulary), <strong>เขียว</strong> (Context Clues), <strong>ฟ้า</strong> (Main Ideas & Sentence Meaning)</li>\n            <li>แยก <strong>Subject + Verb + Supporting Info</strong> ในประโยคยาว</li>\n          </ul>\n        </div>\n\n        <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:12px; padding:1rem;\">\n          <div style=\"font-size:0.73rem; font-weight:800; color:#B45309; text-transform:uppercase; margin-bottom:0.25rem;\">Stage 3 • Post-Reading</div>\n          <div style=\"font-weight:800; color:#78350F; font-size:0.98rem; margin-bottom:0.4rem;\">🕵️ หลังอ่าน: Vocabulary Detective & Quiz</div>\n          <ul style=\"margin:0; padding-left:1.15rem; font-size:0.85rem; color:#92400E; line-height:1.6;\">\n            <li>สรุปคำศัพท์ใหม่ ประเภท Context Clue ที่ใช้ และความหมายหลักของประโยคลงในตาราง <strong>Vocabulary Detective</strong></li>\n            <li>ทำ <strong>Post-Reading Vocabulary Quiz (30 ข้อ)</strong> ให้ผ่านเกณฑ์ 70%</li>\n          </ul>\n        </div>\n      </div>\n\n      <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:12px; padding:1.1rem;\">\n        <h4 style=\"margin:0 0 0.6rem 0; font-size:0.96rem; font-weight:800; color:#1E293B;\">💡 สถานการณ์จริงที่ควรใช้กลยุทธ์บทที่ 3 ทันที (Practical A2–B1 Triggers)</h4>\n        <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:0.7rem; font-size:0.85rem; color:#334155;\">\n          <div style=\"background:#F8FAFC; padding:0.7rem 0.85rem; border-radius:8px; border-left:3.5px solid #3B82F6;\">\n            <strong>1. เมื่อทำข้อสอบและห้ามใช้พจนานุกรม</strong><br>\n            มองหาคำอธิบายที่ซ่อนอยู่หลังคำว่า <em>is, means, or, in other words</em> หรือในวงเล็บ <code>( )</code>\n          </div>\n          <div style=\"background:#F8FAFC; padding:0.7rem 0.85rem; border-radius:8px; border-left:3.5px solid #10B981;\">\n            <strong>2. เมื่อเจอคำศัพท์ยากที่มีตัวอย่างตามหลัง</strong><br>\n            ดูคำที่อยู่หลัง <em>such as, including, for example</em> เพื่อเดาว่าคำข้างหน้าคือหมวดหมู่อะไร\n          </div>\n          <div style=\"background:#F8FAFC; padding:0.7rem 0.85rem; border-radius:8px; border-left:3.5px solid #F59E0B;\">\n            <strong>3. เมื่อเจอคำเชื่อมบอกความตรงข้าม</strong><br>\n            หากเห็น <em>however, but, unlike, instead of</em> แปลว่าคำศัพท์นั้นมีความหมายตรงข้ามกับอีกฝั่งของประโยค\n          </div>\n          <div style=\"background:#F8FAFC; padding:0.7rem 0.85rem; border-radius:8px; border-left:3.5px solid #8B5CF6;\">\n            <strong>4. เมื่อเจอประโยคยาวที่มีส่วนขยายเยอะ</strong><br>\n            ตัดส่วนขยายออกชั่วคราว แล้วหาว่า <strong>ใคร (Subject) + ทำอะไร (Verb)</strong> ก่อนเสมอ\n          </div>\n        </div>\n      </div>\n"
         },
         {
           "stepNum": 4,
           "title": "How do I use it?",
           "thaiTitle": "ใช้อย่างไร?",
-          "icon": "settings",
-          "content": "Follow the 5-Step Execution Protocol for Using Context Clues:",
+          "content": "Follow these four steps to unlock unfamiliar words and sentence meaning, then practice with the interactive Context Clue Game below.",
           "checklist": [
-            "Step 1 (Isolate & Bracket): When you encounter an unknown word, do not panic or stop; read past the word to the end of the sentence to take in the complete thought.",
-            "Step 2 (Hunt for Signal Words & Punctuation): Look closely for punctuation clues (commas, dashes, parentheses) and connective signal words (means, or, unlike, however, such as, for instance).",
-            "Step 3 (Classify the Clue Category): Identify which clue type the author provided: Definition, Synonym, Contrast, or Example.",
-            "Step 4 (Substitute a Trial Meaning): Think of a simple replacement word (e.g., 'helpful', 'dangerous', 'tool', 'gather') and mentally insert it in place of the unknown word.",
-            "Step 5 (Verify Logical & Grammatical Fit): Re-read the modified sentence to ensure that your substituted meaning creates perfect logical and grammatical coherence in the paragraph."
-          ]
+            "Step 1 (Look at Surrounding Words): Read the words before and after the unfamiliar word instead of stopping immediately.",
+            "Step 2 (Spot Signal Words & Punctuation): Check for commas (, ... ,), dashes (—), parentheses ( ), or signal phrases like means, or, in other words, such as, and however.",
+            "Step 3 (Identify the Clue Type & Guess): Decide whether the clue is a Definition, Synonym, Antonym, Example, or General Clue, and guess the word's meaning.",
+            "Step 4 (Unpack Sentence Meaning): Find the main Subject + Verb + Key Supporting Information and check that your guessed meaning makes sense in the sentence."
+          ],
+          "customHtml": "\n      <!-- PART 1: 5 TYPES OF CONTEXT CLUES & SIGNAL PUNCTUATION -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.2rem; margin-bottom:1.25rem;\">\n        <div style=\"font-size:0.74rem; font-weight:800; color:#1D4ED8; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Part 1 • 5 Types of Context Clues & Signal Punctuation (A2–B1 Guide)</div>\n        <h4 style=\"margin:0 0 0.65rem 0; font-size:1.05rem; font-weight:800; color:#0F172A;\">ตารางสรุป Context Clues ทั้ง 5 ประเภท พร้อมคำสัญญาณและเครื่องหมายวรรคตอน</h4>\n\n        <div style=\"overflow-x:auto;\">\n          <table style=\"width:100%; border-collapse:collapse; font-size:0.84rem;\">\n            <thead>\n              <tr style=\"background:#F1F5F9; color:#0F172A; text-align:left;\">\n                <th style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ประเภท (Clue Type)</th>\n                <th style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">วิธีสังเกต</th>\n                <th style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">Signal Words & Punctuation</th>\n                <th style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ตัวอย่างประโยค A2–B1</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1; font-weight:800; color:#1D4ED8;\">1. Definition Clue<br><span style=\"font-weight:600; font-size:0.77rem;\">(บอกความหมายตรงๆ)</span></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ผู้เขียนอธิบายความหมายของคำศัพท์ไว้ในประโยคทันที</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\"><code>is / are</code>, <code>means</code>, <code>refers to</code>, คอมมา <code>, ... ,</code>, ขีด <code>—</code>, วงเล็บ <code>( )</code></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">A <strong><u>beverage</u></strong> <strong>is</strong> any kind of drink, such as water, milk, or tea. (<em>beverage = เครื่องดื่ม</em>)</td>\n              </tr>\n              <tr style=\"background:#F8FAFC;\">\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1; font-weight:800; color:#047857;\">2. Synonym / Restatement<br><span style=\"font-weight:600; font-size:0.77rem;\">(คำพ้อง/กล่าวซ้ำง่ายๆ)</span></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ใช้คำง่ายๆ ที่มีความหมายเหมือนกันมาวางขยายไว้ข้างๆ</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\"><code>, or</code>, <code>in other words</code>, <code>that is</code>, <code>also called</code></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">The market was <strong><u>crowded</u></strong>; <strong>in other words</strong>, it was full of many people. (<em>crowded = แออัด/คนเยอะ</em>)</td>\n              </tr>\n              <tr>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1; font-weight:800; color:#B45309;\">3. Antonym / Contrast<br><span style=\"font-weight:600; font-size:0.77rem;\">(คำตรงข้าม/เปรียบเทียบต่าง)</span></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">บอกความหมายโดยเทียบกับคำที่ตรงกันข้าม</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\"><code>however</code>, <code>but</code>, <code>unlike</code>, <code>instead of</code>, <code>while</code></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\"><strong>Unlike</strong> her noisy brother, Mali is very <strong><u>quiet</u></strong> and calm. (<em>quiet ตรงข้ามกับ noisy = เงียบสงบ</em>)</td>\n              </tr>\n              <tr style=\"background:#F8FAFC;\">\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1; font-weight:800; color:#7C3AED;\">4. Example Clue<br><span style=\"font-weight:600; font-size:0.77rem;\">(การยกตัวอย่าง)</span></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ยกตัวอย่างที่คุ้นเคยเพื่อให้รู้ว่าคำศัพท์นั้นอยู่ในหมวดใด</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\"><code>such as</code>, <code>including</code>, <code>for example</code>, <code>for instance</code></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">We bought fresh <strong><u>citrus fruits</u></strong>, <strong>such as</strong> oranges, lemons, and limes. (<em>citrus fruits = ผลไม้ตระกูลส้ม</em>)</td>\n              </tr>\n              <tr>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1; font-weight:800; color:#BE185D;\">5. General Context Clue<br><span style=\"font-weight:600; font-size:0.77rem;\">(บริบทแวดล้อมทั่วไป)</span></td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ใช้เหตุผลและสถานการณ์รอบข้างในประโยคมาปะติดปะต่อความหมาย</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">ดูเหตุการณ์ สาเหตุ หรือการกระทำที่เกิดขึ้นในประโยค</td>\n                <td style=\"padding:0.65rem 0.8rem; border:1px solid #CBD5E1;\">Because dark clouds covered the sky and thunder roared, we brought an umbrella for the <strong><u>storm</u></strong>. (<em>storm = พายุฝน</em>)</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n\n      <!-- PART 2: SENTENCE MEANING (SUBJECT + VERB + SUPPORTING INFORMATION) -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.2rem; margin-bottom:1.25rem;\">\n        <div style=\"font-size:0.74rem; font-weight:800; color:#047857; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Part 2 • Understanding Sentence Meaning (Subject + Verb + Key Info)</div>\n        <h4 style=\"margin:0 0 0.55rem 0; font-size:1.05rem; font-weight:800; color:#0F172A;\">เทคนิคแยกส่วนประกอบหลักของประโยค (Unpacking Sentence Meaning)</h4>\n        <p style=\"margin:0 0 0.85rem 0; font-size:0.87rem; color:#334155; line-height:1.6;\">\n          เมื่อเจอประโยคที่มีส่วนขยายข้างหน้าหรือข้างหลังยาวๆ ให้แยกออกเป็น <strong>3 ส่วนหลัก</strong> เพื่อหาความหมายที่แท้จริงของประโยค:\n        </p>\n\n        <div style=\"background:#F8FAFC; border:1px solid #CBD5E1; border-radius:10px; padding:0.9rem; margin-bottom:0.85rem; font-size:0.9rem; line-height:1.75;\">\n          <em>\"During the hot summer months, <span style=\"background:#DBEAFE; padding:0.12rem 0.4rem; border-radius:4px; font-weight:700; color:#1E3A8A;\">local farmers</span> <span style=\"background:#DCFCE7; padding:0.12rem 0.4rem; border-radius:4px; font-weight:700; color:#14532D;\">water</span> <span style=\"background:#FEF08A; padding:0.12rem 0.4rem; border-radius:4px; font-weight:700; color:#713F12;\">their vegetable gardens early in the morning to save water.</span>\"</em>\n        </div>\n\n        <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:0.75rem; font-size:0.84rem;\">\n          <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:800; color:#1E40AF; margin-bottom:0.2rem;\">🟦 1. Main Subject (ประธานหลัก)</div>\n            <div><strong>local farmers</strong> (ชาวสวนในท้องถิ่น) — บอกว่า <em>ใคร</em> เป็นผู้กระทำ</div>\n          </div>\n          <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:800; color:#166534; margin-bottom:0.2rem;\">🟩 2. Main Verb (กริยาหลัก)</div>\n            <div><strong>water</strong> (รดน้ำ) — บอกว่าประธาน <em>ทำอะไร</em></div>\n          </div>\n          <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:800; color:#854D0E; margin-bottom:0.2rem;\">🟨 3. Key Supporting Info (ข้อมูลสำคัญ)</div>\n            <div><strong>their vegetable gardens early in the morning to save water</strong> — รดน้ำแปลงผักตอนเช้าตรู่เพื่อประหยัดน้ำ</div>\n          </div>\n        </div>\n      </div>\n\n      <!-- PART 3: INTERACTIVE CONTEXT CLUE GAME (6 ITEMS) -->\n      <div style=\"background:linear-gradient(135deg, #F0FDF4, #ECFDF5); border:2px solid #34D399; border-radius:14px; padding:1.2rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.6rem; margin-bottom:0.75rem;\">\n          <div>\n            <span style=\"background:#059669; color:#fff; padding:0.2rem 0.65rem; border-radius:999px; font-size:0.72rem; font-weight:800; text-transform:uppercase;\">Interactive Activity • Context Clue Game</span>\n            <h4 style=\"margin:0.3rem 0 0 0; font-size:1.03rem; font-weight:800; color:#064E3B;\">🎮 เกมนักสืบบริบท: Context Clue Game (6 ข้อ • เป้าหมาย 70%+)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.submitStrat3Game()\" style=\"background:#059669; color:#fff; border:none; border-radius:8px; padding:0.5rem 1.05rem; font-size:0.83rem; font-weight:800; cursor:pointer;\">ตรวจคำตอบ Context Clue Game</button>\n        </div>\n\n        <p style=\"margin:0 0 0.8rem 0; font-size:0.86rem; color:#065F46; line-height:1.55;\">\n          <strong>คำชี้แจง:</strong> ใช้เบาะแสในประโยค (Context Clues) เพื่อเลือกความหมายที่ถูกต้องที่สุดของคำที่ขีดเส้นใต้ทั้ง 6 ข้อ (เกณฑ์ผ่าน 70% = 5/6 ข้อ):\n        </p>\n\n        <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:0.75rem; margin-bottom:0.85rem;\">\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">1. (Synonym Clue) The glass bowl is very <u>fragile</u>, or easy to break, so please hold it with both hands.</div>\n            <select id=\"s3-game-1\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ fragile --</option>\n              <option value=\"0\">Heavy and strong (หนักและแข็งแรง)</option>\n              <option value=\"1\">Easy to break (เปราะบาง แตกหักง่าย)</option>\n              <option value=\"2\">Very cheap (ราคาถูกมาก)</option>\n            </select>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">2. (Example Clue) The morning market sells fresh <u>poultry</u>, such as chicken, duck, and turkey.</div>\n            <select id=\"s3-game-2\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ poultry --</option>\n              <option value=\"0\">Farm birds raised for meat and eggs (สัตว์ปีก เช่น ไก่ เป็ด)</option>\n              <option value=\"1\">Sweet bakery cakes (ขนมเค้ก)</option>\n              <option value=\"2\">Plastic kitchen spoons (ช้อนพลาสติก)</option>\n            </select>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">3. (Antonym Clue) Unlike the <u>shallow</u> baby pool, the main swimming pool is two meters deep.</div>\n            <select id=\"s3-game-3\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ shallow --</option>\n              <option value=\"0\">Not deep (ตื้น — ตรงข้ามกับ deep)</option>\n              <option value=\"1\">Very dirty (สกปรกมาก)</option>\n              <option value=\"2\">Boiling hot (ร้อนจัด)</option>\n            </select>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">4. (Definition Clue) An <u>annual</u> event is a special festival that happens once every year.</div>\n            <select id=\"s3-game-4\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ annual --</option>\n              <option value=\"0\">Happening every hour (เกิดขึ้นทุกชั่วโมง)</option>\n              <option value=\"1\">Happening once every year (ประจำปี / ปีละครั้ง)</option>\n              <option value=\"2\">Never happening again (ไม่เกิดขึ้นอีกเลย)</option>\n            </select>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">5. (Punctuation Dash Clue) Many people enjoy <u>solo</u> travel — traveling alone without a group — because they can choose their own schedule.</div>\n            <select id=\"s3-game-5\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ solo --</option>\n              <option value=\"0\">Done alone by one person (ทำคนเดียว / เดินทางคนเดียว)</option>\n              <option value=\"1\">Traveling with 50 people (เดินทางเป็นกลุ่มใหญ่)</option>\n              <option value=\"2\">Traveling only by boat (เดินทางด้วยเรือเท่านั้น)</option>\n            </select>\n          </div>\n\n          <div style=\"background:#fff; border:1px solid #D1FAE5; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.84rem; color:#0F172A; margin-bottom:0.35rem;\">6. (General Context Clue) Because the road was wet and <u>slippery</u> after the rain, the cyclist rode very slowly so he would not fall.</div>\n            <select id=\"s3-game-6\" style=\"width:100%; padding:0.42rem; border:1px solid #CBD5E1; border-radius:6px; font-size:0.83rem;\">\n              <option value=\"\">-- เลือกความหมายของ slippery --</option>\n              <option value=\"0\">Dry and rough (แห้งและขรุขระ)</option>\n              <option value=\"1\">Smooth and wet, causing things to slide or fall easily (ลื่น)</option>\n              <option value=\"2\">Full of tall trees (เต็มไปด้วยต้นไม้สูง)</option>\n            </select>\n          </div>\n        </div>\n\n        <div id=\"strat3-game-feedback\" style=\"margin-top:0.75rem; display:none;\"></div>\n      </div>\n"
         },
         {
           "stepNum": 5,
           "title": "Worked Example",
           "thaiTitle": "ตัวอย่างการใช้",
-          "icon": "file-text",
-          "content": "Sample Text: 'Archaeologists excavating the ruins of Muang Tam Sanctuary discovered several subterranean chambers—underground rooms located beneath the stone foundation—which were used for preserving sacred offerings from tropical heat.'",
-          "annotated": "Strategy Analysis (Unit 3 Model):\n• Target Vocabulary Word: Unfamiliar academic term 'subterranean'.\n• Punctuation Clue (Dashes): The author places explanatory em-dashes immediately after the word: '—underground rooms located beneath the stone foundation—'.\n• Context Clue Type: Definition / Restatement Clue directly defining the word between punctuation marks.\n• Morphological Clue (Word Parts): Prefix 'sub-' (under/below) + Latin root 'terra' (earth/ground).\n• Contextual Supporting Detail: Purpose is 'preserving sacred offerings from tropical heat', confirming cool subterranean conditions.\n• Decoded Definition: 'Subterranean' means existing, occurring, or situated underground beneath the surface of the earth.\n• Verification: Substituting 'underground' into the sentence preserves perfect grammatical and semantic coherence.",
-          "takeaway": "Punctuation marks such as dashes, commas, and parentheses act as the author's built-in glossary—always examine the words between them first!"
+          "content": "Read and listen to the A2–B1 passage 'Smart Shopping at the Local Market' to see how Yellow (Unfamiliar Vocabulary), Green (Context Clues), and Blue (Main Ideas & Sentence Meaning) work together.",
+          "annotated": "Yellow = Unfamiliar Vocabulary (organic, disposable, affordable) | Green = Context Clues (which means..., instead of..., in other words...) | Blue = Main Idea & Sentence Meaning",
+          "takeaway": "Every unfamiliar word in the passage is explained right next to it by a clear signal phrase (which means, instead of, in other words).",
+          "customHtml": "\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.25rem; margin-bottom:1.2rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.6rem; margin-bottom:0.75rem;\">\n          <div>\n            <span style=\"background:#DBEAFE; color:#1E40AF; padding:0.2rem 0.65rem; border-radius:999px; font-size:0.72rem; font-weight:800; text-transform:uppercase;\">Guided Reading Demo • ตัวอย่างการวิเคราะห์คำศัพท์และประโยค</span>\n            <h4 style=\"margin:0.3rem 0 0 0; font-size:1.05rem; font-weight:800; color:#0F172A;\">Passage Demo: Smart Shopping at the Local Market (A2–B1)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.speakText('Shopping at a local morning market helps families buy fresh food and save money. First, market farmers sell organic vegetables, which means plants grown naturally without harmful chemicals. Second, buyers can bring reusable cloth bags instead of disposable plastic bags that people throw away after one use. Finally, fruits at the market are very affordable; in other words, their prices are low enough for everyone to buy.')\" style=\"background:#2563EB; color:#fff; border:none; border-radius:999px; padding:0.45rem 0.95rem; font-size:0.8rem; font-weight:700; cursor:pointer;\">🔊 ฟังเสียงอ่านบทความ (Listen)</button>\n        </div>\n\n        <p style=\"margin:0 0 0.85rem 0; font-size:0.86rem; color:#475569;\">\n          สังเกตการใช้สี 3 ระดับตามเกณฑ์ของ Unit 3: <span style=\"background:#FEF08A; padding:0.1rem 0.45rem; border-radius:4px; font-weight:700;\">สีเหลือง = Unfamiliar Vocabulary (คำศัพท์เป้าหมาย)</span>, <span style=\"background:#BBF7D0; padding:0.1rem 0.45rem; border-radius:4px; font-weight:700;\">สีเขียว = Context Clues (เบาะแสและคำสัญญาณ)</span>, และ <span style=\"background:#BFDBFE; padding:0.1rem 0.45rem; border-radius:4px; font-weight:700;\">สีฟ้า = Main Ideas & Sentence Meaning (ใจความหลักของประโยค)</span>:\n        </p>\n\n        <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1rem; line-height:1.88; font-size:0.92rem; color:#0F172A; margin-bottom:1rem;\">\n          <span style=\"background:#BFDBFE; padding:0.15rem 0.4rem; border-radius:5px; font-weight:700;\">(1) Shopping at a local morning market helps families buy fresh food and save money.</span>\n          (2) First, market farmers sell <span style=\"background:#FEF08A; padding:0.12rem 0.38rem; border-radius:4px; font-weight:800;\"><u>organic</u></span> vegetables, <span style=\"background:#BBF7D0; padding:0.12rem 0.38rem; border-radius:4px;\"><strong>which means</strong> plants grown naturally without harmful chemicals.</span>\n          (3) Second, buyers can bring reusable cloth bags <span style=\"background:#BBF7D0; padding:0.12rem 0.38rem; border-radius:4px;\"><strong>instead of</strong></span> <span style=\"background:#FEF08A; padding:0.12rem 0.38rem; border-radius:4px; font-weight:800;\"><u>disposable</u></span> plastic bags <span style=\"background:#BBF7D0; padding:0.12rem 0.38rem; border-radius:4px;\">that people throw away after one use.</span>\n          (4) Finally, fruits at the market are very <span style=\"background:#FEF08A; padding:0.12rem 0.38rem; border-radius:4px; font-weight:800;\"><u>affordable</u></span>; <span style=\"background:#BBF7D0; padding:0.12rem 0.38rem; border-radius:4px;\"><strong>in other words</strong>, their prices are low enough for everyone to buy.</span>\n        </div>\n\n        <div style=\"display:grid; grid-template-columns:repeat(auto-fit, minmax(240px, 1fr)); gap:0.8rem; font-size:0.85rem;\">\n          <div style=\"background:#FEFCE8; border:1px solid #FDE047; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:800; color:#854D0E; margin-bottom:0.25rem;\">🟨 Unfamiliar Vocabulary (คำศัพท์ใหม่ 3 คำ)</div>\n            <p style=\"margin:0; color:#713F12; line-height:1.55;\">\n              1. <strong>organic</strong> = ปลอดสารเคมี/อินทรีย์<br>\n              2. <strong>disposable</strong> = ใช้ครั้งเดียวแล้วทิ้ง<br>\n              3. <strong>affordable</strong> = ราคาไม่แพง/จ่ายไหว\n            </p>\n          </div>\n          <div style=\"background:#F0FDF4; border:1px solid #86EFAC; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:800; color:#166534; margin-bottom:0.25rem;\">🟩 Context Clues ที่ช่วยไขความหมาย</div>\n            <p style=\"margin:0; color:#14532D; line-height:1.55;\">\n              • <em>which means...</em> (Definition Clue)<br>\n              • <em>instead of reusable... throw away after one use</em> (Contrast & Definition)<br>\n              • <em>in other words, prices are low enough...</em> (Restatement Clue)\n            </p>\n          </div>\n          <div style=\"background:#EFF6FF; border:1px solid #93C5FD; border-radius:10px; padding:0.85rem;\">\n            <div style=\"font-weight:800; color:#1E40AF; margin-bottom:0.25rem;\">🟦 Main Idea & Sentence Meaning</div>\n            <p style=\"margin:0; color:#1E3A8A; line-height:1.55;\">\n              <strong>Subject:</strong> Shopping at a local morning market<br>\n              <strong>Verb:</strong> helps<br>\n              <strong>Meaning:</strong> การซื้อของตลาดเช้าช่วยให้ครอบครัวได้อาหารสดปลอดสาร ลดขยะ และประหยัดเงิน\n            </p>\n          </div>\n        </div>\n      </div>\n"
         },
         {
           "stepNum": 6,
           "title": "Guided Practice",
           "thaiTitle": "ฝึกปฏิบัติ",
-          "icon": "user-check",
-          "content": "Passage: 'While Professor Thanarat was known for his amicable and welcoming disposition, his colleague was sullen, hostile, and constantly avoided talking to students.'",
-          "question": "Based on the contrast clue 'While' and the opposites 'sullen and hostile', what is the most accurate meaning of 'amicable'?",
+          "content": "Complete Part A (Sentence Meaning & Context Analysis) and Part B (Interactive 3-Colour Highlighting Lab: Yellow = Unfamiliar Vocabulary, Green = Context Clues, Blue = Main Ideas & Sentence Meaning).",
+          "customHtml": "\n      <!-- PART A: INTERACTIVE SENTENCE MEANING & CONTEXT PRACTICE -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.2rem; margin-bottom:1.25rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.5rem; margin-bottom:0.75rem;\">\n          <div>\n            <span style=\"background:#DBEAFE; color:#1D4ED8; padding:0.2rem 0.65rem; border-radius:999px; font-size:0.72rem; font-weight:800; text-transform:uppercase;\">Part A • Sentence Meaning & Context Analysis</span>\n            <h4 style=\"margin:0.3rem 0 0 0; font-size:1.03rem; font-weight:800; color:#0F172A;\">🧩 ฝึกวิเคราะห์โครงสร้างประโยคและคำศัพท์จากบริบท (4 ข้อ • เกณฑ์ผ่าน 70%+)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.submitStrat3SentencePractice()\" style=\"background:#2563EB; color:#fff; border:none; border-radius:8px; padding:0.48rem 0.95rem; font-size:0.82rem; font-weight:700; cursor:pointer;\">ตรวจคำตอบ Part A</button>\n        </div>\n\n        <div style=\"background:#F8FAFC; border:1px solid #CBD5E1; border-radius:10px; padding:0.95rem; margin-bottom:0.9rem; font-size:0.9rem; line-height:1.72; color:#1E293B;\">\n          <strong>Passage: Indoor Plants for Clean Air (A2–B1)</strong><br>\n          (1) Keeping green indoor plants inside your home improves air quality and makes rooms look bright. (2) Many houseplants can <strong><u>absorb</u></strong>, or take in, dirty gases from the air through their green leaves. (3) Beginners should choose <strong><u>hardy</u></strong> plants — strong plants that can live with very little water and sunlight — such as snake plants and aloe vera. (4) Because these easy plants need minimal care, busy workers can enjoy a fresh and peaceful room every day.\n        </div>\n\n        <div style=\"display:grid; gap:0.75rem;\">\n          <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.86rem; color:#0F172A; margin-bottom:0.4rem;\">1. ในประโยคที่ (2) คำว่า <strong><u>absorb</u></strong> มีความหมายว่าอะไร และใช้เบาะแสชนิดใด?</div>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-1\" value=\"0\"> A. แปลว่า ดูดซับ / รับเข้าไป (take in) โดยสังเกตจาก Synonym Clue หลังคำว่า \", or take in,\"</label>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-1\" value=\"1\"> B. แปลว่า ทาสีใหม่ โดยดูจากคำว่า green</label>\n            <label style=\"display:block; font-size:0.84rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-1\" value=\"2\"> C. แปลว่า ตัดใบไม้ออก</label>\n          </div>\n\n          <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.86rem; color:#0F172A; margin-bottom:0.4rem;\">2. ในประโยคที่ (3) เครื่องหมายขีดคู่ (<code>— ... —</code>) ช่วยอธิบายว่าคำว่า <strong><u>hardy</u></strong> แปลว่าอะไร?</div>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-2\" value=\"0\"> A. ต้นไม้ที่เหี่ยวเฉาง่ายมาก</label>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-2\" value=\"1\"> B. แข็งแรง ทนทาน อยู่ได้แม้น้ำและแดดน้อย (strong plants that can live with very little water and sunlight)</label>\n            <label style=\"display:block; font-size:0.84rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-2\" value=\"2\"> C. ต้นไม้พลาสติก</label>\n          </div>\n\n          <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.86rem; color:#0F172A; margin-bottom:0.4rem;\">3. ในประโยคที่ (4) <em>\"Because these easy plants need minimal care, busy workers can enjoy a fresh and peaceful room every day.\"</em> ข้อใดคือ <strong>Subject + Verb หลัก (Main Clause)</strong> ของประโยคนี้?</div>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-3\" value=\"0\"> A. Subject = busy workers | Verb = can enjoy (คนทำงานที่มีเวลาน้อยสามารถเพลิดเพลินกับห้องที่สดชื่นได้ทุกวัน)</label>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-3\" value=\"1\"> B. Subject = minimal | Verb = peaceful</label>\n            <label style=\"display:block; font-size:0.84rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-3\" value=\"2\"> C. Subject = every day | Verb = room</label>\n          </div>\n\n          <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:10px; padding:0.8rem;\">\n            <div style=\"font-weight:700; font-size:0.86rem; color:#0F172A; margin-bottom:0.4rem;\">4. ข้อใดสรุป <strong>ความหมายหลัก (Main Meaning)</strong> ของย่อหน้านี้ได้ถูกต้องที่สุด?</div>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-4\" value=\"0\"> A. การปลูกต้นไม้ในร่มที่ดูแลง่ายช่วยฟอกอากาศให้สะอาดและทำให้ห้องดูสดชื่นน่าอยู่</label>\n            <label style=\"display:block; font-size:0.84rem; margin-bottom:0.22rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-4\" value=\"1\"> B. การปลูกต้นไม้ในบ้านต้องรดน้ำวันละ 10 ครั้ง</label>\n            <label style=\"display:block; font-size:0.84rem; cursor:pointer;\"><input type=\"radio\" name=\"s3-sent-4\" value=\"2\"> C. ต้นว่านหางจระเข้ปลูกได้เฉพาะในทะเลทรายเท่านั้น</label>\n          </div>\n        </div>\n        <div id=\"strat3-sent-feedback\" style=\"margin-top:0.75rem; display:none;\"></div>\n      </div>\n\n      <!-- PART B: INTERACTIVE 3-COLOUR HIGHLIGHTING LAB (Yellow = Unfamiliar Vocab, Green = Context Clues, Blue = Main Ideas & Sentence Meaning) -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.2rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.6rem; margin-bottom:0.75rem;\">\n          <div>\n            <span style=\"background:#FEF3C7; color:#B45309; padding:0.2rem 0.65rem; border-radius:999px; font-size:0.72rem; font-weight:800; text-transform:uppercase;\">Part B • Interactive 3-Colour Highlighting Lab</span>\n            <h4 style=\"margin:0.3rem 0 0 0; font-size:1.03rem; font-weight:800; color:#0F172A;\">🎨 ฝึกป้ายสี 3 ระดับตามแผนการสอน Unit 3: Yellow (Vocabulary) • Green (Context Clues) • Blue (Main Ideas & Sentence Meaning)</h4>\n          </div>\n          <div style=\"display:flex; gap:0.45rem; flex-wrap:wrap;\">\n            <button type=\"button\" onclick=\"window.app.revealStrat3Highlights()\" style=\"background:#059669; color:#fff; border:none; border-radius:8px; padding:0.42rem 0.85rem; font-size:0.8rem; font-weight:700; cursor:pointer;\">เฉลยสีทั้งหมด</button>\n            <button type=\"button\" onclick=\"window.app.resetStrat3Highlights()\" style=\"background:#64748B; color:#fff; border:none; border-radius:8px; padding:0.42rem 0.85rem; font-size:0.8rem; font-weight:700; cursor:pointer;\">ล้างสี</button>\n          </div>\n        </div>\n\n        <p style=\"margin:0 0 0.75rem 0; font-size:0.85rem; color:#475569; line-height:1.55;\">\n          <strong>วิธีทำ:</strong> คลิกเลือกปากกาไฮไลต์ด้านล่าง แล้วคลิกที่แต่ละส่วน (1)–(6) เพื่อแยกแยะ <strong>คำศัพท์ที่ไม่คุ้นเคย (สีเหลือง)</strong>, <strong>เบาะแสบริบท (สีเขียว)</strong>, และ <strong>ใจความหลัก/ความหมายประโยค (สีฟ้า)</strong>:\n        </p>\n\n        <div style=\"display:flex; flex-wrap:wrap; gap:0.55rem; margin-bottom:0.9rem;\">\n          <button type=\"button\" id=\"strat3-tool-yellow\" onclick=\"window.app.setStrat3HighlightTool('yellow')\" style=\"background:#FEF08A; border:2.5px solid #CA8A04; color:#713F12; border-radius:999px; padding:0.42rem 0.9rem; font-size:0.82rem; font-weight:800; cursor:pointer;\">🟨 Yellow = Unfamiliar Vocabulary</button>\n          <button type=\"button\" id=\"strat3-tool-green\" onclick=\"window.app.setStrat3HighlightTool('green')\" style=\"background:#DCFCE7; border:1.5px solid #22C55E; color:#14532D; border-radius:999px; padding:0.42rem 0.9rem; font-size:0.82rem; font-weight:800; cursor:pointer;\">🟩 Green = Context Clues</button>\n          <button type=\"button\" id=\"strat3-tool-blue\" onclick=\"window.app.setStrat3HighlightTool('blue')\" style=\"background:#DBEAFE; border:1.5px solid #3B82F6; color:#1E3A8A; border-radius:999px; padding:0.42rem 0.9rem; font-size:0.82rem; font-weight:800; cursor:pointer;\">🟦 Blue = Main Ideas & Sentence Meaning</button>\n        </div>\n\n        <div style=\"display:grid; gap:0.5rem;\">\n          <div id=\"strat3-hl-sent-0\" onclick=\"window.app.highlightStrat3Sentence(0)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(1)</strong> Regular morning stretching gives people of all ages better body balance and daily energy.\n          </div>\n          <div id=\"strat3-hl-sent-1\" onclick=\"window.app.highlightStrat3Sentence(1)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(2)</strong> Target Word: <strong><u>flexible</u></strong> (in the sentence: \"Stretching makes your muscles more <u>flexible</u>...\")\n          </div>\n          <div id=\"strat3-hl-sent-2\" onclick=\"window.app.highlightStrat3Sentence(2)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(3)</strong> Clue in Text: \"...<strong>in other words, able to bend and move easily without pain</strong>.\"\n          </div>\n          <div id=\"strat3-hl-sent-3\" onclick=\"window.app.highlightStrat3Sentence(3)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(4)</strong> Target Word: <strong><u>brief</u></strong> (in the sentence: \"Even a <u>brief</u> stretching routine helps...\")\n          </div>\n          <div id=\"strat3-hl-sent-4\" onclick=\"window.app.highlightStrat3Sentence(4)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(5)</strong> Clue in Text: \"...<strong>— lasting only five to ten minutes —</strong> before breakfast.\"\n          </div>\n          <div id=\"strat3-hl-sent-5\" onclick=\"window.app.highlightStrat3Sentence(5)\" style=\"padding:0.65rem 0.85rem; border:1.5px solid #E2E8F0; border-radius:9px; cursor:pointer; font-size:0.89rem; line-height:1.6; background:#fff; transition:all 0.15s;\">\n            <strong>(6)</strong> Overall Sentence Meaning: Spending just ten minutes stretching each morning keeps muscles soft, relaxed, and ready for the day.\n          </div>\n        </div>\n        <div id=\"strat3-hl-feedback\" style=\"margin-top:0.75rem; display:none;\"></div>\n      </div>\n",
+          "question": "Quick Check: In the sentence 'You can blend tropical fruits, such as mangoes, bananas, and pineapples,' which type of context clue helps you understand 'tropical fruits'?",
           "options": [
-            "Friendly, pleasant, and easy to get along with",
-            "Extremely wealthy and powerful",
-            "Tired, sleepy, and exhausted",
-            "Strict, harsh, and punitive"
+            "Antonym / Contrast Clue",
+            "Example Clue (introduced by the signal phrase 'such as')",
+            "A dictionary page number",
+            "No clue is given in the sentence"
           ],
-          "answer": 0,
-          "explanation": "The contrast marker 'While' contrasts the professor's 'amicable' nature directly with his colleague who is 'sullen, hostile, and avoids talking', proving amicable means friendly and welcoming."
+          "answer": 1,
+          "explanation": "ถูกต้อง! คำว่า 'such as mangoes, bananas, and pineapples' เป็น Example Clue (การยกตัวอย่าง) ที่ช่วยให้รู้ว่า tropical fruits คือผลไม้เมืองร้อน (ข้อ B)"
         },
         {
           "stepNum": 7,
           "title": "Apply to a Short Text",
           "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
-          "icon": "book-open",
-          "passageTitle": "Endangered Biodiversity in the Dong Phayayen-Khao Yai Forest",
-          "passage": "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
-          "audioText": "Biologists monitoring wildlife corridors in the Dong Phayayen forest complex are concerned about the decline of arboreal mammals, such as gibbons, flying squirrels, and tree shrews. These canopy-dwelling species spend almost their entire lifespans high in the treetops and rarely descend to the forest floor. When illegal logging fragments the continuous upper canopy, these agile creatures become isolated, severely impairing their ability to forage for seasonal fruits and find reproductive mates.",
-          "taskQuestion": "Using the example clues ('such as gibbons, flying squirrels...') and sentence clues ('canopy-dwelling species... high in the treetops'), what does the word 'arboreal' mean?",
-          "taskAnswer": "'Arboreal' means living in or relating to trees and tree canopies (living off the ground)."
+          "content": "Read and listen to the three A2–B1 passages, use context clues to answer the comprehension questions, and review the Post-Reading Vocabulary Detective Worksheet.",
+          "customHtml": "\n      <!-- PASSAGE 1: DEFINITION & EXAMPLE CLUES -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.15rem; margin-bottom:1.1rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.5rem; margin-bottom:0.55rem;\">\n          <div>\n            <span style=\"background:#DCFCE7; color:#166534; padding:0.18rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:800;\">Passage 1 • Definition & Example Clues</span>\n            <h4 style=\"margin:0.25rem 0 0 0; font-size:1rem; font-weight:800; color:#0F172A;\">Healthy Smoothies at Home (A2–B1)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.speakText('Making fruit smoothies at home is an easy way to enjoy a nutritious drink every morning. First, you can blend tropical fruits, such as mangoes, bananas, and pineapples, with cold milk or yogurt. These fresh fruits contain important vitamins — natural substances that help your body stay strong and fight illness. Because homemade smoothies have no extra sugar, they are much healthier than sweet drinks from a store.')\" style=\"background:#10B981; color:#fff; border:none; border-radius:999px; padding:0.38rem 0.85rem; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 ฟังเสียงอ่าน</button>\n        </div>\n\n        <p style=\"margin:0 0 0.75rem 0; font-size:0.89rem; line-height:1.72; color:#1E293B; background:#F8FAFC; padding:0.85rem; border-radius:10px; border:1px solid #E2E8F0;\">\n          Making fruit smoothies at home is an easy way to enjoy a <strong><u>nutritious</u></strong> drink every morning. First, you can blend <strong><u>tropical fruits</u></strong>, <strong>such as</strong> mangoes, bananas, and pineapples, with cold milk or yogurt. These fresh fruits contain important <strong><u>vitamins</u></strong> <strong>— natural substances that help your body stay strong and fight illness</strong>. Because homemade smoothies have no extra sugar, they are much healthier than sweet drinks from a store.\n        </p>\n\n        <div style=\"font-size:0.85rem; font-weight:700; color:#0F172A; margin-bottom:0.35rem;\">คำถาม Passage 1: จากเครื่องหมายขีด (<code>—</code>) ในบทอ่าน คำว่า <strong><u>vitamins</u></strong> หมายถึงอะไร และใช้เบาะแสชนิดใด?</div>\n        <select id=\"s3-pass-1\" style=\"width:100%; padding:0.45rem; border:1px solid #CBD5E1; border-radius:8px; font-size:0.84rem;\">\n          <option value=\"\">-- เลือกคำตอบ Passage 1 --</option>\n          <option value=\"0\">Definition Clue — สารธรรมชาติในอาหารที่ช่วยให้ร่างกายแข็งแรงและต้านทานความเจ็บป่วย</option>\n          <option value=\"1\">Antonym Clue — น้ำตาลเทียมที่ทำให้ป่วยง่าย</option>\n          <option value=\"2\">Example Clue — เครื่องปั่นน้ำผลไม้ราคาแพง</option>\n        </select>\n      </div>\n\n      <!-- PASSAGE 2: SYNONYM & ANTONYM CLUES -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.15rem; margin-bottom:1.1rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.5rem; margin-bottom:0.55rem;\">\n          <div>\n            <span style=\"background:#DBEAFE; color:#1E40AF; padding:0.18rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:800;\">Passage 2 • Synonym & Antonym Clues</span>\n            <h4 style=\"margin:0.25rem 0 0 0; font-size:1rem; font-weight:800; color:#0F172A;\">The Community Book Swap Corner (A2–B1)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.speakText('Our neighborhood park has a popular Book Swap Corner where people can share books for free. Anyone can donate old books, or give them freely to others, by placing them on the wooden shelf. Unlike a bookstore where every book is expensive, all books at the swap corner are completely free. This simple project encourages children and adults to read more stories every week.')\" style=\"background:#2563EB; color:#fff; border:none; border-radius:999px; padding:0.38rem 0.85rem; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 ฟังเสียงอ่าน</button>\n        </div>\n\n        <p style=\"margin:0 0 0.75rem 0; font-size:0.89rem; line-height:1.72; color:#1E293B; background:#F8FAFC; padding:0.85rem; border-radius:10px; border:1px solid #E2E8F0;\">\n          Our neighborhood park has a popular Book Swap Corner where people can share books for free. Anyone can <strong><u>donate</u></strong> old books, <strong>or give them freely to others</strong>, by placing them on the wooden shelf. <strong>Unlike</strong> a bookstore where every book is expensive, all books at the swap corner are completely free. This simple project <strong><u>encourages</u></strong> children and adults to read more stories every week.\n        </p>\n\n        <div style=\"font-size:0.85rem; font-weight:700; color:#0F172A; margin-bottom:0.35rem;\">คำถาม Passage 2: จากเบาะแสคำว่า <em>\", or give them freely to others,\"</em> คำว่า <strong><u>donate</u></strong> แปลว่าอะไร?</div>\n        <select id=\"s3-pass-2\" style=\"width:100%; padding:0.45rem; border:1px solid #CBD5E1; border-radius:8px; font-size:0.84rem;\">\n          <option value=\"\">-- เลือกคำตอบ Passage 2 --</option>\n          <option value=\"0\">ฉีกหนังสือทิ้ง</option>\n          <option value=\"1\">บริจาค / มอบให้ผู้อื่นโดยไม่คิดเงิน (give freely to others — Synonym/Restatement Clue)</option>\n          <option value=\"2\">ขายหนังสือในราคาแพง</option>\n        </select>\n      </div>\n\n      <!-- PASSAGE 3: GENERAL CLUES & SENTENCE MEANING -->\n      <div style=\"background:#fff; border:1.5px solid #CBD5E1; border-radius:14px; padding:1.15rem; margin-bottom:1.1rem;\">\n        <div style=\"display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.5rem; margin-bottom:0.55rem;\">\n          <div>\n            <span style=\"background:#FEF3C7; color:#B45309; padding:0.18rem 0.6rem; border-radius:999px; font-size:0.72rem; font-weight:800;\">Passage 3 • General Clues & Sentence Meaning</span>\n            <h4 style=\"margin:0.25rem 0 0 0; font-size:1rem; font-weight:800; color:#0F172A;\">Preparing an Emergency Rain Kit (A2–B1)</h4>\n          </div>\n          <button type=\"button\" onclick=\"window.app.speakText('During the rainy season, smart travelers always carry a small waterproof bag in their backpack. Because sudden heavy rain can soak clothes and ruin mobile phones in seconds, a waterproof bag keeps important items dry and safe. In addition, travelers pack a compact umbrella, which folds into a tiny size and fits easily inside a side pocket.')\" style=\"background:#D97706; color:#fff; border:none; border-radius:999px; padding:0.38rem 0.85rem; font-size:0.78rem; font-weight:700; cursor:pointer;\">🔊 ฟังเสียงอ่าน</button>\n        </div>\n\n        <p style=\"margin:0 0 0.75rem 0; font-size:0.89rem; line-height:1.72; color:#1E293B; background:#F8FAFC; padding:0.85rem; border-radius:10px; border:1px solid #E2E8F0;\">\n          During the rainy season, smart travelers always carry a small <strong><u>waterproof</u></strong> bag in their backpack. Because sudden heavy rain can soak clothes and ruin mobile phones in seconds, a <strong><u>waterproof</u></strong> bag keeps important items dry and safe. In addition, travelers pack a <strong><u>compact</u></strong> umbrella, <strong>which folds into a tiny size and fits easily inside a side pocket</strong>.\n        </p>\n\n        <div style=\"font-size:0.85rem; font-weight:700; color:#0F172A; margin-bottom:0.35rem;\">คำถาม Passage 3: จากบริบทแวดล้อมที่บอกว่าช่วยให้ของข้างในแห้งและปลอดภัยจากฝน คำว่า <strong><u>waterproof</u></strong> และ <strong><u>compact</u></strong> แปลว่าอะไร?</div>\n        <select id=\"s3-pass-3\" style=\"width:100%; padding:0.45rem; border:1px solid #CBD5E1; border-radius:8px; font-size:0.84rem;\">\n          <option value=\"\">-- เลือกคำตอบ Passage 3 --</option>\n          <option value=\"0\">waterproof = เต็มไปด้วยน้ำ | compact = ใหญ่และหนักมาก</option>\n          <option value=\"1\">waterproof = กันน้ำได้ (ไม่ให้น้ำซึมผ่าน) | compact = ขนาดเล็กกะทัดรัด พับเก็บง่าย</option>\n          <option value=\"2\">waterproof = ทำจากกระดาษบาง | compact = ราคาแพง</option>\n        </select>\n\n        <button type=\"button\" onclick=\"window.app.submitStrat3PassageCheck()\" style=\"margin-top:0.85rem; background:#4F46E5; color:#fff; border:none; border-radius:8px; padding:0.52rem 1.15rem; font-size:0.84rem; font-weight:800; cursor:pointer;\">ตรวจคำตอบทั้ง 3 บทความ (Passages 1–3)</button>\n        <div id=\"strat3-passages-feedback\" style=\"margin-top:0.75rem; display:none;\"></div>\n      </div>\n\n      <!-- POST-READING VOCABULARY DETECTIVE WORKSHEET -->\n      <div style=\"background:linear-gradient(135deg, #F8FAFC, #EFF6FF); border:2px solid #93C5FD; border-radius:14px; padding:1.2rem;\">\n        <div style=\"font-size:0.74rem; font-weight:800; color:#1D4ED8; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.25rem;\">Post-Reading Group & Individual Activity • Vocabulary Detective Worksheet</div>\n        <h4 style=\"margin:0 0 0.65rem 0; font-size:1.02rem; font-weight:800; color:#0F172A;\">🕵️ ตารางสรุปนักสืบคำศัพท์ (Vocabulary Detective Summary Table)</h4>\n\n        <div style=\"overflow-x:auto;\">\n          <table style=\"width:100%; border-collapse:collapse; font-size:0.83rem; background:#fff;\">\n            <thead>\n              <tr style=\"background:#DBEAFE; color:#1E3A8A; text-align:left;\">\n                <th style=\"padding:0.6rem 0.75rem; border:1px solid #93C5FD;\">Unfamiliar Word</th>\n                <th style=\"padding:0.6rem 0.75rem; border:1px solid #93C5FD;\">Context Clue Type & Signal</th>\n                <th style=\"padding:0.6rem 0.75rem; border:1px solid #93C5FD;\">Word Meaning (A2–B1)</th>\n                <th style=\"padding:0.6rem 0.75rem; border:1px solid #93C5FD;\">Main Meaning of the Sentence</th>\n              </tr>\n            </thead>\n            <tbody>\n              <tr>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; font-weight:800; color:#713F12; background:#FEF9C3;\">tropical fruits</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#DCFCE7;\"><strong>Example Clue:</strong> <code>such as</code> mangoes, bananas, and pineapples</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1;\">Fruits that grow in warm, sunny places (ผลไม้เมืองร้อน)</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#EFF6FF;\">You can mix warm-weather fruits with milk to make a smoothie.</td>\n              </tr>\n              <tr>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; font-weight:800; color:#713F12; background:#FEF9C3;\">vitamins</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#DCFCE7;\"><strong>Definition Clue:</strong> Dash <code>—</code> natural substances that help your body stay strong</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1;\">Healthy natural things in food that keep the body strong (วิตามิน)</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#EFF6FF;\">Fresh fruits give your body natural health protection.</td>\n              </tr>\n              <tr>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; font-weight:800; color:#713F12; background:#FEF9C3;\">donate</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#DCFCE7;\"><strong>Synonym Clue:</strong> <code>, or</code> give them freely to others</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1;\">To give something to help others for free (บริจาค/แบ่งปันฟรี)</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#EFF6FF;\">People can share their old books on the park shelf for free.</td>\n              </tr>\n              <tr>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; font-weight:800; color:#713F12; background:#FEF9C3;\">waterproof</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#DCFCE7;\"><strong>General Clue:</strong> keeps important items dry and safe in heavy rain</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1;\">Not letting water pass through (กันน้ำ)</td>\n                <td style=\"padding:0.6rem 0.75rem; border:1px solid #CBD5E1; background:#EFF6FF;\">A rain-safe bag protects clothes and phones from getting wet.</td>\n              </tr>\n            </tbody>\n          </table>\n        </div>\n      </div>\n",
+          "taskQuestion": "How do the Vocabulary Detective steps help you understand new words and sentences?",
+          "taskAnswer": "By finding the unfamiliar word, naming the context clue type (Definition, Synonym, Antonym, Example, or General Clue), writing a simple meaning, and stating the main Subject + Verb meaning of the sentence."
         },
         {
           "stepNum": 8,
-          "title": "Strategy Quiz",
-          "thaiTitle": "แบบทดสอบ",
-          "icon": "trophy",
-          "question": "In the sentence 'Unlike synthetic fertilizers that degrade soil quality over time, compost is a natural soil enhancer; moreover, it is biodegradable, which means capable of being broken down safely by microorganisms', what TWO types of context clues are used?",
+          "title": "Strategy Quiz (30 ข้อ)",
+          "thaiTitle": "แบบทดสอบ 30 ข้อ",
+          "question": "Complete the 30-Question Strategy Unit 3 Vocabulary & Sentence Meaning Quiz (3 Passages × 10 Questions in A2–B1 English).",
           "options": [
-            "Contrast clue ('Unlike') and Definition clue ('which means')",
-            "Synonym clue and Sound imitation clue",
-            "Rhyme clue and Punctuation ellipsis clue",
-            "Chronological time clue and Question clue"
+            "Start Quiz"
           ],
           "answer": 0,
-          "explanation": "'Unlike' introduces a contrast clue against synthetic fertilizers, while 'which means' explicitly introduces a definition clue for 'biodegradable'."
+          "explanation": "Complete all 3 Passage Quizzes (10 questions each)."
         }
       ]
     },
@@ -5714,6 +5706,421 @@ window.ReadSkillsData = {
             ],
             "correctAnswer": 0,
             "explanation": "ตามเกณฑ์การฝึกใน Unit 2 (Section 6.2.2): สีเหลือง (Yellow) = Main Idea, สีเขียว (Green) = Major Supporting Details, และสีฟ้า (Blue) = Minor Supporting Details (ข้อ A)"
+          }
+        ]
+      }
+    ]
+  },
+  "strategyUnit3Quiz": {
+    "unitId": "strat-u3",
+    "title": "Strategy Unit 3 Mastery Quiz: Vocabulary in Context & Sentence Meaning (30 Questions)",
+    "thaiTitle": "แบบทดสอบวัดผลกลยุทธ์บทที่ 3: การเดาความหมายคำศัพท์จากบริบทและการตีความประโยค (30 ข้อ • A2–B1)",
+    "passages": [
+      {
+        "id": "s3-quiz-p1",
+        "title": "Passage 1: Weekend Gardening for Beginners",
+        "thaiTitle": "บทอ่านที่ 1: การปลูกผักสวนครัววันหยุดสำหรับมือใหม่ (Context Clues & Sentence Meaning)",
+        "genre": "Short Article • Home & Nature (A2–B1)",
+        "audioText": "Starting a small home garden on the weekend is a relaxing hobby that gives families fresh food. First, beginners should plant herbs in fertile soil, which means rich earth that helps plants grow strong and healthy. Second, you can grow easy leafy greens, such as lettuce, spinach, and cabbage, in small pots on a sunny balcony. Unlike plastic flowers that never need water, real garden plants need regular moisture from rain or a watering can every morning. If you see dry brown leaves, trim — cut off neatly — those dead parts so new green leaves can grow.",
+        "sentences": [
+          "Preview Header — Title: 'Weekend Gardening for Beginners' | Target Words: fertile, leafy greens, moisture, trim | Clues: which means, such as, unlike, — ... —",
+          "Starting a small home garden on the weekend is a relaxing hobby that gives families fresh food.",
+          "First, beginners should plant herbs in fertile soil, which means rich earth that helps plants grow strong and healthy.",
+          "Second, you can grow easy leafy greens, such as lettuce, spinach, and cabbage, in small pots on a sunny balcony.",
+          "Unlike plastic flowers that never need water, real garden plants need regular moisture from rain or a watering can every morning.",
+          "If you see dry brown leaves, trim — cut off neatly — those dead parts so new green leaves can grow."
+        ],
+        "questions": [
+          {
+            "id": 1,
+            "type": "mc",
+            "prompt": "In Sentence (3) ('...plant herbs in fertile soil, which means rich earth that helps plants grow strong and healthy'), what does 'fertile' mean?",
+            "options": [
+              "Dry and full of stones",
+              "Rich and able to help plants grow strong and healthy",
+              "Made of hard plastic",
+              "Covered with snow and ice"
+            ],
+            "correctAnswer": 1,
+            "explanation": "หลังคำสัญญาณ 'which means' มีคำอธิบายชัดเจนว่า 'rich earth that helps plants grow strong and healthy' ดังนั้น fertile จึงแปลว่า อุดมสมบูรณ์ (ข้อ B)"
+          },
+          {
+            "id": 2,
+            "type": "mc",
+            "prompt": "Which type of context clue is used in Sentence (3) with the signal phrase 'which means'?",
+            "options": [
+              "Definition Clue (บอกความหมายตรงๆ)",
+              "Antonym / Contrast Clue (บอกคำตรงข้าม)",
+              "No clue is used",
+              "Time sequence only"
+            ],
+            "correctAnswer": 0,
+            "explanation": "การใช้คำว่า 'which means' เป็นการบอกคำจำกัดความหรือความหมายโดยตรง จึงเป็น Definition Clue (ข้อ A)"
+          },
+          {
+            "id": 3,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses an EXAMPLE CLUE ('such as...') to explain 'leafy greens'.",
+            "targetSentenceIndex": 3,
+            "explanation": "ประโยคที่ (4) ('Second, you can grow easy leafy greens, such as lettuce, spinach, and cabbage...') ใช้คำว่า such as ยกตัวอย่างผักใบเขียว"
+          },
+          {
+            "id": 4,
+            "type": "mc",
+            "prompt": "Based on the examples 'lettuce, spinach, and cabbage' in Sentence (4), what are 'leafy greens'?",
+            "options": [
+              "Sweet chocolate candies",
+              "Green vegetables whose leaves we eat",
+              "Garden tools made of iron",
+              "Small insects in the grass"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากตัวอย่างผักกาดหอม (lettuce), ผักโขม (spinach) และกะหล่ำปลี (cabbage) ทำให้ทราบว่า leafy greens คือ ผักใบเขียวที่รับประทานใบ (ข้อ B)"
+          },
+          {
+            "id": 5,
+            "type": "mc",
+            "prompt": "In Sentence (5) ('Unlike plastic flowers that never need water, real garden plants need regular moisture from rain or a watering can'), what does 'moisture' mean?",
+            "options": [
+              "Bright electric light",
+              "Water or wetness that keeps plants alive",
+              "Loud music",
+              "Plastic bags"
+            ],
+            "correctAnswer": 1,
+            "explanation": "จากคำตรงข้าม 'Unlike plastic flowers that never need water' และคำขยาย 'from rain or a watering can' ทำให้เดาได้ว่า moisture หมายถึง ความชื้นหรือน้ำ (ข้อ B)"
+          },
+          {
+            "id": 6,
+            "type": "fillBlank",
+            "prompt": "Choose the correct Contrast signal word in Sentence (5) that compares plastic flowers with real garden plants:",
+            "sentenceWithBlank": "[ _______ ] plastic flowers that never need water, real garden plants need regular moisture from rain or a watering can every morning.",
+            "choices": [
+              "Unlike",
+              "Such as",
+              "Because",
+              "Finally"
+            ],
+            "correctWord": "Unlike",
+            "explanation": "'Unlike' (ต่างจาก...) เป็นคำสัญญาณบอกความตรงข้าม (Antonym / Contrast Clue)"
+          },
+          {
+            "id": 7,
+            "type": "mc",
+            "prompt": "In Sentence (6) ('If you see dry brown leaves, trim — cut off neatly — those dead parts...'), how do the dashes (— ... —) help the reader?",
+            "options": [
+              "They give the definition/synonym of the word 'trim' ('cut off neatly')",
+              "They show that the sentence is a question",
+              "They tell the reader to skip the sentence",
+              "They mean the opposite of 'cut'"
+            ],
+            "correctAnswer": 0,
+            "explanation": "เครื่องหมายขีดคู่ (— cut off neatly —) ทำหน้าที่บอกความหมายของคำว่า trim ว่าแปลว่า 'ตัดหรือเล็มออกอย่างเรียบร้อย' (ข้อ A)"
+          },
+          {
+            "id": 8,
+            "type": "highlight",
+            "prompt": "Tap/Select the opening sentence that states the Main Meaning of the whole paragraph.",
+            "targetSentenceIndex": 1,
+            "explanation": "ประโยคที่ (2) ('Starting a small home garden on the weekend is a relaxing hobby that gives families fresh food.') คือประโยคใจความหลักของย่อหน้า"
+          },
+          {
+            "id": 9,
+            "type": "mc",
+            "prompt": "Look at the sentence structure of Sentence (2): 'Starting a small home garden on the weekend is a relaxing hobby that gives families fresh food.' What is the core Subject + Verb?",
+            "options": [
+              "Subject = Starting a small home garden | Verb = is",
+              "Subject = weekend | Verb = fresh",
+              "Subject = families | Verb = relaxing",
+              "Subject = food | Verb = hobby"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ประธานหลัก (Subject) คือ 'Starting a small home garden (การเริ่มทำสวนเล็กๆ ที่บ้าน)' และกริยาหลัก (Verb) คือ 'is' (คือ งานอดิเรกที่ผ่อนคลาย) (ข้อ A)"
+          },
+          {
+            "id": 10,
+            "type": "mc",
+            "prompt": "Why does trimming dead brown leaves help a plant according to Sentence (6)?",
+            "options": [
+              "So new green leaves can grow",
+              "So the plant turns into plastic",
+              "So the soil becomes dry",
+              "So insects can eat the pot"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ท้ายประโยคที่ (6) ระบุว่า 'so new green leaves can grow' (เพื่อให้ใบสีเขียวใบใหม่งอกขึ้นมาได้) (ข้อ A)"
+          }
+        ]
+      },
+      {
+        "id": "s3-quiz-p2",
+        "title": "Passage 2: Staying Safe When Cycling in Town",
+        "thaiTitle": "บทอ่านที่ 2: การปั่นจักรยานในเมืองอย่างปลอดภัย (Synonyms, Antonyms & Sentence Analysis)",
+        "genre": "Short Guide • Daily Safety & Transport (A2–B1)",
+        "audioText": "Riding a bicycle in town is fun and healthy, but cyclists must follow simple safety rules on busy streets. First, every rider should wear a sturdy helmet, or a strong hard hat that protects the head during an accident. Second, cyclists should wear visible clothes at night; in other words, bright jackets with reflective strips that car drivers can see easily in the dark. Unlike careless riders who look at their phones while moving, cautious cyclists always watch the road ahead and use hand signals before turning. By following these rules, riders can prevent injuries and arrive home safely.",
+        "sentences": [
+          "Preview Header — Title: 'Staying Safe When Cycling in Town' | Target Words: sturdy, visible, cautious, prevent | Clues: or, in other words, unlike",
+          "Riding a bicycle in town is fun and healthy, but cyclists must follow simple safety rules on busy streets.",
+          "First, every rider should wear a sturdy helmet, or a strong hard hat that protects the head during an accident.",
+          "Second, cyclists should wear visible clothes at night; in other words, bright jackets with reflective strips that car drivers can see easily in the dark.",
+          "Unlike careless riders who look at their phones while moving, cautious cyclists always watch the road ahead and use hand signals before turning.",
+          "By following these rules, riders can prevent injuries and arrive home safely."
+        ],
+        "questions": [
+          {
+            "id": 11,
+            "type": "mc",
+            "prompt": "In Sentence (3) ('...wear a sturdy helmet, or a strong hard hat that protects the head'), what does 'sturdy' mean?",
+            "options": [
+              "Soft like paper",
+              "Strong and solid",
+              "Broken into pieces",
+              "Invisible"
+            ],
+            "correctAnswer": 1,
+            "explanation": "เบาะแสหลังคำว่า ', or a strong hard hat' บอกชัดเจนว่า sturdy หมายถึง แข็งแรงทนทาน (strong and solid) (ข้อ B)"
+          },
+          {
+            "id": 12,
+            "type": "mc",
+            "prompt": "In Sentence (4) ('...cyclists should wear visible clothes at night; in other words, bright jackets... that car drivers can see easily in the dark'), what does 'visible' mean?",
+            "options": [
+              "Easy to see",
+              "Very heavy to carry",
+              "Wet from the rain",
+              "Impossible to find"
+            ],
+            "correctAnswer": 0,
+            "explanation": "หลังคำสัญญาณ 'in other words' อธิบายว่า 'that car drivers can see easily in the dark' ดังนั้น visible จึงแปลว่า มองเห็นได้ง่าย (easy to see) (ข้อ A)"
+          },
+          {
+            "id": 13,
+            "type": "fillBlank",
+            "prompt": "Complete Sentence (4) with the signal phrase that restates the meaning of 'visible clothes':",
+            "sentenceWithBlank": "Second, cyclists should wear visible clothes at night; [ _______ ], bright jackets with reflective strips that car drivers can see easily in the dark.",
+            "choices": [
+              "in other words",
+              "unlike",
+              "instead of",
+              "because of"
+            ],
+            "correctWord": "in other words",
+            "explanation": "'in other words' (พูดง่ายๆ อีกอย่างคือ...) เป็นคำสัญญาณบอกการกล่าวซ้ำหรือขยายความหมาย (Restatement / Synonym Clue)"
+          },
+          {
+            "id": 14,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses an ANTONYM / CONTRAST clue ('Unlike careless riders...') to explain the word 'cautious'.",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ (5) ('Unlike careless riders who look at their phones while moving, cautious cyclists always watch the road ahead...') ใช้คำตรงข้ามกับ careless เพื่ออธิบายคำว่า cautious"
+          },
+          {
+            "id": 15,
+            "type": "mc",
+            "prompt": "Using the contrast clue 'Unlike careless riders...' in Sentence (5), what does 'cautious' mean?",
+            "options": [
+              "Careful and paying attention to avoid danger",
+              "Sleepy and late for work",
+              "Fast and noisy",
+              "Forgetful and messy"
+            ],
+            "correctAnswer": 0,
+            "explanation": "คำว่า cautious ตรงข้ามกับ careless (ประมาท) และขยายความว่า 'always watch the road ahead' จึงแปลว่า ระมัดระวัง (careful) (ข้อ A)"
+          },
+          {
+            "id": 16,
+            "type": "mc",
+            "prompt": "In Sentence (5) ('Unlike careless riders who look at their phones while moving, cautious cyclists always watch the road ahead...'), what is the MAIN Subject + Verb of the sentence?",
+            "options": [
+              "Subject = phones | Verb = moving",
+              "Subject = cautious cyclists | Verb = watch (and use)",
+              "Subject = hand signals | Verb = turning",
+              "Subject = road | Verb = look"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ส่วนหน้า ('Unlike careless riders...') เป็นเพียงวลีเปรียบเทียบ ส่วนประโยคหลัก (Main Clause) มี Subject คือ 'cautious cyclists' และ Verb คือ 'watch (and use)' (ข้อ B)"
+          },
+          {
+            "id": 17,
+            "type": "mc",
+            "prompt": "In Sentence (6) ('By following these rules, riders can prevent injuries and arrive home safely'), what does 'prevent' mean in this context?",
+            "options": [
+              "To stop something bad from happening",
+              "To cause more accidents on the street",
+              "To buy a new bicycle",
+              "To paint the road yellow"
+            ],
+            "correctAnswer": 0,
+            "explanation": "จากบริบทการทำตามกฎความปลอดภัยและกลับบ้านอย่างปลอดภัย ('arrive home safely') ทำให้ทราบว่า prevent injuries หมายถึง ป้องกันไม่ให้เกิดการบาดเจ็บ (ข้อ A)"
+          },
+          {
+            "id": 18,
+            "type": "highlight",
+            "prompt": "Tap/Select the Concluding Sentence that summarizes the result of following cycling safety rules.",
+            "targetSentenceIndex": 5,
+            "explanation": "ประโยคที่ (6) ('By following these rules, riders can prevent injuries and arrive home safely.') สรุปผลลัพธ์ของการปฏิบัติตามกฎความปลอดภัย"
+          },
+          {
+            "id": 19,
+            "type": "mc",
+            "prompt": "What is the main meaning of Passage 2?",
+            "options": [
+              "Bicycles are more expensive than cars.",
+              "Cyclists can stay safe on city streets by wearing a strong helmet, bright night clothes, and watching the road carefully.",
+              "People should only ride bicycles inside their houses.",
+              "Helmets are only used for winter sports."
+            ],
+            "correctAnswer": 1,
+            "explanation": "ตัวเลือก B สรุปใจความหลักของทั้งย่อหน้าได้ครบถ้วนและตรงตามประโยคเปิดและประโยคสรุป"
+          },
+          {
+            "id": 20,
+            "type": "mc",
+            "prompt": "If you see a comma followed by 'or' right after a new word (like 'a sturdy helmet, or a strong hard hat'), what is the writer doing?",
+            "options": [
+              "Giving a Synonym or simple Definition clue to explain the new word",
+              "Changing the topic to a new story",
+              "Asking the reader a difficult riddle",
+              "Showing that the first word is a spelling mistake"
+            ],
+            "correctAnswer": 0,
+            "explanation": "การใช้ ', or ...' หลังคำศัพท์ใหม่ เป็นวิธีที่ผู้เขียนให้คำพ้องความหมาย (Synonym) หรือคำแปลอย่างง่ายเพื่อให้ผู้อ่านเข้าใจทันทีโดยไม่ต้องเปิดดิกชันนารี (ข้อ A)"
+          }
+        ]
+      },
+      {
+        "id": "s3-quiz-p3",
+        "title": "Passage 3: Saving Electricity at Home Every Day",
+        "thaiTitle": "บทอ่านที่ 3: วิธีประหยัดไฟฟ้าที่บ้านในทุกๆ วัน (All 5 Clues & Sentence Structure)",
+        "genre": "Practical Guide • Home & Environment (A2–B1)",
+        "audioText": "Every family can reduce their monthly electricity bill by changing a few daily habits at home. First, turn off electrical appliances, such as televisions, fans, and computers, when nobody is in the room. Second, open curtains during the daytime to use natural sunlight instead of turning on artificial lights — electric lamps made by humans. Furthermore, families can replace old light bulbs with modern LED bulbs, which consume, or use, much less power. When everyone in the house practices these small habits, the family saves money and helps protect the planet.",
+        "sentences": [
+          "Preview Header — Title: 'Saving Electricity at Home Every Day' | Target Words: appliances, artificial, consume | Clues: such as, instead of, — ... —, or",
+          "Every family can reduce their monthly electricity bill by changing a few daily habits at home.",
+          "First, turn off electrical appliances, such as televisions, fans, and computers, when nobody is in the room.",
+          "Second, open curtains during the daytime to use natural sunlight instead of turning on artificial lights — electric lamps made by humans.",
+          "Furthermore, families can replace old light bulbs with modern LED bulbs, which consume, or use, much less power.",
+          "When everyone in the house practices these small habits, the family saves money and helps protect the planet."
+        ],
+        "questions": [
+          {
+            "id": 21,
+            "type": "mc",
+            "prompt": "In Sentence (3) ('...turn off electrical appliances, such as televisions, fans, and computers, when nobody is in the room'), what are 'appliances'?",
+            "options": [
+              "Machines or devices used in the home (like TVs, fans, and computers)",
+              "Wooden tables and chairs",
+              "Fresh fruits and vegetables",
+              "Paper books and magazines"
+            ],
+            "correctAnswer": 0,
+            "explanation": "จาก Example Clue คำว่า 'such as televisions, fans, and computers' ทำให้รู้ทันทีว่า electrical appliances คือ เครื่องใช้ไฟฟ้าในบ้าน (ข้อ A)"
+          },
+          {
+            "id": 22,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that uses BOTH a contrast clue ('instead of natural sunlight') AND a dash definition ('— electric lamps made by humans') to explain 'artificial'.",
+            "targetSentenceIndex": 3,
+            "explanation": "ประโยคที่ (4) มีทั้งคำตรงข้ามกับ natural sunlight ('instead of') และคำนิยามหลังขีด ('— electric lamps made by humans') เพื่ออธิบายคำว่า artificial lights"
+          },
+          {
+            "id": 23,
+            "type": "mc",
+            "prompt": "Based on the clues in Sentence (4), what does 'artificial' mean?",
+            "options": [
+              "Growing naturally in the forest",
+              "Made by humans rather than occurring naturally (เทียม / มนุษย์สร้างขึ้น)",
+              "Completely dark",
+              "Free of charge"
+            ],
+            "correctAnswer": 1,
+            "explanation": "artificial ตรงข้ามกับ natural (ธรรมชาติ) และมีคำจำกัดความหลังขีดว่า 'made by humans' จึงแปลว่า เทียม หรือที่มนุษย์สร้างขึ้น (ข้อ B)"
+          },
+          {
+            "id": 24,
+            "type": "mc",
+            "prompt": "In Sentence (5) ('...modern LED bulbs, which consume, or use, much less power'), what does 'consume' mean?",
+            "options": [
+              "To use up energy or power (ใช้พลังงาน)",
+              "To clean a window",
+              "To sell in a market",
+              "To break a glass bulb"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ผู้เขียนให้ Synonym Clue ไว้ข้างๆ ทันทีคือคำว่า ', or use,' ดังนั้น consume จึงแปลว่า ใช้ (พลังงาน/ไฟฟ้า) (ข้อ A)"
+          },
+          {
+            "id": 25,
+            "type": "fillBlank",
+            "prompt": "Choose the correct Example signal phrase in Sentence (3):",
+            "sentenceWithBlank": "First, turn off electrical appliances, [ _______ ] televisions, fans, and computers, when nobody is in the room.",
+            "choices": [
+              "such as",
+              "however",
+              "unlike",
+              "therefore"
+            ],
+            "correctWord": "such as",
+            "explanation": "'such as' (เช่น / ตัวอย่างเช่น) ใช้เปิดตัว Example Clue"
+          },
+          {
+            "id": 26,
+            "type": "mc",
+            "prompt": "Look at Sentence (6): 'When everyone in the house practices these small habits, the family saves money and helps protect the planet.' What is the MAIN Subject + Verb of the main clause?",
+            "options": [
+              "Subject = house | Verb = small habits",
+              "Subject = the family | Verb = saves (and helps protect)",
+              "Subject = planet | Verb = practices",
+              "Subject = money | Verb = everyone"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ส่วนหน้า ('When everyone...') เป็นอนุประโยคบอกเวลา ส่วนประโยคหลัก (Main Clause) มี Subject คือ 'the family' และ Verb คือ 'saves (and helps protect)' (ข้อ B)"
+          },
+          {
+            "id": 27,
+            "type": "highlight",
+            "prompt": "Tap/Select the sentence that explains how replacing old light bulbs with modern LED bulbs saves power.",
+            "targetSentenceIndex": 4,
+            "explanation": "ประโยคที่ (5) ('Furthermore, families can replace old light bulbs with modern LED bulbs, which consume, or use, much less power.') อธิบายเรื่องการเปลี่ยนมาใช้หลอด LED"
+          },
+          {
+            "id": 28,
+            "type": "mc",
+            "prompt": "In Sentence (2) ('Every family can reduce their monthly electricity bill by changing a few daily habits at home'), what is the main meaning of the sentence?",
+            "options": [
+              "Families can pay less for electricity each month by making small changes in their daily actions.",
+              "Families should never use electricity at home.",
+              "Electricity bills are impossible to understand.",
+              "Only big factories can save electricity."
+            ],
+            "correctAnswer": 0,
+            "explanation": "ใจความหลักของประโยคที่ (2) คือ ทุกครอบครัวสามารถลดค่าไฟรายเดือนได้ด้วยการปรับเปลี่ยนพฤติกรรมเล็กๆ น้อยๆ ในชีวิตประจำวัน (ข้อ A)"
+          },
+          {
+            "id": 29,
+            "type": "mc",
+            "prompt": "In Unit 3's 3-Colour Highlighting System (Section 6.2.2), what do Yellow, Green, and Blue represent?",
+            "options": [
+              "Yellow = Unfamiliar vocabulary, Green = Context clues, Blue = Main ideas and sentence meaning",
+              "Yellow = Page numbers, Green = Pictures, Blue = Titles only",
+              "All three colors mean the exact same thing",
+              "Yellow = Correct answers, Green = Wrong answers, Blue = Questions"
+            ],
+            "correctAnswer": 0,
+            "explanation": "ตามแผนการสอน Unit 3 (หัวข้อ 6.2.2): สีเหลือง = คำศัพท์ที่ไม่คุ้นเคย (Unfamiliar vocabulary), สีเขียว = เบาะแสบริบท (Context clues), และสีฟ้า = ใจความสำคัญและความหมายของประโยค (Main ideas and sentence meaning) (ข้อ A)"
+          },
+          {
+            "id": 30,
+            "type": "mc",
+            "prompt": "What is the MOST common mistake students make when they meet an unfamiliar word while reading?",
+            "options": [
+              "Looking at the words and punctuation around the unfamiliar word",
+              "Stopping immediately or guessing randomly without checking the context clues in the sentence",
+              "Checking the main subject and verb of the sentence",
+              "Looking for signal words like 'such as' or 'in other words'"
+            ],
+            "correctAnswer": 1,
+            "explanation": "ข้อผิดพลาดที่พบบ่อยที่สุดคือการหยุดอ่านทันทีหรือเดาสุ่มโดยไม่ดูเบาะแสบริบท (Context Clues) และเครื่องหมายวรรคตอนที่อยู่รอบคำนั้น (ข้อ B)"
           }
         ]
       }
