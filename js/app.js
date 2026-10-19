@@ -204,6 +204,21 @@ class ReadSkillsApp {
       lastScore: savedS3QuizScore ? parseInt(savedS3QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 4 State (References, Connectives, Text Organization & 30-Question Strategy Quiz)
+    this.strat4ActiveHighlightTool = 'yellow';
+    this.strat4HighlightColors = {};
+    const savedS4QuizScore = localStorage.getItem('bru_strat4_quiz_score');
+    this.strat4QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS4QuizScore ? parseInt(savedS4QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -2958,7 +2973,8 @@ class ReadSkillsApp {
         if (
           (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) ||
           (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz) ||
-          (unit.unitNumber === 3 && ReadSkillsData.strategyUnit3Quiz)
+          (unit.unitNumber === 3 && ReadSkillsData.strategyUnit3Quiz) ||
+          (unit.unitNumber === 4 && ReadSkillsData.strategyUnit4Quiz)
         ) {
           return this.renderStrategyUnit1QuizStep(step);
         }
@@ -3759,8 +3775,245 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2 & 3) ------------------- */
+  /* ------------------- Strategy Unit 4 Interactive Methods (A2-B1) ------------------- */
+
+  submitStrat4Pretest() {
+    const key = [1, 1, 1];
+    const exps = [
+      "ข้อ 1 ตอบ B: คำว่า 'they' เป็นสรรพนามพหูพจน์ที่อ้างอิงย้อนกลับไปหา 'two glass bottles' (ขวดแก้วสองใบ)",
+      "ข้อ 2 ตอบ B: คำว่า 'therefore' (ดังนั้น) เป็นคำเชื่อมแสดงความสัมพันธ์แบบ Cause and Effect (เหตุและผล)",
+      "ข้อ 3 ตอบ B: การเปิดประเด็นด้วยปัญหาขยะริมหาดแล้วตามด้วยวิธีแก้ไขจัดเป็นโครงสร้างแบบ Problem and Solution"
+    ];
+    let score = 0;
+    const details = [];
+    for (let i = 0; i < 3; i++) {
+      const checked = document.querySelector(`input[name="s4-pre-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      details.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat4-pretest-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #34D399' : '1.5px solid #FBBF24';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน Pre-Test (Unit 4): ${score} / 3 คะแนน</div>${details.join('')}`;
+    }
+  }
+
+  checkStrat4Warmup(choiceIdx) {
+    const fb = document.getElementById('strat4-warmup-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    fb.style.padding = '0.8rem';
+    fb.style.borderRadius = '10px';
+    fb.style.fontSize = '0.84rem';
+    if (choiceIdx === 1) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #34D399';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>ถูกต้อง! 🎉</strong> ช่องว่าง (1) ใช้ <strong>They</strong> เพื่อแทนคำนามพหูพจน์ <em>bicycles</em> และช่องว่าง (2) ใช้ <strong>In addition</strong> (นอกจากนี้) เพื่อเพิ่มข้อดีของการปั่นจักรยาน';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #F87171';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '💡 <strong>ลองสังเกตพจน์และทิศทางประโยคอีกครั้ง:</strong> <em>bicycles</em> เป็นพหูพจน์และตามด้วยกริยา <em>are</em> จึงต้องใช้ <strong>They</strong> ส่วนประโยคสุดท้ายเป็นการเพิ่มข้อดีอีกข้อหนึ่ง จึงใช้ <strong>In addition</strong> (ข้อ B)';
+    }
+  }
+
+  submitStrat4RefTask() {
+    const key = [0, 1, 2, 1, 0, 1];
+    const exps = [
+      "Item 1 (them): อ้างอิงถึง sweet mangoes (มะม่วงรสหวานที่นำไปขายที่ตลาด)",
+      "Item 2 (this simple habit): อ้างอิงถึงการกระทำข้างหน้าทั้งวลี คือ Drinking warm milk before bed",
+      "Item 3 (which): เป็น Relative Pronoun ขยายสิ่งของที่อยู่ติดกันข้างหน้า คือ a new bicycle path",
+      "Item 4 (ones): เป็น Substitute Word ใช้แทนคำนามพหูพจน์ bananas เพื่อไม่ให้พูดซ้ำ",
+      "Item 5 (it): เป็น Personal Pronoun เอกพจน์ที่อ้างอิงถึง the portable fan",
+      "Item 6 (who): เป็น Relative Pronoun ที่ใช้แทนคำนามที่เป็นคนข้างหน้า คือ the friendly nurse"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 6; i++) {
+      const sel = document.getElementById(`s4-ref-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 6) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat4-reftask-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🎉 ผ่านเกณฑ์ 70%!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน Reference Matching Task: ${score} / 6 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  submitStrat4StructurePractice() {
+    const key = [0, 1, 0, 1];
+    const exps = [
+      "ข้อ 1 ตอบ A: มีคำเชื่อม First, Next, Finally บอกลำดับขั้นตอนการชงชาขิง จึงเป็นโครงสร้างแบบ Sequence",
+      "ข้อ 2 ตอบ B: มีคำเชื่อม Both, However, while เปรียบเทียบความเหมือนและความต่างระหว่างรถเมล์กับแท็กซี่ จึงเป็น Compare and Contrast",
+      "ข้อ 3 ตอบ A: มีคำเชื่อม Because of this habit และ Therefore แสดงสาเหตุและผลกระทบของการดูจอแท็บเล็ตดึก จึงเป็น Cause and Effect",
+      "ข้อ 4 ตอบ B: คำว่า they ในประโยค 'they often have dry eyes' อ้างอิงถึง Many children ในประโยคแรก"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 4; i++) {
+      const checked = document.querySelector(`input[name="s4-prac-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 4) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat4-practice-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🏆 ผ่านเกณฑ์ 70%!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน Text Structure Practice: ${score} / 4 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  setStrat4HighlightTool(color) {
+    this.strat4ActiveHighlightTool = color;
+    const tools = ['yellow', 'green', 'blue'];
+    tools.forEach(c => {
+      const btn = document.getElementById(`strat4-tool-${c}`);
+      if (btn) {
+        btn.style.boxShadow = c === color ? '0 0 0 3px rgba(15,23,42,0.28)' : 'none';
+        btn.style.transform = c === color ? 'scale(1.03)' : 'scale(1)';
+      }
+    });
+  }
+
+  highlightStrat4Sentence(sentIdx, forcedColor) {
+    const color = forcedColor || this.strat4ActiveHighlightTool || 'yellow';
+    if (!this.strat4HighlightColors) this.strat4HighlightColors = {};
+    this.strat4HighlightColors[sentIdx] = color;
+
+    const expected = {
+      0: { role: 'blue', exp: 'Segment (1) คือ Main Idea & Text Organization (สีฟ้า): ประโยคเปิดที่ระบุโครงสร้างการเปรียบเทียบ (Compare & Contrast) ระหว่างการนั่งรถไฟกับการขับรถยนต์' },
+      1: { role: 'green', exp: 'Segment (2) คือ Connectives & Transition Words (สีเขียว): คำสัญญาณเชื่อมโยงความคิด First, in addition, however, on the other hand, therefore' },
+      2: { role: 'yellow', exp: 'Segment (3) คือ Reference Words (สีเหลือง): คำอ้างอิง it, they, this option ที่แทนคำนามก่อนหน้า' },
+      3: { role: 'green', exp: 'Segment (4) คือ Connectives & Transition Words (สีเขียว): คำเชื่อม On the other hand (บอกความต่าง) และ because, as a result (บอกเหตุและผล)' },
+      4: { role: 'yellow', exp: 'Segment (5) คือ Reference Words (สีเหลือง): คำอ้างอิง those who, their, ones ที่ใช้แทนคนและสิ่งของ' },
+      5: { role: 'blue', exp: 'Segment (6) คือ Concluding Main Idea & Organization Summary (สีฟ้า): ประโยคสรุปใจความสำคัญของการเปรียบเทียบทางเลือกในการเดินทาง' }
+    };
+
+    const el = document.getElementById(`strat4-hl-sent-${sentIdx}`);
+    if (el) {
+      if (color === 'yellow') {
+        el.style.background = '#FEF08A';
+        el.style.borderColor = '#EAB308';
+      } else if (color === 'green') {
+        el.style.background = '#DCFCE7';
+        el.style.borderColor = '#22C55E';
+      } else {
+        el.style.background = '#DBEAFE';
+        el.style.borderColor = '#3B82F6';
+      }
+    }
+
+    const fb = document.getElementById('strat4-hl-feedback');
+    if (fb && expected[sentIdx]) {
+      const ok = expected[sentIdx].role === color;
+      fb.style.display = 'block';
+      fb.style.padding = '0.8rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = ok ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = ok ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `${ok ? '✅ <strong>เลือกสีถูกต้อง!</strong>' : '💡 <strong>คำแนะนำสีที่ถูกต้อง:</strong>'} ${expected[sentIdx].exp}`;
+    }
+  }
+
+  resetStrat4Highlights() {
+    this.strat4HighlightColors = {};
+    for (let i = 0; i < 6; i++) {
+      const el = document.getElementById(`strat4-hl-sent-${i}`);
+      if (el) {
+        el.style.background = '#fff';
+        el.style.borderColor = '#E2E8F0';
+      }
+    }
+    const fb = document.getElementById('strat4-hl-feedback');
+    if (fb) fb.style.display = 'none';
+  }
+
+  revealStrat4Highlights() {
+    const key = { 0: 'blue', 1: 'green', 2: 'yellow', 3: 'green', 4: 'yellow', 5: 'blue' };
+    Object.keys(key).forEach(k => this.highlightStrat4Sentence(Number(k), key[k]));
+    const fb = document.getElementById('strat4-hl-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>เฉลยครบทั้ง 6 ส่วนแล้ว:</strong> สีเหลือง (3, 5) = Reference Words • สีเขียว (2, 4) = Connectives & Transitions • สีฟ้า (1, 6) = Main Ideas & Text Organization';
+    }
+  }
+
+  submitStrat4PassageCheck() {
+    const key = [1, 1, 1];
+    const exps = [
+      "Passage 1 (Sunflowers): คำว่า 'one' แทน small hole (หลุมเล็กๆ แต่ละหลุม) และใช้คำเชื่อม First, Second, Next, Finally จึงเป็นโครงสร้างแบบ Sequence",
+      "Passage 2 (Bicycles vs. Scooters): คำเชื่อม Both, However, On the other hand แสดงโครงสร้างแบบ Compare and Contrast และคำว่า 'they' แทน bicycles and electric scooters",
+      "Passage 3 (Streetlights): 'this issue' แทนปัญหาไฟถนนเสียทำให้ทางมืด ส่วน 'These lamps' แทน solar lamps และย่อหน้านี้จัดโครงสร้างแบบ Problem and Solution"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 3; i++) {
+      const sel = document.getElementById(`s4-pass-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.3rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat4-passages-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน While-Reading Passages 1–3 (Unit 4): ${score} / 3 คะแนน</div>${rows.join('')}`;
+    }
+  }
+
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2, 3 & 4) ------------------- */
   getActiveStrategyQuizContext() {
+    if (this.currentStrategyUnit === 4 && ReadSkillsData.strategyUnit4Quiz) {
+      return {
+        unitNum: 4,
+        quizData: ReadSkillsData.strategyUnit4Quiz,
+        state: this.strat4QuizState,
+        storageKey: 'bru_strat4_quiz_score'
+      };
+    }
     if (this.currentStrategyUnit === 3 && ReadSkillsData.strategyUnit3Quiz) {
       return {
         unitNum: 3,
@@ -3800,7 +4053,28 @@ class ReadSkillsApp {
       state.passageSubmitted = [false, false, false];
     }
 
-    const topCards = unitNum === 3 ? `
+    const topCards = unitNum === 4 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="git-branch" class="w-4 h-4 text-purple-700"></i>
+            <span>References, Connectives & Text Organization</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Tracing Logical Connections (A2–B1):</strong> แกะรอยคำอ้างอิง (<em>Pronouns, Demonstratives, Relative Pronouns, Substitute Words</em>), คำเชื่อม 6 หน้าที่ และโครงสร้างบทอ่าน 5 รูปแบบ
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Unit 4 Assessment & 70% Mastery Goal</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการหาคำอ้างอิง การวิเคราะห์คำเชื่อม และการระบุโครงสร้างบทอ่านระดับ A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    ` : unitNum === 3 ? `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
         <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-purple-950 font-bold">
@@ -3865,7 +4139,28 @@ class ReadSkillsApp {
       </div>
     `;
 
-    const bottomReview = unitNum === 3 ? `
+    const bottomReview = unitNum === 4 ? `
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Unit 4 Review & Common Mistakes (สรุปบทที่ 4 และข้อควรระวัง)</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. โยงคำสรรพนามผิดพจน์</strong>
+            <p class="leading-relaxed">ตรวจสอบเสมอว่าคำอ้างอิงเป็นเอกพจน์ (<em>it, this, one</em>) หรือพหูพจน์ (<em>they, them, these, ones</em>) เพื่อไม่ให้จับคู่ผิดคำนาม</p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. สับสนระหว่าง Contrast กับ Cause & Effect</strong>
+            <p class="leading-relaxed">จำไว้ว่า <em>however, on the other hand, while</em> ใช้แสดงความต่าง/ขัดแย้ง ส่วน <em>therefore, as a result, consequently</em> ใช้แสดงผลลัพธ์</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. แยก Problem & Solution กับ Cause & Effect ไม่ชัดเจน</strong>
+            <p class="leading-relaxed">โครงสร้าง <strong>Problem & Solution</strong> จะมีการเสนอวิธีแก้ไขปัญหาอย่างชัดเจน (เช่น <em>To solve this problem...</em>)</p>
+          </div>
+        </div>
+      </div>
+    ` : unitNum === 3 ? `
       <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
         <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
           <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
@@ -4461,7 +4756,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
-    if (unitNum === 3) {
+    if (unitNum === 4) {
+      this.strat4QuizState = fresh;
+    } else if (unitNum === 3) {
       this.strat3QuizState = fresh;
     } else if (unitNum === 2) {
       this.strat2QuizState = fresh;
