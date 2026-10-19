@@ -172,6 +172,23 @@ class ReadSkillsApp {
       lastScore: savedS1QuizScore ? parseInt(savedS1QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 2 State (Supporting Details, Idea Relationships & 30-Question Strategy Quiz)
+    this.strat2ScanTimer = null;
+    this.strat2ScanSeconds = 0;
+    this.strat2ActiveHighlightTool = 'yellow';
+    this.strat2HighlightColors = {};
+    const savedS2QuizScore = localStorage.getItem('bru_strat2_quiz_score');
+    this.strat2QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS2QuizScore ? parseInt(savedS2QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -2923,7 +2940,10 @@ class ReadSkillsApp {
 
       // 8. Strategy Quiz (แบบทดสอบ)
       case 8:
-        if (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) {
+        if (
+          (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) ||
+          (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz)
+        ) {
           return this.renderStrategyUnit1QuizStep(step);
         }
         return `
@@ -3000,7 +3020,12 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Strategy Unit 1 Interactive Methods & 30-Item Quiz ------------------- */
+  speakText(text) {
+    if (!text) return;
+    this.togglePassageAudio(encodeURIComponent(text));
+  }
+
+  /* ------------------- Strategy Unit 1 Interactive Methods (A2-B1) ------------------- */
 
   // 1. Diagnostic Pre-Test (3 Items)
   submitStrat1Pretest(qNum, choiceIdx) {
@@ -3008,9 +3033,9 @@ class ReadSkillsApp {
     this.strat1PretestAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 1, exp: "ก่อนอ่านบทความวิชาการ ควรใช้กลยุทธ์ Previewing สำรวจชื่อเรื่อง หัวข้อย่อย รูปภาพ และคำตัวหนาก่อนเสมอ (ข้อ B)" },
-      2: { ans: 0, exp: "Topic Sentence ทำหน้าที่ระบุใจความสำคัญ (Main Idea) และควบคุมขอบเขตของย่อหน้า (ข้อ A)" },
-      3: { ans: 2, exp: "จากชื่อเรื่อง 'How Rooftop Gardens Cool Modern Cities' และภาพต้นไม้บนดาดฟ้า คาดเดาได้ว่าการปลูกพืชบนหลังคาช่วยลดความร้อนในเมือง (ข้อ C)" }
+      1: { ans: 1, exp: "ก่อนเริ่มอ่านทุกบรรทัด ควรใช้กลยุทธ์ Previewing กวาดสายตาดูชื่อเรื่อง หัวข้อย่อย รูปภาพ และคำตัวหนาก่อนเสมอ (ข้อ B)" },
+      2: { ans: 0, exp: "Topic Sentence ทำหน้าที่บอกประเด็นหลักและใจความสำคัญ (Main Idea) ของย่อหน้า (ข้อ A)" },
+      3: { ans: 2, exp: "จากชื่อเรื่อง 'Easy Ways to Save Water at Home' และภาพปิดก๊อกน้ำ คาดเดาได้ว่าเป็นเรื่องวิธีประหยัดน้ำในชีวิตประจำวันที่บ้าน (ข้อ C)" }
     };
 
     const target = key[qNum];
@@ -3052,25 +3077,25 @@ class ReadSkillsApp {
     fb.classList.remove('hidden');
     if (selectedNum === 2) {
       fb.className = 'p-3 rounded-xl text-xs font-medium bg-emerald-100 text-emerald-950 border border-emerald-300 block';
-      fb.innerHTML = '<strong>ถูกต้อง! 🎉:</strong> จากการเชื่อมโยงภาพหน้าจอมือถือตอนตีหนึ่งครึ่ง + ชื่อเรื่อง <em>"Blue Light and the Sleepless Brain"</em> + คำตัวหนา <em>melatonin, circadian rhythm, sleep quality</em> ทำให้คาดเดาใจความหลักได้ทันทีว่าบทความพูดถึงผลกระทบของแสงสีฟ้าต่อฮอร์โมนการนอนหลับ';
+      fb.innerHTML = '<strong>ถูกต้อง! 🎉:</strong> จากการเชื่อมโยงภาพดูมือถือบนเตียงตอนดึก + ชื่อเรื่อง <em>"Using Phones at Night Hurts Your Sleep"</em> + คำตัวหนา <em>bright screen, tired, sleep schedule</em> ทำให้คาดเดาใจความหลักได้ทันทีว่าบทความพูดถึงผลเสียของการใช้มือถือก่อนนอนที่ทำให้หลับยากและเหนื่อยในตอนเช้า';
     } else {
       fb.className = 'p-3 rounded-xl text-xs font-medium bg-rose-100 text-rose-950 border border-rose-300 block';
-      fb.innerHTML = '<strong>ลองสังเกตเบาะแสอีกครั้ง:</strong> ดูคำว่า <em>Blue Light, Sleepless Brain, melatonin</em> และ <em>sleep quality</em> ซึ่งชี้ไปที่ตัวเลือกที่ 2 (ผลกระทบของแสงสีฟ้าจากหน้าจอต่อการนอนหลับ)';
+      fb.innerHTML = '<strong>ลองสังเกตเบาะแสอีกครั้ง:</strong> ดูคำว่า <em>Using Phones at Night, bright screen, tired</em> และ <em>sleep schedule</em> ซึ่งชี้ไปที่ตัวเลือกที่ 2 (ผลของการใช้โทรศัพท์ตอนดึกต่อการนอนหลับ)';
     }
   }
 
-  // 3. Vocabulary Preview Activity (6 Items)
+  // 3. Vocabulary Preview Activity (6 A2-B1 Items)
   submitStrat1Vocab(qNum, choiceIdx) {
     if (!this.strat1VocabAnswers) this.strat1VocabAnswers = {};
     this.strat1VocabAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 1, exp: "sustainable (adj.) = ยั่งยืน สามารถดำเนินต่อไปได้ในระยะยาวโดยไม่ทำลายสิ่งแวดล้อม (ข้อ B)" },
-      2: { ans: 0, exp: "microplastics (n.) = เศษพลาสติกขนาดจิ๋วที่มีขนาดเล็กกว่า 5 มิลลิเมตร (ข้อ A)" },
-      3: { ans: 2, exp: "cognitive (adj.) = เกี่ยวกับกระบวนการคิด การรับรู้ การเรียนรู้ และความจำของสมอง (ข้อ C)" },
-      4: { ans: 1, exp: "biomimicry (n.) = การออกแบบนวัตกรรมหรือเทคโนโลยีโดยเลียนแบบโครงสร้างและระบบของธรรมชาติ (ข้อ B)" },
-      5: { ans: 0, exp: "circadian rhythm (n.) = นาฬิกาชีวภาพรอบ 24 ชั่วโมงภายในร่างกายที่ควบคุมการตื่นและการนอนหลับ (ข้อ A)" },
-      6: { ans: 2, exp: "biodiversity (n.) = ความหลากหลายทางชีวภาพของพืชและสัตว์ในระบบนิเวศ (ข้อ C)" }
+      1: { ans: 1, exp: "healthy (adj.) = ดีต่อสุขภาพ แข็งแรง (good for your body and mind) (ข้อ B)" },
+      2: { ans: 0, exp: "reduce (v.) = ลดลง ทำให้มีขนาดหรือจำนวนน้อยลง (to make something smaller or less) (ข้อ A)" },
+      3: { ans: 2, exp: "improve (v.) = พัฒนา ทำให้ดีขึ้นกว่าเดิม (to make something better) (ข้อ C)" },
+      4: { ans: 1, exp: "benefit (n.) = ประโยชน์ ข้อดี หรือผลดีที่ได้รับ (a good or helpful result) (ข้อ B)" },
+      5: { ans: 0, exp: "schedule (n.) = ตารางเวลา แผนกำหนดเวลาทำกิจกรรมในแต่ละวัน (ข้อ A)" },
+      6: { ans: 2, exp: "protect (v.) = ปกป้อง คุ้มครองให้ปลอดภัยจากอันตราย (to keep safe from harm) (ข้อ C)" }
     };
 
     const target = key[qNum];
@@ -3107,16 +3132,16 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 6`;
   }
 
-  // 4. Prediction Quiz Activity (4 Items)
+  // 4. Prediction Quiz Activity (4 A2-B1 Items)
   submitStrat1Pred(qNum, choiceIdx) {
     if (!this.strat1PredAnswers) this.strat1PredAnswers = {};
     this.strat1PredAnswers[qNum] = choiceIdx;
 
     const key = {
-      1: { ans: 1, exp: "จากชื่อเรื่อง 'Electric Public Transit: Clearing the Smog' และประโยคเปิด คาดเดาได้ว่าเรื่องนี้กล่าวถึงการใช้รถเมล์ไฟฟ้าเพื่อลดมลพิษทางอากาศและช่วยให้สุขภาพดีขึ้น (ข้อ B)" },
-      2: { ans: 0, exp: "จากหัวข้อย่อย 'Fear of Failure' และคำตัวหนา anxiety, perfectionism คาดเดาได้ว่าพูดถึงสาเหตุทางจิตวิทยาของการผัดวันประกันพรุ่ง (ข้อ A)" },
-      3: { ans: 2, exp: "จากชื่อเรื่อง 'Mangrove Forests: Nature's Coastal Shield' และภาพรากโกงกางรับคลื่น คาดเดาได้ว่าป่าชายเลนช่วยปกป้องชายฝั่งจากพายุและการกัดเซาะ (ข้อ C)" },
-      4: { ans: 0, exp: "จากประโยคเปิดเรื่องการสลับใช้ 2 ภาษาช่วยพัฒนาสมอง คาดเดาได้ว่าการพูดสองภาษาช่วยเพิ่มสมาธิและความยืดหยุ่นทางความคิด (ข้อ A)" }
+      1: { ans: 1, exp: "จากชื่อเรื่อง 'City Buses Go Electric for Cleaner Air' และประโยคเปิด คาดเดาได้ว่าเรื่องนี้กล่าวถึงการใช้รถเมล์ไฟฟ้าเพื่อลดควันพิษและเสียงดังในเมือง (ข้อ B)" },
+      2: { ans: 0, exp: "จากหัวข้อย่อย 'Why Students Wait Until the Last Minute' และคำตัวหนา homework, stress, time plan คาดเดาได้ว่าพูดถึงสาเหตุที่นักศึกษาเลื่อนทำงานและวิธีวางแผนเวลา (ข้อ A)" },
+      3: { ans: 2, exp: "จากชื่อเรื่อง 'Trees by the Sea Protect Our Coast' และภาพต้นไม้ชายฝั่งรับคลื่น คาดเดาได้ว่าต้นไม้ชายทะเลช่วยปกป้องหมู่บ้านชายฝั่งจากคลื่นและพายุ (ข้อ C)" },
+      4: { ans: 0, exp: "จากประโยคเปิดเรื่องการเรียนภาษาที่สองช่วยฝึกสมอง คาดเดาได้ว่าการเรียนสองภาษาช่วยพัฒนาความจำและเป็นประโยชน์ต่อการทำงานในอนาคต (ข้อ A)" }
     };
 
     const target = key[qNum];
@@ -3153,13 +3178,13 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 4`;
   }
 
-  // 5. Interactive 3-Colour Highlighting Tool
+  // 5. Interactive 3-Colour Highlighting Tool (Unit 1)
   highlightStrat1Sentence(segNum, color) {
     const expected = {
-      1: { role: 'yellow', exp: 'Segment (1) คือ Preview Clues (สีเหลือง) ได้แก่ Title, Subheading และ Bold Terms ที่ช่วยคาดเดาเนื้อหาก่อนอ่าน' },
-      2: { role: 'blue', exp: 'Segment (2) คือ Topic Sentence (สีฟ้า) ที่เปิดประเด็นหลักว่าการนอนหลับลึกทุกคืนจำเป็นต่อการเปลี่ยนความรู้ใหม่เป็นความจำระยะยาว' },
-      3: { role: 'green', exp: 'Segment (3) คือ Major Supporting Detail (สีเขียว) อธิบายกลไกของสมองส่วน hippocampus ขณะหลับลึก' },
-      4: { role: 'green', exp: 'Segment (4) คือ Minor Supporting Detail / Example (สีเขียว) ยกตัวอย่างผลการทดลองเปรียบเทียบการจำคำศัพท์ 35%' },
+      1: { role: 'yellow', exp: 'Segment (1) คือ Preview Clues (สีเหลือง) ได้แก่ Title, Subheading และ Bold Words ที่ช่วยคาดเดาเนื้อหาก่อนอ่าน' },
+      2: { role: 'blue', exp: 'Segment (2) คือ Topic Sentence (สีฟ้า) ที่เปิดประเด็นหลักว่าการนอนหลับให้เพียงพอทุกคืนช่วยให้สมองจดจำบทเรียนใหม่ได้ดี' },
+      3: { role: 'green', exp: 'Segment (3) คือ Supporting Detail (สีเขียว) อธิบายการทำงานของสมองในการจัดระเบียบสิ่งที่เรียนมาขณะหลับ' },
+      4: { role: 'green', exp: 'Segment (4) คือ Supporting Detail / Example (สีเขียว) ยกตัวอย่างว่านักศึกษาที่นอนครบ 8 ชั่วโมงจำคำศัพท์ได้มากกว่า' },
       5: { role: 'blue', exp: 'Segment (5) คือ Concluding Main Idea Restatement (สีฟ้า) ที่สรุปย้ำใจความสำคัญปิดท้ายย่อหน้า' }
     };
 
@@ -3198,15 +3223,15 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightStrat1Sentence(Number(k), roles[k]));
   }
 
-  // 6. While-Reading Passages 1–3 Check
+  // 6. While-Reading Passages 1–3 Check (Unit 1 A2-B1)
   submitStrat1PassageCheck(pNum, choiceIdx) {
     if (!this.strat1PassageAnswers) this.strat1PassageAnswers = {};
     this.strat1PassageAnswers[pNum] = choiceIdx;
 
     const key = {
-      1: { ans: 1, exp: "ประโยค (1) คือ Topic Sentence และใจความหลักคือไมโครพลาสติกในมหาสมุทรเป็นภัยคุกคามต่อระบบนิเวศทางทะเลและสุขภาพมนุษย์ผ่านห่วงโซ่อาหาร (ข้อ B)" },
-      2: { ans: 0, exp: "จาก Topic Sentence (1) และประโยคสรุป (5) ใจความหลักคือการจดบันทึกด้วยมือช่วยให้สมองประมวลผล สรุปความ และจำได้ดีกว่าการพิมพ์ตามคำพูดทุกคำ (ข้อ A)" },
-      3: { ans: 1, exp: "ตัวอย่างจะงอยปากนกกระเต็นและจอมปลวกแอฟริกาในประโยค (3)–(4) ทำหน้าที่เป็น Supporting Details ที่ขยายความ Topic Sentence ในประโยค (1) (ข้อ B)" }
+      1: { ans: 1, exp: "ประโยค (1) คือ Topic Sentence และใจความหลักคือการใช้ขวดน้ำใช้ซ้ำช่วยลดขยะพลาสติกและประหยัดเงินของนักศึกษา (ข้อ B)" },
+      2: { ans: 0, exp: "จาก Topic Sentence (1) และประโยคสรุป (5) ใจความหลักคือการจดโน้ตด้วยปากกาในสมุดช่วยให้นักศึกษาเข้าใจและจำบทเรียนได้ดีกว่าการพิมพ์ทุกคำ (ข้อ A)" },
+      3: { ans: 1, exp: "ตัวอย่างรถไฟหัวกระสุนที่เลียนแบบปากนกและตึกที่ระบายอากาศเหมือนจอมปลวกในประโยค (3)–(4) ทำหน้าที่เป็น Supporting Details ที่ขยายความ Topic Sentence ในประโยค (1) (ข้อ B)" }
     };
 
     const target = key[pNum];
@@ -3242,20 +3267,308 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 3 Completed`;
   }
 
+  /* ------------------- Strategy Unit 2 Interactive Methods (A2-B1) ------------------- */
+
+  submitStrat2Pretest() {
+    const key = [1, 0, 1];
+    const exps = [
+      "ข้อ 1 ตอบ B: Minor Supporting Detail ทำหน้าที่ยกตัวอย่าง ตัวเลข หรือข้อเท็จจริงย่อยเพื่ออธิบายขยายความ Major Supporting Detail",
+      "ข้อ 2 ตอบ A: because, so, therefore, as a result เป็นคำสัญญาณ (Signal Words) แสดงเหตุและผล (Cause and Effect)",
+      "ข้อ 3 ตอบ B: การหาเวลาเปิด-ปิด (8:30 AM) อย่างรวดเร็วต้องใช้ทักษะ Scanning กวาดสายตาหาตัวเลขและเวลาโดยเฉพาะ"
+    ];
+    let score = 0;
+    const details = [];
+    for (let i = 0; i < 3; i++) {
+      const checked = document.querySelector(`input[name="s2-pre-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      details.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat2-pretest-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #34D399' : '1.5px solid #FBBF24';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน Pre-Test: ${score} / 3 คะแนน</div>${details.join('')}`;
+    }
+  }
+
+  checkStrat2Warmup(choiceIdx) {
+    const fb = document.getElementById('strat2-warmup-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    fb.style.padding = '0.8rem';
+    fb.style.borderRadius = '10px';
+    fb.style.fontSize = '0.84rem';
+    if (choiceIdx === 1) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #34D399';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>ถูกต้อง! 🎉</strong> ประโยคที่ขึ้นต้นด้วย <em>"For example, a 30-minute walk..."</em> เป็น <strong>Minor Supporting Detail</strong> ที่ยกตัวอย่างขยายความประโยคก่อนหน้าว่าเดินแล้วช่วยให้หัวใจและกล้ามเนื้อแข็งแรงอย่างไร';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #F87171';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '💡 <strong>ลองดูคำขึ้นต้นประโยคอีกครั้ง:</strong> ประโยคนี้มีคำว่า <em>"For example..."</em> จึงเป็น <strong>Minor Supporting Detail</strong> (ข้อ B) ที่ยกตัวอย่างขยายความเหตุผลหลักข้อที่ 1';
+    }
+  }
+
+  startStrat2ScanTimer() {
+    if (this.strat2ScanTimer) clearInterval(this.strat2ScanTimer);
+    this.strat2ScanSeconds = 0;
+    const disp = document.getElementById('strat2-scan-timer-display');
+    if (disp) disp.textContent = '⏱️ 00:00';
+    this.strat2ScanTimer = setInterval(() => {
+      this.strat2ScanSeconds++;
+      const m = String(Math.floor(this.strat2ScanSeconds / 60)).padStart(2, '0');
+      const s = String(this.strat2ScanSeconds % 60).padStart(2, '0');
+      const el = document.getElementById('strat2-scan-timer-display');
+      if (el) el.textContent = `⏱️ ${m}:${s}`;
+    }, 1000);
+  }
+
+  submitStrat2Scan() {
+    if (this.strat2ScanTimer) {
+      clearInterval(this.strat2ScanTimer);
+      this.strat2ScanTimer = null;
+    }
+    const key = [1, 1, 0, 2, 0, 0];
+    const exps = [
+      "ข้อ 1 (Skimming): ใจความสำคัญคือตารางกิจกรรม ค่าสมัคร และวิธีสมัครเข้าชมรมวิ่งและแบดมินตันของมหาวิทยาลัย",
+      "ข้อ 2 (Scanning Time): กลุ่มวิ่งตอนเช้านัดพบเวลา 6:30 AM",
+      "ข้อ 3 (Scanning Place): กลุ่มแบดมินตันซ้อมในอาคาร Gym Building 2",
+      "ข้อ 4 (Scanning Price): ค่าสมัครสมาชิกเพียง 50 baht ต่อภาคเรียน",
+      "ข้อ 5 (Scanning Date): ต้องสมัครภายในวันที่ June 15",
+      "ข้อ 6 (Cause & Effect): ต้องสวมรองเท้ากีฬาที่สะอาดเพราะต้องถนอมพื้นโรงยิม (Because the gym floor needs protection)"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 6; i++) {
+      const sel = document.getElementById(`s2-scan-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 6) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat2-scan-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🎉 ผ่านเกณฑ์ 70%!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน Timed Scanning Task: ${score} / 6 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  submitStrat2Challenge() {
+    const key = [0, 1, 0, 1];
+    const exps = [
+      "ข้อ 1 ตอบ A: ประโยคที่ (1) เป็น Topic Sentence ที่สรุป Main Idea ว่าการดื่มน้ำสะอาดทุกวันช่วยให้ร่างกายแข็งแรงและกระฉับกระเฉง",
+      "ข้อ 2 ตอบ B: ประโยคที่ (2) และ (4) ขึ้นต้นด้วย First และ Second เพื่อบอกเหตุผลหลัก 2 ข้อที่รองรับ Main Idea โดยตรง จึงเป็น Major Supporting Details",
+      "ข้อ 3 ตอบ A: ประโยคที่ (3) ขึ้นต้นด้วย For example เพื่อยกตัวอย่างขยายความประโยคที่ (2) จึงเป็น Minor Supporting Detail",
+      "ข้อ 4 ตอบ B: คำว่า Because แสดงความสัมพันธ์แบบ Cause and Effect (เหตุและผล)"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 4; i++) {
+      const checked = document.querySelector(`input[name="s2-chal-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const pct = Math.round((score / 4) * 100);
+    const passed = pct >= 70;
+    const fb = document.getElementById('strat2-challenge-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = passed ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = passed ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">${passed ? '🏆 ผ่านเกณฑ์ Main Idea Challenge!' : '💪 ลองทบทวนอีกครั้ง'} คะแนน: ${score} / 4 (${pct}%)</div>${rows.join('')}`;
+    }
+  }
+
+  setStrat2HighlightTool(color) {
+    this.strat2ActiveHighlightTool = color;
+    const tools = ['yellow', 'green', 'blue'];
+    tools.forEach(c => {
+      const btn = document.getElementById(`strat2-tool-${c}`);
+      if (btn) {
+        btn.style.boxShadow = c === color ? '0 0 0 3px rgba(15,23,42,0.28)' : 'none';
+        btn.style.transform = c === color ? 'scale(1.03)' : 'scale(1)';
+      }
+    });
+  }
+
+  highlightStrat2Sentence(sentIdx, forcedColor) {
+    const color = forcedColor || this.strat2ActiveHighlightTool || 'yellow';
+    if (!this.strat2HighlightColors) this.strat2HighlightColors = {};
+    this.strat2HighlightColors[sentIdx] = color;
+
+    const expected = {
+      0: { role: 'yellow', exp: 'ประโยคที่ (1) คือ Main Idea (สีเหลือง): เปิดประเด็นว่าการทำอาหารกินเองที่บ้านช่วยให้สุขภาพดีและประหยัดเงิน' },
+      1: { role: 'green', exp: 'ประโยคที่ (2) คือ Major Supporting Detail ที่ 1 (สีเขียว): ขึ้นต้นด้วย First บอกเหตุผลหลักเรื่องอาหารทำเองดีต่อสุขภาพ' },
+      2: { role: 'blue', exp: 'ประโยคที่ (3) คือ Minor Supporting Detail (สีฟ้า): ขึ้นต้นด้วย For example ยกตัวอย่างการใช้ผักสดและลดน้ำมัน/น้ำตาล' },
+      3: { role: 'green', exp: 'ประโยคที่ (4) คือ Major Supporting Detail ที่ 2 (สีเขียว): ขึ้นต้นด้วย Second บอกเหตุผลหลักเรื่องการประหยัดเงินค่าอาหาร' },
+      4: { role: 'blue', exp: 'ประโยคที่ (5) คือ Minor Supporting Detail (สีฟ้า): ขึ้นต้นด้วย Specifically ยกตัวเลขราคาซื้อไข่และผัก 100 บาททำได้ 3 มื้อ' },
+      5: { role: 'yellow', exp: 'ประโยคที่ (6) คือ Concluding Main Idea Restatement (สีเหลือง): สรุปย้ำใจความสำคัญปิดท้ายย่อหน้า' }
+    };
+
+    const el = document.getElementById(`strat2-hl-sent-${sentIdx}`);
+    if (el) {
+      if (color === 'yellow') {
+        el.style.background = '#FEF08A';
+        el.style.borderColor = '#EAB308';
+      } else if (color === 'green') {
+        el.style.background = '#DCFCE7';
+        el.style.borderColor = '#22C55E';
+      } else {
+        el.style.background = '#DBEAFE';
+        el.style.borderColor = '#3B82F6';
+      }
+    }
+
+    const fb = document.getElementById('strat2-hl-feedback');
+    if (fb && expected[sentIdx]) {
+      const ok = expected[sentIdx].role === color;
+      fb.style.display = 'block';
+      fb.style.padding = '0.8rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = ok ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = ok ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `${ok ? '✅ <strong>เลือกสีถูกต้อง!</strong>' : '💡 <strong>คำแนะนำสีที่ถูกต้อง:</strong>'} ${expected[sentIdx].exp}`;
+    }
+  }
+
+  resetStrat2Highlights() {
+    this.strat2HighlightColors = {};
+    for (let i = 0; i < 6; i++) {
+      const el = document.getElementById(`strat2-hl-sent-${i}`);
+      if (el) {
+        el.style.background = '#fff';
+        el.style.borderColor = '#E2E8F0';
+      }
+    }
+    const fb = document.getElementById('strat2-hl-feedback');
+    if (fb) fb.style.display = 'none';
+  }
+
+  revealStrat2Highlights() {
+    const key = { 0: 'yellow', 1: 'green', 2: 'blue', 3: 'green', 4: 'blue', 5: 'yellow' };
+    Object.keys(key).forEach(k => this.highlightStrat2Sentence(Number(k), key[k]));
+    const fb = document.getElementById('strat2-hl-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.85rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '✅ <strong>เฉลยครบทั้ง 6 ประโยคแล้ว:</strong> สีเหลือง (1, 6) = Main Idea • สีเขียว (2, 4) = Major Supporting Details • สีฟ้า (3, 5) = Minor Supporting Details';
+    }
+  }
+
+  submitStrat2PassageCheck() {
+    const key = [0, 1, 1];
+    const exps = [
+      "Passage 1 (Sequence): คำเชื่อม First, Second, Next, Finally แสดงลำดับขั้นตอนการยืมหนังสือ โดยหลังหยิบหนังสือแล้วให้นำหนังสือและบัตรนักศึกษาไปที่เคาน์เตอร์ชั้น 1",
+      "Passage 2 (Compare & Contrast): การอ่านคนเดียวช่วยให้มีสมาธิลึกโดยไม่มีเสียงคุย ส่วนการอ่านกับเพื่อนช่วยถามคำถามและแบ่งปันโน้ตเมื่อบทเรียนยาก",
+      "Passage 3 (Cause & Effect): การรับประทานไข่ นม และผลไม้ทำให้สมองได้รับพลังงานสดชื่น ส่งผลให้นักศึกษาตั้งใจฟังและตอบคำถามได้ดี (As a result...)"
+    ];
+    let score = 0;
+    const rows = [];
+    for (let i = 0; i < 3; i++) {
+      const sel = document.getElementById(`s2-pass-${i + 1}`);
+      const val = sel && sel.value !== '' ? parseInt(sel.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      rows.push(`<div style="margin-bottom:0.3rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat2-passages-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.padding = '0.9rem';
+      fb.style.borderRadius = '10px';
+      fb.style.fontSize = '0.84rem';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลคะแนน While-Reading Passages 1–3: ${score} / 3 คะแนน</div>${rows.join('')}`;
+    }
+  }
+
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1 & 2) ------------------- */
+  getActiveStrategyQuizContext() {
+    if (this.currentStrategyUnit === 2 && ReadSkillsData.strategyUnit2Quiz) {
+      return {
+        unitNum: 2,
+        quizData: ReadSkillsData.strategyUnit2Quiz,
+        state: this.strat2QuizState,
+        storageKey: 'bru_strat2_quiz_score'
+      };
+    }
+    return {
+      unitNum: 1,
+      quizData: ReadSkillsData.strategyUnit1Quiz,
+      state: this.strat1QuizState,
+      storageKey: 'bru_strat1_quiz_score'
+    };
+  }
+
   // 7. Step 8: 30-Question Strategy Quiz Renderer & Handlers
   renderStrategyUnit1QuizStep(step) {
     setTimeout(() => {
       if (window.lucide) lucide.createIcons();
     }, 30);
 
-    const quizData = ReadSkillsData.strategyUnit1Quiz;
-    const state = this.strat1QuizState;
+    const ctx = this.getActiveStrategyQuizContext();
+    const unitNum = ctx.unitNum;
+    const quizData = ctx.quizData;
+    const state = ctx.state;
     const totalQ = 30;
     if (!Array.isArray(state.passageSubmitted)) {
       state.passageSubmitted = [false, false, false];
     }
 
-    const topCards = `
+    const topCards = unitNum === 2 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="network" class="w-4 h-4 text-purple-700"></i>
+            <span>Post-Reading Graphic Organizer & Support Check</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Decoding Support Systems (A2–B1):</strong> แยกแยะ <strong>Major Supporting Details</strong> (เหตุผลหลัก) และ <strong>Minor Supporting Details</strong> (ตัวอย่าง/ตัวเลข) พร้อมสังเกตคำเชื่อม <em>Cause & Effect, Compare & Contrast, และ Sequence</em>
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Unit 2 Assessment & 70% Mastery Goal</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินทักษะ Skimming, Scanning, Major/Minor Details และ Idea Relationships ในระดับภาษา A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    ` : `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
         <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-purple-950 font-bold">
@@ -3278,20 +3591,41 @@ class ReadSkillsApp {
       </div>
     `;
 
-    const bottomReview = `
+    const bottomReview = unitNum === 2 ? `
       <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
         <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
           <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
-          <span>Lesson Review & Common Mistakes (สรุปบทเรียนและข้อผิดพลาดที่พบบ่อย)</span>
+          <span>Unit 2 Review & Common Mistakes (สรุปบทที่ 2 และข้อควรระวัง)</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. สับสนระหว่าง Major กับ Minor Detail</strong>
+            <p class="leading-relaxed">จำไว้ว่า <strong>Major Detail</strong> คือเหตุผลหลักที่รองรับ Main Idea (มักมี <em>First, Second</em>) ส่วน <strong>Minor Detail</strong> คือตัวอย่างหรือตัวเลขที่ขยายความ (มักมี <em>For example, Specifically</em>)</p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. มองข้าม Signal Words</strong>
+            <p class="leading-relaxed">คำเชื่อมสั้นๆ เช่น <em>because, so</em> (เหตุ-ผล), <em>however, on the other hand</em> (ความต่าง), และ <em>first, next, finally</em> (ลำดับขั้นตอน) คือหัวใจสำคัญในการเข้าใจความสัมพันธ์ของประโยค</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. ใช้ Skimming กับ Scanning สลับกัน</strong>
+            <p class="leading-relaxed">ใช้ <strong>Skimming</strong> เมื่อต้องการหา Main Idea ภาพรวม และใช้ <strong>Scanning</strong> เมื่อต้องการเจาะหาตัวเลข เวลา วันที่ หรือชื่อเฉพาะอย่างรวดเร็ว</p>
+          </div>
+        </div>
+      </div>
+    ` : `
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Unit 1 Review & Common Mistakes (สรุปบทที่ 1 และข้อผิดพลาดที่พบบ่อย)</span>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
           <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
             <strong class="font-bold block text-rose-900">1. ข้ามการ Preview ก่อนอ่าน</strong>
-            <p class="leading-relaxed">นักศึกษาที่เริ่มอ่านบรรทัดแรกทันทีโดยไม่ดูชื่อเรื่อง หัวข้อย่อย หรือคำตัวหนา มักจับประเด็นหลักได้ช้าและหลงทางในคำศัพท์ยาก</p>
+            <p class="leading-relaxed">นักศึกษาที่เริ่มอ่านบรรทัดแรกทันทีโดยไม่ดูชื่อเรื่อง หัวข้อย่อย หรือคำตัวหนา มักจับประเด็นหลักได้ช้าและหลงทางในคำศัพท์</p>
           </div>
           <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
             <strong class="font-bold block text-amber-900">2. เลือก Supporting Detail เป็น Main Idea</strong>
-            <p class="leading-relaxed">ระวังกับดัก <em>Too Narrow</em> เช่น การเลือกประโยคที่มีตัวเลขสถิติสวยๆ (เช่น ประหยัดน้ำ 95%) ไปตอบเป็น Main Idea ทั้งที่เป็นเพียงรายละเอียดสนับสนุน</p>
+            <p class="leading-relaxed">ระวังกับดัก <em>Too Narrow</em> เช่น การเลือกประโยคตัวอย่างย่อยไปตอบเป็น Main Idea ทั้งที่เป็นเพียงรายละเอียดสนับสนุน</p>
           </div>
           <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
             <strong class="font-bold block text-purple-900">3. ไม่ตรวจสอบคำทำนายขณะอ่าน</strong>
@@ -3314,7 +3648,7 @@ class ReadSkillsApp {
 
           <div class="space-y-2">
             <span class="text-xs font-bold uppercase tracking-wider ${passed ? 'text-emerald-700 bg-emerald-100' : 'text-amber-800 bg-amber-100'} px-3 py-1 rounded-full">
-              ${passed ? 'Strategy Unit 1 Passed (≥ 70%)! 🎉' : 'Keep Practicing! 💪'}
+              ${passed ? `Strategy Unit ${unitNum} Passed (≥ 70%)! 🎉` : 'Keep Practicing! 💪'}
             </span>
             <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">${quizData.title}</h3>
             <p class="text-xs text-slate-500">${quizData.thaiTitle}</p>
@@ -3463,7 +3797,7 @@ class ReadSkillsApp {
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div class="flex items-center space-x-2">
                 <i data-lucide="book-open" class="w-4 h-4 text-pink-400"></i>
-                <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Academic Passage ${pIdx + 1} of 3</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Reading Passage ${pIdx + 1} of 3 (CEFR A2–B1)</span>
               </div>
               <button 
                 onclick="app.playStrat1QuizPassageAudio(${pIdx})"
@@ -3593,7 +3927,7 @@ class ReadSkillsApp {
                     ${
                       currentQuestion.type === 'mc' ? 'Multiple Choice' :
                       currentQuestion.type === 'highlight' ? 'Highlight Sentence in Text' :
-                      'Vocabulary Fill-in-the-Blank'
+                      'Vocabulary / Signal Word Fill-in-the-Blank'
                     }
                   </span>
                   <span class="text-xs font-bold text-purple-700">ข้อที่ ${qIdx + 1} / 10 • 1 Point</span>
@@ -3715,14 +4049,15 @@ class ReadSkillsApp {
   }
 
   goToStrat1QuizQuestion(pIdx, qIdx) {
-    this.strat1QuizState.isCompleted = false;
-    this.strat1QuizState.passageIndex = pIdx;
-    this.strat1QuizState.questionIndex = qIdx;
+    const { state } = this.getActiveStrategyQuizContext();
+    state.isCompleted = false;
+    state.passageIndex = pIdx;
+    state.questionIndex = qIdx;
     this.navigate('strategies', true);
   }
 
   setStrat1QuizAnswer(selected) {
-    const state = this.strat1QuizState;
+    const { state } = this.getActiveStrategyQuizContext();
     if (state.isCompleted) return;
     if (Array.isArray(state.passageSubmitted) && state.passageSubmitted[state.passageIndex]) return;
     state.answers[`${state.passageIndex}-${state.questionIndex}`] = { selected };
@@ -3742,7 +4077,7 @@ class ReadSkillsApp {
   }
 
   prevStrat1QuizQuestion() {
-    const state = this.strat1QuizState;
+    const { state } = this.getActiveStrategyQuizContext();
     if (state.questionIndex > 0) {
       state.questionIndex--;
     }
@@ -3750,7 +4085,7 @@ class ReadSkillsApp {
   }
 
   nextStrat1QuizQuestion() {
-    const state = this.strat1QuizState;
+    const { state } = this.getActiveStrategyQuizContext();
     if (state.questionIndex < 9) {
       state.questionIndex++;
     }
@@ -3758,8 +4093,7 @@ class ReadSkillsApp {
   }
 
   submitStrat1PassageQuiz(pIdx) {
-    const state = this.strat1QuizState;
-    const quizData = ReadSkillsData.strategyUnit1Quiz;
+    const { state, quizData, storageKey } = this.getActiveStrategyQuizContext();
     const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
     const passage = quizData.passages[targetP];
     if (!passage) return;
@@ -3791,13 +4125,13 @@ class ReadSkillsApp {
     state.passageIndex = targetP;
 
     const totalScore = state.passageScores.reduce((a, b) => a + b, 0);
-    localStorage.setItem('bru_strat1_quiz_score', totalScore);
+    localStorage.setItem(storageKey, totalScore);
     state.lastScore = totalScore;
     this.navigate('strategies', true);
   }
 
   resetStrat1PassageQuiz(pIdx) {
-    const state = this.strat1QuizState;
+    const { state } = this.getActiveStrategyQuizContext();
     const targetP = pIdx !== undefined ? pIdx : state.passageIndex;
     if (!Array.isArray(state.passageSubmitted)) {
       state.passageSubmitted = [false, false, false];
@@ -3814,13 +4148,15 @@ class ReadSkillsApp {
   }
 
   showStrat1QuizSummary() {
-    this.strat1QuizState.isCompleted = true;
+    const { state } = this.getActiveStrategyQuizContext();
+    state.isCompleted = true;
     this.navigate('strategies', false);
   }
 
   resetStrat1Quiz() {
-    const saved = localStorage.getItem('bru_strat1_quiz_score');
-    this.strat1QuizState = {
+    const { unitNum, storageKey } = this.getActiveStrategyQuizContext();
+    const saved = localStorage.getItem(storageKey);
+    const fresh = {
       passageIndex: 0,
       questionIndex: 0,
       answers: {},
@@ -3830,11 +4166,16 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
+    if (unitNum === 2) {
+      this.strat2QuizState = fresh;
+    } else {
+      this.strat1QuizState = fresh;
+    }
     this.navigate('strategies', true);
   }
 
   playStrat1QuizPassageAudio(pIndex) {
-    const quizData = ReadSkillsData.strategyUnit1Quiz;
+    const { quizData } = this.getActiveStrategyQuizContext();
     if (!quizData || !quizData.passages[pIndex]) return;
     const passage = quizData.passages[pIndex];
     this.togglePassageAudio(encodeURIComponent(passage.audioText));
