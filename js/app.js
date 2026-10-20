@@ -5868,14 +5868,15 @@ class ReadSkillsApp {
           </div>
         </div>
 
-        <!-- Passage Card -->
-        <div class="glass-card p-5 sm:p-7 space-y-4 bg-slate-900 text-slate-100 rounded-2xl shadow-lg border border-slate-800">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
-            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">⚡ Timed Reading Passage</span>
-            <span class="text-[10px] font-semibold text-slate-400">${q.units}</span>
+        <!-- Passage Card (high-contrast highlighted box) -->
+        <div class="p-5 sm:p-7 space-y-4 rounded-2xl" style="background:#FFF4CC; border:2.5px solid #1E1B2E; box-shadow:5px 5px 0 #1E1B2E;">
+          <div class="flex items-center justify-between pb-2.5" style="border-bottom:2px dashed #1E1B2E;">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-extrabold uppercase tracking-wider" style="background:#F59E0B; color:#1E1B2E; border:2px solid #1E1B2E;">⚡ Timed Reading Passage</span>
+            <span class="px-2.5 py-1 rounded-full text-[11px] font-bold bg-white" style="color:#53347C; border:2px solid #1E1B2E;">${q.units}</span>
           </div>
-          <p class="text-sm sm:text-base leading-relaxed text-slate-200 font-serif italic">
-            "${q.passage}"
+          <h3 class="text-base sm:text-lg font-extrabold" style="color:#1E1B2E;">${q.topic || ''}</h3>
+          <p class="text-[15px] sm:text-lg leading-relaxed font-medium" style="color:#1E1B2E;">
+            ${q.passage}
           </p>
         </div>
 
@@ -5990,7 +5991,7 @@ class ReadSkillsApp {
           
           <!-- Left: Reading Passage Card (5 cols on lg) -->
           <div class="lg:col-span-5 space-y-4 lg:sticky lg:top-24">
-            <div class="glass-card p-4 sm:p-6 bg-slate-900 text-slate-100 rounded-2xl shadow-lg space-y-4">
+            <div class="p-4 sm:p-6 bg-slate-900 text-slate-100 rounded-2xl shadow-lg space-y-4">
               <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3">
                 <div>
                   <span class="text-[10px] font-bold uppercase tracking-wider text-pink-400">Integrated Reading Passage</span>
