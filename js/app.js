@@ -219,6 +219,21 @@ class ReadSkillsApp {
       lastScore: savedS4QuizScore ? parseInt(savedS4QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 5 State (Text Interpretation, Inference, Paraphrasing & 30-Question Strategy Quiz)
+    this.strat5ActiveHighlightTool = 'yellow';
+    this.strat5HighlightColors = {};
+    const savedS5QuizScore = localStorage.getItem('bru_strat5_quiz_score');
+    this.strat5QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS5QuizScore ? parseInt(savedS5QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -3004,7 +3019,8 @@ class ReadSkillsApp {
           (unit.unitNumber === 1 && ReadSkillsData.strategyUnit1Quiz) ||
           (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz) ||
           (unit.unitNumber === 3 && ReadSkillsData.strategyUnit3Quiz) ||
-          (unit.unitNumber === 4 && ReadSkillsData.strategyUnit4Quiz)
+          (unit.unitNumber === 4 && ReadSkillsData.strategyUnit4Quiz) ||
+          (unit.unitNumber === 5 && ReadSkillsData.strategyUnit5Quiz)
         ) {
           return this.renderStrategyUnit1QuizStep(step);
         }
@@ -4047,8 +4063,16 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2, 3 & 4) ------------------- */
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1 to 5) ------------------- */
   getActiveStrategyQuizContext() {
+    if (this.currentStrategyUnit === 5 && ReadSkillsData.strategyUnit5Quiz) {
+      return {
+        unitNum: 5,
+        quizData: ReadSkillsData.strategyUnit5Quiz,
+        state: this.strat5QuizState,
+        storageKey: 'bru_strat5_quiz_score'
+      };
+    }
     if (this.currentStrategyUnit === 4 && ReadSkillsData.strategyUnit4Quiz) {
       return {
         unitNum: 4,
@@ -4799,7 +4823,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
-    if (unitNum === 4) {
+    if (unitNum === 5) {
+      this.strat5QuizState = fresh;
+    } else if (unitNum === 4) {
       this.strat4QuizState = fresh;
     } else if (unitNum === 3) {
       this.strat3QuizState = fresh;
