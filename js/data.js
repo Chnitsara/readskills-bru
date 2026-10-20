@@ -861,79 +861,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
         "unitRef": "Unit 1: Main Ideas",
         "strategyRef": "Strategy 1: Previewing & Predicting",
-        "timeMinutes": 10,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
           "title": "The Tortoise and the Hare: Lessons on Perseverance and Overconfidence",
-          "text": "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
-          "audioText": "A boastful Hare was constantly ridiculing a slow-moving Tortoise for his clumsy pace. Weary of the ceaseless teasing, the quiet Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing nap beneath a shady oak tree. Meanwhile, the Tortoise never paused for a single second, pressing onward step by step under the blazing sun. When the arrogant Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
+          "text": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course.\n\nMeanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
+          "audioText": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course. Meanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 2: Strategy 1 (Previewing)",
-            "question": "1. Before reading the full story, what previewing technique best reveals the central characters and conflict immediately?",
+            "tag": "Strategy 1 (Previewing Title)",
+            "question": "1. Before reading the entire narrative, what does previewing the title 'The Tortoise and the Hare: Lessons on Perseverance and Overconfidence' reveal?",
             "options": [
-              "Examining the title 'The Tortoise and the Hare: Lessons on Perseverance and Overconfidence'",
-              "Counting how many verbs appear in the third sentence",
-              "Reading only the punctuation marks in the last paragraph",
-              "Translating every single adjective into another language"
+              "The central characters and the contrasting themes of steady effort versus excessive pride",
+              "The exact distance in meters that the two competitors will run",
+              "A complete historical list of famous runners in ancient folklore",
+              "The scientific classifications of desert reptiles and woodland mammals"
             ],
             "answer": 0,
             "explanation": "Previewing the title immediately identifies the key characters and the contrasting themes (perseverance vs. overconfidence)."
           },
           {
             "id": 2,
-            "tag": "Module 1: Unit 1 (Main Idea)",
+            "tag": "Unit 1 (Main Idea)",
             "question": "2. What is the stated main idea of the fable as expressed in the concluding sentence?",
             "options": [
-              "Sleeping under oak trees is the best way to spend an afternoon",
+              "Natural talent alone guarantees continuous victory without practicing",
               "Steady determination and consistent effort often lead to unexpected success over careless natural talent",
-              "Fast animals always win every race without effort",
-              "Running races during hot weather is strictly prohibited"
+              "Resting under large oak trees is recommended before athletic contests",
+              "Slow-moving forest animals should avoid competing against faster opponents"
             ],
             "answer": 1,
             "explanation": "The final sentence explicitly states the core moral: steady determination and consistent effort overcome careless talent."
           },
           {
             "id": 3,
-            "tag": "Module 2: Strategy 1 (Predicting)",
-            "question": "3. If an accompanying illustration showed the Hare sleeping peacefully while the Tortoise crept past the milestone, what prediction is confirmed?",
+            "tag": "Strategy 1 (Predicting)",
+            "question": "3. If an accompanying illustration depicts the Hare sleeping while the Tortoise steadily passes the halfway mark, what can the reader predict?",
             "options": [
               "The patient Tortoise will overtake the sleeping Hare and win the race",
-              "The Hare decided to quit the race to become a doctor",
-              "The Tortoise woke up the Hare so they could run together as friends",
-              "A storm cancelled the race before anyone finished"
+              "The Hare will wake up instantly and cancel the entire race",
+              "The Tortoise will take a nap right beside the Hare",
+              "A sudden storm will force all animals to abandon the track"
             ],
             "answer": 0,
             "explanation": "Visual clues of the sleeping Hare and advancing Tortoise confirm the prediction of the Tortoise taking the lead."
           },
           {
             "id": 4,
-            "tag": "Module 1: Unit 1 (Topic Sentence)",
-            "question": "4. In the narrative paragraph describing the race, which sentence establishes the core controlling idea of persistence defeating talent?",
+            "tag": "Unit 1 (Topic Sentence)",
+            "question": "4. Which sentence functions as the controlling idea for the entire narrative?",
             "options": [
-              "The concluding sentence: 'Steady determination and consistent effort often lead to unexpected success over careless natural talent.'",
-              "The opening phrase describing the teasing",
-              "The middle detail about the oak tree having pleasant shade",
-              "There is no topic sentence or main idea anywhere in the text"
+              "Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
+              "A boastful Hare was constantly teasing a quiet Tortoise about his slow walking pace.",
+              "The noon sunshine felt delightfully warm beneath the spreading oak branches.",
+              "The finish line was decorated with wild berries and colorful leaves."
             ],
             "answer": 0,
             "explanation": "The concluding sentence encapsulates the controlling idea and moral lesson that governs the entire narrative."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 1 + Strategy 1)",
+            "tag": "Integrated Skill (Preview & Main Idea)",
             "question": "5. By combining previewing and predicting with main idea identification, how does an active reader benefit?",
             "options": [
-              "Saves reading time, anticipates plot outcomes, and grasps the core moral without unnecessary rereading",
-              "Guarantees that words never have to be pronounced correctly",
-              "Replaces the requirement to read any complete sentences",
-              "Proves that stories should only be listened to as audio"
+              "It eliminates the need to understand grammar or sentence structure",
+              "It allows readers to anticipate outcomes and grasp the core message without unnecessary rereading",
+              "It guarantees that every multiple-choice answer will automatically be option A",
+              "It replaces the need to read any paragraphs in full detail"
+            ],
+            "answer": 1,
+            "explanation": "Previewing sets up mental schema, allowing readers to identify main ideas and themes with high speed and comprehension accuracy."
+          },
+          {
+            "id": 6,
+            "tag": "Scanning Details",
+            "question": "6. Under which type of tree did the arrogant Hare choose to take his afternoon nap?",
+            "options": [
+              "A tall pine tree beside the riverbank",
+              "A fragrant eucalyptus tree near the meadow",
+              "A shady oak tree along the racecourse",
+              "A flowering cherry tree by the spectator stand"
+            ],
+            "answer": 2,
+            "explanation": "Scanning the middle section reveals that the Hare chose to rest beneath a shady oak tree."
+          },
+          {
+            "id": 7,
+            "tag": "Scanning Details",
+            "question": "7. How did the forest spectators react when the Tortoise crossed the finish line?",
+            "options": [
+              "They cheered triumphantly for the persistent victor",
+              "They demanded that the race be rerun immediately",
+              "They remained completely silent in deep disappointment",
+              "They fled into the dense forest because of rain"
             ],
             "answer": 0,
-            "explanation": "Previewing sets up expectations and mental schema, allowing readers to identify main ideas and themes with high speed and comprehension accuracy."
+            "explanation": "Scanning the conclusion shows the woodland spectators cheered triumphantly as the Tortoise crossed the line."
+          },
+          {
+            "id": 8,
+            "tag": "Vocabulary in Context",
+            "question": "8. In paragraph 1, what does the word 'ridiculing' mean in the phrase 'constantly ridiculing a slow-moving Tortoise'?",
+            "options": [
+              "Praising someone warmly for their achievements",
+              "Mocking or making fun of someone unkindly",
+              "Encouraging a teammate to run faster",
+              "Inviting a neighbor to share a meal"
+            ],
+            "answer": 1,
+            "explanation": "'Ridiculing' means mocking or teasing someone in an unkind, derisive manner."
+          },
+          {
+            "id": 9,
+            "tag": "Vocabulary in Context",
+            "question": "9. In paragraph 2, what is the meaning of 'complacent' in 'the complacent Hare decided to take a nap'?",
+            "options": [
+              "Overly self-satisfied and unworried about potential failure",
+              "Extremely terrified of losing the contest",
+              "Physically injured and in need of medical treatment",
+              "Deeply respectful of an opponent's hidden strengths"
+            ],
+            "answer": 0,
+            "explanation": "'Complacent' means feeling satisfied with oneself to the point of ignoring potential risks or competition."
+          },
+          {
+            "id": 10,
+            "tag": "Vocabulary in Context",
+            "question": "10. In the final sentence, what does 'perseverance' mean?",
+            "options": [
+              "Continued steady effort to achieve a goal despite difficulties",
+              "Running at maximum speed for a very short distance",
+              "Boasting proudly about past accomplishments to others",
+              "Relying on good luck rather than daily practice"
+            ],
+            "answer": 0,
+            "explanation": "'Perseverance' refers to persistent, steadfast determination to keep going despite obstacles."
+          },
+          {
+            "id": 11,
+            "tag": "Reference Words",
+            "question": "11. In paragraph 1, in the phrase 'ridiculing a slow-moving Tortoise for his clumsy pace', what does 'his' refer to?",
+            "options": [
+              "The Hare",
+              "The Tortoise",
+              "The spectator",
+              "The oak tree"
+            ],
+            "answer": 1,
+            "explanation": "'His' refers back to the antecedent noun 'a slow-moving Tortoise'."
+          },
+          {
+            "id": 12,
+            "tag": "Reference Words",
+            "question": "12. In the sentence 'he was astonished to see the persistent Tortoise crossing ahead of him', who does 'he' refer to?",
+            "options": [
+              "The arrogant Hare",
+              "The patient Tortoise",
+              "An owl in the tree",
+              "The forest referee"
+            ],
+            "answer": 0,
+            "explanation": "'He' refers to the Hare who woke up from his nap and saw the Tortoise winning."
+          },
+          {
+            "id": 13,
+            "tag": "Strategy 1 (Previewing Technique)",
+            "question": "13. What is the most effective sequence when previewing an expository or narrative text?",
+            "options": [
+              "Read the title, subheadings, visual captions, and the opening/closing sentences first",
+              "Read the final sentence of every paragraph backwards from end to start",
+              "Translate every technical noun into three different languages before reading",
+              "Count the total number of adverbs in the entire article"
+            ],
+            "answer": 0,
+            "explanation": "Effective previewing begins with titles, headings, illustrations, and structural anchor sentences."
+          },
+          {
+            "id": 14,
+            "tag": "Strategy 1 (Predicting Technique)",
+            "question": "14. How should an active reader handle a prediction that turns out to be incorrect after reading?",
+            "options": [
+              "Adjust the prediction based on textual evidence and continue reading attentively",
+              "Stop reading immediately and discard the text as poorly written",
+              "Pretend the incorrect prediction was never made to maintain confidence",
+              "Memorize the incorrect prediction for the final exam"
+            ],
+            "answer": 0,
+            "explanation": "Active readers constantly monitor comprehension, revising predictions when new text evidence contradicts them."
+          },
+          {
+            "id": 15,
+            "tag": "Unit 1 (Major vs Minor Detail)",
+            "question": "15. Which of the following is a minor supporting detail rather than a central main idea in the story?",
+            "options": [
+              "The Hare chose a shady oak tree under which to rest",
+              "Consistent effort often triumphs over careless overconfidence",
+              "Arrogance can blind talented individuals to realistic threats",
+              "Determination and persistence lead to unexpected success"
+            ],
+            "answer": 0,
+            "explanation": "The specific type of tree (oak) is a minor background detail, whereas the others express core thematic ideas."
+          },
+          {
+            "id": 16,
+            "tag": "Paraphrasing Skill",
+            "question": "16. Which statement best paraphrases the moral: 'Steady determination and consistent effort often lead to unexpected success over careless natural talent'?",
+            "options": [
+              "Hard work and persistence will frequently beat unmotivated skill.",
+              "Fast runners will always lose if they do not take lengthy naps.",
+              "Slow animals are superior in intelligence to fast animals.",
+              "Natural talent is completely useless in modern society."
+            ],
+            "answer": 0,
+            "explanation": "Option A accurately captures the original meaning using different words and sentence structure."
+          },
+          {
+            "id": 17,
+            "tag": "Inference Skill",
+            "question": "17. What can be inferred about the Hare's attitude toward the Tortoise at the start of the race?",
+            "options": [
+              "He felt genuine fear and respect for the Tortoise's physical endurance",
+              "He regarded the Tortoise as completely incapable of posing any competitive challenge",
+              "He wanted to teach the Tortoise how to sprint more efficiently",
+              "He hoped to lose on purpose to cheer up his fellow animals"
+            ],
+            "answer": 1,
+            "explanation": "The Hare's decision to nap proves he viewed the Tortoise as zero threat to his victory."
+          },
+          {
+            "id": 18,
+            "tag": "Author's Purpose",
+            "question": "18. What was the author's primary communicative purpose in writing this classic fable?",
+            "options": [
+              "To impart a timeless ethical lesson on humility, perseverance, and respect",
+              "To provide accurate biological data on reptile walking speeds",
+              "To entertain readers with jokes about forest wildlife",
+              "To promote professional athletic training in ancient Greece"
+            ],
+            "answer": 0,
+            "explanation": "Fables are didactic narratives designed to teach moral principles and character values."
+          },
+          {
+            "id": 19,
+            "tag": "Text Structure",
+            "question": "19. How does the narrative structure build dramatic tension in the second paragraph?",
+            "options": [
+              "By contrasting the Hare's motionless slumber with the Tortoise's continuous forward movement",
+              "By describing a sudden thunderstorm that washed away the running path",
+              "By having the spectators vote on who should receive the prize",
+              "By listing recipes for wild berries collected in the meadow"
+            ],
+            "answer": 0,
+            "explanation": "The author juxtaposes the stationary sleeping Hare with the relentless Tortoise step by step."
+          },
+          {
+            "id": 20,
+            "tag": "Metacognitive Application",
+            "question": "20. How can a student apply the lesson of this fable and Strategy 1 to their everyday English reading habits?",
+            "options": [
+              "By previewing each reading text systematically and practicing consistently each day",
+              "By waiting until the night before an exam to cram all vocabulary at once",
+              "By reading only the easiest words and skipping all difficult paragraphs",
+              "By assuming that natural ability makes daily study unnecessary"
+            ],
+            "answer": 0,
+            "explanation": "Consistent daily effort and structured previewing yield sustainable academic mastery over sporadic cramming."
           }
         ]
       },
@@ -944,79 +1139,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 2 (รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด) + Strategy 2 (การอ่านแบบกวาดสายตาและค้นหาข้อมูล)",
         "unitRef": "Unit 2: Supporting Details & Idea Relationships",
         "strategyRef": "Strategy 2: Skimming & Scanning",
-        "timeMinutes": 10,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
           "title": "Smart Agriculture and IoT Irrigation in Buriram Province",
-          "text": "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually.",
-          "audioText": "Modern agriculture in Buriram is undergoing a rapid technological transformation. Traditional farming often suffered from unpredictable rainfall patterns and seasonal water shortages. To address this persistent dilemma, local agricultural researchers introduced Internet of Things (IoT) soil moisture sensors across experimental jasmine rice paddies. These intelligent sensors automatically trigger drip irrigation only when soil humidity drops below 30%. As a result, participating farmers have increased crop yields by 25% while conserving over 1.2 million liters of water annually."
+          "text": "Agriculture in Buriram Province has historically faced severe challenges from unpredictable monsoon rains and porous sandy soil that loses moisture rapidly during arid dry-season months. To overcome these persistent obstacles, agricultural cooperatives partnered with technological researchers to implement an automated smart irrigation pilot project.\n\nSpecifically, the initiative deployed wireless soil moisture probes and solar-powered microcontrollers directly into vegetable crop beds. These electronic devices continuously measure subterranean humidity levels and wirelessly transmit real-time telemetry to automated water pumps. Instead of traditional flood irrigation that saturates entire fields, the smart system activates precision drip lines only when moisture drops below a calibrated threshold, delivering water directly to root zones.\n\nDuring the six-month monitored trial, participating farms recorded a remarkable forty-five percent reduction in overall water consumption alongside a twenty-two percent increase in crop yields. By preventing both drought stress and waterlogging, precision smart agriculture proves that sustainable, data-driven farming can secure rural livelihoods against climate uncertainties.",
+          "audioText": "Agriculture in Buriram Province has historically faced severe challenges from unpredictable monsoon rains and porous sandy soil that loses moisture rapidly during arid dry-season months. To overcome these persistent obstacles, agricultural cooperatives partnered with technological researchers to implement an automated smart irrigation pilot project. Specifically, the initiative deployed wireless soil moisture probes and solar-powered microcontrollers directly into vegetable crop beds. These electronic devices continuously measure subterranean humidity levels and wirelessly transmit real-time telemetry to automated water pumps. Instead of traditional flood irrigation that saturates entire fields, the smart system activates precision drip lines only when moisture drops below a calibrated threshold, delivering water directly to root zones. During the six-month monitored trial, participating farms recorded a remarkable forty-five percent reduction in overall water consumption alongside a twenty-two percent increase in crop yields. By preventing both drought stress and waterlogging, precision smart agriculture proves that sustainable, data-driven farming can secure rural livelihoods against climate uncertainties."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 2: Strategy 2 (Skimming for Gist)",
-            "question": "1. When skimming the passage in 10 seconds, which parts should you focus on to grasp the general gist quickly?",
+            "tag": "Strategy 2 (Skimming for Gist)",
+            "question": "1. What is the overarching topic of the passage on agricultural technology in Buriram?",
             "options": [
-              "The first sentence, keywords like 'IoT' and 'smart agriculture', and the final outcome sentence",
-              "Every footnote and citation number",
-              "Only the prepositions and conjunctions",
-              "Counting how many letters are capitalized"
+              "Using smart IoT sensors and automated irrigation to conserve water and boost farm yields",
+              "The history of silk weaving in northeastern provincial markets",
+              "A complete guide to constructing commercial sports stadiums in provincial towns",
+              "Tourist attractions and ancient volcanic parks in southern Isan"
             ],
             "answer": 0,
-            "explanation": "Skimming focuses on the opening topic sentence, major keywords, and concluding result to extract the gist."
+            "explanation": "Skimming reveals the passage focuses on IoT soil sensors and smart drip irrigation for farming."
           },
           {
             "id": 2,
-            "tag": "Module 1: Unit 2 (Supporting Details)",
-            "question": "2. Which of the following is a specific factual supporting detail provided in the text?",
+            "tag": "Unit 2 (Main Idea of Paragraph 1)",
+            "question": "2. What is the primary problem highlighted in the opening paragraph?",
             "options": [
-              "Sensors automatically trigger drip irrigation when soil moisture drops below 30%",
-              "Rice farming was completely abolished in Buriram",
-              "Buriram has the highest rainfall in Southeast Asia",
-              "IoT sensors are operated entirely by hand"
+              "Unpredictable seasonal rainfall and sandy soil cause severe water scarcity during dry months",
+              "Farm workers refuse to operate modern tractors during morning shifts",
+              "Fertilizer prices have dropped to zero across northeastern provinces",
+              "Government authorities banned all agricultural trade in the region"
             ],
             "answer": 0,
-            "explanation": "The text specifies that intelligent sensors automatically trigger drip irrigation when humidity falls below 30%."
+            "explanation": "Paragraph 1 establishes the problem: sandy soil and erratic monsoon rains create severe drought challenges."
           },
           {
             "id": 3,
-            "tag": "Module 2: Strategy 2 (Scanning for Specific Information)",
-            "question": "3. Scan the text quickly to locate the exact percentage increase in crop yield achieved by the farmers.",
+            "tag": "Unit 2 (Major Supporting Detail)",
+            "question": "3. What specific technology is installed directly into the crop beds to monitor subterranean conditions?",
             "options": [
-              "25%",
-              "40%",
-              "30%",
-              "10%"
+              "Wireless moisture sensors connected to solar-powered microcontrollers",
+              "High-definition video cameras that record bird flight patterns",
+              "Deep underground metal pipes filled with chemical dyes",
+              "Handheld magnifying lenses operated manually by volunteers"
             ],
             "answer": 0,
-            "explanation": "Scanning quickly for the '%' symbol and the word 'crop yields' immediately pinpoints '25%'."
+            "explanation": "Paragraph 2 details wireless soil moisture probes and solar microcontrollers placed in the soil."
           },
           {
             "id": 4,
-            "tag": "Module 1: Unit 2 (Idea Relationships: Cause & Effect)",
-            "question": "4. What is the cause-and-effect relationship established between soil moisture sensors and water conservation?",
+            "tag": "Unit 2 (Minor Supporting Detail)",
+            "question": "4. What percentage reduction in overall irrigation water consumption was recorded by the pilot project?",
             "options": [
-              "Sensors activate drip irrigation only when humidity drops below 30%, which directly results in saving 1.2 million liters of water annually",
-              "Sensors increase rainfall across Buriram province",
-              "Water shortages cause sensors to break down permanently",
-              "Farmers stopped watering rice paddies altogether"
+              "Forty-five percent less water used compared to conventional flood irrigation",
+              "Ninety-nine percent reduction within the first two hours",
+              "Exactly five percent savings during rainy months",
+              "Zero water savings were observed during the trial"
             ],
             "answer": 0,
-            "explanation": "The text explains that targeted drip irrigation directly leads to conserving 1.2 million liters of water annually."
+            "explanation": "The text specifies a 45% reduction in water usage compared to traditional furrow flooding."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 2 + Strategy 2)",
-            "question": "5. How does combining skimming and scanning with identifying supporting details enhance reading efficiency?",
+            "tag": "Strategy 2 (Scanning for Location)",
+            "question": "5. In which northeastern Thai province was this sustainable smart agriculture pilot implemented?",
             "options": [
-              "Skimming provides the overall framework so that specific supporting data points can be scanned and verified swiftly",
-              "It prevents the reader from understanding the author's purpose",
-              "It forces the reader to memorize the entire dictionary",
-              "It eliminates the need to verify facts"
+              "Buriram Province",
+              "Chiang Mai Province",
+              "Phuket Province",
+              "Kanchanaburi Province"
             ],
             "answer": 0,
-            "explanation": "Skimming establishes context, allowing the reader to scan for and evaluate specific supporting evidence quickly."
+            "explanation": "Scanning for proper nouns immediately identifies Buriram Province as the project location."
+          },
+          {
+            "id": 6,
+            "tag": "Strategy 2 (Scanning for Energy Source)",
+            "question": "6. What power source drives the automated water pumps and sensor transmitters?",
+            "options": [
+              "Solar panels mounted on lightweight field frames",
+              "Heavy diesel fuel generators running continuously",
+              "Coal-burning power stations connected by long cables",
+              "Wind turbine mills constructed on distant mountaintops"
+            ],
+            "answer": 0,
+            "explanation": "Scanning confirms the sensors and pumps are powered by photovoltaic solar panels."
+          },
+          {
+            "id": 7,
+            "tag": "Unit 2 (Signal Words for Details)",
+            "question": "7. Which transitional word in paragraph 2 signals an illustration of the system's automated features?",
+            "options": [
+              "'For instance' or 'Specifically'",
+              "'Nevertheless'",
+              "'On the contrary'",
+              "'In ancient times'"
+            ],
+            "answer": 0,
+            "explanation": "Words like 'Specifically' and 'For instance' introduce concrete supporting examples."
+          },
+          {
+            "id": 8,
+            "tag": "Vocabulary in Context",
+            "question": "8. In paragraph 1, what does the adjective 'arid' mean in 'during arid dry-season months'?",
+            "options": [
+              "Extremely dry and lacking sufficient moisture for vegetation",
+              "Rich in organic nutrients and dark loam soil",
+              "Covered with thick layers of winter frost",
+              "Crowded with busy urban commercial buildings"
+            ],
+            "answer": 0,
+            "explanation": "'Arid' describes land or climate with little or no rain, too dry to support crops easily."
+          },
+          {
+            "id": 9,
+            "tag": "Vocabulary in Context",
+            "question": "9. In paragraph 2, what does 'automated' mean in the context of 'automated drip irrigation'?",
+            "options": [
+              "Operating by self-acting machinery or computers without continuous human intervention",
+              "Requiring dozens of manual laborers carrying buckets of water",
+              "Powered solely by horses and oxen pulling wooden plows",
+              "Conducted only during nighttime under candlelight"
+            ],
+            "answer": 0,
+            "explanation": "'Automated' means operating independently through programmed electronic controls."
+          },
+          {
+            "id": 10,
+            "tag": "Vocabulary in Context",
+            "question": "10. In paragraph 3, what does 'sustainable' mean when referring to modern farming practices?",
+            "options": [
+              "Able to be maintained long-term without depleting natural resources or harming the environment",
+              "Extremely expensive and only accessible to wealthy multinational corporations",
+              "Temporary and expected to fail within two months",
+              "Dangerous to local wildlife and surrounding watersheds"
+            ],
+            "answer": 0,
+            "explanation": "'Sustainable' means using resources responsibly so ecological balance is preserved for the future."
+          },
+          {
+            "id": 11,
+            "tag": "Reference Words",
+            "question": "11. In paragraph 2, what does the phrase 'these electronic devices' refer to?",
+            "options": [
+              "The subterranean moisture sensors and microcontroller units",
+              "The wooden fences surrounding the farmland",
+              "The diesel trucks transporting produce to Bangkok",
+              "The smartphones owned by city consumers"
+            ],
+            "answer": 0,
+            "explanation": "'These electronic devices' points back to the wireless sensors and microcontroller units mentioned prior."
+          },
+          {
+            "id": 12,
+            "tag": "Reference Words",
+            "question": "12. In paragraph 3, what does the pronoun 'it' refer to in the clause 'because it delivers water directly to root zones'?",
+            "options": [
+              "Targeted micro-drip irrigation",
+              "The midday sunshine",
+              "The regional highway",
+              "The farm storage barn"
+            ],
+            "answer": 0,
+            "explanation": "'It' refers to the precision drip irrigation system described in the sentence."
+          },
+          {
+            "id": 13,
+            "tag": "Strategy 2 (Skimming Mechanics)",
+            "question": "13. When skimming a three-paragraph report for the overall gist, which parts should you read most attentively?",
+            "options": [
+              "The first two sentences of each paragraph and the concluding summary lines",
+              "Every third word in the middle column of the page",
+              "Only the footnotes and copyright dates at the very bottom",
+              "The table of contents in a completely different textbook"
+            ],
+            "answer": 0,
+            "explanation": "Skimming focuses on topic sentences at the start of paragraphs and the summarizing conclusion."
+          },
+          {
+            "id": 14,
+            "tag": "Strategy 2 (Scanning Mechanics)",
+            "question": "14. What visual technique helps a reader scan rapidly for the number '45%' in a dense passage?",
+            "options": [
+              "Moving eyes diagonally looking specifically for digits and the '%' symbol without reading full text",
+              "Reading every single word aloud starting from page one",
+              "Covering the text with paper and guessing the answer",
+              "Translating each sentence into Thai before searching"
+            ],
+            "answer": 0,
+            "explanation": "Scanning involves targeted visual pattern searching for specific shapes, numbers, or capitalized names."
+          },
+          {
+            "id": 15,
+            "tag": "Unit 2 (Distinguishing Major vs Minor)",
+            "question": "15. Which statement represents a major supporting pillar of the smart farming initiative?",
+            "options": [
+              "Soil sensors prevent over-watering by triggering pumps only when moisture drops below threshold",
+              "The sensor enclosures are painted light green to match vegetable leaves",
+              "The technician's toolbox has a metal latch",
+              "The farm gate is unlocked at 6:00 AM every morning"
+            ],
+            "answer": 0,
+            "explanation": "Moisture-triggered automated pumping is a major functional pillar explaining how water is saved."
+          },
+          {
+            "id": 16,
+            "tag": "Cause and Effect Analysis",
+            "question": "16. What is the immediate consequence of delivering water directly to root zones rather than spraying overhead?",
+            "options": [
+              "Evaporation loss is drastically reduced and weed growth between rows is minimized",
+              "Crops turn into desert cacti within forty-eight hours",
+              "Farmers are forced to abandon their fields permanently",
+              "Soil temperatures drop below the freezing point"
+            ],
+            "answer": 0,
+            "explanation": "Root-targeted watering prevents evaporative waste and starves weeds of surface water."
+          },
+          {
+            "id": 17,
+            "tag": "Inference Skill",
+            "question": "17. What can be inferred about the future of farming in northeastern Thailand from this project?",
+            "options": [
+              "Adopting smart technology can make regional agriculture resilient against worsening climate droughts",
+              "Farming will disappear completely in Thailand within five years",
+              "Rainfall will increase tenfold without needing any irrigation systems",
+              "Farmers will abandon crops to build software companies exclusively"
+            ],
+            "answer": 0,
+            "explanation": "The pilot demonstrates that technological adaptation offers a viable long-term solution to drought."
+          },
+          {
+            "id": 18,
+            "tag": "Fact vs Opinion",
+            "question": "18. Which statement from the passage is an objective, verifiable fact?",
+            "options": [
+              "Water consumption dropped by forty-five percent during the monitored trial period",
+              "Smart agriculture is the most enjoyable pastime in the world",
+              "Farming in Buriram is far more pleasant than living in Bangkok",
+              "Every citizen should personally own an IoT water sensor"
+            ],
+            "answer": 0,
+            "explanation": "A measured 45% reduction is an objective, verifiable empirical statistic."
+          },
+          {
+            "id": 19,
+            "tag": "Strategy Orchestration",
+            "question": "19. When an exam question asks 'Which province implemented this project?', which strategy is fastest?",
+            "options": [
+              "Scanning for capitalized provincial names",
+              "Skimming the entire article from start to finish",
+              "Reading the passage backward sentence by sentence",
+              "Writing a paragraph summary of agricultural science"
+            ],
+            "answer": 0,
+            "explanation": "Scanning for capitalized proper nouns locates specific factual answers in seconds."
+          },
+          {
+            "id": 20,
+            "tag": "Comprehensive Summary",
+            "question": "20. Which sentence provides the best comprehensive summary of the entire reading passage?",
+            "options": [
+              "Smart IoT sensors and solar drip irrigation in Buriram demonstrate that precision technology significantly cuts water waste and boosts crop resilience in drought-prone regions.",
+              "Traditional agriculture in northeastern Thailand has remained completely unchanged for centuries.",
+              "Solar panels are too fragile to be used outdoors in tropical agricultural environments.",
+              "Installing water pipes requires heavy machinery that damaged local vegetable crops."
+            ],
+            "answer": 0,
+            "explanation": "Option A synthesizes the technology, location, environmental benefits, and strategic importance."
           }
         ]
       },
@@ -1027,79 +1417,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 3 (คำศัพท์ในบริบทและความหมายของประโยค) + Strategy 3 (การใช้คำศัพท์ในบริบท)",
         "unitRef": "Unit 3: Vocabulary in Context & Sentence Meaning",
         "strategyRef": "Strategy 3: Using Context Clues",
-        "timeMinutes": 10,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
           "title": "Preserving Ancient Khmer Architecture in Southern Isan",
-          "text": "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity.",
-          "audioText": "Phanom Rung Historical Park stands as an imposing Khmer sanctuary atop an extinct volcano in Buriram. Constructed between the 10th and 13th centuries, the temple complex features intricate sandstone carvings that have endured centuries of weathering. In 1988, after extensive archaeological restoration, the site was officially opened to the public. Conservators remain vigilant, constantly monitoring stone decay caused by heavy monsoon humidity and environmental erosion to ensure the monument's longevity."
+          "text": "Southern Isan boasts an extraordinary legacy of historic stone sanctuaries, constructed primarily between the tenth and thirteenth centuries. Unlike fragile timber dwellings that vanished centuries ago, volcanic sandstone and laterite complexes—such as Phanom Rung and Muang Tam—endured across centuries. Laterite, a porous, iron-rich sedimentary stone that hardens upon exposure to air, served as strong foundations, while rose-colored sandstone was meticulously shaped into sanctuaries and elaborate lintel carvings depicting deities and floral motifs.\n\nHowever, centuries of tropical weathering, monsoon moisture seepage, and biological lichen growth have caused gradual deterioration across these ancient walls. As rainwater seeps into porous stone blocks, they expand and develop micro-cracks under intense afternoon heat, threatening irreplaceable relief carvings.\n\nTo safeguard these cultural treasures, modern conservators employ terrestrial 3D laser scanners and ultrasonic sensors. This non-invasive technology maps internal fractures without scratching delicate stone surfaces, guiding targeted conservation efforts. Coupled with local community stewardship, scientific restoration ensures these architectural masterpieces remain inspiring cultural assets for future generations.",
+          "audioText": "Southern Isan boasts an extraordinary legacy of historic stone sanctuaries, constructed primarily between the tenth and thirteenth centuries. Unlike fragile timber dwellings that vanished centuries ago, volcanic sandstone and laterite complexes—such as Phanom Rung and Muang Tam—endured across centuries. Laterite, a porous, iron-rich sedimentary stone that hardens upon exposure to air, served as strong foundations, while rose-colored sandstone was meticulously shaped into sanctuaries and elaborate lintel carvings depicting deities and floral motifs. However, centuries of tropical weathering, monsoon moisture seepage, and biological lichen growth have caused gradual deterioration across these ancient walls. As rainwater seeps into porous stone blocks, they expand and develop micro-cracks under intense afternoon heat, threatening irreplaceable relief carvings. To safeguard these cultural treasures, modern conservators employ terrestrial 3D laser scanners and ultrasonic sensors. This non-invasive technology maps internal fractures without scratching delicate stone surfaces, guiding targeted conservation efforts. Coupled with local community stewardship, scientific restoration ensures these architectural masterpieces remain inspiring cultural assets for future generations."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 2: Strategy 3 (Using Context Clues)",
-            "question": "1. Based on context clues in the opening sentence ('sanctuary atop an extinct volcano'), what is the meaning of the word 'imposing'?",
+            "tag": "Unit 3 (Main Idea)",
+            "question": "1. What is the central focus of the passage on historical preservation in Southern Isan?",
             "options": [
-              "Grand, impressive, and commanding admiration",
-              "Hidden, tiny, and unnoticeable",
-              "Fragile, modern, and easily broken",
-              "Dangerous and strictly forbidden to visit"
+              "Preserving ancient Khmer stone sanctuaries through non-destructive 3D laser mapping and community heritage care",
+              "Building modern asphalt highways to replace historic footpaths",
+              "Promoting modern concrete skyscraper construction in provincial capitals",
+              "A complete biography of ancient kings who ruled Angkor Wat"
             ],
             "answer": 0,
-            "explanation": "Nearby context clues describing a prominent sanctuary atop an extinct volcano indicate that 'imposing' means grand and impressive."
+            "explanation": "The passage focuses on preserving ancient stone temples using modern non-invasive technologies and community stewardship."
           },
           {
             "id": 2,
-            "tag": "Module 1: Unit 3 (Vocabulary in Context)",
-            "question": "2. In the sentence 'Conservators remain vigilant, constantly monitoring stone decay...', what does 'vigilant' mean based on surrounding clues?",
+            "tag": "Strategy 3 (Definition Clue)",
+            "question": "2. How does the text define 'laterite' using an appositive context clue?",
             "options": [
-              "Carefully watchful and alert to danger or damage",
-              "Careless and inattentive",
-              "Fast asleep during work hours",
-              "Angry and hostile"
+              "A porous, iron-rich sedimentary stone that hardens when exposed to air",
+              "A delicate species of freshwater orchid found in Isan rivers",
+              "A modern type of industrial cement manufactured in Bangkok",
+              "An ancient bronze currency used during international trade"
             ],
             "answer": 0,
-            "explanation": "The subsequent phrase 'constantly monitoring stone decay' clarifies that vigilant means alert and watchful."
+            "explanation": "The text provides a direct definition clue explaining laterite as an iron-rich porous stone."
           },
           {
             "id": 3,
-            "tag": "Module 2: Strategy 3 (Types of Context Clues)",
-            "question": "3. What type of context clue helps define the word 'weathering' in 'endured centuries of weathering'?",
+            "tag": "Strategy 3 (Synonym Clue)",
+            "question": "3. In paragraph 1, which word functions as a synonym for 'sanctuary'?",
             "options": [
-              "Cause-and-effect / Explanation clue linked to monsoon humidity and environmental erosion",
-              "Antonym contrast clue introduced by 'however'",
-              "Direct dictionary citation in parentheses",
-              "Rhyming sound pattern"
+              "Temple or sacred shrine",
+              "Marketplace",
+              "Modern hospital",
+              "Commercial bank"
             ],
             "answer": 0,
-            "explanation": "The text explains decay caused by 'monsoon humidity and environmental erosion', acting as an explanation context clue for weathering."
+            "explanation": "'Temple' and 'shrine' act as synonyms for 'sanctuary' in sacred architectural contexts."
           },
           {
             "id": 4,
-            "tag": "Module 1: Unit 3 (Sentence Meaning)",
-            "question": "4. What does the word 'intricate' mean in the phrase 'intricate sandstone carvings that have endured centuries'?",
+            "tag": "Strategy 3 (Contrast Clue)",
+            "question": "4. The text states: 'Unlike fragile timber dwellings that vanished centuries ago, the volcanic sandstone complexes endured.' What contrast clue is highlighted?",
             "options": [
-              "Very complicated, detailed, and finely crafted",
-              "Completely plain and unadorned",
-              "Broken beyond repair",
-              "Made of modern plastic"
+              "The durability of sandstone versus the perishable nature of wood",
+              "The cost of buying gold jewelry versus silver coins",
+              "The temperature of monsoon rain versus morning fog",
+              "The speed of horse carts versus pedestrian travelers"
             ],
             "answer": 0,
-            "explanation": "'Intricate' describes detailed, sophisticated craftsmanship in ancient sandstone sculptures."
+            "explanation": "The contrast signal 'Unlike' compares enduring sandstone structures with perishable timber buildings."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 3 + Strategy 3)",
-            "question": "5. How does applying context clue strategies support the overall comprehension of sentence meaning?",
+            "tag": "Strategy 3 (Example Clue)",
+            "question": "5. Which phrase in the passage signals examples of lintel carvings ('such as mythological deities and floral motifs')?",
             "options": [
-              "It enables readers to deduce unfamiliar words from sentence syntax and neighboring clues without interrupting their reading flow",
-              "It requires readers to memorize every dictionary entry",
-              "It translates all English sentences into grammar rules",
-              "It allows students to skip reading full paragraphs"
+              "'Such as'",
+              "'On the contrary'",
+              "'Therefore'",
+              "'In conclusion'"
             ],
             "answer": 0,
-            "explanation": "Context clues allow readers to unlock vocabulary meaning smoothly within the sentence context, maintaining active comprehension."
+            "explanation": "'Such as' is the standard exemplar signal phrase introducing illustrative category members."
+          },
+          {
+            "id": 6,
+            "tag": "Vocabulary in Context",
+            "question": "6. In paragraph 2, what does the word 'deterioration' mean regarding ancient stone carvings?",
+            "options": [
+              "The progressive worsening or decay of physical structure due to weathering",
+              "The sudden appearance of precious gems inside the stone",
+              "A rapid increase in monetary value on the art market",
+              "The intentional polishing of stone walls by museum staff"
+            ],
+            "answer": 0,
+            "explanation": "'Deterioration' means the gradual breakdown or decaying of materials caused by climate and time."
+          },
+          {
+            "id": 7,
+            "tag": "Vocabulary in Context",
+            "question": "7. In paragraph 2, what does 'intricate' mean in 'intricate relief carvings of deities'?",
+            "options": [
+              "Very complicated, detailed, and carefully crafted",
+              "Completely flat with zero decorative marks",
+              "Extremely bright and glowing in the dark",
+              "Made of cheap synthetic plastic fibers"
+            ],
+            "answer": 0,
+            "explanation": "'Intricate' describes complex designs with many detailed and interconnected elements."
+          },
+          {
+            "id": 8,
+            "tag": "Vocabulary in Context",
+            "question": "8. In paragraph 3, what does 'restoration' mean?",
+            "options": [
+              "The process of repairing and returning a historical site to its authentic condition",
+              "Demolishing old buildings to create commercial parking areas",
+              "Painting ancient sandstone with fluorescent yellow paint",
+              "Selling historical artifacts to foreign private collectors"
+            ],
+            "answer": 0,
+            "explanation": "'Restoration' is the careful repair and conservation of cultural heritage artifacts."
+          },
+          {
+            "id": 9,
+            "tag": "Vocabulary in Context",
+            "question": "9. What does the term 'cultural heritage' encompass in the reading?",
+            "options": [
+              "Historic traditions, monuments, and architectural treasures inherited from past generations",
+              "Modern digital smartphones produced in international factories",
+              "Imported plastic toys sold in neighborhood convenience stores",
+              "Underground oil reserves discovered in deep ocean trenches"
+            ],
+            "answer": 0,
+            "explanation": "'Cultural heritage' refers to valuable traditions, monuments, and arts passed down through history."
+          },
+          {
+            "id": 10,
+            "tag": "Strategy 2 (Scanning for Technology)",
+            "question": "10. What high-tech non-destructive tool is used by conservators to map micro-fractures in the sandstone?",
+            "options": [
+              "Terrestrial 3D laser scanners",
+              "Heavy iron sledgehammers",
+              "High-pressure acidic water hoses",
+              "Electric jackhammers"
+            ],
+            "answer": 0,
+            "explanation": "Scanning paragraph 3 identifies terrestrial 3D laser scanners as the conservation tool."
+          },
+          {
+            "id": 11,
+            "tag": "Scanning for Time Period",
+            "question": "11. During which historical centuries were the primary sandstone monuments constructed?",
+            "options": [
+              "Between the tenth and thirteenth centuries",
+              "In the late twentieth century",
+              "Around five thousand years before modern civilization",
+              "During the nineteenth-century industrial revolution"
+            ],
+            "answer": 0,
+            "explanation": "Scanning confirms the sanctuaries were built primarily between the 10th and 13th centuries."
+          },
+          {
+            "id": 12,
+            "tag": "Reference Words",
+            "question": "12. In paragraph 2, in the sentence 'As rainwater seeps into porous stone blocks, they expand and develop cracks', what does 'they' refer to?",
+            "options": [
+              "Porous stone blocks",
+              "Rainwater droplets",
+              "Visiting tourists",
+              "Modern conservationists"
+            ],
+            "answer": 0,
+            "explanation": "'They' refers back to the plural noun phrase 'porous stone blocks'."
+          },
+          {
+            "id": 13,
+            "tag": "Reference Words",
+            "question": "13. In paragraph 3, what does 'this non-invasive method' refer to?",
+            "options": [
+              "3D digital laser scanning and thermal imaging",
+              "Drilling holes with heavy diamond drill bits",
+              "Carving new signatures onto ancient sandstone lintels",
+              "Covering the monuments with concrete plaster"
+            ],
+            "answer": 0,
+            "explanation": "'This non-invasive method' refers to optical laser scanning that analyzes stone without physical damage."
+          },
+          {
+            "id": 14,
+            "tag": "Strategy 3 (Exam Technique)",
+            "question": "14. When encountering an unfamiliar word in a reading test, what should an active reader examine first?",
+            "options": [
+              "Surrounding punctuation, synonyms, antonyms, and explanatory clauses nearby",
+              "The last question on the test to see if the word appears there",
+              "The ceiling of the examination room for inspiration",
+              "The spelling of the word backwards to guess its origin"
+            ],
+            "answer": 0,
+            "explanation": "Context clues (definition, synonym, antonym, example) in surrounding sentences provide meaning."
+          },
+          {
+            "id": 15,
+            "tag": "Strategy 3 (Antonym Signal Recognition)",
+            "question": "15. Which of the following words regularly signals an antonym or contrast clue?",
+            "options": [
+              "'In contrast', 'unlike', or 'whereas'",
+              "'Furthermore' and 'moreover'",
+              "'For example' and 'instance'",
+              "'Consequently' and 'as a result'"
+            ],
+            "answer": 0,
+            "explanation": "Words like 'in contrast', 'unlike', and 'whereas' explicitly signal opposing antonymous concepts."
+          },
+          {
+            "id": 16,
+            "tag": "Sentence Meaning",
+            "question": "16. What does the sentence 'Community stewardship transforms passive observers into active guardians of antiquity' imply?",
+            "options": [
+              "Local residents take personal pride and active responsibility for protecting their historic sites",
+              "Tourists are forced to guard temple gates without receiving food",
+              "Local citizens should not be allowed to enter historical parks",
+              "Antiquity can only be protected by armed security personnel"
+            ],
+            "answer": 0,
+            "explanation": "Community stewardship empowers residents to actively care for and preserve cultural treasures."
+          },
+          {
+            "id": 17,
+            "tag": "Inference Skill",
+            "question": "17. Why is non-invasive laser mapping preferable to physical stone sampling in historical preservation?",
+            "options": [
+              "It captures structural measurements without breaking or scratching fragile ancient artwork",
+              "It makes the sandstone glow in bright rainbow colors for tourists",
+              "It destroys old stone blocks so new ones can be installed",
+              "It is ten times heavier than traditional measuring equipment"
+            ],
+            "answer": 0,
+            "explanation": "Non-invasive laser technology records millimeter-precise data without touching or wearing away artwork."
+          },
+          {
+            "id": 18,
+            "tag": "Author's Tone",
+            "question": "18. What is the author's attitude toward preserving ancient architecture in Southern Isan?",
+            "options": [
+              "Appreciative, respectful, and strongly supportive of scientific conservation",
+              "Critical and dismissive of traditional art forms",
+              "Indifferent and uninterested in regional history",
+              "Angry that modern technology is being utilized"
+            ],
+            "answer": 0,
+            "explanation": "The author expresses deep appreciation for cultural heritage and advocates scientific preservation."
+          },
+          {
+            "id": 19,
+            "tag": "Paraphrasing Skill",
+            "question": "19. Which sentence best paraphrases: 'Sustainable heritage tourism generates vital local revenue while safeguarding priceless historical assets'?",
+            "options": [
+              "Responsible cultural tourism boosts the local economy and protects irreplaceable historical monuments.",
+              "Tourists should pay higher fees so that temples can be turned into luxury hotels.",
+              "Historical assets are too costly to maintain and should be closed to travelers.",
+              "Revenue from tourism should only be spent on building new modern statues."
+            ],
+            "answer": 0,
+            "explanation": "Option A captures both the economic benefit and the protective preservation aspect accurately."
+          },
+          {
+            "id": 20,
+            "tag": "Metacognitive Skill",
+            "question": "20. How does understanding context clues empower second-language English readers?",
+            "options": [
+              "It allows readers to infer meanings independently without constantly halting their reading to consult a dictionary",
+              "It guarantees that readers will never make a grammatical mistake in conversation",
+              "It removes the necessity of learning English vocabulary words in school",
+              "It enables readers to memorize entire textbooks in a single day"
+            ],
+            "answer": 0,
+            "explanation": "Context clue skills foster autonomous reading fluency by enabling in-flight comprehension of unfamiliar terms."
           }
         ]
       },
@@ -1110,79 +1695,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 4 (คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ) + Strategy 4 (การระบุโครงสร้างข้อความ)",
         "unitRef": "Unit 4: References, Connectives & Text Organization",
         "strategyRef": "Strategy 4: Identifying Text Organization",
-        "timeMinutes": 10,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
-          "title": "Digital Literacy versus Traditional Learning in Higher Education",
-          "text": "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended blended learning courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters.",
-          "audioText": "Unlike conventional teacher-centered lectures where students passively absorb information, modern digital learning environments demand autonomous engagement. In blended blended learning courses, students review multimedia lecture modules prior to class. Consequently, in-person class time is dedicated to collaborative problem-solving and rigorous debates. Although some learners initially struggle with self-directed pacing, they ultimately develop critical thinking skills that traditional rote learning rarely fosters."
+          "title": "Digital Literacy versus Traditional Learning in Modern Education",
+          "text": "Educational paradigms are undergoing a profound transformation as secondary institutions shift from conventional teacher-centered lectures toward blended digital learning environments. In traditional classrooms, students often sit as passive listeners while teachers deliver lectures from chalkboards; consequently, learners rarely develop robust debate or independent research abilities. In contrast, blended learning environments require students to take active ownership of their learning journey through self-directed study and collaborative discovery.\n\nIn this innovative instructional model, students review multimedia lecture modules and interactive digital quizzes independently prior to in-person class sessions. Consequently, classroom time is repurposed from passive listening into dynamic collaborative problem-solving, structured debates, and hands-on projects. Although some learners initially struggle with self-paced discipline, they ultimately develop critical analytical skills and self-regulation that traditional rote learning rarely fosters.\n\nFurthermore, modern workplaces demand autonomous problem-solvers who can synthesize digital information rapidly. By balancing independent digital preparation with peer collaboration, blended education provides a compelling blueprint for twenty-first-century intellectual growth.",
+          "audioText": "Educational paradigms are undergoing a profound transformation as secondary institutions shift from conventional teacher-centered lectures toward blended digital learning environments. In traditional classrooms, students often sit as passive listeners while teachers deliver lectures from chalkboards; consequently, learners rarely develop robust debate or independent research abilities. In contrast, blended learning environments require students to take active ownership of their learning journey through self-directed study and collaborative discovery. In this innovative instructional model, students review multimedia lecture modules and interactive digital quizzes independently prior to in-person class sessions. Consequently, classroom time is repurposed from passive listening into dynamic collaborative problem-solving, structured debates, and hands-on projects. Although some learners initially struggle with self-paced discipline, they ultimately develop critical analytical skills and self-regulation that traditional rote learning rarely fosters. Furthermore, modern workplaces demand autonomous problem-solvers who can synthesize digital information rapidly. By balancing independent digital preparation with peer collaboration, blended education provides a compelling blueprint for twenty-first-century intellectual growth."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 1: Unit 4 (Pronoun Reference)",
-            "question": "1. In the phrase 'Although some learners initially struggle with self-directed pacing, they ultimately develop...', what does the pronoun 'they' refer to?",
+            "tag": "Unit 4 (Main Idea)",
+            "question": "1. What is the central thesis of the passage comparing digital learning and traditional instruction?",
             "options": [
-              "Some learners",
-              "Teacher-centered lectures",
-              "Multimedia modules",
-              "In-person class time"
+              "Blended digital learning fosters active critical thinking and collaboration, contrasting sharply with passive traditional lectures",
+              "Traditional lectures are completely superior to any electronic learning system ever created",
+              "Students should never attend in-person classes or speak with instructors",
+              "Computers will cause students to lose all reading and writing abilities"
             ],
             "answer": 0,
-            "explanation": "The pronoun 'they' refers back to the plural subject 'some learners' in the preceding dependent clause."
+            "explanation": "The passage demonstrates how blended digital learning encourages active engagement compared to passive lectures."
           },
           {
             "id": 2,
-            "tag": "Module 2: Strategy 4 (Identifying Text Organization)",
-            "question": "2. What is the primary organizational pattern established in the opening sentence?",
+            "tag": "Strategy 4 (Text Structure Pattern)",
+            "question": "2. What is the predominant organizational structure used across the entire passage?",
             "options": [
               "Compare and Contrast",
               "Chronological Timeline",
-              "Classification of Animals",
-              "Geographic Mapping"
+              "Spatial / Geographical Order",
+              "Simple Categorical Listing"
             ],
             "answer": 0,
-            "explanation": "The signal word 'Unlike' sets up an explicit comparison and contrast between conventional lectures and digital learning."
+            "explanation": "The passage systematically juxtaposes traditional lecture-based schooling with digital blended education."
           },
           {
             "id": 3,
-            "tag": "Module 1: Unit 4 (Connectives & Transitions)",
-            "question": "3. What logical relationship is signaled by the connective transition word 'Consequently' in sentence 3?",
+            "tag": "Unit 4 (Pronoun Reference)",
+            "question": "3. In paragraph 1, in the clause 'students passively absorb information; consequently, they rarely develop debate skills', what does 'they' refer to?",
             "options": [
-              "A cause-and-effect relationship showing the result of students reviewing modules prior to class",
-              "A time order indicating the next century",
-              "A negation that cancels all previous statements",
-              "An introduction of a character's dialogue"
+              "Students in passive lecture classes",
+              "The classroom chalkboards",
+              "The authors of textbooks",
+              "School administrative staff"
             ],
             "answer": 0,
-            "explanation": "'Consequently' signifies that what follows is a direct outcome or effect of the preceding cause."
+            "explanation": "'They' refers to the antecedent noun 'students' who sit in passive lecture settings."
           },
           {
             "id": 4,
-            "tag": "Module 2: Strategy 4 (Transition Signals)",
-            "question": "4. Which transition word in the final sentence signals an unexpected contrast or concession?",
+            "tag": "Unit 4 (Demonstrative Reference)",
+            "question": "4. In paragraph 2, what does 'this innovative instructional model' refer to?",
             "options": [
-              "Although",
-              "Prior to",
-              "Modern",
-              "Rarely"
+              "The blended flipped-classroom approach where prep is done online before interactive in-person debate",
+              "Traditional rote memorization of printed encyclopedias",
+              "Canceling all educational assessments permanently",
+              "Using slide projectors in dark auditoriums"
             ],
             "answer": 0,
-            "explanation": "'Although' is a concession connective used to contrast initial struggles with ultimate positive development."
+            "explanation": "'This innovative model' points back to the flipped blended classroom described immediately prior."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 4 + Strategy 4)",
-            "question": "5. Why is recognizing reference pronouns and transitional connectives essential for analyzing text organization?",
+            "tag": "Unit 4 (Relative Pronoun Reference)",
+            "question": "5. In the sentence 'digital modules, which provide adaptive practice quizzes, allow self-paced study', what does 'which' refer to?",
             "options": [
-              "They act as grammatical signposts connecting ideas, sentences, and paragraphs in logical sequences",
-              "They help students avoid reading the whole passage",
-              "They only indicate punctuation errors",
-              "They are used solely for counting syllables"
+              "Digital modules",
+              "Classroom desks",
+              "Final course grades",
+              "The library building"
             ],
             "answer": 0,
-            "explanation": "Connectives and referents form cohesive ties that reveal the underlying structural architecture of the text."
+            "explanation": "The relative pronoun 'which' introduces a non-restrictive clause modifying 'digital modules'."
+          },
+          {
+            "id": 6,
+            "tag": "Unit 4 (Connective of Contrast)",
+            "question": "6. Which transitional word in paragraph 1 signals a shift from traditional lectures to digital learning?",
+            "options": [
+              "'In contrast' or 'Conversely'",
+              "'Similarly'",
+              "'Furthermore'",
+              "'For example'"
+            ],
+            "answer": 0,
+            "explanation": "Transitions like 'In contrast' and 'Conversely' indicate a clear pivot between opposing ideas."
+          },
+          {
+            "id": 7,
+            "tag": "Unit 4 (Connective of Cause-Effect)",
+            "question": "7. Which transition word signals the outcome in 'Consequently, in-person class time is dedicated to collaborative problem-solving'?",
+            "options": [
+              "'Consequently'",
+              "'Before'",
+              "'Meanwhile'",
+              "'Whereas'"
+            ],
+            "answer": 0,
+            "explanation": "'Consequently' explicitly establishes a cause-and-effect relationship."
+          },
+          {
+            "id": 8,
+            "tag": "Unit 4 (Connective of Addition)",
+            "question": "8. Which connective would an author use to add another supporting advantage of online learning modules?",
+            "options": [
+              "'Furthermore' or 'Moreover'",
+              "'However'",
+              "'On the contrary'",
+              "'Despite this'"
+            ],
+            "answer": 0,
+            "explanation": "'Furthermore' and 'Moreover' add complementary supporting points to an established argument."
+          },
+          {
+            "id": 9,
+            "tag": "Strategy 4 (Paragraph Organization)",
+            "question": "9. How is paragraph 2 organized internally?",
+            "options": [
+              "Sequential process: explaining what students do before class, during class, and after class",
+              "Alphabetical listing of computer programming languages",
+              "Historical narrative dating back to ancient Roman schools",
+              "Fictional dialogue between two animated characters"
+            ],
+            "answer": 0,
+            "explanation": "Paragraph 2 follows a sequential workflow: pre-class video prep, in-class collaboration, post-class review."
+          },
+          {
+            "id": 10,
+            "tag": "Scanning for In-Class Activity",
+            "question": "10. What specific activity replaces passive listening during in-person flipped sessions?",
+            "options": [
+              "Collaborative problem-solving and rigorous structured debates",
+              "Silent copying of entire textbook pages into notebooks",
+              "Individual naps under classroom desks",
+              "Watching entertainment movies without discussion"
+            ],
+            "answer": 0,
+            "explanation": "Scanning paragraph 2 reveals in-person time is dedicated to collaborative problem-solving and debate."
+          },
+          {
+            "id": 11,
+            "tag": "Vocabulary in Context",
+            "question": "11. What does the word 'autonomous' mean in the phrase 'demand autonomous engagement'?",
+            "options": [
+              "Self-directed, independent, and taking personal initiative",
+              "Constantly directed and controlled by an external supervisor",
+              "Automated by robotic assembly lines",
+              "Completely unwilling to communicate with peers"
+            ],
+            "answer": 0,
+            "explanation": "'Autonomous' means having independence and the freedom to govern one's own learning."
+          },
+          {
+            "id": 12,
+            "tag": "Vocabulary in Context",
+            "question": "12. In paragraph 2, what does 'collaborative' mean in 'collaborative group projects'?",
+            "options": [
+              "Produced by people working together cooperatively toward a shared goal",
+              "Done completely alone in total isolation from others",
+              "Competitive and designed to eliminate classmates",
+              "Expensive and requiring private foreign financing"
+            ],
+            "answer": 0,
+            "explanation": "'Collaborative' signifies cooperative teamwork where participants combine ideas and efforts."
+          },
+          {
+            "id": 13,
+            "tag": "Vocabulary in Context",
+            "question": "13. What is the meaning of 'rote learning' as used in contrast to critical thinking?",
+            "options": [
+              "Mechanical memorization of facts based on repetition without deeper understanding",
+              "Advanced scientific research conducted in specialized laboratories",
+              "Learning how to assemble computer hardware components",
+              "Outdoor athletic exercise designed to build muscle endurance"
+            ],
+            "answer": 0,
+            "explanation": "'Rote learning' refers to memorizing information through mechanical repetition without understanding meaning."
+          },
+          {
+            "id": 14,
+            "tag": "Strategy 4 (Importance of Connectives)",
+            "question": "14. Why is tracking transitional connectives crucial for reading comprehension?",
+            "options": [
+              "Connectives show the logical roadmap of ideas—whether the author is comparing, contrasting, adding, or concluding",
+              "Connectives are the only words on an exam that carry vocabulary points",
+              "Connectives tell the reader which font size the printer selected",
+              "Connectives allow readers to ignore all nouns and verbs in a paragraph"
+            ],
+            "answer": 0,
+            "explanation": "Connectives act as navigational signposts that reveal how logical arguments are linked together."
+          },
+          {
+            "id": 15,
+            "tag": "Unit 4 (Problem-Solution Pattern)",
+            "question": "15. What initial challenge do some learners face in digital learning, and what is the resulting benefit?",
+            "options": [
+              "They struggle initially with self-paced discipline, but ultimately develop superior self-regulation and critical thinking",
+              "Their computer screens explode, so they return to stone tablets",
+              "They forget how to speak English, so they learn sign language",
+              "They cannot find internet access, so they leave school permanently"
+            ],
+            "answer": 0,
+            "explanation": "Paragraph 3 notes initial struggles with time management turn into robust self-directed discipline."
+          },
+          {
+            "id": 16,
+            "tag": "Unit 4 (Signal Word Classification)",
+            "question": "16. Which group of transition words exclusively indicates sequence or chronological order?",
+            "options": [
+              "'First', 'subsequently', 'meanwhile', 'finally'",
+              "'Although', 'nevertheless', 'whereas', 'however'",
+              "'Because', 'therefore', 'consequently', 'as a result'",
+              "'In contrast', 'conversely', 'on the other hand'"
+            ],
+            "answer": 0,
+            "explanation": "'First', 'subsequently', 'meanwhile', and 'finally' are temporal markers indicating sequence."
+          },
+          {
+            "id": 17,
+            "tag": "Inference Skill",
+            "question": "17. Why does blended learning better prepare students for modern professional careers than rote lectures?",
+            "options": [
+              "Modern workplaces require autonomous research, problem-solving, and collaborative team communication",
+              "Traditional offices only hire employees who can memorize phone books",
+              "Digital learning guarantees that no employee will ever have a supervisor",
+              "Paper notebooks are completely illegal in international business"
+            ],
+            "answer": 0,
+            "explanation": "Blended learning mirrors real-world workplace dynamics where teamwork and analytical agility are paramount."
+          },
+          {
+            "id": 18,
+            "tag": "Strategy 4 (Graphic Organizers)",
+            "question": "18. Which visual graphic organizer would best represent the content of this reading passage?",
+            "options": [
+              "A Venn Diagram comparing similarities and differences between two learning models",
+              "A family tree showing royal ancestry across five generations",
+              "A pie chart displaying agricultural crop exports",
+              "A map of mountain hiking trails in northern Thailand"
+            ],
+            "answer": 0,
+            "explanation": "A Venn diagram or two-column comparison matrix is the ideal organizer for compare-and-contrast texts."
+          },
+          {
+            "id": 19,
+            "tag": "Reference Word Disambiguation",
+            "question": "19. If a sentence contains two plural nouns ('educators' and 'students'), how does an active reader identify which one 'they' refers to?",
+            "options": [
+              "By analyzing the verb action and grammatical role to see who logically performs the action",
+              "By always choosing the word that has more letters",
+              "By assuming the pronoun always refers to the very first word in the book",
+              "By flipping a coin during the reading test"
+            ],
+            "answer": 0,
+            "explanation": "Contextual meaning and grammatical parallelism determine which antecedent logically performs the action."
+          },
+          {
+            "id": 20,
+            "tag": "Summary Synthesis",
+            "question": "20. Which sentence provides the most accurate synthesis of the entire text?",
+            "options": [
+              "While traditional lectures emphasize passive listening, blended digital education fosters autonomy, collaboration, and deeper analytical competencies through active engagement.",
+              "Digital education is too difficult for ordinary students and should be banned in schools.",
+              "Traditional lectures produce identical learning outcomes to modern computer classrooms in all subjects.",
+              "All classroom teachers should be replaced by automated television broadcasts."
+            ],
+            "answer": 0,
+            "explanation": "Option A synthesizes both educational paradigms and captures the overarching thesis accurately."
           }
         ]
       },
@@ -1193,79 +1973,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 5 (การตีความและความหมายที่เรียบเรียงใหม่) + Strategy 5 (การอนุมานความหมาย)",
         "unitRef": "Unit 5: Text Interpretation & Paraphrased Meaning",
         "strategyRef": "Strategy 5: Making Inferences",
-        "timeMinutes": 10,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
           "title": "Public Library Transformation in the Information Age",
-          "text": "The city central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards.",
-          "audioText": "The city central library once echoed with the sound of turning paper pages and heavy wooden drawers cataloging index cards. Today, those towering wooden bookshelves have been rearranged to create vibrant collaborative learning zones with high-speed internet ports and multimedia editing suites. While physical book checkouts have declined by 35% over the past five years, digital journal downloads and electronic database access have surged fivefold. Students gather in glass-walled rooms, debating group projects around interactive digital whiteboards."
+          "text": "For generations, municipal public libraries operated predominantly as silent repositories of printed books, characterized by quiet study desks and strict silence signs. However, the rapid proliferation of high-speed internet and digital media rendered traditional book warehousing alone insufficient to meet community needs. Rather than fading into obsolescence, progressive public libraries transformed into dynamic, inclusive community learning hubs.\n\nToday, modern libraries provide free high-speed broadband, public computer access, and digital literacy workshops tailored for seniors and job seekers. Furthermore, many facilities have integrated creative maker spaces equipped with 3D printers, laser cutters, and audio-visual recording studios. By transforming these spaces, administrators attracted diverse younger audiences who collaborate on engineering prototypes, community podcasts, and artistic endeavors alongside traditional book readers.\n\nIn pilot municipalities that remodeled their libraries into interactive innovation hubs, annual visitor foot traffic increased by thirty-five percent. This resurgence demonstrates that when public institutions evolve to meet changing societal needs, they strengthen community resilience, bridge the digital divide, and empower citizens across all walks of life.",
+          "audioText": "For generations, municipal public libraries operated predominantly as silent repositories of printed books, characterized by quiet study desks and strict silence signs. However, the rapid proliferation of high-speed internet and digital media rendered traditional book warehousing alone insufficient to meet community needs. Rather than fading into obsolescence, progressive public libraries transformed into dynamic, inclusive community learning hubs. Today, modern libraries provide free high-speed broadband, public computer access, and digital literacy workshops tailored for seniors and job seekers. Furthermore, many facilities have integrated creative maker spaces equipped with 3D printers, laser cutters, and audio-visual recording studios. By transforming these spaces, administrators attracted diverse younger audiences who collaborate on engineering prototypes, community podcasts, and artistic endeavors alongside traditional book readers. In pilot municipalities that remodeled their libraries into interactive innovation hubs, annual visitor foot traffic increased by thirty-five percent. This resurgence demonstrates that when public institutions evolve to meet changing societal needs, they strengthen community resilience, bridge the digital divide, and empower citizens across all walks of life."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 2: Strategy 5 (Making Inferences)",
-            "question": "1. What can you logically infer about modern learners' academic research habits?",
+            "tag": "Unit 5 (Main Idea)",
+            "question": "1. What is the central thesis regarding the evolution of modern public libraries?",
             "options": [
-              "Students increasingly rely on digital databases and collaborative digital tools rather than physical paper books",
-              "Students no longer conduct research at all",
-              "Students prefer index cards over computers",
-              "The library has forbidden electronic devices"
+              "Public libraries have evolved from quiet book storage repositories into vibrant community hubs for digital literacy and creative collaboration",
+              "Public libraries are closing permanently across the world because everyone reads books on smartphones",
+              "Libraries should only lend vintage paperback mystery novels to senior citizens",
+              "Modern libraries have eliminated all books to install commercial coffee franchises"
             ],
             "answer": 0,
-            "explanation": "The fivefold surge in digital downloads and group whiteboard discussions logically implies a shift toward digital collaboration."
+            "explanation": "The passage demonstrates how libraries have transformed into multifunctional hubs for digital literacy and community connection."
           },
           {
             "id": 2,
-            "tag": "Module 1: Unit 5 (Valid Paraphrase)",
-            "question": "2. Which of the following represents an accurate paraphrase of 'While physical book checkouts have declined by 35%... digital journal downloads have surged fivefold'?",
+            "tag": "Strategy 5 (Inference from Text Clues)",
+            "question": "2. The text notes that traditional libraries were characterized by 'hushed silences and strict silence signs.' What can be inferred about their historical atmosphere?",
             "options": [
-              "Borrowing of print books has dropped substantially, whereas digital article usage has multiplied dramatically",
-              "Print books are 35% more popular than online journals",
-              "Students have stopped using the library completely",
-              "Digital downloads declined by 35% over five years"
+              "They prioritized quiet individual reading over collaborative social interaction",
+              "They hosted loud musical concerts every Saturday afternoon",
+              "They were dangerous places where talking was punished by law",
+              "They had zero visitors because silence made patrons fall asleep"
             ],
             "answer": 0,
-            "explanation": "It restates the factual core accurately using synonyms ('borrowing of print books', 'multiplied dramatically') without distorting meaning."
+            "explanation": "Strict silence rules indicate historical libraries were quiet study sanctuaries rather than interactive workshops."
           },
           {
             "id": 3,
-            "tag": "Module 2: Strategy 5 (Inferring Implied Purpose)",
-            "question": "3. Based on the rearrangement of bookshelves into 'collaborative learning zones with multimedia suites', what can be inferred about the changing role of academic libraries?",
+            "tag": "Strategy 5 (Formula: Clues + Prior Knowledge)",
+            "question": "3. Applying the formula 'Text Clues + Prior Knowledge = Inference', what explains why libraries added 3D printers and maker spaces?",
             "options": [
-              "Libraries are transforming from quiet solitary book repositories into active social and digital learning spaces",
-              "Libraries are being turned into commercial shopping malls",
-              "Libraries are eliminating staff members entirely",
-              "Libraries will no longer serve learners"
+              "To provide equitable access to expensive modern technology that patrons might not afford individually",
+              "Because paper books became completely illegal to print",
+              "To replace librarians with automated metal robot workers",
+              "Because municipal councils wanted to open manufacturing factories"
             ],
             "answer": 0,
-            "explanation": "The physical design changes point to an evolving mission toward collaborative, technology-enabled learning."
+            "explanation": "Combining text clues (digital inequality) with prior knowledge yields the inference of equalizing tech access."
           },
           {
             "id": 4,
-            "tag": "Module 1: Unit 5 (Distorted Paraphrase Identification)",
-            "question": "4. Which statement is a flawed paraphrase that introduces false facts?",
+            "tag": "Unit 5 (Paraphrase Evaluation)",
+            "question": "4. Which option represents an acceptable, high-quality paraphrase of: 'Modern libraries empower diverse citizens by offering free access to high-speed internet and digital workshops'?",
             "options": [
-              "The library decided to burn all physical books because paper is outdated",
-              "Electronic databases have experienced significant growth in recent years",
-              "Collaborative areas now feature interactive digital screens",
-              "Traditional card catalogs are no longer the primary search tool"
+              "Contemporary public libraries support community members by providing cost-free online connectivity and technology training classes.",
+              "Modern libraries empower diverse citizens by offering free access to high-speed internet and digital workshops.",
+              "Free internet in libraries makes citizens play video games instead of finding employment.",
+              "Libraries charge citizens heavy fees to use computers and attend lectures."
             ],
             "answer": 0,
-            "explanation": "Claiming books were burned is an unfounded distortion not supported by the original text."
+            "explanation": "Option A captures full original meaning using fresh vocabulary and restructured grammar without patchwriting."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 5 + Strategy 5)",
-            "question": "5. How does combining inference with paraphrased meaning verify true reading comprehension?",
+            "tag": "Unit 5 (Detecting Patchwriting)",
+            "question": "5. Why is the sentence 'Public libraries empower diverse people by providing free access to quick internet and digital workshops' considered unacceptable patchwriting?",
             "options": [
-              "Inferring uncovers unstated implications while paraphrasing confirms that core ideas can be restated accurately in one's own words",
-              "It allows students to copy sentences word-for-word on exams",
-              "It replaces the need for critical thinking",
-              "It proves that all reading passages have identical meanings"
+              "It merely swaps two or three words with near-synonyms while copying the exact grammatical sentence skeleton of the original",
+              "It is written in French rather than standard academic English",
+              "It contains too many punctuation marks in the wrong places",
+              "It changes the topic from libraries to outer space exploration"
             ],
             "answer": 0,
-            "explanation": "Inference checks deep interpretive reading, while paraphrase demonstrates genuine expressive understanding."
+            "explanation": "Patchwriting occurs when a writer retains the exact sentence skeleton and swaps superficial synonyms."
+          },
+          {
+            "id": 6,
+            "tag": "Unit 5 (Rules of Paraphrasing)",
+            "question": "6. What are the two essential requirements for a successful academic paraphrase?",
+            "options": [
+              "Retain 100% of the original author's core meaning while expressing it in a completely new sentence structure and vocabulary",
+              "Shorten the text by deleting all adjectives and keeping only nouns",
+              "Translate the sentence into another language and use an online bot to translate it back",
+              "Add personal opinions and exaggerations to make the text exciting"
+            ],
+            "answer": 0,
+            "explanation": "A valid paraphrase preserves original meaning accurately while demonstrating authentic grammatical and lexical independence."
+          },
+          {
+            "id": 7,
+            "tag": "Inference Skill",
+            "question": "7. What can be inferred about elderly patrons who attend weekly library tech workshops?",
+            "options": [
+              "They gain practical digital competencies that help them stay connected with family and access online healthcare",
+              "They are studying to become professional video game streamers",
+              "They are forced to attend classes as a condition of receiving library books",
+              "They already know more about coding than the library instructors"
+            ],
+            "answer": 0,
+            "explanation": "Senior digital workshops logically aim to bridge the digital divide for essential daily services and family contact."
+          },
+          {
+            "id": 8,
+            "tag": "Inference Skill",
+            "question": "8. Why are municipal city governments continuing to invest tax revenue into modern library facilities?",
+            "options": [
+              "Libraries deliver measurable educational and economic benefits across all demographic age groups",
+              "City officials are legally required to spend all tax money on paper printing",
+              "Libraries are the only buildings in the city with air conditioning",
+              "Government leaders want to store antique tax records on bookshelves"
+            ],
+            "answer": 0,
+            "explanation": "Public investment continues because modern libraries deliver broad socio-economic dividends to the community."
+          },
+          {
+            "id": 9,
+            "tag": "Vocabulary in Context",
+            "question": "9. In paragraph 1, what does the noun 'transformation' mean?",
+            "options": [
+              "A marked, comprehensive change in form, character, or function",
+              "A temporary paint color applied to an exterior building wall",
+              "An unexpected electrical power outage in the city",
+              "The routine sweeping of classroom floors each evening"
+            ],
+            "answer": 0,
+            "explanation": "'Transformation' indicates a fundamental, deep structural change in purpose and identity."
+          },
+          {
+            "id": 10,
+            "tag": "Vocabulary in Context",
+            "question": "10. In paragraph 2, what does the adjective 'inclusive' mean in 'inclusive community centers'?",
+            "options": [
+              "Welcoming and providing equal access to all people regardless of background, age, or income",
+              "Restricted strictly to members who pay an annual membership fee",
+              "Excluding people who do not own luxury automobiles",
+              "Reserved exclusively for certified computer programmers"
+            ],
+            "answer": 0,
+            "explanation": "'Inclusive' means open, welcoming, and accessible to everyone without discrimination."
+          },
+          {
+            "id": 11,
+            "tag": "Vocabulary in Context",
+            "question": "11. What does the word 'repository' mean in the phrase 'silent repositories of printed books'?",
+            "options": [
+              "A storage place where items are kept safely in large quantities",
+              "A vehicle designed for long-distance highway travel",
+              "A type of restaurant that serves quick meals",
+              "A musical instrument played in an orchestra"
+            ],
+            "answer": 0,
+            "explanation": "'Repository' is a place, vessel, or chamber where things are deposited or stored."
+          },
+          {
+            "id": 12,
+            "tag": "Scanning for Equipment",
+            "question": "12. What modern prototyping tool mentioned in paragraph 2 allows patrons to turn digital designs into solid plastic models?",
+            "options": [
+              "3D printers",
+              "Rotary printing presses",
+              "Electric typewriters",
+              "Photocopy machines"
+            ],
+            "answer": 0,
+            "explanation": "Scanning confirms 3D printers allow patrons to fabricate physical objects from digital computer files."
+          },
+          {
+            "id": 13,
+            "tag": "Reference Words",
+            "question": "13. In paragraph 2, in the clause 'by transforming these spaces, administrators attracted younger audiences', what does 'these spaces' refer to?",
+            "options": [
+              "Municipal public library facilities",
+              "Commercial shopping mall arcades",
+              "Private office cubicles in skyscrapers",
+              "Outdoor sports stadiums"
+            ],
+            "answer": 0,
+            "explanation": "'These spaces' refers back to municipal library buildings undergoing modernization."
+          },
+          {
+            "id": 14,
+            "tag": "Reference Words",
+            "question": "14. In paragraph 3, what does 'its' refer to in 'a community that values its public institutions'?",
+            "options": [
+              "The community",
+              "The book catalog",
+              "The 3D printer",
+              "The internet cable"
+            ],
+            "answer": 0,
+            "explanation": "'Its' is the singular possessive pronoun referring to 'a community'."
+          },
+          {
+            "id": 15,
+            "tag": "Strategy 5 (Inference Traps)",
+            "question": "15. Which of the following is an invalid 'over-generalization trap' that goes beyond textual evidence?",
+            "options": [
+              "Paper books will be burned in public squares because nobody will ever read paper again",
+              "Libraries now provide both digital resources and traditional reading materials",
+              "Community members utilize library facilities for multiple educational purposes",
+              "Public libraries have expanded their service offerings in recent decades"
+            ],
+            "answer": 0,
+            "explanation": "Claiming paper books will be burned is an extreme, unfounded over-generalization unsupported by text."
+          },
+          {
+            "id": 16,
+            "tag": "Author's Tone",
+            "question": "16. How would you describe the author's tone toward modern libraries?",
+            "options": [
+              "Progressive, optimistic, and enthusiastic about community empowerment",
+              "Pessimistic and mournful about the loss of quiet spaces",
+              "Sarcastic and mocking toward computer technology",
+              "Bored and detached from the subject matter"
+            ],
+            "answer": 0,
+            "explanation": "The author enthusiastically celebrates the democratization of technology and community empowerment."
+          },
+          {
+            "id": 17,
+            "tag": "Cause and Effect Analysis",
+            "question": "17. What caused library visitor numbers to increase by thirty-five percent in pilot communities?",
+            "options": [
+              "The introduction of interactive maker spaces, digital literacy classes, and collaborative zones",
+              "A law forcing all students to sleep in the library overnight",
+              "Giving away free luxury sports cars to every person who entered",
+              "Closing all public schools in the surrounding region"
+            ],
+            "answer": 0,
+            "explanation": "Visitor growth surged because libraries added maker spaces, digital workshops, and welcoming spaces."
+          },
+          {
+            "id": 18,
+            "tag": "Synthesizing Concepts",
+            "question": "18. How do maker spaces and book collections complement one another inside a modern library?",
+            "options": [
+              "Patrons can research theoretical concepts in books and then apply them practically using maker space tools",
+              "Maker spaces are used to shred books and turn them into wrapping paper",
+              "Books are placed on top of 3D printers to prevent them from vibrating",
+              "Patrons are prohibited from entering book areas if they use maker spaces"
+            ],
+            "answer": 0,
+            "explanation": "Theory (books) and practice (maker spaces) synergize, creating a holistic learning environment."
+          },
+          {
+            "id": 19,
+            "tag": "Metacognitive Verification",
+            "question": "19. When making an inference while reading an informational text, how should a reader verify its validity?",
+            "options": [
+              "Check that concrete textual facts directly point toward the conclusion without relying on wild guesses",
+              "Accept any thought that comes to mind as long as it sounds interesting",
+              "Ask a friend to guess the answer without showing them the passage",
+              "Choose the longest multiple-choice answer on the examination sheet"
+            ],
+            "answer": 0,
+            "explanation": "Valid inferences must be anchored in specific textual evidence combined logically with common-sense knowledge."
+          },
+          {
+            "id": 20,
+            "tag": "Comprehensive Summary",
+            "question": "20. Which sentence best summarizes the overarching message of Unit 5's reading passage?",
+            "options": [
+              "By evolving into vibrant centers for digital literacy, creative fabrication, and community collaboration, modern public libraries have redefined their vital role in the twenty-first century.",
+              "Traditional libraries were completely useless and should have been demolished decades ago.",
+              "Libraries are only valuable if they charge high prices for computer access.",
+              "Digital technology has eliminated the human desire to read stories and learn new ideas."
+            ],
+            "answer": 0,
+            "explanation": "Option A captures the evolution, the modern services, and the enduring civic importance of libraries."
           }
         ]
       },
@@ -1276,79 +2251,274 @@ window.ReadSkillsData = {
         "thaiTitle": "แบบทดสอบรวม: Unit 6 (การฝึกอ่านแบบบูรณาการ) + Strategy 6 (การทบทวนกลยุทธ์แบบบูรณาการ)",
         "unitRef": "Unit 6: Integrated Reading Practice",
         "strategyRef": "Strategy 6: Integrated Strategy Review",
-        "timeMinutes": 15,
-        "questionsCount": 5,
+        "timeMinutes": 20,
+        "questionsCount": 20,
         "passingScore": 70,
         "passage": {
           "title": "The Impact of Explicit Reading Strategy Instruction on EFL Learners",
-          "text": "Research conducted at our reading program demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success.",
-          "audioText": "Research conducted at our reading program demonstrates that explicit instruction in reading strategies significantly empowers EFL undergraduate students. First-year English majors who received structured training in pre-reading, while-reading, and post-reading techniques showed a 28% improvement on standardized reading comprehension tests compared to baseline scores. Furthermore, post-intervention surveys indicated that 91% of participants reported lower levels of reading anxiety and greater self-confidence when encountering complex academic texts. By learning to preview, predict, identify text structures, and summarize arguments, students transform into autonomous, critical readers prepared for lifelong academic success."
+          "text": "Empirical research conducted in secondary and adult language programs demonstrates that explicit instruction in reading strategies significantly empowers English as a Foreign Language (EFL) learners. In many traditional language classes, reading is treated as an implicit testing exercise where students simply answer comprehension questions without being taught how skilled readers comprehend. In contrast, structured strategy instruction directly models how to navigate academic texts systematically.\n\nIn a controlled semester-long study, adolescent EFL language learners received weekly training in strategic reading workflows: previewing text features, predicting outcomes, deploying context clues for unknown vocabulary, identifying rhetorical organizational patterns, and validating inferences. Diagnostic assessments revealed that students receiving explicit strategy coaching improved their standardized reading comprehension test scores by 28% compared to baseline measures. Furthermore, post-intervention surveys indicated that 91% of participating learners experienced lower levels of reading anxiety and substantially greater self-confidence when engaging with authentic English passages.\n\nUltimately, explicit strategy instruction transforms passive decoders into autonomous, critical readers. By learning to orchestrate pre-reading, while-reading, and post-reading techniques flexibly, students acquire versatile cognitive blueprints that serve them throughout their academic and professional journeys.",
+          "audioText": "Empirical research conducted in secondary and adult language programs demonstrates that explicit instruction in reading strategies significantly empowers English as a Foreign Language (EFL) learners. In many traditional language classes, reading is treated as an implicit testing exercise where students simply answer comprehension questions without being taught how skilled readers comprehend. In contrast, structured strategy instruction directly models how to navigate academic texts systematically. In a controlled semester-long study, adolescent EFL language learners received weekly training in strategic reading workflows: previewing text features, predicting outcomes, deploying context clues for unknown vocabulary, identifying rhetorical organizational patterns, and validating inferences. Diagnostic assessments revealed that students receiving explicit strategy coaching improved their standardized reading comprehension test scores by 28% compared to baseline measures. Furthermore, post-intervention surveys indicated that 91% of participating learners experienced lower levels of reading anxiety and substantially greater self-confidence when engaging with authentic English passages. Ultimately, explicit strategy instruction transforms passive decoders into autonomous, critical readers. By learning to orchestrate pre-reading, while-reading, and post-reading techniques flexibly, students acquire versatile cognitive blueprints that serve them throughout their academic and professional journeys."
         },
         "questions": [
           {
             "id": 1,
-            "tag": "Module 2: Strategy 6 (Integrated Strategy Review)",
-            "question": "1. Which statement represents the best overall synthesis and review of the entire passage?",
+            "tag": "Unit 6 (Main Idea)",
+            "question": "1. What is the primary thesis of the empirical study on explicit reading strategy instruction?",
             "options": [
-              "Explicit instruction in reading strategies substantially boosts EFL students' comprehension, reduces reading anxiety, and fosters autonomous learning",
-              "English learners prefer reading short texts rather than taking comprehension tests",
-              "Standardized tests are the only valid measurement of student intellect",
-              "Reading strategies are only beneficial for primary school students"
+              "Explicit, structured instruction in reading strategies significantly improves EFL learners' reading comprehension and lowers anxiety",
+              "Students should never receive reading instruction and should only guess words at random",
+              "Reading strategies are only effective for native speakers of English in preschool",
+              "Standardized reading tests are completely unscientific and should be abandoned"
             ],
             "answer": 0,
-            "explanation": "It accurately synthesizes the main intervention (explicit strategy instruction) with both measured outcomes (28% test gain, 91% anxiety drop) without bias."
+            "explanation": "The study demonstrates that explicit strategy instruction significantly boosts comprehension and reduces anxiety."
           },
           {
             "id": 2,
-            "tag": "Module 1: Unit 6 (Evaluating Empirical Evidence)",
-            "question": "2. According to the text, what two measurable benefits did students experience after receiving structured strategy instruction?",
+            "tag": "Strategy 2 (Scanning for Percentage)",
+            "question": "2. By what percentage did participants' standardized reading comprehension scores increase following strategy training?",
             "options": [
-              "A 28% comprehension score increase and reduced reading anxiety reported by 91% of students",
-              "Free textbooks and an immediate course completion",
-              "Zero hours of homework and higher exam absences",
-              "Automatic English teaching certificates"
+              "Twenty-eight percent",
+              "Fifty-five percent",
+              "Five percent",
+              "Zero percent"
             ],
             "answer": 0,
-            "explanation": "The passage explicitly provides two empirical metrics: 28% test score improvement and 91% reduced anxiety."
+            "explanation": "Scanning confirms comprehension scores increased by 28% compared to pre-intervention baselines."
           },
           {
             "id": 3,
-            "tag": "Module 2: Strategy 6 (Applying Multiple Strategies Together)",
-            "question": "3. How does combining multiple strategies (previewing, predicting, and identifying text organization) benefit readers of complex academic texts?",
+            "tag": "Strategy 2 (Scanning for Survey Result)",
+            "question": "3. What percentage of surveyed students reported feeling lower reading anxiety and greater self-confidence?",
             "options": [
-              "It enables readers to scaffold their comprehension before, during, and after reading for maximum retention and accuracy",
-              "It slows down reading speed so that students cannot finish on time",
-              "It eliminates the need to understand English vocabulary",
-              "It guarantees that texts never need to be reread"
+              "Ninety-one percent",
+              "Ten percent",
+              "Fifty percent",
+              "Thirty-three percent"
             ],
             "answer": 0,
-            "explanation": "Integrating multiple reading strategies creates a complete scaffolding system from initial preview to deep post-reading evaluation."
+            "explanation": "Scanning the survey data in paragraph 2 confirms 91% reported reduced reading anxiety."
           },
           {
             "id": 4,
-            "tag": "Module 1: Unit 6 (Integrated Reading Framework)",
-            "question": "4. How do the three instructional stages (Pre-, While-, and Post-Reading) function together in integrated reading?",
+            "tag": "Strategy Orchestration (Pre-Reading)",
+            "question": "4. Which strategic techniques should an active reader deploy during the pre-reading phase?",
             "options": [
-              "They provide a sequential framework guiding the learner before, during, and after engagement with the text",
-              "They are completely isolated and should never be used together",
-              "They only apply to listening exercises",
-              "They replace the need to understand English vocabulary"
+              "Previewing headings, activating background knowledge, and generating initial predictions",
+              "Writing a fifty-page essay before opening the textbook",
+              "Translating every single noun with a bilingual dictionary",
+              "Memorizing the final paragraph word-for-word"
             ],
             "answer": 0,
-            "explanation": "The three-stage framework scaffolds reading comprehension before, during, and after text interaction."
+            "explanation": "The pre-reading phase focuses on previewing structural cues, schema activation, and predictive questioning."
           },
           {
             "id": 5,
-            "tag": "Integrated Skill (Unit 6 + Strategy 6 Capstone)",
-            "question": "5. Why is the integrated application of reading lessons and strategies considered the capstone of autonomous reading development?",
+            "tag": "Strategy Orchestration (While-Reading)",
+            "question": "5. When an active reader encounters an unknown technical term while reading, what is the best immediate step?",
             "options": [
-              "It empowers students to independently select and apply appropriate comprehension strategies based on text type and reading purpose",
-              "It allows students to skip reading the last paragraph",
-              "It replaces the need to attend classroom lessons",
-              "It proves that memorizing words is unnecessary"
+              "Analyze surrounding context clues (definitions, synonyms, contrast markers) before interrupting reading flow",
+              "Immediately close the book and quit reading for the day",
+              "Erase the word from the printed page with white correction tape",
+              "Assume the sentence has zero meaning and skip the entire chapter"
             ],
             "answer": 0,
-            "explanation": "Autonomous reading mastery occurs when learners flexibly orchestrate multiple strategies tailored to the text and purpose."
+            "explanation": "Using context clues preserves reading momentum and enables rapid situational decoding."
+          },
+          {
+            "id": 6,
+            "tag": "Strategy Orchestration (Text Structure)",
+            "question": "6. When a passage uses connectives like 'whereas', 'conversely', and 'on the other hand', what cognitive blueprint should the reader activate?",
+            "options": [
+              "A Compare and Contrast mental framework",
+              "A Chronological Timeline of ancient dynasties",
+              "A Geographical Map of ocean currents",
+              "A Step-by-Step cooking recipe"
+            ],
+            "answer": 0,
+            "explanation": "Contrast connectives signal the compare-and-contrast organizational pattern."
+          },
+          {
+            "id": 7,
+            "tag": "Strategy Orchestration (Post-Reading)",
+            "question": "7. What post-reading activities consolidate deep comprehension according to Strategy 6?",
+            "options": [
+              "Summarizing core ideas, verifying inferences against textual evidence, and self-reflecting on comprehension",
+              "Counting how many words were printed in italic font",
+              "Throwing away study notes immediately after the bell rings",
+              "Sleeping for eight hours without reviewing difficult concepts"
+            ],
+            "answer": 0,
+            "explanation": "Post-reading involves summarizing, evaluating inferences, and metacognitive self-assessment."
+          },
+          {
+            "id": 8,
+            "tag": "Vocabulary in Context",
+            "question": "8. What does 'explicit instruction' mean in contrast to 'implicit learning'?",
+            "options": [
+              "Direct, clear, and structured teaching that explains how and why strategies work",
+              "Secret instruction delivered in whispered codes at midnight",
+              "Leaving students alone in a room with zero guidance or feedback",
+              "Forcing students to memorize grammar rules without reading any stories"
+            ],
+            "answer": 0,
+            "explanation": "'Explicit instruction' is direct, unambiguous, and systematically structured teaching."
+          },
+          {
+            "id": 9,
+            "tag": "Vocabulary in Context",
+            "question": "9. In paragraph 3, what does 'autonomous readers' mean?",
+            "options": [
+              "Readers who independently monitor, regulate, and direct their own reading comprehension",
+              "Mechanical robots designed to scan printed paper books",
+              "Students who refuse to read unless an instructor stands beside them constantly",
+              "Individuals who only listen to recorded radio broadcasts"
+            ],
+            "answer": 0,
+            "explanation": "'Autonomous readers' independently apply strategic tools to comprehend diverse texts without reliance on others."
+          },
+          {
+            "id": 10,
+            "tag": "Vocabulary in Context",
+            "question": "10. In paragraph 2, what does 'baseline scores' refer to in educational measurement?",
+            "options": [
+              "The initial diagnostic test scores recorded before strategy training commenced",
+              "The highest possible grade any student could theoretically achieve",
+              "The score a student receives when they fail to attend an exam",
+              "The number of books stored on the lowest classroom shelf"
+            ],
+            "answer": 0,
+            "explanation": "'Baseline scores' establish the initial starting benchmark against which progress is measured."
+          },
+          {
+            "id": 11,
+            "tag": "Unit 4 (Pronoun Reference)",
+            "question": "11. In paragraph 1, in the phrase 'explicit instruction in reading strategies significantly empowers EFL learners; it equips them with practical cognitive tools', what does 'it' refer to?",
+            "options": [
+              "Explicit instruction in reading strategies",
+              "The standardized test booklet",
+              "The baseline score",
+              "The classroom clock"
+            ],
+            "answer": 0,
+            "explanation": "'It' refers back to the singular noun concept 'explicit instruction in reading strategies'."
+          },
+          {
+            "id": 12,
+            "tag": "Unit 4 (Pronoun Reference)",
+            "question": "12. In the sentence 'First-year language learners who received structured training showed improvement; they reported higher confidence', what does 'they' refer to?",
+            "options": [
+              "First-year language learners who received structured training",
+              "The teachers who administered the exams",
+              "The authors of the research questionnaire",
+              "The standardized test questions"
+            ],
+            "answer": 0,
+            "explanation": "'They' refers to the participating language learners who underwent the training."
+          },
+          {
+            "id": 13,
+            "tag": "Unit 4 (Text Structure Identification)",
+            "question": "13. What organizational pattern structures paragraph 2?",
+            "options": [
+              "Cause and Effect / Problem and Solution: how targeted strategy training resolved comprehension obstacles and anxiety",
+              "Chronological listing of centuries from ancient Egypt to the modern day",
+              "Geographical tour of international airports across Europe",
+              "Fictional drama involving wild animals in a forest"
+            ],
+            "answer": 0,
+            "explanation": "Paragraph 2 uses cause-and-effect to demonstrate the impact of strategy training on test scores."
+          },
+          {
+            "id": 14,
+            "tag": "Unit 5 (Paraphrase Evaluation)",
+            "question": "14. Which option best paraphrases the conclusion: 'By mastering integrated strategies, learners transform into self-regulated critical thinkers prepared for lifelong academic success'?",
+            "options": [
+              "When students learn to orchestrate multiple reading strategies together, they become independent, analytical readers equipped for ongoing educational achievements.",
+              "Reading strategies only help students pass one multiple-choice quiz in school.",
+              "Critical thinking cannot be learned through reading and requires special computer software.",
+              "Learners should rely on memorization rather than using strategies."
+            ],
+            "answer": 0,
+            "explanation": "Option A accurately captures self-regulation, strategic orchestration, and lifelong success."
+          },
+          {
+            "id": 15,
+            "tag": "Error Analysis (Metacognition)",
+            "question": "15. A student spends twenty minutes searching for an answer by reading every word from the first line. What strategy error did they make?",
+            "options": [
+              "They failed to use scanning to locate specific keywords or numbers quickly",
+              "They should have guessed randomly without looking at the text",
+              "They should have translated the text into Latin first",
+              "They read the text too fast and missed all the punctuation"
+            ],
+            "answer": 0,
+            "explanation": "Searching for specific facts requires scanning; reading word-for-word from line one is inefficient."
+          },
+          {
+            "id": 16,
+            "tag": "Inference Skill",
+            "question": "16. Why does explicit strategy instruction drastically reduce second-language reading anxiety?",
+            "options": [
+              "It provides concrete, actionable tools so students no longer feel overwhelmed when facing unfamiliar texts",
+              "It makes English tests completely voluntary and ungraded",
+              "It eliminates all difficult vocabulary words from English publications",
+              "It allows students to sleep during reading examination periods"
+            ],
+            "answer": 0,
+            "explanation": "When learners possess reliable strategic tools, fear of the unknown is replaced by self-efficacy."
+          },
+          {
+            "id": 17,
+            "tag": "Synthesis of Units 1–6",
+            "question": "17. What is the optimal cognitive sequence when tackling a challenging academic reading passage?",
+            "options": [
+              "Preview & predict -> Skim for gist -> Scan for targeted details -> Use context clues -> Map organization -> Synthesize & infer",
+              "Translate word 1 to word 500 -> Memorize every noun -> Guess the main idea -> Sleep",
+              "Answer the questions without reading -> Check if the teacher is watching -> Leave early",
+              "Read the last sentence -> Pick option C for every question -> Complain about test length"
+            ],
+            "answer": 0,
+            "explanation": "The integrated strategic workflow progresses from macro previewing down to micro decoding and critical inference."
+          },
+          {
+            "id": 18,
+            "tag": "Fact vs Opinion",
+            "question": "18. Which statement from the research passage is an empirical, measurable fact?",
+            "options": [
+              "Participants exhibited a 28% gain on standardized reading comprehension post-tests",
+              "Reading strategies are the most fascinating topic in the entire world",
+              "Every person who reads books is automatically happier than non-readers",
+              "English is the easiest language for human beings to master"
+            ],
+            "answer": 0,
+            "explanation": "The 28% gain is a measured, empirical research datum."
+          },
+          {
+            "id": 19,
+            "tag": "Metacognition (Self-Regulation)",
+            "question": "19. When an autonomous reader notices their mind wandering or comprehension dropping, what metacognitive action should they take?",
+            "options": [
+              "Pause, re-read the confusing segment with focused attention, and summarize the key idea before proceeding",
+              "Continue flipping pages rapidly to finish the book faster",
+              "Blame the author and stop studying reading permanently",
+              "Ignore the confusion and hope the final quiz will be easy"
+            ],
+            "answer": 0,
+            "explanation": "Metacognitive monitoring involves self-repair: detecting breakdowns, pausing, and applying fix-up strategies."
+          },
+          {
+            "id": 20,
+            "tag": "Cap-Stone Mastery",
+            "question": "20. What is the ultimate objective of completing all six units and strategy modules in ReadSkills BRU?",
+            "options": [
+              "To become an autonomous, confident, and critical reader equipped with versatile strategies for lifelong academic and professional success",
+              "To memorize answers to twenty multiple-choice questions for one semester",
+              "To avoid reading any English articles after finishing school",
+              "To prove that reading books is unnecessary in modern society"
+            ],
+            "answer": 0,
+            "explanation": "The overarching goal of the entire program is lifelong reading autonomy, critical agility, and academic success."
           }
         ]
       }
