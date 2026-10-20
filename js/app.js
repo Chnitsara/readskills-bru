@@ -8089,6 +8089,14 @@ class ReadSkillsApp {
 }
 
 // Global App Instance
-document.addEventListener('DOMContentLoaded', () => {
-  window.app = new ReadSkillsApp();
-});
+function initReadSkillsApp() {
+  if (!window.app) {
+    window.app = new ReadSkillsApp();
+  }
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initReadSkillsApp);
+} else {
+  initReadSkillsApp();
+}
