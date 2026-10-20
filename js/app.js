@@ -480,12 +480,13 @@ class ReadSkillsApp {
   }
 
   updateUserDisplay() {
-    const englishName = (this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || 'Somsak Jaidee';
-    const initial = englishName.charAt(0).toUpperCase() || 'S';
+    const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
+    const englishName = (this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || (isTeacher ? 'Dr. Somchai' : 'Somsak Jaidee');
+    const initial = englishName.charAt(0).toUpperCase() || (isTeacher ? 'T' : 'S');
 
     const nameElem = document.getElementById('user-display-name');
     if (nameElem) {
-      nameElem.innerText = englishName;
+      nameElem.innerHTML = `${englishName} ${isTeacher ? '<span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900 border border-amber-300 ml-1">TEACHER</span>' : ''}`;
     }
     const avatarElem = document.getElementById('user-avatar-initial');
     if (avatarElem) {
@@ -501,7 +502,38 @@ class ReadSkillsApp {
     }
     const dropdownEmail = document.getElementById('dropdown-user-email');
     if (dropdownEmail) {
-      dropdownEmail.innerText = this.user.email || 'student@bru.ac.th';
+      dropdownEmail.innerText = this.user.email || (isTeacher ? 'teacher@bru.ac.th' : 'student@bru.ac.th');
+    }
+
+    // Role badge inside profile dropdown
+    const roleBadge = document.getElementById('dropdown-user-role-badge');
+    if (roleBadge) {
+      if (isTeacher) {
+        roleBadge.className = 'inline-block mt-0.5 px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 text-[9px] font-extrabold border border-amber-300';
+        roleBadge.innerText = '👨‍🏫 Teacher / อาจารย์ผู้สอน';
+      } else {
+        roleBadge.className = 'inline-block mt-0.5 px-2 py-0.5 rounded-full bg-purple-100 text-purple-800 text-[9px] font-semibold';
+        roleBadge.innerText = '🎓 Student / นักศึกษา';
+      }
+    }
+
+    // Toggle Teacher Report visibility (Visible ONLY for Teacher/Instructor accounts)
+    const navAdmin = document.getElementById('nav-admin');
+    if (navAdmin) {
+      if (isTeacher) navAdmin.classList.remove('hidden');
+      else navAdmin.classList.add('hidden');
+    }
+
+    const mNavAdmin = document.getElementById('m-nav-admin');
+    if (mNavAdmin) {
+      if (isTeacher) mNavAdmin.classList.remove('hidden');
+      else mNavAdmin.classList.add('hidden');
+    }
+
+    const menuAdmin = document.getElementById('menu-teacher-report-btn');
+    if (menuAdmin) {
+      if (isTeacher) menuAdmin.classList.remove('hidden');
+      else menuAdmin.classList.add('hidden');
     }
   }
 
@@ -530,6 +562,18 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Authentication Renderer (Sign In / Sign Up) ------------------- */
+  fillDemoAccount(role) {
+    const emailInput = document.getElementById('signin-email');
+    const pwdInput = document.getElementById('signin-password');
+    if (role === 'teacher') {
+      if (emailInput) emailInput.value = 'teacher@bru.ac.th';
+      if (pwdInput) pwdInput.value = '123456';
+    } else {
+      if (emailInput) emailInput.value = 'student@bru.ac.th';
+      if (pwdInput) pwdInput.value = '123456';
+    }
+  }
+
   setAuthMode(mode) {
     this.authMode = mode;
     this.renderLoginView();
@@ -629,6 +673,29 @@ class ReadSkillsApp {
             Sign In ➔
           </button>
         </div>
+
+        <!-- Quick Switch Demo Account (Student vs Teacher) -->
+        <div class="pt-3 border-t border-[#BF9EDF]/40 space-y-1.5">
+          <span class="block text-[10px] font-bold text-[#53347C] uppercase tracking-wider text-center">
+            เลือกประเภทบัญชีเพื่อทดสอบระบบ (Quick Switch):
+          </span>
+          <div class="grid grid-cols-2 gap-2 text-xs">
+            <button 
+              type="button" 
+              onclick="app.fillDemoAccount('student')"
+              class="px-2.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 border border-purple-200 text-purple-900 font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
+            >
+              <span>🎓 นักศึกษา (Student)</span>
+            </button>
+            <button 
+              type="button" 
+              onclick="app.fillDemoAccount('teacher')"
+              class="px-2.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
+            >
+              <span>👨‍🏫 อาจารย์ (Teacher)</span>
+            </button>
+          </div>
+        </div>
       </form>
     `;
   }
@@ -711,16 +778,19 @@ class ReadSkillsApp {
     const email = document.getElementById('signup-email').value.trim();
     const password = document.getElementById('signup-password').value.trim();
 
+    const roleElem = document.getElementById('signup-role');
+    const role = (roleElem && roleElem.value) ? roleElem.value : 'student';
+
     const existingIndex = this.registeredUsers.findIndex(u => u.email.toLowerCase() === email.toLowerCase());
     if (existingIndex >= 0) {
-      this.registeredUsers[existingIndex] = { name, email, password, role: 'student' };
+      this.registeredUsers[existingIndex] = { name, email, password, role };
     } else {
-      this.registeredUsers.push({ name, email, password, role: 'student' });
+      this.registeredUsers.push({ name, email, password, role });
     }
 
     localStorage.setItem('bru_registered_users', JSON.stringify(this.registeredUsers));
-    alert('สมัครสมาชิกเรียบร้อยแล้ว! เข้าสู่ระบบอัตโนมัติ');
-    this.performLogin(name, email, 'student');
+    alert(`สมัครสมาชิกเรียบร้อยแล้วในฐานะ ${role === 'instructor' ? 'อาจารย์ผู้สอน' : 'นักศึกษา'}! เข้าสู่ระบบอัตโนมัติ`);
+    this.performLogin(name, email, role);
   }
 
   performLogin(name, email, role) {
@@ -752,6 +822,16 @@ class ReadSkillsApp {
     if (!this.isLoggedIn) {
       this.renderLoginView();
       return;
+    }
+
+    // Role Security Guard: Only Teacher/Instructor can access Teacher Report Dashboard
+    if (viewName === 'admin') {
+      const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
+      if (!isTeacher) {
+        alert('หน้านี้สำหรับบัญชีอาจารย์ผู้สอนเท่านั้น (Instructor / Teacher Only)\nกรุณาเข้าสู่ระบบด้วยบัญชีอาจารย์เพื่อดูรายงาน');
+        this.navigate('dashboard');
+        return;
+      }
     }
 
     const savedScrollY = window.scrollY;
