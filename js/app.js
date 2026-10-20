@@ -5755,7 +5755,7 @@ class ReadSkillsApp {
       this.srState.streak = 0;
     }
 
-    this.navigate('practice', false);
+    this.navigate('practice', true);
   }
 
   nextSpeedRaceQuestion() {
@@ -5771,7 +5771,7 @@ class ReadSkillsApp {
     } else {
       this.srState.currentQuestionIdx++;
       this.startSpeedRaceTimer();
-      this.navigate('practice', false);
+      this.navigate('practice', true);
     }
   }
 
@@ -6504,11 +6504,20 @@ class ReadSkillsApp {
               <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">Instructor Portal</span>
               <span class="text-xs text-purple-700 font-semibold">&bull; Section D Integrated Scores</span>
             </div>
-            <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1 flex items-center space-x-2">
-              <i data-lucide="shield-check" class="w-6 h-6 text-amber-600 shrink-0"></i>
-              <span>Teacher Report Dashboard (รายงานคะแนนและชั่วโมงการเรียน)</span>
-            </h2>
-            <p class="text-xs text-slate-600 mt-0.5">
+            <div class="mt-1.5 flex items-start space-x-2.5">
+              <div class="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 text-amber-700 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
+                <i data-lucide="shield-check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900 leading-tight">
+                  Teacher Report Dashboard
+                </h2>
+                <p class="text-sm sm:text-base font-bold text-purple-900 mt-0.5">
+                  (รายงานคะแนนและชั่วโมงการเรียน)
+                </p>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 mt-1">
               ติดตามเวลาออนไลน์และผลคะแนนแบบทดสอบประจำบทเรียน <strong>Unit Comprehension Quizzes (Units 1–6)</strong> ข้อละ 20 ข้อ
             </p>
           </div>
