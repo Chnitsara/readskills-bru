@@ -5645,7 +5645,26 @@ class ReadSkillsApp {
       ? [...ReadSkillsData.speedRaceBank]
       : [];
 
-    this.srState.questions = bank.sort(() => Math.random() - 0.5);
+    // Fisher-Yates shuffle helper
+    const shuffle = (arr) => {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    };
+
+    // Shuffle question order AND the position of the correct option in every question
+    this.srState.questions = shuffle(bank).map(q => {
+      const tagged = q.options.map((text, idx) => ({ text, isCorrect: idx === q.answer }));
+      const mixed = shuffle(tagged);
+      return {
+        ...q,
+        options: mixed.map(o => o.text),
+        answer: mixed.findIndex(o => o.isCorrect)
+      };
+    });
     this.srState.currentQuestionIdx = 0;
     this.srState.score = 0;
     this.srState.streak = 0;

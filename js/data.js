@@ -7932,7 +7932,8 @@ window.ReadSkillsData = {
       "options": [
         "Miniature native forests planted in cities provide fast, effective cooling and environmental benefits.",
         "Parking lots are the most expensive type of real estate in modern metropolitan centers.",
-        "Volunteer tree planters refuse to accept government funding from municipal councils."
+        "Volunteer tree planters refuse to accept government funding from municipal councils.",
+        "Pocket forests grow about ten times faster than normal woods."
       ],
       "answer": 0,
       "explanation": "The passage explains how dense urban micro-forests cool neighborhoods and absorb carbon, offering an effective environmental solution."
@@ -7945,7 +7946,8 @@ window.ReadSkillsData = {
       "options": [
         "Disconnecting from electronic screens before bedtime helps restore natural sleep cycles disrupted by artificial blue light.",
         "Human beings are completely incapable of producing melatonin without purchasing expensive pharmaceuticals.",
-        "Sunlight during morning hours causes severe neurological damage to circadian pacemaker cells."
+        "Sunlight during morning hours causes severe neurological damage to circadian pacemaker cells.",
+        "Melatonin is a hormone that the brain produces at night."
       ],
       "answer": 0,
       "explanation": "The text explains how screen light suppresses melatonin and why powering down devices before bed restores restorative sleep."
@@ -7958,7 +7960,8 @@ window.ReadSkillsData = {
       "options": [
         "Edible seaweed film offers a promising, rapidly dissolvable alternative to persistent single-use plastic packaging.",
         "Marine algae is poisonous to sea turtles and should never be harvested for commercial manufacturing.",
-        "Traditional petroleum plastic containers decompose completely in kitchen sinks within two minutes."
+        "Traditional petroleum plastic containers decompose completely in kitchen sinks within two minutes.",
+        "Seaweed film can protect dry snacks such as crackers and chips."
       ],
       "answer": 0,
       "explanation": "The passage highlights seaweed-derived packaging as a revolutionary eco-friendly replacement for stubborn plastic waste."
@@ -7971,7 +7974,8 @@ window.ReadSkillsData = {
       "options": [
         "Building dedicated, separated bicycle expressways encourages bike commuting and reduces traffic congestion.",
         "Bicycles cause more traffic delays than delivery trucks and municipal transit buses combined.",
-        "Concrete highway bridges are too fragile to support two-wheeled commuter bicycles."
+        "Concrete highway bridges are too fragile to support two-wheeled commuter bicycles.",
+        "Rush-hour road delays dropped by eighteen percent in some European capitals."
       ],
       "answer": 0,
       "explanation": "The core thesis is that isolated bicycle highways successfully increase cycling and ease road gridlock."
@@ -7984,7 +7988,8 @@ window.ReadSkillsData = {
       "options": [
         "Community repair workshops extend appliance lifespans, save household money, and prevent landfill waste.",
         "Modern home appliances are intentionally built to explode after three months of light use.",
-        "Volunteer electricians demand hourly wages before inspecting malfunctioning kitchen toasters."
+        "Volunteer electricians demand hourly wages before inspecting malfunctioning kitchen toasters.",
+        "Seven out of ten broken items are fixed at Repair Cafés."
       ],
       "answer": 0,
       "explanation": "The passage demonstrates how collaborative community repair events reduce waste and cut expenses by fixing broken goods."
@@ -7997,7 +8002,8 @@ window.ReadSkillsData = {
       "options": [
         "Community solar cooperatives make clean renewable energy affordable and accessible through pooled investments.",
         "Warehouse roofs are structurally dangerous and should never be fitted with glass solar panels.",
-        "Solar energy costs thirty percent more than electricity generated from traditional coal power plants."
+        "Solar energy costs thirty percent more than electricity generated from traditional coal power plants.",
+        "Large solar panels can be installed on the roofs of neighborhood warehouses."
       ],
       "answer": 0,
       "explanation": "The text shows that collective solar initiatives allow neighbors to enjoy cheaper green energy through shared investment."
@@ -8010,7 +8016,8 @@ window.ReadSkillsData = {
       "options": [
         "Short, regular micro-breaks throughout the workday prevent mental exhaustion and enhance task accuracy.",
         "Looking through office windows permanently damages distant visual focus and causes eye strain.",
-        "Employers should cancel all lunch breaks and require non-stop typing for eight hours."
+        "Employers should cancel all lunch breaks and require non-stop typing for eight hours.",
+        "Looking out of a window for two minutes relaxes the eye muscles."
       ],
       "answer": 0,
       "explanation": "The passage emphasizes that brief 2-minute pauses refresh focus, relieve strain, and boost performance."
@@ -8023,7 +8030,8 @@ window.ReadSkillsData = {
       "options": [
         "Indoor vertical farming dramatically increases crop yields while using a fraction of the land and water.",
         "Salad greens grown without soil contain zero nutritional vitamins and taste like industrial plastic.",
-        "Traditional farming requires zero water and is far more productive than vertical warehouse towers."
+        "Traditional farming requires zero water and is far more productive than vertical warehouse towers.",
+        "Vertical farms use water mist instead of soil to feed their plants."
       ],
       "answer": 0,
       "explanation": "The passage contrasts traditional farming with vertical towers that save 95% water and produce 40 times more food per meter."
@@ -8036,7 +8044,8 @@ window.ReadSkillsData = {
       "options": [
         "Packaging-free grocery stores eliminate disposable plastic waste while saving shoppers money on food staples.",
         "Bringing reusable glass containers into supermarkets is strictly prohibited by international health laws.",
-        "Disposable plastic packaging accounts for zero percent of total consumer grocery expenditures."
+        "Disposable plastic packaging accounts for zero percent of total consumer grocery expenditures.",
+        "Customers at zero-waste markets bring their own glass jars and cloth bags."
       ],
       "answer": 0,
       "explanation": "The central point is that zero-waste markets cut plastic pollution and lower grocery costs for consumers."
@@ -8049,7 +8058,8 @@ window.ReadSkillsData = {
       "options": [
         "Metropolitan rooftop gardens provide a chemical-free, diverse haven where honeybees thrive better than on pesticide-treated farmland.",
         "Honeybees in cities feed exclusively on discarded sugary soda cans left in public waste bins.",
-        "Rural farmlands have zero chemical pesticides and represent the safest environment for honeybees."
+        "Rural farmlands have zero chemical pesticides and represent the safest environment for honeybees.",
+        "City parks and balconies have flowers that bloom in all four seasons."
       ],
       "answer": 0,
       "explanation": "The passage highlights how urban floral biodiversity and lack of heavy farm chemicals make cities an unexpected sanctuary for bees."
