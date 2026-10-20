@@ -234,6 +234,21 @@ class ReadSkillsApp {
       lastScore: savedS5QuizScore ? parseInt(savedS5QuizScore) : null
     };
 
+    // Module 2: Reading Strategies Unit 6 State (Integrated Reading Practice & 30-Question Cumulative Quiz)
+    this.strat6ActiveHighlightTool = 'yellow';
+    this.strat6HighlightColors = {};
+    const savedS6QuizScore = localStorage.getItem('bru_strat6_quiz_score');
+    this.strat6QuizState = {
+      passageIndex: 0,
+      questionIndex: 0,
+      answers: {},
+      passageScores: [0, 0, 0],
+      passageSubmitted: [false, false, false],
+      currentFeedback: null,
+      isCompleted: false,
+      lastScore: savedS6QuizScore ? parseInt(savedS6QuizScore) : null
+    };
+
     this.init();
   }
 
@@ -3020,7 +3035,8 @@ class ReadSkillsApp {
           (unit.unitNumber === 2 && ReadSkillsData.strategyUnit2Quiz) ||
           (unit.unitNumber === 3 && ReadSkillsData.strategyUnit3Quiz) ||
           (unit.unitNumber === 4 && ReadSkillsData.strategyUnit4Quiz) ||
-          (unit.unitNumber === 5 && ReadSkillsData.strategyUnit5Quiz)
+          (unit.unitNumber === 5 && ReadSkillsData.strategyUnit5Quiz) ||
+          (unit.unitNumber === 6 && ReadSkillsData.strategyUnit6Quiz)
         ) {
           return this.renderStrategyUnit1QuizStep(step);
         }
@@ -4201,8 +4217,155 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2, 3, 4 & 5) ------------------- */
+  /* ------------------- Strategy Unit 6 Interactive Methods (B2 Capstone) ------------------- */
+
+  submitStrat6Pretest() {
+    const key = [0, 1, 1];
+    const exps = [
+      "ข้อ 1: คำว่า 'that is to say' เป็นสัญญาณบอกคำจำกัดความอย่างเป็นทางการของ Unit 2 (Definition Context Clues)",
+      "ข้อ 2: คำเชื่อม 'consequently' บ่งชี้ความสัมพันธ์แบบเหตุและผล (Cause and Effect) ของ Unit 4",
+      "ข้อ 3: ผู้อ่านระดับ B2 ที่เชี่ยวชาญจะผสานรวมหลายกลยุทธ์เข้าด้วยกัน (Orchestrating Multiple Strategies) และสร้างผังความคิดเชื่อมโยงข้อมูล"
+    ];
+    let score = 0;
+    const details = [];
+    for (let i = 0; i < 3; i++) {
+      const checked = document.querySelector(`input[name="s6-pre-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      details.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat6-pretest-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลการทดสอบ Pre-Test (Unit 6): ${score} / 3 คะแนน (${Math.round((score / 3) * 100)}%)</div>${details.join('')}`;
+    }
+  }
+
+  checkStrat6Match(scenarioIdx, choiceStrat) {
+    const keys = { 1: 1, 2: 3, 3: 5 };
+    const exps = {
+      1: "ต้องการหาตัวเลขปี ค.ศ. ภายใน 15 วินาที -> ใช้ Unit 1 (Scanning for specific information)",
+      2: "สงสัยว่าสรรพนาม 'these innovative solutions' หมายถึงอะไร -> ใช้ Unit 3 (Reference Tracing)",
+      3: "มีตัวเลขและคำใบ้ แต่ไม่บอกผลลัพธ์ตรงๆ -> ใช้ Unit 5 (Making Inferences / Reading Between the Lines)"
+    };
+    const fb = document.getElementById(`strat6-match-fb-${scenarioIdx}`);
+    if (!fb) return;
+    fb.style.display = 'block';
+    const isCorrect = choiceStrat === keys[scenarioIdx];
+    if (isCorrect) {
+      fb.style.color = '#15803D';
+      fb.innerHTML = `<strong>✅ ถูกต้อง:</strong> ${exps[scenarioIdx]}`;
+    } else {
+      fb.style.color = '#B91C1C';
+      fb.innerHTML = `<strong>❌ ยังไม่ตรง:</strong> ลองทบทวนว่า ${exps[scenarioIdx]}`;
+    }
+  }
+
+  setStrat6HighlightTool(color) {
+    this.strat6ActiveHighlightTool = color;
+    const tools = ['yellow', 'green', 'blue', 'purple', 'red'];
+    tools.forEach(c => {
+      const btn = document.getElementById(`strat6-tool-${c}`);
+      if (btn) {
+        btn.style.boxShadow = c === color ? '0 0 0 3px rgba(15,23,42,0.28)' : 'none';
+      }
+    });
+  }
+
+  highlightStrat6Sentence(sentIdx, forcedColor) {
+    const color = forcedColor || this.strat6ActiveHighlightTool || 'yellow';
+    if (!this.strat6HighlightColors) this.strat6HighlightColors = {};
+    this.strat6HighlightColors[sentIdx] = color;
+
+    const colorStyles = {
+      yellow: { bg: '#FEF08A', border: '2px solid #CA8A04', desc: 'Unit 1: Main Idea & Problem-Solution Statement' },
+      green: { bg: '#BBF7D0', border: '2px solid #16A34A', desc: 'Unit 2: Vocabulary in Context (e.g. mitigate, congestion)' },
+      blue: { bg: '#BAE6FD', border: '2px solid #0284C7', desc: 'Unit 3: Reference Tracing (These dedicated green corridors -> bicycle highways)' },
+      purple: { bg: '#E9D5FF', border: '2px solid #9333EA', desc: 'Unit 4: Text Structure & Contrast Signal (However... because...)' },
+      red: { bg: '#FECDD3', border: '2px solid #E11D48', desc: 'Unit 5: Inference & Paraphrase (Cyclists brought 16% revenue gain)' }
+    };
+
+    const el = document.getElementById(`strat6-hl-sent-${sentIdx}`);
+    if (el && colorStyles[color]) {
+      el.style.background = colorStyles[color].bg;
+      el.style.borderBottom = colorStyles[color].border;
+    }
+
+    const expected = {
+      0: { role: 'yellow', desc: 'Sentence 1 เป็น Main Idea ของ Unit 1 (การสร้างทางจักรยานเพื่อลดรถติดและมลพิษ)' },
+      1: { role: 'blue', desc: 'Sentence 2 เป็น Reference Tracing ของ Unit 3 (These corridors อ้างอิงถึง bicycle highways ในประโยคแรก)' },
+      2: { role: 'purple', desc: 'Sentence 3 เป็น Contrast & Cause-Effect ของ Unit 4 (คำเชื่อม However และ because)' },
+      3: { role: 'red', desc: 'Sentence 4 เป็น Inference Data ของ Unit 5 (รายได้ร้านค้าเพิ่ม 16% บ่งชี้เป็นนัยว่าคนขี่จักรยานช่วยกระตุ้นเศรษฐกิจ)' }
+    };
+
+    const fb = document.getElementById('strat6-hl-feedback');
+    if (fb && expected[sentIdx]) {
+      const ok = expected[sentIdx].role === color;
+      fb.style.display = 'block';
+      fb.style.background = ok ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = ok ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<strong>${ok ? '✅ วิเคราะห์ตรงจุด' : 'ℹ️ คำแนะนำ'}:</strong> ${expected[sentIdx].desc}`;
+    }
+  }
+
+  resetStrat6Highlights() {
+    this.strat6HighlightColors = {};
+    for (let i = 0; i < 4; i++) {
+      const el = document.getElementById(`strat6-hl-sent-${i}`);
+      if (el) {
+        el.style.background = 'transparent';
+        el.style.borderBottom = 'none';
+      }
+    }
+    const fb = document.getElementById('strat6-hl-feedback');
+    if (fb) fb.style.display = 'none';
+  }
+
+  revealStrat6Highlights() {
+    const key = { 0: 'yellow', 1: 'blue', 2: 'purple', 3: 'red' };
+    Object.keys(key).forEach(k => this.highlightStrat6Sentence(Number(k), key[k]));
+    const fb = document.getElementById('strat6-hl-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '<strong>เฉลยผังกลยุทธ์บูรณาการ 5 สี:</strong><br>🟡 Sentence 1 = Unit 1 (Main Idea)<br>🔵 Sentence 2 = Unit 3 (Reference Tracing: These dedicated corridors)<br>🟣 Sentence 3 = Unit 4 (Text Structure: However, because)<br>🔴 Sentence 4 = Unit 5 (Inference Evidence: 16% revenue gain)';
+    }
+  }
+
+  submitStrat6Practice(choiceIdx) {
+    const fb = document.getElementById('strat6-practice-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    if (choiceIdx === 0) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '<strong>✅ วินิจฉัยถูกต้องยอดเยี่ยม (Diagnostic Error Analysis):</strong> ปัญหานี้เกิดจาก Unit 3 (Reference Tracing) เพราะผู้อ่านมองข้ามคำเชื่อมแย้ง "Unlike" ทำให้โยงสรรพนาม "these indigenous seeds" ผิดกลุ่ม โดยความเป็นจริงต้องโยงไปยัง "traditional heritage varieties"';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #EF4444';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '<strong>❌ ยังไม่ใช่วิธีวินิจฉัยที่ถูกต้อง:</strong> การเข้าใจความหมายของกลุ่มคำสรรพนามผิดพลาดเป็นปัญหาเฉพาะเจาะจงของ Unit 3 (Reference Words) ควรตรวจสอบคำนามข้างหน้าที่สรรพนามแทนค่า';
+    }
+  }
+
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2, 3, 4, 5 & 6) ------------------- */
   getActiveStrategyQuizContext() {
+    if (this.currentStrategyUnit === 6 && ReadSkillsData.strategyUnit6Quiz) {
+      return {
+        unitNum: 6,
+        quizData: ReadSkillsData.strategyUnit6Quiz,
+        state: this.strat6QuizState,
+        storageKey: 'bru_strat6_quiz_score'
+      };
+    }
     if (this.currentStrategyUnit === 5 && ReadSkillsData.strategyUnit5Quiz) {
       return {
         unitNum: 5,
@@ -4961,7 +5124,9 @@ class ReadSkillsApp {
       isCompleted: false,
       lastScore: saved ? parseInt(saved) : null
     };
-    if (unitNum === 5) {
+    if (unitNum === 6) {
+      this.strat6QuizState = fresh;
+    } else if (unitNum === 5) {
       this.strat5QuizState = fresh;
     } else if (unitNum === 4) {
       this.strat4QuizState = fresh;

@@ -742,100 +742,98 @@ window.ReadSkillsData = {
     {
       "id": "strat-u6",
       "unitNumber": 6,
-      "title": "Integrated Strategy Review",
-      "thaiTitle": "การทบทวนกลยุทธ์แบบบูรณาการ",
-      "scope": "Applying multiple strategies together across Pre-reading, While-reading, and Post-reading stages",
+      "title": "Integrated Reading Practice: Reviewing and Orchestrating Reading Strategies",
+      "thaiTitle": "การประยุกต์ใช้กลยุทธ์การอ่านแบบบูรณาการ: การทบทวนและผสานรวมทุกกลยุทธ์",
       "cefr": "B2",
-      "icon": "check-check",
+      "scope": "Orchestrating Units 1–5 (Main Ideas, Context Clues, References, Text Structures, Inferences & Paraphrasing), 5-Colour Annotation, Strategy Blueprint & 30-Question Cumulative Quiz (6 Hours / 2 Weeks)",
+      "icon": "layers",
+      "color": "purple",
       "steps": [
         {
           "stepNum": 1,
           "title": "What is the strategy?",
           "thaiTitle": "คืออะไร?",
-          "icon": "help-circle",
-          "content": "Integrated Strategy Review is the holistic orchestration and dynamic synthesis of all five core reading strategies across the Three-Phase Reading Model:\n\n1. Strategy Repertoire:\n• Previewing & Predicting (Unit 1): Surveying structural text features to anticipate topics and activate schema.\n• Skimming & Scanning (Unit 2): Skimming for general gist and scanning for targeted empirical data.\n• Using Context Clues (Unit 3): Deciphering unknown vocabulary through definitions, synonyms, contrasts, and examples.\n• Identifying Text Organization (Unit 4): Recognizing structural patterns and tracing cohesive pronoun references.\n• Making Inferences (Unit 5): Synthesizing explicit text clues with background schema to read between the lines.\n\n2. The Three-Phase Framework:\n• Pre-Reading Stage: Previewing titles, subheadings, diagrams; activating schema; formulating initial predictions.\n• While-Reading Stage: Skimming for macro structure; scanning for facts; solving unknown vocabulary with context clues; tracking text organization; inferring unstated meanings.\n• Post-Reading Stage: Verifying initial predictions; synthesizing core takeaways; evaluating authorial purpose and tone; formulating concise written summaries.",
-          "thaiExplanation": "การทบทวนกลยุทธ์แบบบูรณาการ คือการนำกลยุทธ์การอ่านทั้ง 5 ทักษะมาปรับใช้ร่วมกันอย่างยืดหยุ่นและเป็นระบบตลอด 3 ขั้นตอนการอ่าน: 1. ขั้นก่อนอ่าน (Pre-Reading) สำรวจและคาดเดา 2. ขั้นระหว่างอ่าน (While-Reading) กวาดสายตา แกะรอยบริบท วิเคราะห์โครงสร้าง และอนุมานความหมาย และ 3. ขั้นหลังอ่าน (Post-Reading) ตรวจสอบการคาดเดาและสังเคราะห์สรุปใจความสำคัญ"
+          "content": "Integrated Reading Practice is the advanced skill of orchestrating all five foundational reading strategies learned in Units 1 through 5 simultaneously. Proficient B2 readers do not use strategies in isolation; instead, they preview headings and skim for main ideas (Unit 1), unlock unfamiliar vocabulary using context clues (Unit 2), track pronouns and reference words across paragraphs (Unit 3), recognize text organization patterns and transition signals (Unit 4), and read between the lines to make evidence-based inferences and accurate paraphrases (Unit 5). Synthesizing these tools into a unified Reading Strategy Blueprint empowers readers to master complex, authentic texts with speed and confidence.",
+          "thaiExplanation": "การประยุกต์ใช้กลยุทธ์การอ่านแบบบูรณาการ (Integrated Reading Practice) คือการผสานรวมกลยุทธ์การอ่านทั้ง 5 บทเรียนเข้าด้วยกันอย่างเป็นระบบ ได้แก่ บทที่ 1: การสำรวจและหาใจความสำคัญ (Previewing & Skimming), บทที่ 2: การใช้บริบทช่วยเดาความหมายคำศัพท์ (Context Clues), บทที่ 3: การแกะรอยคำอ้างอิงและสรรพนาม (Reference Words), บทที่ 4: การระบุรูปแบบโครงสร้างบทอ่าน (Text Organization), และบทที่ 5: การอนุมานความหมายโดยนัยและการถอดความ (Inference & Paraphrasing) ในระดับภาษา B2 ผู้อ่านจะไม่ใช้กลยุทธ์แยกส่วน แต่จะบูรณาการเครื่องมือทั้งหมดพร้อมกันเพื่อวิเคราะห์บทความขนาดยาวได้อย่างแม่นยำ",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Course & Unit Banner -->\n          <div style=\"background:linear-gradient(135deg,#3B0764 0%,#581C87 60%,#4338CA 100%); color:#fff; border-radius:16px; padding:1.25rem 1.4rem; box-shadow:0 10px 25px -5px rgba(88,28,135,0.28);\">\n            <div style=\"display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n              <span style=\"background:rgba(255,255,255,0.18); padding:0.25rem 0.7rem; border-radius:999px; font-size:0.75rem; font-weight:700; letter-spacing:0.04em;\">\n                UNIT 6 (CAPSTONE) • COURSE 2031103 • CEFR B2\n              </span>\n              <span style=\"font-size:0.78rem; color:#E9D5FF; font-weight:600;\">Time Allocation: 6 Hours (2 Weeks)</span>\n            </div>\n            <h3 style=\"font-size:1.22rem; font-weight:800; margin:0 0 0.25rem 0;\">Unit 6: Integrated Reading Practice</h3>\n            <p style=\"font-size:0.9rem; color:#F3E8FF; margin:0;\">Topic: Reviewing and Orchestrating Reading Strategies (การบูรณาการกลยุทธ์การอ่านทั้ง 5 บทสู่การอ่านระดับสากล B2)</p>\n          </div>\n\n          <!-- Mind Map of the 5 Integrated Strategies -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:0.8rem;\">\n            <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:12px; padding:0.9rem;\">\n              <div style=\"font-weight:800; color:#854D0E; font-size:0.88rem; margin-bottom:0.3rem;\">🟡 Unit 1: Main Ideas</div>\n              <p style=\"font-size:0.8rem; color:#713F12; line-height:1.5; margin:0;\">\n                Previewing, Skimming, Scanning & Topic Sentences (จับประเด็นหลักและจุดประสงค์ผู้เขียน)\n              </p>\n            </div>\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:0.9rem;\">\n              <div style=\"font-weight:800; color:#166534; font-size:0.88rem; margin-bottom:0.3rem;\">🟢 Unit 2: Context Clues</div>\n              <p style=\"font-size:0.8rem; color:#14532D; line-height:1.5; margin:0;\">\n                Definitions, Synonyms, Antonyms, Examples & Contrast clues (ปลดล็อกศัพท์ยากในบริบท)\n              </p>\n            </div>\n            <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:12px; padding:0.9rem;\">\n              <div style=\"font-weight:800; color:#1E40AF; font-size:0.88rem; margin-bottom:0.3rem;\">🔵 Unit 3: References</div>\n              <p style=\"font-size:0.8rem; color:#1E3A8A; line-height:1.5; margin:0;\">\n                Pronouns, Demonstratives, Relatives & Substitute words (แกะรอยความเชื่อมโยงของประโยค)\n              </p>\n            </div>\n            <div style=\"background:#FAF5FF; border:1.5px solid #D8B4FE; border-radius:12px; padding:0.9rem;\">\n              <div style=\"font-weight:800; color:#6B21A8; font-size:0.88rem; margin-bottom:0.3rem;\">🟣 Unit 4: Text Structure</div>\n              <p style=\"font-size:0.8rem; color:#581C87; line-height:1.5; margin:0;\">\n                Cause-Effect, Compare-Contrast, Sequence, Problem-Solution (เข้าใจแผนผังความคิด)\n              </p>\n            </div>\n            <div style=\"background:#FFF1F2; border:1.5px solid #FECDD3; border-radius:12px; padding:0.9rem;\">\n              <div style=\"font-weight:800; color:#BE123C; font-size:0.88rem; margin-bottom:0.3rem;\">🔴 Unit 5: Inferences</div>\n              <p style=\"font-size:0.8rem; color:#9F1239; line-height:1.5; margin:0;\">\n                Reading Between the Lines & Paraphrasing without copying (อ่านตีความและถอดความอย่างแม่นยำ)\n              </p>\n            </div>\n          </div>\n\n          <!-- Diagnostic Pre-Test (3 Items) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">🧭 Pre-Reading Activity 1: Diagnostic Pre-Test (3 ข้อ)</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">ทดสอบความพร้อมในการเลือกใช้กลยุทธ์การอ่านให้ตรงกับปัญหาในการอ่าน (Strategy Selection)</p>\n              </div>\n              <span style=\"background:#F3E8FF; color:#6B21A8; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Pre-Reading Stage</span>\n            </div>\n\n            <div style=\"display:grid; gap:0.9rem;\">\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  1. เมื่อคุณพบคำศัพท์เทคนิคที่ไม่คุ้นเคย เช่น \"biodegradable\" ในประโยคที่มีคำว่า \"that is to say, naturally decomposed by bacteria\" คุณควรเรียกใช้กลยุทธ์ใด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-1\" value=\"0\"> A. Unit 2: Definition Context Clues (การใช้สัญญาณบอกคำจำกัดความ)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-1\" value=\"1\"> B. Unit 1: Scanning for numbers (การกวาดสายตาหาตัวเลข)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-1\" value=\"2\"> C. Unit 4: Sequence pattern (การเรียงลำดับเวลา)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  2. ประโยค: \"City buses burned twenty percent less diesel; <strong>consequently</strong>, urban smog indices dropped.\" คำเชื่อม <strong>consequently</strong> บ่งชี้โครงสร้างบทอ่านแบบใด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-1\" value=\"0\"> A. Compare and Contrast (เปรียบเทียบความต่าง)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-2\" value=\"1\"> B. Cause and Effect (เหตุและผล — ดังนั้น)</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-1\" value=\"2\"> C. Chronological Sequence (ลำดับเหตุการณ์)</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  3. ผู้อ่านระดับ B2 ที่เชี่ยวชาญจะทำสิ่งใดเมื่ออ่านบทความขนาดยาวที่มีความซับซ้อน?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-3\" value=\"0\"> A. แปลคำศัพท์ทุกคำลงในสมุดก่อนเริ่มอ่าน</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-3\" value=\"1\"> B. บูรณาการกลยุทธ์หลายด้านพร้อมกัน (Orchestrating Multiple Strategies) และสร้างผังความคิดสรุปความเชื่อมโยง</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s6-pre-3\" value=\"2\"> C. อ่านเฉพาะย่อหน้าสุดท้ายแล้วเดาเนื้อเรื่องทั้งหมด</label>\n                </div>\n              </div>\n            </div>\n\n            <div style=\"margin-top:1rem; display:flex; justify-content:flex-end;\">\n              <button onclick=\"app.submitStrat6Pretest()\" style=\"background:#6B21A8; color:#fff; border:none; padding:0.5rem 1.25rem; border-radius:10px; font-size:0.82rem; font-weight:700; cursor:pointer;\">\n                Submit Pre-Test (ส่งคำตอบแบบทดสอบ)\n              </button>\n            </div>\n            <div id=\"strat6-pretest-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n\n          <!-- Pre-Reading Strategy Matching Warm-up (Activity 6.1.2) -->\n          <div style=\"background:#FAF5FF; border:1.5px solid #D8B4FE; border-radius:16px; padding:1.2rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;\">\n              <h4 style=\"font-size:1rem; font-weight:800; color:#581C87; margin:0;\">🧩 Strategy Matching Warm-up (กิจกรรมจับคู่กลยุทธ์)</h4>\n              <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Lesson Plan 6.1.2</span>\n            </div>\n            <p style=\"font-size:0.84rem; color:#4C1D95; line-height:1.6; margin:0 0 0.8rem 0;\">\n              อ่านสถานการณ์ปัญหาในการอ่าน 3 ข้อต่อไปนี้ แล้วจับคู่ว่าควรใช้ <strong>กลยุทธ์ใดจาก Units 1–5</strong> แก้ไขปัญหาได้ดีที่สุด:\n            </p>\n\n            <div style=\"display:grid; gap:0.8rem;\">\n              <div style=\"background:#fff; border:1px solid #C084FC; border-radius:10px; padding:0.8rem; font-size:0.83rem;\">\n                <div style=\"font-weight:700; color:#3B0764; margin-bottom:0.3rem;\">\n                  สถานการณ์ที่ 1: \"คุณต้องหาว่าบริษัทก่อตั้งขึ้นในปี ค.ศ. ใด ภายในเวลาไม่เกิน 15 วินาที\"\n                </div>\n                <div style=\"display:flex; gap:0.5rem; flex-wrap:wrap;\">\n                  <button onclick=\"app.checkStrat6Match(1, 1)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 1: Scanning</button>\n                  <button onclick=\"app.checkStrat6Match(1, 3)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 3: References</button>\n                  <button onclick=\"app.checkStrat6Match(1, 5)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 5: Paraphrasing</button>\n                </div>\n                <div id=\"strat6-match-fb-1\" style=\"display:none; margin-top:0.4rem; font-size:0.8rem;\"></div>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #C084FC; border-radius:10px; padding:0.8rem; font-size:0.83rem;\">\n                <div style=\"font-weight:700; color:#3B0764; margin-bottom:0.3rem;\">\n                  สถานการณ์ที่ 2: \"คุณอ่านเจอสรรพนาม 'these innovative solutions' ในย่อหน้า 3 แล้วสงสัยว่าหมายถึงอะไร\"\n                </div>\n                <div style=\"display:flex; gap:0.5rem; flex-wrap:wrap;\">\n                  <button onclick=\"app.checkStrat6Match(2, 2)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 2: Context Clues</button>\n                  <button onclick=\"app.checkStrat6Match(2, 3)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 3: Reference Tracing</button>\n                  <button onclick=\"app.checkStrat6Match(2, 4)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 4: Text Structure</button>\n                </div>\n                <div id=\"strat6-match-fb-2\" style=\"display:none; margin-top:0.4rem; font-size:0.8rem;\"></div>\n              </div>\n\n              <div style=\"background:#fff; border:1px solid #C084FC; border-radius:10px; padding:0.8rem; font-size:0.83rem;\">\n                <div style=\"font-weight:700; color:#3B0764; margin-bottom:0.3rem;\">\n                  สถานการณ์ที่ 3: \"บทอ่านไม่บอกผลลัพธ์ตรงๆ แต่ให้ตัวเลขกำไรและคำว่า 'celebratory banquet' มา\"\n                </div>\n                <div style=\"display:flex; gap:0.5rem; flex-wrap:wrap;\">\n                  <button onclick=\"app.checkStrat6Match(3, 1)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 1: Skimming</button>\n                  <button onclick=\"app.checkStrat6Match(3, 4)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 4: Sequence</button>\n                  <button onclick=\"app.checkStrat6Match(3, 5)\" style=\"background:#EDE9FE; border:1px solid #A855F7; padding:0.35rem 0.8rem; border-radius:6px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#581C87;\">Unit 5: Making Inferences</button>\n                </div>\n                <div id=\"strat6-match-fb-3\" style=\"display:none; margin-top:0.4rem; font-size:0.8rem;\"></div>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 2,
           "title": "Why use it?",
           "thaiTitle": "ทำไมต้องใช้?",
-          "icon": "lightbulb",
-          "content": "Mastering integrated strategy orchestration provides profound academic and intellectual advantages:\n1. Fosters Autonomous, Self-Monitoring Readers: Transforms students from dependent readers who need constant word-by-word translation into autonomous scholars capable of tackling complex English materials independently.\n2. Delivers Mastery in High-Stakes Exams: Standardized standardized English exams, TOEIC, TOEFL, and IELTS do not test strategies in isolation; high scores require seamless switching between skimming, scanning, context clues, and inferencing under time constraints.\n3. Prevents Cognitive Overload in Dense Academic Literature: Enables students to absorb 20-page research journal articles, thesis literature reviews, and policy documents without fatigue or confusion.\n4. Long-Term Knowledge Retention: Engaging with texts through a multi-strategy workflow encodes information deeply into long-term cognitive structures rather than superficial short-term memory.",
-          "thaiExplanation": "ช่วยพัฒนาผู้เรียนให้เป็นผู้อ่านอิสระ (Autonomous Reader) ที่สามารถกำกับและตรวจสอบความเข้าใจของตนเองได้ เป็นหัวใจสำคัญในการทำข้อสอบวัดระดับภาษาอังกฤษระดับสูง (TOEIC, TOEFL, IELTS) ช่วยให้อ่านบทความวิจัยขนาดยาวได้อย่างมีประสิทธิภาพโดยไม่เหนื่อยล้า และช่วยจดจำเนื้อหาได้อย่างลึกซึ้งและยาวนาน"
+          "content": "Integrating and orchestrating reading strategies provides four decisive advantages for B2 English learners: 1. Authentic Reading Agility: Real-world articles, professional reports, and academic journals never test one strategy in isolation; readers must switch seamlessly between skimming, tracing references, and deducing implied ideas. 2. Diagnostic Error Analysis: When comprehension fails, an integrated mindset allows you to pinpoint the exact failure point (was it an unfamiliar word, a misidentified pronoun, or a missed contrast signal?) rather than giving up. 3. Metacognitive Mastery: Self-monitoring your reading progress builds long-term reading stamina and intellectual independence. 4. Summative Assessment Excellence: Comprehensive B2 examinations require synthesizing multiple textual layers across diverse reading genres.",
+          "thaiExplanation": "ทำไมต้องบูรณาการกลยุทธ์การอ่าน? (1) ความคล่องตัวในการอ่านบทความจริง: ในชีวิตจริง บทความวิชาการและข่าวสารสากลมักมีความซับซ้อน ผู้อ่านต้องสลับใช้กลยุทธ์ต่างๆ อย่างยืดหยุ่น (2) วินิจฉัยจุดบกพร่องของตนเองได้แม่นยำ (Error Analysis): เมื่ออ่านไม่เข้าใจ คุณจะรู้ทันทีว่าติดขัดที่คำศัพท์ (Unit 2), หลงคำอ้างอิง (Unit 3), หรือพลาดการอ่านระหว่างบรรทัด (Unit 5) (3) สร้างการเรียนรู้แบบรู้คิด (Metacognition): ควบคุมและประเมินพัฒนาการของตนเองได้อย่างมีเป้าหมาย และ (4) ทำคะแนนยอดเยี่ยมในแบบทดสอบประมวลผลปลายภาคระดับ B2",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem;\">\n            <div style=\"background:#fff; border-left:4px solid #8B5CF6; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#4C1D95; margin-bottom:0.4rem;\">🚀 1. Real-World Agility</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                อ่านบทความขนาดยาวระดับ B2 ได้อย่างคล่องแคล่ว รวดเร็ว และแม่นยำ โดยไม่ต้องเปิดพจนานุกรมทุกบรรทัด\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #10B981; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#065F46; margin-bottom:0.4rem;\">🩺 2. Error Self-Diagnosis</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                วิเคราะห์ข้อผิดพลาดในการทำข้อสอบได้อย่างตรงจุด สามารถเลือกเครื่องมือมาแก้ไขความเข้าใจผิดได้ทันที\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #3B82F6; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#1E40AF; margin-bottom:0.4rem;\">🧠 3. Metacognitive Control</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                รู้ว่าเมื่อใดควรอ่านเร็ว (Skimming) เมื่อใดควรอ่านละเอียด (Inference & Paraphrase) ตามวัตถุประสงค์ของการอ่าน\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #F59E0B; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#92400E; margin-bottom:0.4rem;\">🏆 4. Capstone Achievement</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                บรรลุเป้าหมายการประเมินผลสัมฤทธิ์ตามกรอบมาตรฐาน CEFR B2 ในแบบทดสอบรวม 30 ข้อ (Strategy Quiz)\n              </p>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 3,
           "title": "When do I use it?",
           "thaiTitle": "ใช้เมื่อไหร่?",
-          "icon": "calendar",
-          "content": "Orchestrate integrated reading strategies in these demanding academic and professional settings:\n• Conducting comprehensive literature reviews for undergraduate senior projects, independent studies, and graduate theses.\n• Sitting for high-stakes standardized English proficiency and standardized English examinations.\n• Analyzing multi-disciplinary academic textbooks, government policy whitepapers, and international industry reports.\n• Reading authentic literature, scholarly editorials, and peer-reviewed journals where complex arguments and technical data intersect.",
-          "thaiExplanation": "ใช้ในการค้นคว้าและทบทวนวรรณกรรมสำหรับงานวิจัยและวิทยานิพนธ์ การทำข้อสอบวัดระดับภาษาอังกฤษเพื่อสำเร็จการศึกษา การอ่านรายงานนโยบายภาครัฐและบทวิเคราะห์ระดับนานาชาติ และการอ่านตำราวิชาการระดับสูง"
+          "content": "Orchestrate all five strategies across the three reading phases systematically: During Pre-Reading, survey the macro features of the text (titles, visuals, subheadings) to form initial predictions and set your reading purpose. During While-Reading, dynamically activate micro strategies: use context clues for hard words, trace reference pronouns to avoid confusion, map text organization signals (cause-effect, compare-contrast), and pause to deduce implied meanings. During Post-Reading, synthesize all findings into a unified Reading Strategy Blueprint, conduct error analysis on challenging questions, and paraphrase key findings to verify complete retention.",
+          "thaiExplanation": "การจัดวางกลยุทธ์ตาม 3 ระยะของการอ่าน: (1) ระยะก่อนอ่าน (Pre-Reading): สำรวจภาพรวมบทอ่าน ตั้งเป้าหมาย และคาดการณ์เนื้อหา (2) ระยะระหว่างอ่าน (While-Reading): ใช้งานกลยุทธ์ย่อยอย่างคล่องตัว ไฮไลต์คำอ้างอิง ถอดรหัสคำศัพท์ สังเกตคำเชื่อมโครงสร้าง และอ่านระหว่างบรรทัด และ (3) ระยะหลังอ่าน (Post-Reading): สรุปแผนผังความคิด (Reading Strategy Blueprint), วิเคราะห์ข้อผิดพลาดเพื่อปรับปรุง, และถอดความประเด็นสำคัญเพื่อยืนยันความเข้าใจ",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;\">\n            <div style=\"background:#FAF5FF; border:1.5px solid #E9D5FF; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#7C3AED; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">1</span>\n                <strong style=\"color:#581C87; font-size:0.95rem;\">Pre-Reading (ก่อนอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#4C1D95; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>Unit 1: Previewing & Predicting โครงเรื่องคร่าวๆ</li>\n                <li>ตั้งเป้าหมาย: บทอ่านนี้จัดโครงสร้างเพื่ออธิบาย โน้มน้าว หรือเปรียบเทียบ?</li>\n                <li>กวาดสายตา (Scan) สำรวจหัวข้อย่อยและรูปภาพประกอบ</li>\n              </ul>\n            </div>\n\n            <div style=\"background:#F0FDF4; border:1.5px solid #BBF7D0; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#16A34A; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">2</span>\n                <strong style=\"color:#14532D; font-size:0.95rem;\">While-Reading (ระหว่างอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#14532D; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>Unit 2: ใช้ Context Clues คาดเดาคำศัพท์ยาก</li>\n                <li>Unit 3: โยงเส้น Pronouns และ Reference Words</li>\n                <li>Unit 4: มาร์กคำเชื่อมบอกทิศทาง (Transitions)</li>\n                <li>Unit 5: ไฮไลต์ Clues เพื่อสร้าง Inference</li>\n              </ul>\n            </div>\n\n            <div style=\"background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#2563EB; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">3</span>\n                <strong style=\"color:#1E3A8A; font-size:0.95rem;\">Post-Reading (หลังอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#1E3A8A; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>สร้าง Reading Strategy Blueprint สรุปบทอ่าน</li>\n                <li>ทำ Error Analysis ทบทวนข้อที่ตอบผิดเพื่อหาสาเหตุ</li>\n                <li>ทำ Strategy Quiz แบบทดสอบประมวลผล 30 ข้อ</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 4,
           "title": "How do I use it?",
           "thaiTitle": "ใช้อย่างไร?",
-          "icon": "settings",
-          "content": "Execute the 5-Step Master Protocol for Strategy Integration:",
+          "content": "Follow the 5-Step Reading Strategy Blueprint: 1. Macro Survey: Preview title and skim first/last sentences to capture the main thesis (Unit 1). 2. Context Decoders: Spot nearby clue words to define unfamiliar terms (Unit 2). 3. Cohesion Tracking: Identify pronouns and demonstratives to maintain sentence continuity (Unit 3). 4. Structural Mapping: Note transition signals (however, therefore, first) to map the text organization (Unit 4). 5. Depth Synthesis: Deduce unstated implications and verify accurate paraphrases (Unit 5). Use the 5-colour digital annotation system to visually untangle complex texts.",
+          "thaiExplanation": "กระบวนการ 5 ขั้นตอนสู่การสร้าง Reading Strategy Blueprint: (1) สำรวจภาพรวมหาใจความหลัก (2) ใช้บริบทถอดรหัสคำศัพท์ (3) แกะรอยคำอ้างอิงเพื่อรักษาความต่อเนื่องทางความคิด (4) วาดผังโครงสร้างบทอ่านตามคำเชื่อม และ (5) ตีความนัยยะสำคัญพร้อมสรุปถอดความ พร้อมฝึกปฏิบัติผ่านระบบไฮไลต์ 5 สีดิจิทัลในพื้นที่ทำงานด้านล่าง",
           "checklist": [
-            "Step 1 (Pre-Reading Orientation): Survey the title, abstract, subheadings, and visuals in 30 seconds; state a formal prediction: 'Based on text features, this passage will demonstrate...'",
-            "Step 2 (First-Pass Skimming): Skim the introductory paragraph, topic sentences of body paragraphs, and concluding thoughts at 3x speed to map the overall thesis and structure.",
-            "Step 3 (Active While-Reading & Context Clues): Read closely; when encountering unfamiliar academic jargon, immediately classify and apply context clues (IDEAS framework); trace pronoun referents ('it', 'they', 'this') back to their antecedents.",
-            "Step 4 (Deep Inferencing & Data Scanning): When comprehension questions demand specific metrics or dates, scan directly for target patterns; read between the lines to deduce authorial tone, implied attitudes, and unstated conclusions.",
-            "Step 5 (Post-Reading Synthesis & Summary): Revisit your Step 1 prediction (Confirmed, Refined, or Disproved?); construct a concise 1-to-2 sentence objective summary capturing the central thesis and supporting evidence."
-          ]
+            "Strategy 1: Did I identify the main idea and topic sentence of each paragraph?",
+            "Strategy 2: Did I deduce the meanings of difficult words using nearby context clues rather than stopping?",
+            "Strategy 3: Did I track who or what pronouns (it, they, these) refer to accurately?",
+            "Strategy 4: Did I identify the overarching text structure (Cause-Effect, Compare-Contrast, etc.)?",
+            "Strategy 5: Did I verify that my inferences are grounded in concrete text evidence without distortion?"
+          ],
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- 5-Colour Digital Annotation Workspace (Lesson Plan 6.2.2) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">🎨 5-Colour Digital Annotation Workspace</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">ตามแผนการสอน 6.2.2: เลือกเครื่องมือสี แล้วคลิกที่แต่ละประโยคเพื่อติดแท็กกลยุทธ์ที่เกี่ยวข้อง</p>\n              </div>\n              <div style=\"display:flex; gap:0.35rem; flex-wrap:wrap;\">\n                <button id=\"strat6-tool-yellow\" onclick=\"app.setStrat6HighlightTool('yellow')\" style=\"background:#FEF08A; border:1.5px solid #EAB308; padding:0.25rem 0.6rem; border-radius:6px; font-size:0.73rem; font-weight:700; cursor:pointer; color:#713F12; box-shadow:0 0 0 3px rgba(15,23,42,0.28);\">\n                  🟡 U1: Main Idea\n                </button>\n                <button id=\"strat6-tool-green\" onclick=\"app.setStrat6HighlightTool('green')\" style=\"background:#BBF7D0; border:1.5px solid #22C55E; padding:0.25rem 0.6rem; border-radius:6px; font-size:0.73rem; font-weight:700; cursor:pointer; color:#14532D;\">\n                  🟢 U2: Vocabulary\n                </button>\n                <button id=\"strat6-tool-blue\" onclick=\"app.setStrat6HighlightTool('blue')\" style=\"background:#BAE6FD; border:1.5px solid #0284C7; padding:0.25rem 0.6rem; border-radius:6px; font-size:0.73rem; font-weight:700; cursor:pointer; color:#0369A1;\">\n                  🔵 U3: References\n                </button>\n                <button id=\"strat6-tool-purple\" onclick=\"app.setStrat6HighlightTool('purple')\" style=\"background:#E9D5FF; border:1.5px solid #9333EA; padding:0.25rem 0.6rem; border-radius:6px; font-size:0.73rem; font-weight:700; cursor:pointer; color:#581C87;\">\n                  🟣 U4: Structure\n                </button>\n                <button id=\"strat6-tool-red\" onclick=\"app.setStrat6HighlightTool('red')\" style=\"background:#FECDD3; border:1.5px solid #E11D48; padding:0.25rem 0.6rem; border-radius:6px; font-size:0.73rem; font-weight:700; cursor:pointer; color:#9F1239;\">\n                  🔴 U5: Inferences\n                </button>\n              </div>\n            </div>\n\n            <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1rem; line-height:1.8; font-size:0.88rem; color:#334155;\">\n              <span id=\"strat6-hl-sent-0\" onclick=\"app.highlightStrat6Sentence(0)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 1: Modern metropolitan centers are actively developing protected bicycle highways to mitigate intense traffic congestion and decrease urban carbon emissions.\n              </span>\n              <span id=\"strat6-hl-sent-1\" onclick=\"app.highlightStrat6Sentence(1)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 2: These dedicated green corridors, which are physically separated from motor vehicle lanes by concrete barriers, provide commuters with uninterrupted routes.\n              </span>\n              <span id=\"strat6-hl-sent-2\" onclick=\"app.highlightStrat6Sentence(2)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 3: However, retail merchants originally opposed the project because they mistakenly feared that eliminating curbside parking would harm their commercial sales.\n              </span>\n              <span id=\"strat6-hl-sent-3\" onclick=\"app.highlightStrat6Sentence(3)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 4: Surprisingly, municipal economic surveys revealed that pedestrian and cyclist foot traffic actually increased storefront shopping revenues by sixteen percent.\n              </span>\n            </div>\n\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; flex-wrap:wrap; gap:0.5rem;\">\n              <div style=\"font-size:0.8rem; color:#64748B;\">คลิกที่ประโยคเพื่อใส่สีกลยุทธ์ หรือคลิก Reveal เพื่อดูการวิเคราะห์แบบบูรณาการ</div>\n              <div style=\"display:flex; gap:0.4rem;\">\n                <button onclick=\"app.resetStrat6Highlights()\" style=\"background:#F1F5F9; border:1px solid #CBD5E1; padding:0.35rem 0.85rem; border-radius:8px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#475569;\">\n                  Reset\n                </button>\n                <button onclick=\"app.revealStrat6Highlights()\" style=\"background:#6B21A8; color:#fff; border:none; padding:0.35rem 0.95rem; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;\">\n                  Reveal Full Blueprint (เฉลยผังกลยุทธ์)\n                </button>\n              </div>\n            </div>\n            <div id=\"strat6-hl-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 5,
           "title": "Worked Example",
           "thaiTitle": "ตัวอย่างการใช้",
-          "icon": "file-text",
-          "content": "Sample Text: 'Abstract: An Empirical Investigation into Community-Based Cultural Tourism along the Khmer Sanctuary Trail in Southern Buriram (Research Bulletin, Vol. 14, 2026). Traditional agricultural revenue in rural Buriram has experienced persistent volatility due to erratic rainfall cycles. In response, four rural subdistricts adjacent to Phanom Rung and Muang Tam sanctuaries established community-based homestay networks in 2023. These enterprises allow heritage travelers to engage directly in silk weaving, volcanic pottery craftsmanship, and local organic farming. Over a three-year assessment period, participating rural households experienced a 36% rise in supplemental annual income; however, researchers noted that municipal infrastructure—specifically rural road access and multilingual directional signage—remains inadequate to support peak festival seasons. Consequently, the provincial administration has allocated emergency infrastructure grants to resolve these transit bottlenecks before the upcoming 2027 tourism cycle.'",
-          "annotated": "Strategy Analysis (Unit 6 Model):\n• Phase 1: Pre-Reading Preview: Surveying title & journal source reveals subject: Community-based Khmer cultural heritage tourism in southern Buriram.\n• Phase 2: Skimming for Gist: Captures the core dilemma and response: Erratic rainfall reduced crop revenue, prompting farming communities to create homestay enterprises.\n• Phase 2: Scanning for Specific Data: Pinpoints empirical metrics: established in '2023', 'three-year assessment', and '36% rise in supplemental annual income'.\n• Phase 2: Context Clues: Decodes 'bottlenecks' via surrounding clue 'rural road access and multilingual signage remains inadequate' -> transit obstacles/delays.\n• Phase 2: Text Organization & Reference: Tracks Problem-Solution and Cause-Effect connectives ('In response', 'however', 'Consequently').\n• Phase 2: Making Inferences: Deduces that provincial government financial intervention was vital to prevent homestay tourism from collapsing during peak festival seasons.\n• Phase 3: Post-Reading Synthesis: Combining these 5 strategies synthesizes the entire 150-word research abstract into a coherent, highly actionable 2-sentence summary!",
-          "takeaway": "Orchestrating strategies transforms complex academic research into crystal-clear comprehension in under 60 seconds."
+          "content": "Observe how a master B2 reader creates a complete Reading Strategy Blueprint on this authentic passage: \"In an effort to counter severe air pollution and excessive summer heat, architects in northern Italy designed the 'Bosco Verticale' (Vertical Forest), consisting of two residential towers wrapped in over eight hundred living trees and fifteen thousand perennial plants. Because conventional concrete facades absorb solar radiation and trap greenhouse gases, this botanical architecture absorbs thirty tons of carbon dioxide annually while lowering interior apartment temperatures by nearly three degrees Celsius. Consequently, utility power demands plummeted, prompting urban planners in France and Singapore to replicate similar bio-climatic designs across their own downtown districts.\" Here is the integrated analysis across all five strategies.",
+          "annotated": "Reading Strategy Blueprint Breakdown:\n1. Main Idea (Unit 1): Living vertical forest towers provide sustainable architectural solutions for urban heat and carbon reduction.\n2. Vocabulary in Context (Unit 2): 'perennial' = plants that live for multiple years; 'plummeted' = dropped rapidly (contrasted with 'excessive').\n3. References (Unit 3): 'this botanical architecture' refers back to the Bosco Verticale towers; 'their own' refers to urban planners in France and Singapore.\n4. Text Structure (Unit 4): Cause and Effect (Because conventional concrete absorbs heat... Consequently, utility power demands plummeted...).\n5. Inferences & Paraphrase (Unit 5): Inference: Green high-rise buildings save substantial energy despite complex botanical maintenance. Paraphrase: By integrating hundreds of trees onto residential towers, designers created a natural cooling system that drastically reduces energy consumption and inspires international replication.",
+          "takeaway": "Key Takeaways: An integrated blueprint connects vocabulary, pronouns, structure, and implied meaning into one cohesive understanding. Readers who synthesize strategies retain information faster and answer high-level questions with 100% confidence.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <h4 style=\"font-size:1.02rem; font-weight:800; color:#1E293B; margin:0 0 0.8rem 0;\">\n              📖 Master Reading Strategy Blueprint Demonstration (Bosco Verticale)\n            </h4>\n\n            <div style=\"background:#F8FAFC; border-left:4px solid #7C3AED; padding:1rem; border-radius:0 12px 12px 0; margin-bottom:1rem; font-size:0.9rem; line-height:1.6; color:#1E293B; font-style:italic;\">\n              \"In an effort to counter severe air pollution and excessive summer heat, architects in northern Italy designed the 'Bosco Verticale' (Vertical Forest), consisting of two residential towers wrapped in over eight hundred living trees and fifteen thousand perennial plants. Because conventional concrete facades absorb solar radiation and trap greenhouse gases, this botanical architecture absorbs thirty tons of carbon dioxide annually while lowering interior apartment temperatures by nearly three degrees Celsius. Consequently, utility power demands plummeted, prompting urban planners in France and Singapore to replicate similar bio-climatic designs across their own downtown districts.\"\n            </div>\n\n            <!-- 5-Strategy Blueprint Table -->\n            <div style=\"display:grid; gap:0.6rem; font-size:0.83rem;\">\n              <div style=\"background:#FEFCE8; border:1px solid #FDE047; padding:0.75rem 0.9rem; border-radius:10px;\">\n                <strong style=\"color:#854D0E;\">1. Main Idea (Unit 1):</strong> อาคารพักอาศัยแนวคิดป่าแนวตั้ง (Vertical Forest) ช่วยดูดซับมลพิษ ลดความร้อนในตัวเมือง และประหยัดพลังงาน\n              </div>\n              <div style=\"background:#F0FDF4; border:1px solid #86EFAC; padding:0.75rem 0.9rem; border-radius:10px;\">\n                <strong style=\"color:#166534;\">2. Vocabulary & Clues (Unit 2):</strong> คำว่า <em>perennial</em> หมายถึงพืชยืนต้นที่มีอายุยืนหลายปี (clue: living trees and plants) และ <em>plummeted</em> หมายถึงดิ่งลงอย่างรวดเร็ว (clue: consequently)\n              </div>\n              <div style=\"background:#EFF6FF; border:1px solid #93C5FD; padding:0.75rem 0.9rem; border-radius:10px;\">\n                <strong style=\"color:#1E40AF;\">3. References (Unit 3):</strong> <em>\"this botanical architecture\"</em> อ้างอิงถึงอาคาร Bosco Verticale และ <em>\"their own\"</em> อ้างอิงถึงนักผังเมืองในฝรั่งเศสและสิงคโปร์\n              </div>\n              <div style=\"background:#FAF5FF; border:1px solid #D8B4FE; padding:0.75rem 0.9rem; border-radius:10px;\">\n                <strong style=\"color:#6B21A8;\">4. Text Structure (Unit 4):</strong> Cause and Effect (คำเชื่อม: <em>Because</em> บอกสาเหตุ และ <em>Consequently</em> บอกผลลัพธ์) ควบคู่กับ Problem and Solution\n              </div>\n              <div style=\"background:#FFF1F2; border:1px solid #FECDD3; padding:0.75rem 0.9rem; border-radius:10px;\">\n                <strong style=\"color:#BE123C;\">5. Inference & Paraphrase (Unit 5):</strong> อนุมานได้ว่าการลงทุนปลูกต้นไม้บนตึกให้ผลตอบแทนคุ้มค่าทั้งด้านพลังงานและสภาพแวดล้อมจนหลายประเทศนำไปเป็นต้นแบบ\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 6,
           "title": "Guided Practice",
           "thaiTitle": "ฝึกปฏิบัติ",
-          "icon": "user-check",
-          "content": "Scenario: You are given a 12-page research report on renewable bioenergy in Isan with 15 comprehension questions to answer in 20 minutes.",
-          "question": "Which sequential workflow represents the most effective integration of reading strategies under strict time pressure?",
+          "content": "Read this short passage about community seed preservation: \"Across rural agricultural valleys, volunteer conservationists established community seed banks to protect native heritage crops from commercial extinction. Unlike industrial hybrid seeds that require synthetic chemical fertilizers and lose fertility after a single harvest season, traditional heritage varieties have evolved natural resistance to local droughts and pest outbreaks over centuries. Consequently, participating farmers who cultivate these indigenous seeds reported stable crop yields despite extreme heatwaves, inspiring neighboring villages to adopt similar botanical preservation cooperatives.\" Answer the synthesis questions below.",
+          "question": "Which statement accurately integrates the Text Structure (Unit 4) and Logical Inference (Unit 5) of the passage?",
           "options": [
-            "Preview title & headings -> Skim introduction & conclusion for gist -> Scan for question keywords to locate answers -> Use context clues & inference for analytical questions",
-            "Start reading word-for-word from page 1 and look up every unknown word in an English-Thai dictionary",
-            "Answer all 15 questions by guessing without looking at the text at all",
-            "Read only the last sentence of each page and ignore headings and charts"
+            "The passage uses Compare-Contrast and Cause-Effect to show that heritage seeds provide climate resilience, implying that traditional biodiversity offers protection against unpredictable weather disasters",
+            "The author argues that all synthetic fertilizers should be immediately destroyed by police forces",
+            "Industrial hybrid seeds are superior because farmers only need to plant them once every fifty years",
+            "The passage is organized exclusively as a Chronological Timeline of international grocery corporations"
           ],
           "answer": 0,
-          "explanation": "Master readers combine previewing to frame the topic, skimming for general structure, scanning to locate answers quickly, and context clues/inferencing to solve complex analytical questions."
+          "explanation": "Choice A is the correct integrated analysis. The passage explicitly compares heritage seeds with industrial hybrid seeds (Unlike...) and links their natural resistance to stable yields (Consequently...), logically implying that genetic diversity shields agricultural communities from climate shocks.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Interactive Error Analysis Task (Lesson Plan 6.2.4) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem; flex-wrap:wrap; gap:0.5rem;\">\n              <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">\n                🩺 Guided Practice 2: Reading Error Analysis Task\n              </h4>\n              <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">\n                Lesson Plan 6.2.4\n              </span>\n            </div>\n\n            <p style=\"font-size:0.85rem; color:#334155; line-height:1.6; margin:0 0 0.8rem 0;\">\n              สมมติว่าเพื่อนของคุณตอบคำถามผิด: <em>\"เพื่อนตอบว่าคำว่า 'these indigenous seeds' หมายถึง 'industrial hybrid seeds' ซึ่งเป็นคำตอบที่ไม่ถูกต้อง\"</em><br>\n              จงวินิจฉัยว่าเพื่อนของคุณเกิดข้อผิดพลาดในการใช้กลยุทธ์จากบทใด และควรแนะนำอย่างไร:\n            </p>\n\n            <div style=\"display:grid; gap:0.6rem; font-size:0.83rem;\">\n              <button onclick=\"app.submitStrat6Practice(0)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                A. ข้อผิดพลาดจาก Unit 3 (Reference Tracing): เพื่อนมองข้ามคำเชื่อม 'Unlike' และไม่ได้ย้อนกลับไปดูคำนาม 'traditional heritage varieties' ที่อยู่ติดกันด้านหน้า\n              </button>\n              <button onclick=\"app.submitStrat6Practice(1)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                B. ข้อผิดพลาดจาก Unit 1: เพื่อนไม่ได้อ่านชื่อเรื่องของหนังสือพิมพ์\n              </button>\n              <button onclick=\"app.submitStrat6Practice(2)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                C. ข้อผิดพลาดจาก Unit 2: คำว่า indigenous ไม่มีคำเหมือนในพจนานุกรม\n              </button>\n            </div>\n            <div id=\"strat6-practice-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 7,
           "title": "Apply to a Short Text",
           "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
-          "icon": "book-open",
-          "passageTitle": "The Transformative Power of Strategic Reading",
-          "passage": "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
-          "audioText": "Cognitive educational research demonstrates that skilled readers are not merely faster decoders of alphabetical print; rather, they are active architects of comprehension. When confronted with dense, unfamiliar academic literature, expert readers dynamically adjust their reading velocity. They preview structural landmarks before diving in, rapidly skim to capture macro-level concepts, scan with laser focus for empirical data points, and effortlessly decipher cryptic vocabulary through contextual signals. Furthermore, by tracing cohesive connective markers and inferring unspoken implications, they extract profound meaning from complex arguments. Ultimately, mastering this integrated strategy repertoire transforms English language learners into autonomous, analytical, and confident lifelong scholars.",
-          "taskQuestion": "Explain how expert readers demonstrate flexibility according to this passage, and synthesize the ultimate benefit of mastering integrated reading strategies.",
-          "taskAnswer": "Expert readers dynamically adjust their reading speed and strategy based on text demands (previewing, skimming, scanning, context clues, inferencing), which ultimately transforms them into autonomous, analytical, and confident lifelong scholars."
+          "passageTitle": "The Rise of Zero-Waste Grocery Stores: Redefining Sustainable Retail",
+          "passage": "In response to the global crisis of single-use plastic pollution, innovative entrepreneurs across several European capitals launched packaging-free grocery stores, commonly known as zero-waste markets. Instead of selling grains, oils, and detergents pre-sealed in disposable plastic containers, these retailers require shoppers to bring reusable glass jars, cloth sacks, and stainless steel bottles from home. Items are dispensed from bulk gravity bins, and customers pay strictly by net weight. Although initial critics argued that unpackaged shopping was too inconvenient for busy urban families, retail audit reports revealed that regular patrons actually spent fifteen percent less on their monthly grocery budgets. Because commercial product branding and single-use packaging typically account for up to twenty percent of conventional packaged food costs, eliminating them delivers tangible economic relief to household budgets while simultaneously reducing municipal landfill volume. By demonstrating that environmental sustainability aligns directly with consumer affordability, zero-waste grocery stores prove that reimagining everyday retail habits can foster ecological health and economic resilience at the community level.",
+          "audioText": "In response to the global crisis of single-use plastic pollution, innovative entrepreneurs across several European capitals launched packaging-free grocery stores, commonly known as zero-waste markets. Instead of selling grains, oils, and detergents pre-sealed in disposable plastic containers, these retailers require shoppers to bring reusable glass jars, cloth sacks, and stainless steel bottles from home. Items are dispensed from bulk gravity bins, and customers pay strictly by net weight. Although initial critics argued that unpackaged shopping was too inconvenient for busy urban families, retail audit reports revealed that regular patrons actually spent fifteen percent less on their monthly grocery budgets. Because commercial product branding and single-use packaging typically account for up to twenty percent of conventional packaged food costs, eliminating them delivers tangible economic relief to household budgets while simultaneously reducing municipal landfill volume. By demonstrating that environmental sustainability aligns directly with consumer affordability, zero-waste grocery stores prove that reimagining everyday retail habits can foster ecological health and economic resilience at the community level.",
+          "taskQuestion": "Synthesize the passage by constructing a 3-part Reading Strategy Blueprint (Main Idea, Key Text Structure, and Logical Inference).",
+          "taskAnswer": "1. Main Idea (Unit 1): Zero-waste grocery stores offer an eco-friendly retail alternative where shoppers use reusable containers and pay by weight. 2. Text Structure (Unit 4): Cause and Effect combined with Problem and Solution (eliminating plastic packaging causes a 15% reduction in grocery expenses). 3. Logical Inference (Unit 5): Much of what consumers pay for in standard supermarkets covers disposable packaging and marketing rather than the actual food.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Reading Passage Box with Audio Player -->\n          <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n              <span class=\"text-xs font-bold text-pink-300 uppercase tracking-wider\">\n                The Rise of Zero-Waste Grocery Stores: Redefining Sustainable Retail\n              </span>\n              \n              <div class=\"flex items-center space-x-2\">\n                <!-- Playback Speed Control -->\n                <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\" title=\"Playback Speed (ความเร็วเสียงอ่าน)\">\n                  <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300 shrink-0\"></i>\n                  <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n                    <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n                    <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n                    <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n                    <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n                  </select>\n                </div>\n\n                <button onclick=\"app.togglePassageAudio(encodeURIComponent('In response to the global crisis of single-use plastic pollution, innovative entrepreneurs across several European capitals launched packaging-free grocery stores, commonly known as zero-waste markets. Instead of selling grains, oils, and detergents pre-sealed in disposable plastic containers, these retailers require shoppers to bring reusable glass jars, cloth sacks, and stainless steel bottles from home. Items are dispensed from bulk gravity bins, and customers pay strictly by net weight. Although initial critics argued that unpackaged shopping was too inconvenient for busy urban families, retail audit reports revealed that regular patrons actually spent fifteen percent less on their monthly grocery budgets. Because commercial product branding and single-use packaging typically account for up to twenty percent of conventional packaged food costs, eliminating them delivers tangible economic relief to household budgets while simultaneously reducing municipal landfill volume. By demonstrating that environmental sustainability aligns directly with consumer affordability, zero-waste grocery stores prove that reimagining everyday retail habits can foster ecological health and economic resilience at the community level.'))\" class=\"px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer\">\n                  <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n                  <span>Listen Passage</span>\n                </button>\n              </div>\n            </div>\n\n            <p class=\"text-sm italic leading-relaxed text-slate-200 font-serif\">\n              \"In response to the global crisis of single-use plastic pollution, innovative entrepreneurs across several European capitals launched packaging-free grocery stores, commonly known as zero-waste markets. Instead of selling grains, oils, and detergents pre-sealed in disposable plastic containers, these retailers require shoppers to bring reusable glass jars, cloth sacks, and stainless steel bottles from home. Items are dispensed from bulk gravity bins, and customers pay strictly by net weight. Although initial critics argued that unpackaged shopping was too inconvenient for busy urban families, retail audit reports revealed that regular patrons actually spent fifteen percent less on their monthly grocery budgets. Because commercial product branding and single-use packaging typically account for up to twenty percent of conventional packaged food costs, eliminating them delivers tangible economic relief to household budgets while simultaneously reducing municipal landfill volume. By demonstrating that environmental sustainability aligns directly with consumer affordability, zero-waste grocery stores prove that reimagining everyday retail habits can foster ecological health and economic resilience at the community level.\"\n            </p>\n          </div>\n\n          <!-- Application Verification Card -->\n          <div style=\"background:#FAF5FF; border:1.5px solid #D8B4FE; border-radius:14px; padding:1.1rem;\">\n            <h4 style=\"font-size:0.95rem; font-weight:800; color:#581C87; margin:0 0 0.5rem 0;\">\n              💡 Capstone Reading Strategy Blueprint (ผังบูรณาการกลยุทธ์)\n            </h4>\n            <div style=\"display:grid; gap:0.5rem; font-size:0.83rem; color:#4C1D95; line-height:1.6;\">\n              <div>\n                <strong>Main Idea (Unit 1):</strong> ร้านค้าไร้บรรจุภัณฑ์ (Zero-Waste Markets) ช่วยลดขยะพลาสติกและช่วยให้ผู้บริโภคประหยัดค่าใช้จ่ายได้ถึง 15%\n              </div>\n              <div>\n                <strong>Context Clues & References (Units 2 & 3):</strong> คำว่า <em>\"patrons\"</em> หมายถึงลูกค้าประจำ (clue: regular customers/shoppers) และคำว่า <em>\"them\"</em> ในประโยครองสุดท้าย อ้างอิงถึง <em>\"commercial product branding and single-use packaging\"</em>\n              </div>\n              <div>\n                <strong>Text Structure & Inference (Units 4 & 5):</strong> ใช้โครงสร้าง Cause and Effect (คำเชื่อม: <em>Because</em>, <em>Although</em>) และอนุมานได้ว่าค่าใช้จ่ายในห้างทั่วไปส่วนหนึ่งเป็นค่าแพ็กเกจจิ้งพลาสติกที่ผู้บริโภคต้องจ่ายโดยไม่จำเป็น\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 8,
-          "title": "Strategy Quiz",
-          "thaiTitle": "แบบทดสอบ",
-          "icon": "trophy",
-          "question": "Which scenario best exemplifies an autonomous reader applying integrated reading strategies in an academic setting?",
+          "title": "Strategy Quiz (30 ข้อ)",
+          "thaiTitle": "แบบทดสอบ 30 ข้อ",
+          "question": "Strategy Quiz Module for Unit 6 (Capstone Cumulative Review)",
           "options": [
-            "A student who previews the abstract and subheadings of a research paper, skims to find relevant sections, scans for statistical data, uses context clues for technical terms, and verifies conclusions",
-            "A student who translates an entire 20-page textbook chapter word-by-word with a translation app",
-            "A student who skips reading entirely and relies solely on lecture slides",
-            "A student who reads every type of text—from poetry to bus schedules—at the exact same slow speed"
+            "Start Quiz"
           ],
           "answer": 0,
-          "explanation": "An autonomous reader flexibly selects, combines, and adapts reading strategies to match the specific reading purpose and complexity of the text."
+          "explanation": "Complete all 30 cumulative questions across 3 passages."
         }
       ]
     }
@@ -7024,6 +7022,454 @@ window.ReadSkillsData = {
             ],
             "correctAnswer": 0,
             "explanation": "The passage consistently recommends incorporating structured two-minute pauses to counter fatigue, protect eye muscles, and enhance overall output."
+          }
+        ]
+      }
+    ]
+  },
+  "strategyUnit6Quiz": {
+    "title": "Unit 6: Cumulative Reading Strategy Mastery Quiz",
+    "thaiTitle": "แบบทดสอบประมวลความรู้กลยุทธ์การอ่านบทที่ 6 (30 ข้อ)",
+    "passages": [
+      {
+        "id": "strat6-p1",
+        "title": "Passage 1: The Renaissance of Urban Bicycles: How Modern Cities Rethink Mobility",
+        "thaiTitle": "บทอ่านที่ 1: การฟื้นฟูจักรยานในเมือง: นวัตกรรมการสัญจรยุคใหม่",
+        "genre": "Urban Planning & Sustainable Transportation",
+        "audioText": "To resolve mounting vehicular gridlock and poor air quality, metropolitan transportation planners have constructed extensive networks of protected bicycle highways. Unlike regular painted bike lanes, these dedicated corridors are separated from automobile traffic by solid concrete islands and vibrant green shrubs. Municipal traffic counts show that bicycle commuting increased by forty-four percent within two years of completing the primary arterial routes. However, some traditional shopkeepers initially objected, fearing that removing curbside car parking would severely reduce customer foot traffic. To alleviate these anxieties, city economists tracked local shopping patterns and discovered that cyclists actually visit neighborhood bakeries and pharmacies more frequently than car drivers. Furthermore, public health researchers reported a significant decrease in cardiovascular complaints among regular cycling commuters. By transforming roadway real estate into accessible, active mobility corridors, city administrators proved that investing in cycling infrastructure improves public health and strengthens local commerce simultaneously.",
+        "sentences": [
+          "Sentence 1: To resolve mounting vehicular gridlock and poor air quality, metropolitan transportation planners have constructed extensive networks of protected bicycle highways.",
+          "Sentence 2: Unlike regular painted bike lanes, these dedicated corridors are separated from automobile traffic by solid concrete islands and vibrant green shrubs.",
+          "Sentence 3: Municipal traffic counts show that bicycle commuting increased by forty-four percent within two years of completing the primary arterial routes.",
+          "Sentence 4: However, some traditional shopkeepers initially objected, fearing that removing curbside car parking would severely reduce customer foot traffic.",
+          "Sentence 5: To alleviate these anxieties, city economists tracked local shopping patterns and discovered that cyclists actually visit neighborhood bakeries and pharmacies more frequently than car drivers.",
+          "Sentence 6: Furthermore, public health researchers reported a significant decrease in cardiovascular complaints among regular cycling commuters.",
+          "Sentence 7: By transforming roadway real estate into accessible, active mobility corridors, city administrators proved that investing in cycling infrastructure improves public health and strengthens local commerce simultaneously."
+        ],
+        "questions": [
+          {
+            "id": "s6-p1-q1",
+            "type": "mc",
+            "prompt": "Strategy 1 (Main Idea): What is the CENTRAL THEME of the passage?",
+            "options": [
+              "Building protected bicycle networks reduces traffic congestion and brings combined health, environmental, and commercial benefits to cities",
+              "Automobile traffic should be completely outlawed in all metropolitan areas worldwide",
+              "Traditional shopkeepers refuse to sell groceries to customers who arrive on bicycles",
+              "City administrators lost public funds by painting green shrubs along vehicle highways"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The passage explains how dedicated bicycle corridors solve traffic gridlock, enhance public health, and stimulate local business revenues."
+          },
+          {
+            "id": "s6-p1-q2",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 1, what does the phrase \"vehicular gridlock\" most closely mean?",
+            "options": [
+              "Severe traffic jams where automobiles cannot move smoothly",
+              "A modern electronic navigation device installed in private cars",
+              "A special parking garage reserved exclusively for government vehicles",
+              "A type of bicycle pedal designed for mountain riding"
+            ],
+            "correctAnswer": 0,
+            "explanation": "In urban transportation, \"vehicular gridlock\" refers to intense traffic jams and highway congestion that prevent cars from moving."
+          },
+          {
+            "id": "s6-p1-q3",
+            "type": "mc",
+            "prompt": "Strategy 3 (Reference Words): In Sentence 2, what does the phrase \"these dedicated corridors\" refer back to?",
+            "options": [
+              "Extensive networks of protected bicycle highways",
+              "Traditional painted street signs",
+              "Automobile engines and exhaust pipes",
+              "Commercial shopping malls"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"These dedicated corridors\" links directly back to the \"protected bicycle highways\" mentioned at the end of Sentence 1."
+          },
+          {
+            "id": "s6-p1-q4",
+            "type": "mc",
+            "prompt": "Strategy 4 (Text Structure): What is the PRIMARY text organization pattern used across Sentence 1 and Sentence 3?",
+            "options": [
+              "Problem and Solution with Cause and Effect",
+              "Chronological Historical Biography",
+              "Alphabetical Dictionary Definition",
+              "Fictional Narrative Adventure"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 1 presents the problems (traffic gridlock and poor air quality) and the solution (protected bicycle highways), while Sentence 3 shows the effect (cycling increased by 44%)."
+          },
+          {
+            "id": "s6-p1-q5",
+            "type": "mc",
+            "prompt": "Strategy 4 (Signal Words): In Sentence 4, what is the rhetorical function of the transition word \"However\"?",
+            "options": [
+              "To introduce a contrasting objection from local shopkeepers that challenged the project",
+              "To list an exact chronological sequence of bicycle construction stages",
+              "To define the chemical composition of bicycle tires",
+              "To conclude the author's personal life story"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"However\" signals a contrast between the positive traffic growth in Sentence 3 and the skepticism of local store owners in Sentence 4."
+          },
+          {
+            "id": "s6-p1-q6",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 5, what does the verb \"alleviate\" mean based on surrounding clues?",
+            "options": [
+              "To lessen, relieve, or calm someone's fears and worries",
+              "To multiply or double the cost of public construction",
+              "To arrest citizens who commit traffic violations",
+              "To ignore community feedback completely"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"Alleviate these anxieties\" means to ease or relieve the worries that shopkeepers had about losing customer sales."
+          },
+          {
+            "id": "s6-p1-q7",
+            "type": "mc",
+            "prompt": "Strategy 5 (Inference): What can be logically INFERRED from Sentence 5 regarding cyclist shopping habits?",
+            "options": [
+              "Cyclists can easily pull over and enter neighborhood shops because they do not have to search for street parking spaces",
+              "Cyclists buy fifty times more bread than automobile owners every afternoon",
+              "Cyclists only shop at stores that offer free bicycle repair tools at the entrance",
+              "Automobile drivers refuse to purchase medication from local pharmacies"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Because bicycles are nimble and do not require searching for vehicle parking spaces, riders stop and make frequent short purchases at local shops."
+          },
+          {
+            "id": "s6-p1-q8",
+            "type": "mc",
+            "prompt": "Strategy 5 (Paraphrasing): Which sentence best PARAPHRASES Sentence 6: \"Furthermore, public health researchers reported a significant decrease in cardiovascular complaints among regular cycling commuters.\"?",
+            "options": [
+              "In addition, medical scientists found that people who bike to work consistently experienced noticeably fewer heart-related health issues.",
+              "Furthermore, health researchers reported a significant decrease in cardiovascular complaints among cycling commuters.",
+              "Cycling causes severe cardiovascular complaints according to international medical researchers.",
+              "Doctors advised all heart patients to avoid riding bicycles on city highways."
+            ],
+            "correctAnswer": 0,
+            "explanation": "Option A restates the sentence clearly using fresh vocabulary (medical scientists, bike to work consistently, noticeably fewer heart-related health issues) without copying."
+          },
+          {
+            "id": "s6-p1-q9",
+            "type": "mc",
+            "prompt": "Strategy 5 (Evaluating Distortions): Which statement represents an UNSUPPORTED claim not found in the passage?",
+            "options": [
+              "City administrators gave a brand-new electric bicycle to every resident who sold their private car",
+              "Physical barriers like concrete islands and shrubs separate bike routes from vehicle lanes",
+              "Cyclist foot traffic brought positive economic benefits to neighborhood retailers",
+              "Protected bicycle highways help address both gridlock and air pollution"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The passage never states that the government gave free electric bicycles to car owners. This is an unsupported distortion."
+          },
+          {
+            "id": "s6-p1-q10",
+            "type": "mc",
+            "prompt": "Strategy 1 & 5 (Synthesis): What is the FINAL CONCLUSION established in Sentence 7?",
+            "options": [
+              "Reallocating road space for active cycling benefits both citizen wellness and neighborhood businesses",
+              "Streets should only be designed for delivery trucks and commercial buses",
+              "Concrete barriers are too dangerous to install along urban roadways",
+              "Local commerce cannot survive without curbside automobile parking spaces"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 7 summarizes that investing in cycling infrastructure simultaneously enhances public health and strengthens local business commerce."
+          }
+        ]
+      },
+      {
+        "id": "strat6-p2",
+        "title": "Passage 2: The Hidden Wonders of Mycelium: Nature's Underground Packaging Revolution",
+        "thaiTitle": "บทอ่านที่ 2: มหัศจรรย์ไมซีเลียม: นวัตกรรมบรรจุภัณฑ์ชีวภาพจากเส้นใยเห็ดรา",
+        "genre": "Biotechnology & Sustainable Manufacturing",
+        "audioText": "To combat the persistent crisis of non-biodegradable synthetic packaging waste, material scientists have developed an organic alternative using mycelium, the dense root network of fungal mushrooms. In specialized clean production facilities, agricultural crop byproducts like hemp husks and oat hulls are blended with living fungal spores inside shaped molds. Over seven days, the living fibers bind the crop fragments into strong, lightweight blocks without requiring chemical adhesives or intense thermal energy. Once dried to halt further growth, the resulting material functions identically to expanded polystyrene foam, effectively cushioning fragile electronic goods during international transit. Unlike petroleum-derived plastic foams that persist in municipal landfills for centuries, mycelium packaging naturally decomposes in backyard garden soil within forty-five days. Although scaling up bio-manufacturing initially encountered logistical bottlenecks, multinational electronics manufacturers are increasingly adopting this bio-composite to achieve their zero-waste sustainability commitments.",
+        "sentences": [
+          "Sentence 1: To combat the persistent crisis of non-biodegradable synthetic packaging waste, material scientists have developed an organic alternative using mycelium, the dense root network of fungal mushrooms.",
+          "Sentence 2: In specialized clean production facilities, agricultural crop byproducts like hemp husks and oat hulls are blended with living fungal spores inside shaped molds.",
+          "Sentence 3: Over seven days, the living fibers bind the crop fragments into strong, lightweight blocks without requiring chemical adhesives or intense thermal energy.",
+          "Sentence 4: Once dried to halt further growth, the resulting material functions identically to expanded polystyrene foam, effectively cushioning fragile electronic goods during international transit.",
+          "Sentence 5: Unlike petroleum-derived plastic foams that persist in municipal landfills for centuries, mycelium packaging naturally decomposes in backyard garden soil within forty-five days.",
+          "Sentence 6: Although scaling up bio-manufacturing initially encountered logistical bottlenecks, multinational electronics manufacturers are increasingly adopting this bio-composite to achieve their zero-waste sustainability commitments."
+        ],
+        "questions": [
+          {
+            "id": "s6-p2-q1",
+            "type": "mc",
+            "prompt": "Strategy 1 (Topic Sentence): What is the PRIMARY PURPOSE of Sentence 1?",
+            "options": [
+              "To state the environmental problem of plastic waste and introduce mycelium as an organic packaging solution",
+              "To describe how farmers harvest edible mushrooms for soup recipes",
+              "To explain the history of petroleum refineries in the twentieth century",
+              "To argue that electronic goods should never be shipped internationally"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 1 sets the topic sentence by defining the problem (synthetic packaging waste) and presenting the thesis (mycelium fungal root networks as an organic alternative)."
+          },
+          {
+            "id": "s6-p2-q2",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 1, what does the definition clue tell us about \"mycelium\"?",
+            "options": [
+              "It is the dense root network of fungal mushrooms",
+              "It is a synthetic plastic derived from crude petroleum",
+              "It is an electronic tracking sensor installed inside cardboard boxes",
+              "It is a harmful industrial chemical that pollutes rivers"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 1 provides an appositive definition: \"mycelium, the dense root network of fungal mushrooms\"."
+          },
+          {
+            "id": "s6-p2-q3",
+            "type": "mc",
+            "prompt": "Strategy 3 (Reference Words): In Sentence 3, what does the phrase \"the crop fragments\" refer back to in Sentence 2?",
+            "options": [
+              "Hemp husks and oat hulls",
+              "Living fungal spores",
+              "Clean production facilities",
+              "Chemical adhesives"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"The crop fragments\" refers back to the \"agricultural crop byproducts like hemp husks and oat hulls\" introduced in Sentence 2."
+          },
+          {
+            "id": "s6-p2-q4",
+            "type": "mc",
+            "prompt": "Strategy 4 (Text Structure): What text organization pattern is utilized across Sentence 2, Sentence 3, and Sentence 4?",
+            "options": [
+              "Process Sequence (Step-by-step manufacturing timeline)",
+              "Fictional Dialogue between two scientists",
+              "Personal Travel Diary across rural Europe",
+              "Alphabetical Glossary of botanical terms"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentences 2, 3, and 4 describe the chronological steps of making mycelium packaging: blending crop husks with spores, letting fibers grow for seven days, and drying to halt growth."
+          },
+          {
+            "id": "s6-p2-q5",
+            "type": "mc",
+            "prompt": "Strategy 4 (Signal Words): In Sentence 5, what is the role of the signal word \"Unlike\"?",
+            "options": [
+              "To compare and contrast the rapid biodegradability of mycelium against the multi-century persistence of plastic foam",
+              "To indicate that both materials decompose in garden soil within forty-five days",
+              "To show that mushroom roots are manufactured inside oil refineries",
+              "To announce that plastic foam production is expanding rapidly"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"Unlike\" signals a stark contrast between petroleum plastic (which lasts centuries) and mycelium (which decomposes in 45 days)."
+          },
+          {
+            "id": "s6-p2-q6",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 6, what does the phrase \"logistical bottlenecks\" mean in a manufacturing context?",
+            "options": [
+              "Operational obstacles, delays, or supply constraints that slow down large-scale production",
+              "Glass bottles used by factory workers to drink purified water",
+              "Narrow doorways in the shipping department of a warehouse",
+              "Special plastic caps placed on electronic circuit boards"
+            ],
+            "correctAnswer": 0,
+            "explanation": "In industrial logistics, a \"bottleneck\" refers to a point of congestion or an obstacle that slows down the manufacturing workflow."
+          },
+          {
+            "id": "s6-p2-q7",
+            "type": "mc",
+            "prompt": "Strategy 5 (Inference): What can be logically INFERRED from Sentence 3 and Sentence 4 regarding the energy footprint of mycelium?",
+            "options": [
+              "Growing mycelium consumes far less heat and electricity than melting petroleum polymers into synthetic plastic foam",
+              "Fungal packaging requires burning large amounts of coal during the seven-day growing period",
+              "Chemical glues are necessary to make mycelium waterproof during ocean shipments",
+              "Living mushroom spores continue to grow and eat electronic laptops inside shipping boxes"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 3 states that fibers bind fragments without chemical glues or intense thermal energy, and Sentence 4 notes the material is dried to stop growth, implying low energy consumption."
+          },
+          {
+            "id": "s6-p2-q8",
+            "type": "mc",
+            "prompt": "Strategy 5 (Paraphrasing): Which sentence best PARAPHRASES Sentence 5: \"Unlike petroleum-derived plastic foams that persist in municipal landfills for centuries, mycelium packaging naturally decomposes in backyard garden soil within forty-five days.\"?",
+            "options": [
+              "While traditional fossil-fuel plastic foam lingers in waste dumps for hundreds of years, mushroom-based packaging breaks down completely in outdoor soil in just a month and a half.",
+              "Unlike petroleum plastic foams that persist for centuries, mycelium packaging decomposes in garden soil within 45 days.",
+              "Petroleum foam is superior to mycelium packaging because it lasts for centuries in backyard gardens.",
+              "Landfills refuse to accept plastic foams unless they are mixed with mushroom roots."
+            ],
+            "correctAnswer": 0,
+            "explanation": "Option A replaces key words (fossil-fuel plastic foam, lingers in waste dumps, breaks down completely in outdoor soil in just a month and a half) without copying or distorting."
+          },
+          {
+            "id": "s6-p2-q9",
+            "type": "mc",
+            "prompt": "Strategy 5 (Evaluating Distortions): Which statement is CONTRADICTED by information in the passage?",
+            "options": [
+              "Mycelium materials require heavy doses of synthetic chemical adhesives to bind agricultural fibers together",
+              "Mycelium packaging can protect fragile electronic equipment during global transit",
+              "Agricultural byproducts like oat hulls can be repurposed into protective packaging",
+              "Major electronics brands are adopting bio-composites to meet corporate zero-waste goals"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 3 explicitly says the fibers bind \"without requiring chemical adhesives\". Claiming it needs heavy chemical glues directly contradicts the text."
+          },
+          {
+            "id": "s6-p2-q10",
+            "type": "mc",
+            "prompt": "Strategy 1 & 5 (Synthesis): What is the MAIN TAKEAWAY regarding the future of sustainable packaging?",
+            "options": [
+              "Harnessing natural biological processes can replace persistent plastic waste with high-performance, circular alternatives",
+              "Traditional Styrofoam is completely irreplaceable for shipping expensive digital technology",
+              "Agricultural crops should only be grown for industrial packaging rather than human food",
+              "Zero-waste goals are impossible to achieve without banning all international trade"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The passage shows how bio-based engineering (mycelium + crop byproducts) provides functional, biodegradable replacements for petroleum plastics."
+          }
+        ]
+      },
+      {
+        "id": "strat6-p3",
+        "title": "Passage 3: The Science of Circadian Rhythms: Harmonizing Daily Habits with Internal Clocks",
+        "thaiTitle": "บทอ่านที่ 3: วิทยาศาสตร์แห่งนาฬิกาชีวภาพ: การประสานกิจวัตรประจำวันกับจังหวะธรรมชาติ",
+        "genre": "Chronobiology & Preventive Health",
+        "audioText": "Deep inside the human brain, a specialized cluster of nerve cells known as the suprachiasmatic nucleus coordinates our circadian rhythm, the twenty-four-hour biological clock governing sleep, hormone secretion, and cognitive vigilance. For millions of years, natural dawn sunlight signaled the body to release cortisol to stimulate morning alertness, while evening darkness stimulated the pineal gland to produce melatonin, promoting deep physiological recovery. In modern twenty-four-hour society, however, pervasive artificial blue light emitted by smartphones, computer monitors, and LED ceiling fixtures suppresses melatonin production late into the night. Consequently, chronic circadian misalignment impairs immune defenses, elevates resting blood pressure, and diminishes problem-solving capacity among shift workers and desk professionals alike. To counteract these widespread metabolic disruptions, chronobiology experts advise establishing a strict digital sunset by shutting off luminous screens ninety minutes before bedtime. Furthermore, stepping outside for fifteen minutes of unfiltered morning sunlight recalibrates internal neural pacemakers, proving that aligning daily routines with natural solar rhythms restores vitality and long-term well-being.",
+        "sentences": [
+          "Sentence 1: Deep inside the human brain, a specialized cluster of nerve cells known as the suprachiasmatic nucleus coordinates our circadian rhythm, the twenty-four-hour biological clock governing sleep, hormone secretion, and cognitive vigilance.",
+          "Sentence 2: For millions of years, natural dawn sunlight signaled the body to release cortisol to stimulate morning alertness, while evening darkness stimulated the pineal gland to produce melatonin, promoting deep physiological recovery.",
+          "Sentence 3: In modern twenty-four-hour society, however, pervasive artificial blue light emitted by smartphones, computer monitors, and LED ceiling fixtures suppresses melatonin production late into the night.",
+          "Sentence 4: Consequently, chronic circadian misalignment impairs immune defenses, elevates resting blood pressure, and diminishes problem-solving capacity among shift workers and desk professionals alike.",
+          "Sentence 5: To counteract these widespread metabolic disruptions, chronobiology experts advise establishing a strict digital sunset by shutting off luminous screens ninety minutes before bedtime.",
+          "Sentence 6: Furthermore, stepping outside for fifteen minutes of unfiltered morning sunlight recalibrates internal neural pacemakers, proving that aligning daily routines with natural solar rhythms restores vitality and long-term well-being."
+        ],
+        "questions": [
+          {
+            "id": "s6-p3-q1",
+            "type": "mc",
+            "prompt": "Strategy 1 (Main Idea): What is the PRIMARY FOCUS of the passage?",
+            "options": [
+              "How natural light cycles regulate human biological clocks, how screen habits disrupt them, and how simple adjustments restore health",
+              "How to design blue-light filtering glasses for professional graphic designers",
+              "Why human beings should sleep for fifteen hours every afternoon",
+              "How smartphone manufacturers calculate battery lifespans"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The text explores the biology of circadian rhythms, explains modern disruptions caused by screen lighting, and offers practical solutions (digital sunsets and morning sunlight)."
+          },
+          {
+            "id": "s6-p3-q2",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 1, what definition clue explains the term \"circadian rhythm\"?",
+            "options": [
+              "The twenty-four-hour biological clock governing sleep, hormone secretion, and cognitive vigilance",
+              "A type of smartphone alarm ringtone used by office workers",
+              "A surgical operation performed on human brain cells",
+              "A musical tempo used in relaxation therapies"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 1 defines circadian rhythm directly: \"the twenty-four-hour biological clock governing sleep, hormone secretion, and cognitive vigilance\"."
+          },
+          {
+            "id": "s6-p3-q3",
+            "type": "mc",
+            "prompt": "Strategy 3 (Reference Words): In Sentence 5, what does the phrase \"these widespread metabolic disruptions\" refer to?",
+            "options": [
+              "Impaired immune defenses, elevated blood pressure, and reduced problem-solving capacity",
+              "Natural dawn sunlight and evening darkness",
+              "Fifteen minutes of morning walking exercises",
+              "The purchase of new computer monitors"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"These widespread metabolic disruptions\" points directly back to the health damages listed in Sentence 4 (impaired immunity, higher blood pressure, diminished mental focus)."
+          },
+          {
+            "id": "s6-p3-q4",
+            "type": "mc",
+            "prompt": "Strategy 4 (Text Structure): What is the OVERALL organizational framework of the passage?",
+            "options": [
+              "Cause and Effect combined with Problem and Solution",
+              "Strict Chronological Diary of an ancient traveler",
+              "Compare and Contrast between two smartphone brands",
+              "Fictional Mystery Story about a lost clock"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The text presents the biological cause-effect cycle, shows how screen light causes health problems, and offers chronobiological solutions."
+          },
+          {
+            "id": "s6-p3-q5",
+            "type": "mc",
+            "prompt": "Strategy 4 (Signal Words): In Sentence 4, what is the role of the transitional adverb \"Consequently\"?",
+            "options": [
+              "To indicate that serious health problems result directly from nighttime melatonin suppression",
+              "To contrast morning cortisol with evening melatonin",
+              "To introduce an example of a brand-new smartphone model",
+              "To ask a rhetorical question to the audience"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"Consequently\" introduces the physiological consequences (impaired immunity, high blood pressure) that result from the blue-light disruption in Sentence 3."
+          },
+          {
+            "id": "s6-p3-q6",
+            "type": "mc",
+            "prompt": "Strategy 2 (Context Clues): In Sentence 3, what does the verb \"suppresses\" mean based on context clues?",
+            "options": [
+              "Blocks, inhibits, or prevents from occurring normally",
+              "Increases rapidly by five hundred percent",
+              "Celebrates with public awards and honors",
+              "Translates from one language into another"
+            ],
+            "correctAnswer": 0,
+            "explanation": "\"Suppresses melatonin production\" means artificial blue light inhibits or stops the body from releasing the sleep hormone."
+          },
+          {
+            "id": "s6-p3-q7",
+            "type": "mc",
+            "prompt": "Strategy 5 (Inference): What can be logically INFERRED from Sentence 2 and Sentence 3 about looking at smartphones in bed?",
+            "options": [
+              "The brain interprets screen light as daylight, tricking the body into remaining alert when it should prepare for sleep",
+              "Smartphones emit chemical melatonin vapor that helps individuals fall asleep instantly",
+              "Looking at screens in bed cures chronic high blood pressure within ten minutes",
+              "Morning sunlight is harmful and should always be avoided by office workers"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Because daylight triggers alertness and darkness triggers melatonin, exposing eyes to bright blue screen light late at night tricks the brain into believing it is daytime."
+          },
+          {
+            "id": "s6-p3-q8",
+            "type": "mc",
+            "prompt": "Strategy 5 (Paraphrasing): Which sentence best PARAPHRASES Sentence 5: \"To counteract these widespread metabolic disruptions, chronobiology experts advise establishing a strict digital sunset by shutting off luminous screens ninety minutes before bedtime.\"?",
+            "options": [
+              "To prevent these common health problems, biological sleep specialists recommend powering down glowing electronic devices an hour and a half prior to going to sleep.",
+              "To counteract metabolic disruptions, experts advise establishing a digital sunset by shutting off screens ninety minutes before bedtime.",
+              "Watching television in bed for ninety minutes stimulates healthy metabolic enzymes.",
+              "Chronobiology experts advise sleeping with digital smartphone screens on all night."
+            ],
+            "correctAnswer": 0,
+            "explanation": "Option A translates the sentence into clean, fresh language (biological sleep specialists, powering down glowing electronic devices an hour and a half prior to going to sleep) without copying."
+          },
+          {
+            "id": "s6-p3-q9",
+            "type": "mc",
+            "prompt": "Strategy 5 (Evaluating Distortions): Which statement represents an UNSUPPORTED claim that goes beyond the text evidence?",
+            "options": [
+              "Humans should move into dark underground caverns permanently to avoid all electronic light exposure",
+              "Morning outdoor light helps reset the brain's master circadian pacemaker",
+              "Cortisol release is naturally stimulated by morning sunlight to promote alertness",
+              "Chronic circadian misalignment impairs the body's natural immune defenses"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The passage advises a 90-minute digital sunset and morning sunlight. Suggesting that humans live permanently in underground caves is an unsupported, absurd claim."
+          },
+          {
+            "id": "s6-p3-q10",
+            "type": "mc",
+            "prompt": "Strategy 1 & 5 (Synthesis): What is the PRACTICAL CORE LESSON for personal health established in Sentence 6?",
+            "options": [
+              "Coordinating daily habits like light exposure and screen use with natural circadian cycles is essential for sustaining physical vitality and mental performance",
+              "Night-shift workers never need to sleep because internal pacemakers adapt within two days",
+              "Artificial LED lights are superior to natural sunlight for synchronizing human brain chemistry",
+              "Physical recovery only depends on the number of hours spent sitting in office chairs"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Sentence 6 concludes that aligning daily routines with solar rhythms (morning light, nighttime dark) restores vitality, mental sharpness, and long-term health."
           }
         ]
       }
