@@ -3066,19 +3066,33 @@ window.ReadSkillsData = {
     {
       "id": "STD-6501",
       "name": "Somsak Jaidee",
-      "email": "somsak@bru.ac.th",
       "onlineHours": "14.5 hrs",
       "onlineSeconds": 52200,
+      "unitScores": {
+        "u1": 90,
+        "u2": 85,
+        "u3": 95,
+        "u4": 88,
+        "u5": 92,
+        "u6": 0
+      },
       "completedUnits": "5/6 Units",
-      "quizAvg": "88%",
+      "quizAvg": "90%",
       "lastActive": "2026-09-21 14:15"
     },
     {
       "id": "STD-6502",
       "name": "Kanya Wongsuwan",
-      "email": "kanya@bru.ac.th",
       "onlineHours": "18.2 hrs",
       "onlineSeconds": 65520,
+      "unitScores": {
+        "u1": 95,
+        "u2": 90,
+        "u3": 100,
+        "u4": 90,
+        "u5": 95,
+        "u6": 95
+      },
       "completedUnits": "6/6 Units",
       "quizAvg": "94%",
       "lastActive": "2026-09-21 13:40"
@@ -3086,19 +3100,33 @@ window.ReadSkillsData = {
     {
       "id": "STD-6503",
       "name": "Niran Suwannarat",
-      "email": "niran@bru.ac.th",
       "onlineHours": "9.8 hrs",
       "onlineSeconds": 35280,
+      "unitScores": {
+        "u1": 80,
+        "u2": 75,
+        "u3": 75,
+        "u4": 0,
+        "u5": 0,
+        "u6": 0
+      },
       "completedUnits": "3/6 Units",
-      "quizAvg": "76%",
+      "quizAvg": "77%",
       "lastActive": "2026-09-20 18:22"
     },
     {
       "id": "STD-6504",
       "name": "Ploypailin Rattana",
-      "email": "ploy@bru.ac.th",
       "onlineHours": "22.0 hrs",
       "onlineSeconds": 79200,
+      "unitScores": {
+        "u1": 100,
+        "u2": 95,
+        "u3": 95,
+        "u4": 95,
+        "u5": 95,
+        "u6": 95
+      },
       "completedUnits": "6/6 Units",
       "quizAvg": "96%",
       "lastActive": "2026-09-21 15:00"
@@ -3106,9 +3134,16 @@ window.ReadSkillsData = {
     {
       "id": "STD-6505",
       "name": "Chaiwat Prasert",
-      "email": "chaiwat@bru.ac.th",
       "onlineHours": "6.4 hrs",
       "onlineSeconds": 23040,
+      "unitScores": {
+        "u1": 70,
+        "u2": 65,
+        "u3": 0,
+        "u4": 0,
+        "u5": 0,
+        "u6": 0
+      },
       "completedUnits": "2/6 Units",
       "quizAvg": "68%",
       "lastActive": "2026-09-19 11:05"
