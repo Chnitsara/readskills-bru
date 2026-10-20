@@ -249,6 +249,40 @@ class ReadSkillsApp {
       lastScore: savedS6QuizScore ? parseInt(savedS6QuizScore) : null
     };
 
+    // Educational Reading Games State (Word Matcher & Speed Main Idea Race)
+    this.activePracticeGame = null; // 'g1' (Word Matcher) or 'g2' (Speed Main Idea Race)
+
+    this.wmState = {
+      roundTerms: [],
+      roundDefs: [],
+      selectedTermId: null,
+      selectedDefId: null,
+      matchedIds: [],
+      score: 0,
+      combo: 1,
+      startTime: 0,
+      elapsedSeconds: 0,
+      timerInterval: null,
+      isCompleted: false,
+      statusMsg: '',
+      highScore: parseInt(localStorage.getItem('bru_word_matcher_highscore') || '0', 10)
+    };
+
+    this.srState = {
+      questions: [],
+      currentQuestionIdx: 0,
+      score: 0,
+      streak: 0,
+      bestStreak: 0,
+      correctCount: 0,
+      remainingSeconds: 15,
+      timerInterval: null,
+      selectedChoice: null,
+      isAnswered: false,
+      isCompleted: false,
+      highScore: parseInt(localStorage.getItem('bru_speed_race_highscore') || '0', 10)
+    };
+
     this.init();
   }
 
@@ -5149,6 +5183,12 @@ class ReadSkillsApp {
 
   // 4. Practice & Quiz View (Section D: Practice & Quiz)
   renderPracticeView() {
+    if (this.activePracticeGame === 'g1') {
+      return this.renderWordMatcherGame();
+    }
+    if (this.activePracticeGame === 'g2') {
+      return this.renderSpeedRaceGame();
+    }
     if (this.activeStandaloneQuizId) {
       if (this.activeQuizResult) {
         return this.renderStandaloneQuizResult();
@@ -5177,26 +5217,45 @@ class ReadSkillsApp {
             <span>Educational Reading Games (เกมการเรียนรู้คำศัพท์และความเร็ว)</span>
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            ${games.map((g, idx) => `
-              <div class="glass-card p-6 border-l-4 ${idx === 0 ? 'border-purple-700' : 'border-amber-500'} space-y-3">
-                <div class="flex items-center space-x-3">
-                  <div class="w-10 h-10 ${idx === 0 ? 'bg-purple-100 text-purple-800' : 'bg-amber-100 text-amber-800'} rounded-xl flex items-center justify-center font-bold">
-                    <i data-lucide="${g.icon || 'gamepad'}" class="w-5 h-5"></i>
+            ${games.map((g, idx) => {
+              const isG1 = g.id === 'g1';
+              const high = isG1 ? (this.wmState.highScore || 0) : (this.srState.highScore || 0);
+              const actionFn = isG1 ? "app.startWordMatcherGame()" : "app.startSpeedRaceGame()";
+              return `
+                <div class="glass-card p-6 border-l-4 ${isG1 ? 'border-purple-700' : 'border-amber-500'} space-y-3 flex flex-col justify-between hover:shadow-lg transition">
+                  <div class="space-y-3">
+                    <div class="flex items-center justify-between">
+                      <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 ${isG1 ? 'bg-purple-100 text-purple-800' : 'bg-amber-100 text-amber-800'} rounded-xl flex items-center justify-center font-bold shadow-sm">
+                          <i data-lucide="${g.icon || 'gamepad'}" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                          <h4 class="font-bold text-sm text-slate-900">${g.title}</h4>
+                          <span class="text-[10px] uppercase font-bold ${isG1 ? 'text-purple-700' : 'text-amber-700'}">Units 1–6 Integrated Content</span>
+                        </div>
+                      </div>
+                      ${high > 0 ? `
+                        <span class="text-[11px] font-bold px-2.5 py-1 rounded-full ${isG1 ? 'bg-purple-50 text-purple-700 border border-purple-200' : 'bg-amber-50 text-amber-800 border border-amber-200'} flex items-center space-x-1">
+                          <i data-lucide="trophy" class="w-3 h-3"></i>
+                          <span>Best: ${high} pts</span>
+                        </span>
+                      ` : ''}
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">${g.description}</p>
+                    <div class="text-[11px] text-slate-500 flex items-center space-x-2">
+                      <i data-lucide="sparkles" class="w-3.5 h-3.5 text-purple-500"></i>
+                      <span>${isG1 ? '24 Core Reading Terms • 6 Pairs per Round' : '10 Fast-Paced Passages • 15s Timer per Question'}</span>
+                    </div>
                   </div>
-                  <div>
-                    <h4 class="font-bold text-sm text-slate-900">${g.title}</h4>
-                    <span class="text-[10px] uppercase font-bold text-purple-700">Interactive Game Mode</span>
+                  <div class="pt-2">
+                    <button onclick="${actionFn}" class="w-full sm:w-auto px-5 py-2.5 ${isG1 ? 'bg-purple-700 hover:bg-purple-800' : 'bg-amber-600 hover:bg-amber-700'} text-white text-xs font-semibold rounded-xl transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                      <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                      <span>Play Challenge (${isG1 ? 'เล่นเกมจับคู่คำศัพท์' : 'เริ่มประลองความเร็ว 15s'})</span>
+                    </button>
                   </div>
                 </div>
-                <p class="text-xs text-slate-600 leading-relaxed">${g.description}</p>
-                <div class="pt-2">
-                  <button onclick="alert('Starting ${g.title}!')" class="px-4 py-2 ${idx === 0 ? 'bg-purple-700 hover:bg-purple-800' : 'bg-amber-600 hover:bg-amber-700'} text-white text-xs font-semibold rounded-xl transition flex items-center space-x-2">
-                    <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                    <span>Play Challenge</span>
-                  </button>
-                </div>
-              </div>
-            `).join('')}
+              `;
+            }).join('')}
           </div>
         </div>
 
@@ -5243,6 +5302,623 @@ class ReadSkillsApp {
           </div>
         </div>
 
+      </div>
+    `;
+  }
+
+
+  /* =========================================================================
+     EDUCATIONAL READING GAMES (UNITS 1–6 INTEGRATED CONTENT)
+     ========================================================================= */
+
+  exitPracticeGame() {
+    if (this.wmState.timerInterval) {
+      clearInterval(this.wmState.timerInterval);
+      this.wmState.timerInterval = null;
+    }
+    if (this.srState.timerInterval) {
+      clearInterval(this.srState.timerInterval);
+      this.srState.timerInterval = null;
+    }
+    this.activePracticeGame = null;
+    this.navigate('practice', false);
+  }
+
+  /* ------------------- Game 1: Word Matcher Challenge ------------------- */
+  startWordMatcherGame() {
+    if (this.wmState.timerInterval) clearInterval(this.wmState.timerInterval);
+
+    const bank = (ReadSkillsData.wordMatcherBank && ReadSkillsData.wordMatcherBank.length >= 6)
+      ? [...ReadSkillsData.wordMatcherBank]
+      : [
+          { id: 'wm-1', term: 'Skimming', def: 'การอ่านกวาดสายตาอย่างรวดเร็วเพื่อหาใจความสำคัญโดยรวมของบทอ่าน', unit: 'Unit 1' },
+          { id: 'wm-2', term: 'Scanning', def: 'การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะเจาะจง เช่น วันที่ ตัวเลข หรือชื่อเฉพาะ', unit: 'Unit 1' },
+          { id: 'wm-5', term: 'Context Clues', def: 'คำหรือข้อความแวดล้อมที่ช่วยให้ผู้อ่านเดาความหมายของคำศัพท์ที่ไม่คุ้นเคย', unit: 'Unit 2' },
+          { id: 'wm-9', term: 'Reference Words', def: 'คำที่ใช้แทนคำนามที่กล่าวไปแล้ว เพื่อหลีกเลี่ยงการพูดคำเดิมซ้ำๆ', unit: 'Unit 3' },
+          { id: 'wm-13', term: 'Cause and Effect', def: 'โครงสร้างบทอ่านที่อธิบายเหตุและผลลัพธ์ เช่น because, therefore, consequently', unit: 'Unit 4' },
+          { id: 'wm-17', term: 'Making Inferences', def: 'การอ่านระหว่างบรรทัดเพื่อสรุปความหมายโดยนัยที่ผู้เขียนไม่ได้บอกตรงๆ', unit: 'Unit 5' }
+        ];
+
+    // Shuffle and pick 6 items
+    const shuffled = bank.sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 6);
+
+    // Terms array
+    const terms = selected.map(item => ({ id: item.id, term: item.term, unit: item.unit })).sort(() => Math.random() - 0.5);
+    // Definitions array (shuffled independently)
+    const defs = selected.map(item => ({ id: item.id, def: item.def, unit: item.unit })).sort(() => Math.random() - 0.5);
+
+    this.wmState.roundTerms = terms;
+    this.wmState.roundDefs = defs;
+    this.wmState.selectedTermId = null;
+    this.wmState.selectedDefId = null;
+    this.wmState.matchedIds = [];
+    this.wmState.score = 0;
+    this.wmState.combo = 1;
+    this.wmState.elapsedSeconds = 0;
+    this.wmState.isCompleted = false;
+    this.wmState.statusMsg = 'คลิกเลือกคำศัพท์ภาษาอังกฤษทางซ้าย แล้วคลิกเลือกคำจำกัดความภาษาไทยทางขวาให้ตรงกัน';
+    this.activePracticeGame = 'g1';
+
+    this.wmState.timerInterval = setInterval(() => {
+      this.wmState.elapsedSeconds++;
+      const timerEl = document.getElementById('wm-live-timer');
+      if (timerEl) {
+        const m = Math.floor(this.wmState.elapsedSeconds / 60);
+        const s = (this.wmState.elapsedSeconds % 60).toString().padStart(2, '0');
+        timerEl.textContent = `${m}:${s}`;
+      }
+    }, 1000);
+
+    this.navigate('practice', false);
+  }
+
+  selectWordMatcherTerm(termId) {
+    if (this.wmState.matchedIds.includes(termId)) return;
+    this.wmState.selectedTermId = termId;
+
+    if (this.wmState.selectedDefId) {
+      this.checkWordMatcherPair();
+    } else {
+      this.renderWordMatcherBoardOnly();
+    }
+  }
+
+  selectWordMatcherDef(defId) {
+    if (this.wmState.matchedIds.includes(defId)) return;
+    this.wmState.selectedDefId = defId;
+
+    if (this.wmState.selectedTermId) {
+      this.checkWordMatcherPair();
+    } else {
+      this.renderWordMatcherBoardOnly();
+    }
+  }
+
+  checkWordMatcherPair() {
+    const termId = this.wmState.selectedTermId;
+    const defId = this.wmState.selectedDefId;
+    if (!termId || !defId) return;
+
+    if (termId === defId) {
+      // Correct Match!
+      this.wmState.matchedIds.push(termId);
+      const earned = 100 * this.wmState.combo;
+      this.wmState.score += earned;
+      this.wmState.combo++;
+      this.wmState.statusMsg = `✅ ถูกต้องยอดเยี่ยม! +${earned} คะแนน (Combo x${this.wmState.combo - 1}! 🔥)`;
+
+      this.wmState.selectedTermId = null;
+      this.wmState.selectedDefId = null;
+
+      // Check if all 6 matched
+      if (this.wmState.matchedIds.length === this.wmState.roundTerms.length) {
+        if (this.wmState.timerInterval) clearInterval(this.wmState.timerInterval);
+        this.wmState.isCompleted = true;
+        if (this.wmState.score > this.wmState.highScore) {
+          this.wmState.highScore = this.wmState.score;
+          localStorage.setItem('bru_word_matcher_highscore', this.wmState.score);
+        }
+        this.navigate('practice', false);
+        return;
+      }
+      this.renderWordMatcherBoardOnly();
+    } else {
+      // Mismatch
+      this.wmState.combo = 1;
+      this.wmState.score = Math.max(0, this.wmState.score - 10);
+      this.wmState.statusMsg = '❌ ยังไม่ตรงกัน (-10 คะแนน) ลองเลือกใหม่อีกครั้งนะ!';
+      this.renderWordMatcherBoardOnly();
+
+      setTimeout(() => {
+        this.wmState.selectedTermId = null;
+        this.wmState.selectedDefId = null;
+        this.wmState.statusMsg = 'คลิกเลือกคำศัพท์และคำจำกัดความที่สอดคล้องกัน';
+        this.renderWordMatcherBoardOnly();
+      }, 700);
+    }
+  }
+
+  renderWordMatcherBoardOnly() {
+    const container = document.getElementById('wm-board-container');
+    if (container) {
+      container.innerHTML = this.renderWordMatcherBoardHtml();
+      if (window.lucide) lucide.createIcons();
+    }
+    const scoreEl = document.getElementById('wm-live-score');
+    if (scoreEl) scoreEl.textContent = `${this.wmState.score} pts`;
+    const comboEl = document.getElementById('wm-live-combo');
+    if (comboEl) comboEl.textContent = `x${this.wmState.combo}`;
+    const matchEl = document.getElementById('wm-live-matches');
+    if (matchEl) matchEl.textContent = `${this.wmState.matchedIds.length} / ${this.wmState.roundTerms.length}`;
+    const statusEl = document.getElementById('wm-live-status');
+    if (statusEl) statusEl.textContent = this.wmState.statusMsg;
+  }
+
+  renderWordMatcherBoardHtml() {
+    return `
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+        <!-- Left: English Terms Column -->
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-purple-900 uppercase tracking-wider flex items-center justify-between pb-1 border-b border-purple-200">
+            <span>English Reading Terms (คำศัพท์ภาษาอังกฤษ)</span>
+            <span class="text-[10px] text-slate-500">Units 1–6</span>
+          </div>
+          <div class="space-y-2.5">
+            ${this.wmState.roundTerms.map((item, idx) => {
+              const isMatched = this.wmState.matchedIds.includes(item.id);
+              const isSelected = this.wmState.selectedTermId === item.id;
+              let cardClass = "p-4 rounded-xl text-left transition flex items-center justify-between border cursor-pointer ";
+              if (isMatched) {
+                cardClass += "bg-emerald-50 border-emerald-300 text-emerald-800 opacity-60 pointer-events-none";
+              } else if (isSelected) {
+                cardClass += "bg-purple-100 border-purple-600 ring-2 ring-purple-300 text-purple-950 font-bold shadow-md";
+              } else {
+                cardClass += "bg-white border-purple-100 hover:border-purple-400 hover:shadow-sm text-slate-800 font-semibold";
+              }
+              return `
+                <button onclick="app.selectWordMatcherTerm('${item.id}')" class="${cardClass}">
+                  <div class="flex items-center space-x-2.5">
+                    <span class="w-6 h-6 rounded-lg ${isMatched ? 'bg-emerald-200 text-emerald-800' : 'bg-purple-100 text-purple-800'} text-[11px] font-bold flex items-center justify-center shrink-0">
+                      ${idx + 1}
+                    </span>
+                    <span class="text-xs sm:text-sm">${item.term}</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-slate-100 text-slate-600">${item.unit}</span>
+                    ${isMatched ? '<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600"></i>' : ''}
+                  </div>
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <!-- Right: Thai Definitions Column -->
+        <div class="space-y-3">
+          <div class="text-xs font-bold text-purple-900 uppercase tracking-wider flex items-center justify-between pb-1 border-b border-purple-200">
+            <span>Thai Reading Definitions (คำจำกัดความภาษาไทย)</span>
+            <span class="text-[10px] text-slate-500">สุ่มสลับตำแหน่ง</span>
+          </div>
+          <div class="space-y-2.5">
+            ${this.wmState.roundDefs.map((item, idx) => {
+              const isMatched = this.wmState.matchedIds.includes(item.id);
+              const isSelected = this.wmState.selectedDefId === item.id;
+              let cardClass = "p-4 rounded-xl text-left transition flex items-start justify-between border cursor-pointer ";
+              if (isMatched) {
+                cardClass += "bg-emerald-50 border-emerald-300 text-emerald-800 opacity-60 pointer-events-none";
+              } else if (isSelected) {
+                cardClass += "bg-amber-100 border-amber-600 ring-2 ring-amber-300 text-amber-950 font-bold shadow-md";
+              } else {
+                cardClass += "bg-white border-purple-100 hover:border-amber-400 hover:shadow-sm text-slate-800 font-medium";
+              }
+              return `
+                <button onclick="app.selectWordMatcherDef('${item.id}')" class="${cardClass}">
+                  <div class="flex items-start space-x-2.5">
+                    <span class="w-6 h-6 rounded-lg ${isMatched ? 'bg-emerald-200 text-emerald-800' : 'bg-amber-100 text-amber-800'} text-[11px] font-bold flex items-center justify-center shrink-0 mt-0.5">
+                      ${String.fromCharCode(65 + idx)}
+                    </span>
+                    <span class="text-xs leading-relaxed">${item.def}</span>
+                  </div>
+                  ${isMatched ? '<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 ml-2 mt-0.5"></i>' : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  renderWordMatcherGame() {
+    if (this.wmState.isCompleted) {
+      const minutes = Math.floor(this.wmState.elapsedSeconds / 60);
+      const seconds = (this.wmState.elapsedSeconds % 60).toString().padStart(2, '0');
+      const isNewHigh = this.wmState.score >= this.wmState.highScore && this.wmState.score > 0;
+
+      return `
+        <div class="max-w-2xl mx-auto space-y-6">
+          <div class="glass-card p-6 sm:p-8 text-center space-y-5 bg-gradient-to-b from-purple-50 via-white to-purple-50/50 border border-purple-200 rounded-3xl shadow-xl">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-emerald-100 text-emerald-600 rounded-3xl flex items-center justify-center mx-auto shadow-inner">
+              <i data-lucide="trophy" class="w-8 h-8 sm:w-10 sm:h-10"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Challenge Cleared 🎉</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2">Word Matcher Champion!</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">ยอดเยี่ยมมาก! คุณจับคู่คำศัพท์และนิยามการอ่านครบทั้ง 6 คู่เรียบร้อยแล้ว</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 py-2">
+              <div class="bg-white p-3.5 rounded-2xl border border-purple-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Final Score</span>
+                <span class="text-xl sm:text-2xl font-black text-purple-900">${this.wmState.score}</span>
+                <span class="text-[10px] text-slate-400 block">points</span>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-purple-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Time Spent</span>
+                <span class="text-xl sm:text-2xl font-black text-purple-900">${minutes}:${seconds}</span>
+                <span class="text-[10px] text-slate-400 block">min:sec</span>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-purple-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Record High</span>
+                <span class="text-xl sm:text-2xl font-black text-amber-600">${this.wmState.highScore}</span>
+                <span class="text-[10px] text-amber-500 font-semibold block">${isNewHigh ? '🏆 New Best!' : 'points'}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              <button onclick="app.startWordMatcherGame()" class="px-6 py-3 bg-purple-700 hover:bg-purple-800 text-white font-bold rounded-2xl text-xs transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span>Play Another Round (สุ่มคำศัพท์ชุดใหม่)</span>
+              </button>
+              <button onclick="app.exitPracticeGame()" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-2xl text-xs transition flex items-center justify-center space-x-2 cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Back to Practice Hub</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    const m = Math.floor(this.wmState.elapsedSeconds / 60);
+    const s = (this.wmState.elapsedSeconds % 60).toString().padStart(2, '0');
+
+    return `
+      <div class="space-y-6">
+        <!-- Top Control Bar -->
+        <div class="glass-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center space-x-3">
+            <button onclick="app.exitPracticeGame()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span>Exit Game</span>
+            </button>
+            <div class="h-6 w-px bg-purple-200"></div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="bg-purple-700 text-white text-[10px] font-extrabold px-2 py-0.5 rounded">GAME 01</span>
+                <h3 class="text-sm font-bold text-slate-900">Word Matcher Challenge</h3>
+              </div>
+              <p class="text-[11px] text-purple-700 font-medium">เกมจับคู่คำศัพท์และนิยามการอ่าน Units 1–6</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-2 sm:space-x-3 text-xs self-end sm:self-auto flex-wrap gap-y-2">
+            <div class="px-3 py-1.5 bg-purple-100 text-purple-900 rounded-xl font-bold flex items-center space-x-1.5">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-purple-700"></i>
+              <span>Score: <strong id="wm-live-score">${this.wmState.score} pts</strong></span>
+            </div>
+            <div class="px-2.5 py-1.5 bg-amber-100 text-amber-900 rounded-xl font-bold flex items-center space-x-1">
+              <span>🔥 Combo: <strong id="wm-live-combo">x${this.wmState.combo}</strong></span>
+            </div>
+            <div class="px-2.5 py-1.5 bg-emerald-100 text-emerald-900 rounded-xl font-bold flex items-center space-x-1">
+              <span>Matched: <strong id="wm-live-matches">${this.wmState.matchedIds.length} / ${this.wmState.roundTerms.length}</strong></span>
+            </div>
+            <div class="px-3 py-1.5 bg-slate-900 text-white rounded-xl font-mono text-xs font-bold flex items-center space-x-1.5 shadow-sm">
+              <i data-lucide="clock" class="w-3.5 h-3.5 text-purple-300"></i>
+              <span id="wm-live-timer">${m}:${s}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notification Banner -->
+        <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-2xl text-xs text-purple-900 flex items-center space-x-2">
+          <i data-lucide="info" class="w-4 h-4 text-purple-700 shrink-0"></i>
+          <span id="wm-live-status" class="font-medium">${this.wmState.statusMsg}</span>
+        </div>
+
+        <!-- Game Cards Board -->
+        <div id="wm-board-container">
+          ${this.renderWordMatcherBoardHtml()}
+        </div>
+      </div>
+    `;
+  }
+
+  /* ------------------- Game 2: Speed Main Idea Race ------------------- */
+  startSpeedRaceGame() {
+    if (this.srState.timerInterval) clearInterval(this.srState.timerInterval);
+
+    const bank = (ReadSkillsData.speedRaceBank && ReadSkillsData.speedRaceBank.length >= 5)
+      ? [...ReadSkillsData.speedRaceBank]
+      : [];
+
+    this.srState.questions = bank.sort(() => Math.random() - 0.5);
+    this.srState.currentQuestionIdx = 0;
+    this.srState.score = 0;
+    this.srState.streak = 0;
+    this.srState.bestStreak = 0;
+    this.srState.correctCount = 0;
+    this.srState.selectedChoice = null;
+    this.srState.isAnswered = false;
+    this.srState.isCompleted = false;
+    this.activePracticeGame = 'g2';
+
+    this.startSpeedRaceTimer();
+    this.navigate('practice', false);
+  }
+
+  startSpeedRaceTimer() {
+    if (this.srState.timerInterval) clearInterval(this.srState.timerInterval);
+    this.srState.remainingSeconds = 15;
+    this.srState.isAnswered = false;
+    this.srState.selectedChoice = null;
+
+    this.srState.timerInterval = setInterval(() => {
+      this.srState.remainingSeconds--;
+
+      const timerBar = document.getElementById('sr-timer-bar');
+      const timerText = document.getElementById('sr-timer-text');
+
+      if (timerText) {
+        timerText.textContent = `${this.srState.remainingSeconds}s`;
+      }
+      if (timerBar) {
+        const pct = Math.max(0, (this.srState.remainingSeconds / 15) * 100);
+        timerBar.style.width = `${pct}%`;
+        if (this.srState.remainingSeconds <= 4) {
+          timerBar.className = "h-2.5 rounded-full transition-all duration-1000 bg-rose-600 animate-pulse";
+        } else if (this.srState.remainingSeconds <= 8) {
+          timerBar.className = "h-2.5 rounded-full transition-all duration-1000 bg-amber-500";
+        } else {
+          timerBar.className = "h-2.5 rounded-full transition-all duration-1000 bg-emerald-500";
+        }
+      }
+
+      if (this.srState.remainingSeconds <= 0) {
+        clearInterval(this.srState.timerInterval);
+        this.submitSpeedRaceAnswer(-1); // Timeout
+      }
+    }, 1000);
+  }
+
+  submitSpeedRaceAnswer(choiceIdx) {
+    if (this.srState.isAnswered) return;
+    if (this.srState.timerInterval) clearInterval(this.srState.timerInterval);
+
+    this.srState.isAnswered = true;
+    this.srState.selectedChoice = choiceIdx;
+
+    const q = this.srState.questions[this.srState.currentQuestionIdx];
+    const isCorrect = choiceIdx === q.answer;
+
+    if (isCorrect) {
+      const speedBonus = this.srState.remainingSeconds * 10;
+      const streakBonus = this.srState.streak * 20;
+      const earned = 100 + speedBonus + streakBonus;
+      this.srState.score += earned;
+      this.srState.streak++;
+      this.srState.correctCount++;
+      if (this.srState.streak > this.srState.bestStreak) {
+        this.srState.bestStreak = this.srState.streak;
+      }
+    } else {
+      this.srState.streak = 0;
+    }
+
+    this.navigate('practice', false);
+  }
+
+  nextSpeedRaceQuestion() {
+    if (this.srState.currentQuestionIdx + 1 >= this.srState.questions.length) {
+      // Completed Race
+      if (this.srState.timerInterval) clearInterval(this.srState.timerInterval);
+      this.srState.isCompleted = true;
+      if (this.srState.score > this.srState.highScore) {
+        this.srState.highScore = this.srState.score;
+        localStorage.setItem('bru_speed_race_highscore', this.srState.score);
+      }
+      this.navigate('practice', false);
+    } else {
+      this.srState.currentQuestionIdx++;
+      this.startSpeedRaceTimer();
+      this.navigate('practice', false);
+    }
+  }
+
+  renderSpeedRaceGame() {
+    if (this.srState.isCompleted) {
+      const isNewHigh = this.srState.score >= this.srState.highScore && this.srState.score > 0;
+      let rankTitle = "Speed Champion 🏆";
+      let rankColor = "text-amber-500";
+      if (this.srState.score < 800) {
+        rankTitle = "Reading Racer 🚀";
+        rankColor = "text-purple-600";
+      } else if (this.srState.score < 1400) {
+        rankTitle = "Main Idea Master ⚡";
+        rankColor = "text-emerald-600";
+      }
+
+      return `
+        <div class="max-w-2xl mx-auto space-y-6">
+          <div class="glass-card p-6 sm:p-8 text-center space-y-5 bg-gradient-to-b from-amber-50 via-white to-amber-50/50 border border-amber-200 rounded-3xl shadow-xl">
+            <div class="w-16 h-16 sm:w-20 sm:h-20 bg-amber-100 text-amber-600 rounded-3xl flex items-center justify-center mx-auto shadow-inner">
+              <i data-lucide="zap" class="w-8 h-8 sm:w-10 sm:h-10"></i>
+            </div>
+            
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-700 bg-amber-100 px-3 py-1 rounded-full">Speed Race Finished 🏁</span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-2 ${rankColor}">${rankTitle}</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-1">ประลองความเร็วหาใจความสำคัญครบทั้ง 10 บทอ่านเรียบร้อยแล้ว!</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-3 gap-3 sm:gap-4 py-2">
+              <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Final Score</span>
+                <span class="text-xl sm:text-2xl font-black text-amber-700">${this.srState.score}</span>
+                <span class="text-[10px] text-slate-400 block">points</span>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Accuracy</span>
+                <span class="text-xl sm:text-2xl font-black text-purple-900">${this.srState.correctCount} / 10</span>
+                <span class="text-[10px] text-slate-400 block">${Math.round((this.srState.correctCount / 10) * 100)}% correct</span>
+              </div>
+              <div class="bg-white p-3.5 rounded-2xl border border-amber-100 shadow-sm">
+                <span class="text-[10px] uppercase font-bold text-slate-500 block">Best Streak</span>
+                <span class="text-xl sm:text-2xl font-black text-emerald-600">🔥 ${this.srState.bestStreak}</span>
+                <span class="text-[10px] text-slate-400 block">${isNewHigh ? '🏆 New Best Score!' : 'in a row'}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+              <button onclick="app.startSpeedRaceGame()" class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-2xl text-xs transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                <i data-lucide="rotate-ccw" class="w-4 h-4"></i>
+                <span>Race Again (ประลองความเร็วอีกครั้ง)</span>
+              </button>
+              <button onclick="app.exitPracticeGame()" class="px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-2xl text-xs transition flex items-center justify-center space-x-2 cursor-pointer">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Back to Practice Hub</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    const q = this.srState.questions[this.srState.currentQuestionIdx];
+    const isAnswered = this.srState.isAnswered;
+    const selected = this.srState.selectedChoice;
+    const isCorrect = selected === q.answer;
+
+    return `
+      <div class="max-w-3xl mx-auto space-y-6">
+        <!-- Top Nav & Header -->
+        <div class="glass-card p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center space-x-3">
+            <button onclick="app.exitPracticeGame()" class="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition cursor-pointer">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              <span>Exit Race</span>
+            </button>
+            <div class="h-6 w-px bg-purple-200"></div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="bg-amber-600 text-white text-[10px] font-extrabold px-2 py-0.5 rounded">GAME 02</span>
+                <h3 class="text-sm font-bold text-slate-900">Speed Main Idea Race</h3>
+              </div>
+              <p class="text-[11px] text-amber-700 font-medium">Race ${this.srState.currentQuestionIdx + 1} of ${this.srState.questions.length} • ${q.topic}</p>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-3 text-xs self-end sm:self-auto">
+            <div class="px-3 py-1.5 bg-amber-100 text-amber-900 rounded-xl font-bold flex items-center space-x-1.5">
+              <i data-lucide="award" class="w-3.5 h-3.5 text-amber-700"></i>
+              <span>Score: <strong>${this.srState.score} pts</strong></span>
+            </div>
+            <div class="px-2.5 py-1.5 bg-purple-100 text-purple-900 rounded-xl font-bold flex items-center space-x-1">
+              <span>🔥 Streak: <strong>${this.srState.streak}</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15-Second Animated Timer Bar -->
+        <div class="glass-card p-4 space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold">
+            <span class="flex items-center space-x-1.5 text-slate-700">
+              <i data-lucide="timer" class="w-4 h-4 text-amber-600"></i>
+              <span>Time Remaining:</span>
+            </span>
+            <span id="sr-timer-text" class="text-sm font-black ${this.srState.remainingSeconds <= 4 ? 'text-rose-600 animate-pulse' : 'text-slate-900'}">
+              ${this.srState.remainingSeconds}s
+            </span>
+          </div>
+          <div class="w-full bg-slate-100 rounded-full h-2.5 overflow-hidden">
+            <div id="sr-timer-bar" style="width: ${Math.max(0, (this.srState.remainingSeconds / 15) * 100)}%" class="h-2.5 rounded-full transition-all duration-1000 ${this.srState.remainingSeconds <= 4 ? 'bg-rose-600' : (this.srState.remainingSeconds <= 8 ? 'bg-amber-500' : 'bg-emerald-500')}"></div>
+          </div>
+        </div>
+
+        <!-- Passage Card -->
+        <div class="glass-card p-5 sm:p-7 space-y-4 bg-slate-900 text-slate-100 rounded-2xl shadow-lg border border-slate-800">
+          <div class="flex items-center justify-between border-b border-slate-800 pb-2.5">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-400">⚡ Timed Reading Passage</span>
+            <span class="text-[10px] font-semibold text-slate-400">${q.units}</span>
+          </div>
+          <p class="text-sm sm:text-base leading-relaxed text-slate-200 font-serif italic">
+            "${q.passage}"
+          </p>
+        </div>
+
+        <!-- Question Prompt & Options -->
+        <div class="glass-card p-5 sm:p-6 space-y-4">
+          <h4 class="text-sm font-bold text-slate-900 flex items-center space-x-2">
+            <i data-lucide="help-circle" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            <span>Which sentence expresses the MAIN IDEA of this passage?</span>
+          </h4>
+
+          <div class="space-y-2.5">
+            ${q.options.map((opt, oIdx) => {
+              let optClass = "w-full text-left p-4 rounded-xl text-xs sm:text-sm font-medium transition flex items-start justify-between border cursor-pointer ";
+              if (!isAnswered) {
+                optClass += "bg-white border-purple-100 hover:border-amber-400 hover:bg-amber-50/50 text-slate-800";
+              } else {
+                if (oIdx === q.answer) {
+                  optClass += "bg-emerald-50 border-emerald-400 text-emerald-950 font-bold ring-2 ring-emerald-300";
+                } else if (oIdx === selected) {
+                  optClass += "bg-rose-50 border-rose-300 text-rose-950 font-semibold";
+                } else {
+                  optClass += "bg-white border-slate-200 text-slate-400 opacity-60";
+                }
+              }
+
+              return `
+                <button onclick="app.submitSpeedRaceAnswer(${oIdx})" ${isAnswered ? 'disabled' : ''} class="${optClass}">
+                  <div class="flex items-start space-x-3">
+                    <span class="w-6 h-6 rounded-lg text-xs font-bold flex items-center justify-center shrink-0 mt-0.5 ${isAnswered && oIdx === q.answer ? 'bg-emerald-200 text-emerald-800' : 'bg-slate-100 text-slate-700'}">
+                      ${String.fromCharCode(65 + oIdx)}
+                    </span>
+                    <span class="leading-relaxed">${opt}</span>
+                  </div>
+                  ${isAnswered && oIdx === q.answer ? '<i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0 ml-2 mt-1"></i>' : ''}
+                  ${isAnswered && oIdx === selected && !isCorrect ? '<i data-lucide="x-circle" class="w-4 h-4 text-rose-600 shrink-0 ml-2 mt-1"></i>' : ''}
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Answer Feedback & Next Button -->
+          ${isAnswered ? `
+            <div class="p-4 rounded-2xl text-xs leading-relaxed space-y-2 ${isCorrect ? 'bg-emerald-50 border border-emerald-200 text-emerald-900' : 'bg-rose-50 border border-rose-200 text-rose-900'}">
+              <div class="flex items-center justify-between font-bold text-sm">
+                <span>${isCorrect ? '🎉 ถูกต้องแม่นยำ!' : (selected === -1 ? '⏰ หมดเวลา (Time Out)!' : '❌ ยังไม่ถูกต้อง!')}</span>
+                ${isCorrect ? `
+                  <span class="text-xs bg-emerald-200/80 px-2.5 py-0.5 rounded-full text-emerald-900">
+                    +100 + ${this.srState.remainingSeconds * 10} speed bonus pts
+                  </span>
+                ` : ''}
+              </div>
+              <p>${q.explanation}</p>
+            </div>
+
+            <div class="flex justify-end pt-2">
+              <button onclick="app.nextSpeedRaceQuestion()" class="w-full sm:w-auto px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded-xl text-xs transition flex items-center justify-center space-x-2 shadow-md cursor-pointer">
+                <span>${this.srState.currentQuestionIdx + 1 >= this.srState.questions.length ? 'Finish Race & View Results 🏆' : 'Next Race ➡'}</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          ` : ''}
+        </div>
       </div>
     `;
   }

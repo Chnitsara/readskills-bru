@@ -7474,5 +7474,585 @@ window.ReadSkillsData = {
         ]
       }
     ]
-  }
+  },
+  "gameData": {
+    "wordMatcherPairs": [
+      {
+        "id": "wm-1",
+        "term": "Skimming",
+        "meaning": "การอ่านกวาดสายตาอย่างเร็วเพื่อจับใจความสำคัญของบทอ่าน",
+        "unit": "Unit 1"
+      },
+      {
+        "id": "wm-2",
+        "term": "Scanning",
+        "meaning": "การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะ เช่น ตัวเลข วันที่ หรือชื่อเฉพาะ",
+        "unit": "Unit 1"
+      },
+      {
+        "id": "wm-3",
+        "term": "Topic Sentence",
+        "meaning": "ประโยคใจความหลักที่ควบคุมและสรุปเนื้อหาสำคัญของย่อหน้า",
+        "unit": "Unit 1"
+      },
+      {
+        "id": "wm-4",
+        "term": "Previewing",
+        "meaning": "การสำรวจหัวข้อ รูปภาพ และโครงสร้างคร่าวๆ ก่อนเริ่มอ่านจริง",
+        "unit": "Unit 1"
+      },
+      {
+        "id": "wm-5",
+        "term": "Context Clues",
+        "meaning": "คำชี้แนะในบริบทแวดล้อมที่ช่วยบอกความหมายของคำศัพท์ยาก",
+        "unit": "Unit 2"
+      },
+      {
+        "id": "wm-6",
+        "term": "Synonym Clue",
+        "meaning": "คำชี้แนะความหมายเหมือน เช่น or, that is to say, in other words",
+        "unit": "Unit 2"
+      },
+      {
+        "id": "wm-7",
+        "term": "Antonym Clue",
+        "meaning": "คำชี้แนะความหมายตรงข้าม เช่น however, unlike, whereas",
+        "unit": "Unit 2"
+      },
+      {
+        "id": "wm-8",
+        "term": "Definition Clue",
+        "meaning": "คำชี้แนะคำจำกัดความ เช่น is defined as, means, refers to",
+        "unit": "Unit 2"
+      },
+      {
+        "id": "wm-9",
+        "term": "Reference Words",
+        "meaning": "คำที่ใช้แทนคำนามที่กล่าวไปแล้วเพื่อความต่อเนื่องและเลี่ยงการพูดซ้ำ",
+        "unit": "Unit 3"
+      },
+      {
+        "id": "wm-10",
+        "term": "Demonstrative Pronoun",
+        "meaning": "สรรพนามชี้เฉพาะระบุสิ่งที่กล่าวถึง เช่น this, that, these, those",
+        "unit": "Unit 3"
+      },
+      {
+        "id": "wm-11",
+        "term": "Relative Pronoun",
+        "meaning": "สรรพนามเชื่อมความขยายคำนาม เช่น who, which, that, whose",
+        "unit": "Unit 3"
+      },
+      {
+        "id": "wm-12",
+        "term": "Substitute Words",
+        "meaning": "คำแทนคำนามทั่วไปเพื่อหลีกเลี่ยงการใช้คำเดิมซ้ำ เช่น one, ones",
+        "unit": "Unit 3"
+      },
+      {
+        "id": "wm-13",
+        "term": "Cause and Effect",
+        "meaning": "โครงสร้างบทอ่านที่แสดงความเป็นเหตุและผลลัพธ์ (because, consequently)",
+        "unit": "Unit 4"
+      },
+      {
+        "id": "wm-14",
+        "term": "Compare and Contrast",
+        "meaning": "โครงสร้างบทอ่านที่แสดงความเหมือนและความแตกต่าง (similarly, however)",
+        "unit": "Unit 4"
+      },
+      {
+        "id": "wm-15",
+        "term": "Problem and Solution",
+        "meaning": "โครงสร้างบทอ่านที่นำเสนอปัญหาและแนวทางการแก้ไข",
+        "unit": "Unit 4"
+      },
+      {
+        "id": "wm-16",
+        "term": "Chronological Sequence",
+        "meaning": "โครงสร้างบทอ่านที่เรียงตามลำดับเวลาหรือขั้นตอน (first, next, finally)",
+        "unit": "Unit 4"
+      },
+      {
+        "id": "wm-17",
+        "term": "Making Inferences",
+        "meaning": "การอ่านระหว่างบรรทัดเพื่ออนุมานความหมายที่ผู้เขียนไม่ได้บอกตรงๆ",
+        "unit": "Unit 5"
+      },
+      {
+        "id": "wm-18",
+        "term": "Text Clues",
+        "meaning": "ร่องรอยหลักฐานรูปธรรมในบทอ่านที่ใช้เชื่อมโยงกับตรรกะเพื่ออนุมาน",
+        "unit": "Unit 5"
+      },
+      {
+        "id": "wm-19",
+        "term": "Paraphrasing",
+        "meaning": "การถอดความใหม่ด้วยภาษาตนเองโดยรักษาความหมายดั้งเดิมครบ 100%",
+        "unit": "Unit 5"
+      },
+      {
+        "id": "wm-20",
+        "term": "Patchwriting",
+        "meaning": "ข้อผิดพลาดร้ายแรงจากการเปลี่ยนแค่คำศัพท์แต่ยังลอกโครงสร้างเดิม",
+        "unit": "Unit 5"
+      },
+      {
+        "id": "wm-21",
+        "term": "Strategy Blueprint",
+        "meaning": "ผังมโนทัศน์สังเคราะห์ทุกองค์ประกอบของบทอ่านเข้าด้วยกัน",
+        "unit": "Unit 6"
+      },
+      {
+        "id": "wm-22",
+        "term": "Error Self-Diagnosis",
+        "meaning": "การวิเคราะห์วินิจฉัยสาเหตุของข้อผิดพลาดในการอ่านเพื่อแก้ไขได้ตรงจุด",
+        "unit": "Unit 6"
+      },
+      {
+        "id": "wm-23",
+        "term": "Digital Annotation",
+        "meaning": "การทำสัญลักษณ์และไฮไลต์สีจำแนกหน้าที่ของประโยคในบทอ่าน",
+        "unit": "Unit 6"
+      },
+      {
+        "id": "wm-24",
+        "term": "Circadian Rhythm",
+        "meaning": "นาฬิกาชีวภาพ 24 ชั่วโมงที่ควบคุมการตื่น การนอน และการหลั่งฮอร์โมน",
+        "unit": "Unit 6"
+      },
+      {
+        "id": "wm-25",
+        "term": "Biodegradable",
+        "meaning": "วัสดุอินทรีย์ที่สามารถย่อยสลายได้ตามธรรมชาติด้วยจุลินทรีย์",
+        "unit": "Unit 6"
+      },
+      {
+        "id": "wm-26",
+        "term": "Urban Mobility",
+        "meaning": "ระบบการสัญจรและการเดินทางภายในเมืองใหญ่เพื่อความคล่องตัว",
+        "unit": "Unit 6"
+      }
+    ],
+    "speedRaceQuestions": [
+      {
+        "id": "sr-1",
+        "topic": "Urban Bicycle Highways (Units 1 & 4)",
+        "paragraph": "Metropolitan authorities constructed wide protected bicycle corridors separated from car lanes by concrete barriers. As a result, cycling commutes grew by forty-four percent, easing traffic gridlock and boosting shop revenues.",
+        "question": "Which statement expresses the MAIN IDEA of the paragraph?",
+        "options": [
+          "Dedicated bicycle highways solve traffic gridlock while benefiting commuter mobility and local store sales",
+          "Concrete barriers are too heavy for municipal workers to install along city highways",
+          "Shopkeepers prefer automobile customers because drivers purchase expensive luxury items",
+          "Cycling is only safe when citizens ride during the early morning hours"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The paragraph explains that building protected bike corridors solved traffic jams and also increased local business revenues."
+      },
+      {
+        "id": "sr-2",
+        "topic": "Ocean Microplastic Cleaners (Units 2 & 5)",
+        "paragraph": "Autonomous surface vessels collect floating plastic waste in coastal bays before it breaks down into microscopic fragments. Because microscopic plastics are eaten by marine plankton, preventing plastic breakdown protects global seafood safety.",
+        "question": "What is the CENTRAL POINT of the passage?",
+        "options": [
+          "Automated cleanup boats collect coastal plastics to protect marine food chains from toxic microplastic pollution",
+          "Plankton organisms actively hunt for synthetic plastics to nourish their offspring",
+          "Ocean fishing is prohibited within fifty kilometers of automated cleanup vessels",
+          "Plastic packaging breaks down completely into harmless purified water"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The paragraph highlights that collecting plastic waste before it degrades into microplastics protects the marine food chain."
+      },
+      {
+        "id": "sr-3",
+        "topic": "Heritage Seed Banks (Units 3 & 4)",
+        "paragraph": "Unlike commercial hybrid seeds that require chemical fertilizers and lose fertility after one season, traditional heritage seeds have evolved natural resistance to droughts. Farmers cultivating these indigenous varieties maintained stable yields during severe heatwaves.",
+        "question": "Which sentence best captures the MAIN IDEA?",
+        "options": [
+          "Traditional heritage seeds offer essential climate resilience because they naturally withstand harsh weather and droughts",
+          "Commercial hybrid seeds are the only seeds permitted in international agriculture",
+          "Chemical fertilizers eliminate all plant diseases in tropical farming valleys",
+          "Indigenous farmers stopped growing food crops after the recent heatwave"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The contrast highlights that traditional heritage seeds provide natural resilience against droughts and heatwaves."
+      },
+      {
+        "id": "sr-4",
+        "topic": "Bosco Verticale Living Architecture (Units 4 & 6)",
+        "paragraph": "The Bosco Verticale residential towers feature balconies planted with eight hundred living trees. This botanical architecture absorbs thirty tons of carbon dioxide each year and lowers interior summer temperatures, drastically cutting air conditioning power demands.",
+        "question": "What is the MAIN IDEA of the paragraph?",
+        "options": [
+          "Integrating living trees into residential high-rises provides natural air cooling and substantial carbon absorption",
+          "Architects in northern Italy refuse to construct concrete residential buildings",
+          "Balcony trees produce excessive humidity that damages apartment furniture",
+          "High-rise towers should only be built inside remote forest reserves"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main point is that vertical forest architecture naturally cools living spaces and absorbs carbon dioxide."
+      },
+      {
+        "id": "sr-5",
+        "topic": "Circadian Rhythms & Digital Screens (Units 5 & 6)",
+        "paragraph": "Evening exposure to artificial blue light from smartphones suppresses the brain from releasing melatonin, disrupting restorative sleep. Establishing a ninety-minute digital sunset before bedtime allows the body to restore natural biological sleep cycles.",
+        "question": "What is the MAIN TAKEAWAY of this health advice?",
+        "options": [
+          "Powering down digital screens before sleep allows the brain to release melatonin for healthy sleep cycles",
+          "Melatonin is a toxic chemical emitted by modern smartphone touchscreens",
+          "Human beings do not require sleep if they work in brightly lit offices",
+          "Evening screen time improves resting heart rates and strengthens vision"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The central advice is to avoid glowing screens before bedtime so the brain can produce melatonin and restore sleep."
+      },
+      {
+        "id": "sr-6",
+        "topic": "Expiration Date Clarification (Units 2 & 5)",
+        "paragraph": "Surveys show that shoppers often discard edible food because they confuse flavor tags with safety limits. Unlike \"use by\" dates that indicate actual safety deadlines, \"best before\" stamps merely reflect optimal taste, leading grocery stores to remove them from fresh produce.",
+        "question": "What is the PRIMARY MESSAGE of the paragraph?",
+        "options": [
+          "Clarifying the difference between safety deadlines and peak flavor stamps prevents edible food from being wasted",
+          "Supermarkets sell expired canned foods to increase weekly retail profit margins",
+          "All grocery date stamps mean that food will cause immediate illness the following morning",
+          "Shoppers should throw away unopened groceries every single weekend"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The core message is that understanding that \"best before\" means flavor rather than safety reduces food waste."
+      },
+      {
+        "id": "sr-7",
+        "topic": "Community Repair Cafés (Units 3 & 6)",
+        "paragraph": "Community Repair Cafés invite neighbors to bring broken small appliances to be fixed alongside skilled volunteer technicians. Over seventy percent of presented items are restored to working order within forty minutes, preventing electronic waste from entering local landfills.",
+        "question": "Which statement accurately identifies the MAIN IDEA?",
+        "options": [
+          "Volunteer repair workshops extend appliance lifespans and cut landfill waste through shared community fixing",
+          "Repairing broken toasters requires buying specialized electronic microscopes",
+          "Landfill managers mandated that citizens throw away all home electronics",
+          "Volunteers charge expensive repair fees for fixing household vacuum cleaners"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The paragraph explains that collaborative repair events fix most broken electronics and reduce landfill trash."
+      },
+      {
+        "id": "sr-8",
+        "topic": "Directional Smart Streetlights (Units 4 & 5)",
+        "paragraph": "Metropolitan centers installed intelligent LED streetlights with automated dimming sensors and downward directional shades. This upgrade lowered municipal electric bills by forty percent while preventing skyward artificial glare that confuses migrating nocturnal birds.",
+        "question": "What is the CENTRAL POINT of the paragraph?",
+        "options": [
+          "Directional smart streetlights deliver city energy savings while protecting nocturnal bird migrations",
+          "Streetlights should be turned off completely throughout all residential neighborhoods",
+          "Sodium filament bulbs are superior to modern LEDs for nocturnal bird vision",
+          "Birds only migrate during daylight hours across rural agricultural highways"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The text links intelligent dimming and directional lighting to city energy savings and bird safety."
+      },
+      {
+        "id": "sr-9",
+        "topic": "Vertical Hydroponic Agriculture (Units 2 & 4)",
+        "paragraph": "Vertical indoor farms stack nutrient-rich crop trays inside climate-controlled buildings. By recirculating water in closed-loop systems, these indoor facilities produce fresh salad greens using ninety percent less water than traditional open-field farms.",
+        "question": "What is the MAIN IDEA of this modern agricultural technology?",
+        "options": [
+          "Vertical indoor farming produces fresh produce with exceptional water efficiency compared to conventional farming",
+          "Salad greens grown in indoor warehouses are deficient in essential vitamins",
+          "Open-field agriculture will be completely abolished within the next twelve months",
+          "Hydroponic farming requires enormous amounts of petroleum fuel to grow vegetables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main idea is that vertical farming uses 90% less water to produce fresh vegetables in controlled environments."
+      },
+      {
+        "id": "sr-10",
+        "topic": "Workplace Micro-Breaks (Units 5 & 6)",
+        "paragraph": "Taking structured two-minute pauses every hour to stand and look at distant objects relaxes ciliary eye muscles and calms resting heart rates. Teams implementing micro-break software reminders completed complex calculations with twenty-two percent fewer errors.",
+        "question": "Which statement best expresses the MAIN IDEA?",
+        "options": [
+          "Taking regular short pauses relieves physical strain and noticeably sharpens cognitive work accuracy",
+          "Working eight continuous hours without stepping away from monitors is the key to business efficiency",
+          "Looking out office windows permanently damages human peripheral vision",
+          "Software reminders cause severe workplace distractions that reduce employee productivity"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The passage shows that brief 2-minute pauses reduce eye strain and improve calculation accuracy by 22%."
+      }
+    ]
+  },
+  "wordMatcherBank": [
+    {
+      "id": "wm-1",
+      "term": "Skimming",
+      "def": "การอ่านกวาดสายตาอย่างรวดเร็วเพื่อหาใจความสำคัญโดยรวมของบทอ่าน",
+      "unit": "Unit 1"
+    },
+    {
+      "id": "wm-2",
+      "term": "Scanning",
+      "def": "การกวาดสายตาเพื่อค้นหาข้อมูลเฉพาะเจาะจง เช่น วันที่ ตัวเลข หรือชื่อเฉพาะ",
+      "unit": "Unit 1"
+    },
+    {
+      "id": "wm-3",
+      "term": "Topic Sentence",
+      "def": "ประโยคใจความหลักที่ระบุประเด็นสำคัญที่สุดของย่อหน้านั้นๆ",
+      "unit": "Unit 1"
+    },
+    {
+      "id": "wm-4",
+      "term": "Previewing",
+      "def": "การสำรวจองค์ประกอบบทอ่าน เช่น ชื่อเรื่อง รูปภาพ เพื่อคาดการณ์เนื้อหาล่วงหน้า",
+      "unit": "Unit 1"
+    },
+    {
+      "id": "wm-5",
+      "term": "Context Clues",
+      "def": "คำหรือข้อความแวดล้อมที่ช่วยให้ผู้อ่านเดาความหมายของคำศัพท์ที่ไม่คุ้นเคย",
+      "unit": "Unit 2"
+    },
+    {
+      "id": "wm-6",
+      "term": "Synonym Clue",
+      "def": "คำใบ้บอกความหมายเหมือนหรือคำที่มีความหมายใกล้เคียงในประโยค",
+      "unit": "Unit 2"
+    },
+    {
+      "id": "wm-7",
+      "term": "Antonym Clue",
+      "def": "คำใบ้บอกความหมายตรงกันข้าม โดยมักมีคำเชื่อมแสดงความขัดแย้ง",
+      "unit": "Unit 2"
+    },
+    {
+      "id": "wm-8",
+      "term": "Definition Clue",
+      "def": "คำใบ้ที่ให้คำจำกัดความอย่างเป็นทางการผ่านคำว่า is, means, that is",
+      "unit": "Unit 2"
+    },
+    {
+      "id": "wm-9",
+      "term": "Reference Words",
+      "def": "คำที่ใช้แทนคำนามที่กล่าวไปแล้ว เพื่อหลีกเลี่ยงการพูดคำเดิมซ้ำๆ",
+      "unit": "Unit 3"
+    },
+    {
+      "id": "wm-10",
+      "term": "Antecedent",
+      "def": "คำนามตัวตั้งต้นที่สรรพนามหรือคำอ้างอิงชี้กลับไปหา",
+      "unit": "Unit 3"
+    },
+    {
+      "id": "wm-11",
+      "term": "Demonstratives",
+      "def": "คำชี้เฉพาะ เช่น this, that, these, those ที่ใช้อ้างอิงถึงสิ่งที่เพิ่งกล่าวถึง",
+      "unit": "Unit 3"
+    },
+    {
+      "id": "wm-12",
+      "term": "Relative Pronouns",
+      "def": "สรรพนามเชื่อมความ เช่น who, which, that ที่ใช้เชื่อมประโยคขยายคำนาม",
+      "unit": "Unit 3"
+    },
+    {
+      "id": "wm-13",
+      "term": "Cause and Effect",
+      "def": "โครงสร้างบทอ่านที่อธิบายเหตุและผลลัพธ์ เช่น because, therefore, consequently",
+      "unit": "Unit 4"
+    },
+    {
+      "id": "wm-14",
+      "term": "Compare and Contrast",
+      "def": "โครงสร้างที่เปรียบเทียบความเหมือนและความต่าง เช่น similarly, however, unlike",
+      "unit": "Unit 4"
+    },
+    {
+      "id": "wm-15",
+      "term": "Problem and Solution",
+      "def": "โครงสร้างบทอ่านที่ระบุปัญหาอุปสรรคและเสนอแนวทางแก้ไขอย่างชัดเจน",
+      "unit": "Unit 4"
+    },
+    {
+      "id": "wm-16",
+      "term": "Chronological Sequence",
+      "def": "โครงสร้างที่จัดเรียงลำดับเหตุการณ์ตามวันเวลาหรือขั้นตอนก่อนหลัง",
+      "unit": "Unit 4"
+    },
+    {
+      "id": "wm-17",
+      "term": "Making Inferences",
+      "def": "การอ่านระหว่างบรรทัดเพื่อสรุปความหมายโดยนัยที่ผู้เขียนไม่ได้บอกตรงๆ",
+      "unit": "Unit 5"
+    },
+    {
+      "id": "wm-18",
+      "term": "Text Clues",
+      "def": "ร่องรอยและหลักฐานรูปธรรมในบทอ่านที่ใช้สนับสนุนข้ออนุมาน",
+      "unit": "Unit 5"
+    },
+    {
+      "id": "wm-19",
+      "term": "Paraphrasing",
+      "def": "การนำสาระสำคัญมาเรียบเรียงใหม่ด้วยถ้อยคำตนเองโดยคงความหมาย 100%",
+      "unit": "Unit 5"
+    },
+    {
+      "id": "wm-20",
+      "term": "Patchwriting",
+      "def": "การลอกเลียนแบบตัดแปะโดยเปลี่ยนแค่คำบางคำแต่ยังคงโครงสร้างเดิมไว้",
+      "unit": "Unit 5"
+    },
+    {
+      "id": "wm-21",
+      "term": "Strategy Blueprint",
+      "def": "ผังมโนทัศน์สังเคราะห์ความเข้าใจบทอ่านอย่างเป็นระบบรอบด้าน",
+      "unit": "Unit 6"
+    },
+    {
+      "id": "wm-22",
+      "term": "Strategy Orchestration",
+      "def": "การผสานรวมและสลับใช้กลยุทธ์การอ่านหลายด้านพร้อมกันตามความเหมาะสม",
+      "unit": "Unit 6"
+    },
+    {
+      "id": "wm-23",
+      "term": "Error Analysis",
+      "def": "การวิเคราะห์วินิจฉัยสาเหตุของความผิดพลาดในการอ่านเพื่อแก้ไขให้ตรงจุด",
+      "unit": "Unit 6"
+    },
+    {
+      "id": "wm-24",
+      "term": "Metacognition",
+      "def": "การรู้คิดและประเมินตนเองเพื่อควบคุมกระบวนการอ่านให้มีประสิทธิภาพสูงสุด",
+      "unit": "Unit 6"
+    }
+  ],
+  "speedRaceBank": [
+    {
+      "id": "sr-1",
+      "topic": "Urban Pocket Forests",
+      "units": "Units 1 & 4",
+      "passage": "Across crowded cities, volunteer groups are planting tiny pocket forests in abandoned parking lots. These dense plots of native trees grow ten times faster than conventional woods, absorb tons of carbon emissions, and cool surrounding neighborhoods by up to four degrees. As a result, municipal councils are now funding micro-green spaces to combat urban heat islands.",
+      "options": [
+        "Miniature native forests planted in cities provide fast, effective cooling and environmental benefits.",
+        "Parking lots are the most expensive type of real estate in modern metropolitan centers.",
+        "Volunteer tree planters refuse to accept government funding from municipal councils."
+      ],
+      "answer": 0,
+      "explanation": "The passage explains how dense urban micro-forests cool neighborhoods and absorb carbon, offering an effective environmental solution."
+    },
+    {
+      "id": "sr-2",
+      "topic": "Circadian Sleep Rhythm",
+      "units": "Units 1 & 5",
+      "passage": "For thousands of years, the human internal biological clock has synchronized with sunrise and sunset to regulate sleep hormones and energy levels. However, late-night exposure to blue-emitting electronic screens fools the brain into delaying melatonin production. Consequently, medical studies reveal that establishing a screen-free period ninety minutes before bedtime dramatically improves deep restorative sleep.",
+      "options": [
+        "Disconnecting from electronic screens before bedtime helps restore natural sleep cycles disrupted by artificial blue light.",
+        "Human beings are completely incapable of producing melatonin without purchasing expensive pharmaceuticals.",
+        "Sunlight during morning hours causes severe neurological damage to circadian pacemaker cells."
+      ],
+      "answer": 0,
+      "explanation": "The text explains how screen light suppresses melatonin and why powering down devices before bed restores restorative sleep."
+    },
+    {
+      "id": "sr-3",
+      "topic": "Seaweed-Based Packaging",
+      "units": "Units 2 & 4",
+      "passage": "Single-use petroleum plastics linger in landfills and oceans for hundreds of years without breaking down. To solve this ecological dilemma, biotech designers have created transparent food containers from marine brown algae. This seaweed film protects dry snacks effectively and dissolves harmlessly in ordinary tap water within two minutes after disposal.",
+      "options": [
+        "Edible seaweed film offers a promising, rapidly dissolvable alternative to persistent single-use plastic packaging.",
+        "Marine algae is poisonous to sea turtles and should never be harvested for commercial manufacturing.",
+        "Traditional petroleum plastic containers decompose completely in kitchen sinks within two minutes."
+      ],
+      "answer": 0,
+      "explanation": "The passage highlights seaweed-derived packaging as a revolutionary eco-friendly replacement for stubborn plastic waste."
+    },
+    {
+      "id": "sr-4",
+      "topic": "Bicycle Expressways",
+      "units": "Units 3 & 4",
+      "passage": "Rather than painting narrow lines on busy roads, several European capitals built elevated, physically isolated bicycle expressways. These wide concrete corridors allow long-distance commuters to pedal smoothly without interacting with automobiles or traffic signals. Traffic surveys demonstrate that bike commuting doubled while rush-hour road delays dropped by eighteen percent.",
+      "options": [
+        "Building dedicated, separated bicycle expressways encourages bike commuting and reduces traffic congestion.",
+        "Bicycles cause more traffic delays than delivery trucks and municipal transit buses combined.",
+        "Concrete highway bridges are too fragile to support two-wheeled commuter bicycles."
+      ],
+      "answer": 0,
+      "explanation": "The core thesis is that isolated bicycle highways successfully increase cycling and ease road gridlock."
+    },
+    {
+      "id": "sr-5",
+      "topic": "Community Repair Cafés",
+      "units": "Units 5 & 6",
+      "passage": "Discarded household gadgets represent the fastest-growing category of domestic waste. In response, neighborhood Repair Cafés pair consumers with volunteer craftspeople to fix damaged appliances free of charge. Records show that seven out of ten broken items are restored to working condition, saving families money and keeping tons of e-waste out of incinerators.",
+      "options": [
+        "Community repair workshops extend appliance lifespans, save household money, and prevent landfill waste.",
+        "Modern home appliances are intentionally built to explode after three months of light use.",
+        "Volunteer electricians demand hourly wages before inspecting malfunctioning kitchen toasters."
+      ],
+      "answer": 0,
+      "explanation": "The passage demonstrates how collaborative community repair events reduce waste and cut expenses by fixing broken goods."
+    },
+    {
+      "id": "sr-6",
+      "topic": "Rooftop Solar Cooperatives",
+      "units": "Units 1 & 4",
+      "passage": "Individual solar panel installations can be prohibitively expensive for lower-income homeowners. In response, suburban communities have formed shared solar cooperatives where residents pool financial resources to install large solar arrays on neighborhood warehouse roofs. Participating families then receive monthly electricity credits, cutting their annual energy bills by thirty percent.",
+      "options": [
+        "Community solar cooperatives make clean renewable energy affordable and accessible through pooled investments.",
+        "Warehouse roofs are structurally dangerous and should never be fitted with glass solar panels.",
+        "Solar energy costs thirty percent more than electricity generated from traditional coal power plants."
+      ],
+      "answer": 0,
+      "explanation": "The text shows that collective solar initiatives allow neighbors to enjoy cheaper green energy through shared investment."
+    },
+    {
+      "id": "sr-7",
+      "topic": "Workplace Micro-Breaks",
+      "units": "Units 4 & 5",
+      "passage": "Continuous screen work for several uninterrupted hours induces severe mental fatigue and visual strain. Occupational therapists find that taking brief two-minute pauses every hour to stretch and gaze out distant windows relaxes eye muscles and lowers stress hormones. Workers who practice these micro-breaks complete analytical assignments with twenty percent fewer mistakes.",
+      "options": [
+        "Short, regular micro-breaks throughout the workday prevent mental exhaustion and enhance task accuracy.",
+        "Looking through office windows permanently damages distant visual focus and causes eye strain.",
+        "Employers should cancel all lunch breaks and require non-stop typing for eight hours."
+      ],
+      "answer": 0,
+      "explanation": "The passage emphasizes that brief 2-minute pauses refresh focus, relieve strain, and boost performance."
+    },
+    {
+      "id": "sr-8",
+      "topic": "Indoor Vertical Farming",
+      "units": "Units 2 & 6",
+      "passage": "Traditional agriculture consumes vast expanses of rural land and enormous amounts of irrigation water. In contrast, automated indoor vertical farms grow fresh salad greens inside stacked warehouse shelves using nutrient-rich water mist instead of soil. These climate-controlled towers produce forty times more produce per square meter while using ninety-five percent less water.",
+      "options": [
+        "Indoor vertical farming dramatically increases crop yields while using a fraction of the land and water.",
+        "Salad greens grown without soil contain zero nutritional vitamins and taste like industrial plastic.",
+        "Traditional farming requires zero water and is far more productive than vertical warehouse towers."
+      ],
+      "answer": 0,
+      "explanation": "The passage contrasts traditional farming with vertical towers that save 95% water and produce 40 times more food per meter."
+    },
+    {
+      "id": "sr-9",
+      "topic": "Zero-Waste Bulk Stores",
+      "units": "Units 3 & 5",
+      "passage": "Standard supermarkets pack nearly every fruit, vegetable, and dry snack in single-use plastic wrap that ends up in local landfills. Innovative zero-waste markets eliminate all disposable wrappers by requiring customers to bring reusable glass jars and cloth bags to fill from bulk dispensers. By cutting out packaging expenses, shoppers pay fifteen percent less for organic staples.",
+      "options": [
+        "Packaging-free grocery stores eliminate disposable plastic waste while saving shoppers money on food staples.",
+        "Bringing reusable glass containers into supermarkets is strictly prohibited by international health laws.",
+        "Disposable plastic packaging accounts for zero percent of total consumer grocery expenditures."
+      ],
+      "answer": 0,
+      "explanation": "The central point is that zero-waste markets cut plastic pollution and lower grocery costs for consumers."
+    },
+    {
+      "id": "sr-10",
+      "topic": "Urban Honeybee Sanctuaries",
+      "units": "Units 1 & 5",
+      "passage": "While bee populations have sharply declined across rural farmland due to heavy agricultural pesticide spraying, rooftop beehives are flourishing in modern metropolitan centers. Cities provide diverse flowering gardens in public parks and residential balconies that bloom across all four seasons without chemical poisons. As a result, urban honeybee colonies produce richer honey and maintain higher survival rates than rural hives.",
+      "options": [
+        "Metropolitan rooftop gardens provide a chemical-free, diverse haven where honeybees thrive better than on pesticide-treated farmland.",
+        "Honeybees in cities feed exclusively on discarded sugary soda cans left in public waste bins.",
+        "Rural farmlands have zero chemical pesticides and represent the safest environment for honeybees."
+      ],
+      "answer": 0,
+      "explanation": "The passage highlights how urban floral biodiversity and lack of heavy farm chemicals make cities an unexpected sanctuary for bees."
+    }
+  ]
 };
