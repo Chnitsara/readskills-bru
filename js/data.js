@@ -646,99 +646,96 @@ window.ReadSkillsData = {
       "unitNumber": 5,
       "title": "Text Interpretation and Paraphrased Meaning: Reading Between the Lines",
       "thaiTitle": "การตีความบทอ่านและการถอดความ: การอ่านระหว่างบรรทัด",
-      "scope": "Evidence-Based Inferences, Stated vs. Implied vs. Distorted Meaning, Paraphrasing Techniques (Synonyms, Structural Transformations, Semantic Accuracy) & 30-Question Strategy Quiz (6 Hours / 2 Weeks)",
       "cefr": "B2",
-      "icon": "sparkles",
+      "scope": "Evidence-Based Inferences, Stated vs. Implied Meaning, Paraphrasing Techniques (Synonyms & Structural Shifts) & 30-Question Strategy Quiz (6 Hours / 2 Weeks)",
+      "icon": "search",
       "color": "purple",
       "steps": [
         {
           "stepNum": 1,
           "title": "What is the strategy?",
           "thaiTitle": "คืออะไร?",
-          "content": "Text Interpretation and Paraphrasing are two foundational reading strategies for academic B2 comprehension. Text Interpretation (Making Inferences) involves uncovering ideas that an author suggests or implies without stating them word-for-word. Skilled readers combine explicit textual evidence with logical background knowledge to 'read between the lines.' Paraphrasing is the skill of restating an author's ideas using fresh academic vocabulary and transformed grammatical structures while preserving one hundred percent of the original semantic meaning without copying or distorting the message.",
-          "thaiExplanation": "การตีความบทอ่านและการถอดความ (Text Interpretation and Paraphrased Meaning) คือ 2 ทักษะหัวใจสำคัญของการอ่านระดับ B2 ได้แก่ (1) การอนุมานความหมาย (Making Inferences หรือ Reading Between the Lines) คือการค้นหาความหมายที่ผู้เขียนซ่อนไว้เป็นนัยโดยไม่ได้เขียนบอกตรงๆ ผ่านสมการ: หลักฐานในบทอ่าน (Text Clues) + ความรู้และตรรกะเดิม (Prior Knowledge) = ข้อสรุปที่สมเหตุสมผล (Logical Inference) และ (2) การถอดความ (Paraphrasing) คือการนำสาระสำคัญของผู้เขียนมาถ่ายทอดใหม่ด้วยคำศัพท์และโครงสร้างไวยากรณ์ของตนเอง โดยรักษาความหมายเดิมไว้อย่างถูกต้องสมบูรณ์ร้อยเปอร์เซ็นต์ ไม่บิดเบือนและไม่คัดลอกข้อความเดิม",
-          "customHtml": "\n        <div class=\"space-y-4\">\n          <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 text-xs\">\n            <div class=\"p-4 rounded-xl border border-purple-200 bg-purple-50/70\">\n              <span class=\"px-2 py-0.5 text-[10px] font-bold rounded bg-purple-700 text-white uppercase tracking-wider\">Strategy Pillar 1</span>\n              <h5 class=\"font-bold text-slate-900 mt-2 mb-1 text-sm\">Making Inferences (การอนุมานความหมาย)</h5>\n              <p class=\"text-slate-700 leading-relaxed mb-2\">Finding implied meanings that are not directly stated on the page.</p>\n              <div class=\"p-2.5 bg-white rounded-lg border border-purple-150 font-mono text-[11px] text-purple-900 font-semibold\">\n                Text Clues + Background Knowledge = Valid Inference\n              </div>\n            </div>\n\n            <div class=\"p-4 rounded-xl border border-pink-200 bg-pink-50/70\">\n              <span class=\"px-2 py-0.5 text-[10px] font-bold rounded bg-pink-600 text-white uppercase tracking-wider\">Strategy Pillar 2</span>\n              <h5 class=\"font-bold text-slate-900 mt-2 mb-1 text-sm\">Paraphrasing Techniques (การถอดความ)</h5>\n              <p class=\"text-slate-700 leading-relaxed mb-2\">Restating ideas in your own words while retaining original meaning.</p>\n              <div class=\"p-2.5 bg-white rounded-lg border border-pink-150 font-mono text-[11px] text-pink-900 font-semibold\">\n                Synonyms + Structural Shift + Semantic Accuracy = Paraphrase\n              </div>\n            </div>\n          </div>\n\n          <div class=\"p-3.5 bg-slate-900 text-slate-100 rounded-xl text-xs space-y-2\">\n            <div class=\"flex items-center space-x-2 text-purple-300 font-bold\">\n              <i data-lucide=\"info\" class=\"w-4 h-4\"></i>\n              <span>3 Core Distinctions in Reading Comprehension (ความแตกต่าง 3 รูปแบบ)</span>\n            </div>\n            <div class=\"grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-[11px]\">\n              <div class=\"p-2 rounded bg-slate-800/80 border border-slate-700\">\n                <span class=\"text-emerald-400 font-bold block mb-1\">1. Stated Fact</span>\n                <span>Expressed directly in words. Readers can point to the exact phrase on the page.</span>\n              </div>\n              <div class=\"p-2 rounded bg-slate-800/80 border border-slate-700\">\n                <span class=\"text-purple-400 font-bold block mb-1\">2. Valid Inference</span>\n                <span>Unstated idea supported by evidence and reason. Not a wild guess.</span>\n              </div>\n              <div class=\"p-2 rounded bg-slate-800/80 border border-slate-700\">\n                <span class=\"text-rose-400 font-bold block mb-1\">3. Distorted Idea</span>\n                <span>Changes original tone, exaggerates facts, or contradicts text evidence.</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
+          "content": "Text Interpretation (Making Inferences) and Paraphrasing are two essential reading strategies for academic B2 comprehension. Making inferences means reading between the lines to discover ideas that an author suggests without stating them directly. Readers combine concrete textual clues with logical background knowledge to reach valid conclusions. Paraphrasing is the skill of restating an author's ideas in your own words using new vocabulary and sentence structures while preserving one hundred percent of the original meaning without copying or distorting the message.",
+          "thaiExplanation": "กลยุทธ์บทที่ 5 ประกอบด้วย 2 ทักษะหัวใจสำคัญสำหรับการอ่านภาษาอังกฤษระดับ B2 ได้แก่ (1) การอนุมานความหมาย (Making Inferences หรือ Reading Between the Lines) คือการอ่านเพื่อหาความหมายที่ผู้เขียนสื่อไว้เป็นนัยโดยไม่ได้เขียนบอกตรงๆ โดยใช้สูตร: หลักฐานในบทอ่าน (Text Clues) + ตรรกะและความรู้พื้นฐาน (Background Knowledge) = ข้อสรุปที่สมเหตุสมผล (Logical Inference) และ (2) การถอดความ (Paraphrasing) คือการนำเนื้อความเดิมมาเรียบเรียงใหม่ด้วยคำศัพท์และโครงสร้างประโยคของตนเอง โดยรักษาความหมายเดิมไว้อย่างครบถ้วน ถูกต้อง และไม่คัดลอกคำต่อคำ (หลีกเลี่ยง Plagiarism/Patchwriting)",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Course & Unit Banner -->\n          <div style=\"background:linear-gradient(135deg,#3B0764 0%,#581C87 60%,#4338CA 100%); color:#fff; border-radius:16px; padding:1.25rem 1.4rem; box-shadow:0 10px 25px -5px rgba(88,28,135,0.28);\">\n            <div style=\"display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n              <span style=\"background:rgba(255,255,255,0.18); padding:0.25rem 0.7rem; border-radius:999px; font-size:0.75rem; font-weight:700; letter-spacing:0.04em;\">\n                UNIT 5 • COURSE 2031103 • CEFR B2\n              </span>\n              <span style=\"font-size:0.78rem; color:#E9D5FF; font-weight:600;\">Time Allocation: 6 Hours (2 Weeks)</span>\n            </div>\n            <h3 style=\"font-size:1.22rem; font-weight:800; margin:0 0 0.25rem 0;\">Unit 5: Text Interpretation and Paraphrased Meaning</h3>\n            <p style=\"font-size:0.9rem; color:#F3E8FF; margin:0;\">Topic: Reading Between the Lines (การอ่านตีความระหว่างบรรทัดและการถอดความระดับ B2)</p>\n          </div>\n\n          <!-- 4 Core Pillars Overview matching Lesson Plan -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:0.9rem;\">\n            <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#854D0E; font-size:0.92rem; margin-bottom:0.35rem;\">1. Stated vs. Implied Meaning</div>\n              <p style=\"font-size:0.83rem; color:#713F12; line-height:1.55; margin:0;\">\n                แยกแยะระหว่าง <strong>Stated Facts</strong> (ข้อเท็จจริงที่เขียนบอกตรงๆ) กับ <strong>Implied Meaning</strong> (ความหมายโดยนัยที่ต้องใช้หลักฐานเชื่อมโยง) และระวัง <strong>Unsupported Claims</strong> (ข้อความที่คิดไปเองโดยไม่มีข้อมูลรองรับ)\n              </p>\n            </div>\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#166534; font-size:0.92rem; margin-bottom:0.35rem;\">2. The Inference Formula</div>\n              <p style=\"font-size:0.83rem; color:#14532D; line-height:1.55; margin:0;\">\n                สมการสร้างข้อสรุป: <strong>Text Evidence</strong> (คำกริยา, ตัวเลข, บริบท) + <strong>Background Knowledge</strong> (ตรรกะความจริงสากล) = <strong>Valid Inference</strong> โดยไม่ด่วนสรุปเกินจริง (Avoid Overgeneralization)\n              </p>\n            </div>\n            <div style=\"background:#EFF6FF; border:1.5px solid #93C5FD; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#1E40AF; font-size:0.92rem; margin-bottom:0.35rem;\">3. Paraphrasing Techniques</div>\n              <p style=\"font-size:0.83rem; color:#1E3A8A; line-height:1.55; margin:0;\">\n                เทคนิคการถอดความ 2 มิติ: <strong>Synonym Replacement</strong> (เปลี่ยนคำศัพท์ให้ตรงบริบท) + <strong>Syntactic Transformation</strong> (สลับโครงสร้างไวยากรณ์ เช่น Active เป็น Passive หรือปรับ Clause)\n              </p>\n            </div>\n            <div style=\"background:#FDF4FF; border:1.5px solid #F0ABFC; border-radius:14px; padding:1rem;\">\n              <div style=\"font-weight:800; color:#701A75; font-size:0.92rem; margin-bottom:0.35rem;\">4. Semantic Accuracy & Integrity</div>\n              <p style=\"font-size:0.83rem; color:#4A044E; line-height:1.55; margin:0;\">\n                การรักษาความหมายดั้งเดิมให้ครบ 100% โดยไม่บิดเบือนน้ำเสียง (Tone) และไม่ลอกวลีติดต่อกัน 4 คำขึ้นไป เพื่อป้องกันการลอกเลียนวรรณกรรมแบบตัดแปะ (Patchwriting)\n              </p>\n            </div>\n          </div>\n\n          <!-- Diagnostic Pre-Test (3 Items) -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">🧭 Pre-Reading Activity 1: Diagnostic Pre-Test (3 ข้อ)</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">ทดสอบความเข้าใจเบื้องต้นเรื่องการอนุมาน (Inference) และการถอดความ (Paraphrasing)</p>\n              </div>\n              <span style=\"background:#F3E8FF; color:#6B21A8; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Pre-Reading Stage</span>\n            </div>\n\n            <div style=\"display:grid; gap:0.9rem;\">\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  1. \"The technician inspected the empty server rack, packed his diagnostic tools into his bag, and sighed with relief after twelve straight hours of emergency repairs.\" ข้อใดคือข้อสรุปที่สามารถอนุมาน (Inference) ได้อย่างสมเหตุสมผล?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-1\" value=\"0\"> A. The repair job failed completely and the technician was fired.</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-1\" value=\"1\"> B. The urgent computer server problem was successfully resolved after a stressful shift.</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-1\" value=\"2\"> C. The technician prefers working twelve hours every weekend.</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  2. ประโยคเดิม: \"The city council replaced conventional mercury streetlamps with low-energy LED bulbs to diminish municipal electric expenditures.\" ประโยคถอดความ (Paraphrase) ใดมีความหมายถูกต้องและปรับโครงสร้างได้ดีที่สุด?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-2\" value=\"0\"> A. To lower city electricity costs, local authorities installed energy-efficient LED lights instead of older mercury lamps.</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-2\" value=\"1\"> B. The city council replaced conventional mercury streetlamps with low-energy LED lights to diminish city expenses.</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-2\" value=\"2\"> C. LED bulbs are much brighter than mercury streetlamps, according to government engineers.</label>\n                </div>\n              </div>\n\n              <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:0.9rem;\">\n                <p style=\"font-size:0.86rem; font-weight:700; color:#0F172A; margin:0 0 0.5rem 0;\">\n                  3. ข้อใดคือ \"ข้อผิดพลาดที่ร้ายแรงที่สุด\" ในการถอดความภาษาอังกฤษระดับวิชาการ (Academic Paraphrasing)?\n                </p>\n                <div style=\"display:grid; gap:0.35rem; font-size:0.83rem;\">\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-3\" value=\"0\"> A. เปลี่ยนประธานจากรูปเอกพจน์เป็นรูปพหูพจน์</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-3\" value=\"1\"> B. Patchwriting (การเปลี่ยนแค่คำศัพท์บางคำแต่ยังคงโครงสร้างเดิมไว้เกือบทั้งหมด) หรือการบิดเบือนความหมายเดิม</label>\n                  <label style=\"display:flex; align-items:center; gap:0.45rem; cursor:pointer;\"><input type=\"radio\" name=\"s5-pre-3\" value=\"2\"> C. การใช้คำเชื่อมแสดงผลลัพธ์ เช่น therefore หรือ consequently</label>\n                </div>\n              </div>\n            </div>\n\n            <div style=\"margin-top:1rem; display:flex; justify-content:flex-end;\">\n              <button onclick=\"app.submitStrat5Pretest()\" style=\"background:#6B21A8; color:#fff; border:none; padding:0.5rem 1.25rem; border-radius:10px; font-size:0.82rem; font-weight:700; cursor:pointer;\">\n                Submit Pre-Test (ส่งคำตอบแบบทดสอบ)\n              </button>\n            </div>\n            <div id=\"strat5-pretest-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n\n          <!-- Pre-Reading Warm-Up: Inference Detective Activity -->\n          <div style=\"background:#FAF5FF; border:1.5px solid #D8B4FE; border-radius:16px; padding:1.2rem;\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;\">\n              <h4 style=\"font-size:1rem; font-weight:800; color:#581C87; margin:0;\">🔍 Warm-up Activity: The Inference Detective</h4>\n              <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">Guided Warm-up</span>\n            </div>\n            <p style=\"font-size:0.84rem; color:#4C1D95; line-height:1.6; margin:0 0 0.8rem 0;\">\n              อ่านสถานการณ์สั้นๆ ต่อไปนี้ แล้วทายว่าเกิดอะไรขึ้นโดยอาศัย <strong>Text Clues (ร่องรอยในข้อความ)</strong>:<br>\n              <em>\"When David stepped into the office lobby at 8:45 AM, water was dripping from his folded umbrella, his coat shoulders were dark and damp, and colleagues were crowding near the hot coffee machine comparing stories about unexpected highway traffic delays.\"</em>\n            </p>\n            <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:0.6rem; font-size:0.82rem;\">\n              <button onclick=\"app.checkStrat5Warmup(0)\" style=\"background:#fff; border:1.5px solid #C084FC; padding:0.65rem 0.85rem; border-radius:10px; text-align:left; cursor:pointer; color:#4C1D95; font-weight:600;\">\n                A. The office building sprinkler system malfunctioned\n              </button>\n              <button onclick=\"app.checkStrat5Warmup(1)\" style=\"background:#fff; border:1.5px solid #C084FC; padding:0.65rem 0.85rem; border-radius:10px; text-align:left; cursor:pointer; color:#4C1D95; font-weight:600;\">\n                B. An unexpected morning rainstorm slowed down city commuters\n              </button>\n              <button onclick=\"app.checkStrat5Warmup(2)\" style=\"background:#fff; border:1.5px solid #C084FC; padding:0.65rem 0.85rem; border-radius:10px; text-align:left; cursor:pointer; color:#4C1D95; font-weight:600;\">\n                C. David spilled cold coffee all over his coat and umbrella\n              </button>\n            </div>\n            <div id=\"strat5-warmup-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.75rem; border-radius:10px; font-size:0.82rem;\"></div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 2,
           "title": "Why use it?",
           "thaiTitle": "ทำไมต้องใช้?",
-          "content": "Mastering text interpretation and paraphrasing empowers readers at CEFR level B2 in four vital ways: 1. Deep Comprehension: Authors of academic reports, scientific journals, and analytical essays frequently use subtle phrasing, nuance, and understatement rather than blunt declarations. 2. Exam Excellence: Standardized English reading assessments (such as IELTS, TOEFL, TOEIC, and CEFR B2 tests) allocate thirty to forty percent of questions to inference and paraphrase identification. 3. Academic Integrity: Paraphrasing enables learners to synthesize research evidence into essays while avoiding patchwriting and plagiarism. 4. Linguistic Precision: Rewriting ideas develops sentence agility, vocabulary flexibility, and syntactic awareness.",
-          "thaiExplanation": "การฝึกฝนกลยุทธ์ทั้งสองนี้ให้ประโยชน์มหาศาล 4 ประการ: (1) เข้าใจบทอ่านเชิงวิชาการอย่างลึกซึ้ง เพราะผู้เขียนบทความระดับสากลมักใช้ภาษาที่สละสลวย นัยประหวัด และคำชี้บอกที่ไม่บอกตรงๆ (2) ทำข้อสอบวัดระดับภาษาอังกฤษได้คะแนนสูง เช่น IELTS, TOEFL, TOEIC และข้อสอบ B2 ที่มีสัดส่วนคำถามประเภท Inference และ Paraphrasing สูงถึง 30-40% (3) มีความซื่อสัตย์ทางวิชาการ (Academic Integrity) สามารถนำข้อมูลจากงานวิจัยมาเขียนสรุปความได้โดยไม่ลอกเลียนวรรณกรรม (Plagiarism) และ (4) พัฒนาความคล่องแคล่วในการเรียบเรียงโครงสร้างประโยคและขยายคลังคำศัพท์",
-          "customHtml": "\n        <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs\">\n          <div class=\"p-3.5 bg-white border border-purple-150 rounded-xl shadow-sm flex items-start space-x-3\">\n            <div class=\"w-8 h-8 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center shrink-0 font-bold text-sm\">1</div>\n            <div>\n              <h5 class=\"font-bold text-slate-900 mb-0.5\">Detect Subtle Tone & Subtext</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Decode irony, cautious scientific skepticism, and nuanced stances hidden behind academic phrasing.</p>\n            </div>\n          </div>\n\n          <div class=\"p-3.5 bg-white border border-purple-150 rounded-xl shadow-sm flex items-start space-x-3\">\n            <div class=\"w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 font-bold text-sm\">2</div>\n            <div>\n              <h5 class=\"font-bold text-slate-900 mb-0.5\">Conquer Standardized Reading Tests</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Quickly answer questions like \"It can be inferred that...\" and \"Which sentence best paraphrases paragraph 2?\".</p>\n            </div>\n          </div>\n\n          <div class=\"p-3.5 bg-white border border-purple-150 rounded-xl shadow-sm flex items-start space-x-3\">\n            <div class=\"w-8 h-8 rounded-lg bg-pink-100 text-pink-700 flex items-center justify-center shrink-0 font-bold text-sm\">3</div>\n            <div>\n              <h5 class=\"font-bold text-slate-900 mb-0.5\">Prevent Plagiarism & Patchwriting</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Transform research into fresh, authentic writing without merely swapping isolated synonyms.</p>\n            </div>\n          </div>\n\n          <div class=\"p-3.5 bg-white border border-purple-150 rounded-xl shadow-sm flex items-start space-x-3\">\n            <div class=\"w-8 h-8 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 font-bold text-sm\">4</div>\n            <div>\n              <h5 class=\"font-bold text-slate-900 mb-0.5\">Enhance Critical Thinking</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Evaluate assumptions, separate solid textual deductions from unsupported biases, and think like a researcher.</p>\n            </div>\n          </div>\n        </div>\n      "
+          "content": "Mastering text interpretation and paraphrasing is essential for CEFR B2 readers for four clear reasons: 1. Uncovering Implicit Ideas: Skilled writers frequently imply subtle nuances, tones, and warnings without stating them literally. 2. Critical Thinking: Inferences allow readers to identify unstated assumptions, detect biased arguments, and distinguish facts from unsupported claims. 3. Academic Integrity: Paraphrasing enables learners to express technical information accurately while avoiding plagiarism. 4. Assessment Readiness: Standardized B2 English reading evaluations specifically test your ability to synthesize implied meanings and recognize correct restatements.",
+          "thaiExplanation": "ทำไมต้องฝึกฝนการอนุมานและการถอดความ? (1) เข้าใจสาระลึกซึ้ง: บทความภาษาอังกฤษระดับ B2 มักไม่เขียนอธิบายทุกอย่างตรงๆ แต่จะซ่อนนัยยะสำคัญไว้ให้ผู้อ่านตีความ (2) คิดวิเคราะห์อย่างมีวิจารณญาณ: ช่วยให้ไม่หลงเชื่อข้ออ้างลอยๆ และสามารถตรวจสอบหลักฐานก่อนด่วนสรุป (3) เสริมทักษะการเขียนเชิงวิชาการ: ช่วยให้ถ่ายทอดข้อมูลวิชาการได้อย่างถูกต้องโดยไม่คัดลอก และ (4) พิชิตข้อสอบมาตรฐานสากล: ข้อสอบวัดระดับภาษาอังกฤษส่วนใหญ่มุ่งวัดทักษะ Inference และ Paraphrase มากกว่าการจำคำศัพท์เพียงอย่างเดียว",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- 4 Core Benefits Cards -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem;\">\n            <div style=\"background:#fff; border-left:4px solid #8B5CF6; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#4C1D95; margin-bottom:0.4rem;\">🎯 1. Deep Comprehension</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                เข้าใจเจตนาที่แท้จริงของผู้เขียน (Author's Intent and Attitude) แม้ผู้เขียนจะใช้คำอุปมาหรือน้ำเสียงสุภาพแบบอ้อมๆ ก็สามารถจับใจความได้ถูกต้อง\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #10B981; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#065F46; margin-bottom:0.4rem;\">🛡️ 2. Critical Evidence Evaluation</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                แยกแยะระหว่างสิ่งที่ <em>บทอ่านระบุไว้จริง</em> กับ <em>ข้อสรุปที่คาดเดาไปเอง</em> ป้องกันการถูกชักจูงด้วยข้อมูลเท็จหรือข้ออ้างที่ไม่มีหลักฐาน\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #3B82F6; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#1E40AF; margin-bottom:0.4rem;\">✍️ 3. Academic Paraphrasing Skills</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                พัฒนาทักษะการสื่อสารภาษาอังกฤษเชิงวิชาการ สามารถสรุปสาระสำคัญของผู้อื่นด้วยสำนวนของตนเองได้อย่างมืออาชีพและถูกต้องตามหลักจริยธรรม\n              </p>\n            </div>\n            <div style=\"background:#fff; border-left:4px solid #F59E0B; border-radius:12px; padding:1.1rem; box-shadow:0 3px 10px rgba(0,0,0,0.04);\">\n              <div style=\"font-size:0.95rem; font-weight:800; color:#92400E; margin-bottom:0.4rem;\">📈 4. Exam Mastery for B2</div>\n              <p style=\"font-size:0.83rem; color:#475569; line-height:1.55; margin:0;\">\n                ตรงตามตัวชี้วัดสมรรถนะการอ่านของหลักสูตรภาษาอังกฤษและเกณฑ์มาตรฐานสากล CEFR B2 ในการทำข้อสอบประเภท 'Which can be inferred...?' และ 'Which sentence best restates...?'\n              </p>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 3,
           "title": "When do I use it?",
           "thaiTitle": "ใช้เมื่อไหร่?",
-          "content": "Apply text interpretation and paraphrasing continuously throughout the three phases of reading: During Pre-Reading, examine titles, subheadings, and data charts to make initial predictive inferences regarding the author's viewpoint. During While-Reading, highlight explicit clues, detect modal verbs indicating possibility (may, could, suggests), and pause after challenging sentences to restate them mentally in simplified terms. During Post-Reading, audit your inferences against textual evidence to confirm they are justified, and formulate an accurate paraphrase summarizing the central thesis.",
-          "thaiExplanation": "กลยุทธ์นี้ใช้ตลอด 3 ขั้นตอนของการอ่าน: (1) ระยะก่อนอ่าน (Pre-Reading) พิจารณาชื่อเรื่อง หัวข้อย่อย และตารางข้อมูลเพื่อตั้งสมมติฐานการอนุมานเบื้องต้นเกี่ยวกับจุดยืนของผู้เขียน (2) ระยะระหว่างอ่าน (While-Reading) มองหาคำบอกใบ้ สังเกตคำช่วยที่บอกระดับความน่าจะเป็น (may, might, suggests) และหยุดถอดความประโยคที่ซับซ้อนทีละท่อน และ (3) ระยะหลังอ่าน (Post-Reading) ตรวจสอบความถูกต้องของข้ออนุมานกับหลักฐานในเนื้อเรื่อง และเขียนถอดความสรุปใจความสำคัญโดยไม่ตกหล่น",
-          "customHtml": "\n        <div class=\"space-y-4\">\n          <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-xs\">\n            <div class=\"p-3.5 bg-white border border-purple-200 rounded-xl\">\n              <span class=\"text-[10px] font-bold text-purple-700 uppercase block mb-1\">Pre-Reading Stage</span>\n              <h5 class=\"font-bold text-slate-900 mb-1\">Predictive Inferences</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Examine visual figures, title keywords, and introductory abstracts to predict the central argument.</p>\n            </div>\n\n            <div class=\"p-3.5 bg-white border border-purple-200 rounded-xl\">\n              <span class=\"text-[10px] font-bold text-purple-700 uppercase block mb-1\">While-Reading Stage</span>\n              <h5 class=\"font-bold text-slate-900 mb-1\">Clue Auditing & Mental Paraphrase</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Highlight evidence, track descriptive adjectives, and convert complex clauses into concise mental notes.</p>\n            </div>\n\n            <div class=\"p-3.5 bg-white border border-purple-200 rounded-xl\">\n              <span class=\"text-[10px] font-bold text-purple-700 uppercase block mb-1\">Post-Reading Stage</span>\n              <h5 class=\"font-bold text-slate-900 mb-1\">Synthesis & Verification</h5>\n              <p class=\"text-slate-600 text-[11px] leading-relaxed\">Confirm deductions against text proof; write original summary statements preserving core meaning.</p>\n            </div>\n          </div>\n\n          <div class=\"p-3.5 bg-purple-50/90 border border-purple-200 rounded-xl text-xs space-y-2\">\n            <strong class=\"font-bold text-purple-950 flex items-center space-x-1.5\">\n              <i data-lucide=\"help-circle\" class=\"w-4 h-4 text-purple-700\"></i>\n              <span>Exam Question Stems (รูปแบบโจทย์ข้อสอบที่พบบ่อย):</span>\n            </strong>\n            <div class=\"grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-slate-700\">\n              <div class=\"p-2 bg-white rounded-lg border border-purple-100\">\n                <span class=\"font-bold text-purple-900 block mb-0.5\">Inference Questions:</span>\n                <ul class=\"list-disc list-inside space-y-0.5 text-slate-600\">\n                  <li>\"What can be inferred from paragraph 2?\"</li>\n                  <li>\"The author implies that the new technology...\"</li>\n                  <li>\"Which conclusion is best supported by the text?\"</li>\n                </ul>\n              </div>\n              <div class=\"p-2 bg-white rounded-lg border border-purple-100\">\n                <span class=\"font-bold text-pink-900 block mb-0.5\">Paraphrase Questions:</span>\n                <ul class=\"list-disc list-inside space-y-0.5 text-slate-600\">\n                  <li>\"Which sentence best expresses the essential idea...?\"</li>\n                  <li>\"Which of the following is an accurate paraphrase...?\"</li>\n                  <li>\"The phrase 'X' can be restated as...\"</li>\n                </ul>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
+          "content": "Apply text interpretation and paraphrasing continuously across the three stages of reading: In Pre-Reading, preview title keywords, subtitles, and introductory facts to anticipate the author's focus and perspective. In While-Reading, highlight direct factual evidence in yellow and inference clues in green; pause after each paragraph to deduce implied meanings and test whether paraphrased notes preserve the original idea. In Post-Reading, synthesize the passage by checking your inferences against the entire text and writing a concise two-sentence paraphrase of the main thesis.",
+          "thaiExplanation": "นำกลยุทธ์นี้ไปใช้ตลอด 3 ระยะของการอ่าน: (1) ระยะก่อนอ่าน (Pre-Reading): สำรวจหัวข้อและคำบอกทิศทางเพื่อคาดการณ์จุดยืนของผู้เขียน (2) ระยะระหว่างอ่าน (While-Reading): ใช้เทคนิค 2-Colour Coding ไฮไลต์สีเหลืองสำหรับข้อเท็จจริงที่ระบุชัด และสีเขียวสำหรับร่องรอยที่ต้องนำมาอนุมาน พร้อมทั้งหมั่นทดสอบความเข้าใจด้วยการแปลงประโยคยากเป็นภาษาของตนเอง และ (3) ระยะหลังอ่าน (Post-Reading): ทบทวนข้อสรุปทั้งหมดว่าสอดคล้องกับเนื้อเรื่องหรือไม่ และฝึกเขียนถอดความประเด็นสำคัญเพื่อประเมินความแม่นยำ",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1rem;\">\n            <div style=\"background:#FAF5FF; border:1.5px solid #E9D5FF; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#7C3AED; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">1</span>\n                <strong style=\"color:#581C87; font-size:0.95rem;\">Pre-Reading (ก่อนอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#4C1D95; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>สังเกตชื่อเรื่อง รูปภาพประกอบ และบริบททั่วไป</li>\n                <li>ตั้งคำถามล่วงหน้า: <em>\"ผู้เขียนกำลังจะสื่อข้อความอะไรเป็นนัย?\"</em></li>\n                <li>ทำความเข้าใจคำศัพท์สำคัญก่อนเริ่มอ่านเนื้อเรื่องจริง</li>\n              </ul>\n            </div>\n\n            <div style=\"background:#F0FDF4; border:1.5px solid #BBF7D0; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#16A34A; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">2</span>\n                <strong style=\"color:#14532D; font-size:0.95rem;\">While-Reading (ระหว่างอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#14532D; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>ใช้ปากกาไฮไลต์ 2 สี: สีเหลือง = ข้อมูลบอกตรง / สีเขียว = ร่องรอยอนุมาน</li>\n                <li>หยุดคิดเมื่อเจอนัยสำคัญ: เชื่อมโยงหลักฐานกับตรรกะความเป็นจริง</li>\n                <li>แปลงประโยคยาวซับซ้อนให้เป็นประโยคย่อยที่เข้าใจง่ายในใจ</li>\n              </ul>\n            </div>\n\n            <div style=\"background:#EFF6FF; border:1.5px solid #BFDBFE; border-radius:14px; padding:1.1rem;\">\n              <div style=\"display:flex; align-items:center; gap:0.5rem; margin-bottom:0.5rem;\">\n                <span style=\"background:#2563EB; color:#fff; width:26px; height:26px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; font-size:0.8rem; font-weight:700;\">3</span>\n                <strong style=\"color:#1E3A8A; font-size:0.95rem;\">Post-Reading (หลังอ่าน)</strong>\n              </div>\n              <ul style=\"font-size:0.83rem; color:#1E3A8A; line-height:1.6; margin:0; padding-left:1.2rem;\">\n                <li>ตรวจสอบความถูกต้องของข้ออนุมานว่าไม่มีข้อความขัดแย้งในบทอ่าน</li>\n                <li>เขียนสรุปถอดความ (Paraphrase) ใจความสำคัญด้วยถ้อยคำตนเอง</li>\n                <li>ทำแบบทดสอบวัดผลความเข้าใจเชิงลึก (Inference & Paraphrase Quiz)</li>\n              </ul>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 4,
           "title": "How do I use it?",
           "thaiTitle": "ใช้อย่างไร?",
-          "content": "Follow two structured frameworks to master these strategies. Part A: The 3-Step Inference Method: 1. Locate Concrete Text Clues (identify specific actions, verbs, and statistics). 2. Integrate Prior Knowledge (apply logical principles and real-world understanding). 3. Derive a Modest Deduction (avoid broad generalizations like 'always' or 'impossible' unless explicitly proven). Part B: The 4-Step P.A.T.H. Paraphrasing Method: 1. Prehend (grasp the core message completely). 2. Alter Vocabulary (replace key words with accurate B2 synonyms). 3. Transform Structure (change voice from active to passive, reverse clause order, or shift word forms). 4. Harmonize Meaning (verify that the original meaning remains intact without addition, omission, or bias).",
-          "thaiExplanation": "ปฏิบัติตาม 2 กระบวนการที่เป็นระบบ: ส่วนที่ 1: ขั้นตอนการอนุมาน 3 ขั้น (Inference Formula) 1. หาหลักฐานรูปธรรมในบทอ่าน (Text Clues) 2. เชื่อมโยงกับความรู้เดิมตามหลักตรรกะ (Prior Knowledge) 3. สรุปข้ออนุมานที่พอดีและสมเหตุสมผล ส่วนที่ 2: เทคนิคการถอดความ 4 ขั้นตอน P.A.T.H. (1) Prehend = อ่านทำความเข้าใจแก่นของประโยคให้ถ่องแท้ (2) Alter Vocabulary = สลับคำศัพท์สำคัญด้วยคำพ้องความหมาย (Synonyms) ที่มีความหมายตรงบริบท (3) Transform Structure = ปรับเปลี่ยนโครงสร้างไวยากรณ์ (เช่น เปลี่ยน Active เป็น Passive, สลับอนุประโยค, หรือเปลี่ยนหน้าที่คำ) และ (4) Harmonize = ตรวจสอบว่าความหมายเดิมคงอยู่ครบ 100% ไม่เติมความคิดเห็นส่วนตัวและไม่ตัดใจความสำคัญทิ้ง",
+          "content": "Follow two structured frameworks to master these strategies. Part A: The 3-Step Inference Method: 1. Locate Concrete Clues: Spot specific words, numbers, or actions. 2. Combine with Background Logic: Think about how the world works realistically. 3. Formulate a Cautious Deduction: Avoid extreme conclusions that go beyond the evidence. Part B: The 4-Step Paraphrasing Technique: 1. Read for full meaning. 2. Select appropriate context synonyms. 3. Transform grammar (change voice, parts of speech, or clause orders). 4. Compare with the original to ensure 100% semantic accuracy without patchwriting.",
+          "thaiExplanation": "ขั้นตอนการปฏิบัติที่เป็นระบบ: ส่วนที่ 1: การอนุมาน 3 ขั้นตอน (1. ค้นหาร่องรอยรูปธรรมในข้อความ 2. ผสานกับตรรกะความจริง 3. สรุปความหมายโดยไม่ด่วนสรุปเกินหลักฐาน) และส่วนที่ 2: การถอดความ 4 ขั้นตอน (1. อ่านจับใจความรวม 2. หาคำเหมือนที่ตรงบริบท 3. ปรับโครงสร้างไวยากรณ์ 4. ตรวจสอบความถูกต้องว่าคงความหมายเดิมไว้ครบ 100% และไม่มีการลอกวลีติดต่อกันเกิน 3-4 คำ)",
           "checklist": [
-            "Inference: Did I anchor my conclusion in actual words and data from the text, rather than personal bias?",
-            "Inference: Does my deduction avoid extreme words (e.g. 'completely', 'never', 'only') unless supported?",
+            "Inference: Did I base my deduction on actual words and facts from the text, rather than pure imagination?",
+            "Inference: Does my conclusion avoid extreme terms like 'always', 'never', or 'completely' unless verified?",
             "Paraphrase: Did I change both key vocabulary (synonyms) and grammatical structure (syntax)?",
-            "Paraphrase: Did I preserve one hundred percent of the original author's meaning and tone?",
-            "Paraphrase: Did I avoid copying distinctive word sequences of four or more consecutive words?"
+            "Paraphrase: Does my rewritten version preserve one hundred percent of the original meaning and tone?",
+            "Paraphrase: Did I avoid copying four or more consecutive words from the source text (avoiding patchwriting)?"
           ],
-          "customHtml": "\n        <div class=\"space-y-4\">\n          <div class=\"p-4 bg-slate-900 text-slate-100 rounded-2xl text-xs space-y-3\">\n            <h5 class=\"text-sm font-bold text-purple-300 flex items-center space-x-2\">\n              <i data-lucide=\"shuffle\" class=\"w-4 h-4\"></i>\n              <span>3 Powerful Structural Shifts for Paraphrasing (3 เทคนิคเปลี่ยนโครงสร้างประโยค)</span>\n            </h5>\n            <div class=\"grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px]\">\n              <div class=\"p-3 bg-slate-800 rounded-xl border border-slate-700\">\n                <span class=\"text-emerald-400 font-bold block mb-1\">1. Active to Passive Voice</span>\n                <p class=\"text-slate-300 mb-1\"><strong>Orig:</strong> Solar collectors power the marine filtration pumps.</p>\n                <p class=\"text-purple-300 font-mono\"><strong>Para:</strong> The marine filtration pumps are driven by solar collectors.</p>\n              </div>\n\n              <div class=\"p-3 bg-slate-800 rounded-xl border border-slate-700\">\n                <span class=\"text-purple-400 font-bold block mb-1\">2. Reversing Clause Order</span>\n                <p class=\"text-slate-300 mb-1\"><strong>Orig:</strong> Because weather worsened, engineers recalled the drones.</p>\n                <p class=\"text-purple-300 font-mono\"><strong>Para:</strong> Engineers recalled the drones after weather conditions deteriorated.</p>\n              </div>\n\n              <div class=\"p-3 bg-slate-800 rounded-xl border border-slate-700\">\n                <span class=\"text-pink-400 font-bold block mb-1\">3. Word Form Shifts</span>\n                <p class=\"text-slate-300 mb-1\"><strong>Orig:</strong> The system operates efficiently under heavy rain.</p>\n                <p class=\"text-purple-300 font-mono\"><strong>Para:</strong> The system maintains high operational efficiency during heavy rain.</p>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Two Frameworks Side-by-Side -->\n          <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;\">\n            <!-- Framework A: Inference -->\n            <div style=\"background:#FFFBEB; border:1.5px solid #FCD34D; border-radius:14px; padding:1.1rem;\">\n              <h4 style=\"font-size:0.96rem; font-weight:800; color:#B45309; margin:0 0 0.6rem 0;\">\n                🔍 Framework A: The 3-Step Inference Formula\n              </h4>\n              <div style=\"display:grid; gap:0.6rem; font-size:0.83rem; color:#78350F;\">\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #FDE68A;\">\n                  <strong>Step 1: Text Clues (หาหลักฐาน)</strong><br>\n                  ค้นหาคำบรรยาย รหัสคำ ตัวเลข หรือกริยาที่ผู้เขียนระบุไว้ในบทอ่าน\n                </div>\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #FDE68A;\">\n                  <strong>Step 2: Prior Logic (ผสานตรรกะความจริง)</strong><br>\n                  นำหลักฐานมาเชื่อมโยงกับความรู้สากลว่าในความเป็นจริงเหตุการณ์นี้บ่งชี้ถึงสิ่งใด\n                </div>\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #FDE68A;\">\n                  <strong>Step 3: Balanced Conclusion (สรุปอย่างรัดกุม)</strong><br>\n                  อนุมานข้อเท็จจริงที่ไม่เกินขอบเขตของหลักฐาน หลีกเลี่ยงข้อความสุดโต่ง\n                </div>\n              </div>\n            </div>\n\n            <!-- Framework B: Paraphrasing -->\n            <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:14px; padding:1.1rem;\">\n              <h4 style=\"font-size:0.96rem; font-weight:800; color:#15803D; margin:0 0 0.6rem 0;\">\n                📝 Framework B: The 4-Step Paraphrasing Technique\n              </h4>\n              <div style=\"display:grid; gap:0.6rem; font-size:0.83rem; color:#14532D;\">\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>Step 1: Grasp Core Meaning (เข้าใจเนื้อหาลึกซึ้ง)</strong><br>\n                  ทำความเข้าใจประโยคดั้งเดิมให้ทะลุปรุโปร่งก่อนเริ่มลงมือเขียน\n                </div>\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>Step 2: Select Synonyms (เลือกคำศัพท์เทียบเคียง)</strong><br>\n                  หาคำที่มีความหมายเท่าเดิม เช่น <em>diminish -> reduce</em>, <em>expenditure -> cost</em>\n                </div>\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>Step 3: Restructure Syntax (ปรับไวยากรณ์)</strong><br>\n                  เปลี่ยน Active เป็น Passive, แปลง Part of Speech หรือสลับตำแหน่งประโยคย่อย\n                </div>\n                <div style=\"background:#fff; padding:0.65rem; border-radius:8px; border:1px solid #BBF7D0;\">\n                  <strong>Step 4: Semantic Check (ตรวจสอบความถูกต้อง)</strong><br>\n                  ตรวจทานว่าความหมายไม่บิดเบือน และไม่ลอกคำติดต่อกันเกิน 3-4 คำ\n                </div>\n              </div>\n            </div>\n          </div>\n\n          <!-- Interactive 2-Colour Coding Workspace -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.8rem;\">\n              <div>\n                <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">🎨 Interactive 2-Colour Highlighting Workspace</h4>\n                <p style=\"font-size:0.8rem; color:#64748B; margin:0.15rem 0 0 0;\">ฝึกจำแนกประโยค: คลิกเลือกสีเครื่องมือ แล้วคลิกที่แต่ละประโยคเพื่อไฮไลต์</p>\n              </div>\n              <div style=\"display:flex; gap:0.4rem;\">\n                <button id=\"strat5-tool-yellow\" onclick=\"app.setStrat5HighlightTool('yellow')\" style=\"background:#FEF08A; border:1.5px solid #EAB308; padding:0.3rem 0.7rem; border-radius:8px; font-size:0.75rem; font-weight:700; cursor:pointer; color:#713F12; box-shadow:0 0 0 3px rgba(15,23,42,0.28);\">\n                  🟡 Directly Stated\n                </button>\n                <button id=\"strat5-tool-green\" onclick=\"app.setStrat5HighlightTool('green')\" style=\"background:#BBF7D0; border:1.5px solid #22C55E; padding:0.3rem 0.7rem; border-radius:8px; font-size:0.75rem; font-weight:700; cursor:pointer; color:#14532D;\">\n                  🟢 Implied Meaning Clue\n                </button>\n              </div>\n            </div>\n\n            <div style=\"background:#F8FAFC; border:1px solid #E2E8F0; border-radius:12px; padding:1rem; line-height:1.8; font-size:0.88rem; color:#334155;\">\n              <span id=\"strat5-hl-sent-0\" onclick=\"app.highlightStrat5Sentence(0)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 1: The municipal transport authority launched fifty electric buses across downtown transit corridors last spring.\n              </span>\n              <span id=\"strat5-hl-sent-1\" onclick=\"app.highlightStrat5Sentence(1)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 2: Commuters remarked that noise levels dropped noticeably and diesel fumes completely vanished from bus stops.\n              </span>\n              <span id=\"strat5-hl-sent-2\" onclick=\"app.highlightStrat5Sentence(2)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 3: The city accounting ledger revealed that monthly vehicle fueling costs dropped by thirty-eight percent.\n              </span>\n              <span id=\"strat5-hl-sent-3\" onclick=\"app.highlightStrat5Sentence(3)\" style=\"cursor:pointer; padding:2px 4px; border-radius:4px; transition:background 0.2s;\">\n                Sentence 4: Route managers noticed that riders with respiratory sensitivities chose to travel more frequently during peak hours.\n              </span>\n            </div>\n\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-top:0.8rem; flex-wrap:wrap; gap:0.5rem;\">\n              <div style=\"font-size:0.8rem; color:#64748B;\">คลิกที่ประโยคเพื่อใส่สี หรือคลิก Reveal เพื่อดูเฉลย</div>\n              <div style=\"display:flex; gap:0.4rem;\">\n                <button onclick=\"app.resetStrat5Highlights()\" style=\"background:#F1F5F9; border:1px solid #CBD5E1; padding:0.35rem 0.85rem; border-radius:8px; font-size:0.78rem; font-weight:600; cursor:pointer; color:#475569;\">\n                  Reset\n                </button>\n                <button onclick=\"app.revealStrat5Highlights()\" style=\"background:#6B21A8; color:#fff; border:none; padding:0.35rem 0.95rem; border-radius:8px; font-size:0.78rem; font-weight:700; cursor:pointer;\">\n                  Reveal Analysis (เฉลยการวิเคราะห์)\n                </button>\n              </div>\n            </div>\n            <div id=\"strat5-hl-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 5,
           "title": "Worked Example",
           "thaiTitle": "ตัวอย่างการใช้",
-          "content": "Analyze this B2 passage: 'During the five-month ocean trials, the automated surface vessel gathered seven tons of microplastics from coastal waters without human crew aboard. Although turbulent monsoon waves repeatedly tossed the vessel, its onboard sensors automatically adjusted its ballast tanks, preventing any capsizing. Technicians at the mainland control room received real-time satellite telemetry every twelve seconds, intervening remotely only twice when drift logs blocked the collection inlet.'",
-          "annotated": "• Explicit Clue 1: 'automated surface vessel gathered seven tons... without human crew aboard' -> Proof of robotic, unmanned functionality.\n• Explicit Clue 2: 'sensors automatically adjusted its ballast tanks, preventing any capsizing' -> Proof of automated stability engineering under rough sea conditions.\n• Explicit Clue 3: 'intervening remotely only twice when drift logs blocked the collection inlet' -> Proof that the craft runs almost entirely independently, requiring human assistance only for unexpected physical blockages.\n• Logical Inference: The autonomous vessel possesses robust self-stabilization capabilities and operates with substantial independence from shore-based human operators.\n• Paraphrase Evaluation:\n  - Original Sentence: 'Although turbulent monsoon waves repeatedly tossed the vessel, its onboard sensors automatically adjusted its ballast tanks, preventing any capsizing.'\n  - Accurate Paraphrase: 'Despite being buffeted by severe monsoon seas, the unmanned craft avoided rolling over because its automated sensors modified ballast levels.' (Uses synonyms, changes clause structure, retains complete meaning).\n  - Flawed Paraphrase (Distorted): 'The boat overturned during a monsoon storm because technicians failed to manage the ballast tanks.' (Directly contradicts text evidence).",
-          "takeaway": "Notice how the valid inference is directly justified by evidence, and the successful paraphrase alters vocabulary and sentence grammar without losing any original nuance.",
-          "customHtml": "\n        <div class=\"space-y-3\">\n          <div class=\"p-4 bg-purple-50/80 border border-purple-200 rounded-2xl text-xs space-y-2\">\n            <h5 class=\"font-bold text-purple-950 flex items-center space-x-1.5\">\n              <i data-lucide=\"check-circle-2\" class=\"w-4 h-4 text-purple-700\"></i>\n              <span>Worked Paraphrase Comparison (เปรียบเทียบการถอดความแบบเจาะลึก)</span>\n            </h5>\n            <div class=\"grid grid-cols-1 md:grid-cols-2 gap-3 pt-1 text-[11px]\">\n              <div class=\"p-3 bg-white rounded-xl border border-emerald-300\">\n                <span class=\"text-emerald-700 font-bold flex items-center space-x-1 mb-1\">\n                  <i data-lucide=\"check\" class=\"w-3.5 h-3.5\"></i>\n                  <span>Successful Paraphrase (ผ่านเกณฑ์ดีเยี่ยม)</span>\n                </span>\n                <p class=\"text-slate-800 leading-relaxed mb-1\">\"Despite being buffeted by severe monsoon seas, the unmanned craft avoided rolling over because its automated sensors modified ballast levels.\"</p>\n                <span class=\"text-[10px] text-emerald-800 font-semibold\">✓ Substitutes vocabulary (buffeted, severe seas, craft, modified) and flips clause order while keeping 100% of the meaning.</span>\n              </div>\n\n              <div class=\"p-3 bg-white rounded-xl border border-rose-300\">\n                <span class=\"text-rose-700 font-bold flex items-center space-x-1 mb-1\">\n                  <i data-lucide=\"x\" class=\"w-3.5 h-3.5\"></i>\n                  <span>Flawed Paraphrase (ไม่ผ่านเกณฑ์)</span>\n                </span>\n                <p class=\"text-slate-800 leading-relaxed mb-1\">\"Although turbulent monsoon waves repeatedly tossed the vessel, sensors adjusted ballast tanks to prevent capsizing.\"</p>\n                <span class=\"text-[10px] text-rose-800 font-semibold\">✗ Patchwriting error: Copies ten consecutive words from the original sentence without transforming syntax.</span>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
+          "content": "Examine this authentic B2 passage: \"Although the upfront procurement costs of battery-electric public buses were thirty percent higher than conventional diesel models, city transit directors reported a remarkable forty-five percent reduction in routine maintenance and operating expenses within eighteen months of deployment. Furthermore, route surveys indicated that passenger satisfaction increased significantly as commuters praised the quiet cabins and cleaner neighborhood air.\" Here is how a skilled reader applies the two strategies step by step.",
+          "annotated": "Explicit Clue 1: Battery buses cost 30% more upfront -> But routine maintenance and operating expenses fell by 45% within 18 months.\nExplicit Clue 2: Passengers praised silent cabins and cleaner air.\nLogical Inference: The higher initial investment in green public transit is rapidly offset by operational savings and public health benefits.\nParaphrase Breakdown: \"Although electric buses required higher starting investment, local authorities achieved substantial long-term savings while improving rider comfort and urban air quality.\"",
+          "takeaway": "Key Takeaways: 1. Inferences must be anchored directly in numbers and facts (the 45% reduction proves cost-effectiveness). 2. A good paraphrase changes grammar (voice, clause order) and vocabulary (procurement -> purchase, expenditures -> costs) while preserving 100% of the author's original meaning without copying.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Step-by-Step Interactive Example Breakdown -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <h4 style=\"font-size:1.02rem; font-weight:800; color:#1E293B; margin:0 0 0.8rem 0;\">\n              📖 Step-by-Step Worked Example Demonstration\n            </h4>\n\n            <!-- Original Passage Box -->\n            <div style=\"background:#F8FAFC; border-left:4px solid #7C3AED; padding:1rem; border-radius:0 12px 12px 0; margin-bottom:1rem; font-size:0.9rem; line-height:1.6; color:#1E293B; font-style:italic;\">\n              \"Although the upfront procurement costs of battery-electric public buses were thirty percent higher than conventional diesel models, city transit directors reported a remarkable forty-five percent reduction in routine maintenance and operating expenses within eighteen months of deployment. Furthermore, route surveys indicated that passenger satisfaction increased significantly as commuters praised the quiet cabins and cleaner neighborhood air.\"\n            </div>\n\n            <!-- 2-Part Breakdown Grid -->\n            <div style=\"display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem;\">\n              <!-- Left: Inference Breakdown -->\n              <div style=\"background:#FEFCE8; border:1.5px solid #FDE047; border-radius:12px; padding:1rem;\">\n                <div style=\"font-weight:800; color:#854D0E; font-size:0.9rem; margin-bottom:0.4rem;\">\n                  🔍 Strategy 1: Inference Deduction Analysis\n                </div>\n                <div style=\"font-size:0.83rem; color:#713F12; line-height:1.6;\">\n                  <strong>1. Explicit Clues (ข้อมูลบอกตรง):</strong><br>\n                  • ซื้อรถเมล์ไฟฟ้าราคาสูงกว่า 30% ในตอนแรก<br>\n                  • ค่าบำรุงรักษาและเชื้อเพลิงลดลงถึง 45% ใน 18 เดือน<br>\n                  • ผู้โดยสารชอบความเงียบและอากาศที่สะอาดขึ้น<br><br>\n                  <strong>2. Background Knowledge (ตรรกะความจริง):</strong><br>\n                  การประหยัดค่าใช้จ่ายระยะยาว 45% ย่อมสามารถชดเชยต้นทุนตอนเริ่มต้นที่แพงกว่าได้<br><br>\n                  <strong>3. Valid Inference (ข้อสรุปที่ถูกต้อง):</strong><br>\n                  <em>\"การลงทุนในระบบขนส่งพลังงานสะอาดคุ้มค่าในระยะยาวทั้งด้านการเงินและความพึงพอใจของประชาชน\"</em>\n                </div>\n              </div>\n\n              <!-- Right: Paraphrase Transformation Breakdown -->\n              <div style=\"background:#F0FDF4; border:1.5px solid #86EFAC; border-radius:12px; padding:1rem;\">\n                <div style=\"font-weight:800; color:#166534; font-size:0.9rem; margin-bottom:0.4rem;\">\n                  ✍️ Strategy 2: Paraphrasing Transformation\n                </div>\n                <div style=\"font-size:0.83rem; color:#14532D; line-height:1.6;\">\n                  <strong>1. Word Replacements (การเปลี่ยนคำศัพท์):</strong><br>\n                  • <em>procurement costs</em> -> <em>purchase price</em><br>\n                  • <em>operating expenses</em> -> <em>running costs</em><br>\n                  • <em>passenger satisfaction</em> -> <em>commuter approval</em><br><br>\n                  <strong>2. Structural Shifts (การปรับโครงสร้างประโยค):</strong><br>\n                  สลับตำแหน่งของประโยคแย้ง และเปลี่ยนคำขยายเป็นกลุ่มคำกริยา<br><br>\n                  <strong>3. High-Scoring Paraphrase:</strong><br>\n                  <span style=\"background:#DCFCE7; padding:0.25rem 0.4rem; border-radius:6px; display:inline-block; margin-top:0.3rem; font-weight:600;\">\n                    \"Even though electric transit buses cost more to buy originally, cities saved money over time through lower operating expenses while providing a cleaner, quieter travel experience.\"\n                  </span>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 6,
           "title": "Guided Practice",
           "thaiTitle": "ฝึกปฏิบัติ",
-          "content": "Read the excerpt: 'In an effort to reduce urban heat islands, city planners replaced forty hectares of conventional black asphalt parking lots with permeable grass pavers and native shade trees. Three years later, infrared aerial mapping revealed that ground temperatures across the renovated districts had dropped by an average of 4.2 degrees Celsius. Furthermore, local stormwater retention systems recorded sixty percent fewer sewer overflows during summer flash floods.'",
-          "question": "Which of the following statements represents a LOGICAL INFERENCE that can be deduced from the passage?",
+          "content": "Read this short passage about rooftop urban gardening: \"To counteract rising summer temperatures, a residential community installed soil-based vegetation gardens on five vacant rooftop terraces. Within one year, interior building temperatures dropped by four degrees Celsius during peak afternoon hours, and air-conditioning electricity usage fell by twenty-two percent. In addition, resident surveys noted that neighbors who previously never interacted now meet regularly on weekends to harvest fresh herbs and vegetables.\" Answer the guided questions below.",
+          "question": "Based on the passage, which statement represents a VALID INFERENCE supported by the text clues?",
           "options": [
-            "Replacing paved surfaces with permeable greenery not only cooled the city area but also improved urban drainage capacity during heavy rains",
-            "The city government plans to ban all motorized vehicles from the renovated parking lots next year",
-            "Ground temperatures decreased exclusively because summer air temperatures across the country became unusually cold",
-            "Conventional black asphalt is cheaper to install than permeable grass pavers and native shade trees"
+            "Installing rooftop gardens is illegal unless all apartment owners plant identical vegetable varieties",
+            "In addition to cooling apartments and reducing electric bills, the rooftop gardens fostered stronger social connections among neighbors",
+            "Air-conditioning equipment produces more toxic carbon emissions than rooftop herb plants",
+            "The residential community forced all tenants to become vegetarians within twelve months"
           ],
-          "answer": 0,
-          "explanation": "Option A is the correct logical inference. The passage explicitly connects the greenery conversion to lower surface temperatures (cooling effect) and a 60% decrease in sewer overflows during flash floods (improved drainage capacity). Options B and D are unsupported speculations not mentioned in the text, and Option C is contradicted by the evidence attributing cooling to the renovation.",
-          "customHtml": "\n        <div class=\"p-3.5 bg-purple-50/80 border border-purple-200 rounded-xl text-xs space-y-2\">\n          <div class=\"flex items-center space-x-2 text-purple-900 font-bold\">\n            <i data-lucide=\"lightbulb\" class=\"w-4 h-4 text-purple-700\"></i>\n            <span>Inference Detective Check: Why Option A is Valid</span>\n          </div>\n          <p class=\"text-slate-700 text-[11px] leading-relaxed\">\n            The passage gives two pieces of evidence: temperature dropped by 4.2°C, and sewer overflows dropped by 60% during summer flash floods. Combining these two facts produces the valid inference that replacing black asphalt with greenery delivered dual benefits: temperature mitigation and stormwater management.\n          </p>\n        </div>\n      "
+          "answer": 1,
+          "explanation": "Choice B is the only valid inference supported by the text clues. The text explicitly links the rooftop garden to lower temperatures, reduced power usage, and neighbors meeting on weekends to harvest herbs together, which logically implies both environmental cooling and enhanced community bonding. Choices A, C, and D are extreme, distorted, or completely unsupported.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Interactive Paraphrasing Challenge in Step 6 -->\n          <div style=\"background:#fff; border:1.5px solid #E2E8F0; border-radius:16px; padding:1.2rem; box-shadow:0 4px 12px rgba(15,23,42,0.04);\">\n            <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:0.8rem; flex-wrap:wrap; gap:0.5rem;\">\n              <h4 style=\"font-size:1rem; font-weight:800; color:#1E293B; margin:0;\">\n                🎯 Guided Practice 2: Paraphrase Evaluation Task\n              </h4>\n              <span style=\"background:#EDE9FE; color:#5B21B6; font-size:0.75rem; font-weight:700; padding:0.25rem 0.65rem; border-radius:999px;\">\n                Task Evaluation\n              </span>\n            </div>\n\n            <p style=\"font-size:0.85rem; color:#334155; line-height:1.6; margin:0 0 0.8rem 0;\">\n              ประโยคเป้าหมาย: <em>\"Within one year, interior building temperatures dropped by four degrees Celsius during peak afternoon hours, and air-conditioning electricity usage fell by twenty-two percent.\"</em><br>\n              จงเลือกประโยคถอดความที่มีความหมายถูกต้อง ครบถ้วน และไม่มีการลอกคำเดิม (Best Academic Paraphrase):\n            </p>\n\n            <div style=\"display:grid; gap:0.6rem; font-size:0.83rem;\">\n              <button onclick=\"app.submitStrat5ParaphrasePractice(0)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                A. Within one year, inside temperatures dropped by 4 degrees in peak afternoon hours and air conditioning usage fell 22%. (Patchwriting - โครงสร้างเดิมเกือบ 100%)\n              </button>\n              <button onclick=\"app.submitStrat5ParaphrasePractice(1)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                B. Over a twelve-month period, indoor rooms stayed noticeably cooler during the hottest parts of the day, leading to a substantial decrease in cooling power consumption. (Best Paraphrase)\n              </button>\n              <button onclick=\"app.submitStrat5ParaphrasePractice(2)\" style=\"background:#F8FAFC; border:1px solid #E2E8F0; padding:0.75rem 0.9rem; border-radius:10px; text-align:left; cursor:pointer; color:#1E293B; font-weight:500;\">\n                C. Air conditioners are no longer necessary in residential buildings after installing soil-based rooftop gardens. (Distorted / Unsupported meaning)\n              </button>\n            </div>\n            <div id=\"strat5-paraphrase-feedback\" style=\"display:none; margin-top:0.8rem; padding:0.8rem; border-radius:10px; font-size:0.82rem; line-height:1.5;\"></div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 7,
           "title": "Apply to a Short Text",
           "thaiTitle": "นำไปใช้กับบทอ่านสั้น",
-          "passageTitle": "Urban Vertical Agriculture: Cultivating the Future of Sustainable Megacities",
-          "passage": "Across high-density megacities, urban vertical farms are reshaping the food supply chain by converting vacant multistory warehouses into climate-controlled indoor greenhouses. Instead of natural soil, these vertical towers rely on aeroponic misting systems that nourish plant roots with nutrient-rich mineral solutions, reducing agricultural water consumption by ninety-five percent compared to conventional rural fields. Because LED lighting simulates optimal photosynthesis schedules twenty-four hours a day, leafy greens mature forty percent faster and yield uninterrupted harvests regardless of exterior winter blizzards or summer droughts. Furthermore, cultivating crops directly inside municipal boundaries eliminates thousands of kilometers of refrigerated trucking logistics, thereby cutting transport emissions and ensuring crisp produce arrives at neighborhood markets within hours of harvesting.",
-          "audioText": "Across high-density megacities, urban vertical farms are reshaping the food supply chain by converting vacant multistory warehouses into climate-controlled indoor greenhouses. Instead of natural soil, these vertical towers rely on aeroponic misting systems that nourish plant roots with nutrient-rich mineral solutions, reducing agricultural water consumption by ninety-five percent compared to conventional rural fields. Because LED lighting simulates optimal photosynthesis schedules twenty-four hours a day, leafy greens mature forty percent faster and yield uninterrupted harvests regardless of exterior winter blizzards or summer droughts. Furthermore, cultivating crops directly inside municipal boundaries eliminates thousands of kilometers of refrigerated trucking logistics, thereby cutting transport emissions and ensuring crisp produce arrives at neighborhood markets within hours of harvesting.",
-          "taskQuestion": "What two logical deductions can you infer about the broader economic and ecological impact of vertical indoor farming?",
-          "taskAnswer": "1. Environmental Resilience: Vertical farms drastically reduce ecological strain by slashing water waste (95% reduction) and transport carbon emissions. 2. Food Security: Growing crops indoors protects urban populations from seasonal agricultural disruptions caused by extreme climate volatility.",
-          "customHtml": "\n        <div class=\"space-y-3\">\n          <div class=\"p-4 bg-purple-50/90 border border-purple-200 rounded-2xl text-xs space-y-2\">\n            <h5 class=\"font-bold text-purple-950 flex items-center space-x-1.5\">\n              <i data-lucide=\"feather\" class=\"w-4 h-4 text-purple-700\"></i>\n              <span>Paraphrasing Mastery Challenge (ฝึกวิเคราะห์การถอดความ):</span>\n            </h5>\n            <p class=\"text-slate-700 text-[11px] leading-relaxed mb-2\">\n              <strong>Original sentence:</strong> \"Cultivating crops directly inside municipal boundaries eliminates thousands of kilometers of refrigerated trucking logistics, thereby cutting transport emissions.\"\n            </p>\n            <div class=\"p-3 bg-white rounded-xl border border-purple-150 text-[11px] text-purple-950 font-semibold space-y-1\">\n              <span class=\"text-emerald-700 block font-bold\">✓ High-Quality B2 Paraphrase:</span>\n              <p class=\"font-normal text-slate-800\">\"Producing food within city limits substantially lowers carbon pollution by removing the requirement for long-distance refrigerated transportation.\"</p>\n              <div class=\"text-[10px] text-slate-500 pt-1\">\n                Notice: \"cultivating crops\" -> \"producing food\"; \"inside municipal boundaries\" -> \"within city limits\"; \"cutting transport emissions\" -> \"substantially lowers carbon pollution\". Structure shifted to passive cause-effect.\n              </div>\n            </div>\n          </div>\n        </div>\n      "
+          "passageTitle": "Community Repair Cafés: Breathing New Life into Broken Electronics",
+          "passage": "In response to growing mounds of electronic waste, volunteers in several European municipalities established monthly \"Repair Cafés\" where neighbors bring broken household devices to be fixed free of charge. Instead of immediately purchasing replacement appliances, visitors sit alongside skilled retired technicians, carpenters, and electricians to troubleshoot malfunctioning toasters, vacuum cleaners, and laptops. Event records indicate that nearly seventy percent of all presented items are successfully restored to working condition within forty minutes. More importantly, participants report feeling empowered by acquiring basic troubleshooting skills, while municipal waste collection authorities registered an eleven percent drop in small consumer electronics disposed of in local landfills. By transforming a throwaway habit into a collaborative educational workshop, repair cafés demonstrate that extending product lifespans fosters community resilience and environmental stewardship simultaneously.",
+          "audioText": "In response to growing mounds of electronic waste, volunteers in several European municipalities established monthly Repair Cafés where neighbors bring broken household devices to be fixed free of charge. Instead of immediately purchasing replacement appliances, visitors sit alongside skilled retired technicians, carpenters, and electricians to troubleshoot malfunctioning toasters, vacuum cleaners, and laptops. Event records indicate that nearly seventy percent of all presented items are successfully restored to working condition within forty minutes. More importantly, participants report feeling empowered by acquiring basic troubleshooting skills, while municipal waste collection authorities registered an eleven percent drop in small consumer electronics disposed of in local landfills. By transforming a throwaway habit into a collaborative educational workshop, repair cafés demonstrate that extending product lifespans fosters community resilience and environmental stewardship simultaneously.",
+          "taskQuestion": "Identify two logical inferences from the passage and evaluate how effectively the author frames the solution.",
+          "taskAnswer": "Inference 1: Many discarded household electronics contain minor, fixable defects rather than irreparable damage, as proven by the 70% repair success rate within 40 minutes. Inference 2: Financial savings are not the sole motivator for attendees; learning practical repair skills and connecting with community members are equally powerful incentives.",
+          "customHtml": "\n        <div class=\"space-y-6\">\n          <!-- Reading Passage Box with Audio Player -->\n          <div class=\"bg-slate-900 text-slate-100 p-4 sm:p-6 rounded-2xl space-y-4 relative shadow-lg\">\n            <div class=\"flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700 pb-3\">\n              <span class=\"text-xs font-bold text-pink-300 uppercase tracking-wider\">\n                Community Repair Cafés: Breathing New Life into Broken Electronics\n              </span>\n              \n              <div class=\"flex items-center space-x-2\">\n                <!-- Playback Speed Control -->\n                <div class=\"flex items-center space-x-1.5 bg-slate-800 border border-slate-700 rounded-lg px-2.5 py-1.5\" title=\"Playback Speed (ความเร็วเสียงอ่าน)\">\n                  <i data-lucide=\"gauge\" class=\"w-3.5 h-3.5 text-purple-300 shrink-0\"></i>\n                  <select onchange=\"app.setAudioSpeed(this.value)\" class=\"bg-transparent text-purple-200 text-xs font-semibold focus:outline-none cursor-pointer\">\n                    <option value=\"0.65\" class=\"bg-slate-900 text-white\">0.65x (ช้ามาก)</option>\n                    <option value=\"0.75\" selected class=\"bg-slate-900 text-white\">0.75x (ช้าชัดเจน ✨)</option>\n                    <option value=\"0.85\" class=\"bg-slate-900 text-white\">0.85x (ปานกลาง)</option>\n                    <option value=\"1.0\" class=\"bg-slate-900 text-white\">1.0x (ปกติ)</option>\n                  </select>\n                </div>\n\n                <button onclick=\"app.togglePassageAudio(encodeURIComponent('In response to growing mounds of electronic waste, volunteers in several European municipalities established monthly Repair Cafés where neighbors bring broken household devices to be fixed free of charge. Instead of immediately purchasing replacement appliances, visitors sit alongside skilled retired technicians, carpenters, and electricians to troubleshoot malfunctioning toasters, vacuum cleaners, and laptops. Event records indicate that nearly seventy percent of all presented items are successfully restored to working condition within forty minutes. More importantly, participants report feeling empowered by acquiring basic troubleshooting skills, while municipal waste collection authorities registered an eleven percent drop in small consumer electronics disposed of in local landfills. By transforming a throwaway habit into a collaborative educational workshop, repair cafés demonstrate that extending product lifespans fosters community resilience and environmental stewardship simultaneously.'))\" class=\"px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer\">\n                  <i data-lucide=\"volume-2\" class=\"w-4 h-4\"></i>\n                  <span>Listen Passage</span>\n                </button>\n              </div>\n            </div>\n\n            <p class=\"text-sm italic leading-relaxed text-slate-200 font-serif\">\n              \"In response to growing mounds of electronic waste, volunteers in several European municipalities established monthly 'Repair Cafés' where neighbors bring broken household devices to be fixed free of charge. Instead of immediately purchasing replacement appliances, visitors sit alongside skilled retired technicians, carpenters, and electricians to troubleshoot malfunctioning toasters, vacuum cleaners, and laptops. Event records indicate that nearly seventy percent of all presented items are successfully restored to working condition within forty minutes. More importantly, participants report feeling empowered by acquiring basic troubleshooting skills, while municipal waste collection authorities registered an eleven percent drop in small consumer electronics disposed of in local landfills. By transforming a throwaway habit into a collaborative educational workshop, repair cafés demonstrate that extending product lifespans fosters community resilience and environmental stewardship simultaneously.\"\n            </p>\n          </div>\n\n          <!-- Application Verification Card -->\n          <div style=\"background:#FAF5FF; border:1.5px solid #D8B4FE; border-radius:14px; padding:1.1rem;\">\n            <h4 style=\"font-size:0.95rem; font-weight:800; color:#581C87; margin:0 0 0.5rem 0;\">\n              💡 Strategy Application Check (ตรวจสอบการประยุกต์ใช้)\n            </h4>\n            <div style=\"display:grid; gap:0.5rem; font-size:0.83rem; color:#4C1D95; line-height:1.6;\">\n              <div>\n                <strong>Evidence-Based Inference:</strong> สังเกตจากอัตราความสำเร็จในการซ่อมแซม 70% ภายใน 40 นาที อนุมานได้ว่าอุปกรณ์อิเล็กทรอนิกส์ส่วนใหญ่ที่ผู้คนทิ้งลงถังขยะไม่ได้พังเสียหายถาวร แต่เป็นเพียงอาการเสียเล็กน้อยที่แก้ไขได้ง่าย\n              </div>\n              <div>\n                <strong>Model Paraphrase:</strong> <em>\"Rather than discarding broken home appliances, local residents collaborate with volunteer experts at community workshops to repair damaged electronics, cutting landfill waste and teaching self-reliance.\"</em>\n              </div>\n            </div>\n          </div>\n        </div>\n      "
         },
         {
           "stepNum": 8,
           "title": "Strategy Quiz (30 ข้อ)",
           "thaiTitle": "แบบทดสอบ 30 ข้อ",
-          "question": "Which of the following represents a CRITICAL error when making inferences in reading comprehension tests?",
+          "question": "Strategy Quiz Module for Unit 5",
           "options": [
-            "Making an assumption based entirely on personal opinion that is not supported by any textual evidence",
-            "Combining explicit factual clues with reasonable real-world background knowledge",
-            "Checking whether the inferred idea contradicts any statement in the text",
-            "Looking for clues in the characters' actions and descriptive adjectives"
+            "Start Quiz"
           ],
           "answer": 0,
-          "explanation": "An inference must always be anchored in textual evidence. Making conclusions based on personal bias or unsupported speculation is an invalid wild guess."
+          "explanation": "Complete all 30 questions across 3 passages."
         }
       ]
     },
@@ -6580,458 +6577,453 @@ window.ReadSkillsData = {
     ]
   },
   "strategyUnit5Quiz": {
-    "unitId": 5,
     "title": "Unit 5: Text Interpretation, Inference & Paraphrasing Quiz",
-    "thaiTitle": "แบบทดสอบกลยุทธ์การอนุมานความหมายและการถอดความ บทที่ 5 (30 ข้อ)",
-    "passingScore": 70,
+    "thaiTitle": "แบบทดสอบกลยุทธ์การอ่านบทที่ 5: การตีความและการถอดความ (30 ข้อ)",
     "passages": [
       {
         "id": "strat5-p1",
-        "title": "Passage 1: Automated Ocean Cleaners: Battling Marine Microplastics",
-        "thaiTitle": "บทอ่านที่ 1: หุ่นยนต์ทำความสะอาดมหาสมุทร: ต่อกรกับขยะไมโครพลาสติกในทะเล",
-        "genre": "Environmental Science & Marine Technology (วิทยาศาสตร์สิ่งแวดล้อมและเทคโนโลยีทางทะเล)",
-        "audioText": "Marine microplastics, defined as synthetic plastic particles measuring less than five millimeters in diameter, represent one of the most pervasive ecological crises of the modern era. Because microscopic fragments easily absorb toxic heavy metals and organic pesticides from seawater, tiny planktonic organisms mistake them for suspended food. When fish consume these contaminated plankton, toxic chemical residues accumulate up the marine food web, eventually reaching dinner plates in human households. To combat this hidden disaster, ocean engineers developed solar-powered autonomous collector catamarans designed to scour coastal bays and harbor channels. Equipped with high-precision optical sensors, these twin-hulled robotic crafts sweep the sea surface, using gentle underwater suction channels to gather floating debris. Unlike traditional dredging ships that produce deafening engine noise and risk entrapping sea turtles in heavy drag nets, the solar catamarans glide silently and feature submerged acoustic deterrents that emit low-frequency hums to guide dolphins and seals away from collection mouths. During a six-month pilot operation in an industrial estuary, three prototype vessels recovered nearly twelve metric tons of synthetic waste, including discarded fishing nets, degraded packaging, and micro-pellets. Marine biologists examining regional fish samples after the deployment discovered a thirty-eight percent drop in plastic ingestion rates among coastal seabirds and reef fish. However, researchers emphasize that robotic extraction represents an emergency mitigation tool rather than a permanent cure, noting that global plastic manufacturing must contract dramatically before ocean ecosystems can fully recover.",
+        "title": "Passage 1: Smart Lighting in Modern Cities",
+        "thaiTitle": "บทอ่านที่ 1: ระบบไฟส่องสว่างอัจฉริยะในเมืองสมัยใหม่",
+        "genre": "Urban Technology & Environmental Management",
+        "audioText": "Over the past five years, major metropolitan centers have begun replacing traditional yellow sodium streetlights with intelligent LED lighting networks. These modern fixtures contain environmental sensors that automatically dim illumination levels when roads are completely empty after midnight. City audit reports demonstrate that the initial equipment purchase was costly, but operational electric bills fell by nearly forty percent within eight months. Surprisingly, maintenance technicians also reported fewer emergency night dispatches because the new bulbs last five times longer than older filaments. In addition, biologists observed that nocturnal bird migrations improved because directional LED shades prevent artificial glare from radiating upward into the night sky. Nevertheless, some neighborhood residents originally expressed privacy concerns regarding the optical motion sensors mounted on street poles outside their bedroom windows. Municipal administrators responded by publishing clear technical guidelines confirming that the motion detectors only record moving silhouettes without capturing identifiable images or personal audio. Consequently, public complaints dropped sharply once residents understood both the financial savings and the strict privacy protections in place.",
         "sentences": [
-          "Marine microplastics, defined as synthetic plastic particles measuring less than five millimeters in diameter, represent one of the most pervasive ecological crises of the modern era.",
-          "Because microscopic fragments easily absorb toxic heavy metals and organic pesticides from seawater, tiny planktonic organisms mistake them for suspended food.",
-          "When fish consume these contaminated plankton, toxic chemical residues accumulate up the marine food web, eventually reaching dinner plates in human households.",
-          "To combat this hidden disaster, ocean engineers developed solar-powered autonomous collector catamarans designed to scour coastal bays and harbor channels.",
-          "Equipped with high-precision optical sensors, these twin-hulled robotic crafts sweep the sea surface, using gentle underwater suction channels to gather floating debris.",
-          "Unlike traditional dredging ships that produce deafening engine noise and risk entrapping sea turtles in heavy drag nets, the solar catamarans glide silently and feature submerged acoustic deterrents that emit low-frequency hums to guide dolphins and seals away from collection mouths.",
-          "During a six-month pilot operation in an industrial estuary, three prototype vessels recovered nearly twelve metric tons of synthetic waste, including discarded fishing nets, degraded packaging, and micro-pellets.",
-          "Marine biologists examining regional fish samples after the deployment discovered a thirty-eight percent drop in plastic ingestion rates among coastal seabirds and reef fish.",
-          "However, researchers emphasize that robotic extraction represents an emergency mitigation tool rather than a permanent cure, noting that global plastic manufacturing must contract dramatically before ocean ecosystems can fully recover."
+          "Sentence 1: Over the past five years, major metropolitan centers have begun replacing traditional yellow sodium streetlights with intelligent LED lighting networks.",
+          "Sentence 2: These modern fixtures contain environmental sensors that automatically dim illumination levels when roads are completely empty after midnight.",
+          "Sentence 3: City audit reports demonstrate that the initial equipment purchase was costly, but operational electric bills fell by nearly forty percent within eight months.",
+          "Sentence 4: Surprisingly, maintenance technicians also reported fewer emergency night dispatches because the new bulbs last five times longer than older filaments.",
+          "Sentence 5: In addition, biologists observed that nocturnal bird migrations improved because directional LED shades prevent artificial glare from radiating upward into the night sky.",
+          "Sentence 6: Nevertheless, some neighborhood residents originally expressed privacy concerns regarding the optical motion sensors mounted on street poles outside their bedroom windows.",
+          "Sentence 7: Municipal administrators responded by publishing clear technical guidelines confirming that the motion detectors only record moving silhouettes without capturing identifiable images or personal audio.",
+          "Sentence 8: Consequently, public complaints dropped sharply once residents understood both the financial savings and the strict privacy protections in place."
         ],
         "questions": [
           {
-            "id": 1,
+            "id": "s5-p1-q1",
             "type": "mc",
-            "prompt": "What can be logically INFERRED from Sentences (2) and (3) regarding the threat of microplastics?",
+            "prompt": "What can be logically INFERRED from Sentence 2 and Sentence 3 regarding the smart lighting network?",
             "options": [
-              "Human health is susceptible to marine plastic pollution even if individuals never directly consume ocean water",
-              "Planktonic organisms deliberately target toxic pesticides because chemicals supply essential nutrients",
-              "Toxic heavy metals neutralize the harmful health impacts of synthetic plastic particles",
-              "Cooking seafood at high temperatures eliminates all plastic particles before meals reach dinner plates"
+              "Dimming lights when streets are empty directly contributes to substantial energy and financial savings for the city",
+              "Cities turn off all streetlights completely after midnight to force residents to stay indoors",
+              "Modern LED streetlights consume more electricity than traditional sodium lamps during winter months",
+              "Sensors malfunction whenever traffic density decreases after dark"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (2) และ (3) ระบุว่าแพลงก์ตอนกินไมโครพลาสติกที่มีสารพิษ จากนั้นปลามากินแพลงก์ตอน และสารพิษสะสมขึ้นมาตามห่วงโซ่อาหารจนถึงโต๊ะอาหารของมนุษย์ จึงอนุมานได้อย่างสมเหตุสมผลว่าสุขภาพของมนุษย์ได้รับผลกระทบจากมลพิษพลาสติกในทะเล แม้บุคคลนั้นจะไม่เคยดื่มน้ำทะเลโดยตรงก็ตาม"
+            "explanation": "Sentence 2 explains that lights dim automatically when roads are empty, and Sentence 3 states that electric bills fell by nearly 40%. Logically, reducing illumination when lights are not needed produces significant financial and energy savings."
           },
           {
-            "id": 2,
+            "id": "s5-p1-q2",
             "type": "mc",
-            "prompt": "Based on Sentence (6), what can be INFERRED about the engineers' design philosophy when building the solar catamarans?",
+            "prompt": "What can be INFERRED from Sentence 4 about municipal maintenance operations?",
             "options": [
-              "They prioritized preventing collateral harm to aquatic animals alongside waste collection efficiency",
-              "They designed the catamarans to entrap large marine mammals for biological research purposes",
-              "They wanted the vessels to emit loud engine noises to scare all fish away from commercial harbors",
-              "They concluded that traditional dredging ships are much safer for sea turtles than robotic vessels"
+              "Longer-lasting bulbs reduce the frequency of hazardous nighttime repair work for city staff",
+              "Technicians refused to work night shifts after the new lighting network was installed",
+              "Older sodium filament bulbs were much easier to repair in emergency situations",
+              "The city fired all repair technicians after buying the automated LED fixtures"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (6) ระบุว่าเรือคาตามารันนี้แล่นอย่างเงียบเชียบและส่งสัญญาณเสียงความถี่ต่ำเพื่อเตือนโลมาและแมวน้ำให้ว่ายห่างจากช่องเก็บขยะ แตกต่างจากเรือขุดลอกแบบเดิมที่เสียงดังและติดเต่าทะเล จึงอนุมานได้ว่าวิศวกรให้ความสำคัญกับการป้องกันอันตรายต่อสิ่งมีชีวิตในทะเลควบคู่ไปกับประสิทธิภาพในการเก็บขยะ"
+            "explanation": "Because the new bulbs last five times longer, emergency night dispatches decreased, which logically implies that repair workers face fewer dangerous midnight maintenance calls."
           },
           {
-            "id": 3,
+            "id": "s5-p1-q3",
             "type": "mc",
-            "prompt": "What does the 38% decrease in plastic ingestion mentioned in Sentence (8) imply about the six-month pilot project?",
+            "prompt": "Based on Sentence 5, what is the connection between light fixture design and urban wildlife?",
             "options": [
-              "The prototype vessels successfully removed enough coastal plastic debris to produce measurable ecological benefits",
-              "Seabirds and reef fish completely stopped eating natural food supplies in the industrial estuary",
-              "The estuary became one hundred percent free from all chemical residues and discarded fishing nets",
-              "Marine biologists fabricated the examination results to justify building more prototype ships"
+              "Directing artificial light downward prevents birds from becoming disoriented by skyward glare during migration",
+              "Nocturnal birds deliberately feed on the glass covers of smart LED streetlamps",
+              "Birds migrate exclusively through bright metropolitan downtowns because streetlights provide heat",
+              "Biologists forced city engineers to turn off all streetlights during spring"
             ],
             "correctAnswer": 0,
-            "explanation": "การที่อัตราการกลืนกินพลาสติกของนกทะเลและปลาแนวปะการังลดลงถึง 38% สะท้อนให้เห็นว่าการเก็บขยะ 12 ตันของเรือต้นแบบส่งผลดีต่อระบบนิเวศอย่างเป็นรูปธรรมและวัดค่าได้จริง"
+            "explanation": "Sentence 5 indicates that shades preventing light from shining upward into the night sky helped nocturnal bird migrations, meaning downward lighting reduces skyward glare that confuses flying birds."
           },
           {
-            "id": 4,
+            "id": "s5-p1-q4",
             "type": "mc",
-            "prompt": "According to Sentence (9), what is the author's and researchers' underlying stance on technological solutions to environmental crises?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 3: \"City audit reports demonstrate that the initial equipment purchase was costly, but operational electric bills fell by nearly forty percent within eight months.\"?",
             "options": [
-              "Technological cleanup devices provide vital interim relief, but systemic reduction at the production source is imperative",
-              "Robotic collectors are entirely ineffective and should be decommissioned immediately worldwide",
-              "Increasing global plastic manufacturing will have no measurable bearing on future marine health",
-              "Environmental cleanup technology alone is fully capable of curing all oceanic degradation without policy changes"
+              "Although buying the new equipment was expensive initially, the city cut its power costs by almost 40% in under a year, according to official audits.",
+              "City audit reports demonstrate that buying initial equipment was costly, but electricity fell by 40% in eight months.",
+              "The municipal council ran out of money eight months after investing in expensive electrical infrastructure.",
+              "Audit reports show that electricity costs increased by 40% because new equipment was very expensive."
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (9) ระบุว่าหุ่นยนต์เก็บขยะเป็นเพียงเครื่องมือบรรเทาภัยฉุกเฉิน (emergency mitigation tool) ไม่ใช่การรักษาที่ถาวร และการผลิตพลาสติกทั่วโลกจะต้องลดลงอย่างมาก จึงอนุมานได้ว่าเทคโนโลยีช่วยบรรเทาปัญหาเฉพาะหน้าได้ แต่จำเป็นต้องลดการผลิตที่ต้นตอจึงจะแก้ปัญหาได้อย่างยั่งยืน"
+            "explanation": "Option A accurately restates the full meaning with fresh vocabulary (costly -> expensive initially, fell by nearly forty percent within eight months -> cut power costs by almost 40% in under a year) without copying or distorting."
           },
           {
-            "id": 5,
+            "id": "s5-p1-q5",
             "type": "mc",
-            "prompt": "Which detail from Sentence (4) directly explains WHY the catamarans can operate sustainably without recurring fossil fuel costs?",
+            "prompt": "Which statement represents an UNSUPPORTED or DISTORTED claim that cannot be inferred from the passage?",
             "options": [
-              "They are solar-powered (ขับเคลื่อนด้วยพลังงานแสงอาทิตย์)",
-              "They are equipped with drag nets (ติดตั้งอวนลากขนาดใหญ่)",
-              "They are steered by human crews aboard (ควบคุมโดยลูกเรือบนเรือ)",
-              "They depend on diesel combustion engines (พึ่งพาเครื่องยนต์ดีเซล)"
+              "The municipal government plans to replace all traffic police officers with optical sensor poles",
+              "Some residents initially worried that street sensors might record private personal activities",
+              "Smart LED bulbs have a significantly longer operational lifespan than older sodium lamps",
+              "Clarifying privacy guidelines helped reassure skeptical city residents"
             ],
             "correctAnswer": 0,
-            "explanation": "คำว่า 'solar-powered' (ขับเคลื่อนด้วยพลังงานแสงอาทิตย์) ในประโยคที่ (4) แสดงให้เห็นถึงการใช้พลังงานสะอาดหมุนเวียน ทำให้เรือทำงานได้อย่างยั่งยืนโดยไม่ต้องเติมน้ำมันเชื้อเพลิงฟอสซิล"
+            "explanation": "The passage mentions optical sensors for lighting and moving silhouettes, but nowhere states or implies replacing traffic police officers. This is an unsupported distortion."
           },
           {
-            "id": 6,
+            "id": "s5-p1-q6",
             "type": "mc",
-            "prompt": "Which of the following is the most ACCURATE PARAPHRASE of Sentence (1)?",
+            "prompt": "What can be INFERRED from Sentence 6 and Sentence 7 about the technical nature of the motion detectors?",
             "options": [
-              "Tiny plastic particles under five millimeters across constitute a widespread and urgent environmental threat today",
-              "Synthetic plastics larger than five meters in diameter are easily managed by contemporary waste management systems",
-              "Marine microplastics are harmless synthetic fragments that rarely affect modern oceanic environmental conditions",
-              "Modern ecological crises are exclusively triggered by synthetic particles measuring exactly five millimeters"
+              "The sensors are designed for spatial presence detection rather than high-resolution surveillance",
+              "The motion sensors actively record high-definition video of household bedrooms",
+              "Residents were angry because the motion sensors emitted loud buzzing sounds all night",
+              "City administrators installed cameras specifically to spy on nighttime pedestrians"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้อย่างถูกต้องสมบูรณ์ โดยเปลี่ยน 'synthetic plastic particles measuring less than five millimeters' เป็น 'Tiny plastic particles under five millimeters across' และเปลี่ยน 'represent one of the most pervasive ecological crises of the modern era' เป็น 'constitute a widespread and urgent environmental threat today' โดยความหมายตรงกัน 100%"
+            "explanation": "Sentence 7 explains that the sensors only detect moving silhouettes without capturing identifiable images or sound, logically confirming they detect motion, not personal identity."
           },
           {
-            "id": 7,
+            "id": "s5-p1-q7",
             "type": "mc",
-            "prompt": "Which sentence represents the best PARAPHRASE of Sentence (2)?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 7: \"Municipal administrators responded by publishing clear technical guidelines confirming that the motion detectors only record moving silhouettes without capturing identifiable images or personal audio.\"?",
             "options": [
-              "Microscopic plastic pieces absorb chemical pollutants from water, leading minuscule plankton to consume them accidentally as sustenance",
-              "Plankton actively cleanse seawater by digesting toxic pesticides and heavy metals trapped inside synthetic containers",
-              "Seawater becomes contaminated because tiny plankton release toxic heavy metals into floating plastic fragments",
-              "Because microscopic plastic pieces are nutritious, marine plankton deliberately ingest them to boost organic growth"
+              "City officials addressed public unease by issuing official documents explaining that the detectors sense physical shapes without recording faces or voices.",
+              "Municipal administrators responded by publishing guidelines confirming that detectors only record silhouettes without images or audio.",
+              "Technical guidelines proved that motion detectors record private phone calls across downtown neighborhoods.",
+              "City officials refused to answer resident concerns about bedroom surveillance cameras."
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้ถูกต้อง โดยใช้คำว่า 'minuscule plankton to consume them accidentally as sustenance' แทน 'tiny planktonic organisms mistake them for suspended food' และเปลี่ยนโครงสร้างโดยคงความหมายเดิมไว้ครบถ้วน"
+            "explanation": "Option A replaces key words and restructures the sentence cleanly (addressed public unease, issuing official documents, physical shapes without recording faces or voices) while retaining 100% meaning."
           },
           {
-            "id": 8,
+            "id": "s5-p1-q8",
             "type": "mc",
-            "prompt": "Why is the statement: 'Solar catamarans cause identical environmental destruction to traditional diesel dredging vessels' an INVALID interpretation of Sentence (6)?",
+            "prompt": "What was the primary factor that caused public complaints to diminish in Sentence 8?",
             "options": [
-              "It directly contradicts explicit evidence highlighting the catamarans' silent motion and animal-friendly deterrents",
-              "Sentence (6) confirms that dredging ships are powered entirely by silent solar batteries",
-              "It accurately reflects the author's belief that all marine vessels create severe underwater noise",
-              "Sentence (6) focuses exclusively on freshwater lakes rather than oceanic environments"
+              "Transparent communication regarding economic advantages and privacy safeguards",
+              "A direct monetary refund given to every resident who complained about streetlights",
+              "The city council completely removing the LED lights from residential avenues",
+              "A municipal threat to shut off electricity for uncooperative households"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (6) เปรียบเทียบให้เห็นชัดเจนว่าเรือคาตามารันแล่นเงียบและมีสัญญาณเสียงเตือนสัตว์น้ำ ต่างจากเรือขุดลอกแบบเดิมที่เสียงดังและติดเต่าทะเล ข้อความในโจทย์จึงขัดแย้งกับหลักฐานในเนื้อเรื่องโดยตรง"
+            "explanation": "Sentence 8 states complaints dropped once residents understood both the financial savings and the strict privacy protections, demonstrating the power of transparent communication."
           },
           {
-            "id": 9,
+            "id": "s5-p1-q9",
             "type": "mc",
-            "prompt": "Which option best restates the core idea of Sentence (7) without losing critical details?",
+            "prompt": "In Sentence 1, what does the word \"intelligent\" most closely IMPLY in this technological context?",
             "options": [
-              "Over a half-year trial in a commercial estuary, three test craft extracted roughly twelve tons of synthetic refuse",
-              "A solitary vessel spent six months in an industrial estuary without finding any degraded packaging or micro-pellets",
-              "Twelve prototype vessels cleaned twelve metric tons of pure industrial water over several decades",
-              "Estuary water was polluted by three vessels that dumped discarded fishing nets and plastic pellets"
+              "Equipped with automated sensors that adapt flexibly to real-time environmental conditions",
+              "Capable of passing advanced high-school academic examinations",
+              "Manufactured by the wealthiest international technology corporations",
+              "Painted in bright modern colors that attract evening pedestrians"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้อย่างกระชับและแม่นยำ: 'During a six-month pilot operation' -> 'Over a half-year trial', 'three prototype vessels' -> 'three test craft', 'recovered nearly twelve metric tons of synthetic waste' -> 'extracted roughly twelve tons of synthetic refuse'"
+            "explanation": "In urban infrastructure, \"intelligent\" or \"smart\" describes systems equipped with automated sensors that adjust autonomously based on real-time data."
           },
           {
-            "id": 10,
+            "id": "s5-p1-q10",
             "type": "mc",
-            "prompt": "What does the word 'pervasive' in Sentence (1) imply regarding the distribution of microplastics?",
+            "prompt": "What is the overall MAIN CONCLUSION that can be drawn from the entire passage?",
             "options": [
-              "They are widespread and present throughout diverse parts of the marine environment",
-              "They are restricted exclusively to a single remote Arctic coastline",
-              "They are extraordinarily rare and seldom discovered by marine researchers",
-              "They dissolve completely within seconds of entering ocean currents"
+              "Adopting sustainable civic technology succeeds when environmental and economic benefits are combined with clear public transparency",
+              "Older sodium streetlamps are superior to modern LEDs because residents never complained about them",
+              "Smart streetlights should only be installed in uninhabited rural areas to prevent public anxiety",
+              "Nocturnal bird migration is the only reason cities should invest in energy-efficient lighting"
             ],
             "correctAnswer": 0,
-            "explanation": "คำว่า 'pervasive' (ซึ่งแพร่กระจายไปทั่ว / แทรกซึมทุกหนแห่ง) แสดงเป็นนัยว่าอนุภาคไมโครพลาสติกพบได้ทั่วไปในแทบทุกพื้นที่ของสิ่งแวดล้อมทางทะเล"
+            "explanation": "The passage synthesizes technological, financial, and ecological gains while highlighting that transparent privacy guidelines were crucial to earning public support."
           }
         ]
       },
       {
         "id": "strat5-p2",
-        "title": "Passage 2: Urban Vertical Agriculture: Cultivating Sustainable Megacities",
-        "thaiTitle": "บทอ่านที่ 2: เกษตรกรรมแนวดิ่งในเมือง: การเพาะปลูกเพื่อมหานครที่ยั่งยืน",
-        "genre": "Agritech & Urban Sustainability (เทคโนโลยีการเกษตรและความยั่งยืนของเมือง)",
-        "audioText": "As global demographic projections indicate that nearly seventy percent of humanity will reside in urban centers by 2050, municipal authorities face daunting challenges regarding food security and resource management. Traditional open-field farming demands vast expanses of arable land, consumes seventy percent of global freshwater withdrawals, and remains acutely vulnerable to extreme droughts, hailstorms, and pest outbreaks triggered by accelerating climate change. In response, agritech pioneers have pioneered vertical farming facilities, transforming disused multi-story industrial warehouses into high-tech automated indoor ecosystems. Within these towering structures, stacked trays of crops flourish without natural soil, sustained instead by closed-loop hydroponic and aeroponic systems that deliver precise doses of dissolved minerals and oxygen directly to exposed roots. Moisture evaporated by growing vegetation is captured by industrial dehumidifiers, purified, and recirculated back into irrigation tanks, resulting in a staggering ninety-five percent conservation of water compared to conventional rural farms. Furthermore, specialized light-emitting diode arrays emit customized wavelengths of blue and red light tailored to optimize plant photosynthesis continuously day and night, accelerating harvest cycles by up to forty percent while entirely eliminating chemical pesticides. By establishing agricultural cultivation directly adjacent to densely populated residential districts, vertical farms bypass thousands of kilometers of intercity trucking, drastically reducing vehicular carbon emissions and supply chain spoilage. Nevertheless, critics point out that the substantial electrical consumption required to illuminate thousands of lighting fixtures and power thermal control systems presents a formidable obstacle, meaning that vertical agriculture must be coupled with local renewable power sources like wind and solar arrays to achieve genuine ecological sustainability.",
+        "title": "Passage 2: The Psychology of Food Waste: Decoding Expiration Labels",
+        "thaiTitle": "บทอ่านที่ 2: จิตวิทยาเบื้องหลังขยะอาหาร: การถอดรหัสป้ายวันหมดอายุ",
+        "genre": "Consumer Psychology & Resource Sustainability",
+        "audioText": "Every year, consumers discard millions of tons of perfectly edible groceries simply because they misunderstand package date labels. Food safety researchers emphasize that \"use by\" dates indicate actual safety deadlines, whereas \"best before\" tags merely reflect optimal manufacturer flavor. Surveys reveal that over sixty percent of shoppers routinely throw unopened yogurt and dry pasta into trash bins the moment the \"best before\" date arrives. In response, several prominent supermarket chains have begun removing \"best before\" stamps from fresh fruits and hardy root vegetables. Instead, grocery stores encourage customers to assess produce freshness using natural sensory checks like smell, texture, and visual inspection. Early retail data indicates that this small labeling change reduced household produce waste by eighteen percent within the first quarter. Still, consumer advocates warn that elderly shoppers and vulnerable families require transparent public education campaigns to prevent accidental food poisoning. Ultimately, bridging the gap between food safety regulations and shopper psychology is essential for creating sustainable food consumption habits worldwide.",
         "sentences": [
-          "As global demographic projections indicate that nearly seventy percent of humanity will reside in urban centers by 2050, municipal authorities face daunting challenges regarding food security and resource management.",
-          "Traditional open-field farming demands vast expanses of arable land, consumes seventy percent of global freshwater withdrawals, and remains acutely vulnerable to extreme droughts, hailstorms, and pest outbreaks triggered by accelerating climate change.",
-          "In response, agritech pioneers have pioneered vertical farming facilities, transforming disused multi-story industrial warehouses into high-tech automated indoor ecosystems.",
-          "Within these towering structures, stacked trays of crops flourish without natural soil, sustained instead by closed-loop hydroponic and aeroponic systems that deliver precise doses of dissolved minerals and oxygen directly to exposed roots.",
-          "Moisture evaporated by growing vegetation is captured by industrial dehumidifiers, purified, and recirculated back into irrigation tanks, resulting in a staggering ninety-five percent conservation of water compared to conventional rural farms.",
-          "Furthermore, specialized light-emitting diode arrays emit customized wavelengths of blue and red light tailored to optimize plant photosynthesis continuously day and night, accelerating harvest cycles by up to forty percent while entirely eliminating chemical pesticides.",
-          "By establishing agricultural cultivation directly adjacent to densely populated residential districts, vertical farms bypass thousands of kilometers of intercity trucking, drastically reducing vehicular carbon emissions and supply chain spoilage.",
-          "Nevertheless, critics point out that the substantial electrical consumption required to illuminate thousands of lighting fixtures and power thermal control systems presents a formidable obstacle, meaning that vertical agriculture must be coupled with local renewable power sources like wind and solar arrays to achieve genuine ecological sustainability."
+          "Sentence 1: Every year, consumers discard millions of tons of perfectly edible groceries simply because they misunderstand package date labels.",
+          "Sentence 2: Food safety researchers emphasize that \"use by\" dates indicate actual safety deadlines, whereas \"best before\" tags merely reflect optimal manufacturer flavor.",
+          "Sentence 3: Surveys reveal that over sixty percent of shoppers routinely throw unopened yogurt and dry pasta into trash bins the moment the \"best before\" date arrives.",
+          "Sentence 4: In response, several prominent supermarket chains have begun removing \"best before\" stamps from fresh fruits and hardy root vegetables.",
+          "Sentence 5: Instead, grocery stores encourage customers to assess produce freshness using natural sensory checks like smell, texture, and visual inspection.",
+          "Sentence 6: Early retail data indicates that this small labeling change reduced household produce waste by eighteen percent within the first quarter.",
+          "Sentence 7: Still, consumer advocates warn that elderly shoppers and vulnerable families require transparent public education campaigns to prevent accidental food poisoning.",
+          "Sentence 8: Ultimately, bridging the gap between food safety regulations and shopper psychology is essential for creating sustainable food consumption habits worldwide."
         ],
         "questions": [
           {
-            "id": 1,
+            "id": "s5-p2-q1",
             "type": "mc",
-            "prompt": "What can be INFERRED from Sentence (1) about future challenges facing municipal governments?",
+            "prompt": "What can be INFERRED from Sentence 2 regarding food consumed shortly after its \"best before\" date?",
             "options": [
-              "Rapid urbanization will strain current agricultural and logistics infrastructure unless cities adopt alternative food production methods",
-              "City authorities plan to force seventy percent of urban citizens to relocate to rural agricultural villages",
-              "Food production in megacities will become effortless because urban populations will decline drastically by 2050",
-              "Resource management will be completely resolved by closing down all municipal industrial warehouses"
+              "It is generally still safe to eat, even though its peak taste or crispness may have slightly declined",
+              "It transforms instantly into dangerous bacterial poison the morning after the date",
+              "It loses all nutritional value and should only be fed to farm animals",
+              "Manufacturers deliberately print fake dates to encourage legal lawsuits"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (1) ระบุว่าภายในปี 2050 ประชากรโลก 70% จะอาศัยอยู่ในเขตเมือง ทำให้เกิดความท้าทายอย่างมากด้านความมั่นคงทางอาหารและการจัดการทรัพยากร จึงอนุมานได้ว่าการขยายตัวของเมืองอย่างรวดเร็วจะสร้างแรงกดดันต่อระบบส่งกำลังบำรุงและอาหาร หากไม่มีวิธีเพาะปลูกแบบใหม่มารองรับ"
+            "explanation": "Sentence 2 highlights that \"best before\" indicates optimal flavor rather than safety. Logically, food past that date may not taste at its absolute best, but remains safe for consumption."
           },
           {
-            "id": 2,
+            "id": "s5-p2-q2",
             "type": "mc",
-            "prompt": "Based on Sentence (5), what can be INFERRED about the water efficiency of closed-loop vertical farms?",
+            "prompt": "What does Sentence 3 IMPLY about common consumer shopping and eating habits?",
             "options": [
-              "The system recycles plant transpiration moisture so effectively that almost no water is lost to external evaporation",
-              "Vertical farms require ninety-five percent more water than traditional rural agricultural fields",
-              "Industrial dehumidifiers pollute the irrigation tanks, forcing technicians to dump the water daily",
-              "Indoor plants do not absorb any moisture during their natural growth cycles"
+              "Many shoppers rely mechanically on printed calendar dates rather than checking the actual physical condition of their food",
+              "Dry pasta spoils faster than fresh dairy products like milk and yogurt",
+              "Over sixty percent of shoppers prefer eating spoiled food to save grocery money",
+              "Supermarkets sell expired dry pasta at huge promotional discounts"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (5) อธิบายว่าความชื้นที่ระเหยจากพืชถูกเครื่องดูดความชื้นดักจับ นำไปบำบัด และหมุนเวียนกลับมาใช้ใหม่ ช่วยประหยัดน้ำได้ถึง 95% จึงอนุมานได้ว่าระบบปิดนี้รีไซเคิลน้ำจากการคายน้ำของพืชอย่างมีประสิทธิภาพจนแทบไม่มีการสูญเสียน้ำออกสู่ภายนอก"
+            "explanation": "Throwing away unopened dry pasta immediately when a \"best before\" date passes implies shoppers rely rigidly on date numbers instead of observing the item's true quality."
           },
           {
-            "id": 3,
+            "id": "s5-p2-q3",
             "type": "mc",
-            "prompt": "What does Sentence (6) imply regarding the use of chemical pesticides in vertical indoor farms?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 2: \"Food safety researchers emphasize that 'use by' dates indicate actual safety deadlines, whereas 'best before' tags merely reflect optimal manufacturer flavor.\"?",
             "options": [
-              "The controlled indoor environment and sealed structure naturally protect crops from external insect invasions",
-              "LED lighting arrays are sprayed with liquid insecticides every twelve hours to poison airborne pests",
-              "Vertical farmers use twice as many chemical sprays as outdoor farmers to protect their indoor harvests",
-              "Pesticides are mixed directly into the mineral misting nozzles to kill beneficial soil bacteria"
+              "Experts point out that 'use by' dates mark when food becomes unsafe, while 'best before' labels simply show when taste and quality are at their peak.",
+              "Food safety researchers emphasize that use by dates are deadlines, whereas best before tags reflect optimal flavor.",
+              "Researchers discovered that all food labels mean the exact same thing to international shoppers.",
+              "Manufacturers use safety deadlines to prevent grocery stores from selling fresh produce."
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (6) ระบุว่าฟาร์มแนวตั้งสามารถกำจัดสารเคมีกำจัดศัตรูพืชได้อย่างสิ้นเชิง (entirely eliminating chemical pesticides) ซึ่งบอกเป็นนัยว่าระบบปิดในอาคารช่วยป้องกันแมลงและศัตรูพืชจากภายนอกได้โดยธรรมชาติ"
+            "explanation": "Option A transforms the sentence structure and vocabulary naturally (point out, mark when food becomes unsafe, simply show when taste and quality are at their peak) while preserving 100% meaning."
           },
           {
-            "id": 4,
+            "id": "s5-p2-q4",
             "type": "mc",
-            "prompt": "What can be INFERRED from Sentence (8) regarding the relationship between vertical farming and the energy sector?",
+            "prompt": "Why did supermarkets specifically choose to remove date stamps from \"fresh fruits and hardy root vegetables\" in Sentence 4?",
             "options": [
-              "If powered solely by coal or fossil fuels, vertical farms may substitute agricultural land issues with high carbon emissions from electricity",
-              "Wind and solar installations are completely incapable of producing enough electricity for vertical farming",
-              "Critics believe that indoor agricultural facilities consume zero kilowatt-hours of electrical power",
-              "Thermal control systems are unnecessary because indoor warehouse temperatures remain constant naturally"
+              "Whole produce exhibits obvious physical signs of spoilage that shoppers can easily evaluate with their senses",
+              "Root vegetables never decompose or rot under any storage conditions",
+              "Supermarkets wanted to prevent shoppers from discovering where produce was grown",
+              "Fresh fruits are exempt from all international agricultural safety laws"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (8) ชี้ว่าฟาร์มแนวตั้งใช้ไฟฟ้ามหาศาลในการเปิดไฟและควบคุมอุณหภูมิ จึงต้องจับคู่กับพลังงานหมุนเวียน (wind & solar) จึงอนุมานได้ว่าหากใช้ไฟฟ้าจากเชื้อเพลิงฟอสซิล ฟาร์มแนวตั้งอาจเปลี่ยนปัญหาจากการใช้ที่ดินไปเป็นการปล่อยก๊าซคาร์บอนจากการใช้ไฟฟ้าแทน"
+            "explanation": "Sentence 5 explains that stores encourage sensory checks (smell, touch, appearance). Produce like carrots, potatoes, and apples clearly display spoilage visibly without needing a printed stamp."
           },
           {
-            "id": 5,
+            "id": "s5-p2-q5",
             "type": "mc",
-            "prompt": "Which detail in Sentence (7) demonstrates that vertical farming improves the quality of fresh food reaching consumers?",
+            "prompt": "What can be INFERRED from the 18% reduction in household produce waste reported in Sentence 6?",
             "options": [
-              "Produce bypasses long trucking journeys, which substantially reduces transport time and spoilage",
-              "Crops are stored in refrigerated highway trucks for several weeks before distribution",
-              "Produce is genetically modified to resist vehicular carbon emissions during highway delivery",
-              "Vertical vegetables are transported through intercity railway networks across distant continents"
+              "Removing arbitrary dates encouraged shoppers to trust their own senses and keep edible produce longer",
+              "Shoppers simply stopped buying fresh produce and ate only frozen meals",
+              "Retailers lowered grocery prices by eighteen percent to eliminate unsold stock",
+              "Households began throwing eighteen percent more food into compost bins"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (7) ระบุว่าการเพาะปลูกติดกับเขตที่พักอาศัยทำให้ไม่ต้องขนส่งทางรถบรรทุกหลายพันกิโลเมตร ลดการเน่าเสียระหว่างการขนส่ง (supply chain spoilage) ทำให้อาหารสดใหม่ส่งถึงผู้บริโภคได้อย่างรวดเร็ว"
+            "explanation": "The 18% reduction demonstrates that without an artificial deadline, customers kept and ate fresh produce based on real freshness rather than prematurely tossing it."
           },
           {
-            "id": 6,
+            "id": "s5-p2-q6",
             "type": "mc",
-            "prompt": "Which of the following represents the most ACCURATE PARAPHRASE of Sentence (2)?",
+            "prompt": "Which statement represents an UNSUPPORTED claim that contradicts the author's message in the passage?",
             "options": [
-              "Conventional outdoor agriculture consumes seventy percent of global freshwater, requires enormous land, and is highly susceptible to climate extremes",
-              "Traditional farming operates without arable land or freshwater, rendering it immune to severe droughts and storms",
-              "Accelerating climate change has eliminated all pest outbreaks and hailstorms across rural agricultural areas",
-              "Seventy percent of global arable land has been completely abandoned because farmers prefer indoor facilities"
+              "Supermarkets should completely abolish all \"use by\" dates on perishable raw meats and dairy",
+              "Confusing expiration labels are a major contributor to global household food waste",
+              "Certain demographics, like elderly shoppers, need clear educational guidance on food safety",
+              "Natural sensory checks include assessing the smell, texture, and look of grocery items"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้อย่างแม่นยำ โดยเปลี่ยน 'demands vast expanses of arable land' เป็น 'requires enormous land', 'consumes seventy percent of global freshwater withdrawals' เป็น 'consumes seventy percent of global freshwater', และ 'remains acutely vulnerable to extreme droughts... and pest outbreaks' เป็น 'is highly susceptible to climate extremes'"
+            "explanation": "The passage explicitly preserves \"use by\" dates as real safety deadlines and warns about food poisoning in Sentence 7. Eliminating \"use by\" on raw meats is dangerous and completely unsupported."
           },
           {
-            "id": 7,
+            "id": "s5-p2-q7",
             "type": "mc",
-            "prompt": "Which sentence provides the best PARAPHRASE of Sentence (3)?",
+            "prompt": "What can be INFERRED from the consumer advocates' warning in Sentence 7?",
             "options": [
-              "In response, agricultural technologists built vertical farms by converting abandoned commercial warehouses into high-tech indoor growing facilities",
-              "Pioneering farmers destroyed multi-story warehouses to plant conventional rural crops across open fields",
-              "Industrial warehouses were abandoned because automated vertical farming ecosystems failed to produce crops",
-              "Municipal governments prohibited vertical agricultural pioneers from entering empty industrial districts"
+              "Over-simplifying labels without proper guidance might lead vulnerable people to consume genuinely spoiled food",
+              "Elderly shoppers refuse to eat fresh vegetables unless supermarkets print barcodes on them",
+              "Food poisoning only affects wealthy shoppers who purchase organic items",
+              "Supermarkets intentionally distribute toxic food to lower-income neighborhoods"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้ถูกต้องสมบูรณ์ โดยรักษาความหมายเดิมและเปลี่ยนคำศัพท์: 'agritech pioneers' -> 'agricultural technologists', 'disused multi-story industrial warehouses' -> 'abandoned commercial warehouses', 'automated indoor ecosystems' -> 'high-tech indoor growing facilities'"
+            "explanation": "Advocates stress public education to avoid accidental illness, implying that if label changes are misunderstood, vulnerable individuals might accidentally eat dangerous, spoiled perishables."
           },
           {
-            "id": 8,
+            "id": "s5-p2-q8",
             "type": "mc",
-            "prompt": "Why is the statement: 'Aeroponic towers require abundant natural topsoil to supply minerals to plant roots' an INVALID interpretation of Sentence (4)?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 8: \"Ultimately, bridging the gap between food safety regulations and shopper psychology is essential for creating sustainable food consumption habits worldwide.\"?",
             "options": [
-              "Sentence (4) explicitly states that crops grow without natural soil, using dissolved mineral solutions and oxygen delivered to roots",
-              "Sentence (4) indicates that topsoil is harvested exclusively from disused industrial warehouse floors",
-              "Sentence (4) proves that plants cannot absorb dissolved minerals unless buried in dry sand",
-              "Sentence (4) discusses commercial ocean catamarans rather than indoor agricultural facilities"
+              "In the end, aligning legal food standards with how consumers actually think and behave is vital for reducing food waste globally.",
+              "Ultimately, bridging gaps between safety rules and psychology is essential for sustainable habits worldwide.",
+              "Shoppers must study psychology degrees before visiting modern retail supermarkets.",
+              "Food safety regulations are unnecessary because shoppers always follow their personal intuition."
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (4) ระบุชัดเจนว่าพืชเจริญเติบโต 'without natural soil' (โดยไม่ใช้ดินธรรมชาติ) โดยใช้ระบบไฮโดรโพนิกส์และแอโรโพนิกส์พ่นละอองสารอาหารไปยังรากโดยตรง ข้อความในโจทย์จึงขัดแย้งกับข้อเท็จจริงในบทอ่าน"
+            "explanation": "Option A replaces key phrases (aligning legal food standards, how consumers actually think and behave, vital for reducing food waste globally) while faithfully conveying the original thesis."
           },
           {
-            "id": 9,
+            "id": "s5-p2-q9",
             "type": "mc",
-            "prompt": "Which option best paraphrases Sentence (7) using a cause-and-effect restructuring?",
+            "prompt": "In Sentence 5, what does the phrase \"natural sensory checks\" mean in everyday terms?",
             "options": [
-              "Growing food inside city boundaries sharply lowers transport emissions and spoilage by eliminating long-distance highway hauling",
-              "Intercity trucking is expanding rapidly because vertical farms are located thousands of kilometers away from city residents",
-              "Vehicular carbon emissions increase by ninety-five percent when fresh produce is delivered to municipal neighborhoods",
-              "Food spoilage during transport is unavoidable even when agricultural crops are grown directly next to residential areas"
+              "Using your eyes, nose, and hands to check if an apple or potato is fresh",
+              "Employing electronic lab microscopes to count bacterial colonies on food packages",
+              "Hiring professional food scientists to inspect private home kitchens",
+              "Reading chemical nutrition panels on processed canned goods"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความโดยปรับเปลี่ยนโครงสร้างเป็นเหตุเป็นผลอย่างสละสลวย: 'Growing food inside city boundaries sharply lowers transport emissions and spoilage by eliminating long-distance highway hauling' รักษาความหมายเดิมไว้ครบถ้วน"
+            "explanation": "The text defines sensory checks as smell, texture, and visual inspection — using human senses (eyes, nose, touch) to evaluate freshness."
           },
           {
-            "id": 10,
+            "id": "s5-p2-q10",
             "type": "mc",
-            "prompt": "What does the phrase 'formidable obstacle' in Sentence (8) mean in context?",
+            "prompt": "What is the PRIMARY PURPOSE of the author in Passage 2?",
             "options": [
-              "A major and difficult challenge that requires careful resolution (อุปสรรคสำคัญที่ต้องหาทางแก้ไข)",
-              "A trivial detail that can be completely disregarded by engineers (ปัญหาเล็กน้อยที่ไม่ต้องสนใจ)",
-              "A temporary advantage that guarantees effortless financial profit (ข้อได้เปรียบชั่วคราว)",
-              "A physical brick wall erected outside the warehouse gates (กำแพงอิฐที่สร้างขึ้นภายนอก)"
+              "To explain how clarifying expiration label definitions and shopper perceptions can significantly reduce avoidable food waste",
+              "To convince consumers that canned food is healthier than fresh root vegetables",
+              "To criticize supermarkets for selling groceries after printed calendar dates",
+              "To demand that governments ban all date printing on commercial grocery packages"
             ],
             "correctAnswer": 0,
-            "explanation": "'formidable obstacle' หมายถึง อุปสรรคหรือความท้าทายที่น่าเกรงขามและจัดการได้ยาก ซึ่งในบริบทนี้คือการใช้พลังงานไฟฟ้าปริมาณมหาศาลของฟาร์มแนวตั้ง"
+            "explanation": "The passage explores the psychology of date labels, distinguishes safety from flavor, and highlights practical labeling reforms to reduce preventable waste."
           }
         ]
       },
       {
         "id": "strat5-p3",
-        "title": "Passage 3: Acoustic Bio-monitoring: AI Listeners in Tropical Rainforests",
-        "thaiTitle": "บทอ่านที่ 3: การตรวจวัดทางชีวภาพด้วยเสียง: ปัญญาประดิษฐ์ผู้ฟังในป่าฝนเขตร้อน",
-        "genre": "Biodiversity & Applied AI (ความหลากหลายทางชีวภาพและปัญญาประดิษฐ์ประยุกต์)",
-        "audioText": "Tropical rainforests shelter more than half of the planet's terrestrial biodiversity, yet monitoring endangered species beneath dense forest canopies has historically presented severe logistical difficulties. Traditional wildlife tracking methods, such as deploying camera traps or dispatching human field rangers on foot patrols, are constrained by restricted visual sightlines, impenetrable vegetation, and the evasive nocturnal habits of rare mammals. To overcome these limitations, conservation biologists have developed an ingenious surveillance methodology known as passive acoustic bio-monitoring. Field teams install weatherproof audio recorders powered by compact solar panels high in the forest canopy, creating an expansive network of digital listening posts that continuously capture ambient forest sounds twenty-four hours a day. The resulting audio recordings, totaling tens of thousands of hours each month, are processed by deep neural networks trained to isolate specific acoustic signatures. These machine-learning algorithms can distinguish the subtle territorial calls of critically endangered gibbons, identify ultrasonic echolocation clicks from rare insect-eating bats, and flag the distinctive rustle of nocturnal tree frogs from background monsoonal rainfall. Beyond cataloging biological diversity, the acoustic network serves as a real-time defense shield against illicit commercial exploitation. When algorithms detect anomalous industrial frequencies—such as the distant buzz of two-stroke chainsaws or the distinct crack of hunting rifles—the system instantly transmits satellite alerts to wildlife ranger headquarters, displaying GPS coordinates on digital tactical maps. Field wardens can intercept illegal loggers and poachers before irreparable ecological destruction occurs. Nevertheless, conservationists caution that machine-learning bio-acoustics depends heavily on the quality of underlying training libraries, as algorithmic classifiers can misidentify rare animal calls when unexpected atmospheric conditions distort sound wave propagation through dense jungle foliage.",
+        "title": "Passage 3: The Power of Micro-Breaks in Modern Workspaces",
+        "thaiTitle": "บทอ่านที่ 3: พลังของการพักเบรกสั้นในพื้นที่ทำงานยุคใหม่",
+        "genre": "Occupational Health & Cognitive Performance",
+        "audioText": "In high-pressure office environments, continuous screen exposure often causes cognitive fatigue, eye strain, and declining focus within just two hours. Rather than waiting for a single long lunch break, occupational health experts recommend scheduling frequent two-minute micro-breaks throughout the working day. During these brief intervals, workers stand up, gaze at distant objects outside windows, and perform gentle neck and shoulder rotations. Clinical monitors show that shifting visual focus away from close digital monitors relaxes the ciliary eye muscles and stabilizes resting heart rates. Furthermore, office teams that implemented automated micro-break desktop reminders completed complex calculation tasks with twenty-two percent fewer errors. While a minority of managers initially feared that frequent interruptions would disrupt employee momentum, daily output actually increased steadily. Psychology researchers explain that momentary mental disengagement allows short-term memory circuits to consolidate information and restore mental agility. Integrating short, structured pauses into daily work routines thus proves that sustainable workplace productivity depends on strategic recovery rather than uninterrupted endurance.",
         "sentences": [
-          "Tropical rainforests shelter more than half of the planet's terrestrial biodiversity, yet monitoring endangered species beneath dense forest canopies has historically presented severe logistical difficulties.",
-          "Traditional wildlife tracking methods, such as deploying camera traps or dispatching human field rangers on foot patrols, are constrained by restricted visual sightlines, impenetrable vegetation, and the evasive nocturnal habits of rare mammals.",
-          "To overcome these limitations, conservation biologists have developed an ingenious surveillance methodology known as passive acoustic bio-monitoring.",
-          "Field teams install weatherproof audio recorders powered by compact solar panels high in the forest canopy, creating an expansive network of digital listening posts that continuously capture ambient forest sounds twenty-four hours a day.",
-          "The resulting audio recordings, totaling tens of thousands of hours each month, are processed by deep neural networks trained to isolate specific acoustic signatures.",
-          "These machine-learning algorithms can distinguish the subtle territorial calls of critically endangered gibbons, identify ultrasonic echolocation clicks from rare insect-eating bats, and flag the distinctive rustle of nocturnal tree frogs from background monsoonal rainfall.",
-          "Beyond cataloging biological diversity, the acoustic network serves as a real-time defense shield against illicit commercial exploitation.",
-          "When algorithms detect anomalous industrial frequencies—such as the distant buzz of two-stroke chainsaws or the distinct crack of hunting rifles—the system instantly transmits satellite alerts to wildlife ranger headquarters, displaying GPS coordinates on digital tactical maps.",
-          "Field wardens can intercept illegal loggers and poachers before irreparable ecological destruction occurs.",
-          "Nevertheless, conservationists caution that machine-learning bio-acoustics depends heavily on the quality of underlying training libraries, as algorithmic classifiers can misidentify rare animal calls when unexpected atmospheric conditions distort sound wave propagation through dense jungle foliage."
+          "Sentence 1: In high-pressure office environments, continuous screen exposure often causes cognitive fatigue, eye strain, and declining focus within just two hours.",
+          "Sentence 2: Rather than waiting for a single long lunch break, occupational health experts recommend scheduling frequent two-minute micro-breaks throughout the working day.",
+          "Sentence 3: During these brief intervals, workers stand up, gaze at distant objects outside windows, and perform gentle neck and shoulder rotations.",
+          "Sentence 4: Clinical monitors show that shifting visual focus away from close digital monitors relaxes the ciliary eye muscles and stabilizes resting heart rates.",
+          "Sentence 5: Furthermore, office teams that implemented automated micro-break desktop reminders completed complex calculation tasks with twenty-two percent fewer errors.",
+          "Sentence 6: While a minority of managers initially feared that frequent interruptions would disrupt employee momentum, daily output actually increased steadily.",
+          "Sentence 7: Psychology researchers explain that momentary mental disengagement allows short-term memory circuits to consolidate information and restore mental agility.",
+          "Sentence 8: Integrating short, structured pauses into daily work routines thus proves that sustainable workplace productivity depends on strategic recovery rather than uninterrupted endurance."
         ],
         "questions": [
           {
-            "id": 1,
+            "id": "s5-p3-q1",
             "type": "mc",
-            "prompt": "What can be INFERRED from Sentence (2) regarding the limitations of human field patrols in tropical rainforests?",
+            "prompt": "What can be INFERRED from Sentence 1 and Sentence 2 regarding traditional work schedules?",
             "options": [
-              "Many endangered animals successfully evade human detection due to their nighttime activity and dense physical cover",
-              "Human field rangers refuse to enter tropical rainforests because camera traps are completely non-functional",
-              "Nocturnal mammals deliberately destroy all camera traps installed along jungle trails",
-              "Visual sightlines in rainforests are so broad that rangers never need audio equipment to locate wildlife"
+              "Relying solely on one midday break is insufficient to prevent the physical and mental fatigue caused by modern screen work",
+              "Workers should work twelve continuous hours without eating lunch to maximize daily office revenue",
+              "Modern computer monitors are completely harmless to human eyesight after eight hours",
+              "High-pressure office jobs should be banned by international labor unions"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (2) ระบุว่าการเดินลาดตระเวนถูกจำกัดด้วยทัศนวิสัย ต้นไม้รกทึบ และพฤติกรรมหลบซ่อนตัวในเวลากลางคืนของสัตว์หายาก จึงอนุมานได้อย่างสมเหตุสมผลว่าสัตว์จำนวนมากสามารถหลบเลี่ยงการตรวจจับของมนุษย์ได้สำเร็จ"
+            "explanation": "Sentence 1 notes fatigue develops within two hours, while Sentence 2 advises frequent micro-breaks rather than waiting for one lunch break, implying a single break cannot protect workers from modern digital strain."
           },
           {
-            "id": 2,
+            "id": "s5-p3-q2",
             "type": "mc",
-            "prompt": "Based on Sentence (5) and (6), what can be INFERRED about the necessity of artificial intelligence in audio conservation?",
+            "prompt": "Based on Sentence 3 and Sentence 4, why is looking out a window at distant objects beneficial for office workers?",
             "options": [
-              "The volume of audio data is far too immense for human biologists to analyze manually in a reasonable timeframe",
-              "Machine-learning algorithms were designed to replace biological scientists in writing conservation policies",
-              "Critically endangered gibbons change their vocal calls whenever human scientists listen to recordings",
-              "Background monsoonal rainfall makes it impossible for any computer program to recognize bat sounds"
+              "It allows eye muscles contracted from close screen focus to stretch and relax naturally",
+              "It helps office workers identify bad weather before leaving for their evening commute",
+              "Looking outside prevents workers from thinking about their assigned professional tasks",
+              "Window glass filters out all harmful artificial blue light from the indoor ceiling lamps"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (5) ระบุว่ามีไฟล์เสียงบันทึกสะสมหลายหมื่นชั่วโมงต่อเดือน ซึ่งเกินกว่ากำลังมนุษย์จะมานั่งฟังและแยกแยะได้ทีละไฟล์ จึงต้องพึ่งพา deep neural networks มาช่วยคัดกรองสัญญาณเสียงเฉพาะของสัตว์ได้อย่างรวดเร็ว"
+            "explanation": "Sentence 4 states shifting focus away from close screens relaxes ciliary eye muscles, which logically explains why looking at distant landscapes relieves visual tension."
           },
           {
-            "id": 3,
+            "id": "s5-p3-q3",
             "type": "mc",
-            "prompt": "What does Sentence (8) imply about how the acoustic system enhances anti-poaching operations?",
+            "prompt": "What can be INFERRED from the 22% reduction in calculation errors mentioned in Sentence 5?",
             "options": [
-              "It transforms reactive enforcement into rapid preventative interception by providing immediate location data",
-              "It broadcasts loud verbal warnings across the forest canopy to frighten illegal loggers into surrendering",
-              "It automatically disables the engines of commercial chainsaws via remote satellite microwave beams",
-              "It alerts wildlife rangers only after poachers have already transported timber out of the country"
+              "Short mental rests restore cognitive accuracy and prevent careless computational mistakes",
+              "Automated software reminders solved all complex calculation problems on behalf of workers",
+              "Calculations were simplified by twenty-two percent to make work easier for tired employees",
+              "Office teams worked twenty-two percent faster by skipping their lunch intervals"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (8) และ (9) ระบุว่าเมื่อตรวจจับเสียงเลื่อยยนต์หรือปืนล่าสัตว์ ระบบจะส่งสัญญาณเตือนผ่านดาวเทียมพร้อมพิกัด GPS ทันที ทำให้เจ้าหน้าที่สามารถสกัดกั้นก่อนเกิดความเสียหาย จึงอนุมานได้ว่าระบบเปลี่ยนการทำงานจากการรับมือหลังเกิดเหตุเป็นการเข้าสกัดได้อย่างทันท่วงทีและแม่นยำ"
+            "explanation": "Taking brief pauses resulted in 22% fewer errors on complex tasks, directly implying that resting the brain restores attention to detail and cognitive accuracy."
           },
           {
-            "id": 4,
+            "id": "s5-p3-q4",
             "type": "mc",
-            "prompt": "According to Sentence (10), what is an inherent vulnerability of AI-driven acoustic bio-monitoring?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 6: \"While a minority of managers initially feared that frequent interruptions would disrupt employee momentum, daily output actually increased steadily.\"?",
             "options": [
-              "Environmental variables like atmospheric shifts and weather can warp acoustic signals, potentially leading to false classifications",
-              "Solar panels mounted in tree canopies fail whenever the sun shines brightly during midday hours",
-              "Machine-learning classifiers are permanently incapable of learning new animal vocalizations",
-              "Tropical rainforest foliage absorbs all sound waves, making audio recording completely useless"
+              "Although some supervisors initially worried that regular pauses would hurt workflow, overall worker productivity actually improved over time.",
+              "While a minority of managers feared interruptions would disrupt momentum, output actually increased steadily.",
+              "Managers decided to cancel all breaks because employee momentum was severely disrupted.",
+              "Daily output increased because managers forced workers to stay at their desks without interruptions."
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (10) เตือนว่าสภาพอากาศและใบไม้หนาทึบอาจบิดเบือนการเดินทางของคลื่นเสียง ทำให้ AI จำแนกเสียงสัตว์หายากผิดพลาดได้ หากชุดข้อมูลฝึกสอน (training libraries) ยังไม่สมบูรณ์เพียงพอ"
+            "explanation": "Option A translates the sentence into clear, natural language (supervisors initially worried, hurt workflow, overall worker productivity actually improved over time) without copying consecutive phrases."
           },
           {
-            "id": 5,
+            "id": "s5-p3-q5",
             "type": "mc",
-            "prompt": "Which detail from Sentence (4) ensures that listening posts can operate for extended durations in remote wilderness?",
+            "prompt": "According to Sentence 7, how does momentary mental disengagement help short-term memory circuits?",
             "options": [
-              "They are weatherproof and energized by compact solar panels",
-              "They must be recharged manually by human wardens every twelve hours",
-              "They are attached to the collars of migrating forest elephants",
-              "They are constructed entirely from biodegradable timber and wet moss"
+              "It provides brief downtime for the brain to process, organize, and refresh cognitive resources",
+              "It erases all short-term memories so workers can start fresh on unrelated projects",
+              "It forces the human brain to sleep for two hours during the middle of the working day",
+              "It permanently disconnects memory circuits from emotional stress"
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (4) ระบุว่าเครื่องบันทึกเสียงนี้ 'weatherproof' (ทนต่อสภาพอากาศ) และ 'powered by compact solar panels' (ใช้พลังงานจากแผงโซลาร์เซลล์ขนาดกะทัดรัด) ทำให้สามารถทำงานต่อเนื่อง 24 ชั่วโมงในป่าลึกได้เป็นเวลานาน"
+            "explanation": "Sentence 7 explains that stepping back allows memory circuits to consolidate information and regain mental sharpness, meaning the brain organizes knowledge during brief pauses."
           },
           {
-            "id": 6,
+            "id": "s5-p3-q6",
             "type": "mc",
-            "prompt": "Which of the following represents the most ACCURATE PARAPHRASE of Sentence (1)?",
+            "prompt": "Which statement represents an UNSUPPORTED claim that cannot be concluded from the text?",
             "options": [
-              "Although tropical rainforests contain over half of Earth's land species, tracking wildlife beneath thick canopies has long been extremely challenging",
-              "More than half of global biodiversity has vanished because dense jungle canopies prevent animals from surviving",
-              "Monitoring endangered wildlife in tropical forests is straightforward because animals congregate beneath open sightlines",
-              "Terrestrial biodiversity in rainforests is limited to less than fifty species due to severe logistical complications"
+              "Micro-breaks must consist of vigorous cardiovascular weightlifting exercises to be effective",
+              "Gentle physical movements like shoulder rolls help relieve upper body tension",
+              "Initial managerial skepticism regarding frequent pauses proved to be unfounded",
+              "Automated software desktop reminders can help office workers maintain regular break habits"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้อย่างสมบูรณ์แบบ: 'shelter more than half of the planet's terrestrial biodiversity' -> 'contain over half of Earth's land species', 'monitoring endangered species beneath dense forest canopies has historically presented severe logistical difficulties' -> 'tracking wildlife beneath thick canopies has long been extremely challenging'"
+            "explanation": "The text specifies gentle stretching and neck rotations (Sentence 3). Claiming workers need intense cardiovascular weightlifting is an absurd, unsupported distortion."
           },
           {
-            "id": 7,
+            "id": "s5-p3-q7",
             "type": "mc",
-            "prompt": "Which sentence provides the best PARAPHRASE of Sentence (7)?",
+            "prompt": "What can be INFERRED from the contrast between \"uninterrupted endurance\" and \"strategic recovery\" in Sentence 8?",
             "options": [
-              "In addition to documenting wildlife species, the sound surveillance framework actively guards against illegal commercial activities",
-              "The acoustic network is used exclusively to record commercial advertisements for international logging companies",
-              "Cataloging biodiversity is impossible because illicit poachers destroyed the listening equipment",
-              "Real-time defense shields have replaced all acoustic monitoring across tropical rainforest reserves"
+              "Working non-stop without pausing leads to diminishing returns and lower overall quality of output",
+              "Employees who take pauses are weaker and less dedicated than employees who never stop",
+              "Strategic recovery is only suitable for professional athletes, not desk workers",
+              "Workplace productivity will double if employers eliminate all weekends and holidays"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้ถูกต้องครบถ้วน: 'Beyond cataloging biological diversity' -> 'In addition to documenting wildlife species', 'the acoustic network serves as a real-time defense shield against illicit commercial exploitation' -> 'the sound surveillance framework actively guards against illegal commercial activities'"
+            "explanation": "The contrast emphasizes that continuous grinding (\"uninterrupted endurance\") is less effective than taking planned pauses (\"strategic recovery\") to maintain high performance."
           },
           {
-            "id": 8,
+            "id": "s5-p3-q8",
             "type": "mc",
-            "prompt": "Why is the statement: 'Audio recorders are placed on the forest floor to avoid rain interference' an INVALID interpretation of Sentence (4)?",
+            "prompt": "Which sentence best PARAPHRASES Sentence 8: \"Integrating short, structured pauses into daily work routines thus proves that sustainable workplace productivity depends on strategic recovery rather than uninterrupted endurance.\"?",
             "options": [
-              "Sentence (4) explicitly states that the weatherproof devices are positioned high in the forest canopy",
-              "Sentence (4) indicates that audio devices can only function when submerged in deep jungle rivers",
-              "Sentence (4) confirms that listening posts are carried in the backpacks of field rangers",
-              "Sentence (4) notes that tree canopies prevent solar panels from absorbing any sunlight"
+              "Building regular brief rests into the workday demonstrates that long-term efficiency relies on smart rest intervals rather than grinding without stopping.",
+              "Integrating short pauses into daily routines proves productivity depends on recovery rather than endurance.",
+              "Working without stopping for eight hours is the only way to achieve sustainable corporate success.",
+              "Short pauses reduce workplace productivity because endurance is the key to daily employment."
             ],
             "correctAnswer": 0,
-            "explanation": "ประโยคที่ (4) ระบุชัดเจนว่าติดตั้ง 'high in the forest canopy' (ติดตั้งไว้สูงในเรือนยอดไม้) และเป็นอุปกรณ์กันสภาพอากาศ (weatherproof) ข้อความในโจทย์ที่บอกว่าวางไว้บนพื้นป่าจึงขัดแย้งกับบทอ่านโดยตรง"
+            "explanation": "Option A captures the complete core meaning using fresh expressions (Building regular brief rests into the workday, long-term efficiency relies on smart rest intervals rather than grinding without stopping) without copying."
           },
           {
-            "id": 9,
+            "id": "s5-p3-q9",
             "type": "mc",
-            "prompt": "Which option best restates the core idea of Sentence (9) without distorting its meaning?",
+            "prompt": "In Sentence 4, what does the stabilization of \"resting heart rates\" IMPLY about micro-breaks?",
             "options": [
-              "Wildlife rangers can stop illegal poachers and timber harvesters before permanent damage is inflicted on the ecosystem",
-              "Illegal loggers are invited to assist field wardens in rehabilitating destroyed forest habitats",
-              "Ecological destruction is unavoidable because wardens cannot reach poaching zones in time",
-              "Field wardens intercept poachers only after forests have been completely cut down and sold"
+              "Brief pauses help reduce physiological stress levels caused by workplace pressure",
+              "Heart rates stop completely whenever workers look out an open office window",
+              "Micro-breaks cause workers to fall into a deep, unconscious sleep at their desks",
+              "Cardiovascular monitoring equipment is mandatory for all private company employees"
             ],
             "correctAnswer": 0,
-            "explanation": "ตัวเลือก A ถอดความได้อย่างแม่นยำ: 'Field wardens can intercept illegal loggers and poachers' -> 'Wildlife rangers can stop illegal poachers and timber harvesters', 'before irreparable ecological destruction occurs' -> 'before permanent damage is inflicted on the ecosystem'"
+            "explanation": "A stable resting heart rate reflects physical calm and reduced stress hormones, implying that short breaks de-escalate office anxiety."
           },
           {
-            "id": 10,
+            "id": "s5-p3-q10",
             "type": "mc",
-            "prompt": "What does the word 'anomalous' in Sentence (8) signify in the context of forest audio monitoring?",
+            "prompt": "What is the PRIMARY ADVICE that the author offers to modern knowledge workers throughout Passage 3?",
             "options": [
-              "Unusual, artificial sounds that deviate from typical natural ambient wildlife noises",
-              "Common musical bird songs that repeat every morning at sunrise",
-              "Natural rainfall sounds that occur continuously throughout the monsoon season",
-              "Gentle wind breezes blowing softly through tree branches"
+              "Incorporate frequent, planned two-minute pauses to protect your vision, sharpen cognitive focus, and sustain high performance",
+              "Demand that employers replace all desktop computer screens with printed paper binders",
+              "Take a two-hour sleep break after every single telephone conversation with clients",
+              "Never gaze outside office windows because distant views distract from computational momentum"
             ],
             "correctAnswer": 0,
-            "explanation": "'anomalous' หมายถึง ผิดปกติ / ผิดแปลกไปจากธรรมชาติ ในบริบทนี้คือความถี่เสียงของเครื่องจักรหรืออาวุธ (เช่น เลื่อยยนต์ เสียงปืน) ที่ผิดแผกไปจากเสียงธรรมชาติของสิ่งมีชีวิตในป่า"
+            "explanation": "The passage consistently recommends incorporating structured two-minute pauses to counter fatigue, protect eye muscles, and enhance overall output."
           }
         ]
       }

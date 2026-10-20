@@ -219,7 +219,7 @@ class ReadSkillsApp {
       lastScore: savedS4QuizScore ? parseInt(savedS4QuizScore) : null
     };
 
-    // Module 2: Reading Strategies Unit 5 State (Text Interpretation, Inference, Paraphrasing & 30-Question Strategy Quiz)
+    // Module 2: Reading Strategies Unit 5 State (Text Interpretation, Paraphrasing & 30-Question Strategy Quiz)
     this.strat5ActiveHighlightTool = 'yellow';
     this.strat5HighlightColors = {};
     const savedS5QuizScore = localStorage.getItem('bru_strat5_quiz_score');
@@ -4063,7 +4063,145 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1 to 5) ------------------- */
+  /* ------------------- Strategy Unit 5 Interactive Methods (B2) ------------------- */
+
+  submitStrat5Pretest() {
+    const key = [1, 0, 1];
+    const exps = [
+      "ข้อ 1: ช่างซ่อมตรวจสอบตู้เซิร์ฟเวอร์ เก็บเครื่องมือลงกระเป๋า และถอนหายใจอย่างโล่งอกหลังซ่อมฉุกเฉิน 12 ชั่วโมง อนุมานได้อย่างสมเหตุสมผลว่าปัญหาได้รับการแก้ไขสำเร็จเรียบร้อย (Choice B)",
+      "ข้อ 2: ประโยคเดิมระบุว่าเทศบาลเปลี่ยนหลอดไฟเป็น LED เพื่อลดค่าไฟ ประโยคถอดความ Choice A ปรับโครงสร้างโดยเอาวัตถุประสงค์ (To lower city electricity costs...) ขึ้นต้น และเลือกใช้คำเหมือน (expensive, power costs) ได้อย่างถูกต้องครบถ้วน",
+      "ข้อ 3: ข้อผิดพลาดที่ร้ายแรงที่สุดคือ Patchwriting (การเปลี่ยนแค่คำศัพท์แต่คงโครงสร้างเดิมไว้เกือบหมด) หรือการบิดเบือนความหมายดั้งเดิม (Choice B)"
+    ];
+    let score = 0;
+    const details = [];
+    for (let i = 0; i < 3; i++) {
+      const checked = document.querySelector(`input[name="s5-pre-${i + 1}"]:checked`);
+      const val = checked ? parseInt(checked.value, 10) : -1;
+      const ok = val === key[i];
+      if (ok) score++;
+      details.push(`<div style="margin-bottom:0.25rem;">${ok ? '✅' : '❌'} ${exps[i]}</div>`);
+    }
+    const fb = document.getElementById('strat5-pretest-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = score >= 2 ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = score >= 2 ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<div style="font-weight:800; margin-bottom:0.4rem;">ผลการทดสอบ Pre-Test (Unit 5): ${score} / 3 คะแนน (${Math.round((score / 3) * 100)}%)</div>${details.join('')}`;
+    }
+  }
+
+  checkStrat5Warmup(choiceIdx) {
+    const fb = document.getElementById('strat5-warmup-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    if (choiceIdx === 1) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '<strong>✅ ถูกต้องยอดเยี่ยม (Inference Detective)!</strong> ร่องรอยในข้อความ (น้ำหยดจากร่ม เสื้อโค้ตเปียกชื้น การจราจรติดขัด และทุกคนดื่มกาแฟร้อน) เมื่อผสานกับตรรกะความจริง สรุปได้ว่าเกิดพายุฝนตกหนักกระทันหันในตอนเช้า';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #EF4444';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '<strong>❌ ยังไม่ถูกต้อง:</strong> ลองสังเกตคำว่า "water dripping from umbrella", "coat shoulders dark and damp" และ "highway traffic delays" ซึ่งชี้ชัดว่าเป็นฝนตกหนักภายนอกอาคาร';
+    }
+  }
+
+  setStrat5HighlightTool(color) {
+    this.strat5ActiveHighlightTool = color;
+    const tools = ['yellow', 'green'];
+    tools.forEach(c => {
+      const btn = document.getElementById(`strat5-tool-${c}`);
+      if (btn) {
+        btn.style.boxShadow = c === color ? '0 0 0 3px rgba(15,23,42,0.28)' : 'none';
+      }
+    });
+  }
+
+  highlightStrat5Sentence(sentIdx, forcedColor) {
+    const color = forcedColor || this.strat5ActiveHighlightTool || 'yellow';
+    if (!this.strat5HighlightColors) this.strat5HighlightColors = {};
+    this.strat5HighlightColors[sentIdx] = color;
+
+    const expected = {
+      0: { role: 'yellow', desc: 'Sentence 1 เป็น Directly Stated Fact (เทศบาลเปิดตัวรถเมล์ไฟฟ้า 50 คัน เป็นข้อมูลบอกตรง)' },
+      1: { role: 'green', desc: 'Sentence 2 เป็น Implied Meaning Clue (เสียงเครื่องยนต์เบาลง ควันดีเซลหายไป ชี้เป็นนัยถึงคุณภาพสิ่งแวดล้อม)' },
+      2: { role: 'yellow', desc: 'Sentence 3 เป็น Directly Stated Fact (ตัวเลขบัญชีระบุชัดเจนว่าค่าน้ำมันเชื้อเพลิงลดลง 38%)' },
+      3: { role: 'green', desc: 'Sentence 4 เป็น Implied Meaning Clue (ผู้โดยสารที่มีปัญหาระบบทางเดินหายใจเดินทางบ่อยขึ้น บ่งบอกเป็นนัยว่าอากาศสะอาดขึ้นจริง)' }
+    };
+
+    const el = document.getElementById(`strat5-hl-sent-${sentIdx}`);
+    if (el) {
+      if (color === 'yellow') {
+        el.style.background = '#FEF08A';
+        el.style.borderBottom = '2px solid #CA8A04';
+      } else if (color === 'green') {
+        el.style.background = '#BBF7D0';
+        el.style.borderBottom = '2px solid #16A34A';
+      }
+    }
+
+    const fb = document.getElementById('strat5-hl-feedback');
+    if (fb && expected[sentIdx]) {
+      const ok = expected[sentIdx].role === color;
+      fb.style.display = 'block';
+      fb.style.background = ok ? '#ECFDF5' : '#FFFBEB';
+      fb.style.border = ok ? '1.5px solid #10B981' : '1.5px solid #F59E0B';
+      fb.style.color = '#0F172A';
+      fb.innerHTML = `<strong>${ok ? '✅ วิเคราะห์ตรงประเภท' : 'ℹ️ คำแนะนำ'}:</strong> ${expected[sentIdx].desc}`;
+    }
+  }
+
+  resetStrat5Highlights() {
+    this.strat5HighlightColors = {};
+    for (let i = 0; i < 4; i++) {
+      const el = document.getElementById(`strat5-hl-sent-${i}`);
+      if (el) {
+        el.style.background = 'transparent';
+        el.style.borderBottom = 'none';
+      }
+    }
+    const fb = document.getElementById('strat5-hl-feedback');
+    if (fb) fb.style.display = 'none';
+  }
+
+  revealStrat5Highlights() {
+    const key = { 0: 'yellow', 1: 'green', 2: 'yellow', 3: 'green' };
+    Object.keys(key).forEach(k => this.highlightStrat5Sentence(Number(k), key[k]));
+    const fb = document.getElementById('strat5-hl-feedback');
+    if (fb) {
+      fb.style.display = 'block';
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '<strong>เฉลยการจำแนกประเภทประโยค:</strong><br>🟡 สีเหลือง = ข้อมูลบอกตรง (Sentence 1, Sentence 3)<br>🟢 สีเขียว = ร่องรอยที่ต้องอนุมาน (Sentence 2, Sentence 4)';
+    }
+  }
+
+  submitStrat5ParaphrasePractice(choiceIdx) {
+    const fb = document.getElementById('strat5-paraphrase-feedback');
+    if (!fb) return;
+    fb.style.display = 'block';
+    if (choiceIdx === 1) {
+      fb.style.background = '#ECFDF5';
+      fb.style.border = '1.5px solid #10B981';
+      fb.style.color = '#065F46';
+      fb.innerHTML = '<strong>✅ ถูกต้องที่สุด (Best Academic Paraphrase):</strong> Choice B ถ่ายทอดใจความครบถ้วนสมบูรณ์ มีการปรับเปลี่ยนโครงสร้างไวยากรณ์ (Over a twelve-month period... indoor rooms stayed cooler...) และเลือกใช้คำศัพท์เทียบเคียงโดยไม่มีการลอกสำนวนเดิม';
+    } else if (choiceIdx === 0) {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #EF4444';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '<strong>❌ ข้อผิดพลาดแบบ Patchwriting:</strong> Choice A ลอกโครงสร้างประโยคเดิมเกือบคำต่อคำ (Within one year... dropped by... in peak afternoon hours...) เป็นตัวอย่างของการถอดความที่ไม่ผ่านมาตรฐานวิชาการ';
+    } else {
+      fb.style.background = '#FEF2F2';
+      fb.style.border = '1.5px solid #EF4444';
+      fb.style.color = '#991B1B';
+      fb.innerHTML = '<strong>❌ ข้อความบิดเบือน (Distorted Meaning):</strong> Choice C อ้างว่า "เครื่องปรับอากาศไม่จำเป็นอีกต่อไป" ซึ่งเกินเลยจากข้อเท็จจริงในบทอ่านที่ระบุเพียงว่าใช้ไฟลดลง 22%';
+    }
+  }
+
+  /* ------------------- Shared 30-Question Strategy Quiz Engine (Units 1, 2, 3, 4 & 5) ------------------- */
   getActiveStrategyQuizContext() {
     if (this.currentStrategyUnit === 5 && ReadSkillsData.strategyUnit5Quiz) {
       return {
