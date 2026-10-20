@@ -6386,19 +6386,6 @@ class ReadSkillsApp {
           </div>
         </div>
 
-        <!-- Chart Container -->
-        <div class="glass-card p-6 space-y-4">
-          <div class="flex items-center justify-between">
-            <h3 class="font-bold text-slate-900 text-lg">Unit Score Performance Chart</h3>
-            <span class="text-xs font-semibold text-purple-700 bg-purple-50 px-3 py-1 rounded-full border border-purple-200">
-              Unit Comprehension Quizzes (Units 1-6)
-            </span>
-          </div>
-          <div class="h-64">
-            <canvas id="progressChart"></canvas>
-          </div>
-        </div>
-
         <!-- Unit Comprehension Quizzes Scores Breakdown (Section D Integration) -->
         <div class="glass-card p-6 space-y-4">
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-purple-100 pb-3">
@@ -6456,45 +6443,7 @@ class ReadSkillsApp {
   }
 
   initProgressChart() {
-    const ctx = document.getElementById('progressChart');
-    if (!ctx) return;
-
-    const compScores = this.getComprehensionQuizScores();
-    const chartScores = [
-      (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : 0,
-      (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : 0,
-      (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : 0,
-      (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : 0,
-      (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : 0,
-      (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : 0
-    ];
-
-    if (this._progressChartInstance) {
-      try {
-        this._progressChartInstance.destroy();
-      } catch (e) {}
-      this._progressChartInstance = null;
-    }
-
-    this._progressChartInstance = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Unit 1', 'Unit 2', 'Unit 3', 'Unit 4', 'Unit 5', 'Unit 6'],
-        datasets: [{
-          label: 'Quiz Score (%)',
-          data: chartScores,
-          backgroundColor: '#654394',
-          borderRadius: 8
-        }]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        scales: {
-          y: { beginAtZero: true, max: 100 }
-        }
-      }
-    });
+    // Chart removed as requested by user
   }
 
   // 6. Teacher Admin View
