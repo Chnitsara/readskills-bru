@@ -8108,29 +8108,35 @@ class ReadSkillsApp {
     if (!this.unit6Highlights) this.unit6Highlights = {};
     this.unit6Highlights[segNum] = color;
 
-    const el = document.getElementById(`u6-hl-s${segNum}`);
-    const fb = document.getElementById('u6-hl-feedback');
+    const textEl = document.getElementById(`u6-s${segNum}-text`);
+    const fbEl = document.getElementById(`u6-s${segNum}-feedback`);
+    if (!textEl) return;
 
     const roles = {
       1: {
         role: 'yellow',
-        msg: 'ถูกต้องครับ! 🟡 Segment [1] เป็น Topic Sentence & Main Idea (Unit 1) ที่แนะนำว่าเมือง St. Augustine รัฐฟลอริดา คือเมืองที่มีผู้คนตั้งถิ่นฐานอย่างต่อเนื่องที่เก่าแก่ที่สุดในสหรัฐอเมริกา'
+        name: '🟡 สีเหลือง (Unit 1: Main Idea)',
+        exp: 'Segment (1) คือ Topic Sentence & Main Idea (Unit 1 - สีเหลือง) ที่ระบุใจความสำคัญหลักว่า St. Augustine รัฐฟลอริดา เป็นเมืองตั้งถิ่นฐานชาวยุโรปที่เก่าแก่ที่สุดในอเมริกาเหนือ'
       },
       2: {
         role: 'green',
-        msg: 'ถูกต้องครับ! 🟢 Segment [2] มี Context Clue (Unit 3) ใช้ขีดยาว (—) นิยามคำว่า "fortifications" ว่าหมายถึงกำแพงหินป้องกันเมืองที่แข็งแกร่ง'
+        name: '🟢 สีเขียว (Unit 2: Vocab & Context Clues)',
+        exp: 'Segment (2) คือ Vocabulary & Context Clues (Unit 2 - สีเขียว) ที่มีคำนิยามในวงเล็บอธิบายคำว่า fortified ว่าหมายถึง strengthened with defensive walls (สร้างกำแพงป้องกัน)'
       },
       3: {
         role: 'purple',
-        msg: 'ถูกต้องครับ! 🟣 Segment [3] มี Transition Signal "Subsequently" (ต่อมา) และ "However" (อย่างไรก็ตาม) ที่บอกลำดับเวลาและความขัดแย้ง (Units 2 & 4)'
+        name: '🟣 สีม่วง (Unit 4: Text Structure & Signals)',
+        exp: 'Segment (3) คือ Text Structure & Transition Signals (Unit 4 - สีม่วง) ที่มีคำเชื่อมบอกลำดับเวลาและเหตุผล เช่น Between 1513 and 1563, then in 1564, as a result of this infiltration'
       },
       4: {
         role: 'blue',
-        msg: 'ถูกต้องครับ! 🔵 Segment [4] มีคำสรรพนามอ้างอิง "They" และ "their" (Unit 4) ซึ่งอ้างอิงย้อนกลับไปหา "Spanish settlers" (ผู้ตั้งถิ่นฐานชาวสเปน)'
+        name: '🔵 สีฟ้า (Unit 3: Reference Words & Pronouns)',
+        exp: 'Segment (4) คือ Reference Words & Pronouns (Unit 3 - สีฟ้า) ที่แสดงการแกะรอยคำอ้างอิง เช่น "he and his 600 soldiers" (Menendez), "named it" (the village)'
       },
       5: {
         role: 'red',
-        msg: 'ถูกต้องครับ! 🔴 Segment [5] ให้หลักฐานคำใบ้ (ป้อมหินโบราณ ถนนอิฐแคบๆ และบ้านสไตล์สเปนที่ยังมีนักท่องเที่ยวมาชมไม่ขาดสาย) ซึ่งนำไปสู่การสรุป Inference & Paraphrase (Unit 5) ว่าเมืองนี้อนุรักษ์มรดกทางประวัติศาสตร์ไว้ได้อย่างยอดเยี่ยม'
+        name: '🔴 สีแดง/ชมพู (Unit 5: Inferences & Paraphrasing)',
+        exp: 'Segment (5) คือ Logical Inference & Paraphrase (Unit 5 - สีแดง) ที่ถอดความและสรุปความหมายโดยนัยว่าเหตุใดสเปนจึงต้องรีบสร้างเมืองและป้อมปราการอย่างเร่งด่วน'
       }
     };
 
@@ -8142,36 +8148,44 @@ class ReadSkillsApp {
       red: 'highlighter-pen highlighter-pink font-bold text-slate-900'
     };
 
-    if (el) {
-      el.className = `${colorClasses[color]} px-1 rounded transition`;
+    if (!textEl.dataset.originalText) {
+      textEl.dataset.originalText = textEl.textContent.trim();
     }
+    textEl.innerHTML = `<span class="${colorClasses[color]} px-1 rounded inline-block transition">${textEl.dataset.originalText}</span>`;
 
     const expected = roles[segNum];
-    if (fb && expected) {
+    if (fbEl && expected) {
       const isCorrect = expected.role === color;
-      fb.classList.remove('hidden');
-      fb.className = `p-3.5 rounded-xl border text-xs font-medium ${isCorrect ? 'bg-emerald-50 border-emerald-300 text-emerald-950' : 'bg-amber-50 border-amber-300 text-amber-950'}`;
-      const colorNames = {
-        yellow: '🟡 สีเหลือง (Main Idea)',
-        green: '🟢 สีเขียว (Vocabulary & Context Clues)',
-        purple: '🟣 สีม่วง (Text Structure & Transition Signals)',
-        blue: '🔵 สีฟ้า (Reference Words & Pronouns)',
-        red: '🔴 สีแดง/ชมพู (Inference Clues & Paraphrased Ideas)'
-      };
-      fb.innerHTML = isCorrect
-        ? `<strong>ยอดเยี่ยม! 🎉</strong> ${expected.msg}`
-        : `<strong>ลองดูอีกครั้งครับ! 💡</strong> Segment [${segNum}] ไม่ใช่ ${colorNames[color]} — ลองสังเกตคำสำคัญในประโยคแล้วเลือกสีที่ตรงกับหน้าที่ของ Segment [${segNum}] (${colorNames[expected.role]})`;
+      fbEl.classList.remove('hidden');
+      fbEl.className = `text-[11px] font-sans pt-1.5 ${isCorrect ? 'text-emerald-300' : 'text-amber-300'}`;
+      fbEl.innerHTML = isCorrect
+        ? `✅ <strong>ถูกต้อง!</strong> ${expected.exp}`
+        : `💡 <strong>ลองดูอีกครั้งครับ:</strong> ส่วนนี้ไม่ตรงกับบทบาทที่เลือก — ${expected.exp}`;
     }
   }
 
   resetUnit6Highlights() {
     this.unit6Highlights = {};
     for (let i = 1; i <= 5; i++) {
-      const el = document.getElementById(`u6-hl-s${i}`);
-      if (el) el.className = 'transition px-1 rounded';
+      const textEl = document.getElementById(`u6-s${i}-text`);
+      const fbEl = document.getElementById(`u6-s${i}-feedback`);
+      if (textEl) {
+        if (textEl.dataset.originalText) {
+          textEl.innerHTML = textEl.dataset.originalText;
+        } else {
+          textEl.innerHTML = textEl.textContent.trim();
+        }
+      }
+      if (fbEl) {
+        fbEl.classList.add('hidden');
+        fbEl.innerHTML = '';
+      }
     }
-    const fb = document.getElementById('u6-hl-feedback');
-    if (fb) fb.classList.add('hidden');
+    const fbTop = document.getElementById('u6-hl-feedback');
+    if (fbTop) {
+      fbTop.classList.add('hidden');
+      fbTop.innerHTML = '';
+    }
   }
 
   revealUnit6Highlights() {
@@ -8180,17 +8194,19 @@ class ReadSkillsApp {
     this.highlightUnit6Sentence(3, 'purple');
     this.highlightUnit6Sentence(4, 'blue');
     this.highlightUnit6Sentence(5, 'red');
-    const fb = document.getElementById('u6-hl-feedback');
-    if (fb) {
-      fb.classList.remove('hidden');
-      fb.className = 'p-3.5 rounded-xl border bg-purple-50 border-purple-200 text-purple-950 text-xs space-y-1';
-      fb.innerHTML = `
-        <div class="font-bold">✨ เฉลยการไฮไลต์ดิจิทัล 5 สี (5-Colour Digital Annotation):</div>
+    const fbTop = document.getElementById('u6-hl-feedback');
+    if (fbTop) {
+      fbTop.classList.remove('hidden');
+      fbTop.className = 'p-3.5 rounded-xl border bg-purple-50 border-purple-200 text-purple-950 text-xs space-y-1.5 shadow-sm mt-3';
+      fbTop.innerHTML = `
+        <div class="font-bold text-sm text-purple-900 flex items-center space-x-1.5">
+          <span>✨ เฉลยการไฮไลต์ดิจิทัล 5 สี (5-Colour Digital Annotation Model Key):</span>
+        </div>
         <p>• <strong>[1] 🟡 สีเหลือง (Main Idea — Unit 1):</strong> แนะนำเมือง St. Augustine ว่าเป็นเมืองที่ตั้งถิ่นฐานอย่างต่อเนื่องเก่าแก่ที่สุดในสหรัฐฯ</p>
-        <p>• <strong>[2] 🟢 สีเขียว (Context Clues — Unit 3):</strong> มีเครื่องหมายขีดยาว <code>— massive stone walls —</code> นิยามคำว่า <em>fortifications</em></p>
-        <p>• <strong>[3] 🟣 สีม่วง (Structure & Signals — Units 2 & 4):</strong> มีคำเชื่อม <em>Subsequently</em> (ลำดับเวลา) และ <em>However</em> (ความขัดแย้ง)</p>
-        <p>• <strong>[4] 🔵 สีฟ้า (Reference Words — Unit 4):</strong> คำสรรพนาม <em>They</em> และ <em>their</em> อ้างอิงย้อนกลับไปหา <em>Spanish settlers</em></p>
-        <p>• <strong>[5] 🔴 สีแดง/ชมพู (Inferences & Paraphrasing — Unit 5):</strong> คำใบ้เรื่องสถาปัตยกรรมโบราณและนักท่องเที่ยวหลายล้านคนช่วยสรุปว่าเมืองนี้อนุรักษ์ประวัติศาสตร์ไว้ได้อย่างมีชีวิตชีวา</p>
+        <p>• <strong>[2] 🟢 สีเขียว (Vocab & Context Clues — Unit 2):</strong> คำนิยามในวงเล็บอธิบายคำว่า fortified (strengthened with defensive walls)</p>
+        <p>• <strong>[3] 🟣 สีม่วง (Structure & Signals — Unit 4):</strong> มีคำเชื่อมลำดับเวลาและเหตุผล (Between 1513 and 1563, then, as a result of)</p>
+        <p>• <strong>[4] 🔵 สีฟ้า (Reference Words — Unit 3):</strong> การแกะรอยสรรพนามอ้างอิง ("he and his 600 soldiers", "named it")</p>
+        <p>• <strong>[5] 🔴 สีแดง/ชมพู (Inferences & Paraphrasing — Unit 5):</strong> ถอดความและสรุปความหมายโดยนัยถึงความจำเป็นเร่งด่วนในการตั้งเมือง</p>
       `;
     }
   }
