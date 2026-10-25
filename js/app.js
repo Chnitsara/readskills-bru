@@ -6944,11 +6944,11 @@ class ReadSkillsApp {
     }
 
     const correctRoles = {
-      1: { role: 'yellow', name: 'Main Idea', reason: 'ประโยคหลักที่ครอบคลุมผลกระทบสิ่งแวดล้อมและจิตวิทยาของพื้นที่สีเขียว' },
-      2: { role: 'green', name: 'Major Supporting Detail 1', reason: 'บอกเหตุผลสำคัญประเด็นที่ 1: การลดปรากฏการณ์เกาะความร้อนในเมือง' },
-      3: { role: 'blue', name: 'Minor Detail 1a', reason: 'ให้ข้อมูลตัวเลขงานวิจัยในกรุงเทพฯ ที่ลดอุณหภูมิได้ 3.8°C' },
-      4: { role: 'green', name: 'Major Supporting Detail 2', reason: 'บอกเหตุผลสำคัญประเด็นที่ 2: การพัฒนาสุขภาพจิตของประชาชน' },
-      5: { role: 'blue', name: 'Minor Detail 2a', reason: 'ให้สถิติตัวอย่างนักศึกษา 450 คนและความเครียดที่ลดลง 28%' }
+      1: { role: 'yellow', name: 'Main Idea', reason: 'ประโยคหลักที่เปิดประเด็นว่าการใช้เวลาในสวนสาธารณะชุมชนส่งผลดีต่อสุขภาพกายและใจในชีวิตประจำวัน' },
+      2: { role: 'green', name: 'Major Supporting Detail 1', reason: 'บอกประเด็นสนับสนุนหลักที่ 1: สวนสาธารณะให้พื้นที่ร่มรื่นและอากาศบริสุทธิ์ห่างจากฝุ่นควันบนท้องถนน' },
+      3: { role: 'blue', name: 'Minor Detail 1a', reason: 'ให้ข้อมูลตัวเลขงานวิจัยสิ่งแวดล้อมว่าพื้นที่ร่มเงาในสวนเย็นกว่าถนนคอนกรีตถึง 4°C' },
+      4: { role: 'green', name: 'Major Supporting Detail 2', reason: 'บอกประเด็นสนับสนุนหลักที่ 2: การพักผ่อนท่ามกลางธรรมชาติช่วยลดความเครียดและเพิ่มสมาธิ' },
+      5: { role: 'blue', name: 'Minor Detail 2a', reason: 'ให้สถิติตัวอย่างจากการสำรวจชุมชนว่าการเดินเล่นในสวน 20 นาทีช่วยลดความเหนื่อยล้าทางสมองลง 30%' }
     };
 
     const target = correctRoles[sentenceId];
