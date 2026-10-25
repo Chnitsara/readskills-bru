@@ -2303,6 +2303,12 @@ class ReadSkillsApp {
               ` : ''}
             </div>
 
+            ${currentPassage.image ? `
+              <div class="rounded-xl overflow-hidden border border-slate-700/80 shadow-md">
+                <img src="${currentPassage.image}" alt="${currentPassage.title}" class="w-full h-44 sm:h-56 object-cover object-center" />
+              </div>
+            ` : ''}
+
             <div class="text-sm font-serif leading-relaxed text-slate-200 space-y-1.5 max-h-[500px] overflow-y-auto pr-1">
               ${currentPassage.sentences.map((sent, sIdx) => {
                 let sentClass = 'inline transition-colors duration-200 p-1 rounded ';

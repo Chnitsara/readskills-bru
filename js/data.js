@@ -2534,6 +2534,7 @@ window.ReadSkillsData = {
         "title": "Passage 1: The Crow and the Pitcher",
         "thaiTitle": "บทอ่านที่ 1: อีกากับคนโทน้ำ (การแก้ปัญหาด้วยความพากเพียร)",
         "genre": "Classic Narrative Fable",
+        "image": "images/crow_and_pitcher.jpg",
         "audioText": "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water. After hours of searching, he discovered a tall glass pitcher standing outside an abandoned cottage. Peering eagerly inside, the bird noticed a small amount of clear water at the very bottom. However, the pitcher's neck was extremely narrow, and his beak could not reach the refreshing liquid. Giving up would mean dying of thirst, but the steadfast bird refused to surrender to despair. Looking around the garden, he noticed a heap of small pebbles on the dry ground. One by one, with patient determination, the clever Crow picked up the stones and dropped them directly into the pitcher. As the heavy pebbles filled the vessel, the water slowly rose to the top rim. Through calm ingenuity and tireless perseverance, the Crow quenched his thirst and saved his own life.",
         "sentences": [
           "On a sweltering summer afternoon, a thirsty Crow flew across the parched countryside searching desperately for water.",
@@ -2668,6 +2669,7 @@ window.ReadSkillsData = {
         "title": "Passage 2: The Benefits of Regular Morning Exercise",
         "thaiTitle": "บทอ่านที่ 2: ประโยชน์ของการออกกำลังกายตอนเช้า (บทความเชิงข้อมูล)",
         "genre": "Expository / Health & Student Life",
+        "image": "images/morning_exercise.jpg",
         "audioText": "Starting each day with thirty minutes of light physical exercise provides immense benefits for learners. First, morning workouts stimulate blood circulation and release endorphins, which sharpen mental alertness and enhance concentration during long morning lectures. Students who jog or stretch before breakfast consistently report feeling more energized than those who sleep late. Second, regular morning activity helps regulate natural sleep cycles, allowing learners to fall asleep faster and enjoy deeper rest each night. In contrast, students who remain completely sedentary often struggle with chronic fatigue and academic stress. Finally, dedicating time to exercise every morning builds self-discipline and mental resilience, proving that personal consistency leads to long-term success. Overall, incorporating moderate morning exercise into your daily routine is an essential habit for achieving both physical wellness and academic excellence.",
         "sentences": [
           "Starting each day with thirty minutes of light physical exercise provides immense benefits for learners.",
@@ -2800,6 +2802,7 @@ window.ReadSkillsData = {
         "title": "Passage 3: The Shepherd Boy and the Wolf",
         "thaiTitle": "บทอ่านที่ 3: เด็กเลี้ยงแกะกับหมาป่า (ผลลัพธ์ของความไม่ซื่อสัตย์)",
         "genre": "Classic Narrative Fable",
+        "image": "images/shepherd_boy_wolf.jpg",
         "audioText": "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest. Finding his daily duties dull and repetitive, he decided to amuse himself by playing a mischievous trick on the hardworking villagers. Running frantically toward the village square, he screamed at the top of his lungs that a ferocious wolf was attacking the flock. The alarmed villagers dropped their tools and rushed up the hill to help, only to find the boastful boy laughing loudly at their panic. A few days later, the arrogant boy repeated the deceitful prank, once again mocking the foolish villagers who came running. However, on the following evening, an actual hungry wolf emerged from the shadows and attacked the terrified sheep. When the boy cried out in genuine terror, the villagers ignored his screams, believing it was merely another deceitful joke. The tragic consequence demonstrates that habitual liars are never believed, even when they speak the absolute truth.",
         "sentences": [
           "A lonely Shepherd Boy tended his village's sheep on a grassy hillside near a dark forest.",
@@ -2933,6 +2936,7 @@ window.ReadSkillsData = {
         "title": "Passage 4: How Modern Public Libraries Are Evolving",
         "thaiTitle": "บทอ่านที่ 4: การปรับเปลี่ยนของห้องสมุดประชาชนยุคใหม่ (บทความเชิงสารคดีร่วมสมัย)",
         "genre": "Expository / Modern Society & Technology",
+        "image": "images/modern_library.jpg",
         "audioText": "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers. In the past, visitors entered libraries solely to borrow printed novels or study silently under strict supervision. Today, however, contemporary libraries provide free high-speed internet access, digital audiobooks, and collaborative multimedia workstations for students and freelancers. Furthermore, many modern urban libraries offer free coding workshops, 3D printing equipment, and professional development seminars to empower local residents. These innovative technological resources bridge the digital divide for underprivileged families who cannot afford expensive computers at home. Rather than becoming obsolete in the internet age, public libraries have successfully adapted their core mission to meet the evolving informational needs of modern society. By embracing digital innovation, community libraries remain vital institutions for lifelong learning, equal opportunity, and public education.",
         "sentences": [
           "Across the globe, modern public libraries are transforming from quiet book repositories into dynamic community technology centers.",
