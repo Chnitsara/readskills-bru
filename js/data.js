@@ -3728,6 +3728,7 @@ window.ReadSkillsData = {
         "id": 1,
         "title": "Story 1: Crazy Paella (A Trip to Barcelona)",
         "thaiTitle": "เรื่องสั้นที่ 1: ข้าวผัดสเปนสุดป่วน (Crazy Paella)",
+        "image": "images/u3_quiz_crazy_paella.jpg",
         "sentences": [
           "Daniel and his younger sister Julia travelled from London to Barcelona for a summer holiday, and their father gave them a wad of cash—a big pile of paper money—to help pay for their trip.",
           "Unlike Daniel who loved meeting new people, Julia was very shy and became quiet with a red face when Daniel's friend Armando greeted them at the airport.",
@@ -3874,6 +3875,7 @@ window.ReadSkillsData = {
         "id": 2,
         "title": "Story 2: A Very Unusual Excursion (The Lake Cabin)",
         "thaiTitle": "เรื่องสั้นที่ 2: ทริปเดินป่าสุดประหลาด (A Very Unusual Excursion)",
+        "image": "images/u3_quiz_lake_cabin.jpg",
         "sentences": [
           "Lake Ullswater in the north-west of England has very mild weather—weather that is quite warm and comfortable, not too hot—so hikers love walking there in summer.",
           "Last weekend, Sylvia and her friend George went on an excursion, or a short trip and outing, along a narrow path through the woods near the lake.",
