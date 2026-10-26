@@ -4022,6 +4022,7 @@ window.ReadSkillsData = {
         "id": 3,
         "title": "Story 3: The Watch (The Time-Travelling Pirate)",
         "thaiTitle": "เรื่องสั้นที่ 3: นาฬิกาโจรสลัดข้ามเวลา (The Watch)",
+        "image": "images/u3_quiz_pirate_watch.jpg",
         "sentences": [
           "Carl was a skilled watchmaker—a person who makes and repairs watches—who lived near Eastern Green Beach in the south-west of England.",
           "One evening on the beach, Carl's friend Susan, who worked as a security guard, showed him an antique watch that she had found in the sand.",
@@ -4168,6 +4169,7 @@ window.ReadSkillsData = {
         "id": 4,
         "title": "Story 4: The Chest (The Secret of the Three Numbers)",
         "thaiTitle": "เรื่องสั้นที่ 4: หีบปริศนากับตัวเลขทั้งสาม (The Chest)",
+        "image": "images/u3_quiz_secret_chest.jpg",
         "sentences": [
           "Walter was a kind elderly man from Scotland who had a long white beard and an important mission—a special task that he believed he must complete.",
           "Walter showed a young man named David a photograph of an old wooden chest (a large, strong box used for storing valuable things) that had a three-number lock.",
