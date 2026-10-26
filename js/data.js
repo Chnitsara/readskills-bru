@@ -4322,6 +4322,7 @@ window.ReadSkillsData = {
         "id": 1,
         "title": "Passage 1: Ziggy's Journey to Become a Service Dog (Level 4)",
         "thaiTitle": "เรื่องที่ 1: เส้นทางการฝึกของสุนัขช่วยเหลือชื่อซิกกี้ (Sequence & Reference Chains)",
+        "image": "images/u4_quiz_service_dog_ziggy.jpg",
         "sentences": [
           "Ziggy is a special service dog for someone with a disability, and her training started when she was just seven weeks old.",
           "First, she went to live with a puppy raiser who taught Ziggy how to get along with others and obey basic commands.",
@@ -4468,6 +4469,7 @@ window.ReadSkillsData = {
         "id": 2,
         "title": "Passage 2: Comparing Soccer and American Football (Level 4)",
         "thaiTitle": "เรื่องที่ 2: เปรียบเทียบกีฬาฟุตบอล (Soccer) กับอเมริกันฟุตบอล (Compare & Contrast)",
+        "image": "images/u4_quiz_soccer_vs_football.jpg",
         "sentences": [
           "Soccer and American football are both popular team sports that began in England and are played by two teams of eleven players.",
           "In both games, the main object is to move the ball down the field and score into the opponent's goal.",
@@ -4614,6 +4616,7 @@ window.ReadSkillsData = {
         "id": 3,
         "title": "Passage 3: Battling Soil Erosion on Hillsides (Level 4)",
         "thaiTitle": "เรื่องที่ 3: ปัญหาการกัดเซาะหน้าดินและแนวทางป้องกัน (Problem-Solution & Cause-Effect)",
+        "image": "images/u4_quiz_hillside_soil_erosion.jpg",
         "sentences": [
           "Soil erosion is a serious environmental problem that happens when rock and soil break down into small pieces and slide down a hill, a cliff, or a mountain.",
           "This gradual wearing away of the earth is caused by natural forces such as strong wind, heavy rain, and changing temperatures.",
@@ -4760,6 +4763,7 @@ window.ReadSkillsData = {
         "id": 4,
         "title": "Passage 4: How Old Phone Books Get Recycled (Level 4)",
         "thaiTitle": "เรื่องที่ 4: กระบวนการรีไซเคิลสมุดโทรศัพท์เก่าสู่เล่มใหม่ (Process Sequence & Referents)",
+        "image": "images/u4_quiz_phonebook_recycling.jpg",
         "sentences": [
           "Each year, countless numbers of old phone books get recycled into brand-new phone books through a well-organized process.",
           "First, people take their old phone books to drop-off locations at local stores and supermarkets, and the collected books are transported to a central warehouse.",
