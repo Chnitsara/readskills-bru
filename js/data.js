@@ -5338,6 +5338,7 @@ window.ReadSkillsData = {
         "id": 1,
         "title": "Passage 1: Detective Declan and the Rings & Things Robbery (Level 5)",
         "thaiTitle": "เรื่องที่ 1: นักสืบเดคลันกับคดีโจรกรรมร้านเครื่องประดับ (Making Inferences & Paraphrasing Clues)",
+        "image": "images/u5_quiz_detective_declan.jpg",
         "sentences": [
           "When Detective Declan arrived at the Rings & Things jewelry store, the back storage room was pitch-black because someone had unscrewed the overhead lightbulb.",
           "Shining his flashlight across the floor, Declan noticed a trail of glittering gold chains and diamond rings that the thief had dropped in a frantic hurry.",
@@ -5484,6 +5485,7 @@ window.ReadSkillsData = {
         "id": 2,
         "title": "Passage 2: King Tutankhamen and the Pharaohs' Tombs (Level 5)",
         "thaiTitle": "เรื่องที่ 2: ฟาโรห์ตุตันคาเมนกับความลับแห่งสุสานอียิปต์โบราณ (Implied Meaning & Historical Paraphrasing)",
+        "image": "images/u5_quiz_king_tut_tomb.jpg",
         "sentences": [
           "King Tutankhamen became the ruler of ancient Egypt when he was only a young boy and died unexpectedly at the age of nineteen.",
           "Because ancient Egyptians believed that a pharaoh needed his earthly treasures in the afterlife, priests filled King Tut's tomb with solid gold chariots, furniture, and jewelry.",
@@ -5630,6 +5632,7 @@ window.ReadSkillsData = {
         "id": 3,
         "title": "Passage 3: Spider Silk and Nocturnal Survival in Nature (Level 5)",
         "thaiTitle": "เรื่องที่ 3: ความมหัศจรรย์ของใยแมงมุมและการปรับตัวของสัตว์หากินกลางคืน (Scientific Inference & Paraphrasing)",
+        "image": "images/u5_quiz_nocturnal_spider_silk.jpg",
         "sentences": [
           "Pound for pound, spider silk is five times stronger than steel and can stretch up to forty percent of its length without snapping.",
           "Because this natural fiber is both lightweight and remarkably tough, engineers have long dreamed of using it to manufacture bulletproof vests and surgical thread.",
@@ -5776,6 +5779,7 @@ window.ReadSkillsData = {
         "id": 4,
         "title": "Passage 4: Sydney's History Test and the Cheating Classmate (Level 5)",
         "thaiTitle": "เรื่องที่ 4: การสอบวิชาประวัติศาสตร์ของซิดนีย์กับเพื่อนร่วมชั้นจอมลอก (Character Inference & Paraphrasing)",
+        "image": "images/u5_quiz_sydney_history_test.jpg",
         "sentences": [
           "For three evenings in a row, Sydney reviewed her history flashcards and outlined every chapter in her notebook to prepare for Friday's major exam.",
           "When the teacher distributed the test booklets on Friday morning, Sydney's palms were sweaty, yet she felt confident as she began answering the questions.",
