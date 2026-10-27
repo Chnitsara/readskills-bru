@@ -1,0 +1,316 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" width="100%" height="100%">
+  <defs>
+    <!-- Sky Gradient -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7dd3fc" />
+      <stop offset="55%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#fed7aa" />
+    </linearGradient>
+
+    <!-- Sun Glow Gradient -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#fef08a" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#fde047" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Ocean Gradient -->
+    <linearGradient id="oceanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="40%" stop-color="#0369a1" />
+      <stop offset="100%" stop-color="#075985" />
+    </linearGradient>
+
+    <!-- Wave Swell Gradient -->
+    <linearGradient id="waveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.85" />
+    </linearGradient>
+
+    <!-- Foam Gradient -->
+    <linearGradient id="foamGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#e0f2fe" stop-opacity="0.4" />
+    </linearGradient>
+
+    <!-- Calm Water Gradient (Village Side) -->
+    <linearGradient id="calmWaterGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d9488" stop-opacity="0.85" />
+      <stop offset="60%" stop-color="#14b8a6" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#2dd4bf" stop-opacity="0.65" />
+    </linearGradient>
+
+    <!-- Mangrove Foliage Gradients -->
+    <linearGradient id="leafGradDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#14532d" />
+    </linearGradient>
+    <linearGradient id="leafGradMid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="leafGradLight" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#16a34a" />
+    </linearGradient>
+
+    <!-- Root Gradient -->
+    <linearGradient id="rootGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#78350f" />
+      <stop offset="50%" stop-color="#582d1d" />
+      <stop offset="100%" stop-color="#3b1d11" />
+    </linearGradient>
+
+    <!-- Shore / Sand Gradient -->
+    <linearGradient id="sandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde68a" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+
+    <!-- Drop Shadow Filter -->
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect x="0" y="0" width="960" height="540" fill="url(#skyGrad)" />
+
+  <!-- Sun -->
+  <circle cx="820" cy="110" r="110" fill="url(#sunGlow)" />
+  <circle cx="820" cy="110" r="42" fill="#fffbeb" />
+
+  <!-- Clouds -->
+  <g fill="#ffffff" opacity="0.85">
+    <!-- Cloud 1 Left -->
+    <path d="M 80 120 Q 95 95 125 100 Q 155 85 185 105 Q 215 100 230 120 Q 240 140 215 150 L 95 150 Q 70 140 80 120 Z" />
+    <!-- Cloud 2 Center -->
+    <path d="M 380 95 Q 395 75 425 80 Q 450 65 480 82 Q 505 78 520 95 Q 530 115 505 125 L 390 125 Q 370 115 380 95 Z" opacity="0.65" />
+    <!-- Cloud 3 High -->
+    <path d="M 640 70 Q 655 52 680 58 Q 705 45 730 60 Q 750 56 760 72 L 650 72 Z" opacity="0.5" />
+  </g>
+
+  <!-- Birds -->
+  <g stroke="#0369a1" stroke-width="2.5" fill="none" opacity="0.6" stroke-linecap="round">
+    <path d="M 280 110 Q 290 102 300 110 Q 310 102 320 110" />
+    <path d="M 325 125 Q 332 119 340 125 Q 348 119 355 125" />
+    <path d="M 260 135 Q 266 130 273 135 Q 280 130 286 135" />
+  </g>
+
+  <!-- Distant Blue Hills / Island -->
+  <path d="M 0 260 Q 90 235 180 245 Q 260 255 340 240 Q 420 225 500 250 L 500 290 L 0 290 Z" fill="#93c5fd" opacity="0.5" />
+  <path d="M 520 245 Q 640 220 780 235 Q 870 245 960 230 L 960 290 L 520 290 Z" fill="#6ee7b7" opacity="0.4" />
+
+  <!-- Village Landmass (Right Shore) -->
+  <path d="M 640 340 Q 720 310 820 300 Q 900 295 960 290 L 960 540 L 640 540 Z" fill="#bbf7d0" />
+  <!-- Sandy Edge of Village Shore -->
+  <path d="M 600 375 Q 670 335 770 320 Q 860 310 960 305 L 960 330 Q 850 335 750 350 Q 650 370 580 410 Z" fill="url(#sandGrad)" />
+
+  <!-- Village Houses (Sheltered & Safe) -->
+  <g id="villageHouses">
+    <!-- House 1 (Stilt house near green slope) -->
+    <rect x="760" y="270" width="46" height="32" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="2" />
+    <polygon points="752,270 783,242 814,270" fill="#dc2626" />
+    <rect x="778" y="282" width="10" height="20" fill="#92400e" />
+    <rect x="794" y="276" width="8" height="8" rx="1" fill="#38bdf8" />
+
+    <!-- House 2 (Slightly behind, blue roof) -->
+    <rect x="825" y="260" width="50" height="35" rx="3" fill="#ffffff" stroke="#94a3b8" stroke-width="2" />
+    <polygon points="817,260 850,232 883,260" fill="#2563eb" />
+    <rect x="844" y="274" width="12" height="21" fill="#475569" />
+    <rect x="862" y="268" width="9" height="9" rx="1" fill="#fef08a" />
+
+    <!-- House 3 (Warm terracotta) -->
+    <rect x="890" y="275" width="44" height="30" rx="3" fill="#ffedd5" stroke="#ea580c" stroke-width="2" />
+    <polygon points="882,275 912,248 942,275" fill="#ea580c" />
+    <rect x="906" y="286" width="10" height="19" fill="#7c2d12" />
+
+    <!-- Distant Coconut Palms in Village -->
+    <g stroke="#78350f" stroke-width="3.5" fill="none" stroke-linecap="round">
+      <path d="M 735 295 Q 730 260 742 235" />
+      <path d="M 875 255 Q 878 225 872 205" />
+    </g>
+    <!-- Palm fronds -->
+    <g fill="#16a34a" stroke="#15803d" stroke-width="1.5">
+      <ellipse cx="740" cy="235" rx="18" ry="6" transform="rotate(-30 740 235)" />
+      <ellipse cx="745" cy="235" rx="18" ry="6" transform="rotate(35 745 235)" />
+      <ellipse cx="742" cy="230" rx="16" ry="6" transform="rotate(-80 742 230)" />
+      <ellipse cx="872" cy="205" rx="20" ry="7" transform="rotate(-40 872 205)" />
+      <ellipse cx="875" cy="205" rx="20" ry="7" transform="rotate(45 875 205)" />
+    </g>
+
+    <!-- Village path / greenery -->
+    <path d="M 740 310 Q 790 300 870 295 Q 920 293 960 292" stroke="#86efac" stroke-width="5" fill="none" stroke-linecap="round" />
+  </g>
+
+  <!-- Calm Lagoon Water (Sheltered behind Mangrove Forest) -->
+  <path d="M 450 330 Q 600 320 780 340 Q 860 360 960 380 L 960 540 L 450 540 Z" fill="url(#calmWaterGrad)" />
+  <!-- Gentle Calm Ripples in Protected Area -->
+  <g stroke="#ffffff" stroke-width="1.8" stroke-linecap="round" opacity="0.6">
+    <path d="M 680 390 Q 720 388 760 390" />
+    <path d="M 750 430 Q 810 427 870 430" />
+    <path d="M 620 450 Q 670 448 720 450" />
+    <path d="M 780 480 Q 840 478 900 480" />
+    <path d="M 710 515 Q 755 513 800 515" />
+  </g>
+
+  <!-- Left Open Ocean (Deep and Dynamic) -->
+  <path d="M 0 280 Q 150 275 320 285 L 350 540 L 0 540 Z" fill="url(#oceanGrad)" />
+
+  <!-- Big Ocean Swell / Wave incoming from the Left -->
+  <g id="incomingWaves">
+    <!-- Base Wave Swell Body -->
+    <path d="M 0 420 Q 90 350 200 320 Q 270 300 340 340 Q 370 360 400 410 Q 430 460 380 500 Q 320 540 180 540 L 0 540 Z" fill="url(#waveGrad)" />
+
+    <!-- Wave Crest Arc -->
+    <path d="M 0 380 Q 80 320 180 300 Q 260 285 320 315 Q 350 330 370 365" stroke="url(#foamGrad)" stroke-width="12" fill="none" stroke-linecap="round" filter="url(#softShadow)" />
+
+    <!-- Crashing White Water Foam Splashes -->
+    <path d="M 280 315 Q 315 300 335 325 Q 350 310 365 335 Q 380 350 360 370" fill="#ffffff" />
+    <ellipse cx="370" cy="355" rx="14" ry="10" fill="#ffffff" />
+    <ellipse cx="385" cy="370" rx="10" ry="8" fill="#e0f2fe" />
+    <circle cx="395" cy="385" r="6" fill="#ffffff" />
+    <circle cx="375" cy="335" r="4.5" fill="#ffffff" />
+    <circle cx="355" cy="305" r="5" fill="#ffffff" />
+    <circle cx="330" cy="295" r="4" fill="#ffffff" />
+    <circle cx="410" cy="390" r="5" fill="#e0f2fe" />
+    <circle cx="420" cy="410" r="4" fill="#ffffff" />
+
+    <!-- Wave lines inside body -->
+    <path d="M 20 440 Q 100 385 180 365 Q 240 350 290 370" stroke="#bae6fd" stroke-width="3" fill="none" opacity="0.6" stroke-linecap="round" />
+    <path d="M 40 480 Q 120 435 220 410 Q 280 400 330 430" stroke="#7dd3fc" stroke-width="2.5" fill="none" opacity="0.5" stroke-linecap="round" />
+  </g>
+
+  <!-- MANGROVE FOREST (The Natural Shield / Buffer in Center) -->
+  <g id="mangroveForest">
+    <!-- Submerged Sand Bar & Mudflat -->
+    <ellipse cx="480" cy="460" rx="200" ry="40" fill="#a16207" opacity="0.45" />
+
+    <!-- STILT ROOTS (Prop Roots Network - The Key Feature!) -->
+    <!-- Tree 1 Roots (Center-Left facing the wave) -->
+    <g stroke="url(#rootGrad)" stroke-width="7" stroke-linecap="round" fill="none">
+      <!-- Main trunk 1 -->
+      <path d="M 410 270 Q 405 320 400 365" stroke-width="12" />
+      <!-- Arching prop roots leftward into waves -->
+      <path d="M 400 345 Q 360 380 330 450" />
+      <path d="M 402 355 Q 380 400 355 480" />
+      <path d="M 400 340 Q 340 375 295 440" stroke-width="6" />
+      <path d="M 330 430 Q 300 460 280 495" stroke-width="5" />
+      <!-- Arching prop roots downward and rightward -->
+      <path d="M 400 350 Q 410 400 405 475" />
+      <path d="M 402 355 Q 430 410 445 485" />
+      <path d="M 405 340 Q 455 385 490 460" stroke-width="6" />
+    </g>
+
+    <!-- Tree 2 Roots (Main massive mangrove, Center-Right) -->
+    <g stroke="url(#rootGrad)" stroke-width="8" stroke-linecap="round" fill="none">
+      <!-- Main trunk 2 -->
+      <path d="M 520 250 Q 525 310 530 360" stroke-width="15" />
+      <!-- Branching intertwined stilt roots -->
+      <path d="M 528 335 Q 485 380 450 470" />
+      <path d="M 525 350 Q 495 410 480 490" />
+      <path d="M 530 330 Q 460 370 420 445" stroke-width="6.5" />
+      <path d="M 530 340 Q 545 400 550 480" />
+      <path d="M 532 345 Q 570 405 595 475" />
+      <path d="M 535 330 Q 600 375 635 450" stroke-width="6.5" />
+      <path d="M 585 435 Q 625 470 655 500" stroke-width="5" />
+    </g>
+
+    <!-- Tree 3 Roots (Front Small Mangrove Sapling) -->
+    <g stroke="url(#rootGrad)" stroke-width="5" stroke-linecap="round" fill="none">
+      <path d="M 465 370 L 465 410" stroke-width="8" />
+      <path d="M 465 400 Q 440 430 425 470" />
+      <path d="M 465 400 Q 470 440 472 485" />
+      <path d="M 465 400 Q 490 435 510 475" />
+    </g>
+
+    <!-- Water breaking around roots (Energy Dissipation Effect) -->
+    <g stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.85" stroke-linecap="round">
+      <path d="M 310 445 Q 330 440 345 450" />
+      <path d="M 345 475 Q 365 470 380 477" />
+      <path d="M 270 495 Q 295 490 315 500" />
+      <path d="M 410 455 Q 430 450 445 457" />
+      <path d="M 440 485 Q 465 480 485 488" />
+    </g>
+    <!-- Little foam bubbles around roots -->
+    <g fill="#ffffff" opacity="0.75">
+      <circle cx="335" cy="442" r="3" />
+      <circle cx="370" cy="465" r="2.5" />
+      <circle cx="435" cy="452" r="3" />
+      <circle cx="475" cy="482" r="2.5" />
+      <circle cx="300" cy="488" r="3.5" />
+    </g>
+
+    <!-- DENSE CANOPY / FOLIAGE CLUSTERS -->
+    <!-- Distant Background Foliage Layer (Darker) -->
+    <g fill="url(#leafGradDark)" filter="url(#softShadow)">
+      <circle cx="360" cy="240" r="55" />
+      <circle cx="430" cy="210" r="65" />
+      <circle cx="500" cy="200" r="70" />
+      <circle cx="580" cy="215" r="65" />
+      <circle cx="640" cy="250" r="50" />
+    </g>
+
+    <!-- Mid Foliage Layer (Vibrant Green) -->
+    <g fill="url(#leafGradMid)">
+      <circle cx="340" cy="265" r="48" />
+      <circle cx="390" cy="235" r="55" />
+      <circle cx="450" cy="225" r="60" />
+      <circle cx="520" cy="215" r="65" />
+      <circle cx="570" cy="240" r="58" />
+      <circle cx="620" cy="275" r="45" />
+    </g>
+
+    <!-- Foreground Highlight Clusters (Bright Sunlit Leaves) -->
+    <g fill="url(#leafGradLight)">
+      <circle cx="375" cy="220" r="38" />
+      <circle cx="435" cy="195" r="42" />
+      <circle cx="495" cy="185" r="45" />
+      <circle cx="545" cy="205" r="40" />
+      <circle cx="595" cy="235" r="32" />
+      <circle cx="460" cy="250" r="35" />
+    </g>
+
+    <!-- Leaf cluster detail accents -->
+    <g fill="#86efac" opacity="0.6">
+      <ellipse cx="430" cy="180" rx="14" ry="7" transform="rotate(-15 430 180)" />
+      <ellipse cx="490" cy="170" rx="16" ry="8" transform="rotate(20 490 170)" />
+      <ellipse cx="540" cy="190" rx="14" ry="7" transform="rotate(-10 540 190)" />
+      <ellipse cx="370" cy="205" rx="12" ry="6" transform="rotate(30 370 205)" />
+    </g>
+
+    <!-- Front Mangrove Sapling Leaves -->
+    <g fill="url(#leafGradMid)">
+      <circle cx="450" cy="355" r="22" />
+      <circle cx="475" cy="345" r="24" />
+      <circle cx="465" cy="365" r="20" />
+    </g>
+    <circle cx="470" cy="342" r="14" fill="url(#leafGradLight)" />
+  </g>
+
+  <!-- Educational Explanatory Badges / Callouts (Subtle, High-End Storybook Aesthetic) -->
+  <!-- Left Badge: Big Ocean Waves -->
+  <g transform="translate(45, 460)">
+    <rect x="0" y="0" width="185" height="46" rx="12" fill="#0c4a6e" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.5" />
+    <text x="16" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#f0f9ff">
+      🌊 Big Ocean Waves
+    </text>
+  </g>
+
+  <!-- Center Badge: Mangrove Stilt Roots Barrier -->
+  <g transform="translate(365, 475)">
+    <rect x="0" y="0" width="230" height="46" rx="12" fill="#14532d" fill-opacity="0.88" stroke="#4ade80" stroke-width="1.5" />
+    <text x="18" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#f0fdf4">
+      🛡️ Strong Mangrove Roots
+    </text>
+  </g>
+
+  <!-- Right Badge: Protected Coastal Village -->
+  <g transform="translate(735, 460)">
+    <rect x="0" y="0" width="195" height="46" rx="12" fill="#78350f" fill-opacity="0.85" stroke="#fcd34d" stroke-width="1.5" />
+    <text x="16" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" fill="#fffbeb">
+      🏡 Safe Coastal Village
+    </text>
+  </g>
+</svg>
