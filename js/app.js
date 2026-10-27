@@ -8,23 +8,25 @@
 
 class ReadSkillsApp {
   constructor() {
-    this.isLoggedIn = localStorage.getItem('bru_is_logged_in') === 'true';
+    this.isLoggedIn = false;
     this.authMode = 'signin'; // 'signin' or 'signup'
     this.currentView = 'dashboard';
     
-    // Initial active user session
+    // Member session (loaded from Firebase Authentication + Firestore after sign-in)
     this.user = {
-      name: (localStorage.getItem('bru_user_name') || 'Somsak Jaidee').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim(),
-      email: localStorage.getItem('bru_user_email') || 'student@bru.ac.th',
-      role: localStorage.getItem('bru_user_role') || 'student',
-      onlineSeconds: parseInt(localStorage.getItem('bru_online_seconds')) || 18400
+      uid: null,
+      name: '',
+      email: '',
+      role: 'student',
+      onlineSeconds: 0,
+      quizScores: {},
+      activeDays: []
     };
-
-    // User accounts database stored in localStorage
-    this.registeredUsers = JSON.parse(localStorage.getItem('bru_registered_users')) || [
-      { name: 'Somsak Jaidee', email: 'student@bru.ac.th', password: '123456', role: 'student' },
-      { name: 'Dr. Somchai', email: 'teacher@bru.ac.th', password: '123456', role: 'instructor' }
-    ];
+    this.authBusy = false;
+    this.pendingOnlineSeconds = 0;
+    this.adminStudents = [];
+    this.adminLoading = false;
+    this.adminError = null;
 
     this.currentUnitId = 1;
     this.currentStage = 'preReading';
@@ -300,14 +302,32 @@ class ReadSkillsApp {
       }
     });
 
-    if (this.isLoggedIn) {
-      this.showAppLayout(true);
-      this.updateUserDisplay();
-      this.navigate(this.currentView);
-    } else {
-      this.showAppLayout(false);
+    this.showAppLayout(false);
+
+    if (!window.BRUCloud || !BRUCloud.isConfigured()) {
       this.renderLoginView();
+      return;
     }
+
+    // ระบบสมาชิกจริง: ติดตามสถานะการเข้าสู่ระบบจาก Firebase Authentication
+    this.renderLoadingView();
+    BRUCloud.onAuthChanged(async (fbUser) => {
+      if (this.authBusy) return; // กำลังสมัครสมาชิก — handleSignUp จะจัดการเอง
+      if (fbUser) {
+        try {
+          await this.enterApp(fbUser, this.currentView);
+        } catch (err) {
+          console.warn('Load profile failed:', err);
+          alert(BRUCloud.errorMessage(err));
+          try { await BRUCloud.signOut(); } catch (e) { /* ignore */ }
+        }
+      } else {
+        this.isLoggedIn = false;
+        this.resetUser();
+        this.showAppLayout(false);
+        this.renderLoginView();
+      }
+    });
   }
 
   /* ------------------- Bracketed-Number Detector & Auto-Sanitizer ------------------- */
@@ -452,13 +472,26 @@ class ReadSkillsApp {
 
   /* ------------------- Online Timer (Tracking Hours Online) ------------------- */
   startOnlineTimer() {
+    // นับเวลาเฉพาะตอนที่แท็บเปิดอยู่ และบันทึกลง Firestore ทุก 30 วินาที
     setInterval(() => {
-      if (this.isLoggedIn) {
-        this.user.onlineSeconds++;
-        localStorage.setItem('bru_online_seconds', this.user.onlineSeconds);
-        this.updateTimerDisplay();
-      }
+      if (!this.isLoggedIn || document.visibilityState !== 'visible') return;
+      this.user.onlineSeconds++;
+      this.pendingOnlineSeconds = (this.pendingOnlineSeconds || 0) + 1;
+      this.updateTimerDisplay();
+      if (this.pendingOnlineSeconds >= 30) this.flushOnlineTime();
     }, 1000);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') this.flushOnlineTime();
+    });
+    window.addEventListener('pagehide', () => this.flushOnlineTime());
+  }
+
+  flushOnlineTime() {
+    const delta = this.pendingOnlineSeconds || 0;
+    if (delta <= 0 || !this.user.uid) return Promise.resolve();
+    this.pendingOnlineSeconds = 0;
+    return this.cloudSync(() => BRUCloud.saveOnline(this.user.uid, delta));
   }
 
   updateTimerDisplay() {
@@ -481,7 +514,7 @@ class ReadSkillsApp {
 
   updateUserDisplay() {
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
-    const englishName = (this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || (isTeacher ? 'Dr. Somchai' : 'Somsak Jaidee');
+    const englishName = (this.user.name || '').trim() || (this.user.email ? this.user.email.split('@')[0] : 'Student');
     const initial = englishName.charAt(0).toUpperCase() || (isTeacher ? 'T' : 'S');
 
     const nameElem = document.getElementById('user-display-name');
@@ -502,7 +535,7 @@ class ReadSkillsApp {
     }
     const dropdownEmail = document.getElementById('dropdown-user-email');
     if (dropdownEmail) {
-      dropdownEmail.innerText = this.user.email || (isTeacher ? 'teacher@bru.ac.th' : 'student@bru.ac.th');
+      dropdownEmail.innerText = this.user.email || '';
     }
 
     // Role badge inside profile dropdown
@@ -562,18 +595,6 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Authentication Renderer (Sign In / Sign Up) ------------------- */
-  fillDemoAccount(role) {
-    const emailInput = document.getElementById('signin-email');
-    const pwdInput = document.getElementById('signin-password');
-    if (role === 'teacher') {
-      if (emailInput) emailInput.value = 'teacher@bru.ac.th';
-      if (pwdInput) pwdInput.value = '123456';
-    } else {
-      if (emailInput) emailInput.value = 'student@bru.ac.th';
-      if (pwdInput) pwdInput.value = '123456';
-    }
-  }
-
   setAuthMode(mode) {
     this.authMode = mode;
     this.renderLoginView();
@@ -602,7 +623,8 @@ class ReadSkillsApp {
           Improve your academic reading skills with adaptive passages,<br />strategy modules, and instant feedback.
         </p>
 
-        <!-- Auth Card Container -->
+          ${this.renderCloudNotice()}
+          <!-- Auth Card Container -->
         <div class="login-card-container space-y-5 relative">
           
           <!-- Circle Logo -->
@@ -665,7 +687,7 @@ class ReadSkillsApp {
         </div>
 
         <div class="flex items-center justify-between pt-1">
-          <a href="#" onclick="alert('กรุณาติดต่ออาจารย์ประจำวิชาเพื่อรีเซ็ตรหัสผ่าน')" class="text-xs font-semibold text-[#53347C] hover:text-[#3C2A58] transition underline">
+          <a href="#" onclick="app.handleForgotPassword(); return false;" class="text-xs font-semibold text-[#53347C] hover:text-[#3C2A58] transition underline">
             Forgot password?
           </a>
 
@@ -674,28 +696,6 @@ class ReadSkillsApp {
           </button>
         </div>
 
-        <!-- Quick Switch Demo Account (Student vs Teacher) -->
-        <div class="pt-3 border-t border-[#BF9EDF]/40 space-y-1.5">
-          <span class="block text-[10px] font-bold text-[#53347C] uppercase tracking-wider text-center">
-            เลือกประเภทบัญชีเพื่อทดสอบระบบ (Quick Switch):
-          </span>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <button 
-              type="button" 
-              onclick="app.fillDemoAccount('student')"
-              class="px-2.5 py-2 rounded-xl bg-purple-50 hover:bg-purple-100 border border-purple-200 text-purple-900 font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
-            >
-              <span>🎓 นักศึกษา (Student)</span>
-            </button>
-            <button 
-              type="button" 
-              onclick="app.fillDemoAccount('teacher')"
-              class="px-2.5 py-2 rounded-xl bg-amber-50 hover:bg-amber-100 border border-amber-300 text-amber-950 font-bold flex items-center justify-center space-x-1 transition cursor-pointer"
-            >
-              <span>👨‍🏫 อาจารย์ (Teacher)</span>
-            </button>
-          </div>
-        </div>
       </form>
     `;
   }
@@ -747,74 +747,176 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Sign In & Sign Up Handlers ------------------- */
-  handleSignIn(event) {
-    event.preventDefault();
-    const email = document.getElementById('signin-email').value.trim();
-    const password = document.getElementById('signin-password').value.trim();
-
-    // Check against registered users database
-    const foundUser = this.registeredUsers.find(u => u.email.toLowerCase() === email.toLowerCase());
-
-    if (!foundUser) {
-      const newName = email.split('@')[0];
-      const newUser = { name: newName, email: email, password: password, role: 'student' };
-      this.registeredUsers.push(newUser);
-      localStorage.setItem('bru_registered_users', JSON.stringify(this.registeredUsers));
-      this.performLogin(newName, email, 'student');
-      return;
-    }
-
-    if (foundUser.password !== password) {
-      alert('รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง');
-      return;
-    }
-
-    this.performLogin(foundUser.name, foundUser.email, foundUser.role || 'student');
+  /* ------------------- Cloud helpers ------------------- */
+  ensureCloudReady() {
+    if (window.BRUCloud && BRUCloud.isConfigured()) return true;
+    alert('ระบบสมาชิกยังไม่ได้เชื่อมต่อ Firebase\nกรุณาตั้งค่าไฟล์ js/firebase-config.js ตามคู่มือ FIREBASE_SETUP.md');
+    return false;
   }
 
-  handleSignUp(event) {
-    event.preventDefault();
-    const name = document.getElementById('signup-name').value.trim();
-    const email = document.getElementById('signup-email').value.trim();
-    const password = document.getElementById('signup-password').value.trim();
+  cloudSync(fn) {
+    if (!window.BRUCloud || !BRUCloud.isConfigured() || !this.user.uid) return Promise.resolve();
+    try {
+      return Promise.resolve(fn()).catch(err => console.warn('Cloud sync failed:', err));
+    } catch (err) {
+      console.warn('Cloud sync failed:', err);
+      return Promise.resolve();
+    }
+  }
 
-    const roleElem = document.getElementById('signup-role');
-    const role = (roleElem && roleElem.value) ? roleElem.value : 'student';
-
-    const existingIndex = this.registeredUsers.findIndex(u => u.email.toLowerCase() === email.toLowerCase());
-    if (existingIndex >= 0) {
-      this.registeredUsers[existingIndex] = { name, email, password, role };
+  setBtnBusy(btn, busy, busyLabel) {
+    if (!btn) return;
+    if (busy) {
+      btn.dataset.label = btn.innerHTML;
+      btn.disabled = true;
+      btn.classList.add('opacity-60', 'cursor-wait');
+      btn.innerText = busyLabel || 'กำลังดำเนินการ...';
     } else {
-      this.registeredUsers.push({ name, email, password, role });
+      btn.disabled = false;
+      btn.classList.remove('opacity-60', 'cursor-wait');
+      if (btn.dataset.label) btn.innerHTML = btn.dataset.label;
     }
-
-    localStorage.setItem('bru_registered_users', JSON.stringify(this.registeredUsers));
-    alert(`สมัครสมาชิกเรียบร้อยแล้วในฐานะ ${role === 'instructor' ? 'อาจารย์ผู้สอน' : 'นักศึกษา'}! เข้าสู่ระบบอัตโนมัติ`);
-    this.performLogin(name, email, role);
   }
 
-  performLogin(name, email, role) {
-    this.user.name = name;
-    this.user.email = email;
-    this.user.role = role;
+  renderCloudNotice() {
+    if (window.BRUCloud && BRUCloud.isConfigured()) return '';
+    return `
+      <div class="max-w-md w-full mb-4 p-3 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 text-[11px] leading-relaxed">
+        <strong>⚠️ ระบบสมาชิกยังไม่ได้เชื่อมต่อ Firebase</strong><br />
+        ผู้พัฒนาต้องใส่ค่า firebaseConfig ในไฟล์ <code>js/firebase-config.js</code> ก่อน (ดูขั้นตอนใน <code>FIREBASE_SETUP.md</code>) จึงจะสมัคร/เข้าสู่ระบบได้
+      </div>
+    `;
+  }
+
+  renderLoadingView() {
+    const container = document.getElementById('main-content');
+    if (!container) return;
+    container.innerHTML = `
+      <div class="flex flex-col items-center justify-center py-24 space-y-3">
+        <div class="w-10 h-10 rounded-full border-4 border-purple-200 border-t-purple-700 animate-spin"></div>
+        <p class="text-sm font-semibold text-purple-900">กำลังตรวจสอบการเข้าสู่ระบบ...</p>
+      </div>
+    `;
+  }
+
+  /** เก็บข้อมูลโปรไฟล์จาก Firestore ลงในสถานะแอป */
+  applyProfile(fbUser, profile) {
+    const p = profile || {};
+    const today = new Date();
+    const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    const days = Array.isArray(p.activeDays) ? [...p.activeDays] : [];
+    if (!days.includes(todayKey)) days.push(todayKey);
+
+    this.user = {
+      uid: fbUser.uid,
+      name: (p.name || fbUser.displayName || (fbUser.email || '').split('@')[0] || 'Student').trim(),
+      email: fbUser.email || p.email || '',
+      role: p.role || 'student',
+      onlineSeconds: p.onlineSeconds || 0,
+      quizScores: p.quizScores || {},
+      activeDays: days
+    };
+    this.pendingOnlineSeconds = 0;
+  }
+
+  async enterApp(fbUser, targetView) {
+    const profile = await BRUCloud.loadProfile(fbUser);
+    this.applyProfile(fbUser, profile);
     this.isLoggedIn = true;
-
-    localStorage.setItem('bru_is_logged_in', 'true');
-    localStorage.setItem('bru_user_name', name);
-    localStorage.setItem('bru_user_email', email);
-    localStorage.setItem('bru_user_role', role);
-
     this.showAppLayout(true);
     this.updateUserDisplay();
-    this.navigate('dashboard');
+    this.navigate(targetView || 'dashboard');
+    // บันทึกวันที่เข้าใช้งานทันที
+    this.cloudSync(() => BRUCloud.saveOnline(this.user.uid, 1));
   }
 
-  logout() {
+  resetUser() {
+    this.user = { uid: null, name: '', email: '', role: 'student', onlineSeconds: 0, quizScores: {}, activeDays: [] };
+    this.pendingOnlineSeconds = 0;
+    this.adminStudents = [];
+    this.adminLoading = false;
+    this.adminError = null;
+    this.currentView = 'dashboard';
+  }
+
+  /* ------------------- Sign In, Sign Up, Forgot Password, Sign Out ------------------- */
+  async handleSignIn(event) {
+    event.preventDefault();
+    if (!this.ensureCloudReady()) return;
+
+    const btn = event.target.querySelector('button[type="submit"]');
+    const email = document.getElementById('signin-email').value.trim();
+    const password = document.getElementById('signin-password').value;
+
+    this.setBtnBusy(btn, true, 'กำลังเข้าสู่ระบบ...');
+    try {
+      await BRUCloud.signIn(email, password);
+      // onAuthChanged จะโหลดโปรไฟล์และพาเข้าสู่หน้าแดชบอร์ดให้อัตโนมัติ
+    } catch (err) {
+      alert(BRUCloud.errorMessage(err));
+      this.setBtnBusy(btn, false);
+    }
+  }
+
+  async handleSignUp(event) {
+    event.preventDefault();
+    if (!this.ensureCloudReady()) return;
+
+    const btn = event.target.querySelector('button[type="submit"]');
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const password = document.getElementById('signup-password').value;
+
+    if (name.length < 2) {
+      alert('กรุณากรอกชื่อ-นามสกุล');
+      return;
+    }
+    if (password.length < 6) {
+      alert('รหัสผ่านต้องมีอย่างน้อย 6 ตัวอักษร');
+      return;
+    }
+
+    this.authBusy = true;
+    this.setBtnBusy(btn, true, 'กำลังสมัครสมาชิก...');
+    try {
+      const fbUser = await BRUCloud.signUp(name, email, password);
+      await this.enterApp(fbUser);
+    } catch (err) {
+      alert(BRUCloud.errorMessage(err));
+      this.setBtnBusy(btn, false);
+      try { await BRUCloud.signOut(); } catch (e) { /* ignore */ }
+    } finally {
+      this.authBusy = false;
+    }
+  }
+
+  async handleForgotPassword() {
+    if (!this.ensureCloudReady()) return;
+    const emailInput = document.getElementById('signin-email');
+    let email = emailInput ? emailInput.value.trim() : '';
+    if (!email) {
+      email = (prompt('กรอกอีเมลที่ใช้สมัครสมาชิก เพื่อรับลิงก์ตั้งรหัสผ่านใหม่:') || '').trim();
+    }
+    if (!email) return;
+    try {
+      await BRUCloud.sendPasswordReset(email);
+      alert(`ส่งลิงก์ตั้งรหัสผ่านใหม่ไปที่ ${email} แล้ว\nกรุณาตรวจสอบกล่องจดหมาย (รวมถึงโฟลเดอร์ Junk/Spam)`);
+    } catch (err) {
+      alert(BRUCloud.errorMessage(err));
+    }
+  }
+
+  async logout() {
     this.closeUserMenu();
-    this.isLoggedIn = false;
-    localStorage.setItem('bru_is_logged_in', 'false');
-    this.showAppLayout(false);
-    this.renderLoginView();
+    if (this.speechSynth) this.speechSynth.cancel();
+    this.isAudioPlaying = false;
+    await this.flushOnlineTime();
+    try {
+      await BRUCloud.signOut();
+      // onAuthChanged จะรีเซ็ตสถานะและแสดงหน้าเข้าสู่ระบบ
+    } catch (err) {
+      alert(BRUCloud.errorMessage(err));
+    }
   }
 
   /* ------------------- Router Navigation ------------------- */
@@ -876,7 +978,9 @@ class ReadSkillsApp {
         this.initProgressChart();
         break;
       case 'admin':
+        this.adminLoading = true;
         container.innerHTML = this.renderAdminView();
+        this.loadAdminStudents();
         break;
       default:
         container.innerHTML = this.renderDashboard();
@@ -932,7 +1036,7 @@ class ReadSkillsApp {
                 <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
               </span>
               <h1 class="nb-display text-3xl sm:text-5xl leading-none mb-3 text-slate-900">
-                Hello, <span class="text-[#8B5CF6]">${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim().split(' ')[0] || 'Somsak'}</span> <span class="nb-wave inline-block">👋</span>
+                Hello, <span class="text-[#8B5CF6]">${((this.user.name || '').trim().split(' ')[0]) || 'there'}</span> <span class="nb-wave inline-block">👋</span>
               </h1>
               <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
                 Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
@@ -1009,7 +1113,7 @@ class ReadSkillsApp {
         <div class="glass-card p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
           <div class="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto">
             <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl border border-purple-200 shrink-0">
-              5/6
+              ${this.getCompletionStats().done}/6
             </div>
             <div>
               <h4 class="font-bold text-slate-900 text-sm sm:text-base">Your Active Progress</h4>
@@ -1020,10 +1124,10 @@ class ReadSkillsApp {
           <div class="flex-1 w-full md:max-w-md">
             <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
               <span>Overall Completion</span>
-              <span>83%</span>
+              <span>${this.getCompletionStats().pct}%</span>
             </div>
             <div class="w-full bg-slate-200/80 h-2.5 sm:h-3 rounded-full overflow-hidden">
-              <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full" style="width: 83%"></div>
+              <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full" style="width: ${this.getCompletionStats().pct}%"></div>
             </div>
           </div>
 
@@ -6314,38 +6418,30 @@ class ReadSkillsApp {
   
   /* ------------------- Unit Comprehension Quizzes Progress Storage ------------------- */
   getComprehensionQuizScores() {
-    // Default baseline scores (matching initial state: Units 1-5 completed, Unit 6 pending)
-    const defaults = {
-      q1: { score: 90, correctCount: 18, total: 20, passed: true, completedAt: 'Completed' },
-      q2: { score: 85, correctCount: 17, total: 20, passed: true, completedAt: 'Completed' },
-      q3: { score: 95, correctCount: 19, total: 20, passed: true, completedAt: 'Completed' },
-      q4: { score: 88, correctCount: 17, total: 20, passed: true, completedAt: 'Completed' },
-      q5: { score: 92, correctCount: 18, total: 20, passed: true, completedAt: 'Completed' },
-      q6: { score: 0, correctCount: 0, total: 20, passed: false, completedAt: null }
-    };
+    // Real scores per member (stored in Firestore). Units not yet taken stay at 0.
+    const base = {};
+    ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'].forEach(id => {
+      base[id] = { score: 0, correctCount: 0, total: 20, passed: false, completedAt: null };
+    });
+    return { ...base, ...(this.user.quizScores || {}) };
+  }
 
-    const saved = localStorage.getItem('bru_comprehension_quiz_scores');
-    if (saved) {
-      try {
-        const parsed = JSON.parse(saved);
-        return { ...defaults, ...parsed };
-      } catch (e) {
-        return defaults;
-      }
-    }
-    return defaults;
+  getCompletionStats() {
+    const done = Object.values(this.getComprehensionQuizScores())
+      .filter(item => item && item.completedAt && item.score > 0).length;
+    return { done, pct: Math.round((done / 6) * 100) };
   }
 
   saveComprehensionQuizScore(quizId, percentage, correctCount, total) {
-    const scores = this.getComprehensionQuizScores();
-    scores[quizId] = {
+    const result = {
       score: percentage,
       correctCount: correctCount,
       total: total,
       passed: percentage >= 70,
       completedAt: new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' })
     };
-    localStorage.setItem('bru_comprehension_quiz_scores', JSON.stringify(scores));
+    this.user.quizScores = { ...(this.user.quizScores || {}), [quizId]: result };
+    this.cloudSync(() => BRUCloud.saveQuizScore(this.user.uid, quizId, result));
   }
 
   startStandaloneQuiz(quizId) {
@@ -6393,11 +6489,6 @@ class ReadSkillsApp {
     // Persist to Learning Progress Storage
     this.saveComprehensionQuizScore(this.activeStandaloneQuizId, percentage, correctCount, total);
 
-    // Update student report database record
-    const studentIdx = ReadSkillsData.studentsReport.findIndex(s => s.email === this.user.email);
-    if (studentIdx >= 0) {
-      ReadSkillsData.studentsReport[studentIdx].quizAvg = `${percentage}%`;
-    }
 
     if (this.speechSynth) this.speechSynth.cancel();
     this.isAudioPlaying = false;
@@ -6467,8 +6558,8 @@ class ReadSkillsApp {
 
           <div class="glass-card p-6">
             <span class="text-xs font-semibold text-slate-500">Access Frequency</span>
-            <div class="text-2xl font-bold text-amber-700 mt-2">14 Days</div>
-            <p class="text-[11px] text-slate-500 mt-1">Active study streak</p>
+            <div class="text-2xl font-bold text-amber-700 mt-2">${(this.user.activeDays || []).length} Days</div>
+            <p class="text-[11px] text-slate-500 mt-1">Total days you studied</p>
           </div>
         </div>
 
@@ -6534,40 +6625,31 @@ class ReadSkillsApp {
 
   // 6. Teacher Admin View (No Email, Unit Comprehension Quizzes Breakdown U1–U6)
   renderAdminView() {
-    const compScores = this.getComprehensionQuizScores();
-    const currUnitScores = {
-      u1: (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : 90,
-      u2: (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : 85,
-      u3: (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : 95,
-      u4: (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : 88,
-      u5: (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : 92,
-      u6: (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : 0
-    };
+    if (this.adminLoading) {
+      return `
+        <div class="glass-card p-10 text-center space-y-3">
+          <div class="w-10 h-10 mx-auto rounded-full border-4 border-purple-200 border-t-purple-700 animate-spin"></div>
+          <p class="text-sm font-semibold text-purple-900">กำลังโหลดข้อมูลนักศึกษา...</p>
+        </div>
+      `;
+    }
+    if (this.adminError) {
+      return `
+        <div class="glass-card p-8 text-center space-y-3 border-l-4 border-rose-500">
+          <p class="text-sm font-bold text-rose-700">โหลดข้อมูลนักศึกษาไม่สำเร็จ</p>
+          <p class="text-xs text-slate-600">${this.adminError}</p>
+          <button onclick="app.navigate('admin')" class="px-4 py-2 bg-purple-700 text-white text-xs font-bold rounded-xl cursor-pointer">ลองอีกครั้ง</button>
+        </div>
+      `;
+    }
 
-    const doneCount = Object.values(currUnitScores).filter(s => s > 0).length;
-    const doneSum = Object.values(currUnitScores).filter(s => s > 0).reduce((a, b) => a + b, 0);
-    const currAvg = doneCount > 0 ? Math.round(doneSum / doneCount) : 0;
-
-    // Build unified student list
-    const students = ReadSkillsData.studentsReport.map(s => {
-      if (s.name.toLowerCase() === this.user.name.toLowerCase() || s.id === 'STD-6501') {
-        return {
-          ...s,
-          name: this.user.name,
-          onlineHours: this.formatHoursText(this.user.onlineSeconds),
-          unitScores: { ...currUnitScores },
-          completedUnits: `${doneCount}/6 Units`,
-          quizAvg: `${currAvg}%`,
-          lastActive: 'Active Now (กำลังใช้งาน)',
-          isCurrentUser: true
-        };
-      }
-      return { ...s, isCurrentUser: false };
-    });
-
+    // Build student list from real Firestore data
+    const students = this.buildAdminStudentList();
     const totalStudents = students.length;
-    const classAvgSum = students.reduce((acc, s) => acc + parseInt(s.quizAvg || '0', 10), 0);
-    const classAvg = Math.round(classAvgSum / totalStudents);
+    const scored = students.filter(s => parseInt(s.quizAvg || '0', 10) > 0);
+    const classAvg = scored.length
+      ? Math.round(scored.reduce((acc, s) => acc + parseInt(s.quizAvg, 10), 0) / scored.length)
+      : 0;
 
     // Score pill helper
     const renderScorePill = (score) => {
@@ -6760,36 +6842,68 @@ class ReadSkillsApp {
     });
   }
 
+  /* ------------------- Teacher Report: live data from Firestore ------------------- */
+  async loadAdminStudents() {
+    this.adminError = null;
+    try {
+      this.adminStudents = await BRUCloud.fetchStudents();
+    } catch (err) {
+      console.warn('Load students failed:', err);
+      this.adminError = BRUCloud.errorMessage(err);
+    }
+    this.adminLoading = false;
+    if (this.currentView === 'admin') {
+      const container = document.getElementById('main-content');
+      if (container) {
+        container.innerHTML = this.renderAdminView();
+        if (window.lucide) lucide.createIcons();
+      }
+    }
+  }
+
+  buildAdminStudentList() {
+    const rows = (this.adminStudents || []).map(p => {
+      const qs = p.quizScores || {};
+      const pick = (id) => (qs[id] && qs[id].completedAt && qs[id].score > 0) ? qs[id].score : 0;
+      const unitScores = { u1: pick('q1'), u2: pick('q2'), u3: pick('q3'), u4: pick('q4'), u5: pick('q5'), u6: pick('q6') };
+      const done = Object.values(unitScores).filter(s => s > 0);
+      const avg = done.length ? Math.round(done.reduce((a, b) => a + b, 0) / done.length) : 0;
+      const isMe = p.uid === this.user.uid;
+      const secs = isMe ? this.user.onlineSeconds : (p.onlineSeconds || 0);
+      let last = '—';
+      if (isMe) {
+        last = 'Active Now';
+      } else if (p.lastActiveAt && typeof p.lastActiveAt.toDate === 'function') {
+        last = p.lastActiveAt.toDate().toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+      }
+      return {
+        id: (p.uid || '').slice(0, 6).toUpperCase(),
+        name: p.name || '-',
+        onlineHours: this.formatHoursText(secs),
+        unitScores,
+        completedUnits: `${done.length}/6 Units`,
+        quizAvg: `${avg}%`,
+        lastActive: last,
+        isCurrentUser: isMe
+      };
+    });
+    rows.sort((a, b) => a.name.localeCompare(b.name));
+    return rows;
+  }
+
   /* ------------------- Export CSV Function (No Email, Unit Scores U1-U6) ------------------- */
   exportStudentReportCSV() {
-    const compScores = this.getComprehensionQuizScores();
-    const currUnitScores = {
-      u1: (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : 90,
-      u2: (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : 85,
-      u3: (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : 95,
-      u4: (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : 88,
-      u5: (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : 92,
-      u6: (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : 0
-    };
+    const students = this.buildAdminStudentList();
+    const esc = (v) => `"${String(v === undefined || v === null ? '' : v).replace(/"/g, '""')}"`;
 
-    let csv = "Student ID,Full Name,Online Hours,Unit 1 Score,Unit 2 Score,Unit 3 Score,Unit 4 Score,Unit 5 Score,Unit 6 Score,Quiz Average Score,Last Active\n";
-
-    ReadSkillsData.studentsReport.forEach(s => {
-      let u = s.unitScores || { u1: 0, u2: 0, u3: 0, u4: 0, u5: 0, u6: 0 };
-      let hours = s.onlineHours;
-      let avg = s.quizAvg;
-      let last = s.lastActive;
-
-      if (s.name.toLowerCase() === this.user.name.toLowerCase() || s.id === 'STD-6501') {
-        u = currUnitScores;
-        hours = this.formatHoursText(this.user.onlineSeconds);
-        const doneCount = Object.values(u).filter(sc => sc > 0).length;
-        const doneSum = Object.values(u).filter(sc => sc > 0).reduce((a, b) => a + b, 0);
-        avg = (doneCount > 0 ? Math.round(doneSum / doneCount) : 0) + "%";
-        last = "Active Now";
-      }
-
-      csv += `"${s.id}","${s.name}","${hours}","${u.u1 || 0}%","${u.u2 || 0}%","${u.u3 || 0}%","${u.u4 || 0}%","${u.u5 || 0}%","${u.u6 || 0}%","${avg}","${last}"\n`;
+    let csv = "\uFEFFStudent ID,Full Name,Online Hours,Unit 1 Score,Unit 2 Score,Unit 3 Score,Unit 4 Score,Unit 5 Score,Unit 6 Score,Quiz Average Score,Last Active\n";
+    students.forEach(s => {
+      const u = s.unitScores || {};
+      csv += [
+        s.id, s.name, s.onlineHours,
+        `${u.u1 || 0}%`, `${u.u2 || 0}%`, `${u.u3 || 0}%`, `${u.u4 || 0}%`, `${u.u5 || 0}%`, `${u.u6 || 0}%`,
+        s.quizAvg, s.lastActive
+      ].map(esc).join(',') + "\n";
     });
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
