@@ -5932,6 +5932,7 @@ window.ReadSkillsData = {
         "id": 1,
         "title": "Passage 1: Human Bones, Calcium, and Preventing Osteoporosis (Level 5)",
         "thaiTitle": "เรื่องที่ 1: กระดูกมนุษย์ แคลเซียม และการป้องกันโรคกระดูกพรุน (Integrated Strategies Units 1–5)",
+        "image": "images/u6_quiz_bone_health_calcium.jpg",
         "sentences": [
           "Human bones are composed of two important minerals—calcium and phosphorus—which help your body develop and maintain a strong skeletal structure.",
           "Therefore, it is essential to consume foods that are rich in these minerals, such as dairy products like milk, cheese, yogurt, and ice cream.",
@@ -6078,6 +6079,7 @@ window.ReadSkillsData = {
         "id": 2,
         "title": "Passage 2: New York City, London, and the Harlem Renaissance (Level 5)",
         "thaiTitle": "เรื่องที่ 2: มหานครนิวยอร์ก ลอนดอน และยุคฟื้นฟูศิลปวิทยาการฮาร์เล็ม (Integrated Strategies Units 1–5)",
+        "image": "images/u6_quiz_harlem_renaissance.jpg",
         "sentences": [
           "Settled by the Dutch in the 1600s, New York City is the largest city in the United States and serves as a global center of finance, communications, and culture.",
           "London, the capital of the United Kingdom situated along the Thames River, is likewise the largest city in Europe and a major financial and cultural capital.",
@@ -6224,6 +6226,7 @@ window.ReadSkillsData = {
         "id": 3,
         "title": "Passage 3: The Life of Daniel Webster & Facts About T-Rex (Level 5)",
         "thaiTitle": "เรื่องที่ 3: ชีวประวัติของแดเนียล เว็บสเตอร์ และข้อมูลวิทยาศาสตร์ของทีเร็กซ์ (Integrated Strategies Units 1–5)",
+        "image": "images/u6_quiz_webster_and_trex.jpg",
         "sentences": [
           "Born in New Hampshire in 1782, Daniel Webster was such a frail and sickly child that his family feared he would not survive to adulthood.",
           "Because he was often bedridden and could do little else, young Daniel spent his days reading and quickly developed a deep love for books.",
@@ -6370,6 +6373,7 @@ window.ReadSkillsData = {
         "id": 4,
         "title": "Passage 4: The Humane Mousetrap & Hawaiian Snorkeling (Level 5)",
         "thaiTitle": "เรื่องที่ 4: กับดักหนูแสนฉลาดและการดำน้ำตื้นที่ฮาวาย (Integrated Strategies Units 1–5)",
+        "image": "images/u6_quiz_mousetrap_hawaiian_snorkel.jpg",
         "sentences": [
           "Because our house stands next to an open field, field mice often wander indoors every autumn, frightening my mother and sister.",
           "Since I actually like furry little creatures and do not want to harm them, I build humane live mousetraps baited with half a slice of Swiss cheese.",
