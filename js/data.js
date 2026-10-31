@@ -854,286 +854,285 @@ window.ReadSkillsData = {
       }
     ],
     "quizzes": [
-      {
-        "id": "q1",
-        "image": "images/q1_comprehension_tortoise_hare.jpg",
-        "code": "QUIZ 01",
-        "title": "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
-        "thaiTitle": "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
-        "unitRef": "Unit 1: Main Ideas",
-        "strategyRef": "Strategy 1: Previewing & Predicting",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "The Tortoise and the Hare: Lessons on Perseverance and Overconfidence",
-          "image": "images/q1_comprehension_tortoise_hare.jpg",
-          "text": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course.\n\nMeanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
-          "audioText": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course. Meanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Strategy 1 (Previewing Title)",
-            "question": "1. Before reading the entire narrative, what does previewing the title 'The Tortoise and the Hare: Lessons on Perseverance and Overconfidence' reveal?",
-            "options": [
-              "The central characters and the contrasting themes of steady effort versus excessive pride",
-              "The exact distance in meters that the two competitors will run",
-              "A complete historical list of famous runners in ancient folklore",
-              "The scientific classifications of desert reptiles and woodland mammals"
-            ],
-            "answer": 0,
-            "explanation": "Previewing the title immediately identifies the key characters and the contrasting themes (perseverance vs. overconfidence)."
-          },
-          {
-            "id": 2,
-            "tag": "Unit 1 (Main Idea)",
-            "question": "2. What is the stated main idea of the fable as expressed in the concluding sentence?",
-            "options": [
-              "Natural talent alone guarantees continuous victory without practicing",
-              "Steady determination and consistent effort often lead to unexpected success over careless natural talent",
-              "Resting under large oak trees is recommended before athletic contests",
-              "Slow-moving forest animals should avoid competing against faster opponents"
-            ],
-            "answer": 1,
-            "explanation": "The final sentence explicitly states the core moral: steady determination and consistent effort overcome careless talent."
-          },
-          {
-            "id": 3,
-            "tag": "Strategy 1 (Predicting)",
-            "question": "3. If an accompanying illustration depicts the Hare sleeping while the Tortoise steadily passes the halfway mark, what can the reader predict?",
-            "options": [
-              "The patient Tortoise will overtake the sleeping Hare and win the race",
-              "The Hare will wake up instantly and cancel the entire race",
-              "The Tortoise will take a nap right beside the Hare",
-              "A sudden storm will force all animals to abandon the track"
-            ],
-            "answer": 0,
-            "explanation": "Visual clues of the sleeping Hare and advancing Tortoise confirm the prediction of the Tortoise taking the lead."
-          },
-          {
-            "id": 4,
-            "tag": "Unit 1 (Topic Sentence)",
-            "question": "4. Which sentence functions as the controlling idea for the entire narrative?",
-            "options": [
-              "Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
-              "A boastful Hare was constantly teasing a quiet Tortoise about his slow walking pace.",
-              "The noon sunshine felt delightfully warm beneath the spreading oak branches.",
-              "The finish line was decorated with wild berries and colorful leaves."
-            ],
-            "answer": 0,
-            "explanation": "The concluding sentence encapsulates the controlling idea and moral lesson that governs the entire narrative."
-          },
-          {
-            "id": 5,
-            "tag": "Integrated Skill (Preview & Main Idea)",
-            "question": "5. By combining previewing and predicting with main idea identification, how does an active reader benefit?",
-            "options": [
-              "It eliminates the need to understand grammar or sentence structure",
-              "It allows readers to anticipate outcomes and grasp the core message without unnecessary rereading",
-              "It guarantees that every multiple-choice answer will automatically be option A",
-              "It replaces the need to read any paragraphs in full detail"
-            ],
-            "answer": 1,
-            "explanation": "Previewing sets up mental schema, allowing readers to identify main ideas and themes with high speed and comprehension accuracy."
-          },
-          {
-            "id": 6,
-            "tag": "Scanning Details",
-            "question": "6. Under which type of tree did the arrogant Hare choose to take his afternoon nap?",
-            "options": [
-              "A tall pine tree beside the riverbank",
-              "A fragrant eucalyptus tree near the meadow",
-              "A shady oak tree along the racecourse",
-              "A flowering cherry tree by the spectator stand"
-            ],
-            "answer": 2,
-            "explanation": "Scanning the middle section reveals that the Hare chose to rest beneath a shady oak tree."
-          },
-          {
-            "id": 7,
-            "tag": "Scanning Details",
-            "question": "7. How did the forest spectators react when the Tortoise crossed the finish line?",
-            "options": [
-              "They cheered triumphantly for the persistent victor",
-              "They demanded that the race be rerun immediately",
-              "They remained completely silent in deep disappointment",
-              "They fled into the dense forest because of rain"
-            ],
-            "answer": 0,
-            "explanation": "Scanning the conclusion shows the woodland spectators cheered triumphantly as the Tortoise crossed the line."
-          },
-          {
-            "id": 8,
-            "tag": "Vocabulary in Context",
-            "question": "8. In paragraph 1, what does the word 'ridiculing' mean in the phrase 'constantly ridiculing a slow-moving Tortoise'?",
-            "options": [
-              "Praising someone warmly for their achievements",
-              "Mocking or making fun of someone unkindly",
-              "Encouraging a teammate to run faster",
-              "Inviting a neighbor to share a meal"
-            ],
-            "answer": 1,
-            "explanation": "'Ridiculing' means mocking or teasing someone in an unkind, derisive manner."
-          },
-          {
-            "id": 9,
-            "tag": "Vocabulary in Context",
-            "question": "9. In paragraph 2, what is the meaning of 'complacent' in 'the complacent Hare decided to take a nap'?",
-            "options": [
-              "Overly self-satisfied and unworried about potential failure",
-              "Extremely terrified of losing the contest",
-              "Physically injured and in need of medical treatment",
-              "Deeply respectful of an opponent's hidden strengths"
-            ],
-            "answer": 0,
-            "explanation": "'Complacent' means feeling satisfied with oneself to the point of ignoring potential risks or competition."
-          },
-          {
-            "id": 10,
-            "tag": "Vocabulary in Context",
-            "question": "10. In the final sentence, what does 'perseverance' mean?",
-            "options": [
-              "Continued steady effort to achieve a goal despite difficulties",
-              "Running at maximum speed for a very short distance",
-              "Boasting proudly about past accomplishments to others",
-              "Relying on good luck rather than daily practice"
-            ],
-            "answer": 0,
-            "explanation": "'Perseverance' refers to persistent, steadfast determination to keep going despite obstacles."
-          },
-          {
-            "id": 11,
-            "tag": "Reference Words",
-            "question": "11. In paragraph 1, in the phrase 'ridiculing a slow-moving Tortoise for his clumsy pace', what does 'his' refer to?",
-            "options": [
-              "The Hare",
-              "The Tortoise",
-              "The spectator",
-              "The oak tree"
-            ],
-            "answer": 1,
-            "explanation": "'His' refers back to the antecedent noun 'a slow-moving Tortoise'."
-          },
-          {
-            "id": 12,
-            "tag": "Reference Words",
-            "question": "12. In the sentence 'he was astonished to see the persistent Tortoise crossing ahead of him', who does 'he' refer to?",
-            "options": [
-              "The arrogant Hare",
-              "The patient Tortoise",
-              "An owl in the tree",
-              "The forest referee"
-            ],
-            "answer": 0,
-            "explanation": "'He' refers to the Hare who woke up from his nap and saw the Tortoise winning."
-          },
-          {
-            "id": 13,
-            "tag": "Strategy 1 (Previewing Technique)",
-            "question": "13. What is the most effective sequence when previewing an expository or narrative text?",
-            "options": [
-              "Read the title, subheadings, visual captions, and the opening/closing sentences first",
-              "Read the final sentence of every paragraph backwards from end to start",
-              "Translate every technical noun into three different languages before reading",
-              "Count the total number of adverbs in the entire article"
-            ],
-            "answer": 0,
-            "explanation": "Effective previewing begins with titles, headings, illustrations, and structural anchor sentences."
-          },
-          {
-            "id": 14,
-            "tag": "Strategy 1 (Predicting Technique)",
-            "question": "14. How should an active reader handle a prediction that turns out to be incorrect after reading?",
-            "options": [
-              "Adjust the prediction based on textual evidence and continue reading attentively",
-              "Stop reading immediately and discard the text as poorly written",
-              "Pretend the incorrect prediction was never made to maintain confidence",
-              "Memorize the incorrect prediction for the final exam"
-            ],
-            "answer": 0,
-            "explanation": "Active readers constantly monitor comprehension, revising predictions when new text evidence contradicts them."
-          },
-          {
-            "id": 15,
-            "tag": "Unit 1 (Major vs Minor Detail)",
-            "question": "15. Which of the following is a minor supporting detail rather than a central main idea in the story?",
-            "options": [
-              "The Hare chose a shady oak tree under which to rest",
-              "Consistent effort often triumphs over careless overconfidence",
-              "Arrogance can blind talented individuals to realistic threats",
-              "Determination and persistence lead to unexpected success"
-            ],
-            "answer": 0,
-            "explanation": "The specific type of tree (oak) is a minor background detail, whereas the others express core thematic ideas."
-          },
-          {
-            "id": 16,
-            "tag": "Paraphrasing Skill",
-            "question": "16. Which statement best paraphrases the moral: 'Steady determination and consistent effort often lead to unexpected success over careless natural talent'?",
-            "options": [
-              "Hard work and persistence will frequently beat unmotivated skill.",
-              "Fast runners will always lose if they do not take lengthy naps.",
-              "Slow animals are superior in intelligence to fast animals.",
-              "Natural talent is completely useless in modern society."
-            ],
-            "answer": 0,
-            "explanation": "Option A accurately captures the original meaning using different words and sentence structure."
-          },
-          {
-            "id": 17,
-            "tag": "Inference Skill",
-            "question": "17. What can be inferred about the Hare's attitude toward the Tortoise at the start of the race?",
-            "options": [
-              "He felt genuine fear and respect for the Tortoise's physical endurance",
-              "He regarded the Tortoise as completely incapable of posing any competitive challenge",
-              "He wanted to teach the Tortoise how to sprint more efficiently",
-              "He hoped to lose on purpose to cheer up his fellow animals"
-            ],
-            "answer": 1,
-            "explanation": "The Hare's decision to nap proves he viewed the Tortoise as zero threat to his victory."
-          },
-          {
-            "id": 18,
-            "tag": "Author's Purpose",
-            "question": "18. What was the author's primary communicative purpose in writing this classic fable?",
-            "options": [
-              "To impart a timeless ethical lesson on humility, perseverance, and respect",
-              "To provide accurate biological data on reptile walking speeds",
-              "To entertain readers with jokes about forest wildlife",
-              "To promote professional athletic training in ancient Greece"
-            ],
-            "answer": 0,
-            "explanation": "Fables are didactic narratives designed to teach moral principles and character values."
-          },
-          {
-            "id": 19,
-            "tag": "Text Structure",
-            "question": "19. How does the narrative structure build dramatic tension in the second paragraph?",
-            "options": [
-              "By contrasting the Hare's motionless slumber with the Tortoise's continuous forward movement",
-              "By describing a sudden thunderstorm that washed away the running path",
-              "By having the spectators vote on who should receive the prize",
-              "By listing recipes for wild berries collected in the meadow"
-            ],
-            "answer": 0,
-            "explanation": "The author juxtaposes the stationary sleeping Hare with the relentless Tortoise step by step."
-          },
-          {
-            "id": 20,
-            "tag": "Metacognitive Application",
-            "question": "20. How can a student apply the lesson of this fable and Strategy 1 to their everyday English reading habits?",
-            "options": [
-              "By previewing each reading text systematically and practicing consistently each day",
-              "By waiting until the night before an exam to cram all vocabulary at once",
-              "By reading only the easiest words and skipping all difficult paragraphs",
-              "By assuming that natural ability makes daily study unnecessary"
-            ],
-            "answer": 0,
-            "explanation": "Consistent daily effort and structured previewing yield sustainable academic mastery over sporadic cramming."
-          }
-        ]
+            {
+            "id": "q1",
+            "code": "QUIZ 01",
+            "title": "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
+            "thaiTitle": "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
+            "unitRef": "Unit 1: Main Ideas",
+            "strategyRef": "Strategy 1: Previewing & Predicting",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "Healthy Habits, Happy Students: The 30-Day Campus Challenge",
+                  "text": "Many first-year university students struggle with busy class schedules, late-night studying, and unhealthy daily routines. In their first semester, many students go to bed very late, skip breakfast, and drink too many sugary energy drinks to stay awake. As a result, they often feel tired during morning lectures and find it hard to focus on their lessons. To help students build better lifestyles, the Student Health Club launched the \"30-Day Campus Challenge.\" The main goal of this project was to prove that simple daily habits can dramatically improve energy, mood, and academic success.\n\nDuring the challenge, participating students agreed to follow three simple rules every day. First, they went to sleep before 11:00 PM and woke up thirty minutes earlier each morning. Second, instead of taking motorcycles or campus shuttles, students walked or rode bicycles across campus to get gentle morning exercise. Third, they replaced sugary soft drinks with plain water and ate a nutritious breakfast, such as boiled eggs, bananas, and whole-wheat toast. Club members used a free mobile phone app to track their daily progress and encouraged each other in a friendly group chat.\n\nBy the end of the month, the results were truly inspiring. Over ninety percent of participants reported feeling more alert, happier, and less stressed during morning classes. Furthermore, teachers noticed that students arrived on time and participated more actively in classroom discussions. Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement. Because of this great success, the university now plans to organize the healthy habit challenge every semester.",
+                  "audioText": "Many first-year university students struggle with busy class schedules, late-night studying, and unhealthy daily routines. In their first semester, many students go to bed very late, skip breakfast, and drink too many sugary energy drinks to stay awake. As a result, they often feel tired during morning lectures and find it hard to focus on their lessons. To help students build better lifestyles, the Student Health Club launched the 30-Day Campus Challenge. The main goal of this project was to prove that simple daily habits can dramatically improve energy, mood, and academic success. During the challenge, participating students agreed to follow three simple rules every day. First, they went to sleep before 11:00 PM and woke up thirty minutes earlier each morning. Second, instead of taking motorcycles or campus shuttles, students walked or rode bicycles across campus to get gentle morning exercise. Third, they replaced sugary soft drinks with plain water and ate a nutritious breakfast, such as boiled eggs, bananas, and whole-wheat toast. Club members used a free mobile phone app to track their daily progress and encouraged each other in a friendly group chat. By the end of the month, the results were truly inspiring. Over ninety percent of participants reported feeling more alert, happier, and less stressed during morning classes. Furthermore, teachers noticed that students arrived on time and participated more actively in classroom discussions. Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement. Because of this great success, the university now plans to organize the healthy habit challenge every semester."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 1 (Previewing the Title)",
+                        "question": "1. Before reading the full text, what can an active reader predict by previewing the title 'Healthy Habits, Happy Students: The 30-Day Campus Challenge'?",
+                        "options": [
+                              "The passage will discuss a university challenge that helps students build positive daily habits for better health and happiness",
+                              "The passage will explain how to build a commercial gym building on a university campus",
+                              "The passage will describe a difficult medical examination taken by hospital doctors",
+                              "The passage will review dangerous extreme sports played during summer holidays"
+                        ],
+                        "answer": 0,
+                        "explanation": "Previewing the title gives immediate clues: 'Healthy Habits, Happy Students' and '30-Day Campus Challenge' indicate a positive student habit-building program."
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Unit 1 (Main Idea of the Passage)",
+                        "question": "2. What is the stated main idea of the entire reading passage?",
+                        "options": [
+                              "Consistent small daily habits are the key to long-term health, happiness, and academic achievement",
+                              "University students should never study late at night under any circumstances",
+                              "Riding bicycles is the only acceptable way to travel around a college campus",
+                              "Energy drinks should be completely banned by all university bookstores"
+                        ],
+                        "answer": 0,
+                        "explanation": "The core message stated throughout the passage and in paragraph 3 is that small, consistent daily habits lead to lasting health and academic success."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Unit 1 (Topic Sentence of Paragraph 1)",
+                        "question": "3. What is the primary problem highlighted in the opening paragraph?",
+                        "options": [
+                              "First-year students struggle with busy schedules, late nights, and skipping breakfast, causing fatigue and poor focus",
+                              "Students could not find any available tables in the university library",
+                              "The university tuition fees increased significantly before the semester began",
+                              "Campus sports teams lost all their matches due to bad rainy weather"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 clearly establishes the problem: busy schedules, late bedtimes, and poor nutrition caused students to feel exhausted and unable to focus."
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Strategy 1 (Predicting from Opening Problem)",
+                        "question": "4. After reading in paragraph 1 that students feel exhausted from poor routines, what can the reader predict about the Health Club's challenge?",
+                        "options": [
+                              "The challenge will introduce simple, healthy routines to help students feel more energetic and alert",
+                              "The challenge will force students to drop out of their morning classes",
+                              "The challenge will give free sugary energy drinks to every dorm student",
+                              "The challenge will cancel all final exams for the semester"
+                        ],
+                        "answer": 0,
+                        "explanation": "Active reading involves predicting logical solutions to identified problems: a health club challenge will provide healthy routines to boost student energy."
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Unit 1 (Main Idea of Paragraph 2)",
+                        "question": "5. What is the main idea of paragraph 2?",
+                        "options": [
+                              "The 30-day challenge required students to follow three simple daily rules: early sleep, morning exercise, and nutritious food",
+                              "Mobile phones are harmful to students and should never be used on campus",
+                              "Dormitory students should only eat bananas and boiled eggs for dinner",
+                              "Taking campus shuttles is faster than walking across campus"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 focuses specifically on explaining the three practical rules of the challenge: sleep before 11 PM, walking/cycling, and eating nutritious meals."
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Scanning for Specific Details",
+                        "question": "6. According to paragraph 2, what bedtime did students agree to follow during the challenge?",
+                        "options": [
+                              "Going to sleep before 11:00 PM",
+                              "Going to sleep after 2:00 AM",
+                              "Going to sleep at exactly 8:00 PM",
+                              "Staying awake all night on weekends"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning paragraph 2 for time numbers quickly locates: 'First, they went to sleep before 11:00 PM.'"
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Scanning for Specific Details",
+                        "question": "7. Which nutritious breakfast foods were mentioned as healthy examples in paragraph 2?",
+                        "options": [
+                              "Boiled eggs, bananas, and whole-wheat toast",
+                              "Potato chips, sugary chocolate bars, and iced tea",
+                              "Instant noodles and spicy fried chicken",
+                              "Black coffee and cream donuts"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 specifically lists: 'such as boiled eggs, bananas, and whole-wheat toast.'"
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Vocabulary in Context (struggle with)",
+                        "question": "8. In paragraph 1, what does the phrase 'struggle with' mean in 'students struggle with busy class schedules'?",
+                        "options": [
+                              "Experience great difficulty dealing with or managing something",
+                              "Easily finish tasks ahead of schedule without effort",
+                              "Refuse to attend any university classes",
+                              "Win a competitive physical wrestling contest"
+                        ],
+                        "answer": 0,
+                        "explanation": "To 'struggle with' means having a hard time coping with challenges like heavy study loads and busy schedules."
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Vocabulary in Context (nutritious)",
+                        "question": "9. In paragraph 2, what does the adjective 'nutritious' mean in 'ate a nutritious breakfast'?",
+                        "options": [
+                              "Healthy and containing beneficial vitamins and energy that the body needs",
+                              "Very sweet, colorful, and packed with artificial sugar",
+                              "Extremely expensive and imported from abroad",
+                              "Quickly fried in deep animal fat"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Nutritious' describes food that provides nourishment and essential nutrients to keep the body strong and healthy."
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Vocabulary in Context (consistent)",
+                        "question": "10. In paragraph 3, what does 'consistent' mean in 'Consistent small habits... are the key'?",
+                        "options": [
+                              "Done regularly and steadily over time without stopping",
+                              "Done only once a year on special holidays",
+                              "Changing completely every single morning",
+                              "Impossible for ordinary people to achieve"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Consistent' means continuous, regular, and steady in behavior or performance."
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Reference Words (they)",
+                        "question": "11. In paragraph 2, what does the pronoun 'they' refer to in 'First, they went to sleep before 11:00 PM'?",
+                        "options": [
+                              "The participating students in the challenge",
+                              "The security guards at the university gate",
+                              "The teachers grading final examination papers",
+                              "The motorcycles parked outside the dormitory"
+                        ],
+                        "answer": 0,
+                        "explanation": "'They' refers back to 'participating students' who agreed to follow the three challenge rules."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Reference Words (this project)",
+                        "question": "12. In paragraph 1, what does the phrase 'this project' refer to?",
+                        "options": [
+                              "The 30-Day Campus Challenge launched by the Health Club",
+                              "A final biology research paper written by senior students",
+                              "The construction of a new campus cafeteria",
+                              "A commercial television show filmed on university grounds"
+                        ],
+                        "answer": 0,
+                        "explanation": "'This project' refers directly to the '30-Day Campus Challenge' introduced in the preceding sentence."
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Strategy 1 (Previewing Technique)",
+                        "question": "13. Why is previewing a text before reading helpful for second-language learners?",
+                        "options": [
+                              "It activates background knowledge, sets reading goals, and makes the text easier to understand",
+                              "It guarantees that the reader will never have to read the body paragraphs",
+                              "It allows the reader to skip all vocabulary questions on a test",
+                              "It helps the reader translate every English word into Thai word-for-word"
+                        ],
+                        "answer": 0,
+                        "explanation": "Previewing titles, headings, and topic sentences activates schema (prior knowledge) and helps readers build a mental roadmap of the text."
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Strategy 1 (Predicting Technique)",
+                        "question": "14. How should an active reader make effective predictions while reading?",
+                        "options": [
+                              "Use clues from the title, headings, and early paragraphs, then check and adjust predictions as you read",
+                              "Ignore all text headings and make random wild guesses",
+                              "Always assume the story will end with a terrible disaster",
+                              "Only make predictions after finishing the entire book"
+                        ],
+                        "answer": 0,
+                        "explanation": "Good readers use visual and contextual clues to make predictions, which they actively verify or adjust as new information is uncovered."
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Unit 1 (Distinguishing Main Idea vs Minor Detail)",
+                        "question": "15. Which of the following is a MINOR supporting detail in the reading passage?",
+                        "options": [
+                              "Club members encouraged each other in a friendly group chat",
+                              "Small daily habits improve student energy and academic success",
+                              "First-year students faced fatigue due to poor lifestyle routines",
+                              "The university plans to continue the healthy habit challenge"
+                        ],
+                        "answer": 0,
+                        "explanation": "Using a friendly group chat is a small supporting detail describing how students communicated, whereas the main idea is about habit formation and academic success."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Paraphrasing the Main Idea",
+                        "question": "16. Which statement best paraphrases: 'Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement'?",
+                        "options": [
+                              "Practicing simple healthy routines regularly leads to lasting well-being and study success better than drastic changes",
+                              "Students must make extreme, painful sacrifices if they want to pass their examinations",
+                              "Only professional athletes can achieve good health and high test scores",
+                              "Changing your daily routine has no measurable impact on school performance"
+                        ],
+                        "answer": 0,
+                        "explanation": "This option accurately restates the core meaning using synonyms: 'simple healthy routines regularly' = 'consistent small habits', and 'lasting well-being and study success' = 'long-term health and academic achievement'."
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Inference Skill",
+                        "question": "17. What can the reader infer about the university teachers' reaction to the challenge?",
+                        "options": [
+                              "They welcomed the positive change because students were more punctual, awake, and engaged in class",
+                              "They were angry because students talked too much about bicycles",
+                              "They canceled all lectures because students were eating breakfast",
+                              "They preferred students to stay up late studying every night"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 notes: 'teachers noticed that students arrived on time and participated more actively', showing they observed and appreciated the positive impact."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Cause and Effect",
+                        "question": "18. According to paragraph 1, what was the direct consequence of students sleeping late and skipping breakfast?",
+                        "options": [
+                              "They felt tired during morning lectures and struggled to concentrate",
+                              "They won a cash prize from the university president",
+                              "They became professional bicycle racers overnight",
+                              "Their dormitory rooms were completely locked"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 explains: 'As a result, they often feel tired during morning lectures and find it hard to focus on their lessons.'"
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Strategy Orchestration (Previewing & Main Idea)",
+                        "question": "19. How does previewing the first sentence of each paragraph help you locate the main ideas quickly?",
+                        "options": [
+                              "First sentences usually introduce the topic of each paragraph, showing how the problem, solution, and results connect",
+                              "First sentences are always the only sentences tested on university exams",
+                              "First sentences always contain foreign language translations",
+                              "First sentences tell you the author's home address and phone number"
+                        ],
+                        "answer": 0,
+                        "explanation": "In standard expository writing, topic sentences are typically placed at the beginning of paragraphs to state the focus of that section."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Metacognitive Application",
+                        "question": "20. How can a student apply the lesson of this passage and Strategy 1 to become a better English reader?",
+                        "options": [
+                              "Set aside 15 minutes every day to preview English titles and read short articles consistently",
+                              "Read an entire English novel in one night without previewing anything",
+                              "Only read English texts when a difficult exam is scheduled for the next morning",
+                              "Avoid reading English and rely exclusively on automatic translation tools"
+                        ],
+                        "answer": 0,
+                        "explanation": "Just as the 30-day challenge showed that consistent small daily habits bring success, reading English for 15 minutes daily with previewing strategies builds lasting reading fluency."
+                  }
+            ]
       },
+
             {
             "id": "q2",
             "code": "QUIZ 02",
