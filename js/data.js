@@ -1134,284 +1134,285 @@ window.ReadSkillsData = {
           }
         ]
       },
-      {
-        "id": "q2",
-        "code": "QUIZ 02",
-        "title": "Unit 2: Supporting Details + Strategy 2: Skimming & Scanning",
-        "thaiTitle": "แบบทดสอบรวม: Unit 2 (รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด) + Strategy 2 (การอ่านแบบกวาดสายตาและค้นหาข้อมูล)",
-        "unitRef": "Unit 2: Supporting Details & Idea Relationships",
-        "strategyRef": "Strategy 2: Skimming & Scanning",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "Smart Agriculture and IoT Irrigation in Buriram Province",
-          "text": "Agriculture in Buriram Province has historically faced severe challenges from unpredictable monsoon rains and porous sandy soil that loses moisture rapidly during arid dry-season months. To overcome these persistent obstacles, agricultural cooperatives partnered with technological researchers to implement an automated smart irrigation pilot project.\n\nSpecifically, the initiative deployed wireless soil moisture probes and solar-powered microcontrollers directly into vegetable crop beds. These electronic devices continuously measure subterranean humidity levels and wirelessly transmit real-time telemetry to automated water pumps. Instead of traditional flood irrigation that saturates entire fields, the smart system activates precision drip lines only when moisture drops below a calibrated threshold, delivering water directly to root zones.\n\nDuring the six-month monitored trial, participating farms recorded a remarkable forty-five percent reduction in overall water consumption alongside a twenty-two percent increase in crop yields. By preventing both drought stress and waterlogging, precision smart agriculture proves that sustainable, data-driven farming can secure rural livelihoods against climate uncertainties.",
-          "audioText": "Agriculture in Buriram Province has historically faced severe challenges from unpredictable monsoon rains and porous sandy soil that loses moisture rapidly during arid dry-season months. To overcome these persistent obstacles, agricultural cooperatives partnered with technological researchers to implement an automated smart irrigation pilot project. Specifically, the initiative deployed wireless soil moisture probes and solar-powered microcontrollers directly into vegetable crop beds. These electronic devices continuously measure subterranean humidity levels and wirelessly transmit real-time telemetry to automated water pumps. Instead of traditional flood irrigation that saturates entire fields, the smart system activates precision drip lines only when moisture drops below a calibrated threshold, delivering water directly to root zones. During the six-month monitored trial, participating farms recorded a remarkable forty-five percent reduction in overall water consumption alongside a twenty-two percent increase in crop yields. By preventing both drought stress and waterlogging, precision smart agriculture proves that sustainable, data-driven farming can secure rural livelihoods against climate uncertainties."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Strategy 2 (Skimming for Gist)",
-            "question": "1. What is the overarching topic of the passage on agricultural technology in Buriram?",
-            "options": [
-              "Using smart IoT sensors and automated irrigation to conserve water and boost farm yields",
-              "The history of silk weaving in northeastern provincial markets",
-              "A complete guide to constructing commercial sports stadiums in provincial towns",
-              "Tourist attractions and ancient volcanic parks in southern Isan"
-            ],
-            "answer": 0,
-            "explanation": "Skimming reveals the passage focuses on IoT soil sensors and smart drip irrigation for farming."
-          },
-          {
-            "id": 2,
-            "tag": "Unit 2 (Main Idea of Paragraph 1)",
-            "question": "2. What is the primary problem highlighted in the opening paragraph?",
-            "options": [
-              "Unpredictable seasonal rainfall and sandy soil cause severe water scarcity during dry months",
-              "Farm workers refuse to operate modern tractors during morning shifts",
-              "Fertilizer prices have dropped to zero across northeastern provinces",
-              "Government authorities banned all agricultural trade in the region"
-            ],
-            "answer": 0,
-            "explanation": "Paragraph 1 establishes the problem: sandy soil and erratic monsoon rains create severe drought challenges."
-          },
-          {
-            "id": 3,
-            "tag": "Unit 2 (Major Supporting Detail)",
-            "question": "3. What specific technology is installed directly into the crop beds to monitor subterranean conditions?",
-            "options": [
-              "Wireless moisture sensors connected to solar-powered microcontrollers",
-              "High-definition video cameras that record bird flight patterns",
-              "Deep underground metal pipes filled with chemical dyes",
-              "Handheld magnifying lenses operated manually by volunteers"
-            ],
-            "answer": 0,
-            "explanation": "Paragraph 2 details wireless soil moisture probes and solar microcontrollers placed in the soil."
-          },
-          {
-            "id": 4,
-            "tag": "Unit 2 (Minor Supporting Detail)",
-            "question": "4. What percentage reduction in overall irrigation water consumption was recorded by the pilot project?",
-            "options": [
-              "Forty-five percent less water used compared to conventional flood irrigation",
-              "Ninety-nine percent reduction within the first two hours",
-              "Exactly five percent savings during rainy months",
-              "Zero water savings were observed during the trial"
-            ],
-            "answer": 0,
-            "explanation": "The text specifies a 45% reduction in water usage compared to traditional furrow flooding."
-          },
-          {
-            "id": 5,
-            "tag": "Strategy 2 (Scanning for Location)",
-            "question": "5. In which northeastern Thai province was this sustainable smart agriculture pilot implemented?",
-            "options": [
-              "Buriram Province",
-              "Chiang Mai Province",
-              "Phuket Province",
-              "Kanchanaburi Province"
-            ],
-            "answer": 0,
-            "explanation": "Scanning for proper nouns immediately identifies Buriram Province as the project location."
-          },
-          {
-            "id": 6,
-            "tag": "Strategy 2 (Scanning for Energy Source)",
-            "question": "6. What power source drives the automated water pumps and sensor transmitters?",
-            "options": [
-              "Solar panels mounted on lightweight field frames",
-              "Heavy diesel fuel generators running continuously",
-              "Coal-burning power stations connected by long cables",
-              "Wind turbine mills constructed on distant mountaintops"
-            ],
-            "answer": 0,
-            "explanation": "Scanning confirms the sensors and pumps are powered by photovoltaic solar panels."
-          },
-          {
-            "id": 7,
-            "tag": "Unit 2 (Signal Words for Details)",
-            "question": "7. Which transitional word in paragraph 2 signals an illustration of the system's automated features?",
-            "options": [
-              "'For instance' or 'Specifically'",
-              "'Nevertheless'",
-              "'On the contrary'",
-              "'In ancient times'"
-            ],
-            "answer": 0,
-            "explanation": "Words like 'Specifically' and 'For instance' introduce concrete supporting examples."
-          },
-          {
-            "id": 8,
-            "tag": "Vocabulary in Context",
-            "question": "8. In paragraph 1, what does the adjective 'arid' mean in 'during arid dry-season months'?",
-            "options": [
-              "Extremely dry and lacking sufficient moisture for vegetation",
-              "Rich in organic nutrients and dark loam soil",
-              "Covered with thick layers of winter frost",
-              "Crowded with busy urban commercial buildings"
-            ],
-            "answer": 0,
-            "explanation": "'Arid' describes land or climate with little or no rain, too dry to support crops easily."
-          },
-          {
-            "id": 9,
-            "tag": "Vocabulary in Context",
-            "question": "9. In paragraph 2, what does 'automated' mean in the context of 'automated drip irrigation'?",
-            "options": [
-              "Operating by self-acting machinery or computers without continuous human intervention",
-              "Requiring dozens of manual laborers carrying buckets of water",
-              "Powered solely by horses and oxen pulling wooden plows",
-              "Conducted only during nighttime under candlelight"
-            ],
-            "answer": 0,
-            "explanation": "'Automated' means operating independently through programmed electronic controls."
-          },
-          {
-            "id": 10,
-            "tag": "Vocabulary in Context",
-            "question": "10. In paragraph 3, what does 'sustainable' mean when referring to modern farming practices?",
-            "options": [
-              "Able to be maintained long-term without depleting natural resources or harming the environment",
-              "Extremely expensive and only accessible to wealthy multinational corporations",
-              "Temporary and expected to fail within two months",
-              "Dangerous to local wildlife and surrounding watersheds"
-            ],
-            "answer": 0,
-            "explanation": "'Sustainable' means using resources responsibly so ecological balance is preserved for the future."
-          },
-          {
-            "id": 11,
-            "tag": "Reference Words",
-            "question": "11. In paragraph 2, what does the phrase 'these electronic devices' refer to?",
-            "options": [
-              "The subterranean moisture sensors and microcontroller units",
-              "The wooden fences surrounding the farmland",
-              "The diesel trucks transporting produce to Bangkok",
-              "The smartphones owned by city consumers"
-            ],
-            "answer": 0,
-            "explanation": "'These electronic devices' points back to the wireless sensors and microcontroller units mentioned prior."
-          },
-          {
-            "id": 12,
-            "tag": "Reference Words",
-            "question": "12. In paragraph 3, what does the pronoun 'it' refer to in the clause 'because it delivers water directly to root zones'?",
-            "options": [
-              "Targeted micro-drip irrigation",
-              "The midday sunshine",
-              "The regional highway",
-              "The farm storage barn"
-            ],
-            "answer": 0,
-            "explanation": "'It' refers to the precision drip irrigation system described in the sentence."
-          },
-          {
-            "id": 13,
-            "tag": "Strategy 2 (Skimming Mechanics)",
-            "question": "13. When skimming a three-paragraph report for the overall gist, which parts should you read most attentively?",
-            "options": [
-              "The first two sentences of each paragraph and the concluding summary lines",
-              "Every third word in the middle column of the page",
-              "Only the footnotes and copyright dates at the very bottom",
-              "The table of contents in a completely different textbook"
-            ],
-            "answer": 0,
-            "explanation": "Skimming focuses on topic sentences at the start of paragraphs and the summarizing conclusion."
-          },
-          {
-            "id": 14,
-            "tag": "Strategy 2 (Scanning Mechanics)",
-            "question": "14. What visual technique helps a reader scan rapidly for the number '45%' in a dense passage?",
-            "options": [
-              "Moving eyes diagonally looking specifically for digits and the '%' symbol without reading full text",
-              "Reading every single word aloud starting from page one",
-              "Covering the text with paper and guessing the answer",
-              "Translating each sentence into Thai before searching"
-            ],
-            "answer": 0,
-            "explanation": "Scanning involves targeted visual pattern searching for specific shapes, numbers, or capitalized names."
-          },
-          {
-            "id": 15,
-            "tag": "Unit 2 (Distinguishing Major vs Minor)",
-            "question": "15. Which statement represents a major supporting pillar of the smart farming initiative?",
-            "options": [
-              "Soil sensors prevent over-watering by triggering pumps only when moisture drops below threshold",
-              "The sensor enclosures are painted light green to match vegetable leaves",
-              "The technician's toolbox has a metal latch",
-              "The farm gate is unlocked at 6:00 AM every morning"
-            ],
-            "answer": 0,
-            "explanation": "Moisture-triggered automated pumping is a major functional pillar explaining how water is saved."
-          },
-          {
-            "id": 16,
-            "tag": "Cause and Effect Analysis",
-            "question": "16. What is the immediate consequence of delivering water directly to root zones rather than spraying overhead?",
-            "options": [
-              "Evaporation loss is drastically reduced and weed growth between rows is minimized",
-              "Crops turn into desert cacti within forty-eight hours",
-              "Farmers are forced to abandon their fields permanently",
-              "Soil temperatures drop below the freezing point"
-            ],
-            "answer": 0,
-            "explanation": "Root-targeted watering prevents evaporative waste and starves weeds of surface water."
-          },
-          {
-            "id": 17,
-            "tag": "Inference Skill",
-            "question": "17. What can be inferred about the future of farming in northeastern Thailand from this project?",
-            "options": [
-              "Adopting smart technology can make regional agriculture resilient against worsening climate droughts",
-              "Farming will disappear completely in Thailand within five years",
-              "Rainfall will increase tenfold without needing any irrigation systems",
-              "Farmers will abandon crops to build software companies exclusively"
-            ],
-            "answer": 0,
-            "explanation": "The pilot demonstrates that technological adaptation offers a viable long-term solution to drought."
-          },
-          {
-            "id": 18,
-            "tag": "Fact vs Opinion",
-            "question": "18. Which statement from the passage is an objective, verifiable fact?",
-            "options": [
-              "Water consumption dropped by forty-five percent during the monitored trial period",
-              "Smart agriculture is the most enjoyable pastime in the world",
-              "Farming in Buriram is far more pleasant than living in Bangkok",
-              "Every citizen should personally own an IoT water sensor"
-            ],
-            "answer": 0,
-            "explanation": "A measured 45% reduction is an objective, verifiable empirical statistic."
-          },
-          {
-            "id": 19,
-            "tag": "Strategy Orchestration",
-            "question": "19. When an exam question asks 'Which province implemented this project?', which strategy is fastest?",
-            "options": [
-              "Scanning for capitalized provincial names",
-              "Skimming the entire article from start to finish",
-              "Reading the passage backward sentence by sentence",
-              "Writing a paragraph summary of agricultural science"
-            ],
-            "answer": 0,
-            "explanation": "Scanning for capitalized proper nouns locates specific factual answers in seconds."
-          },
-          {
-            "id": 20,
-            "tag": "Comprehensive Summary",
-            "question": "20. Which sentence provides the best comprehensive summary of the entire reading passage?",
-            "options": [
-              "Smart IoT sensors and solar drip irrigation in Buriram demonstrate that precision technology significantly cuts water waste and boosts crop resilience in drought-prone regions.",
-              "Traditional agriculture in northeastern Thailand has remained completely unchanged for centuries.",
-              "Solar panels are too fragile to be used outdoors in tropical agricultural environments.",
-              "Installing water pipes requires heavy machinery that damaged local vegetable crops."
-            ],
-            "answer": 0,
-            "explanation": "Option A synthesizes the technology, location, environmental benefits, and strategic importance."
-          }
-        ]
+            {
+            "id": "q2",
+            "code": "QUIZ 02",
+            "title": "Unit 2: Supporting Details + Strategy 2: Skimming & Scanning",
+            "thaiTitle": "แบบทดสอบรวม: Unit 2 (รายละเอียดสนับสนุนและความสัมพันธ์ของความคิด) + Strategy 2 (การอ่านแบบกวาดสายตาและค้นหาข้อมูล)",
+            "unitRef": "Unit 2: Supporting Details & Idea Relationships",
+            "strategyRef": "Strategy 2: Skimming & Scanning",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "Green Campus Garden: Students Growing Fresh Food in Buriram",
+                  "text": "Many university students in Buriram want to eat healthy food and protect the environment. However, fresh vegetables can be expensive for students living in campus dormitories. In addition, dry weather and sandy soil often make it difficult to grow plants during the hot season. To solve this problem, a group of thirty university students started the \"Green Campus Garden\" behind the science building. Their main goal was to grow organic vegetables together, save water, and share healthy food with their friends.\n\nTo make the garden successful, the students used smart and creative ideas. Specifically, they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted. The students also installed two small solar lights to brighten the garden paths at night. Every weekend, team members work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemicals.\n\nAfter four months of hard work, the project achieved wonderful results. Participating students grew over 120 kilograms of fresh vegetables and reduced campus food waste by forty percent. The club sold half of the harvest at low prices to dorm students and donated the rest to the local school canteen. Furthermore, students learned important life skills such as teamwork, time management, and sustainable living. The university now plans to expand the green project to other campus areas next semester.",
+                  "audioText": "Many university students in Buriram want to eat healthy food and protect the environment. However, fresh vegetables can be expensive for students living in campus dormitories. In addition, dry weather and sandy soil often make it difficult to grow plants during the hot season. To solve this problem, a group of thirty university students started the Green Campus Garden behind the science building. Their main goal was to grow organic vegetables together, save water, and share healthy food with their friends. To make the garden successful, the students used smart and creative ideas. Specifically, they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted. The students also installed two small solar lights to brighten the garden paths at night. Every weekend, team members work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemicals. After four months of hard work, the project achieved wonderful results. Participating students grew over 120 kilograms of fresh vegetables and reduced campus food waste by forty percent. The club sold half of the harvest at low prices to dorm students and donated the rest to the local school canteen. Furthermore, students learned important life skills such as teamwork, time management, and sustainable living. The university now plans to expand the green project to other campus areas next semester."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 2 (Skimming for Gist)",
+                        "question": "1. What is the overarching topic of this reading passage?",
+                        "options": [
+                              "University students working together on a campus garden project to grow fresh food and save water",
+                              "The history of building modern science laboratories in northeastern universities",
+                              "A travel guide about the most popular tourist attractions in Buriram province",
+                              "How to prepare for difficult final examinations in biology and agriculture classes"
+                        ],
+                        "answer": 0,
+                        "explanation": "Skimming across the headings and opening lines shows the entire passage is about students building a campus green garden to grow food and save resources."
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Unit 2 (Main Idea of Paragraph 1)",
+                        "question": "2. What is the main problem introduced in paragraph 1?",
+                        "options": [
+                              "Expensive vegetables, dry weather, and sandy soil made it hard for dorm students to eat healthy food",
+                              "Students could not find any classrooms available in the science building",
+                              "The university campus completely ran out of electricity during the dry season",
+                              "No students were interested in joining any university clubs or activities"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 explains that expensive vegetables, dry weather, and poor sandy soil made it difficult for dorm students to get fresh healthy food."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Unit 2 (Major Supporting Detail)",
+                        "question": "3. How did the students water their plants without wasting water?",
+                        "options": [
+                              "They used recycled plastic bottles to build low-cost drip watering systems",
+                              "They pumped gallons of tap water onto the soil with a fire hose",
+                              "They waited only for natural rain clouds during the dry months",
+                              "They bought an expensive automatic sprinkler system from a foreign company"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 states: 'they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems.'"
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Unit 2 (Minor Supporting Detail - Percentage)",
+                        "question": "4. By what percentage did the student project reduce campus food waste?",
+                        "options": [
+                              "Forty percent (40%)",
+                              "Ten percent (10%)",
+                              "Seventy-five percent (75%)",
+                              "Ninety-nine percent (99%)"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 explicitly mentions that the project 'reduced campus food waste by forty percent.'"
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Strategy 2 (Scanning for Location)",
+                        "question": "5. Where is the Green Campus Garden located?",
+                        "options": [
+                              "Behind the science building",
+                              "On top of the university library roof",
+                              "Inside the football stadium parking lot",
+                              "At the local shopping mall across the street"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning for capital letters and location words in paragraph 1 quickly locates 'behind the science building.'"
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Strategy 2 (Scanning for Number of Participants)",
+                        "question": "6. How many university students started this green project together?",
+                        "options": [
+                              "Thirty students",
+                              "Five students",
+                              "One hundred students",
+                              "Over five hundred students"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning paragraph 1 for numbers shows: 'a group of thirty university students started the Green Campus Garden.'"
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Unit 2 (Signal Words for Details)",
+                        "question": "7. Which transitional word in paragraph 2 signals a specific supporting example of the students' smart ideas?",
+                        "options": [
+                              "Specifically",
+                              "However",
+                              "Because",
+                              "Although"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Specifically' is a transition word used to introduce a precise, detailed supporting example."
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Vocabulary in Context (organic)",
+                        "question": "8. In paragraph 1, what does the word 'organic' mean in 'grow organic vegetables'?",
+                        "options": [
+                              "Grown naturally without using harmful artificial chemicals or pesticides",
+                              "Imported from expensive supermarkets in big cities",
+                              "Cooked and packaged inside plastic containers",
+                              "Dried in special machines for long-term storage"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 confirms this context by noting students grow vegetables 'without using any dangerous chemicals.'"
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Vocabulary in Context (low-cost)",
+                        "question": "9. In paragraph 2, what does the compound adjective 'low-cost' mean?",
+                        "options": [
+                              "Inexpensive and economical to make or buy",
+                              "Extremely heavy and difficult to transport",
+                              "Requiring advanced computer technology",
+                              "Dangerous and risky to operate"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Low-cost' means inexpensive, as the students used recycled plastic bottles found for free in campus bins."
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Vocabulary in Context (sustainable)",
+                        "question": "10. In paragraph 3, what does 'sustainable living' mean?",
+                        "options": [
+                              "Living in a way that protects natural resources for the future without causing harm",
+                              "Spending money quickly on trendy electronic devices",
+                              "Eating meals only in expensive restaurants",
+                              "Moving to a different city every six months"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Sustainable living' refers to eco-friendly practices that conserve water, reduce waste, and protect the planet."
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Reference Words (These simple bottles)",
+                        "question": "11. In paragraph 2, what does the phrase 'These simple bottles' refer to?",
+                        "options": [
+                              "The used plastic bottles collected from campus recycling bins",
+                              "Bottles of expensive cooking oil from the school market",
+                              "Glass bottles kept in chemistry science laboratories",
+                              "Drinking water bottles brought by visiting tourists"
+                        ],
+                        "answer": 0,
+                        "explanation": "'These simple bottles' refers directly back to the used plastic bottles collected to build drip watering systems."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Reference Words (they)",
+                        "question": "12. In paragraph 2, what does the pronoun 'they' refer to in 'Specifically, they collected used plastic bottles'?",
+                        "options": [
+                              "The university students in the project",
+                              "The security guards at the campus gate",
+                              "The vegetable roots in the soil",
+                              "The science professors in the classroom"
+                        ],
+                        "answer": 0,
+                        "explanation": "'They' refers to 'the students' who used smart and creative ideas to make the garden successful."
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Strategy 2 (Skimming Mechanics)",
+                        "question": "13. What is the most effective way to skim a three-paragraph article quickly?",
+                        "options": [
+                              "Read the title, the first and last sentences of each paragraph, and notice key repeated words",
+                              "Look up every unfamiliar word in an English-Thai dictionary before moving on",
+                              "Read every single word from left to right at a very slow pace",
+                              "Memorize all the numbers and dates in the last sentence first"
+                        ],
+                        "answer": 0,
+                        "explanation": "Skimming is a fast-reading technique focusing on titles, first/last sentences, and overall structure to grasp the main gist."
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Strategy 2 (Scanning Mechanics)",
+                        "question": "14. If a question asks 'How many kilograms of vegetables were grown?', how should you scan the text?",
+                        "options": [
+                              "Move your eyes rapidly across paragraph 3 searching specifically for numbers and the word 'kilograms'",
+                              "Read paragraph 1 from the beginning word-by-word very slowly",
+                              "Translate the entire text into Thai sentence by sentence",
+                              "Close your eyes and guess based on your personal garden experience"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning involves moving eyes rapidly to spot a specific target word or number (like '120 kilograms') without reading every word."
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Unit 2 (Distinguishing Major vs Minor Detail)",
+                        "question": "15. Which of the following is a MINOR supporting detail in paragraph 2?",
+                        "options": [
+                              "Planting sweet basil and small cherry tomatoes",
+                              "Building a low-cost drip watering system to save water",
+                              "Collecting used plastic bottles to prevent water waste",
+                              "Students starting the Green Campus Garden project"
+                        ],
+                        "answer": 0,
+                        "explanation": "The specific plant varieties (sweet basil and cherry tomatoes) are minor illustrative details, whereas the watering system is a major supporting idea."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Cause and Effect Analysis)",
+                        "question": "16. According to paragraph 2, what is the direct effect of dripping water slowly to plant roots?",
+                        "options": [
+                              "No water is wasted during irrigation",
+                              "The plants stop growing completely",
+                              "The plastic bottles become dirty very quickly",
+                              "The soil turns into hard cement rock"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 states: 'These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted.'"
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Inference Skill",
+                        "question": "17. What can the reader infer about the university administration's opinion of the project?",
+                        "options": [
+                              "They support the project because they plan to expand it to other campus areas next semester",
+                              "They dislike the project and ordered students to remove the vegetable beds",
+                              "They think gardening is a waste of time and punished the club members",
+                              "They were completely unaware that students were growing plants behind the building"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 concludes: 'The university now plans to expand the green project to other campus areas next semester', inferring strong institutional support."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Fact vs Opinion",
+                        "question": "18. Which statement from the passage is an objective, verifiable fact?",
+                        "options": [
+                              "Participating students grew over 120 kilograms of fresh vegetables",
+                              "Gardening is the most enjoyable activity in the entire university",
+                              "Cherry tomatoes taste much better than green lettuce",
+                              "Every university student should love working in the hot sun"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Participating students grew over 120 kilograms of fresh vegetables' is a measurable, verifiable fact with documented data."
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Strategy Orchestration",
+                        "question": "19. If you need to answer: 'What did the club do with the harvested vegetables?', which strategy should you use?",
+                        "options": [
+                              "Scan paragraph 3 for keywords like 'sold', 'donated', or 'harvest'",
+                              "Reread the entire passage slowly from paragraph 1 to paragraph 3",
+                              "Skim only the title of the passage",
+                              "Guess without checking any sentences in the text"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning for key action verbs ('sold', 'donated', 'harvest') in the results paragraph (paragraph 3) provides the fastest accurate answer."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Comprehensive Summary",
+                        "question": "20. Which sentence provides the best summary of the entire reading passage?",
+                        "options": [
+                              "Buriram university students successfully created a sustainable campus garden that saves water, provides healthy food, and teaches valuable life skills",
+                              "Plastic bottles can only be recycled if they are cleaned with chemical soap",
+                              "Science buildings in universities are always surrounded by dry sandy soil",
+                              "College dormitories never allow students to cook their own food"
+                        ],
+                        "answer": 0,
+                        "explanation": "This sentence encapsulates the entire story: the initiative, the methods (saving water), the outcomes (healthy food), and educational value (life skills)."
+                  }
+            ]
       },
+
       {
         "id": "q3",
         "code": "QUIZ 03",
