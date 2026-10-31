@@ -1412,1117 +1412,1117 @@ window.ReadSkillsData = {
       },
 
 
-      {
-        "id": "q3",
-        "code": "QUIZ 03",
-        "title": "Unit 3: Vocabulary in Context + Strategy 3: Using Context Clues",
-        "thaiTitle": "แบบทดสอบรวม: Unit 3 (คำศัพท์ในบริบทและความหมายของประโยค) + Strategy 3 (การใช้คำศัพท์ในบริบท)",
-        "unitRef": "Unit 3: Vocabulary in Context & Sentence Meaning",
-        "strategyRef": "Strategy 3: Using Context Clues",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "Preserving Ancient Khmer Architecture in Southern Isan",
-          "text": "Southern Isan boasts an extraordinary legacy of historic stone sanctuaries, constructed primarily between the tenth and thirteenth centuries. Unlike fragile timber dwellings that vanished centuries ago, volcanic sandstone and laterite complexes—such as Phanom Rung and Muang Tam—endured across centuries. Laterite, a porous, iron-rich sedimentary stone that hardens upon exposure to air, served as strong foundations, while rose-colored sandstone was meticulously shaped into sanctuaries and elaborate lintel carvings depicting deities and floral motifs.\n\nHowever, centuries of tropical weathering, monsoon moisture seepage, and biological lichen growth have caused gradual deterioration across these ancient walls. As rainwater seeps into porous stone blocks, they expand and develop micro-cracks under intense afternoon heat, threatening irreplaceable relief carvings.\n\nTo safeguard these cultural treasures, modern conservators employ terrestrial 3D laser scanners and ultrasonic sensors. This non-invasive technology maps internal fractures without scratching delicate stone surfaces, guiding targeted conservation efforts. Coupled with local community stewardship, scientific restoration ensures these architectural masterpieces remain inspiring cultural assets for future generations.",
-          "audioText": "Southern Isan boasts an extraordinary legacy of historic stone sanctuaries, constructed primarily between the tenth and thirteenth centuries. Unlike fragile timber dwellings that vanished centuries ago, volcanic sandstone and laterite complexes—such as Phanom Rung and Muang Tam—endured across centuries. Laterite, a porous, iron-rich sedimentary stone that hardens upon exposure to air, served as strong foundations, while rose-colored sandstone was meticulously shaped into sanctuaries and elaborate lintel carvings depicting deities and floral motifs. However, centuries of tropical weathering, monsoon moisture seepage, and biological lichen growth have caused gradual deterioration across these ancient walls. As rainwater seeps into porous stone blocks, they expand and develop micro-cracks under intense afternoon heat, threatening irreplaceable relief carvings. To safeguard these cultural treasures, modern conservators employ terrestrial 3D laser scanners and ultrasonic sensors. This non-invasive technology maps internal fractures without scratching delicate stone surfaces, guiding targeted conservation efforts. Coupled with local community stewardship, scientific restoration ensures these architectural masterpieces remain inspiring cultural assets for future generations."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Unit 3 (Main Idea)",
-            "question": "1. What is the central focus of the passage on historical preservation in Southern Isan?",
-            "options": [
-              "Preserving ancient Khmer stone sanctuaries through non-destructive 3D laser mapping and community heritage care",
-              "Building modern asphalt highways to replace historic footpaths",
-              "Promoting modern concrete skyscraper construction in provincial capitals",
-              "A complete biography of ancient kings who ruled Angkor Wat"
-            ],
-            "answer": 0,
-            "explanation": "The passage focuses on preserving ancient stone temples using modern non-invasive technologies and community stewardship."
-          },
-          {
-            "id": 2,
-            "tag": "Strategy 3 (Definition Clue)",
-            "question": "2. How does the text define 'laterite' using an appositive context clue?",
-            "options": [
-              "A porous, iron-rich sedimentary stone that hardens when exposed to air",
-              "A delicate species of freshwater orchid found in Isan rivers",
-              "A modern type of industrial cement manufactured in Bangkok",
-              "An ancient bronze currency used during international trade"
-            ],
-            "answer": 0,
-            "explanation": "The text provides a direct definition clue explaining laterite as an iron-rich porous stone."
-          },
-          {
-            "id": 3,
-            "tag": "Strategy 3 (Synonym Clue)",
-            "question": "3. In paragraph 1, which word functions as a synonym for 'sanctuary'?",
-            "options": [
-              "Temple or sacred shrine",
-              "Marketplace",
-              "Modern hospital",
-              "Commercial bank"
-            ],
-            "answer": 0,
-            "explanation": "'Temple' and 'shrine' act as synonyms for 'sanctuary' in sacred architectural contexts."
-          },
-          {
-            "id": 4,
-            "tag": "Strategy 3 (Contrast Clue)",
-            "question": "4. The text states: 'Unlike fragile timber dwellings that vanished centuries ago, the volcanic sandstone complexes endured.' What contrast clue is highlighted?",
-            "options": [
-              "The durability of sandstone versus the perishable nature of wood",
-              "The cost of buying gold jewelry versus silver coins",
-              "The temperature of monsoon rain versus morning fog",
-              "The speed of horse carts versus pedestrian travelers"
-            ],
-            "answer": 0,
-            "explanation": "The contrast signal 'Unlike' compares enduring sandstone structures with perishable timber buildings."
-          },
-          {
-            "id": 5,
-            "tag": "Strategy 3 (Example Clue)",
-            "question": "5. Which phrase in the passage signals examples of lintel carvings ('such as mythological deities and floral motifs')?",
-            "options": [
-              "'Such as'",
-              "'On the contrary'",
-              "'Therefore'",
-              "'In conclusion'"
-            ],
-            "answer": 0,
-            "explanation": "'Such as' is the standard exemplar signal phrase introducing illustrative category members."
-          },
-          {
-            "id": 6,
-            "tag": "Vocabulary in Context",
-            "question": "6. In paragraph 2, what does the word 'deterioration' mean regarding ancient stone carvings?",
-            "options": [
-              "The progressive worsening or decay of physical structure due to weathering",
-              "The sudden appearance of precious gems inside the stone",
-              "A rapid increase in monetary value on the art market",
-              "The intentional polishing of stone walls by museum staff"
-            ],
-            "answer": 0,
-            "explanation": "'Deterioration' means the gradual breakdown or decaying of materials caused by climate and time."
-          },
-          {
-            "id": 7,
-            "tag": "Vocabulary in Context",
-            "question": "7. In paragraph 2, what does 'intricate' mean in 'intricate relief carvings of deities'?",
-            "options": [
-              "Very complicated, detailed, and carefully crafted",
-              "Completely flat with zero decorative marks",
-              "Extremely bright and glowing in the dark",
-              "Made of cheap synthetic plastic fibers"
-            ],
-            "answer": 0,
-            "explanation": "'Intricate' describes complex designs with many detailed and interconnected elements."
-          },
-          {
-            "id": 8,
-            "tag": "Vocabulary in Context",
-            "question": "8. In paragraph 3, what does 'restoration' mean?",
-            "options": [
-              "The process of repairing and returning a historical site to its authentic condition",
-              "Demolishing old buildings to create commercial parking areas",
-              "Painting ancient sandstone with fluorescent yellow paint",
-              "Selling historical artifacts to foreign private collectors"
-            ],
-            "answer": 0,
-            "explanation": "'Restoration' is the careful repair and conservation of cultural heritage artifacts."
-          },
-          {
-            "id": 9,
-            "tag": "Vocabulary in Context",
-            "question": "9. What does the term 'cultural heritage' encompass in the reading?",
-            "options": [
-              "Historic traditions, monuments, and architectural treasures inherited from past generations",
-              "Modern digital smartphones produced in international factories",
-              "Imported plastic toys sold in neighborhood convenience stores",
-              "Underground oil reserves discovered in deep ocean trenches"
-            ],
-            "answer": 0,
-            "explanation": "'Cultural heritage' refers to valuable traditions, monuments, and arts passed down through history."
-          },
-          {
-            "id": 10,
-            "tag": "Strategy 2 (Scanning for Technology)",
-            "question": "10. What high-tech non-destructive tool is used by conservators to map micro-fractures in the sandstone?",
-            "options": [
-              "Terrestrial 3D laser scanners",
-              "Heavy iron sledgehammers",
-              "High-pressure acidic water hoses",
-              "Electric jackhammers"
-            ],
-            "answer": 0,
-            "explanation": "Scanning paragraph 3 identifies terrestrial 3D laser scanners as the conservation tool."
-          },
-          {
-            "id": 11,
-            "tag": "Scanning for Time Period",
-            "question": "11. During which historical centuries were the primary sandstone monuments constructed?",
-            "options": [
-              "Between the tenth and thirteenth centuries",
-              "In the late twentieth century",
-              "Around five thousand years before modern civilization",
-              "During the nineteenth-century industrial revolution"
-            ],
-            "answer": 0,
-            "explanation": "Scanning confirms the sanctuaries were built primarily between the 10th and 13th centuries."
-          },
-          {
-            "id": 12,
-            "tag": "Reference Words",
-            "question": "12. In paragraph 2, in the sentence 'As rainwater seeps into porous stone blocks, they expand and develop cracks', what does 'they' refer to?",
-            "options": [
-              "Porous stone blocks",
-              "Rainwater droplets",
-              "Visiting tourists",
-              "Modern conservationists"
-            ],
-            "answer": 0,
-            "explanation": "'They' refers back to the plural noun phrase 'porous stone blocks'."
-          },
-          {
-            "id": 13,
-            "tag": "Reference Words",
-            "question": "13. In paragraph 3, what does 'this non-invasive method' refer to?",
-            "options": [
-              "3D digital laser scanning and thermal imaging",
-              "Drilling holes with heavy diamond drill bits",
-              "Carving new signatures onto ancient sandstone lintels",
-              "Covering the monuments with concrete plaster"
-            ],
-            "answer": 0,
-            "explanation": "'This non-invasive method' refers to optical laser scanning that analyzes stone without physical damage."
-          },
-          {
-            "id": 14,
-            "tag": "Strategy 3 (Exam Technique)",
-            "question": "14. When encountering an unfamiliar word in a reading test, what should an active reader examine first?",
-            "options": [
-              "Surrounding punctuation, synonyms, antonyms, and explanatory clauses nearby",
-              "The last question on the test to see if the word appears there",
-              "The ceiling of the examination room for inspiration",
-              "The spelling of the word backwards to guess its origin"
-            ],
-            "answer": 0,
-            "explanation": "Context clues (definition, synonym, antonym, example) in surrounding sentences provide meaning."
-          },
-          {
-            "id": 15,
-            "tag": "Strategy 3 (Antonym Signal Recognition)",
-            "question": "15. Which of the following words regularly signals an antonym or contrast clue?",
-            "options": [
-              "'In contrast', 'unlike', or 'whereas'",
-              "'Furthermore' and 'moreover'",
-              "'For example' and 'instance'",
-              "'Consequently' and 'as a result'"
-            ],
-            "answer": 0,
-            "explanation": "Words like 'in contrast', 'unlike', and 'whereas' explicitly signal opposing antonymous concepts."
-          },
-          {
-            "id": 16,
-            "tag": "Sentence Meaning",
-            "question": "16. What does the sentence 'Community stewardship transforms passive observers into active guardians of antiquity' imply?",
-            "options": [
-              "Local residents take personal pride and active responsibility for protecting their historic sites",
-              "Tourists are forced to guard temple gates without receiving food",
-              "Local citizens should not be allowed to enter historical parks",
-              "Antiquity can only be protected by armed security personnel"
-            ],
-            "answer": 0,
-            "explanation": "Community stewardship empowers residents to actively care for and preserve cultural treasures."
-          },
-          {
-            "id": 17,
-            "tag": "Inference Skill",
-            "question": "17. Why is non-invasive laser mapping preferable to physical stone sampling in historical preservation?",
-            "options": [
-              "It captures structural measurements without breaking or scratching fragile ancient artwork",
-              "It makes the sandstone glow in bright rainbow colors for tourists",
-              "It destroys old stone blocks so new ones can be installed",
-              "It is ten times heavier than traditional measuring equipment"
-            ],
-            "answer": 0,
-            "explanation": "Non-invasive laser technology records millimeter-precise data without touching or wearing away artwork."
-          },
-          {
-            "id": 18,
-            "tag": "Author's Tone",
-            "question": "18. What is the author's attitude toward preserving ancient architecture in Southern Isan?",
-            "options": [
-              "Appreciative, respectful, and strongly supportive of scientific conservation",
-              "Critical and dismissive of traditional art forms",
-              "Indifferent and uninterested in regional history",
-              "Angry that modern technology is being utilized"
-            ],
-            "answer": 0,
-            "explanation": "The author expresses deep appreciation for cultural heritage and advocates scientific preservation."
-          },
-          {
-            "id": 19,
-            "tag": "Paraphrasing Skill",
-            "question": "19. Which sentence best paraphrases: 'Sustainable heritage tourism generates vital local revenue while safeguarding priceless historical assets'?",
-            "options": [
-              "Responsible cultural tourism boosts the local economy and protects irreplaceable historical monuments.",
-              "Tourists should pay higher fees so that temples can be turned into luxury hotels.",
-              "Historical assets are too costly to maintain and should be closed to travelers.",
-              "Revenue from tourism should only be spent on building new modern statues."
-            ],
-            "answer": 0,
-            "explanation": "Option A captures both the economic benefit and the protective preservation aspect accurately."
-          },
-          {
-            "id": 20,
-            "tag": "Metacognitive Skill",
-            "question": "20. How does understanding context clues empower second-language English readers?",
-            "options": [
-              "It allows readers to infer meanings independently without constantly halting their reading to consult a dictionary",
-              "It guarantees that readers will never make a grammatical mistake in conversation",
-              "It removes the necessity of learning English vocabulary words in school",
-              "It enables readers to memorize entire textbooks in a single day"
-            ],
-            "answer": 0,
-            "explanation": "Context clue skills foster autonomous reading fluency by enabling in-flight comprehension of unfamiliar terms."
-          }
-        ]
+            {
+            "id": "q3",
+            "code": "QUIZ 03",
+            "title": "Unit 3: Vocabulary in Context + Strategy 3: Using Context Clues",
+            "thaiTitle": "แบบทดสอบรวม: Unit 3 (คำศัพท์ในบริบทและความหมายของประโยค) + Strategy 3 (การใช้คำศัพท์ในบริบท)",
+            "unitRef": "Unit 3: Vocabulary in Context & Sentence Meaning",
+            "strategyRef": "Strategy 3: Using Context Clues",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "The Community Repair Café: Giving Old Things a New Life",
+                  "text": "In many modern cities, people throw away broken household items as soon as they stop working. This throwaway culture creates tons of electronic waste and wastes precious natural resources. To fight this problem, a group of handy volunteers in Sunnyvale opened a \"Community Repair Café\" inside the neighborhood community hall. A repair café is a free meeting place where people bring malfunctioning items—such as noisy electric fans, torn jackets, broken clocks, and quiet radios—to fix them together with skilled local helpers.\n\nVisiting the repair café is an educational and enjoyable experience. Instead of dropping off a broken appliance and leaving, visitors sit beside knowledgeable volunteers and observe each repair step. For instance, a retired electrician named Uncle Bob patiently demonstrates how to replace frayed power cords and clean dusty motor switches. Visitors learn that many small repairs are quite simple and do not require expensive replacement parts. While waiting for their turn, neighbors enjoy warm tea, share homemade cookies, and chat with friends in a welcoming atmosphere.\n\nOver the past year, the repair café has achieved remarkable success. Volunteer helpers successfully restored over 400 broken items, keeping more than two tons of metal, plastic, and fabric out of local landfills. In addition, families saved thousands of dollars by repairing useful belongings instead of buying brand-new replacements. Most importantly, the project inspires community members to adopt sustainable habits and appreciate the true value of their possessions.",
+                  "audioText": "In many modern cities, people throw away broken household items as soon as they stop working. This throwaway culture creates tons of electronic waste and wastes precious natural resources. To fight this problem, a group of handy volunteers in Sunnyvale opened a Community Repair Café inside the neighborhood community hall. A repair café is a free meeting place where people bring malfunctioning items—such as noisy electric fans, torn jackets, broken clocks, and quiet radios—to fix them together with skilled local helpers. Visiting the repair café is an educational and enjoyable experience. Instead of dropping off a broken appliance and leaving, visitors sit beside knowledgeable volunteers and observe each repair step. For instance, a retired electrician named Uncle Bob patiently demonstrates how to replace frayed power cords and clean dusty motor switches. Visitors learn that many small repairs are quite simple and do not require expensive replacement parts. While waiting for their turn, neighbors enjoy warm tea, share homemade cookies, and chat with friends in a welcoming atmosphere. Over the past year, the repair café has achieved remarkable success. Volunteer helpers successfully restored over 400 broken items, keeping more than two tons of metal, plastic, and fabric out of local landfills. In addition, families saved thousands of dollars by repairing useful belongings instead of buying brand-new replacements. Most importantly, the project inspires community members to adopt sustainable habits and appreciate the true value of their possessions."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 3 (Definition Clue)",
+                        "question": "1. In paragraph 1, what is the definition of a 'repair café' as directly explained in the text?",
+                        "options": [
+                              "A free meeting place where people bring broken household items to fix them together with skilled local helpers",
+                              "A commercial restaurant that sells expensive vintage clocks and radios",
+                              "A large city factory that builds new electrical motors for export",
+                              "A private club where professional mechanics buy and sell used tools"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 provides a direct definition clue: 'A repair café is a free meeting place where people bring malfunctioning items... to fix them together with skilled local helpers.'"
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Strategy 3 (Example Clue)",
+                        "question": "2. What clue in paragraph 1 helps the reader understand the meaning of 'malfunctioning items'?",
+                        "options": [
+                              "The examples listed between dashes: noisy electric fans, torn jackets, broken clocks, and quiet radios",
+                              "The mention of modern cities with busy street traffic",
+                              "The description of hot tea and cookies served on tables",
+                              "The phrase 'precious natural resources' at the beginning of the sentence"
+                        ],
+                        "answer": 0,
+                        "explanation": "Example context clues ('such as noisy electric fans, torn jackets, broken clocks...') clearly illustrate what kind of items are malfunctioning (broken or not working properly)."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Vocabulary in Context (malfunctioning)",
+                        "question": "3. Based on context clues, what does the word 'malfunctioning' mean in paragraph 1?",
+                        "options": [
+                              "Broken, damaged, or not working properly",
+                              "Brand-new and freshly purchased from a store",
+                              "Extremely expensive and made of solid gold",
+                              "Very clean and neatly painted in bright colors"
+                        ],
+                        "answer": 0,
+                        "explanation": "The prefix 'mal-' (bad) and context examples of broken clocks and quiet radios show 'malfunctioning' means not operating correctly."
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Vocabulary in Context (appliance)",
+                        "question": "4. In paragraph 2, what does the word 'appliance' mean in 'dropping off a broken appliance'?",
+                        "options": [
+                              "A household electrical machine designed to perform a specific task, like a fan or toaster",
+                              "A heavy wooden dining table or comfortable bedroom sofa",
+                              "A pair of leather boots worn during rainy weather",
+                              "A paper book containing short mystery stories"
+                        ],
+                        "answer": 0,
+                        "explanation": "In context, appliance refers to electrical household equipment like the fans, radios, and motor switches discussed."
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Strategy 3 (Synonym Clue)",
+                        "question": "5. Which word in paragraph 3 serves as a synonym clue for 'fixed' or 'repaired'?",
+                        "options": [
+                              "Restored",
+                              "Created",
+                              "Landfills",
+                              "Discarded"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Restored' in 'successfully restored over 400 broken items' means repaired and brought back to working condition."
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Strategy 3 (Antonym Clue)",
+                        "question": "6. In paragraph 3, the phrase 'repairing useful belongings' is contrasted with which opposite action?",
+                        "options": [
+                              "Buying brand-new replacements",
+                              "Drinking warm tea with neighbors",
+                              "Sharing homemade cookies",
+                              "Waiting patiently for your turn"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text contrasts 'repairing useful belongings' with 'buying brand-new replacements' as two opposing choices."
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Unit 3 (General Sense of Passage)",
+                        "question": "7. What does the term 'throwaway culture' mean as used in paragraph 1?",
+                        "options": [
+                              "A social habit of discarding usable things quickly instead of fixing them",
+                              "A traditional sports game where players throw balls across a field",
+                              "A cooking festival where people bake sweet fruit pies",
+                              "A gardening method of planting flower seeds in autumn"
+                        ],
+                        "answer": 0,
+                        "explanation": "The general sense of the opening sentences shows 'throwaway culture' refers to the wasteful habit of tossing out items as soon as they have small problems."
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Scanning for Numbers",
+                        "question": "8. How many broken items did volunteer helpers successfully restore over the past year?",
+                        "options": [
+                              "Over 400 broken items",
+                              "Exactly 50 items",
+                              "Only 10 items",
+                              "Over 5,000 items"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning paragraph 3 for numbers quickly locates: 'successfully restored over 400 broken items.'"
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Scanning for Weight Figure",
+                        "question": "9. How much waste was prevented from entering local landfills because of the repair café?",
+                        "options": [
+                              "More than two tons of metal, plastic, and fabric",
+                              "Less than five kilograms of paper",
+                              "Exactly one hundred grams of wood",
+                              "Ten pounds of glass bottles"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 explicitly states: 'keeping more than two tons of metal, plastic, and fabric out of local landfills.'"
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Vocabulary in Context (frayed)",
+                        "question": "10. In paragraph 2, what does 'frayed' mean in 'replace frayed power cords'?",
+                        "options": [
+                              "Worn out, unraveled, or damaged along the edges",
+                              "Completely painted with shiny gold color",
+                              "Brand-new and sealed in waterproof plastic",
+                              "Extremely short and frozen into ice"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Frayed' refers to cloth or wire insulation that has become worn, torn, or unraveled through heavy use."
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Reference Words (their)",
+                        "question": "11. In paragraph 2, what does the pronoun 'their' refer to in 'While waiting for their turn'?",
+                        "options": [
+                              "The neighborhood visitors with broken items",
+                              "The electric fans on the workshop table",
+                              "The dusty motor switches in the drawer",
+                              "The power cords plugged into the wall"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Their' refers to the community visitors who brought items and are waiting for their repair session."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Reference Words (this problem)",
+                        "question": "12. In paragraph 1, what does 'this problem' refer to?",
+                        "options": [
+                              "Throwing away broken items and creating tons of electronic waste",
+                              "The lack of hot tea and cookies in community halls",
+                              "Having too many retired electricians in the neighborhood",
+                              "Repairing torn jackets during winter months"
+                        ],
+                        "answer": 0,
+                        "explanation": "'This problem' refers to the throwaway culture and electronic waste described in the previous sentence."
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Unit 3 (Identifying Context Clue Types)",
+                        "question": "13. The phrase 'such as noisy electric fans, torn jackets, broken clocks' is an example of which context clue type?",
+                        "options": [
+                              "Example clue (illustrations of the target term)",
+                              "Antonym clue (opposite meaning of the word)",
+                              "Punctuation quotation clue",
+                              "Statistical chart clue"
+                        ],
+                        "answer": 0,
+                        "explanation": "Signal words like 'such as', 'for example', and 'for instance' introduce example context clues."
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Unit 3 (Word Morphology Clue)",
+                        "question": "14. What does the prefix 're-' mean in words like 'repair', 'replace', and 'restore'?",
+                        "options": [
+                              "Again or back to an original state",
+                              "Never or completely impossible",
+                              "Beneath or deep underground",
+                              "Very fast or dangerous"
+                        ],
+                        "answer": 0,
+                        "explanation": "The prefix 're-' generally means 'again' or 'back', as in restoring something back to its working condition."
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Inference Skill",
+                        "question": "15. What can the reader infer about why visitors sit beside volunteers instead of dropping off items?",
+                        "options": [
+                              "The café wants people to learn practical repair skills so they can fix things themselves in the future",
+                              "The volunteers do not know how to fix things without someone watching them",
+                              "The community hall does not have any storage shelves for boxes",
+                              "Visitors are forced to guard their items from other neighbors"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 states 'Visiting the repair café is an educational... experience', inferring that watching volunteers teaches valuable self-reliance."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Cause and Effect Analysis",
+                        "question": "16. According to paragraph 3, what was a direct financial effect of the repair café for local families?",
+                        "options": [
+                              "Families saved thousands of dollars by repairing belongings instead of buying new ones",
+                              "Families had to pay high membership fees to the town council",
+                              "Families spent more money buying replacement tools",
+                              "Families lost their savings because of expensive spare parts"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 explicitly notes: 'families saved thousands of dollars by repairing useful belongings instead of buying brand-new replacements.'"
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Fact vs Opinion",
+                        "question": "17. Which statement from the passage is an objective, verifiable fact?",
+                        "options": [
+                              "Volunteer helpers successfully restored over 400 broken items over the past year",
+                              "Repairing clocks is the most entertaining hobby in the world",
+                              "Homemade cookies always taste better than bakery cookies",
+                              "Uncle Bob is the friendliest person in Sunnyvale"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Volunteer helpers successfully restored over 400 broken items' is a measurable, recorded fact."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Strategy 3 (Vocabulary Verification)",
+                        "question": "18. In paragraph 3, what does 'sustainable habits' mean in the context of eco-friendly community living?",
+                        "options": [
+                              "Habits that protect the environment and reduce waste for a healthier future",
+                              "Shopping for new plastic toys every weekend",
+                              "Throwing all household trash into rivers",
+                              "Driving cars without wearing seatbelts"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Sustainable habits' refers to responsible actions like repairing, reusing, and conserving resources to protect nature."
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Author's Tone and Attitude",
+                        "question": "19. What is the author's tone toward the Community Repair Café initiative?",
+                        "options": [
+                              "Enthusiastic and supportive of community collaboration and environmental care",
+                              "Critical and angry about community hall noise",
+                              "Bored and completely uninterested in neighborhood projects",
+                              "Suspicious and worried about electrical safety"
+                        ],
+                        "answer": 0,
+                        "explanation": "The author uses positive, appreciative language ('educational', 'remarkable success', 'welcoming atmosphere', 'inspires community members')."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Comprehensive Summary",
+                        "question": "20. Which sentence provides the best summary of the entire reading passage?",
+                        "options": [
+                              "The Community Repair Café brings neighbors and volunteers together to fix broken items, reducing landfill waste and saving money",
+                              "Electric fans and radios always stop working if they are not cleaned every week",
+                              "Uncle Bob worked for forty years as a professional electrician in Sunnyvale",
+                              "Modern cities should ban people from drinking sweet tea in community halls"
+                        ],
+                        "answer": 0,
+                        "explanation": "This sentence synthesizes the whole passage: the community repair café concept, volunteer collaboration, waste reduction, and financial savings."
+                  }
+            ]
       },
       {
-        "id": "q4",
-        "code": "QUIZ 04",
-        "title": "Unit 4: References & Connectives + Strategy 4: Identifying Text Organization",
-        "thaiTitle": "แบบทดสอบรวม: Unit 4 (คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ) + Strategy 4 (การระบุโครงสร้างข้อความ)",
-        "unitRef": "Unit 4: References, Connectives & Text Organization",
-        "strategyRef": "Strategy 4: Identifying Text Organization",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "Digital Literacy versus Traditional Learning in Modern Education",
-          "text": "Educational paradigms are undergoing a profound transformation as secondary institutions shift from conventional teacher-centered lectures toward blended digital learning environments. In traditional classrooms, students often sit as passive listeners while teachers deliver lectures from chalkboards; consequently, learners rarely develop robust debate or independent research abilities. In contrast, blended learning environments require students to take active ownership of their learning journey through self-directed study and collaborative discovery.\n\nIn this innovative instructional model, students review multimedia lecture modules and interactive digital quizzes independently prior to in-person class sessions. Consequently, classroom time is repurposed from passive listening into dynamic collaborative problem-solving, structured debates, and hands-on projects. Although some learners initially struggle with self-paced discipline, they ultimately develop critical analytical skills and self-regulation that traditional rote learning rarely fosters.\n\nFurthermore, modern workplaces demand autonomous problem-solvers who can synthesize digital information rapidly. By balancing independent digital preparation with peer collaboration, blended education provides a compelling blueprint for twenty-first-century intellectual growth.",
-          "audioText": "Educational paradigms are undergoing a profound transformation as secondary institutions shift from conventional teacher-centered lectures toward blended digital learning environments. In traditional classrooms, students often sit as passive listeners while teachers deliver lectures from chalkboards; consequently, learners rarely develop robust debate or independent research abilities. In contrast, blended learning environments require students to take active ownership of their learning journey through self-directed study and collaborative discovery. In this innovative instructional model, students review multimedia lecture modules and interactive digital quizzes independently prior to in-person class sessions. Consequently, classroom time is repurposed from passive listening into dynamic collaborative problem-solving, structured debates, and hands-on projects. Although some learners initially struggle with self-paced discipline, they ultimately develop critical analytical skills and self-regulation that traditional rote learning rarely fosters. Furthermore, modern workplaces demand autonomous problem-solvers who can synthesize digital information rapidly. By balancing independent digital preparation with peer collaboration, blended education provides a compelling blueprint for twenty-first-century intellectual growth."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Unit 4 (Main Idea)",
-            "question": "1. What is the central thesis of the passage comparing digital learning and traditional instruction?",
-            "options": [
-              "Blended digital learning fosters active critical thinking and collaboration, contrasting sharply with passive traditional lectures",
-              "Traditional lectures are completely superior to any electronic learning system ever created",
-              "Students should never attend in-person classes or speak with instructors",
-              "Computers will cause students to lose all reading and writing abilities"
-            ],
-            "answer": 0,
-            "explanation": "The passage demonstrates how blended digital learning encourages active engagement compared to passive lectures."
-          },
-          {
-            "id": 2,
-            "tag": "Strategy 4 (Text Structure Pattern)",
-            "question": "2. What is the predominant organizational structure used across the entire passage?",
-            "options": [
-              "Compare and Contrast",
-              "Chronological Timeline",
-              "Spatial / Geographical Order",
-              "Simple Categorical Listing"
-            ],
-            "answer": 0,
-            "explanation": "The passage systematically juxtaposes traditional lecture-based schooling with digital blended education."
-          },
-          {
-            "id": 3,
-            "tag": "Unit 4 (Pronoun Reference)",
-            "question": "3. In paragraph 1, in the clause 'students passively absorb information; consequently, they rarely develop debate skills', what does 'they' refer to?",
-            "options": [
-              "Students in passive lecture classes",
-              "The classroom chalkboards",
-              "The authors of textbooks",
-              "School administrative staff"
-            ],
-            "answer": 0,
-            "explanation": "'They' refers to the antecedent noun 'students' who sit in passive lecture settings."
-          },
-          {
-            "id": 4,
-            "tag": "Unit 4 (Demonstrative Reference)",
-            "question": "4. In paragraph 2, what does 'this innovative instructional model' refer to?",
-            "options": [
-              "The blended flipped-classroom approach where prep is done online before interactive in-person debate",
-              "Traditional rote memorization of printed encyclopedias",
-              "Canceling all educational assessments permanently",
-              "Using slide projectors in dark auditoriums"
-            ],
-            "answer": 0,
-            "explanation": "'This innovative model' points back to the flipped blended classroom described immediately prior."
-          },
-          {
-            "id": 5,
-            "tag": "Unit 4 (Relative Pronoun Reference)",
-            "question": "5. In the sentence 'digital modules, which provide adaptive practice quizzes, allow self-paced study', what does 'which' refer to?",
-            "options": [
-              "Digital modules",
-              "Classroom desks",
-              "Final course grades",
-              "The library building"
-            ],
-            "answer": 0,
-            "explanation": "The relative pronoun 'which' introduces a non-restrictive clause modifying 'digital modules'."
-          },
-          {
-            "id": 6,
-            "tag": "Unit 4 (Connective of Contrast)",
-            "question": "6. Which transitional word in paragraph 1 signals a shift from traditional lectures to digital learning?",
-            "options": [
-              "'In contrast' or 'Conversely'",
-              "'Similarly'",
-              "'Furthermore'",
-              "'For example'"
-            ],
-            "answer": 0,
-            "explanation": "Transitions like 'In contrast' and 'Conversely' indicate a clear pivot between opposing ideas."
-          },
-          {
-            "id": 7,
-            "tag": "Unit 4 (Connective of Cause-Effect)",
-            "question": "7. Which transition word signals the outcome in 'Consequently, in-person class time is dedicated to collaborative problem-solving'?",
-            "options": [
-              "'Consequently'",
-              "'Before'",
-              "'Meanwhile'",
-              "'Whereas'"
-            ],
-            "answer": 0,
-            "explanation": "'Consequently' explicitly establishes a cause-and-effect relationship."
-          },
-          {
-            "id": 8,
-            "tag": "Unit 4 (Connective of Addition)",
-            "question": "8. Which connective would an author use to add another supporting advantage of online learning modules?",
-            "options": [
-              "'Furthermore' or 'Moreover'",
-              "'However'",
-              "'On the contrary'",
-              "'Despite this'"
-            ],
-            "answer": 0,
-            "explanation": "'Furthermore' and 'Moreover' add complementary supporting points to an established argument."
-          },
-          {
-            "id": 9,
-            "tag": "Strategy 4 (Paragraph Organization)",
-            "question": "9. How is paragraph 2 organized internally?",
-            "options": [
-              "Sequential process: explaining what students do before class, during class, and after class",
-              "Alphabetical listing of computer programming languages",
-              "Historical narrative dating back to ancient Roman schools",
-              "Fictional dialogue between two animated characters"
-            ],
-            "answer": 0,
-            "explanation": "Paragraph 2 follows a sequential workflow: pre-class video prep, in-class collaboration, post-class review."
-          },
-          {
-            "id": 10,
-            "tag": "Scanning for In-Class Activity",
-            "question": "10. What specific activity replaces passive listening during in-person flipped sessions?",
-            "options": [
-              "Collaborative problem-solving and rigorous structured debates",
-              "Silent copying of entire textbook pages into notebooks",
-              "Individual naps under classroom desks",
-              "Watching entertainment movies without discussion"
-            ],
-            "answer": 0,
-            "explanation": "Scanning paragraph 2 reveals in-person time is dedicated to collaborative problem-solving and debate."
-          },
-          {
-            "id": 11,
-            "tag": "Vocabulary in Context",
-            "question": "11. What does the word 'autonomous' mean in the phrase 'demand autonomous engagement'?",
-            "options": [
-              "Self-directed, independent, and taking personal initiative",
-              "Constantly directed and controlled by an external supervisor",
-              "Automated by robotic assembly lines",
-              "Completely unwilling to communicate with peers"
-            ],
-            "answer": 0,
-            "explanation": "'Autonomous' means having independence and the freedom to govern one's own learning."
-          },
-          {
-            "id": 12,
-            "tag": "Vocabulary in Context",
-            "question": "12. In paragraph 2, what does 'collaborative' mean in 'collaborative group projects'?",
-            "options": [
-              "Produced by people working together cooperatively toward a shared goal",
-              "Done completely alone in total isolation from others",
-              "Competitive and designed to eliminate classmates",
-              "Expensive and requiring private foreign financing"
-            ],
-            "answer": 0,
-            "explanation": "'Collaborative' signifies cooperative teamwork where participants combine ideas and efforts."
-          },
-          {
-            "id": 13,
-            "tag": "Vocabulary in Context",
-            "question": "13. What is the meaning of 'rote learning' as used in contrast to critical thinking?",
-            "options": [
-              "Mechanical memorization of facts based on repetition without deeper understanding",
-              "Advanced scientific research conducted in specialized laboratories",
-              "Learning how to assemble computer hardware components",
-              "Outdoor athletic exercise designed to build muscle endurance"
-            ],
-            "answer": 0,
-            "explanation": "'Rote learning' refers to memorizing information through mechanical repetition without understanding meaning."
-          },
-          {
-            "id": 14,
-            "tag": "Strategy 4 (Importance of Connectives)",
-            "question": "14. Why is tracking transitional connectives crucial for reading comprehension?",
-            "options": [
-              "Connectives show the logical roadmap of ideas—whether the author is comparing, contrasting, adding, or concluding",
-              "Connectives are the only words on an exam that carry vocabulary points",
-              "Connectives tell the reader which font size the printer selected",
-              "Connectives allow readers to ignore all nouns and verbs in a paragraph"
-            ],
-            "answer": 0,
-            "explanation": "Connectives act as navigational signposts that reveal how logical arguments are linked together."
-          },
-          {
-            "id": 15,
-            "tag": "Unit 4 (Problem-Solution Pattern)",
-            "question": "15. What initial challenge do some learners face in digital learning, and what is the resulting benefit?",
-            "options": [
-              "They struggle initially with self-paced discipline, but ultimately develop superior self-regulation and critical thinking",
-              "Their computer screens explode, so they return to stone tablets",
-              "They forget how to speak English, so they learn sign language",
-              "They cannot find internet access, so they leave school permanently"
-            ],
-            "answer": 0,
-            "explanation": "Paragraph 3 notes initial struggles with time management turn into robust self-directed discipline."
-          },
-          {
-            "id": 16,
-            "tag": "Unit 4 (Signal Word Classification)",
-            "question": "16. Which group of transition words exclusively indicates sequence or chronological order?",
-            "options": [
-              "'First', 'subsequently', 'meanwhile', 'finally'",
-              "'Although', 'nevertheless', 'whereas', 'however'",
-              "'Because', 'therefore', 'consequently', 'as a result'",
-              "'In contrast', 'conversely', 'on the other hand'"
-            ],
-            "answer": 0,
-            "explanation": "'First', 'subsequently', 'meanwhile', and 'finally' are temporal markers indicating sequence."
-          },
-          {
-            "id": 17,
-            "tag": "Inference Skill",
-            "question": "17. Why does blended learning better prepare students for modern professional careers than rote lectures?",
-            "options": [
-              "Modern workplaces require autonomous research, problem-solving, and collaborative team communication",
-              "Traditional offices only hire employees who can memorize phone books",
-              "Digital learning guarantees that no employee will ever have a supervisor",
-              "Paper notebooks are completely illegal in international business"
-            ],
-            "answer": 0,
-            "explanation": "Blended learning mirrors real-world workplace dynamics where teamwork and analytical agility are paramount."
-          },
-          {
-            "id": 18,
-            "tag": "Strategy 4 (Graphic Organizers)",
-            "question": "18. Which visual graphic organizer would best represent the content of this reading passage?",
-            "options": [
-              "A Venn Diagram comparing similarities and differences between two learning models",
-              "A family tree showing royal ancestry across five generations",
-              "A pie chart displaying agricultural crop exports",
-              "A map of mountain hiking trails in northern Thailand"
-            ],
-            "answer": 0,
-            "explanation": "A Venn diagram or two-column comparison matrix is the ideal organizer for compare-and-contrast texts."
-          },
-          {
-            "id": 19,
-            "tag": "Reference Word Disambiguation",
-            "question": "19. If a sentence contains two plural nouns ('educators' and 'students'), how does an active reader identify which one 'they' refers to?",
-            "options": [
-              "By analyzing the verb action and grammatical role to see who logically performs the action",
-              "By always choosing the word that has more letters",
-              "By assuming the pronoun always refers to the very first word in the book",
-              "By flipping a coin during the reading test"
-            ],
-            "answer": 0,
-            "explanation": "Contextual meaning and grammatical parallelism determine which antecedent logically performs the action."
-          },
-          {
-            "id": 20,
-            "tag": "Summary Synthesis",
-            "question": "20. Which sentence provides the most accurate synthesis of the entire text?",
-            "options": [
-              "While traditional lectures emphasize passive listening, blended digital education fosters autonomy, collaboration, and deeper analytical competencies through active engagement.",
-              "Digital education is too difficult for ordinary students and should be banned in schools.",
-              "Traditional lectures produce identical learning outcomes to modern computer classrooms in all subjects.",
-              "All classroom teachers should be replaced by automated television broadcasts."
-            ],
-            "answer": 0,
-            "explanation": "Option A synthesizes both educational paradigms and captures the overarching thesis accurately."
-          }
-        ]
+            "id": "q4",
+            "code": "QUIZ 04",
+            "title": "Unit 4: References & Connectives + Strategy 4: Identifying Text Organization",
+            "thaiTitle": "แบบทดสอบรวม: Unit 4 (คำอ้างอิง คำเชื่อม และโครงสร้างข้อความ) + Strategy 4 (การระบุโครงสร้างข้อความ)",
+            "unitRef": "Unit 4: References, Connectives & Text Organization",
+            "strategyRef": "Strategy 4: Identifying Text Organization",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "Bicycles versus Electric Scooters: Choosing Green Transport in Our Town",
+                  "text": "As traffic congestion and air pollution grow in urban areas, many city residents are searching for eco-friendly ways to travel short distances. Among the most popular zero-emission options are traditional bicycles and modern electric scooters. While both vehicles offer clean alternatives to heavy gasoline cars, they differ significantly in terms of physical exercise, cost, and convenience.\n\nOn the one hand, traditional bicycles provide outstanding health benefits. Riding a bicycle every morning gives riders a vigorous cardiovascular workout that strengthens heart muscles, burns calories, and reduces daily stress. In addition, pedal bicycles require very little ongoing maintenance and zero electricity to operate. On the other hand, electric scooters offer superior convenience for commuters wearing formal work clothes. Because scooters are powered by small rechargeable lithium batteries, riders do not sweat during hot afternoons. Furthermore, lightweight folding scooters can easily be carried onto public buses or stored under office desks.\n\nDespite these distinct differences, both transportation modes contribute greatly to a cleaner, quieter community. Consequently, local town planners are expanding protected bike lanes and adding shared charging stations along main streets. By choosing two-wheeled green transport over passenger cars, town residents not only save money on fuel but also help build a healthier, more livable city.",
+                  "audioText": "As traffic congestion and air pollution grow in urban areas, many city residents are searching for eco-friendly ways to travel short distances. Among the most popular zero-emission options are traditional bicycles and modern electric scooters. While both vehicles offer clean alternatives to heavy gasoline cars, they differ significantly in terms of physical exercise, cost, and convenience. On the one hand, traditional bicycles provide outstanding health benefits. Riding a bicycle every morning gives riders a vigorous cardiovascular workout that strengthens heart muscles, burns calories, and reduces daily stress. In addition, pedal bicycles require very little ongoing maintenance and zero electricity to operate. On the other hand, electric scooters offer superior convenience for commuters wearing formal work clothes. Because scooters are powered by small rechargeable lithium batteries, riders do not sweat during hot afternoons. Furthermore, lightweight folding scooters can easily be carried onto public buses or stored under office desks. Despite these distinct differences, both transportation modes contribute greatly to a cleaner, quieter community. Consequently, local town planners are expanding protected bike lanes and adding shared charging stations along main streets. By choosing two-wheeled green transport over passenger cars, town residents not only save money on fuel but also help build a healthier, more livable city."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 4 (Overall Text Pattern)",
+                        "question": "1. What primary organizational pattern is used to structure this reading passage?",
+                        "options": [
+                              "Comparison and Contrast (comparing the benefits and differences of bicycles and electric scooters)",
+                              "Chronological time order of ancient transportation inventions",
+                              "Step-by-step technical instructions on how to assemble an electric motor",
+                              "A fictional adventure story about traveling to outer space"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text systematically compares and contrasts traditional bicycles with electric scooters (benefits, differences, similarities)."
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Unit 4 (Transition Signal for Contrast)",
+                        "question": "2. Which connective phrase in paragraph 2 signals a shift to examine the contrasting features of electric scooters?",
+                        "options": [
+                              "On the other hand",
+                              "For example",
+                              "First of all",
+                              "In conclusion"
+                        ],
+                        "answer": 0,
+                        "explanation": "'On the other hand' is paired with 'On the one hand' to introduce contrasting points between bicycles and scooters."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Unit 4 (Connective of Cause and Effect)",
+                        "question": "3. Which transition word in paragraph 3 indicates a result or consequence of the growing popularity of green transport?",
+                        "options": [
+                              "Consequently",
+                              "Although",
+                              "Meanwhile",
+                              "Unless"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Consequently' signals cause-and-effect, introducing the town planners' decision to expand protected bike lanes."
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Unit 4 (Addition Connective)",
+                        "question": "4. In paragraph 2, which word is used to add another supporting detail about electric scooters?",
+                        "options": [
+                              "Furthermore",
+                              "However",
+                              "Instead",
+                              "Otherwise"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Furthermore' is an additive connective used to provide an additional point (foldable scooters can be carried onto buses)."
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Reference Words (they)",
+                        "question": "5. In paragraph 1, what does the pronoun 'they' refer to in 'they differ significantly in terms of physical exercise'?",
+                        "options": [
+                              "Traditional bicycles and modern electric scooters",
+                              "Heavy gasoline cars on the highway",
+                              "Air pollution and traffic congestion",
+                              "City residents walking on sidewalks"
+                        ],
+                        "answer": 0,
+                        "explanation": "'They' refers back to the two vehicles introduced in the previous sentence: traditional bicycles and modern electric scooters."
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Reference Words (these distinct differences)",
+                        "question": "6. In paragraph 3, what does the phrase 'these distinct differences' refer to?",
+                        "options": [
+                              "The contrasting features of exercise, cost, and convenience between bikes and scooters",
+                              "The different colors of gasoline cars parked along city streets",
+                              "The different types of trees planted in neighborhood parks",
+                              "The prices of bus tickets in neighboring towns"
+                        ],
+                        "answer": 0,
+                        "explanation": "'These distinct differences' summarizes the comparative details discussed throughout paragraph 2."
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Scanning for Specific Details",
+                        "question": "7. What powers modern electric scooters according to paragraph 2?",
+                        "options": [
+                              "Small rechargeable lithium batteries",
+                              "Large gasoline fuel tanks",
+                              "Pedal chains connected to metal gears",
+                              "Windmills mounted on the handlebars"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 states: 'Because scooters are powered by small rechargeable lithium batteries...'"
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Scanning for Specific Details",
+                        "question": "8. What major physical health benefit of riding traditional bicycles is highlighted in paragraph 2?",
+                        "options": [
+                              "A vigorous cardiovascular workout that strengthens heart muscles and burns calories",
+                              "Instant weight gain without any physical effort",
+                              "Decreased oxygen flow to the brain",
+                              "Complete rest for arm and leg muscles"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 explicitly mentions: 'gives riders a vigorous cardiovascular workout that strengthens heart muscles, burns calories, and reduces daily stress.'"
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Vocabulary in Context (congestion)",
+                        "question": "9. In paragraph 1, what does 'traffic congestion' mean?",
+                        "options": [
+                              "A crowded condition where roads are clogged with too many slow-moving vehicles",
+                              "Empty highways with zero cars during the middle of the night",
+                              "A parade of colorful festival floats celebrating a holiday",
+                              "A closed road covered with deep ocean water"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Traffic congestion' refers to heavy traffic jams where vehicle movement is slow or blocked."
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Vocabulary in Context (eco-friendly)",
+                        "question": "10. In paragraph 1, what does the compound word 'eco-friendly' mean?",
+                        "options": [
+                              "Not harmful to the natural environment",
+                              "Extremely loud and frightening to animals",
+                              "Made exclusively from heavy iron metal",
+                              "Costing a large amount of money to maintain"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Eco-friendly' means environmentally safe and causing minimal or no damage to nature."
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Strategy 4 (Paragraph Organization Analysis)",
+                        "question": "11. How is paragraph 2 organized internally?",
+                        "options": [
+                              "Point-by-point comparison (examining bicycle advantages first, then contrasting scooter advantages)",
+                              "A personal diary entry written by a scooter repair mechanic",
+                              "A chronological history of bicycle models from 1850 to 1900",
+                              "A series of mathematical equations calculating travel speed"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 uses a clear comparative structure: bicycles' health benefits and low maintenance, followed by scooters' convenience and portability."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Unit 4 (Connective of Concession)",
+                        "question": "12. Which word in paragraph 1 signals that two ideas exist together despite an apparent contrast?",
+                        "options": [
+                              "While",
+                              "Because",
+                              "Therefore",
+                              "Since"
+                        ],
+                        "answer": 0,
+                        "explanation": "'While' in 'While both vehicles offer clean alternatives... they differ significantly' functions as a concession connective."
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Inference Skill",
+                        "question": "13. Why might an office worker in a business suit prefer an electric scooter over a traditional bicycle?",
+                        "options": [
+                              "Because scooters require no pedaling, so the rider does not sweat in their formal clothing",
+                              "Because bicycles are illegal to ride on city sidewalks",
+                              "Because scooters can fly over heavy traffic jams",
+                              "Because bicycles cannot be ridden in sunny weather"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text explains: 'Because scooters are powered by small rechargeable lithium batteries, riders do not sweat during hot afternoons.'"
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Inference Skill",
+                        "question": "14. What can be inferred about the local town council's attitude toward green transportation?",
+                        "options": [
+                              "They encourage green transport by investing in protected bike lanes and charging stations",
+                              "They want to ban all two-wheeled vehicles from city roads",
+                              "They prefer gasoline cars and will remove all bike paths",
+                              "They are completely unaware of traffic congestion problems"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 notes town planners are expanding bike lanes and shared charging stations, showing strong government support."
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Unit 4 (Pronoun Reference)",
+                        "question": "15. In paragraph 2, what does the pronoun 'their' refer to in 'stored under their office desks'?",
+                        "options": [
+                              "Commuters or riders",
+                              "Public buses",
+                              "Lithium batteries",
+                              "Bicycle pedals"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Their' refers to the commuters who ride folding scooters and store them at work."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Cause and Effect Analysis",
+                        "question": "16. According to paragraph 3, what are two direct benefits for residents who switch from cars to two-wheeled green transport?",
+                        "options": [
+                              "Saving money on fuel and helping create a cleaner, more livable city",
+                              "Buying more expensive car tires and driving faster",
+                              "Spending more time stuck in traffic jams",
+                              "Paying higher vehicle road taxes"
+                        ],
+                        "answer": 0,
+                        "explanation": "The final sentence concludes: 'town residents not only save money on fuel but also help build a healthier, more livable city.'"
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Fact vs Opinion",
+                        "question": "17. Which of the following statements from the passage is an objective, verifiable fact?",
+                        "options": [
+                              "Electric scooters are powered by rechargeable lithium batteries",
+                              "Riding a bicycle is always more fun than riding a scooter",
+                              "Traditional bicycles look much more attractive than modern scooters",
+                              "Every city resident should prefer walking over riding"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Electric scooters are powered by rechargeable lithium batteries' is a verifiable technical fact."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Vocabulary in Context (maintenance)",
+                        "question": "18. In paragraph 2, what does 'maintenance' mean in 'require very little ongoing maintenance'?",
+                        "options": [
+                              "The regular work of keeping something in good working condition",
+                              "The process of painting pictures of bicycles",
+                              "The act of selling something for quick cash",
+                              "The rule of riding only on mountain roads"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Maintenance' refers to the regular servicing, checking, and repairing needed to keep machinery operating properly."
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Strategy 4 (Identifying Signal Words for Comparison)",
+                        "question": "19. Which of the following pairs of transition words are used in the text to balance two compared points?",
+                        "options": [
+                              "On the one hand ... On the other hand",
+                              "First ... Finally",
+                              "Because ... As a result",
+                              "In short ... In summary"
+                        ],
+                        "answer": 0,
+                        "explanation": "'On the one hand ... On the other hand' is the classic transitional pair for balancing two compared viewpoints or objects."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Comprehensive Summary",
+                        "question": "20. Which sentence provides the best summary of the entire passage?",
+                        "options": [
+                              "While bicycles offer excellent exercise and scooters provide sweat-free convenience, both green options reduce pollution and improve city life",
+                              "Gasoline cars are the cheapest and fastest way to commute in modern cities",
+                              "Riding bicycles in the afternoon is too tiring for working adults",
+                              "Town planners refuse to build bike lanes because scooters are too fast"
+                        ],
+                        "answer": 0,
+                        "explanation": "This sentence synthesizes both vehicles' distinctive merits and their shared environmental contribution."
+                  }
+            ]
       },
       {
-        "id": "q5",
-        "code": "QUIZ 05",
-        "title": "Unit 5: Paraphrase & Meaning + Strategy 5: Making Inferences",
-        "thaiTitle": "แบบทดสอบรวม: Unit 5 (การตีความและความหมายที่เรียบเรียงใหม่) + Strategy 5 (การอนุมานความหมาย)",
-        "unitRef": "Unit 5: Text Interpretation & Paraphrased Meaning",
-        "strategyRef": "Strategy 5: Making Inferences",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "Public Library Transformation in the Information Age",
-          "text": "For generations, municipal public libraries operated predominantly as silent repositories of printed books, characterized by quiet study desks and strict silence signs. However, the rapid proliferation of high-speed internet and digital media rendered traditional book warehousing alone insufficient to meet community needs. Rather than fading into obsolescence, progressive public libraries transformed into dynamic, inclusive community learning hubs.\n\nToday, modern libraries provide free high-speed broadband, public computer access, and digital literacy workshops tailored for seniors and job seekers. Furthermore, many facilities have integrated creative maker spaces equipped with 3D printers, laser cutters, and audio-visual recording studios. By transforming these spaces, administrators attracted diverse younger audiences who collaborate on engineering prototypes, community podcasts, and artistic endeavors alongside traditional book readers.\n\nIn pilot municipalities that remodeled their libraries into interactive innovation hubs, annual visitor foot traffic increased by thirty-five percent. This resurgence demonstrates that when public institutions evolve to meet changing societal needs, they strengthen community resilience, bridge the digital divide, and empower citizens across all walks of life.",
-          "audioText": "For generations, municipal public libraries operated predominantly as silent repositories of printed books, characterized by quiet study desks and strict silence signs. However, the rapid proliferation of high-speed internet and digital media rendered traditional book warehousing alone insufficient to meet community needs. Rather than fading into obsolescence, progressive public libraries transformed into dynamic, inclusive community learning hubs. Today, modern libraries provide free high-speed broadband, public computer access, and digital literacy workshops tailored for seniors and job seekers. Furthermore, many facilities have integrated creative maker spaces equipped with 3D printers, laser cutters, and audio-visual recording studios. By transforming these spaces, administrators attracted diverse younger audiences who collaborate on engineering prototypes, community podcasts, and artistic endeavors alongside traditional book readers. In pilot municipalities that remodeled their libraries into interactive innovation hubs, annual visitor foot traffic increased by thirty-five percent. This resurgence demonstrates that when public institutions evolve to meet changing societal needs, they strengthen community resilience, bridge the digital divide, and empower citizens across all walks of life."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Unit 5 (Main Idea)",
-            "question": "1. What is the central thesis regarding the evolution of modern public libraries?",
-            "options": [
-              "Public libraries have evolved from quiet book storage repositories into vibrant community hubs for digital literacy and creative collaboration",
-              "Public libraries are closing permanently across the world because everyone reads books on smartphones",
-              "Libraries should only lend vintage paperback mystery novels to senior citizens",
-              "Modern libraries have eliminated all books to install commercial coffee franchises"
-            ],
-            "answer": 0,
-            "explanation": "The passage demonstrates how libraries have transformed into multifunctional hubs for digital literacy and community connection."
-          },
-          {
-            "id": 2,
-            "tag": "Strategy 5 (Inference from Text Clues)",
-            "question": "2. The text notes that traditional libraries were characterized by 'hushed silences and strict silence signs.' What can be inferred about their historical atmosphere?",
-            "options": [
-              "They prioritized quiet individual reading over collaborative social interaction",
-              "They hosted loud musical concerts every Saturday afternoon",
-              "They were dangerous places where talking was punished by law",
-              "They had zero visitors because silence made patrons fall asleep"
-            ],
-            "answer": 0,
-            "explanation": "Strict silence rules indicate historical libraries were quiet study sanctuaries rather than interactive workshops."
-          },
-          {
-            "id": 3,
-            "tag": "Strategy 5 (Formula: Clues + Prior Knowledge)",
-            "question": "3. Applying the formula 'Text Clues + Prior Knowledge = Inference', what explains why libraries added 3D printers and maker spaces?",
-            "options": [
-              "To provide equitable access to expensive modern technology that patrons might not afford individually",
-              "Because paper books became completely illegal to print",
-              "To replace librarians with automated metal robot workers",
-              "Because municipal councils wanted to open manufacturing factories"
-            ],
-            "answer": 0,
-            "explanation": "Combining text clues (digital inequality) with prior knowledge yields the inference of equalizing tech access."
-          },
-          {
-            "id": 4,
-            "tag": "Unit 5 (Paraphrase Evaluation)",
-            "question": "4. Which option represents an acceptable, high-quality paraphrase of: 'Modern libraries empower diverse citizens by offering free access to high-speed internet and digital workshops'?",
-            "options": [
-              "Contemporary public libraries support community members by providing cost-free online connectivity and technology training classes.",
-              "Modern libraries empower diverse citizens by offering free access to high-speed internet and digital workshops.",
-              "Free internet in libraries makes citizens play video games instead of finding employment.",
-              "Libraries charge citizens heavy fees to use computers and attend lectures."
-            ],
-            "answer": 0,
-            "explanation": "Option A captures full original meaning using fresh vocabulary and restructured grammar without patchwriting."
-          },
-          {
-            "id": 5,
-            "tag": "Unit 5 (Detecting Patchwriting)",
-            "question": "5. Why is the sentence 'Public libraries empower diverse people by providing free access to quick internet and digital workshops' considered unacceptable patchwriting?",
-            "options": [
-              "It merely swaps two or three words with near-synonyms while copying the exact grammatical sentence skeleton of the original",
-              "It is written in French rather than standard academic English",
-              "It contains too many punctuation marks in the wrong places",
-              "It changes the topic from libraries to outer space exploration"
-            ],
-            "answer": 0,
-            "explanation": "Patchwriting occurs when a writer retains the exact sentence skeleton and swaps superficial synonyms."
-          },
-          {
-            "id": 6,
-            "tag": "Unit 5 (Rules of Paraphrasing)",
-            "question": "6. What are the two essential requirements for a successful academic paraphrase?",
-            "options": [
-              "Retain 100% of the original author's core meaning while expressing it in a completely new sentence structure and vocabulary",
-              "Shorten the text by deleting all adjectives and keeping only nouns",
-              "Translate the sentence into another language and use an online bot to translate it back",
-              "Add personal opinions and exaggerations to make the text exciting"
-            ],
-            "answer": 0,
-            "explanation": "A valid paraphrase preserves original meaning accurately while demonstrating authentic grammatical and lexical independence."
-          },
-          {
-            "id": 7,
-            "tag": "Inference Skill",
-            "question": "7. What can be inferred about elderly patrons who attend weekly library tech workshops?",
-            "options": [
-              "They gain practical digital competencies that help them stay connected with family and access online healthcare",
-              "They are studying to become professional video game streamers",
-              "They are forced to attend classes as a condition of receiving library books",
-              "They already know more about coding than the library instructors"
-            ],
-            "answer": 0,
-            "explanation": "Senior digital workshops logically aim to bridge the digital divide for essential daily services and family contact."
-          },
-          {
-            "id": 8,
-            "tag": "Inference Skill",
-            "question": "8. Why are municipal city governments continuing to invest tax revenue into modern library facilities?",
-            "options": [
-              "Libraries deliver measurable educational and economic benefits across all demographic age groups",
-              "City officials are legally required to spend all tax money on paper printing",
-              "Libraries are the only buildings in the city with air conditioning",
-              "Government leaders want to store antique tax records on bookshelves"
-            ],
-            "answer": 0,
-            "explanation": "Public investment continues because modern libraries deliver broad socio-economic dividends to the community."
-          },
-          {
-            "id": 9,
-            "tag": "Vocabulary in Context",
-            "question": "9. In paragraph 1, what does the noun 'transformation' mean?",
-            "options": [
-              "A marked, comprehensive change in form, character, or function",
-              "A temporary paint color applied to an exterior building wall",
-              "An unexpected electrical power outage in the city",
-              "The routine sweeping of classroom floors each evening"
-            ],
-            "answer": 0,
-            "explanation": "'Transformation' indicates a fundamental, deep structural change in purpose and identity."
-          },
-          {
-            "id": 10,
-            "tag": "Vocabulary in Context",
-            "question": "10. In paragraph 2, what does the adjective 'inclusive' mean in 'inclusive community centers'?",
-            "options": [
-              "Welcoming and providing equal access to all people regardless of background, age, or income",
-              "Restricted strictly to members who pay an annual membership fee",
-              "Excluding people who do not own luxury automobiles",
-              "Reserved exclusively for certified computer programmers"
-            ],
-            "answer": 0,
-            "explanation": "'Inclusive' means open, welcoming, and accessible to everyone without discrimination."
-          },
-          {
-            "id": 11,
-            "tag": "Vocabulary in Context",
-            "question": "11. What does the word 'repository' mean in the phrase 'silent repositories of printed books'?",
-            "options": [
-              "A storage place where items are kept safely in large quantities",
-              "A vehicle designed for long-distance highway travel",
-              "A type of restaurant that serves quick meals",
-              "A musical instrument played in an orchestra"
-            ],
-            "answer": 0,
-            "explanation": "'Repository' is a place, vessel, or chamber where things are deposited or stored."
-          },
-          {
-            "id": 12,
-            "tag": "Scanning for Equipment",
-            "question": "12. What modern prototyping tool mentioned in paragraph 2 allows patrons to turn digital designs into solid plastic models?",
-            "options": [
-              "3D printers",
-              "Rotary printing presses",
-              "Electric typewriters",
-              "Photocopy machines"
-            ],
-            "answer": 0,
-            "explanation": "Scanning confirms 3D printers allow patrons to fabricate physical objects from digital computer files."
-          },
-          {
-            "id": 13,
-            "tag": "Reference Words",
-            "question": "13. In paragraph 2, in the clause 'by transforming these spaces, administrators attracted younger audiences', what does 'these spaces' refer to?",
-            "options": [
-              "Municipal public library facilities",
-              "Commercial shopping mall arcades",
-              "Private office cubicles in skyscrapers",
-              "Outdoor sports stadiums"
-            ],
-            "answer": 0,
-            "explanation": "'These spaces' refers back to municipal library buildings undergoing modernization."
-          },
-          {
-            "id": 14,
-            "tag": "Reference Words",
-            "question": "14. In paragraph 3, what does 'its' refer to in 'a community that values its public institutions'?",
-            "options": [
-              "The community",
-              "The book catalog",
-              "The 3D printer",
-              "The internet cable"
-            ],
-            "answer": 0,
-            "explanation": "'Its' is the singular possessive pronoun referring to 'a community'."
-          },
-          {
-            "id": 15,
-            "tag": "Strategy 5 (Inference Traps)",
-            "question": "15. Which of the following is an invalid 'over-generalization trap' that goes beyond textual evidence?",
-            "options": [
-              "Paper books will be burned in public squares because nobody will ever read paper again",
-              "Libraries now provide both digital resources and traditional reading materials",
-              "Community members utilize library facilities for multiple educational purposes",
-              "Public libraries have expanded their service offerings in recent decades"
-            ],
-            "answer": 0,
-            "explanation": "Claiming paper books will be burned is an extreme, unfounded over-generalization unsupported by text."
-          },
-          {
-            "id": 16,
-            "tag": "Author's Tone",
-            "question": "16. How would you describe the author's tone toward modern libraries?",
-            "options": [
-              "Progressive, optimistic, and enthusiastic about community empowerment",
-              "Pessimistic and mournful about the loss of quiet spaces",
-              "Sarcastic and mocking toward computer technology",
-              "Bored and detached from the subject matter"
-            ],
-            "answer": 0,
-            "explanation": "The author enthusiastically celebrates the democratization of technology and community empowerment."
-          },
-          {
-            "id": 17,
-            "tag": "Cause and Effect Analysis",
-            "question": "17. What caused library visitor numbers to increase by thirty-five percent in pilot communities?",
-            "options": [
-              "The introduction of interactive maker spaces, digital literacy classes, and collaborative zones",
-              "A law forcing all students to sleep in the library overnight",
-              "Giving away free luxury sports cars to every person who entered",
-              "Closing all public schools in the surrounding region"
-            ],
-            "answer": 0,
-            "explanation": "Visitor growth surged because libraries added maker spaces, digital workshops, and welcoming spaces."
-          },
-          {
-            "id": 18,
-            "tag": "Synthesizing Concepts",
-            "question": "18. How do maker spaces and book collections complement one another inside a modern library?",
-            "options": [
-              "Patrons can research theoretical concepts in books and then apply them practically using maker space tools",
-              "Maker spaces are used to shred books and turn them into wrapping paper",
-              "Books are placed on top of 3D printers to prevent them from vibrating",
-              "Patrons are prohibited from entering book areas if they use maker spaces"
-            ],
-            "answer": 0,
-            "explanation": "Theory (books) and practice (maker spaces) synergize, creating a holistic learning environment."
-          },
-          {
-            "id": 19,
-            "tag": "Metacognitive Verification",
-            "question": "19. When making an inference while reading an informational text, how should a reader verify its validity?",
-            "options": [
-              "Check that concrete textual facts directly point toward the conclusion without relying on wild guesses",
-              "Accept any thought that comes to mind as long as it sounds interesting",
-              "Ask a friend to guess the answer without showing them the passage",
-              "Choose the longest multiple-choice answer on the examination sheet"
-            ],
-            "answer": 0,
-            "explanation": "Valid inferences must be anchored in specific textual evidence combined logically with common-sense knowledge."
-          },
-          {
-            "id": 20,
-            "tag": "Comprehensive Summary",
-            "question": "20. Which sentence best summarizes the overarching message of Unit 5's reading passage?",
-            "options": [
-              "By evolving into vibrant centers for digital literacy, creative fabrication, and community collaboration, modern public libraries have redefined their vital role in the twenty-first century.",
-              "Traditional libraries were completely useless and should have been demolished decades ago.",
-              "Libraries are only valuable if they charge high prices for computer access.",
-              "Digital technology has eliminated the human desire to read stories and learn new ideas."
-            ],
-            "answer": 0,
-            "explanation": "Option A captures the evolution, the modern services, and the enduring civic importance of libraries."
-          }
-        ]
+            "id": "q5",
+            "code": "QUIZ 05",
+            "title": "Unit 5: Paraphrase & Meaning + Strategy 5: Making Inferences",
+            "thaiTitle": "แบบทดสอบรวม: Unit 5 (การตีความและความหมายที่เรียบเรียงใหม่) + Strategy 5 (การอนุมานความหมาย)",
+            "unitRef": "Unit 5: Text Interpretation & Paraphrased Meaning",
+            "strategyRef": "Strategy 5: Making Inferences",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "The Town Rooftop Garden: A Green Oasis in the City",
+                  "text": "In dense urban centers surrounded by tall concrete towers and asphalt roads, natural green spaces are often hard to find. On hot summer days, dark concrete rooftops absorb intense heat from the sun and radiate it into the surrounding air, making city temperatures significantly higher than nearby rural areas. To combat this urban heat island effect, residents of the Pinecrest apartment building decided to convert their barren flat roof into a flourishing community rooftop garden.\n\nToday, the rooftop has transformed into a vibrant green oasis. Volunteers installed lightweight wooden planting boxes filled with organic soil, planting colorful marigolds, sweet mint, and leafy vegetables. A canopy of climbing passionfruit vines provides cool shade over comfortable wooden benches where neighbors gather to read, talk, and relax. Environmental scientists tested the building and discovered that the green roof lowered indoor temperatures by up to four degrees Celsius, significantly reducing the building's monthly air-conditioning electricity bills.\n\nBeyond energy savings, the rooftop garden has created an ecological sanctuary in the heart of the city. Honeybees and colorful butterflies frequently visit the blossoms, pollinating crops and helping local biodiversity flourish. Residents who rarely spoke to each other in elevator lobbies now share gardening tips and cook meals with freshly picked herbs. The success of Pinecrest garden demonstrates that transforming unused rooftop spaces can cool down crowded cities and bring isolated neighbors closer together.",
+                  "audioText": "In dense urban centers surrounded by tall concrete towers and asphalt roads, natural green spaces are often hard to find. On hot summer days, dark concrete rooftops absorb intense heat from the sun and radiate it into the surrounding air, making city temperatures significantly higher than nearby rural areas. To combat this urban heat island effect, residents of the Pinecrest apartment building decided to convert their barren flat roof into a flourishing community rooftop garden. Today, the rooftop has transformed into a vibrant green oasis. Volunteers installed lightweight wooden planting boxes filled with organic soil, planting colorful marigolds, sweet mint, and leafy vegetables. A canopy of climbing passionfruit vines provides cool shade over comfortable wooden benches where neighbors gather to read, talk, and relax. Environmental scientists tested the building and discovered that the green roof lowered indoor temperatures by up to four degrees Celsius, significantly reducing the building's monthly air-conditioning electricity bills. Beyond energy savings, the rooftop garden has created an ecological sanctuary in the heart of the city. Honeybees and colorful butterflies frequently visit the blossoms, pollinating crops and helping local biodiversity flourish. Residents who rarely spoke to each other in elevator lobbies now share gardening tips and cook meals with freshly picked herbs. The success of Pinecrest garden demonstrates that transforming unused rooftop spaces can cool down crowded cities and bring isolated neighbors closer together."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 5 (Inference from Background Clues)",
+                        "question": "1. What can the reader infer about why concrete rooftops make cities hotter than rural areas?",
+                        "options": [
+                              "Dark concrete surfaces absorb solar heat and release it into the air, whereas plants and trees in rural areas provide natural cooling",
+                              "Concrete roofs are heated with giant electric heaters installed by builders",
+                              "Rural areas have no sunlight during hot summer months",
+                              "Rooftops are located closer to the sun than ordinary roads"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 explains that dark concrete absorbs heat and radiates it, inferring that the lack of vegetation in cities traps excess heat."
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Unit 5 (Paraphrasing a Key Sentence)",
+                        "question": "2. Which statement best paraphrases: 'residents of the Pinecrest apartment building decided to convert their barren flat roof into a flourishing community rooftop garden'?",
+                        "options": [
+                              "People living in the Pinecrest building turned their empty rooftop into a thriving shared garden",
+                              "Pinecrest residents decided to sell their apartment building to buy a country farm",
+                              "Building owners painted their concrete roof black to keep the apartments warmer",
+                              "Residents planted trees inside the elevator lobbies of the apartment complex"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Turned their empty rooftop into a thriving shared garden' accurately rephrases the sentence using clear synonyms ('empty' = 'barren', 'thriving' = 'flourishing')."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Vocabulary in Context (barren)",
+                        "question": "3. In paragraph 1, what does the adjective 'barren' mean in 'their barren flat roof'?",
+                        "options": [
+                              "Empty, bare, and having no plant life growing on it",
+                              "Very crowded with hundreds of tall trees",
+                              "Made of soft green grass and colorful flowers",
+                              "Filled with deep swimming pools"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Barren' describes land or surfaces that are bare, empty, and devoid of vegetation."
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Vocabulary in Context (oasis)",
+                        "question": "4. In paragraph 2, what does 'green oasis' mean in 'transformed into a vibrant green oasis'?",
+                        "options": [
+                              "A peaceful, refreshing green refuge situated in the middle of a harsh or crowded environment",
+                              "A deep ocean hole filled with salt water",
+                              "A large desert filled with dry sand and zero water",
+                              "A parking lot full of yellow delivery vans"
+                        ],
+                        "answer": 0,
+                        "explanation": "Metaphorically, an oasis is a pleasant, refreshing place providing relief amidst a stark concrete city."
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Strategy 5 (Inference about Social Life)",
+                        "question": "5. What can the reader infer about the social relationships among Pinecrest residents BEFORE the garden was built?",
+                        "options": [
+                              "Residents lived rather isolated lives and rarely interacted with their neighbors",
+                              "All residents were close childhood friends who ate dinner together every night",
+                              "Residents constantly argued about where to park their bicycles",
+                              "Residents spent every weekend working together in the basement"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 notes: 'Residents who rarely spoke to each other in elevator lobbies now share gardening tips...', inferring they were previously strangers."
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Scanning for Numbers",
+                        "question": "6. By how many degrees Celsius did the green roof lower the building's indoor temperatures?",
+                        "options": [
+                              "By up to four degrees Celsius",
+                              "By exactly twenty degrees Celsius",
+                              "By less than one degree Celsius",
+                              "By over fifty degrees Celsius"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning paragraph 2 for temperature figures locates: 'lowered indoor temperatures by up to four degrees Celsius.'"
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Strategy 5 (Inference about Energy Bills)",
+                        "question": "7. Why did the rooftop garden reduce the building's monthly electricity bills?",
+                        "options": [
+                              "Because lower indoor temperatures meant air-conditioners did not have to run as long or as hard",
+                              "Because the building manager turned off all electric lights at night",
+                              "Because the marigolds generated solar electricity directly into wall sockets",
+                              "Because the power company gave free electricity to all garden owners"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 links cooler indoor temperatures directly with 'reducing the building's monthly air-conditioning electricity bills.'"
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Unit 5 (Paraphrasing the Conclusion)",
+                        "question": "8. Which statement best paraphrases: 'transforming unused rooftop spaces can cool down crowded cities and bring isolated neighbors closer together'?",
+                        "options": [
+                              "Turning empty building roofs into gardens helps reduce city heat and fosters strong community bonds",
+                              "Crowded cities should tear down all apartment roofs to let rain fall inside",
+                              "Neighbors can only become friends if they live on the highest floor of a building",
+                              "Planting vegetables on roofs causes city temperatures to rise dramatically"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Helps reduce city heat and fosters strong community bonds' is an accurate, concise paraphrase of the concluding sentence."
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Vocabulary in Context (sanctuary)",
+                        "question": "9. In paragraph 3, what does 'sanctuary' mean in 'created an ecological sanctuary'?",
+                        "options": [
+                              "A safe, welcoming shelter or haven for wildlife and living creatures",
+                              "A noisy commercial garage where buses are cleaned",
+                              "A large glass laboratory where chemical medicines are mixed",
+                              "A tall metal tower used for television antennas"
+                        ],
+                        "answer": 0,
+                        "explanation": "An 'ecological sanctuary' is a safe haven where wildlife (like bees and butterflies) can feed, pollinate, and thrive."
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Reference Words (their)",
+                        "question": "10. In paragraph 1, what does the pronoun 'their' refer to in 'convert their barren flat roof'?",
+                        "options": [
+                              "Residents of the Pinecrest apartment building",
+                              "The tall concrete towers down the street",
+                              "The asphalt roads around the city center",
+                              "The rural farmers outside the town"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Their' refers back to 'residents of the Pinecrest apartment building' who decided to create the garden."
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Strategy 5 (Inference about Insects)",
+                        "question": "11. What can be inferred from the presence of honeybees and butterflies in paragraph 3?",
+                        "options": [
+                              "The rooftop garden provides real pollen and nectar, supporting urban wildlife in an otherwise concrete environment",
+                              "The insects were accidentally imported from a plastic toy store",
+                              "Honeybees are dangerous pests that forced residents to abandon the garden",
+                              "Butterflies only visit roofs that have elevators"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text states the insects pollinate crops and help local biodiversity, inferring the garden acts as a genuine natural habitat."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Unit 5 (Interpreting Metaphor)",
+                        "question": "12. What does the metaphor 'urban heat island effect' refer to in paragraph 1?",
+                        "options": [
+                              "The phenomenon where built-up cities experience significantly hotter temperatures than surrounding countryside",
+                              "A tropical holiday island located in the middle of a warm ocean",
+                              "A kitchen island used for preparing hot meals in a restaurant",
+                              "A volcanic mountain covered with red hot lava"
+                        ],
+                        "answer": 0,
+                        "explanation": "Context in paragraph 1 explains it: concrete and asphalt trap heat, 'making city temperatures significantly higher than nearby rural areas.'"
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Scanning for Flora Examples",
+                        "question": "13. What climbing plant was used to create a natural shaded canopy over the wooden benches?",
+                        "options": [
+                              "Passionfruit vines",
+                              "Prickly rose bushes",
+                              "Giant oak trees",
+                              "Water lily pads"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 specifically notes: 'A canopy of climbing passionfruit vines provides cool shade over comfortable wooden benches.'"
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Unit 5 (True/False Paraphrase Check)",
+                        "question": "14. Based on the passage, which statement is ACCURATE?",
+                        "options": [
+                              "Residents grow both flowers like marigolds and edible vegetables on the roof",
+                              "The rooftop garden caused the building to become five degrees hotter",
+                              "Environmental scientists advised the residents to tear down the planting boxes",
+                              "Neighbors refused to sit on the wooden benches because of the passionfruit vines"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 explicitly confirms residents planted 'colorful marigolds, sweet mint, and leafy vegetables.'"
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Strategy 5 (Inference about Human Well-being)",
+                        "question": "15. What does the passage suggest about the psychological effect of green spaces on city residents?",
+                        "options": [
+                              "Green spaces promote relaxation, reduce stress, and foster friendly social interactions",
+                              "Living near green plants makes city residents angry and exhausted",
+                              "Seeing flowers causes residents to forget their jobs completely",
+                              "Green gardens prevent people from speaking to each other"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text shows neighbors gathering to 'read, talk, and relax' and cooking together, inferring positive mental and social well-being."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Cause and Effect Analysis",
+                        "question": "16. What was the direct environmental result of volunteers planting organic flowers and herbs?",
+                        "options": [
+                              "Bees and butterflies visited the blossoms, pollinating crops and boosting urban biodiversity",
+                              "The apartment roof collapsed under the weight of the water",
+                              "The city government banned all apartment gardens",
+                              "The building had to buy three additional air-conditioners"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 explains: 'Honeybees and colorful butterflies frequently visit the blossoms, pollinating crops and helping local biodiversity flourish.'"
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Fact vs Opinion",
+                        "question": "17. Which statement from the passage is an objective, verifiable fact?",
+                        "options": [
+                              "The green roof lowered indoor temperatures by up to four degrees Celsius",
+                              "Passionfruit vines are the prettiest plants in the world",
+                              "Every apartment resident should love gardening on weekends",
+                              "Sitting on wooden benches is always more relaxing than watching television"
+                        ],
+                        "answer": 0,
+                        "explanation": "'The green roof lowered indoor temperatures by up to four degrees Celsius' is an experimentally verified scientific measurement."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Vocabulary in Context (biodiversity)",
+                        "question": "18. In paragraph 3, what does 'biodiversity' refer to?",
+                        "options": [
+                              "The variety of living plant and animal species in an ecosystem",
+                              "The speed of elevators moving between floors",
+                              "The weight of concrete blocks in a building foundation",
+                              "The price of electricity per kilowatt-hour"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Biodiversity' refers to the variety of different living organisms (plants, insects, birds) coexisting in an environment."
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Strategy 5 (Inference from Title)",
+                        "question": "19. Why does the title describe the rooftop garden as a 'Green Oasis'?",
+                        "options": [
+                              "Because it offers a cool, flourishing green sanctuary in the middle of a hot concrete city",
+                              "Because the roof is surrounded by deep sand dunes in an African desert",
+                              "Because the building has an underground swimming pool filled with green water",
+                              "Because the rooftop is painted with green oil paint"
+                        ],
+                        "answer": 0,
+                        "explanation": "Calling it an 'oasis' highlights the stark contrast between the harsh surrounding concrete and the lush, peaceful rooftop garden."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Comprehensive Summary",
+                        "question": "20. Which sentence provides the best summary of the entire reading passage?",
+                        "options": [
+                              "Pinecrest residents turned a barren rooftop into a lush community garden that cools the building, saves energy, and strengthens neighborhood friendships",
+                              "Concrete towers absorb sunlight and force people to buy expensive air-conditioners",
+                              "Passionfruit vines can only grow on wooden benches on high buildings",
+                              "Environmental scientists in cities only study the temperatures of empty roofs"
+                        ],
+                        "answer": 0,
+                        "explanation": "This sentence synthesizes all major components: the physical transformation, environmental cooling, energy savings, and community bonding."
+                  }
+            ]
       },
       {
-        "id": "q6",
-        "code": "QUIZ 06",
-        "title": "Unit 6: Integrated Practice + Strategy 6: Integrated Strategy Review",
-        "thaiTitle": "แบบทดสอบรวม: Unit 6 (การฝึกอ่านแบบบูรณาการ) + Strategy 6 (การทบทวนกลยุทธ์แบบบูรณาการ)",
-        "unitRef": "Unit 6: Integrated Reading Practice",
-        "strategyRef": "Strategy 6: Integrated Strategy Review",
-        "timeMinutes": 20,
-        "questionsCount": 20,
-        "passingScore": 70,
-        "passage": {
-          "title": "The Impact of Explicit Reading Strategy Instruction on EFL Learners",
-          "text": "Empirical research conducted in secondary and adult language programs demonstrates that explicit instruction in reading strategies significantly empowers English as a Foreign Language (EFL) learners. In many traditional language classes, reading is treated as an implicit testing exercise where students simply answer comprehension questions without being taught how skilled readers comprehend. In contrast, structured strategy instruction directly models how to navigate academic texts systematically.\n\nIn a controlled semester-long study, adolescent EFL language learners received weekly training in strategic reading workflows: previewing text features, predicting outcomes, deploying context clues for unknown vocabulary, identifying rhetorical organizational patterns, and validating inferences. Diagnostic assessments revealed that students receiving explicit strategy coaching improved their standardized reading comprehension test scores by 28% compared to baseline measures. Furthermore, post-intervention surveys indicated that 91% of participating learners experienced lower levels of reading anxiety and substantially greater self-confidence when engaging with authentic English passages.\n\nUltimately, explicit strategy instruction transforms passive decoders into autonomous, critical readers. By learning to orchestrate pre-reading, while-reading, and post-reading techniques flexibly, students acquire versatile cognitive blueprints that serve them throughout their academic and professional journeys.",
-          "audioText": "Empirical research conducted in secondary and adult language programs demonstrates that explicit instruction in reading strategies significantly empowers English as a Foreign Language (EFL) learners. In many traditional language classes, reading is treated as an implicit testing exercise where students simply answer comprehension questions without being taught how skilled readers comprehend. In contrast, structured strategy instruction directly models how to navigate academic texts systematically. In a controlled semester-long study, adolescent EFL language learners received weekly training in strategic reading workflows: previewing text features, predicting outcomes, deploying context clues for unknown vocabulary, identifying rhetorical organizational patterns, and validating inferences. Diagnostic assessments revealed that students receiving explicit strategy coaching improved their standardized reading comprehension test scores by 28% compared to baseline measures. Furthermore, post-intervention surveys indicated that 91% of participating learners experienced lower levels of reading anxiety and substantially greater self-confidence when engaging with authentic English passages. Ultimately, explicit strategy instruction transforms passive decoders into autonomous, critical readers. By learning to orchestrate pre-reading, while-reading, and post-reading techniques flexibly, students acquire versatile cognitive blueprints that serve them throughout their academic and professional journeys."
-        },
-        "questions": [
-          {
-            "id": 1,
-            "tag": "Unit 6 (Main Idea)",
-            "question": "1. What is the primary thesis of the empirical study on explicit reading strategy instruction?",
-            "options": [
-              "Explicit, structured instruction in reading strategies significantly improves EFL learners' reading comprehension and lowers anxiety",
-              "Students should never receive reading instruction and should only guess words at random",
-              "Reading strategies are only effective for native speakers of English in preschool",
-              "Standardized reading tests are completely unscientific and should be abandoned"
-            ],
-            "answer": 0,
-            "explanation": "The study demonstrates that explicit strategy instruction significantly boosts comprehension and reduces anxiety."
-          },
-          {
-            "id": 2,
-            "tag": "Strategy 2 (Scanning for Percentage)",
-            "question": "2. By what percentage did participants' standardized reading comprehension scores increase following strategy training?",
-            "options": [
-              "Twenty-eight percent",
-              "Fifty-five percent",
-              "Five percent",
-              "Zero percent"
-            ],
-            "answer": 0,
-            "explanation": "Scanning confirms comprehension scores increased by 28% compared to pre-intervention baselines."
-          },
-          {
-            "id": 3,
-            "tag": "Strategy 2 (Scanning for Survey Result)",
-            "question": "3. What percentage of surveyed students reported feeling lower reading anxiety and greater self-confidence?",
-            "options": [
-              "Ninety-one percent",
-              "Ten percent",
-              "Fifty percent",
-              "Thirty-three percent"
-            ],
-            "answer": 0,
-            "explanation": "Scanning the survey data in paragraph 2 confirms 91% reported reduced reading anxiety."
-          },
-          {
-            "id": 4,
-            "tag": "Strategy Orchestration (Pre-Reading)",
-            "question": "4. Which strategic techniques should an active reader deploy during the pre-reading phase?",
-            "options": [
-              "Previewing headings, activating background knowledge, and generating initial predictions",
-              "Writing a fifty-page essay before opening the textbook",
-              "Translating every single noun with a bilingual dictionary",
-              "Memorizing the final paragraph word-for-word"
-            ],
-            "answer": 0,
-            "explanation": "The pre-reading phase focuses on previewing structural cues, schema activation, and predictive questioning."
-          },
-          {
-            "id": 5,
-            "tag": "Strategy Orchestration (While-Reading)",
-            "question": "5. When an active reader encounters an unknown technical term while reading, what is the best immediate step?",
-            "options": [
-              "Analyze surrounding context clues (definitions, synonyms, contrast markers) before interrupting reading flow",
-              "Immediately close the book and quit reading for the day",
-              "Erase the word from the printed page with white correction tape",
-              "Assume the sentence has zero meaning and skip the entire chapter"
-            ],
-            "answer": 0,
-            "explanation": "Using context clues preserves reading momentum and enables rapid situational decoding."
-          },
-          {
-            "id": 6,
-            "tag": "Strategy Orchestration (Text Structure)",
-            "question": "6. When a passage uses connectives like 'whereas', 'conversely', and 'on the other hand', what cognitive blueprint should the reader activate?",
-            "options": [
-              "A Compare and Contrast mental framework",
-              "A Chronological Timeline of ancient dynasties",
-              "A Geographical Map of ocean currents",
-              "A Step-by-Step cooking recipe"
-            ],
-            "answer": 0,
-            "explanation": "Contrast connectives signal the compare-and-contrast organizational pattern."
-          },
-          {
-            "id": 7,
-            "tag": "Strategy Orchestration (Post-Reading)",
-            "question": "7. What post-reading activities consolidate deep comprehension according to Strategy 6?",
-            "options": [
-              "Summarizing core ideas, verifying inferences against textual evidence, and self-reflecting on comprehension",
-              "Counting how many words were printed in italic font",
-              "Throwing away study notes immediately after the bell rings",
-              "Sleeping for eight hours without reviewing difficult concepts"
-            ],
-            "answer": 0,
-            "explanation": "Post-reading involves summarizing, evaluating inferences, and metacognitive self-assessment."
-          },
-          {
-            "id": 8,
-            "tag": "Vocabulary in Context",
-            "question": "8. What does 'explicit instruction' mean in contrast to 'implicit learning'?",
-            "options": [
-              "Direct, clear, and structured teaching that explains how and why strategies work",
-              "Secret instruction delivered in whispered codes at midnight",
-              "Leaving students alone in a room with zero guidance or feedback",
-              "Forcing students to memorize grammar rules without reading any stories"
-            ],
-            "answer": 0,
-            "explanation": "'Explicit instruction' is direct, unambiguous, and systematically structured teaching."
-          },
-          {
-            "id": 9,
-            "tag": "Vocabulary in Context",
-            "question": "9. In paragraph 3, what does 'autonomous readers' mean?",
-            "options": [
-              "Readers who independently monitor, regulate, and direct their own reading comprehension",
-              "Mechanical robots designed to scan printed paper books",
-              "Students who refuse to read unless an instructor stands beside them constantly",
-              "Individuals who only listen to recorded radio broadcasts"
-            ],
-            "answer": 0,
-            "explanation": "'Autonomous readers' independently apply strategic tools to comprehend diverse texts without reliance on others."
-          },
-          {
-            "id": 10,
-            "tag": "Vocabulary in Context",
-            "question": "10. In paragraph 2, what does 'baseline scores' refer to in educational measurement?",
-            "options": [
-              "The initial diagnostic test scores recorded before strategy training commenced",
-              "The highest possible grade any student could theoretically achieve",
-              "The score a student receives when they fail to attend an exam",
-              "The number of books stored on the lowest classroom shelf"
-            ],
-            "answer": 0,
-            "explanation": "'Baseline scores' establish the initial starting benchmark against which progress is measured."
-          },
-          {
-            "id": 11,
-            "tag": "Unit 4 (Pronoun Reference)",
-            "question": "11. In paragraph 1, in the phrase 'explicit instruction in reading strategies significantly empowers EFL learners; it equips them with practical cognitive tools', what does 'it' refer to?",
-            "options": [
-              "Explicit instruction in reading strategies",
-              "The standardized test booklet",
-              "The baseline score",
-              "The classroom clock"
-            ],
-            "answer": 0,
-            "explanation": "'It' refers back to the singular noun concept 'explicit instruction in reading strategies'."
-          },
-          {
-            "id": 12,
-            "tag": "Unit 4 (Pronoun Reference)",
-            "question": "12. In the sentence 'First-year language learners who received structured training showed improvement; they reported higher confidence', what does 'they' refer to?",
-            "options": [
-              "First-year language learners who received structured training",
-              "The teachers who administered the exams",
-              "The authors of the research questionnaire",
-              "The standardized test questions"
-            ],
-            "answer": 0,
-            "explanation": "'They' refers to the participating language learners who underwent the training."
-          },
-          {
-            "id": 13,
-            "tag": "Unit 4 (Text Structure Identification)",
-            "question": "13. What organizational pattern structures paragraph 2?",
-            "options": [
-              "Cause and Effect / Problem and Solution: how targeted strategy training resolved comprehension obstacles and anxiety",
-              "Chronological listing of centuries from ancient Egypt to the modern day",
-              "Geographical tour of international airports across Europe",
-              "Fictional drama involving wild animals in a forest"
-            ],
-            "answer": 0,
-            "explanation": "Paragraph 2 uses cause-and-effect to demonstrate the impact of strategy training on test scores."
-          },
-          {
-            "id": 14,
-            "tag": "Unit 5 (Paraphrase Evaluation)",
-            "question": "14. Which option best paraphrases the conclusion: 'By mastering integrated strategies, learners transform into self-regulated critical thinkers prepared for lifelong academic success'?",
-            "options": [
-              "When students learn to orchestrate multiple reading strategies together, they become independent, analytical readers equipped for ongoing educational achievements.",
-              "Reading strategies only help students pass one multiple-choice quiz in school.",
-              "Critical thinking cannot be learned through reading and requires special computer software.",
-              "Learners should rely on memorization rather than using strategies."
-            ],
-            "answer": 0,
-            "explanation": "Option A accurately captures self-regulation, strategic orchestration, and lifelong success."
-          },
-          {
-            "id": 15,
-            "tag": "Error Analysis (Metacognition)",
-            "question": "15. A student spends twenty minutes searching for an answer by reading every word from the first line. What strategy error did they make?",
-            "options": [
-              "They failed to use scanning to locate specific keywords or numbers quickly",
-              "They should have guessed randomly without looking at the text",
-              "They should have translated the text into Latin first",
-              "They read the text too fast and missed all the punctuation"
-            ],
-            "answer": 0,
-            "explanation": "Searching for specific facts requires scanning; reading word-for-word from line one is inefficient."
-          },
-          {
-            "id": 16,
-            "tag": "Inference Skill",
-            "question": "16. Why does explicit strategy instruction drastically reduce second-language reading anxiety?",
-            "options": [
-              "It provides concrete, actionable tools so students no longer feel overwhelmed when facing unfamiliar texts",
-              "It makes English tests completely voluntary and ungraded",
-              "It eliminates all difficult vocabulary words from English publications",
-              "It allows students to sleep during reading examination periods"
-            ],
-            "answer": 0,
-            "explanation": "When learners possess reliable strategic tools, fear of the unknown is replaced by self-efficacy."
-          },
-          {
-            "id": 17,
-            "tag": "Synthesis of Units 1–6",
-            "question": "17. What is the optimal cognitive sequence when tackling a challenging academic reading passage?",
-            "options": [
-              "Preview & predict -> Skim for gist -> Scan for targeted details -> Use context clues -> Map organization -> Synthesize & infer",
-              "Translate word 1 to word 500 -> Memorize every noun -> Guess the main idea -> Sleep",
-              "Answer the questions without reading -> Check if the teacher is watching -> Leave early",
-              "Read the last sentence -> Pick option C for every question -> Complain about test length"
-            ],
-            "answer": 0,
-            "explanation": "The integrated strategic workflow progresses from macro previewing down to micro decoding and critical inference."
-          },
-          {
-            "id": 18,
-            "tag": "Fact vs Opinion",
-            "question": "18. Which statement from the research passage is an empirical, measurable fact?",
-            "options": [
-              "Participants exhibited a 28% gain on standardized reading comprehension post-tests",
-              "Reading strategies are the most fascinating topic in the entire world",
-              "Every person who reads books is automatically happier than non-readers",
-              "English is the easiest language for human beings to master"
-            ],
-            "answer": 0,
-            "explanation": "The 28% gain is a measured, empirical research datum."
-          },
-          {
-            "id": 19,
-            "tag": "Metacognition (Self-Regulation)",
-            "question": "19. When an autonomous reader notices their mind wandering or comprehension dropping, what metacognitive action should they take?",
-            "options": [
-              "Pause, re-read the confusing segment with focused attention, and summarize the key idea before proceeding",
-              "Continue flipping pages rapidly to finish the book faster",
-              "Blame the author and stop studying reading permanently",
-              "Ignore the confusion and hope the final quiz will be easy"
-            ],
-            "answer": 0,
-            "explanation": "Metacognitive monitoring involves self-repair: detecting breakdowns, pausing, and applying fix-up strategies."
-          },
-          {
-            "id": 20,
-            "tag": "Cap-Stone Mastery",
-            "question": "20. What is the ultimate objective of completing all six units and strategy modules in ReadSkills BRU?",
-            "options": [
-              "To become an autonomous, confident, and critical reader equipped with versatile strategies for lifelong academic and professional success",
-              "To memorize answers to twenty multiple-choice questions for one semester",
-              "To avoid reading any English articles after finishing school",
-              "To prove that reading books is unnecessary in modern society"
-            ],
-            "answer": 0,
-            "explanation": "The overarching goal of the entire program is lifelong reading autonomy, critical agility, and academic success."
-          }
-        ]
+            "id": "q6",
+            "code": "QUIZ 06",
+            "title": "Unit 6: Integrated Practice + Strategy 6: Integrated Strategy Review",
+            "thaiTitle": "แบบทดสอบรวม: Unit 6 (การฝึกอ่านแบบบูรณาการ) + Strategy 6 (การทบทวนกลยุทธ์แบบบูรณาการ)",
+            "unitRef": "Unit 6: Integrated Reading Practice",
+            "strategyRef": "Strategy 6: Integrated Strategy Review",
+            "timeMinutes": 20,
+            "questionsCount": 20,
+            "passingScore": 70,
+            "passage": {
+                  "title": "The Zero-Waste Grocery Store: A Town's Journey to Clean Living",
+                  "text": "Every year, consumer households throw away billions of single-use plastic containers, food wrappers, and plastic bags that end up polluting oceans and overflowing city landfills. Traditional supermarkets package nearly every item in disposable plastic, giving shoppers very few eco-friendly alternatives. To tackle this growing crisis, two childhood friends named Tara and Ken opened \"EcoRefill,\" the town's first zero-waste grocery market, on Maple Street. Their visionary mission was to eliminate packaging waste entirely while providing fresh, affordable, and healthy food to local residents.\n\nShopping at EcoRefill is a unique and rewarding experience that differs significantly from conventional grocery shopping. Customers bring their own reusable glass jars, cloth produce bags, and metal containers from home. Upon entering the store, shoppers first weigh their empty containers at a digital scale station and mark the weight with a washable pencil. Next, they fill their jars with organic grains, dried beans, cooking oil, nuts, and natural liquid soap from large stainless steel dispensers. Finally, at the checkout counter, the cashier subtracts the container's original weight so customers pay strictly for the exact quantity of food they purchase. Because shoppers buy only what they need, food waste is minimized and family grocery bills decrease.\n\nDuring its first year of operation, EcoRefill achieved extraordinary environmental milestones. The store's five hundred regular member families collectively prevented over 35,000 single-use plastic bags and containers from entering local waste streams. In addition, EcoRefill partners exclusively with regional organic farmers within fifty kilometers, drastically reducing transportation emissions and supporting local farm families. The inspiring success of EcoRefill proves that when community awareness and innovative retail models unite, ordinary shoppers can lead the transition toward a cleaner, sustainable planet.",
+                  "audioText": "Every year, consumer households throw away billions of single-use plastic containers, food wrappers, and plastic bags that end up polluting oceans and overflowing city landfills. Traditional supermarkets package nearly every item in disposable plastic, giving shoppers very few eco-friendly alternatives. To tackle this growing crisis, two childhood friends named Tara and Ken opened EcoRefill, the town's first zero-waste grocery market, on Maple Street. Their visionary mission was to eliminate packaging waste entirely while providing fresh, affordable, and healthy food to local residents. Shopping at EcoRefill is a unique and rewarding experience that differs significantly from conventional grocery shopping. Customers bring their own reusable glass jars, cloth produce bags, and metal containers from home. Upon entering the store, shoppers first weigh their empty containers at a digital scale station and mark the weight with a washable pencil. Next, they fill their jars with organic grains, dried beans, cooking oil, nuts, and natural liquid soap from large stainless steel dispensers. Finally, at the checkout counter, the cashier subtracts the container's original weight so customers pay strictly for the exact quantity of food they purchase. Because shoppers buy only what they need, food waste is minimized and family grocery bills decrease. During its first year of operation, EcoRefill achieved extraordinary environmental milestones. The store's five hundred regular member families collectively prevented over 35,000 single-use plastic bags and containers from entering local waste streams. In addition, EcoRefill partners exclusively with regional organic farmers within fifty kilometers, drastically reducing transportation emissions and supporting local farm families. The inspiring success of EcoRefill proves that when community awareness and innovative retail models unite, ordinary shoppers can lead the transition toward a cleaner, sustainable planet."
+            },
+            "questions": [
+                  {
+                        "id": 1,
+                        "tag": "Strategy 1 (Previewing Title)",
+                        "question": "1. What does previewing the title 'The Zero-Waste Grocery Store: A Town's Journey to Clean Living' predict about the passage?",
+                        "options": [
+                              "The passage will discuss a community grocery store that operates without disposable packaging to promote eco-friendly living",
+                              "The passage will report on the rising prices of gasoline in foreign countries",
+                              "The passage will explain how to build a commercial wooden boat for deep-sea fishing",
+                              "The passage will review popular video games played by teenage students"
+                        ],
+                        "answer": 0,
+                        "explanation": "Previewing 'Zero-Waste Grocery Store' and 'Town's Journey to Clean Living' clearly predicts an eco-friendly retail story focused on eliminating trash."
+                  },
+                  {
+                        "id": 2,
+                        "tag": "Unit 1 (Main Idea Identification)",
+                        "question": "2. What is the central main idea of the entire reading passage?",
+                        "options": [
+                              "EcoRefill demonstrates that zero-waste grocery shopping effectively cuts plastic waste, supports local farmers, and promotes sustainable living",
+                              "Single-use plastic containers are the most durable invention in human history",
+                              "Supermarkets should only sell food packaged in heavy cardboard boxes",
+                              "Consumers should avoid buying fresh food from local farm families"
+                        ],
+                        "answer": 0,
+                        "explanation": "The core message is that EcoRefill's zero-waste model successfully eliminates plastic packaging, reduces waste, and empowers sustainable consumer habits."
+                  },
+                  {
+                        "id": 3,
+                        "tag": "Strategy 2 (Scanning for Numerical Data)",
+                        "question": "3. How many single-use plastic bags and containers were kept out of waste streams during EcoRefill's first year?",
+                        "options": [
+                              "Over 35,000 single-use plastic bags and containers",
+                              "Exactly 500 containers",
+                              "Fewer than 100 bags",
+                              "Over one million containers"
+                        ],
+                        "answer": 0,
+                        "explanation": "Scanning paragraph 3 for numbers locates: 'collectively prevented over 35,000 single-use plastic bags and containers from entering local waste streams.'"
+                  },
+                  {
+                        "id": 4,
+                        "tag": "Strategy 2 (Scanning for Proper Names/Locations)",
+                        "question": "4. Who are the two founders of EcoRefill and where is their store located?",
+                        "options": [
+                              "Tara and Ken, located on Maple Street",
+                              "Uncle Bob and Mary, located on Pine Street",
+                              "Alex and Somchai, located on River Road",
+                              "David and Sarah, located on Ocean Boulevard"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 1 explicitly names: 'two childhood friends named Tara and Ken opened EcoRefill... on Maple Street.'"
+                  },
+                  {
+                        "id": 5,
+                        "tag": "Strategy 3 (Context Clues for Vocabulary)",
+                        "question": "5. In paragraph 1, what does the word 'disposable' mean in 'packaged in disposable plastic'?",
+                        "options": [
+                              "Designed to be used once or for a short time and then thrown away",
+                              "Extremely valuable and kept in a secure bank safe",
+                              "Made of solid steel that lasts for hundreds of years",
+                              "Completely invisible to the human eye"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Disposable' refers to single-use items meant to be discarded after use, contrasting with reusable jars."
+                  },
+                  {
+                        "id": 6,
+                        "tag": "Strategy 3 (Vocabulary in Context)",
+                        "question": "6. In paragraph 2, what does the verb 'subtracts' mean in 'the cashier subtracts the container's original weight'?",
+                        "options": [
+                              "Takes away or deducts an amount from a total",
+                              "Multiplies a number by ten",
+                              "Adds extra weight to the grocery bill",
+                              "Doubles the price of every item"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Subtracts' means deducting the empty jar's tare weight so the customer pays only for the net weight of food."
+                  },
+                  {
+                        "id": 7,
+                        "tag": "Strategy 4 (Chronological Sequence Identification)",
+                        "question": "7. According to paragraph 2, what is the FIRST step a customer takes when shopping at EcoRefill?",
+                        "options": [
+                              "Weighing their empty containers at a digital scale station and marking the weight",
+                              "Filling jars with organic grains and dried beans",
+                              "Paying the cashier at the checkout counter",
+                              "Washing the grocery store floor with soap"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 2 details the sequence: 'shoppers first weigh their empty containers at a digital scale station...'"
+                  },
+                  {
+                        "id": 8,
+                        "tag": "Strategy 4 (Cause and Effect Analysis)",
+                        "question": "8. What is the direct financial benefit for families shopping at EcoRefill described in paragraph 2?",
+                        "options": [
+                              "Because shoppers buy only the exact quantity they need, food waste is minimized and grocery bills decrease",
+                              "Shoppers receive a free new car after five visits",
+                              "The store pays customers monthly wages for shopping",
+                              "All food items are distributed completely free of charge"
+                        ],
+                        "answer": 0,
+                        "explanation": "The text states: 'Because shoppers buy only what they need, food waste is minimized and family grocery bills decrease.'"
+                  },
+                  {
+                        "id": 9,
+                        "tag": "Strategy 5 (Making Inferences about Transport Emissions)",
+                        "question": "9. What can the reader infer about why EcoRefill partners exclusively with farmers within fifty kilometers?",
+                        "options": [
+                              "Shorter delivery distances require less vehicle fuel, keeping food fresher and reducing carbon emissions",
+                              "Local farmers refuse to sell food to distant cities",
+                              "The store founders do not know how to drive cars",
+                              "Airplanes are not allowed to land in the town"
+                        ],
+                        "answer": 0,
+                        "explanation": "Paragraph 3 explains partnering with nearby farms 'drastically reducing transportation emissions and supporting local farm families.'"
+                  },
+                  {
+                        "id": 10,
+                        "tag": "Strategy 5 (Inference about Consumer Behavior)",
+                        "question": "10. What does the passage suggest about ordinary shoppers' ability to protect the planet?",
+                        "options": [
+                              "Individual consumers can make a significant environmental impact through mindful daily shopping choices",
+                              "Ordinary citizens have zero power to reduce plastic waste",
+                              "Only government presidents can solve environmental pollution",
+                              "Shopping at markets always increases ocean plastic pollution"
+                        ],
+                        "answer": 0,
+                        "explanation": "The conclusion affirms: 'ordinary shoppers can lead the transition toward a cleaner, sustainable planet.'"
+                  },
+                  {
+                        "id": 11,
+                        "tag": "Reference Words (Their)",
+                        "question": "11. In paragraph 1, what does the possessive pronoun 'Their' refer to in 'Their visionary mission'?",
+                        "options": [
+                              "Tara and Ken, the founders of EcoRefill",
+                              "Traditional supermarkets on the highway",
+                              "Single-use plastic bags in the ocean",
+                              "City landfills overflowing with waste"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Their' refers back to 'two childhood friends named Tara and Ken' who launched the store."
+                  },
+                  {
+                        "id": 12,
+                        "tag": "Reference Words (they)",
+                        "question": "12. In paragraph 2, what does the pronoun 'they' refer to in 'Next, they fill their jars with organic grains'?",
+                        "options": [
+                              "The customers or shoppers",
+                              "The stainless steel dispensers",
+                              "The washable pencils",
+                              "The cashiers at the counter"
+                        ],
+                        "answer": 0,
+                        "explanation": "'They' refers to 'shoppers' or 'customers' carrying out the refill shopping steps."
+                  },
+                  {
+                        "id": 13,
+                        "tag": "Unit 5 (Paraphrasing Skill)",
+                        "question": "13. Which statement best paraphrases: 'Their visionary mission was to eliminate packaging waste entirely while providing fresh, affordable, and healthy food to local residents'?",
+                        "options": [
+                              "They aimed to supply fresh, reasonably priced healthy food without using any disposable packaging",
+                              "They planned to sell expensive packaged snacks in disposable cardboard boxes",
+                              "They wanted to close down all grocery stores to stop people from eating food",
+                              "They intended to build a plastic factory behind the town center"
+                        ],
+                        "answer": 0,
+                        "explanation": "'They aimed to supply fresh, reasonably priced healthy food without using any disposable packaging' is an accurate restatement using synonyms."
+                  },
+                  {
+                        "id": 14,
+                        "tag": "Unit 4 (Identifying Text Connectives)",
+                        "question": "14. Which sequence of connective words is used in paragraph 2 to guide the reader through the shopping steps?",
+                        "options": [
+                              "first ... Next ... Finally",
+                              "However ... In contrast ... On the other hand",
+                              "Because ... Since ... Although",
+                              "For example ... For instance ... Specifically"
+                        ],
+                        "answer": 0,
+                        "explanation": "'first', 'Next', and 'Finally' are chronological sequence markers organizing the step-by-step process."
+                  },
+                  {
+                        "id": 15,
+                        "tag": "Unit 2 (Distinguishing Major vs Minor Detail)",
+                        "question": "15. Which of the following is a MINOR supporting detail in paragraph 2?",
+                        "options": [
+                              "Marking container weights with a washable pencil",
+                              "Customers bringing reusable containers to eliminate packaging",
+                              "Subtracting the container's weight at the checkout counter",
+                              "EcoRefill opening as the town's first zero-waste market"
+                        ],
+                        "answer": 0,
+                        "explanation": "Using a washable pencil is a minor procedural detail, whereas the refill system and waste elimination are major ideas."
+                  },
+                  {
+                        "id": 16,
+                        "tag": "Vocabulary in Context (milestones)",
+                        "question": "16. In paragraph 3, what does 'milestones' mean in 'achieved extraordinary environmental milestones'?",
+                        "options": [
+                              "Significant achievements or important stages in progress",
+                              "Heavy rocks placed along country roads",
+                              "Failures that caused a business to close down",
+                              "Speed limit signs posted along the highway"
+                        ],
+                        "answer": 0,
+                        "explanation": "In context, 'milestones' refers to notable environmental accomplishments (preventing 35,000 plastic containers)."
+                  },
+                  {
+                        "id": 17,
+                        "tag": "Fact vs Opinion",
+                        "question": "17. Which statement from the passage is an objective, verifiable fact?",
+                        "options": [
+                              "The store's five hundred regular member families prevented over 35,000 single-use plastic containers from entering waste streams",
+                              "Glass jars look much more fashionable than metal containers",
+                              "EcoRefill is the most wonderful grocery store in the nation",
+                              "Every citizen in town enjoys weighing empty jars on digital scales"
+                        ],
+                        "answer": 0,
+                        "explanation": "'The store's five hundred regular member families prevented over 35,000 single-use plastic containers...' is a documented, measurable fact."
+                  },
+                  {
+                        "id": 18,
+                        "tag": "Unit 3 (Context Clues for 'Conventional')",
+                        "question": "18. In paragraph 2, what does 'conventional grocery shopping' refer to based on context clues?",
+                        "options": [
+                              "Standard, traditional supermarkets where pre-packaged plastic goods are sold",
+                              "Ordering food from outer space using satellite dishes",
+                              "Hunting wild animals in a deep forest",
+                              "Growing all your own vegetables in a greenhouse"
+                        ],
+                        "answer": 0,
+                        "explanation": "'Conventional grocery shopping' refers to typical, mainstream supermarket shopping where goods come pre-packaged."
+                  },
+                  {
+                        "id": 19,
+                        "tag": "Strategy 6 (Synthesizing Strategy Applications)",
+                        "question": "19. When reading this passage, which combined strategy helps you understand both the environmental problem and the store's practical solution most quickly?",
+                        "options": [
+                              "Previewing the title, skimming the first and last sentences of each paragraph, and scanning paragraph 3 for impact numbers",
+                              "Translating every single word into Thai with a dictionary without looking at headings",
+                              "Reading only the last sentence of the entire article",
+                              "Guessing the answers without reading any paragraphs"
+                        ],
+                        "answer": 0,
+                        "explanation": "Integrating Strategy 1 (previewing), Strategy 2 (skimming/scanning), and Strategy 4 (text structure) provides comprehensive, rapid understanding."
+                  },
+                  {
+                        "id": 20,
+                        "tag": "Comprehensive Critical Summary",
+                        "question": "20. Which sentence provides the best comprehensive summary of the entire passage?",
+                        "options": [
+                              "EcoRefill enables community members to eliminate single-use plastic packaging by refilling reusable containers with local food, proving community-led retail can drive sustainable change",
+                              "Traditional supermarkets will always package food in disposable plastic because glass jars are too heavy",
+                              "Maple Street is the longest commercial street in the town",
+                              "Digital scales are required in every store that sells organic cooking oil"
+                        ],
+                        "answer": 0,
+                        "explanation": "This sentence completely synthesizes the initiative: the problem, the refill mechanism, the environmental and local economic impact, and broader significance."
+                  }
+            ]
       }
     ]
   },
