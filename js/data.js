@@ -854,7 +854,7 @@ window.ReadSkillsData = {
       }
     ],
     "quizzes": [
-            {
+                  {
             "id": "q1",
             "code": "QUIZ 01",
             "title": "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
@@ -865,275 +865,274 @@ window.ReadSkillsData = {
             "questionsCount": 20,
             "passingScore": 70,
             "passage": {
-                  "title": "Healthy Habits, Happy Students: The 30-Day Campus Challenge",
-                  "text": "Many first-year university students struggle with busy class schedules, late-night studying, and unhealthy daily routines. In their first semester, many students go to bed very late, skip breakfast, and drink too many sugary energy drinks to stay awake. As a result, they often feel tired during morning lectures and find it hard to focus on their lessons. To help students build better lifestyles, the Student Health Club launched the \"30-Day Campus Challenge.\" The main goal of this project was to prove that simple daily habits can dramatically improve energy, mood, and academic success.\n\nDuring the challenge, participating students agreed to follow three simple rules every day. First, they went to sleep before 11:00 PM and woke up thirty minutes earlier each morning. Second, instead of taking motorcycles or campus shuttles, students walked or rode bicycles across campus to get gentle morning exercise. Third, they replaced sugary soft drinks with plain water and ate a nutritious breakfast, such as boiled eggs, bananas, and whole-wheat toast. Club members used a free mobile phone app to track their daily progress and encouraged each other in a friendly group chat.\n\nBy the end of the month, the results were truly inspiring. Over ninety percent of participants reported feeling more alert, happier, and less stressed during morning classes. Furthermore, teachers noticed that students arrived on time and participated more actively in classroom discussions. Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement. Because of this great success, the university now plans to organize the healthy habit challenge every semester.",
-                  "audioText": "Many first-year university students struggle with busy class schedules, late-night studying, and unhealthy daily routines. In their first semester, many students go to bed very late, skip breakfast, and drink too many sugary energy drinks to stay awake. As a result, they often feel tired during morning lectures and find it hard to focus on their lessons. To help students build better lifestyles, the Student Health Club launched the 30-Day Campus Challenge. The main goal of this project was to prove that simple daily habits can dramatically improve energy, mood, and academic success. During the challenge, participating students agreed to follow three simple rules every day. First, they went to sleep before 11:00 PM and woke up thirty minutes earlier each morning. Second, instead of taking motorcycles or campus shuttles, students walked or rode bicycles across campus to get gentle morning exercise. Third, they replaced sugary soft drinks with plain water and ate a nutritious breakfast, such as boiled eggs, bananas, and whole-wheat toast. Club members used a free mobile phone app to track their daily progress and encouraged each other in a friendly group chat. By the end of the month, the results were truly inspiring. Over ninety percent of participants reported feeling more alert, happier, and less stressed during morning classes. Furthermore, teachers noticed that students arrived on time and participated more actively in classroom discussions. Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement. Because of this great success, the university now plans to organize the healthy habit challenge every semester."
+                  "title": "Healthy Morning Routines: Simple Steps to Start Your Day with Energy",
+                  "text": "Many busy people struggle to find energy during the day because of poor morning habits. In today's fast-paced world, many people stay up late looking at phone screens, skip breakfast, and drink multiple cups of sweet coffee to wake up. As a result, they often feel tired by noon and find it difficult to focus on their daily work. To solve this problem, health experts recommend building a simple morning routine. The main idea is that consistent, healthy morning habits can dramatically boost your energy, improve your mood, and help you stay productive all day long.\n\nStarting a healthy morning routine does not require big lifestyle changes; it only takes three simple steps. First, wake up just fifteen to twenty minutes earlier and drink a large glass of clean water to rehydrate your body. Second, spend ten minutes outside getting gentle sunlight and fresh air, such as walking around your neighborhood or doing light stretches. Third, eat a nutritious breakfast that includes protein and fruit, such as boiled eggs, oatmeal, or bananas, instead of sugary pastries. These simple actions wake up your brain naturally and prepare your body for the day ahead.\n\nPeople who follow these morning steps quickly notice wonderful benefits in their daily lives. Over eighty percent of people in wellness studies report feeling calmer, happier, and more focused throughout the afternoon. Furthermore, regular morning routines improve sleep quality at night because natural sunlight helps set your body's internal clock. Consistent small habits, practiced every morning, are the secret to lasting health and happiness. By taking care of yourself for just twenty minutes each morning, you can transform your entire day.",
+                  "audioText": "Many busy people struggle to find energy during the day because of poor morning habits. In today's fast-paced world, many people stay up late looking at phone screens, skip breakfast, and drink multiple cups of sweet coffee to wake up. As a result, they often feel tired by noon and find it difficult to focus on their daily work. To solve this problem, health experts recommend building a simple morning routine. The main idea is that consistent, healthy morning habits can dramatically boost your energy, improve your mood, and help you stay productive all day long. Starting a healthy morning routine does not require big lifestyle changes; it only takes three simple steps. First, wake up just fifteen to twenty minutes earlier and drink a large glass of clean water to rehydrate your body. Second, spend ten minutes outside getting gentle sunlight and fresh air, such as walking around your neighborhood or doing light stretches. Third, eat a nutritious breakfast that includes protein and fruit, such as boiled eggs, oatmeal, or bananas, instead of sugary pastries. These simple actions wake up your brain naturally and prepare your body for the day ahead. People who follow these morning steps quickly notice wonderful benefits in their daily lives. Over eighty percent of people in wellness studies report feeling calmer, happier, and more focused throughout the afternoon. Furthermore, regular morning routines improve sleep quality at night because natural sunlight helps set your body's internal clock. Consistent small habits, practiced every morning, are the secret to lasting health and happiness. By taking care of yourself for just twenty minutes each morning, you can transform your entire day."
             },
             "questions": [
                   {
                         "id": 1,
-                        "tag": "Strategy 1 (Previewing the Title)",
-                        "question": "1. Before reading the full text, what can an active reader predict by previewing the title 'Healthy Habits, Happy Students: The 30-Day Campus Challenge'?",
+                        "tag": "Strategy 1 (Previewing Title)",
+                        "question": "1. Before reading the full text, what does previewing the title 'Healthy Morning Routines: Simple Steps to Start Your Day with Energy' suggest?",
                         "options": [
-                              "The passage will discuss a university challenge that helps students build positive daily habits for better health and happiness",
-                              "The passage will explain how to build a commercial gym building on a university campus",
-                              "The passage will describe a difficult medical examination taken by hospital doctors",
-                              "The passage will review dangerous extreme sports played during summer holidays"
+                              "The passage will share simple morning habits that help people increase their daily energy and well-being",
+                              "The passage will give a detailed financial report on commercial coffee companies",
+                              "The passage will explain how to train for a difficult Olympic running competition",
+                              "The passage will discuss the history of traditional alarm clocks and watches"
                         ],
                         "answer": 0,
-                        "explanation": "Previewing the title gives immediate clues: 'Healthy Habits, Happy Students' and '30-Day Campus Challenge' indicate a positive student habit-building program."
+                        "explanation": "Previewing the title gives clear clues: 'Healthy Morning Routines' and 'Simple Steps to Start Your Day with Energy' indicate a helpful guide on healthy morning habits."
                   },
                   {
                         "id": 2,
-                        "tag": "Unit 1 (Main Idea of the Passage)",
+                        "tag": "Unit 1 (Main Idea of Passage)",
                         "question": "2. What is the stated main idea of the entire reading passage?",
                         "options": [
-                              "Consistent small daily habits are the key to long-term health, happiness, and academic achievement",
-                              "University students should never study late at night under any circumstances",
-                              "Riding bicycles is the only acceptable way to travel around a college campus",
-                              "Energy drinks should be completely banned by all university bookstores"
+                              "Consistent, healthy morning habits can dramatically boost energy, improve mood, and support long-term well-being",
+                              "Drinking coffee is the only way for busy working people to stay awake during the day",
+                              "People should always exercise for two hours every morning before going to work",
+                              "Looking at mobile phone screens at night has no effect on human sleep quality"
                         ],
                         "answer": 0,
-                        "explanation": "The core message stated throughout the passage and in paragraph 3 is that small, consistent daily habits lead to lasting health and academic success."
+                        "explanation": "The central idea stated in paragraph 1 and concluding paragraph 3 is that small, consistent morning habits create lasting energy, health, and happiness."
                   },
                   {
                         "id": 3,
-                        "tag": "Unit 1 (Topic Sentence of Paragraph 1)",
-                        "question": "3. What is the primary problem highlighted in the opening paragraph?",
+                        "tag": "Unit 1 (Topic Sentence Para 1)",
+                        "question": "3. What common problem is described in the opening paragraph?",
                         "options": [
-                              "First-year students struggle with busy schedules, late nights, and skipping breakfast, causing fatigue and poor focus",
-                              "Students could not find any available tables in the university library",
-                              "The university tuition fees increased significantly before the semester began",
-                              "Campus sports teams lost all their matches due to bad rainy weather"
+                              "Many busy people feel exhausted and find it hard to focus because of poor morning habits and late bedtimes",
+                              "Most people cannot find fresh water in their local neighborhood grocery stores",
+                              "Working people refuse to eat breakfast because food prices are too low",
+                              "People spend too much time walking outside in the morning sunlight"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 1 clearly establishes the problem: busy schedules, late bedtimes, and poor nutrition caused students to feel exhausted and unable to focus."
+                        "explanation": "Paragraph 1 outlines the problem: staying up late on phones, skipping breakfast, and poor morning habits make people feel tired and unable to focus."
                   },
                   {
                         "id": 4,
-                        "tag": "Strategy 1 (Predicting from Opening Problem)",
-                        "question": "4. After reading in paragraph 1 that students feel exhausted from poor routines, what can the reader predict about the Health Club's challenge?",
+                        "tag": "Strategy 1 (Predicting Solutions)",
+                        "question": "4. After reading about people feeling tired from poor morning routines in paragraph 1, what would an active reader predict the text will offer?",
                         "options": [
-                              "The challenge will introduce simple, healthy routines to help students feel more energetic and alert",
-                              "The challenge will force students to drop out of their morning classes",
-                              "The challenge will give free sugary energy drinks to every dorm student",
-                              "The challenge will cancel all final exams for the semester"
+                              "Practical and easy steps to build a healthy morning routine that restores energy",
+                              "An advertisement selling expensive sleeping pills and medicine",
+                              "A complaint letter asking companies to cancel all morning work hours",
+                              "An instruction manual on how to buy new smartphones online"
                         ],
                         "answer": 0,
-                        "explanation": "Active reading involves predicting logical solutions to identified problems: a health club challenge will provide healthy routines to boost student energy."
+                        "explanation": "Good readers predict logical solutions to presented problems: an article about fatigue from poor routines will provide practical steps to build better habits."
                   },
                   {
                         "id": 5,
-                        "tag": "Unit 1 (Main Idea of Paragraph 2)",
-                        "question": "5. What is the main idea of paragraph 2?",
+                        "tag": "Unit 1 (Main Idea Para 2)",
+                        "question": "5. What is the controlling idea of paragraph 2?",
                         "options": [
-                              "The 30-day challenge required students to follow three simple daily rules: early sleep, morning exercise, and nutritious food",
-                              "Mobile phones are harmful to students and should never be used on campus",
-                              "Dormitory students should only eat bananas and boiled eggs for dinner",
-                              "Taking campus shuttles is faster than walking across campus"
+                              "Building a healthy morning routine requires only three simple steps: drinking water, getting morning light, and eating nutritious food",
+                              "People must buy expensive sports equipment before they can start waking up early",
+                              "Eating sweet pastries is the best way to wake up your brain naturally",
+                              "Walking around the neighborhood is too dangerous for working adults"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 2 focuses specifically on explaining the three practical rules of the challenge: sleep before 11 PM, walking/cycling, and eating nutritious meals."
+                        "explanation": "Paragraph 2 details the three manageable steps of a healthy routine: rehydrating with water, getting fresh air/sunlight, and eating nutritious food."
                   },
                   {
                         "id": 6,
                         "tag": "Scanning for Specific Details",
-                        "question": "6. According to paragraph 2, what bedtime did students agree to follow during the challenge?",
+                        "question": "6. According to paragraph 2, what should you do first right after waking up earlier?",
                         "options": [
-                              "Going to sleep before 11:00 PM",
-                              "Going to sleep after 2:00 AM",
-                              "Going to sleep at exactly 8:00 PM",
-                              "Staying awake all night on weekends"
+                              "Drink a large glass of clean water to rehydrate your body",
+                              "Check all social media messages on your smartphone",
+                              "Drink two cups of sweet black coffee immediately",
+                              "Go back to sleep for another two hours"
                         ],
                         "answer": 0,
-                        "explanation": "Scanning paragraph 2 for time numbers quickly locates: 'First, they went to sleep before 11:00 PM.'"
+                        "explanation": "Paragraph 2 explicitly states: 'First, wake up just fifteen to twenty minutes earlier and drink a large glass of clean water to rehydrate your body.'"
                   },
                   {
                         "id": 7,
                         "tag": "Scanning for Specific Details",
-                        "question": "7. Which nutritious breakfast foods were mentioned as healthy examples in paragraph 2?",
+                        "question": "7. What healthy breakfast examples are suggested in paragraph 2 instead of sugary pastries?",
                         "options": [
-                              "Boiled eggs, bananas, and whole-wheat toast",
-                              "Potato chips, sugary chocolate bars, and iced tea",
-                              "Instant noodles and spicy fried chicken",
-                              "Black coffee and cream donuts"
+                              "Boiled eggs, oatmeal, or bananas",
+                              "Fried potato chips and chocolate bars",
+                              "Spicy instant noodles and sweet soda",
+                              "Ice cream and sweet cream cakes"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 2 specifically lists: 'such as boiled eggs, bananas, and whole-wheat toast.'"
+                        "explanation": "Scanning paragraph 2 for breakfast examples quickly locates: 'such as boiled eggs, oatmeal, or bananas, instead of sugary pastries.'"
                   },
                   {
                         "id": 8,
-                        "tag": "Vocabulary in Context (struggle with)",
-                        "question": "8. In paragraph 1, what does the phrase 'struggle with' mean in 'students struggle with busy class schedules'?",
+                        "tag": "Vocabulary in Context (fast-paced)",
+                        "question": "8. In paragraph 1, what does the adjective 'fast-paced' mean in 'today's fast-paced world'?",
                         "options": [
-                              "Experience great difficulty dealing with or managing something",
-                              "Easily finish tasks ahead of schedule without effort",
-                              "Refuse to attend any university classes",
-                              "Win a competitive physical wrestling contest"
+                              "Moving or developing very quickly, busily, and actively",
+                              "Extremely slow, quiet, and relaxing",
+                              "Very cold and covered in thick winter snow",
+                              "Located far away in the deep countryside"
                         ],
                         "answer": 0,
-                        "explanation": "To 'struggle with' means having a hard time coping with challenges like heavy study loads and busy schedules."
+                        "explanation": "'Fast-paced' describes a busy, rapid modern lifestyle where things move quickly and people have packed schedules."
                   },
                   {
                         "id": 9,
                         "tag": "Vocabulary in Context (nutritious)",
-                        "question": "9. In paragraph 2, what does the adjective 'nutritious' mean in 'ate a nutritious breakfast'?",
+                        "question": "9. In paragraph 2, what does the adjective 'nutritious' mean in 'eat a nutritious breakfast'?",
                         "options": [
-                              "Healthy and containing beneficial vitamins and energy that the body needs",
-                              "Very sweet, colorful, and packed with artificial sugar",
-                              "Extremely expensive and imported from abroad",
-                              "Quickly fried in deep animal fat"
+                              "Healthy and containing beneficial vitamins, protein, and energy for the body",
+                              "Full of artificial food coloring and white sugar",
+                              "Very difficult and complicated to chew",
+                              "Expensive and only sold in five-star hotels"
                         ],
                         "answer": 0,
-                        "explanation": "'Nutritious' describes food that provides nourishment and essential nutrients to keep the body strong and healthy."
+                        "explanation": "'Nutritious' means nourishing and healthy, providing necessary nutrients to support bodily health and energy."
                   },
                   {
                         "id": 10,
                         "tag": "Vocabulary in Context (consistent)",
-                        "question": "10. In paragraph 3, what does 'consistent' mean in 'Consistent small habits... are the key'?",
+                        "question": "10. In paragraph 3, what does 'consistent' mean in 'Consistent small habits... are the secret'?",
                         "options": [
-                              "Done regularly and steadily over time without stopping",
-                              "Done only once a year on special holidays",
-                              "Changing completely every single morning",
-                              "Impossible for ordinary people to achieve"
+                              "Done regularly and steadily over time without quitting",
+                              "Done only once or twice a year",
+                              "Changing completely every single hour",
+                              "Impossible for ordinary people to perform"
                         ],
                         "answer": 0,
-                        "explanation": "'Consistent' means continuous, regular, and steady in behavior or performance."
+                        "explanation": "'Consistent' means doing something regularly, steadily, and persistently over time."
                   },
                   {
                         "id": 11,
                         "tag": "Reference Words (they)",
-                        "question": "11. In paragraph 2, what does the pronoun 'they' refer to in 'First, they went to sleep before 11:00 PM'?",
+                        "question": "11. In paragraph 1, what does the pronoun 'they' refer to in 'As a result, they often feel tired by noon'?",
                         "options": [
-                              "The participating students in the challenge",
-                              "The security guards at the university gate",
-                              "The teachers grading final examination papers",
-                              "The motorcycles parked outside the dormitory"
+                              "Busy people who have poor morning habits",
+                              "The mobile phone screens in the bedroom",
+                              "The health experts recommending routines",
+                              "The cups of sweet coffee on the table"
                         ],
                         "answer": 0,
-                        "explanation": "'They' refers back to 'participating students' who agreed to follow the three challenge rules."
+                        "explanation": "'They' refers back to 'many people' who stay up late, skip breakfast, and suffer from daytime fatigue."
                   },
                   {
                         "id": 12,
-                        "tag": "Reference Words (this project)",
-                        "question": "12. In paragraph 1, what does the phrase 'this project' refer to?",
+                        "tag": "Reference Words (These simple actions)",
+                        "question": "12. In paragraph 2, what does the phrase 'These simple actions' refer to?",
                         "options": [
-                              "The 30-Day Campus Challenge launched by the Health Club",
-                              "A final biology research paper written by senior students",
-                              "The construction of a new campus cafeteria",
-                              "A commercial television show filmed on university grounds"
+                              "Drinking water, getting morning sunlight, and eating a nutritious breakfast",
+                              "Looking at bright phone screens late at night",
+                              "Skipping meals and working through the night",
+                              "Buying expensive energy drinks at the supermarket"
                         ],
                         "answer": 0,
-                        "explanation": "'This project' refers directly to the '30-Day Campus Challenge' introduced in the preceding sentence."
+                        "explanation": "'These simple actions' refers to the three healthy morning steps described right before it in paragraph 2."
                   },
                   {
                         "id": 13,
                         "tag": "Strategy 1 (Previewing Technique)",
-                        "question": "13. Why is previewing a text before reading helpful for second-language learners?",
+                        "question": "13. Why is previewing titles and first sentences helpful when reading an article?",
                         "options": [
-                              "It activates background knowledge, sets reading goals, and makes the text easier to understand",
-                              "It guarantees that the reader will never have to read the body paragraphs",
-                              "It allows the reader to skip all vocabulary questions on a test",
-                              "It helps the reader translate every English word into Thai word-for-word"
+                              "It provides a clear mental roadmap of the topic and makes comprehension much easier",
+                              "It replaces the need to read any part of the article",
+                              "It guarantees that every test question will be answered without thinking",
+                              "It translates all English vocabulary into your native language automatically"
                         ],
                         "answer": 0,
-                        "explanation": "Previewing titles, headings, and topic sentences activates schema (prior knowledge) and helps readers build a mental roadmap of the text."
+                        "explanation": "Previewing activates background knowledge and gives a mental outline of the passage structure before deep reading."
                   },
                   {
                         "id": 14,
                         "tag": "Strategy 1 (Predicting Technique)",
-                        "question": "14. How should an active reader make effective predictions while reading?",
+                        "question": "14. How does an active reader effectively make and check predictions during reading?",
                         "options": [
-                              "Use clues from the title, headings, and early paragraphs, then check and adjust predictions as you read",
-                              "Ignore all text headings and make random wild guesses",
-                              "Always assume the story will end with a terrible disaster",
-                              "Only make predictions after finishing the entire book"
+                              "Look at clues in titles and early sentences to make logical guesses, then verify them as you read",
+                              "Make wild guesses without looking at any words in the passage",
+                              "Wait until after the test is finished before thinking about the topic",
+                              "Only guess the answers to vocabulary questions"
                         ],
                         "answer": 0,
-                        "explanation": "Good readers use visual and contextual clues to make predictions, which they actively verify or adjust as new information is uncovered."
+                        "explanation": "Active reading involves predicting based on contextual clues, then confirming or adjusting those predictions as new facts appear."
                   },
                   {
                         "id": 15,
                         "tag": "Unit 1 (Distinguishing Main Idea vs Minor Detail)",
                         "question": "15. Which of the following is a MINOR supporting detail in the reading passage?",
                         "options": [
-                              "Club members encouraged each other in a friendly group chat",
-                              "Small daily habits improve student energy and academic success",
-                              "First-year students faced fatigue due to poor lifestyle routines",
-                              "The university plans to continue the healthy habit challenge"
+                              "Eating oatmeal or bananas for breakfast",
+                              "Consistent healthy morning habits boost daily energy and happiness",
+                              "Poor morning routines cause daytime fatigue and lack of focus",
+                              "Taking twenty minutes each morning can transform your entire day"
                         ],
                         "answer": 0,
-                        "explanation": "Using a friendly group chat is a small supporting detail describing how students communicated, whereas the main idea is about habit formation and academic success."
+                        "explanation": "Specific food items like oatmeal or bananas are minor illustrative details supporting the broader idea of nutritious eating."
                   },
                   {
                         "id": 16,
                         "tag": "Paraphrasing the Main Idea",
-                        "question": "16. Which statement best paraphrases: 'Consistent small habits, rather than extreme lifestyle changes, are the key to long-term health and academic achievement'?",
+                        "question": "16. Which statement best paraphrases: 'Consistent small habits, practiced every morning, are the secret to lasting health and happiness'?",
                         "options": [
-                              "Practicing simple healthy routines regularly leads to lasting well-being and study success better than drastic changes",
-                              "Students must make extreme, painful sacrifices if they want to pass their examinations",
-                              "Only professional athletes can achieve good health and high test scores",
-                              "Changing your daily routine has no measurable impact on school performance"
+                              "Doing simple healthy routines every morning is the key to long-term wellness and life satisfaction",
+                              "People must make extreme, difficult sacrifices if they want to feel happy",
+                              "Morning routines have no real effect on a person's mood or health",
+                              "Only professional medical doctors can achieve lasting happiness"
                         ],
                         "answer": 0,
-                        "explanation": "This option accurately restates the core meaning using synonyms: 'simple healthy routines regularly' = 'consistent small habits', and 'lasting well-being and study success' = 'long-term health and academic achievement'."
+                        "explanation": "'Doing simple healthy routines every morning is the key to long-term wellness' accurately restates the core sentence using clear synonyms."
                   },
                   {
                         "id": 17,
                         "tag": "Inference Skill",
-                        "question": "17. What can the reader infer about the university teachers' reaction to the challenge?",
+                        "question": "17. What can the reader infer about drinking sweet coffee to wake up in paragraph 1?",
                         "options": [
-                              "They welcomed the positive change because students were more punctual, awake, and engaged in class",
-                              "They were angry because students talked too much about bicycles",
-                              "They canceled all lectures because students were eating breakfast",
-                              "They preferred students to stay up late studying every night"
+                              "It only provides a temporary energy boost and can lead to tiredness later in the day",
+                              "It is the healthiest drink recommended by modern doctors",
+                              "It permanently replaces the human body's need for nighttime sleep",
+                              "It is completely impossible to purchase in modern cities"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 3 notes: 'teachers noticed that students arrived on time and participated more actively', showing they observed and appreciated the positive impact."
+                        "explanation": "The text links sweet coffee with feeling tired by noon, inferring that sugar and caffeine offer only a short-lived temporary spike."
                   },
                   {
                         "id": 18,
                         "tag": "Cause and Effect",
-                        "question": "18. According to paragraph 1, what was the direct consequence of students sleeping late and skipping breakfast?",
+                        "question": "18. According to paragraph 3, why does morning sunlight help improve your sleep quality at night?",
                         "options": [
-                              "They felt tired during morning lectures and struggled to concentrate",
-                              "They won a cash prize from the university president",
-                              "They became professional bicycle racers overnight",
-                              "Their dormitory rooms were completely locked"
+                              "Natural sunlight helps set your body's internal biological clock",
+                              "Sunlight heats up your bedroom so you feel cold at night",
+                              "Sunlight makes people forget all their daily work duties",
+                              "Sunlight turns into electricity inside your mobile phone"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 1 explains: 'As a result, they often feel tired during morning lectures and find it hard to focus on their lessons.'"
+                        "explanation": "Paragraph 3 explains: 'regular morning routines improve sleep quality at night because natural sunlight helps set your body's internal clock.'"
                   },
                   {
                         "id": 19,
-                        "tag": "Strategy Orchestration (Previewing & Main Idea)",
-                        "question": "19. How does previewing the first sentence of each paragraph help you locate the main ideas quickly?",
+                        "tag": "Strategy Orchestration",
+                        "question": "19. How does reading the first sentence of paragraph 2 help you navigate the text efficiently?",
                         "options": [
-                              "First sentences usually introduce the topic of each paragraph, showing how the problem, solution, and results connect",
-                              "First sentences are always the only sentences tested on university exams",
-                              "First sentences always contain foreign language translations",
-                              "First sentences tell you the author's home address and phone number"
+                              "It signals that the paragraph will outline the specific, actionable steps of the routine",
+                              "It tells you that the entire article is finished and you should stop reading",
+                              "It lists all the names of the doctors who wrote the medical study",
+                              "It gives the exact price of buying fresh fruit at the market"
                         ],
                         "answer": 0,
-                        "explanation": "In standard expository writing, topic sentences are typically placed at the beginning of paragraphs to state the focus of that section."
+                        "explanation": "The topic sentence of paragraph 2 ('Starting a healthy morning routine does not require big lifestyle changes; it only takes three simple steps') signals the three upcoming steps."
                   },
                   {
                         "id": 20,
                         "tag": "Metacognitive Application",
-                        "question": "20. How can a student apply the lesson of this passage and Strategy 1 to become a better English reader?",
+                        "question": "20. How can you apply Strategy 1 and the lesson of this passage to improve your own English reading ability?",
                         "options": [
-                              "Set aside 15 minutes every day to preview English titles and read short articles consistently",
-                              "Read an entire English novel in one night without previewing anything",
-                              "Only read English texts when a difficult exam is scheduled for the next morning",
-                              "Avoid reading English and rely exclusively on automatic translation tools"
+                              "Preview headings and build a consistent daily habit of reading short English articles for fifteen minutes",
+                              "Read an entire English encyclopedia in one single night before an exam",
+                              "Never preview any titles or pictures when reading English stories",
+                              "Avoid reading English words and rely solely on automatic voice recordings"
                         ],
                         "answer": 0,
-                        "explanation": "Just as the 30-day challenge showed that consistent small daily habits bring success, reading English for 15 minutes daily with previewing strategies builds lasting reading fluency."
+                        "explanation": "Consistent small daily habits (e.g. 15 minutes of reading daily) combined with previewing strategies build strong, lasting English reading skills."
                   }
             ]
       },
-
-            {
+      {
             "id": "q2",
             "code": "QUIZ 02",
             "title": "Unit 2: Supporting Details + Strategy 2: Skimming & Scanning",
@@ -1144,9 +1143,9 @@ window.ReadSkillsData = {
             "questionsCount": 20,
             "passingScore": 70,
             "passage": {
-                  "title": "Green Campus Garden: Students Growing Fresh Food in Buriram",
-                  "text": "Many university students in Buriram want to eat healthy food and protect the environment. However, fresh vegetables can be expensive for students living in campus dormitories. In addition, dry weather and sandy soil often make it difficult to grow plants during the hot season. To solve this problem, a group of thirty university students started the \"Green Campus Garden\" behind the science building. Their main goal was to grow organic vegetables together, save water, and share healthy food with their friends.\n\nTo make the garden successful, the students used smart and creative ideas. Specifically, they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted. The students also installed two small solar lights to brighten the garden paths at night. Every weekend, team members work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemicals.\n\nAfter four months of hard work, the project achieved wonderful results. Participating students grew over 120 kilograms of fresh vegetables and reduced campus food waste by forty percent. The club sold half of the harvest at low prices to dorm students and donated the rest to the local school canteen. Furthermore, students learned important life skills such as teamwork, time management, and sustainable living. The university now plans to expand the green project to other campus areas next semester.",
-                  "audioText": "Many university students in Buriram want to eat healthy food and protect the environment. However, fresh vegetables can be expensive for students living in campus dormitories. In addition, dry weather and sandy soil often make it difficult to grow plants during the hot season. To solve this problem, a group of thirty university students started the Green Campus Garden behind the science building. Their main goal was to grow organic vegetables together, save water, and share healthy food with their friends. To make the garden successful, the students used smart and creative ideas. Specifically, they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted. The students also installed two small solar lights to brighten the garden paths at night. Every weekend, team members work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemicals. After four months of hard work, the project achieved wonderful results. Participating students grew over 120 kilograms of fresh vegetables and reduced campus food waste by forty percent. The club sold half of the harvest at low prices to dorm students and donated the rest to the local school canteen. Furthermore, students learned important life skills such as teamwork, time management, and sustainable living. The university now plans to expand the green project to other campus areas next semester."
+                  "title": "The Community Garden: Neighbors Growing Fresh Food Together",
+                  "text": "Many families in town want to eat fresh vegetables and care for the environment. However, fresh produce in local grocery stores can be expensive, especially for large families and elderly residents. In addition, dry weather and sandy soil often make it difficult for people to grow vegetables in their small home yards. To solve this problem, a group of thirty local neighbors started a community garden on an empty plot of land behind the town center. Their main goal was to grow organic vegetables together, save water, and share healthy food with their community.\n\nTo make the neighborhood garden successful, the residents used smart and creative ideas. Specifically, they collected used plastic bottles from town recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted under the hot sun. The neighbors also installed two small solar lights to brighten the garden pathways in the evening. Every weekend, families work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemical sprays.\n\nAfter four months of teamwork, the community garden achieved wonderful results. Participating neighbors harvested over 120 kilograms of fresh vegetables and reduced neighborhood food waste by forty percent. The group shared fresh vegetables with local elderly residents and donated the rest to a nearby children's day-care center. Furthermore, neighbors formed strong friendships and learned valuable skills in water conservation and sustainable living. The town council now plans to create more community gardens in other neighborhoods next year.",
+                  "audioText": "Many families in town want to eat fresh vegetables and care for the environment. However, fresh produce in local grocery stores can be expensive, especially for large families and elderly residents. In addition, dry weather and sandy soil often make it difficult for people to grow vegetables in their small home yards. To solve this problem, a group of thirty local neighbors started a community garden on an empty plot of land behind the town center. Their main goal was to grow organic vegetables together, save water, and share healthy food with their community. To make the neighborhood garden successful, the residents used smart and creative ideas. Specifically, they collected used plastic bottles from town recycling bins to build low-cost drip watering systems. These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted under the hot sun. The neighbors also installed two small solar lights to brighten the garden pathways in the evening. Every weekend, families work together to plant lettuce, sweet basil, and small cherry tomatoes without using any dangerous chemical sprays. After four months of teamwork, the community garden achieved wonderful results. Participating neighbors harvested over 120 kilograms of fresh vegetables and reduced neighborhood food waste by forty percent. The group shared fresh vegetables with local elderly residents and donated the rest to a nearby children's day-care center. Furthermore, neighbors formed strong friendships and learned valuable skills in water conservation and sustainable living. The town council now plans to create more community gardens in other neighborhoods next year."
             },
             "questions": [
                   {
@@ -1154,44 +1153,44 @@ window.ReadSkillsData = {
                         "tag": "Strategy 2 (Skimming for Gist)",
                         "question": "1. What is the overarching topic of this reading passage?",
                         "options": [
-                              "University students working together on a campus garden project to grow fresh food and save water",
-                              "The history of building modern science laboratories in northeastern universities",
-                              "A travel guide about the most popular tourist attractions in Buriram province",
-                              "How to prepare for difficult final examinations in biology and agriculture classes"
+                              "Local neighbors working together on a community garden to grow fresh food and save water",
+                              "How to build large commercial shopping malls in growing suburban towns",
+                              "A historical guide about ancient farming methods in European countries",
+                              "Instructions on how to repair gasoline-powered lawnmowers and tractors"
                         ],
                         "answer": 0,
-                        "explanation": "Skimming across the headings and opening lines shows the entire passage is about students building a campus green garden to grow food and save resources."
+                        "explanation": "Skimming across the headings and paragraphs shows the passage is about neighbors creating a community garden to grow food and conserve water."
                   },
                   {
                         "id": 2,
                         "tag": "Unit 2 (Main Idea of Paragraph 1)",
                         "question": "2. What is the main problem introduced in paragraph 1?",
                         "options": [
-                              "Expensive vegetables, dry weather, and sandy soil made it hard for dorm students to eat healthy food",
-                              "Students could not find any classrooms available in the science building",
-                              "The university campus completely ran out of electricity during the dry season",
-                              "No students were interested in joining any university clubs or activities"
+                              "Expensive grocery store vegetables, dry weather, and sandy soil made it hard for families to grow fresh food",
+                              "The town center was closed permanently due to heavy winter snow",
+                              "Local residents refused to recycle plastic bottles or clean up neighborhood parks",
+                              "No families were interested in eating healthy vegetables or fruit"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 1 explains that expensive vegetables, dry weather, and poor sandy soil made it difficult for dorm students to get fresh healthy food."
+                        "explanation": "Paragraph 1 establishes that expensive store produce, dry weather, and poor sandy soil made getting fresh food difficult for local families."
                   },
                   {
                         "id": 3,
                         "tag": "Unit 2 (Major Supporting Detail)",
-                        "question": "3. How did the students water their plants without wasting water?",
+                        "question": "3. How did the neighbors water their plants efficiently without wasting water?",
                         "options": [
                               "They used recycled plastic bottles to build low-cost drip watering systems",
-                              "They pumped gallons of tap water onto the soil with a fire hose",
-                              "They waited only for natural rain clouds during the dry months",
-                              "They bought an expensive automatic sprinkler system from a foreign company"
+                              "They sprayed gallons of tap water onto the leaves with a fire hose",
+                              "They waited only for rain clouds during the dry summer season",
+                              "They bought an expensive automatic computer sprinkler system"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 2 states: 'they collected used plastic bottles from campus recycling bins to build low-cost drip watering systems.'"
+                        "explanation": "Paragraph 2 states: 'they collected used plastic bottles from town recycling bins to build low-cost drip watering systems.'"
                   },
                   {
                         "id": 4,
-                        "tag": "Unit 2 (Minor Supporting Detail - Percentage)",
-                        "question": "4. By what percentage did the student project reduce campus food waste?",
+                        "tag": "Unit 2 (Minor Detail - Percentage)",
+                        "question": "4. By what percentage did the community garden project reduce neighborhood food waste?",
                         "options": [
                               "Forty percent (40%)",
                               "Ten percent (10%)",
@@ -1199,59 +1198,59 @@ window.ReadSkillsData = {
                               "Ninety-nine percent (99%)"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 3 explicitly mentions that the project 'reduced campus food waste by forty percent.'"
+                        "explanation": "Paragraph 3 explicitly mentions: 'reduced neighborhood food waste by forty percent.'"
                   },
                   {
                         "id": 5,
                         "tag": "Strategy 2 (Scanning for Location)",
-                        "question": "5. Where is the Green Campus Garden located?",
+                        "question": "5. Where is the community garden located?",
                         "options": [
-                              "Behind the science building",
-                              "On top of the university library roof",
-                              "Inside the football stadium parking lot",
-                              "At the local shopping mall across the street"
+                              "On an empty plot of land behind the town center",
+                              "On the roof of the town police station",
+                              "Inside the basement of the local shopping mall",
+                              "Along the highway five miles outside of town"
                         ],
                         "answer": 0,
-                        "explanation": "Scanning for capital letters and location words in paragraph 1 quickly locates 'behind the science building.'"
+                        "explanation": "Scanning paragraph 1 for location phrases quickly locates: 'on an empty plot of land behind the town center.'"
                   },
                   {
                         "id": 6,
-                        "tag": "Strategy 2 (Scanning for Number of Participants)",
-                        "question": "6. How many university students started this green project together?",
+                        "tag": "Strategy 2 (Scanning for Number)",
+                        "question": "6. How many local neighbors started the community garden together?",
                         "options": [
-                              "Thirty students",
-                              "Five students",
-                              "One hundred students",
-                              "Over five hundred students"
+                              "Thirty neighbors",
+                              "Five neighbors",
+                              "Two hundred neighbors",
+                              "Over one thousand neighbors"
                         ],
                         "answer": 0,
-                        "explanation": "Scanning paragraph 1 for numbers shows: 'a group of thirty university students started the Green Campus Garden.'"
+                        "explanation": "Scanning paragraph 1 for number words shows: 'a group of thirty local neighbors started a community garden.'"
                   },
                   {
                         "id": 7,
                         "tag": "Unit 2 (Signal Words for Details)",
-                        "question": "7. Which transitional word in paragraph 2 signals a specific supporting example of the students' smart ideas?",
+                        "question": "7. Which transitional word in paragraph 2 introduces a specific supporting example of the neighbors' smart ideas?",
                         "options": [
                               "Specifically",
                               "However",
-                              "Because",
-                              "Although"
+                              "Although",
+                              "Unless"
                         ],
                         "answer": 0,
-                        "explanation": "'Specifically' is a transition word used to introduce a precise, detailed supporting example."
+                        "explanation": "'Specifically' is a transitional word used to introduce a precise, detailed supporting example."
                   },
                   {
                         "id": 8,
                         "tag": "Vocabulary in Context (organic)",
                         "question": "8. In paragraph 1, what does the word 'organic' mean in 'grow organic vegetables'?",
                         "options": [
-                              "Grown naturally without using harmful artificial chemicals or pesticides",
-                              "Imported from expensive supermarkets in big cities",
-                              "Cooked and packaged inside plastic containers",
-                              "Dried in special machines for long-term storage"
+                              "Grown naturally without using harmful artificial chemicals or sprays",
+                              "Cooked and canned inside commercial glass jars",
+                              "Imported from expensive overseas factories",
+                              "Artificially colored with bright chemical dyes"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 2 confirms this context by noting students grow vegetables 'without using any dangerous chemicals.'"
+                        "explanation": "Paragraph 2 confirms this context by stating families plant crops 'without using any dangerous chemical sprays.'"
                   },
                   {
                         "id": 9,
@@ -1259,35 +1258,35 @@ window.ReadSkillsData = {
                         "question": "9. In paragraph 2, what does the compound adjective 'low-cost' mean?",
                         "options": [
                               "Inexpensive and economical to make or buy",
-                              "Extremely heavy and difficult to transport",
-                              "Requiring advanced computer technology",
-                              "Dangerous and risky to operate"
+                              "Requiring thousands of dollars in bank loans",
+                              "Extremely heavy and impossible to carry",
+                              "Very dangerous to handle with bare hands"
                         ],
                         "answer": 0,
-                        "explanation": "'Low-cost' means inexpensive, as the students used recycled plastic bottles found for free in campus bins."
+                        "explanation": "'Low-cost' means inexpensive and affordable, as neighbors made the watering systems from free recycled bottles."
                   },
                   {
                         "id": 10,
                         "tag": "Vocabulary in Context (sustainable)",
                         "question": "10. In paragraph 3, what does 'sustainable living' mean?",
                         "options": [
-                              "Living in a way that protects natural resources for the future without causing harm",
-                              "Spending money quickly on trendy electronic devices",
-                              "Eating meals only in expensive restaurants",
-                              "Moving to a different city every six months"
+                              "Living in a way that conserves resources and protects the environment for the future",
+                              "Spending money quickly on fashionable disposable products",
+                              "Eating all meals exclusively in fast-food restaurants",
+                              "Moving to a different neighborhood every two months"
                         ],
                         "answer": 0,
-                        "explanation": "'Sustainable living' refers to eco-friendly practices that conserve water, reduce waste, and protect the planet."
+                        "explanation": "'Sustainable living' refers to eco-friendly practices that conserve water, reduce waste, and safeguard nature."
                   },
                   {
                         "id": 11,
                         "tag": "Reference Words (These simple bottles)",
                         "question": "11. In paragraph 2, what does the phrase 'These simple bottles' refer to?",
                         "options": [
-                              "The used plastic bottles collected from campus recycling bins",
-                              "Bottles of expensive cooking oil from the school market",
-                              "Glass bottles kept in chemistry science laboratories",
-                              "Drinking water bottles brought by visiting tourists"
+                              "The used plastic bottles collected from town recycling bins",
+                              "Glass perfume bottles found in antique shops",
+                              "Heavy metal water tanks used by fire trucks",
+                              "Bottles of motor oil sold at local gas stations"
                         ],
                         "answer": 0,
                         "explanation": "'These simple bottles' refers directly back to the used plastic bottles collected to build drip watering systems."
@@ -1297,39 +1296,39 @@ window.ReadSkillsData = {
                         "tag": "Reference Words (they)",
                         "question": "12. In paragraph 2, what does the pronoun 'they' refer to in 'Specifically, they collected used plastic bottles'?",
                         "options": [
-                              "The university students in the project",
-                              "The security guards at the campus gate",
-                              "The vegetable roots in the soil",
-                              "The science professors in the classroom"
+                              "The local residents working on the garden",
+                              "The security officers at the town bank",
+                              "The tomato plants growing in the garden beds",
+                              "The customers shopping in grocery stores"
                         ],
                         "answer": 0,
-                        "explanation": "'They' refers to 'the students' who used smart and creative ideas to make the garden successful."
+                        "explanation": "'They' refers back to 'the residents' who used smart and creative ideas to make the garden successful."
                   },
                   {
                         "id": 13,
                         "tag": "Strategy 2 (Skimming Mechanics)",
-                        "question": "13. What is the most effective way to skim a three-paragraph article quickly?",
+                        "question": "13. What is the most effective way to skim an informational article quickly?",
                         "options": [
                               "Read the title, the first and last sentences of each paragraph, and notice key repeated words",
-                              "Look up every unfamiliar word in an English-Thai dictionary before moving on",
-                              "Read every single word from left to right at a very slow pace",
-                              "Memorize all the numbers and dates in the last sentence first"
+                              "Look up every single word in an English dictionary before reading the next line",
+                              "Read the text backward from the last word to the first word",
+                              "Only look at the page numbers at the bottom of the screen"
                         ],
                         "answer": 0,
-                        "explanation": "Skimming is a fast-reading technique focusing on titles, first/last sentences, and overall structure to grasp the main gist."
+                        "explanation": "Skimming is a speed-reading technique focusing on headings, topic sentences, and text structure to grasp the main gist."
                   },
                   {
                         "id": 14,
                         "tag": "Strategy 2 (Scanning Mechanics)",
-                        "question": "14. If a question asks 'How many kilograms of vegetables were grown?', how should you scan the text?",
+                        "question": "14. If a question asks 'How many kilograms of vegetables were harvested?', how should you scan the text?",
                         "options": [
-                              "Move your eyes rapidly across paragraph 3 searching specifically for numbers and the word 'kilograms'",
-                              "Read paragraph 1 from the beginning word-by-word very slowly",
-                              "Translate the entire text into Thai sentence by sentence",
-                              "Close your eyes and guess based on your personal garden experience"
+                              "Move your eyes rapidly across paragraph 3 looking specifically for numbers and the word 'kilograms'",
+                              "Read paragraph 1 very slowly from beginning to end word-by-word",
+                              "Translate the entire story into Thai before searching for the answer",
+                              "Guess an answer without checking any sentences in the text"
                         ],
                         "answer": 0,
-                        "explanation": "Scanning involves moving eyes rapidly to spot a specific target word or number (like '120 kilograms') without reading every word."
+                        "explanation": "Scanning involves moving eyes rapidly across the text to spot a specific target word or number (like '120 kilograms')."
                   },
                   {
                         "id": 15,
@@ -1337,80 +1336,81 @@ window.ReadSkillsData = {
                         "question": "15. Which of the following is a MINOR supporting detail in paragraph 2?",
                         "options": [
                               "Planting sweet basil and small cherry tomatoes",
-                              "Building a low-cost drip watering system to save water",
+                              "Building a low-cost drip watering system to conserve water",
                               "Collecting used plastic bottles to prevent water waste",
-                              "Students starting the Green Campus Garden project"
+                              "Thirty neighbors creating a community garden project"
                         ],
                         "answer": 0,
-                        "explanation": "The specific plant varieties (sweet basil and cherry tomatoes) are minor illustrative details, whereas the watering system is a major supporting idea."
+                        "explanation": "The specific plant names (sweet basil and cherry tomatoes) are minor illustrative details, whereas the drip watering system is a major supporting idea."
                   },
                   {
                         "id": 16,
-                        "tag": "Cause and Effect Analysis)",
-                        "question": "16. According to paragraph 2, what is the direct effect of dripping water slowly to plant roots?",
+                        "tag": "Cause and Effect Analysis",
+                        "question": "16. According to paragraph 2, what is the direct result of dripping water slowly to plant roots?",
                         "options": [
-                              "No water is wasted during irrigation",
-                              "The plants stop growing completely",
-                              "The plastic bottles become dirty very quickly",
-                              "The soil turns into hard cement rock"
+                              "No water is wasted under the hot sun during irrigation",
+                              "The vegetables stop growing completely within two days",
+                              "The garden soil washes away into the town streets",
+                              "The plastic bottles become damaged by the cold weather"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 2 states: 'These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted.'"
+                        "explanation": "Paragraph 2 explains: 'These simple bottles slowly drip water directly to plant roots every morning, so no water is wasted under the hot sun.'"
                   },
                   {
                         "id": 17,
                         "tag": "Inference Skill",
-                        "question": "17. What can the reader infer about the university administration's opinion of the project?",
+                        "question": "17. What can the reader infer about the town council's opinion of the community garden?",
                         "options": [
-                              "They support the project because they plan to expand it to other campus areas next semester",
-                              "They dislike the project and ordered students to remove the vegetable beds",
-                              "They think gardening is a waste of time and punished the club members",
-                              "They were completely unaware that students were growing plants behind the building"
+                              "They support the project because they plan to create more community gardens in other neighborhoods next year",
+                              "They ordered the neighbors to immediately remove all vegetable plants",
+                              "They believe community gardening is a waste of town land and money",
+                              "They were completely unaware that residents were growing vegetables"
                         ],
                         "answer": 0,
-                        "explanation": "Paragraph 3 concludes: 'The university now plans to expand the green project to other campus areas next semester', inferring strong institutional support."
+                        "explanation": "The final sentence notes: 'The town council now plans to create more community gardens in other neighborhoods next year', inferring strong local government approval."
                   },
                   {
                         "id": 18,
                         "tag": "Fact vs Opinion",
                         "question": "18. Which statement from the passage is an objective, verifiable fact?",
                         "options": [
-                              "Participating students grew over 120 kilograms of fresh vegetables",
-                              "Gardening is the most enjoyable activity in the entire university",
-                              "Cherry tomatoes taste much better than green lettuce",
-                              "Every university student should love working in the hot sun"
+                              "Participating neighbors harvested over 120 kilograms of fresh vegetables",
+                              "Community gardening is the most exciting hobby in the entire world",
+                              "Sweet basil smells much nicer than cherry tomatoes",
+                              "Working in a garden is always more fun than going on vacation"
                         ],
                         "answer": 0,
-                        "explanation": "'Participating students grew over 120 kilograms of fresh vegetables' is a measurable, verifiable fact with documented data."
+                        "explanation": "'Participating neighbors harvested over 120 kilograms of fresh vegetables' is a measurable, factual statement supported by recorded harvest data."
                   },
                   {
                         "id": 19,
                         "tag": "Strategy Orchestration",
-                        "question": "19. If you need to answer: 'What did the club do with the harvested vegetables?', which strategy should you use?",
+                        "question": "19. If you need to find out who received the donated vegetables, which strategy is fastest?",
                         "options": [
-                              "Scan paragraph 3 for keywords like 'sold', 'donated', or 'harvest'",
-                              "Reread the entire passage slowly from paragraph 1 to paragraph 3",
-                              "Skim only the title of the passage",
+                              "Scan paragraph 3 for action keywords like 'shared' and 'donated'",
+                              "Reread the entire passage slowly from start to finish",
+                              "Skim only the title of the reading passage",
                               "Guess without checking any sentences in the text"
                         ],
                         "answer": 0,
-                        "explanation": "Scanning for key action verbs ('sold', 'donated', 'harvest') in the results paragraph (paragraph 3) provides the fastest accurate answer."
+                        "explanation": "Scanning paragraph 3 for the keywords 'shared' or 'donated' takes you directly to the sentence mentioning elderly residents and the children's day-care center."
                   },
                   {
                         "id": 20,
                         "tag": "Comprehensive Summary",
                         "question": "20. Which sentence provides the best summary of the entire reading passage?",
                         "options": [
-                              "Buriram university students successfully created a sustainable campus garden that saves water, provides healthy food, and teaches valuable life skills",
+                              "Local neighbors successfully created a community garden that saves water, provides fresh food, and strengthens community friendships",
                               "Plastic bottles can only be recycled if they are cleaned with chemical soap",
-                              "Science buildings in universities are always surrounded by dry sandy soil",
-                              "College dormitories never allow students to cook their own food"
+                              "Town centers are always surrounded by dry sandy soil and empty land",
+                              "Grocery stores in small towns never sell fresh green vegetables"
                         ],
                         "answer": 0,
-                        "explanation": "This sentence encapsulates the entire story: the initiative, the methods (saving water), the outcomes (healthy food), and educational value (life skills)."
+                        "explanation": "This sentence captures the complete narrative: the community effort, the environmental benefit (saving water), the healthy food, and social connection."
                   }
             ]
       },
+
 
       {
         "id": "q3",
