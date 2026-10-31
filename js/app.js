@@ -5360,6 +5360,15 @@ class ReadSkillsApp {
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             ${quizzes.map((q, idx) => `
               <div class="glass-card p-5 border border-purple-100 flex flex-col justify-between hover:shadow-md transition">
+                ${(q.image || (q.passage && q.passage.image)) ? `
+                <div class="relative w-full h-32 rounded-xl overflow-hidden mb-3 border border-purple-100/80 group">
+                  <img src="${q.image || q.passage.image}" alt="${q.title}" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+                  <div class="absolute bottom-1.5 right-1.5 px-2 py-0.5 bg-slate-900/75 backdrop-blur-sm rounded text-[9px] text-white font-medium flex items-center space-x-1">
+                    <i data-lucide="image" class="w-2.5 h-2.5"></i>
+                    <span>Illustrated Passage</span>
+                  </div>
+                </div>
+                ` : ''}
                 <div class="space-y-2">
                   <div class="flex items-center justify-between">
                     <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded bg-purple-100 text-purple-800">${q.code}</span>
@@ -6120,6 +6129,16 @@ class ReadSkillsApp {
                 </div>
               </div>
 
+              ${(quiz.passage.image || quiz.image) ? `
+              <div class="relative overflow-hidden rounded-xl border border-slate-700/80 shadow-md group">
+                <img src="${quiz.passage.image || quiz.image}" alt="${quiz.passage.title}" class="w-full aspect-video object-cover transition duration-300 group-hover:scale-[1.02]" loading="lazy" />
+                <div class="absolute bottom-2 right-2 px-2 py-0.5 bg-slate-900/80 backdrop-blur-sm rounded text-[10px] text-pink-300 font-medium flex items-center space-x-1">
+                  <i data-lucide="image" class="w-3 h-3"></i>
+                  <span>Passage Illustration</span>
+                </div>
+              </div>
+              ` : ''}
+
               <div class="text-sm text-slate-200 leading-relaxed max-h-[260px] sm:max-h-[380px] overflow-y-auto pr-2 space-y-3 font-serif">
                 <p class="italic">"${quiz.passage.text}"</p>
               </div>
@@ -6495,6 +6514,11 @@ class ReadSkillsApp {
               const isPassed = res && res.passed;
               return `
                 <div class="p-4 rounded-xl border ${isDone ? (isPassed ? 'border-emerald-200 bg-emerald-50/30' : 'border-rose-200 bg-rose-50/30') : 'border-slate-200 bg-slate-50/50'} space-y-3 flex flex-col justify-between hover:shadow-sm transition">
+                  ${(q.image || (q.passage && q.passage.image)) ? `
+                  <div class="relative w-full h-24 rounded-lg overflow-hidden border border-purple-100/70 group">
+                    <img src="${q.image || q.passage.image}" alt="${q.title}" class="w-full h-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+                  </div>
+                  ` : ''}
                   <div class="space-y-1.5">
                     <div class="flex items-center justify-between">
                       <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded ${isDone ? 'bg-purple-100 text-purple-800' : 'bg-slate-200 text-slate-600'}">${q.code}</span>

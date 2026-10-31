@@ -856,6 +856,7 @@ window.ReadSkillsData = {
     "quizzes": [
       {
         "id": "q1",
+        "image": "images/q1_comprehension_tortoise_hare.jpg",
         "code": "QUIZ 01",
         "title": "Unit 1: Main Ideas + Strategy 1: Previewing & Predicting",
         "thaiTitle": "แบบทดสอบรวม: Unit 1 (ใจความสำคัญ) + Strategy 1 (การคาดเดาและการอ่านล่วงหน้า)",
@@ -866,6 +867,7 @@ window.ReadSkillsData = {
         "passingScore": 70,
         "passage": {
           "title": "The Tortoise and the Hare: Lessons on Perseverance and Overconfidence",
+          "image": "images/q1_comprehension_tortoise_hare.jpg",
           "text": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course.\n\nMeanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent.",
           "audioText": "A boastful Hare was constantly ridiculing a quiet Tortoise about his clumsy, slow-moving pace. Weary of the ceaseless teasing, the patient Tortoise calmly challenged the swift Hare to a competitive footrace. Believing the challenge was a hilarious joke, the arrogant Hare accepted immediately. When the race commenced, the Hare dashed ahead with breathtaking speed, establishing an immense lead within minutes. Feeling completely confident of an effortless victory, the complacent Hare decided to take a relaxing afternoon nap beneath a shady oak tree along the course. Meanwhile, the determined Tortoise never paused for a single second, pressing onward step by step under the blazing midday sun. While the Hare slept soundly, the patient competitor crossed the halfway mark and steadily approached the final stretch. When the boastful Hare finally awoke and dashed frantically toward the finish line, he was astonished to see the persistent Tortoise crossing ahead of him to the triumphant cheers of all the forest animals. Steady determination and consistent effort often lead to unexpected success over careless natural talent."
         },
