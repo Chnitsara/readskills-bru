@@ -920,203 +920,117 @@ class ReadSkillsApp {
 
   /* ------------------- View Renderers ------------------- */
 
-  // 1. Dashboard View (Neo-brutalist pastel redesign)
-  // ---- Dashboard helpers ----
-  getDashboardDisplayName() {
-    // Use raw stored name so Thai names are kept; strip honorifics like "Dr." / "ดร."
-    const raw = (localStorage.getItem('bru_user_name') || this.user.name || '').trim();
-    const cleaned = raw
-      .replace(/[()]/g, ' ')
-      .replace(/^(dr|mr|mrs|ms|miss|prof|asst\.?\s*prof|assoc\.?\s*prof)\.?\s+/i, '')
-      .replace(/^(ดร\.|อ\.|อาจารย์|นาย|นางสาว|นาง|ผศ\.|รศ\.|ศ\.)\s*/, '')
-      .trim();
-    const first = cleaned.split(/\s+/)[0] || '';
-    // Reject leftovers that are only punctuation or a lone title
-    if (!first || /^[.\-_,]+$/.test(first)) return '';
-    return first;
-  }
-
-  getDashboardStats() {
-    const data = (typeof ReadSkillsData !== 'undefined') ? ReadSkillsData : null;
-    if (!data || !Array.isArray(data.strategies) || data.strategies.length === 0) {
-      return null; // triggers loading / empty state
-    }
-    const totalUnits = data.strategies.length;                               // 6
-    const stepsPerUnit = (data.strategies[0].steps || []).length;            // 8
-    const hoursMatch = String(data.strategies[0].scope || '').match(/(\d+)\s*Hours?/i);
-    const hoursPerUnit = hoursMatch ? parseInt(hoursMatch[1], 10) : 6;
-    const courseHours = totalUnits * hoursPerUnit;                           // 36
-
-    let doneUnits = 0;
-    try {
-      const scores = this.getComprehensionQuizScores ? this.getComprehensionQuizScores() : {};
-      doneUnits = Object.values(scores || {}).filter(s => s && s.completedAt && s.score > 0).length;
-    } catch (e) { doneUnits = 0; }
-    doneUnits = Math.min(doneUnits, totalUnits);
-
-    const completion = totalUnits ? Math.round((doneUnits / totalUnits) * 100) : 0;
-    return {
-      totalUnits,
-      stepsPerUnit,
-      courseHours,
-      doneUnits,
-      completion,
-      onlineText: this.formatHoursText(this.user.onlineSeconds || 0)
-    };
-  }
-
+  // 1. Dashboard View
   renderDashboard() {
-    const stats = this.getDashboardStats();
-    const name = this.getDashboardDisplayName();
-    const greetingName = name
-      ? `<span class="db-hero__name">${name}</span>`
-      : `<span class="db-hero__name">Learner</span>`;
-
-    // ---------- Loading / empty state ----------
-    if (!stats) {
-      return `
-        <div class="db" aria-busy="true">
-          <section class="db-hero db-skeleton" aria-label="กำลังโหลดแดชบอร์ด">
-            <div class="db-skel-line db-skel-line--lg"></div>
-            <div class="db-skel-line"></div>
-            <div class="db-skel-line db-skel-line--sm"></div>
-          </section>
-          <div class="db-cards">
-            ${[1, 2, 3, 4].map(() => `<div class="db-card db-skeleton"><div class="db-skel-line"></div><div class="db-skel-line db-skel-line--sm"></div></div>`).join('')}
-          </div>
-          <p class="db-empty">กำลังโหลดข้อมูลรายวิชา… <span class="db-en">Loading course data…</span></p>
-        </div>`;
-    }
-
-    const { totalUnits, stepsPerUnit, courseHours, doneUnits, completion, onlineText } = stats;
-
-    const cards = [
-      {
-        view: 'lessons', tone: 'purple', icon: 'book-open',
-        th: 'บทเรียนการอ่าน', en: 'Reading Lessons',
-        meta: `${totalUnits} หน่วยการเรียน`,
-        desc: 'บทเรียนเป็นขั้นตอน ครอบคลุมก่อนอ่าน ระหว่างอ่าน และหลังอ่าน',
-        enDesc: 'Structured lessons: pre-, while- and post-reading.'
-      },
-      {
-        view: 'strategies', tone: 'pink', icon: 'lightbulb',
-        th: 'กลยุทธ์การอ่าน', en: 'Reading Strategies',
-        meta: `${totalUnits} หน่วย • ${stepsPerUnit} ขั้นตอน`,
-        desc: `ฝึกกลยุทธ์ ${totalUnits} หน่วย ตามลำดับการเรียนรู้ ${stepsPerUnit} ขั้น ตั้งแต่แนวคิดจนถึงแบบทดสอบ`,
-        enDesc: `${totalUnits} units × ${stepsPerUnit}-step learning sequence.`
-      },
-      {
-        view: 'practice', tone: 'yellow', icon: 'gamepad-2',
-        th: 'แบบฝึกหัดและแบบทดสอบ', en: 'Practice & Quiz',
-        meta: `แบบทดสอบประจำหน่วย ${totalUnits} ชุด`,
-        desc: 'เกมฝึกทักษะ แบบทดสอบความเข้าใจ พร้อมเฉลยและคำอธิบายทันที',
-        enDesc: 'Games, unit quizzes & instant feedback.'
-      },
-      {
-        view: 'progress', tone: 'green', icon: 'bar-chart-3',
-        th: 'ความก้าวหน้าในการเรียน', en: 'Learning Progress',
-        meta: `ผ่านแล้ว ${doneUnits}/${totalUnits} หน่วย`,
-        desc: 'ติดตามเวลาเรียน หน่วยที่ผ่าน คะแนนแบบทดสอบ และสถิติการใช้งาน',
-        enDesc: 'Online hours, completed units & quiz scores.'
-      }
-    ];
-
     return `
-      <div class="db">
-        <!-- ===== Hero (2 columns) ===== -->
-        <section class="db-hero" aria-labelledby="db-hero-title">
-          <div class="db-hero__text">
-            <span class="db-chip">
-              <i data-lucide="sparkles" class="db-ico-sm" aria-hidden="true"></i>
-              รายวิชา 2031103 <span class="db-en">Reading Strategies</span>
-            </span>
-            <h1 id="db-hero-title" class="db-hero__title">
-              สวัสดี, ${greetingName} <span class="db-wave" aria-hidden="true">👋</span>
-            </h1>
-            <p class="db-en db-hero__hello-en">Hello, ${name || 'Learner'}</p>
-            <p class="db-hero__lead">
-              เรียนรู้ทักษะการอ่านภาษาอังกฤษผ่าน ${totalUnits} หน่วยการเรียน หน่วยละ ${stepsPerUnit} ขั้นตอน
-              พร้อมติดตามความก้าวหน้าของตัวเอง ทีละก้าวอย่างสนุก
-            </p>
-            <p class="db-en db-hero__lead-en">
-              ${totalUnits} units · ${stepsPerUnit} steps each · track your progress one fun step at a time.
-            </p>
-            <div class="db-hero__actions">
-              <button type="button" onclick="app.navigate('lessons')" class="db-btn db-btn--primary">
-                <i data-lucide="play-circle" class="db-ico" aria-hidden="true"></i>
-                <span>เรียนต่อ หน่วยที่ ${this.currentUnitId} <span class="db-btn__en">Continue Lesson</span></span>
-              </button>
-              <button type="button" onclick="app.navigate('strategies')" class="db-btn db-btn--ghost">
-                <i data-lucide="lightbulb" class="db-ico" aria-hidden="true"></i>
-                <span>สำรวจกลยุทธ์ <span class="db-btn__en">Explore Strategies</span></span>
-              </button>
+      <div class="space-y-6 sm:space-y-8">
+        <!-- Welcome Hero (Playful Neo-Brutalist Banner) -->
+        <div class="nb-hero relative overflow-hidden p-5 sm:p-8">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+            <div class="max-w-2xl">
+              <span class="nb-chip nb-chip-yellow mb-3 inline-flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
+              </span>
+              <h1 class="nb-display text-3xl sm:text-5xl leading-none mb-3 text-slate-900">
+                Hello, <span class="text-[#8B5CF6]">${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim().split(' ')[0] || 'Somsak'}</span> <span class="nb-wave inline-block">👋</span>
+              </h1>
+              <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
+                Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
+                <button onclick="app.navigate('lessons')" class="nb-btn nb-btn-purple">
+                  <i data-lucide="play-circle" class="w-4 h-4"></i>
+                  <span>Continue Lesson (Unit ${this.currentUnitId})</span>
+                </button>
+                <button onclick="app.navigate('strategies')" class="nb-btn nb-btn-white">
+                  <i data-lucide="lightbulb" class="w-4 h-4"></i>
+                  <span>Explore Strategies</span>
+                </button>
+              </div>
+            </div>
+            <div class="text-right shrink-0 hidden sm:block">
+              <div class="nb-display text-6xl sm:text-7xl leading-none text-slate-900">6</div>
+              <div class="text-[11px] font-bold text-slate-700">Reading Units</div>
             </div>
           </div>
+          <div class="nb-sticker absolute -right-2 -bottom-3 sm:right-24 sm:bottom-auto sm:top-4 text-4xl select-none pointer-events-none">📚</div>
+        </div>
 
-          <div class="db-hero__stats" role="list" aria-label="สรุปรายวิชา">
-            <div class="db-stat db-stat--purple" role="listitem">
-              <i data-lucide="layers" class="db-ico" aria-hidden="true"></i>
-              <span class="db-stat__num">${totalUnits}</span>
-              <span class="db-stat__label">หน่วยการเรียน</span>
-              <span class="db-en">Units</span>
+        <!-- 4 Core Navigation Cards matching Blueprint -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          
+          <div onclick="app.navigate('lessons')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-purple-700 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="book-open" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
-            <div class="db-stat db-stat--yellow" role="listitem">
-              <i data-lucide="clock" class="db-ico" aria-hidden="true"></i>
-              <span class="db-stat__num">${courseHours}</span>
-              <span class="db-stat__label">ชั่วโมงเรียน</span>
-              <span class="db-en">Hours</span>
-            </div>
-            <div class="db-stat db-stat--pink db-stat--wide" role="listitem">
-              <i data-lucide="target" class="db-ico" aria-hidden="true"></i>
-              <span class="db-stat__num">${completion}<small>%</small></span>
-              <span class="db-stat__label">ความสำเร็จ</span>
-              <span class="db-en">Completion</span>
-            </div>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Lessons</h3>
+            <p class="text-[11px] sm:text-xs text-purple-800 font-semibold mb-1.5 sm:mb-2">บทเรียนการอ่าน (Units 1–6)</p>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Structured reading lessons covering 4 key learning steps: Overview, Learn, Example, and Practice.
+            </p>
           </div>
-        </section>
 
-        <!-- ===== Navigation cards ===== -->
-        <nav class="db-cards" aria-label="เมนูหลัก">
-          ${cards.map(c => `
-            <button type="button" class="db-card db-card--${c.tone}" onclick="app.navigate('${c.view}')"
-                    aria-label="${c.th} (${c.en})">
-              <span class="db-card__icon" aria-hidden="true"><i data-lucide="${c.icon}" class="db-ico-lg"></i></span>
-              <span class="db-card__title">${c.th}</span>
-              <span class="db-card__en">${c.en}</span>
-              <span class="db-card__meta">${c.meta}</span>
-              <span class="db-card__desc">${c.desc}</span>
-              <span class="db-card__desc-en">${c.enDesc}</span>
-              <span class="db-card__go" aria-hidden="true">เข้าสู่หน้า <i data-lucide="arrow-right" class="db-ico-sm"></i></span>
-            </button>
-          `).join('')}
-        </nav>
+          <div onclick="app.navigate('strategies')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-pink-500 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 text-pink-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Strategies</h3>
+            <p class="text-[11px] sm:text-xs text-pink-700 font-semibold mb-1.5 sm:mb-2">กลยุทธ์การอ่าน (6 Units &bull; 8 Steps)</p>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Master 6 reading strategy units following an 8-step learning sequence from concept to quiz.
+            </p>
+          </div>
 
-        <!-- ===== Progress strip ===== -->
-        <section class="db-progress" aria-labelledby="db-progress-title">
-          <div class="db-progress__summary">
-            <div class="db-progress__badge">${doneUnits}/${totalUnits}</div>
+          <div onclick="app.navigate('practice')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-amber-500 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="tv" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Practice & Quiz</h3>
+            <p class="text-[11px] sm:text-xs text-amber-800 font-semibold mb-1.5 sm:mb-2">แบบฝึกหัดและแบบทดสอบ</p>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Interactive games, unit quizzes, passage comprehension, and immediate feedback engine.
+            </p>
+          </div>
+
+          <div onclick="app.navigate('progress')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-emerald-600 hover:shadow-md transition">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+              <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            </div>
+            <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Learning Progress</h3>
+            <p class="text-[11px] sm:text-xs text-emerald-800 font-semibold mb-1.5 sm:mb-2">ความก้าวหน้าในการเรียน</p>
+            <p class="text-slate-600 text-xs leading-relaxed">
+              Track online hours, completed units, quiz performance, and active usage statistics.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Current Progress Summary Banner -->
+        <div class="glass-card p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
+          <div class="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto">
+            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl border border-purple-200 shrink-0">
+              5/6
+            </div>
             <div>
-              <h2 id="db-progress-title" class="db-progress__title">ความก้าวหน้าของคุณ <span class="db-en">Your Progress</span></h2>
-              <p class="db-progress__time">เวลาเรียนสะสม <strong>${onlineText}</strong></p>
+              <h4 class="font-bold text-slate-900 text-sm sm:text-base">Your Active Progress</h4>
+              <p class="text-xs text-slate-600">Total Online Time: <strong class="text-purple-800 font-bold">${this.formatHoursText(this.user.onlineSeconds)}</strong></p>
             </div>
           </div>
 
-          <div class="db-progress__bar-wrap">
-            <div class="db-progress__bar-head">
-              <span>ความสำเร็จโดยรวม <span class="db-en">Overall Completion</span></span>
-              <strong>${completion}%</strong>
+          <div class="flex-1 w-full md:max-w-md">
+            <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
+              <span>Overall Completion</span>
+              <span>83%</span>
             </div>
-            <div class="db-progress__track" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                 aria-valuenow="${completion}" aria-label="ความสำเร็จโดยรวม ${completion}%">
-              <div class="db-progress__fill" style="--pct:${completion}%"></div>
+            <div class="w-full bg-slate-200/80 h-2.5 sm:h-3 rounded-full overflow-hidden">
+              <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full" style="width: 83%"></div>
             </div>
           </div>
 
-          <button type="button" onclick="app.navigate('progress')" class="db-btn db-btn--dark">
-            <i data-lucide="file-bar-chart" class="db-ico" aria-hidden="true"></i>
-            <span>ดูรายงานฉบับเต็ม <span class="db-btn__en">View Full Report</span></span>
+          <button onclick="app.navigate('progress')" class="w-full sm:w-auto px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold rounded-xl transition cursor-pointer text-center">
+            View Full Report
           </button>
-        </section>
+        </div>
       </div>
     `;
   }
