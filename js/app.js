@@ -979,15 +979,14 @@ class ReadSkillsApp {
               </div>
             </div>
 
-            <!-- Right Column: Single Total Online Time Card -->
-            <div onclick="app.navigate('progress')" class="cursor-pointer bg-white border-2 border-[#111] rounded-2xl p-5 sm:p-6 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-4 shrink-0 sm:min-w-[250px]">
-              <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-[#EDE9FE] border-2 border-[#111] flex items-center justify-center text-purple-800 shrink-0 shadow-[2px_2px_0_#111]">
-                <i data-lucide="clock" class="w-6 h-6 sm:w-7 sm:h-7"></i>
+            <!-- Right Column: Compact Total Online Time Card -->
+            <div onclick="app.navigate('progress')" class="cursor-pointer bg-white border-2 border-[#111] rounded-xl px-3.5 py-2.5 shadow-[3px_3px_0_#111] hover:-translate-y-0.5 transition inline-flex items-center gap-3 shrink-0 self-start md:self-center">
+              <div class="w-9 h-9 rounded-lg bg-[#EDE9FE] border-2 border-[#111] flex items-center justify-center text-purple-800 shrink-0">
+                <i data-lucide="clock" class="w-4 h-4"></i>
               </div>
-              <div>
-                <div class="text-[11px] font-extrabold uppercase tracking-wider text-purple-700 mb-0.5">Total Online Time</div>
-                <div class="nb-display text-3xl sm:text-4xl leading-none text-slate-900">${studyHrs} hrs</div>
-                <div class="text-xs font-semibold text-slate-500 mt-1">${studyMins} mins active</div>
+              <div class="pr-1">
+                <div class="text-[9px] font-extrabold uppercase tracking-wider text-purple-700 leading-tight">Total Online Time</div>
+                <div class="nb-display text-lg sm:text-xl leading-tight text-slate-900">${studyHrs} hrs <span class="text-[10px] font-semibold text-slate-500 font-sans">(${studyMins}m)</span></div>
               </div>
             </div>
           </div>
