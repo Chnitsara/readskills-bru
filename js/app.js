@@ -943,14 +943,15 @@ class ReadSkillsApp {
     const accountName = this.getActiveUserName();
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
     const studyHrs = ((this.user.onlineSeconds || 18400) / 3600).toFixed(1);
+    const studyMins = Math.floor((this.user.onlineSeconds || 18400) / 60);
 
     return `
       <div class="space-y-6 sm:space-y-8">
         <!-- Welcome Hero (Playful Neo-Brutalist Banner) -->
         <div class="nb-hero relative overflow-hidden p-5 sm:p-8">
-          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <!-- Left Column: Greeting & CTA -->
-            <div class="lg:col-span-7">
+            <div class="max-w-2xl">
               <div class="flex flex-wrap items-center gap-2 mb-3">
                 <span class="nb-chip nb-chip-yellow inline-flex items-center gap-1">
                   <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
@@ -961,7 +962,7 @@ class ReadSkillsApp {
                 </span>
               </div>
               <h1 class="nb-display text-3xl sm:text-5xl leading-tight mb-3 text-slate-900">
-                Hello, <span class="text-[#8B5CF6]">${accountName}</span> <span class="nb-wave inline-block">👋</span>
+                Hello, <span class="text-[#8B5CF6]">${accountName}</span>
               </h1>
               <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
                 Explore 6 structured reading units, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
@@ -978,46 +979,15 @@ class ReadSkillsApp {
               </div>
             </div>
 
-            <!-- Right Column: Balanced Neo-Brutalist Stat Grid -->
-            <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-3.5">
-              <div onclick="app.navigate('lessons')" class="cursor-pointer bg-white border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-purple-100 border-2 border-[#111] flex items-center justify-center text-purple-800 shrink-0">
-                  <i data-lucide="book-open" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">6</div>
-                  <div class="text-[11px] font-bold text-slate-700 mt-0.5">Reading Units</div>
-                </div>
+            <!-- Right Column: Single Total Online Time Card -->
+            <div onclick="app.navigate('progress')" class="cursor-pointer bg-white border-2 border-[#111] rounded-2xl p-5 sm:p-6 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-4 shrink-0 sm:min-w-[250px]">
+              <div class="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl bg-[#EDE9FE] border-2 border-[#111] flex items-center justify-center text-purple-800 shrink-0 shadow-[2px_2px_0_#111]">
+                <i data-lucide="clock" class="w-6 h-6 sm:w-7 sm:h-7"></i>
               </div>
-
-              <div onclick="app.navigate('strategies')" class="cursor-pointer bg-[#FEF3C7] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-amber-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
-                  <i data-lucide="compass" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">8</div>
-                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Strategy Steps</div>
-                </div>
-              </div>
-
-              <div onclick="app.navigate('practice')" class="cursor-pointer bg-[#FCE7F3] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-pink-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
-                  <i data-lucide="check-square" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">20</div>
-                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Quiz Items / Unit</div>
-                </div>
-              </div>
-
-              <div onclick="app.navigate('progress')" class="cursor-pointer bg-[#EDE9FE] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
-                <div class="w-11 h-11 rounded-xl bg-purple-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
-                  <i data-lucide="clock" class="w-5 h-5"></i>
-                </div>
-                <div>
-                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">${studyHrs}h</div>
-                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Active Study</div>
-                </div>
+              <div>
+                <div class="text-[11px] font-extrabold uppercase tracking-wider text-purple-700 mb-0.5">Total Online Time</div>
+                <div class="nb-display text-3xl sm:text-4xl leading-none text-slate-900">${studyHrs} hrs</div>
+                <div class="text-xs font-semibold text-slate-500 mt-1">${studyMins} mins active</div>
               </div>
             </div>
           </div>
