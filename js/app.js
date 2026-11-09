@@ -3059,7 +3059,7 @@ class ReadSkillsApp {
             <div class="space-y-2.5">
               ${(step.options || []).map((opt, idx) => `
                 <button 
-                  onclick="app.submitStrategyStepPractice(${idx})"
+                  onclick="app.submitStrategyStepPractice(${unit.unitNumber}, ${stepNum}, ${idx})"
                   class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
                 >
                   <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
@@ -3175,7 +3175,7 @@ class ReadSkillsApp {
             <div class="space-y-2.5">
               ${(step.options || []).map((opt, idx) => `
                 <button 
-                  onclick="app.submitStrategyStepPractice(${idx})"
+                  onclick="app.submitStrategyStepPractice(${unit.unitNumber}, ${stepNum}, ${idx})"
                   class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-emerald-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
                 >
                   <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
@@ -8438,10 +8438,19 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Immediate Feedback Engine ------------------- */
-  submitStrategyStepPractice(selectedIdx) {
-    const unit = ReadSkillsData.strategies[this.currentStrategyUnitIndex];
+  submitStrategyStepPractice(unitNum, stepNum, selectedIdx) {
+    if (arguments.length === 1) {
+      selectedIdx = unitNum;
+      unitNum = this.currentStrategyUnit || 1;
+      stepNum = (typeof this.currentStrategyStepIndex === 'number') ? this.currentStrategyStepIndex + 1 : 6;
+    }
+    const unit = (ReadSkillsData.strategies || []).find(u => u.unitNumber === unitNum) 
+               || ReadSkillsData.strategies[(unitNum || 1) - 1] 
+               || ReadSkillsData.strategies[0];
     if (!unit || !unit.steps) return;
-    const step = unit.steps[this.currentStrategyStepIndex];
+    const step = unit.steps.find(s => (s.stepNum || s.stepNumber) === stepNum) 
+               || unit.steps[(stepNum || 6) - 1] 
+               || unit.steps[this.currentStrategyStepIndex || 0];
     if (!step) return;
     const isCorrect = selectedIdx === step.answer;
     this.showFeedbackModal(isCorrect, step.explanation || '');
