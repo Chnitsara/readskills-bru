@@ -1480,7 +1480,7 @@ class ReadSkillsApp {
               <h5 class="text-sm font-bold text-slate-900">${q.question || 'Post-Reading Quiz Question'}</h5>
               <div class="space-y-2">
                 ${(q.options || []).map((opt, idx) => `
-                  <button onclick="app.submitPracticeAnswer(${idx}, ${q.answer}, '${encodeURIComponent(q.explanation || '')}')" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
+                  <button onclick="app.submitPracticeAnswer(${idx}, ${q.answer}, '${encodeURIComponent(q.explanation || '').replace(/'/g, '%27')}')" class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-purple-50/50 transition text-xs font-medium flex items-center space-x-3 cursor-pointer">
                     <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">${String.fromCharCode(65 + idx)}</span>
                     <span>${opt}</span>
                   </button>
@@ -1562,7 +1562,7 @@ class ReadSkillsApp {
                     </select>
                   </div>
 
-                  <button onclick="app.togglePassageAudio('${encodeURIComponent(s.audioText || s.passage || '')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                  <button onclick="app.togglePassageAudio('${encodeURIComponent(s.audioText || s.passage || '').replace(/'/g, '%27')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
                     <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
                     <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
                   </button>
@@ -1632,7 +1632,7 @@ class ReadSkillsApp {
 
             <div class="space-y-3">
               ${(prac.options || []).map((opt, idx) => `
-                <button onclick="app.submitPracticeAnswer(${idx}, ${prac.answer}, '${encodeURIComponent(prac.explanation || '')}')" class="w-full text-left p-4 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white transition text-sm font-medium">
+                <button onclick="app.submitPracticeAnswer(${idx}, ${prac.answer}, '${encodeURIComponent(prac.explanation || '').replace(/'/g, '%27')}')" class="w-full text-left p-4 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white transition text-sm font-medium">
                   ${String.fromCharCode(65 + idx)}. ${opt}
                 </button>
               `).join('')}
@@ -3059,7 +3059,7 @@ class ReadSkillsApp {
             <div class="space-y-2.5">
               ${(step.options || []).map((opt, idx) => `
                 <button 
-                  onclick="app.submitPracticeAnswer(${idx}, ${step.answer}, '${encodeURIComponent(step.explanation)}')"
+                  onclick="app.submitStrategyStepPractice(${idx})"
                   class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-purple-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
                 >
                   <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
@@ -3111,7 +3111,7 @@ class ReadSkillsApp {
                       </select>
                     </div>
 
-                    <button onclick="app.togglePassageAudio('${encodeURIComponent(step.audioText || step.passage || 'Reading text')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                    <button onclick="app.togglePassageAudio('${encodeURIComponent(step.audioText || step.passage || 'Reading text').replace(/'/g, '%27')}')" class="px-4 py-2 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-2 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
                       <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-4 h-4"></i>
                       <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen Passage'}</span>
                     </button>
@@ -3175,7 +3175,7 @@ class ReadSkillsApp {
             <div class="space-y-2.5">
               ${(step.options || []).map((opt, idx) => `
                 <button 
-                  onclick="app.submitQuizAnswer(${idx}, ${step.answer}, '${encodeURIComponent(step.explanation)}')"
+                  onclick="app.submitStrategyStepPractice(${idx})"
                   class="w-full text-left p-3.5 rounded-xl border border-purple-200 hover:border-emerald-600 hover:bg-white bg-white/70 transition text-xs font-medium flex items-center space-x-3 cursor-pointer"
                 >
                   <span class="w-5 h-5 rounded-full bg-purple-100 text-purple-800 font-bold flex items-center justify-center text-[10px] shrink-0">
@@ -3366,7 +3366,7 @@ class ReadSkillsApp {
 
     const key = {
       1: { ans: 1, exp: "จากชื่อเรื่อง 'City Buses Go Electric for Cleaner Air' และประโยคเปิด คาดเดาได้ว่าเรื่องนี้กล่าวถึงการใช้รถเมล์ไฟฟ้าเพื่อลดควันพิษและเสียงดังในเมือง (ข้อ B)" },
-      2: { ans: 0, exp: "จากหัวข้อย่อย 'Why Students Wait Until the Last Minute' และคำตัวหนา homework, stress, time plan คาดเดาได้ว่าพูดถึงสาเหตุที่นักศึกษาเลื่อนทำงานและวิธีวางแผนเวลา (ข้อ A)" },
+      2: { ans: 0, exp: "จากหัวข้อย่อย 'Healthy Vegetables, Saving Money, and Friendly Neighbors' และคำตัวหนา vegetables, fresh food, community garden คาดเดาได้ว่ากล่าวถึงประโยชน์ของสวนผักชุมชนที่ให้ผักสด ประหยัดเงิน และสร้างมิตรภาพ (ข้อ A)" },
       3: { ans: 2, exp: "จากชื่อเรื่อง 'Trees by the Sea Protect Our Coast' และภาพต้นไม้ชายฝั่งรับคลื่น คาดเดาได้ว่าต้นไม้ชายทะเลช่วยปกป้องหมู่บ้านชายฝั่งจากคลื่นและพายุ (ข้อ C)" },
       4: { ans: 0, exp: "จากประโยคเปิดเรื่องการเรียนภาษาที่สองช่วยฝึกสมอง คาดเดาได้ว่าการเรียนสองภาษาช่วยพัฒนาความจำและเป็นประโยชน์ต่อการทำงานในอนาคต (ข้อ A)" }
     };
@@ -3409,10 +3409,10 @@ class ReadSkillsApp {
   highlightStrat1Sentence(segNum, color) {
     const expected = {
       1: { role: 'yellow', exp: 'Segment (1) คือ Preview Clues (สีเหลือง) ได้แก่ Title, Subheading และ Bold Words ที่ช่วยคาดเดาเนื้อหาก่อนอ่าน' },
-      2: { role: 'blue', exp: 'Segment (2) คือ Topic Sentence (สีฟ้า) ที่เปิดประเด็นหลักว่าการนอนหลับให้เพียงพอทุกคืนช่วยให้สมองจดจำบทเรียนใหม่ได้ดี' },
-      3: { role: 'green', exp: 'Segment (3) คือ Supporting Detail (สีเขียว) อธิบายการทำงานของสมองในการจัดระเบียบสิ่งที่เรียนมาขณะหลับ' },
-      4: { role: 'green', exp: 'Segment (4) คือ Supporting Detail / Example (สีเขียว) ยกตัวอย่างว่านักศึกษาที่นอนครบ 8 ชั่วโมงจำคำศัพท์ได้มากกว่า' },
-      5: { role: 'blue', exp: 'Segment (5) คือ Concluding Main Idea Restatement (สีฟ้า) ที่สรุปย้ำใจความสำคัญปิดท้ายย่อหน้า' }
+      2: { role: 'blue', exp: 'Segment (2) คือ Topic Sentence (สีฟ้า) ที่เปิดประเด็นหลักว่าการนอนหลับให้เพียงพอทุกคืนสำคัญต่อการมีสุขภาพที่ดีและกระปรี้กระเปร่า' },
+      3: { role: 'green', exp: 'Segment (3) คือ Supporting Detail (สีเขียว) อธิบายว่าการนอนช่วยให้ร่างกายได้พักและสมองชาร์จพลังงานสดชื่นสำหรับวันถัดไป' },
+      4: { role: 'green', exp: 'Segment (4) คือ Supporting Detail / Example (สีเขียว) ยกตัวอย่างว่าคนที่นอนครบ 8 ชั่วโมงมีพลังและสมาธิในชีวิตประจำวันมากกว่า' },
+      5: { role: 'blue', exp: 'Segment (5) คือ Concluding Main Idea Restatement (สีฟ้า) ที่สรุปย้ำใจความสำคัญว่าการเข้านอนเร็วช่วยให้สุขภาพแข็งแรงและมีความสุขทุกวัน' }
     };
 
     const textEl = document.getElementById(`s1-hl-${segNum}-text`);
@@ -3456,8 +3456,8 @@ class ReadSkillsApp {
     this.strat1PassageAnswers[pNum] = choiceIdx;
 
     const key = {
-      1: { ans: 1, exp: "ประโยค (1) คือ Topic Sentence และใจความหลักคือการใช้ขวดน้ำใช้ซ้ำช่วยลดขยะพลาสติกและประหยัดเงินของนักศึกษา (ข้อ B)" },
-      2: { ans: 0, exp: "จาก Topic Sentence (1) และประโยคสรุป (5) ใจความหลักคือการจดโน้ตด้วยปากกาในสมุดช่วยให้นักศึกษาเข้าใจและจำบทเรียนได้ดีกว่าการพิมพ์ทุกคำ (ข้อ A)" },
+      1: { ans: 1, exp: "ประโยค (1) คือ Topic Sentence และใจความหลักคือการใช้ถุงผ้าช่วยลดขยะพลาสติกและปกป้องธรรมชาติและสัตว์ทะเล (ข้อ B)" },
+      2: { ans: 0, exp: "จาก Topic Sentence (1) และประโยคสรุป (6) ใจความหลักคือการปลูกผักสวนครัวช่วยให้ครอบครัวได้รับอาหารสดสะอาด ประหยัดค่ากับข้าว และช่วยคลายเครียด (ข้อ A)" },
       3: { ans: 1, exp: "ตัวอย่างรถไฟหัวกระสุนที่เลียนแบบปากนกและตึกที่ระบายอากาศเหมือนจอมปลวกในประโยค (3)–(4) ทำหน้าที่เป็น Supporting Details ที่ขยายความ Topic Sentence ในประโยค (1) (ข้อ B)" }
     };
 
@@ -6122,7 +6122,7 @@ class ReadSkillsApp {
                     </select>
                   </div>
 
-                  <button onclick="app.togglePassageAudio('${encodeURIComponent(quiz.passage.audioText || quiz.passage.text)}')" class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
+                  <button onclick="app.togglePassageAudio('${encodeURIComponent(quiz.passage.audioText || quiz.passage.text).replace(/'/g, '%27')}')" class="px-3 py-1.5 bg-pink-600 hover:bg-pink-700 text-white text-xs font-semibold rounded-lg flex items-center space-x-1.5 transition cursor-pointer ${this.isAudioPlaying ? 'audio-playing' : ''}">
                     <i data-lucide="${this.isAudioPlaying ? 'square' : 'volume-2'}" class="w-3.5 h-3.5"></i>
                     <span>${this.isAudioPlaying ? 'Stop Audio' : 'Listen'}</span>
                   </button>
@@ -8438,6 +8438,15 @@ class ReadSkillsApp {
   }
 
   /* ------------------- Immediate Feedback Engine ------------------- */
+  submitStrategyStepPractice(selectedIdx) {
+    const unit = ReadSkillsData.strategies[this.currentStrategyUnitIndex];
+    if (!unit || !unit.steps) return;
+    const step = unit.steps[this.currentStrategyStepIndex];
+    if (!step) return;
+    const isCorrect = selectedIdx === step.answer;
+    this.showFeedbackModal(isCorrect, step.explanation || '');
+  }
+
   submitPracticeAnswer(selectedIdx, correctIdx, encodedExpl) {
     const isCorrect = selectedIdx === correctIdx;
     const explanation = decodeURIComponent(encodedExpl);
