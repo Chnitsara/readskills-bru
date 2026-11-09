@@ -510,7 +510,15 @@ class ReadSkillsApp {
 
     const nameElem = document.getElementById('user-display-name');
     if (nameElem) {
-      nameElem.innerHTML = `${accountName} ${isTeacher ? '<span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900 border border-amber-300 ml-1">TEACHER</span>' : ''}`;
+      nameElem.textContent = accountName;
+    }
+    const headerRoleBadge = document.getElementById('user-header-role-badge');
+    if (headerRoleBadge) {
+      if (isTeacher) {
+        headerRoleBadge.className = 'hidden sm:inline-block text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-amber-200 text-amber-950 border border-[#111] shrink-0';
+      } else {
+        headerRoleBadge.className = 'hidden';
+      }
     }
     const avatarElem = document.getElementById('user-avatar-initial');
     if (avatarElem) {
