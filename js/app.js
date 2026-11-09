@@ -1757,7 +1757,7 @@ class ReadSkillsApp {
         quizData: ReadSkillsData.unit2Quiz,
         state: this.unit2QuizState,
         storageKey: 'bru_unit2_quiz_score',
-        cefrLabel: 'CEFR Target: A2-B1 Level',
+        cefrLabel: '',
         unitTitle: 'Unit 2 Assessment Results (ผลคะแนนแบบทดสอบ 40 ข้อ)',
         unitSub: 'คะแนนแบบทดสอบรายละเอียดสนับสนุน ความสัมพันธ์ทางความคิด และการสแกน Unit 2 (40 ข้อ • Indicator 3.3)',
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถแยกแยะ Major/Minor Details, วิเคราะห์ Signal Words และใช้ Skimming/Scanning ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
@@ -1769,7 +1769,7 @@ class ReadSkillsApp {
         quizData: ReadSkillsData.unit3Quiz,
         state: this.unit3QuizState,
         storageKey: 'bru_unit3_quiz_score',
-        cefrLabel: 'CEFR Target: A2-B1 Level',
+        cefrLabel: '',
         unitTitle: 'Unit 3 Practice Results (ผลคะแนนแบบทดสอบคำศัพท์และประโยค 40 ข้อ)',
         unitSub: 'คะแนนแบบทดสอบวัดผลคำศัพท์ในบริบทและความหมายของประโยค Unit 3 (40 ข้อ • Indicator 3.3)',
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถใช้ Context Clues ถอดรหัสคำศัพท์และวิเคราะห์โครงสร้างประโยคซับซ้อนได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
@@ -2786,7 +2786,7 @@ class ReadSkillsApp {
         <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/80 via-pink-100/60 to-purple-50/80 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber || (ReadSkillsData.strategies.indexOf(unit) + 1)}</span>
-            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${(unit.cefr && unit.cefr !== 'undefined') ? unit.cefr : 'A2–B1'}</span>
+            
           </div>
           <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title || ''} (${unit.thaiTitle || ''})</h3>
           <p class="text-xs text-purple-800 font-semibold mb-1">
@@ -3252,7 +3252,7 @@ class ReadSkillsApp {
     this.togglePassageAudio(encodeURIComponent(text));
   }
 
-  /* ------------------- Strategy Unit 1 Interactive Methods (A2-B1) ------------------- */
+  /* ------------------- Strategy Unit 1 Interactive Methods  ------------------- */
 
   // 1. Diagnostic Pre-Test (3 Items)
   submitStrat1Pretest(qNum, choiceIdx) {
@@ -3311,7 +3311,7 @@ class ReadSkillsApp {
     }
   }
 
-  // 3. Vocabulary Preview Activity (6 A2-B1 Items)
+  // 3. Vocabulary Preview Activity (6  Items)
   submitStrat1Vocab(qNum, choiceIdx) {
     if (!this.strat1VocabAnswers) this.strat1VocabAnswers = {};
     this.strat1VocabAnswers[qNum] = choiceIdx;
@@ -3359,7 +3359,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 6`;
   }
 
-  // 4. Prediction Quiz Activity (4 A2-B1 Items)
+  // 4. Prediction Quiz Activity (4  Items)
   submitStrat1Pred(qNum, choiceIdx) {
     if (!this.strat1PredAnswers) this.strat1PredAnswers = {};
     this.strat1PredAnswers[qNum] = choiceIdx;
@@ -3450,7 +3450,7 @@ class ReadSkillsApp {
     Object.keys(roles).forEach(k => this.highlightStrat1Sentence(Number(k), roles[k]));
   }
 
-  // 6. While-Reading Passages 1–3 Check (Unit 1 A2-B1)
+  // 6. While-Reading Passages 1–3 Check (Unit 1 )
   submitStrat1PassageCheck(pNum, choiceIdx) {
     if (!this.strat1PassageAnswers) this.strat1PassageAnswers = {};
     this.strat1PassageAnswers[pNum] = choiceIdx;
@@ -3494,7 +3494,7 @@ class ReadSkillsApp {
     if (scoreEl) scoreEl.textContent = `${score} / 3 Completed`;
   }
 
-  /* ------------------- Strategy Unit 2 Interactive Methods (A2-B1) ------------------- */
+  /* ------------------- Strategy Unit 2 Interactive Methods  ------------------- */
 
   submitStrat2Pretest() {
     const key = [1, 0, 1];
@@ -3741,7 +3741,7 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Strategy Unit 3 Interactive Methods (A2-B1) ------------------- */
+  /* ------------------- Strategy Unit 3 Interactive Methods  ------------------- */
 
   submitStrat3Pretest() {
     const key = [1, 1, 1];
@@ -3970,7 +3970,7 @@ class ReadSkillsApp {
     }
   }
 
-  /* ------------------- Strategy Unit 4 Interactive Methods (A2-B1) ------------------- */
+  /* ------------------- Strategy Unit 4 Interactive Methods  ------------------- */
 
   submitStrat4Pretest() {
     const key = [1, 1, 1];
@@ -4549,7 +4549,7 @@ class ReadSkillsApp {
             <span>References, Connectives & Text Organization</span>
           </div>
           <p class="text-purple-900 leading-relaxed">
-            <strong>Tracing Logical Connections (A2–B1):</strong> แกะรอยคำอ้างอิง (<em>Pronouns, Demonstratives, Relative Pronouns, Substitute Words</em>), คำเชื่อม 6 หน้าที่ และโครงสร้างบทอ่าน 5 รูปแบบ
+            <strong>Tracing Logical Connections:</strong> แกะรอยคำอ้างอิง (<em>Pronouns, Demonstratives, Relative Pronouns, Substitute Words</em>), คำเชื่อม 6 หน้าที่ และโครงสร้างบทอ่าน 5 รูปแบบ
           </p>
         </div>
         <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
@@ -4558,7 +4558,7 @@ class ReadSkillsApp {
             <span>Strategy Unit 4 Assessment & 70% Mastery Goal</span>
           </div>
           <p class="text-emerald-900 leading-relaxed">
-            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการหาคำอ้างอิง การวิเคราะห์คำเชื่อม และการระบุโครงสร้างบทอ่านระดับ A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการหาคำอ้างอิง การวิเคราะห์คำเชื่อม และการระบุโครงสร้างบทอ่าน(เกณฑ์ผ่าน 70% = 21/30 ข้อ)
           </p>
         </div>
       </div>
@@ -4570,7 +4570,7 @@ class ReadSkillsApp {
             <span>Vocabulary in Context & Sentence Meaning</span>
           </div>
           <p class="text-purple-900 leading-relaxed">
-            <strong>Unlocking Textual Meaning (A2–B1):</strong> ใช้เบาะแสบริบททั้ง 5 ประเภท (<em>Definition, Synonym, Antonym, Example, General Clue</em>) ร่วมกับการแยกโครงสร้างประโยคหลัก <em>Subject + Verb + Supporting Info</em>
+            <strong>Unlocking Textual Meaning:</strong> ใช้เบาะแสบริบททั้ง 5 ประเภท (<em>Definition, Synonym, Antonym, Example, General Clue</em>) ร่วมกับการแยกโครงสร้างประโยคหลัก <em>Subject + Verb + Supporting Info</em>
           </p>
         </div>
         <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
@@ -4579,7 +4579,7 @@ class ReadSkillsApp {
             <span>Strategy Unit 3 Assessment & 70% Mastery Goal</span>
           </div>
           <p class="text-emerald-900 leading-relaxed">
-            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการเดาความหมายคำศัพท์จากบริบทและการตีความประโยคในระดับภาษา A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการเดาความหมายคำศัพท์จากบริบทและการตีความประโยค(เกณฑ์ผ่าน 70% = 21/30 ข้อ)
           </p>
         </div>
       </div>
@@ -4591,7 +4591,7 @@ class ReadSkillsApp {
             <span>Post-Reading Graphic Organizer & Support Check</span>
           </div>
           <p class="text-purple-900 leading-relaxed">
-            <strong>Decoding Support Systems (A2–B1):</strong> แยกแยะ <strong>Major Supporting Details</strong> (เหตุผลหลัก) และ <strong>Minor Supporting Details</strong> (ตัวอย่าง/ตัวเลข) พร้อมสังเกตคำเชื่อม <em>Cause & Effect, Compare & Contrast, และ Sequence</em>
+            <strong>Decoding Support Systems:</strong> แยกแยะ <strong>Major Supporting Details</strong> (เหตุผลหลัก) และ <strong>Minor Supporting Details</strong> (ตัวอย่าง/ตัวเลข) พร้อมสังเกตคำเชื่อม <em>Cause & Effect, Compare & Contrast, และ Sequence</em>
           </p>
         </div>
         <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
@@ -4600,7 +4600,7 @@ class ReadSkillsApp {
             <span>Strategy Unit 2 Assessment & 70% Mastery Goal</span>
           </div>
           <p class="text-emerald-900 leading-relaxed">
-            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินทักษะ Skimming, Scanning, Major/Minor Details และ Idea Relationships ในระดับภาษา A2–B1 (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินทักษะ Skimming, Scanning, Major/Minor Details และ Idea Relationships (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
           </p>
         </div>
       </div>
@@ -4875,7 +4875,7 @@ class ReadSkillsApp {
             <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
               <div class="flex items-center space-x-2">
                 <i data-lucide="book-open" class="w-4 h-4 text-pink-400"></i>
-                <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Reading Passage ${pIdx + 1} of 3 (CEFR A2–B1)</span>
+                <span class="text-xs font-bold uppercase tracking-wider text-pink-300">Reading Passage ${pIdx + 1} of 3</span>
               </div>
               <button 
                 onclick="app.playStrat1QuizPassageAudio(${pIdx})"
