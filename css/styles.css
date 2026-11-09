@@ -483,10 +483,11 @@ h1, h2, h3, .nb-display {
   box-shadow: var(--nb-shadow) !important;
 }
 .glass-card {
-  transition: box-shadow .15s ease !important;
+  transition: transform .15s ease, box-shadow .15s ease !important;
 }
-.glass-card:hover {
-  transform: none !important;
+.glass-card.cursor-pointer:hover {
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 6px 6px 0 var(--nb-ink) !important;
 }
 
 /* Colored top-stripe cards keep their accent as a thick top bar */
@@ -653,4 +654,24 @@ div[class*="bg-slate-900"], div[class*="bg-purple-950"] {
 @media (max-width: 1439px) {
   #app-header p[class*="sm:block"] { display: none !important; }
   .nav-btn { padding: .35rem .6rem !important; font-size: .74rem !important; }
+}
+
+/* ---------- World-Class UX/UI Accessibility & Reduced Motion ---------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[onclick]:focus-visible {
+  outline: 3px solid var(--nb-purple) !important;
+  outline-offset: 2px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

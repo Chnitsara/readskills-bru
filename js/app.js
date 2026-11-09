@@ -292,11 +292,17 @@ class ReadSkillsApp {
     this.installBracketDetector();
     this.createSnowfall();
 
-    // Close user dropdown when clicking outside
+    // Close user dropdown when clicking outside & Escape key accessibility
     document.addEventListener('click', (e) => {
       const container = document.getElementById('user-profile-menu-container');
       if (container && !container.contains(e.target)) {
         this.closeUserMenu();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeUserMenu();
+        this.closeFeedbackModal();
       }
     });
 
@@ -942,6 +948,10 @@ class ReadSkillsApp {
   renderDashboard() {
     const accountName = this.getActiveUserName();
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
+    const compScores = this.getComprehensionQuizScores();
+    const completedList = Object.values(compScores).filter(item => item && item.completedAt && item.score > 0);
+    const completedCount = completedList.length;
+    const progressPct = Math.round((completedCount / 6) * 100);
 
     return `
       <div class="space-y-6 sm:space-y-8">
@@ -961,7 +971,7 @@ class ReadSkillsApp {
               Hello, <span class="text-[#8B5CF6]">${accountName}</span>
             </h1>
             <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
-              Explore 6 structured reading units, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
+              Explore 6 structured reading units, master the 8-step strategy sequence, and track your study analytics — one fun step at a time.
             </p>
             <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
               <button onclick="app.navigate('lessons')" class="nb-btn nb-btn-purple">
@@ -980,19 +990,19 @@ class ReadSkillsApp {
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
           <div onclick="app.navigate('lessons')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-purple-700 hover:shadow-md transition">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 border-2 border-[#111]">
               <i data-lucide="book-open" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
             <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Lessons</h3>
             <p class="text-[11px] sm:text-xs text-purple-800 font-semibold mb-1.5 sm:mb-2">บทเรียนการอ่าน (Units 1–6)</p>
             <p class="text-slate-600 text-xs leading-relaxed">
-              Structured reading lessons covering 4 key learning steps: Overview, Learn, Example, and Practice.
+              Structured reading lessons across Pre-Reading, While-Reading, and Post-Reading stages.
             </p>
           </div>
 
           <div onclick="app.navigate('strategies')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-pink-500 hover:shadow-md transition">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 text-pink-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
-              <i data-lucide="clock" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-pink-100 text-pink-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 border-2 border-[#111]">
+              <i data-lucide="lightbulb" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
             <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Reading Strategies</h3>
             <p class="text-[11px] sm:text-xs text-pink-700 font-semibold mb-1.5 sm:mb-2">กลยุทธ์การอ่าน (6 Units &bull; 8 Steps)</p>
@@ -1002,18 +1012,18 @@ class ReadSkillsApp {
           </div>
 
           <div onclick="app.navigate('practice')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-amber-500 hover:shadow-md transition">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
-              <i data-lucide="tv" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-amber-100 text-amber-800 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 border-2 border-[#111]">
+              <i data-lucide="gamepad-2" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
             <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Practice & Quiz</h3>
-            <p class="text-[11px] sm:text-xs text-amber-800 font-semibold mb-1.5 sm:mb-2">แบบฝึกหัดและแบบทดสอบ</p>
+            <p class="text-[11px] sm:text-xs text-amber-800 font-semibold mb-1.5 sm:mb-2">แบบฝึกหัดและแบบทดสอบ (6 Units)</p>
             <p class="text-slate-600 text-xs leading-relaxed">
               Interactive games, unit quizzes, passage comprehension, and immediate feedback engine.
             </p>
           </div>
 
           <div onclick="app.navigate('progress')" class="glass-card p-4 sm:p-6 cursor-pointer border-t-4 border-emerald-600 hover:shadow-md transition">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 bg-emerald-100 text-emerald-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 border-2 border-[#111]">
               <i data-lucide="bar-chart-3" class="w-5 h-5 sm:w-6 sm:h-6"></i>
             </div>
             <h3 class="font-bold text-slate-900 text-base sm:text-lg mb-0.5 sm:mb-1">Learning Progress</h3>
@@ -1028,8 +1038,8 @@ class ReadSkillsApp {
         <!-- Current Progress Summary Banner -->
         <div class="glass-card p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6">
           <div class="flex items-center space-x-3 sm:space-x-4 w-full md:w-auto">
-            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl border border-purple-200 shrink-0">
-              5/6
+            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-purple-100 text-purple-800 rounded-xl sm:rounded-2xl flex items-center justify-center font-bold text-lg sm:text-xl border-2 border-[#111] shrink-0">
+              ${completedCount}/6
             </div>
             <div>
               <h4 class="font-bold text-slate-900 text-sm sm:text-base">Your Active Progress</h4>
@@ -1040,10 +1050,10 @@ class ReadSkillsApp {
           <div class="flex-1 w-full md:max-w-md">
             <div class="flex justify-between text-xs font-semibold text-slate-700 mb-1">
               <span>Overall Completion</span>
-              <span>83%</span>
+              <span>${progressPct}%</span>
             </div>
             <div class="w-full bg-slate-200/80 h-2.5 sm:h-3 rounded-full overflow-hidden">
-              <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full" style="width: 83%"></div>
+              <div class="bg-gradient-to-r from-purple-700 to-pink-500 h-full rounded-full transition-all duration-500" style="width: ${progressPct}%"></div>
             </div>
           </div>
 
@@ -1112,7 +1122,7 @@ class ReadSkillsApp {
         <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/70 to-pink-100/70 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">${unit.code}</span>
-            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">CEFR Target: ${unit.cefr}</span>
+            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">Unit ${unit.id} of 6</span>
           </div>
           <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
           <p class="text-xs text-slate-700 leading-relaxed">${unit.description}</p>
@@ -1801,7 +1811,7 @@ class ReadSkillsApp {
         quizData: ReadSkillsData.unit4Quiz,
         state: this.unit4QuizState,
         storageKey: 'bru_unit4_quiz_score',
-        cefrLabel: 'CEFR Target: B1 Level (Level 4)',
+        cefrLabel: '',
         unitTitle: 'Unit 4 Assessment Results (ผลคะแนนแบบทดสอบคำอ้างอิง คำเชื่อม และโครงสร้าง 40 ข้อ)',
         unitSub: 'คะแนนแบบทดสอบวัดผลการแกะรอยคำอ้างอิง คำเชื่อม และโครงสร้างบทอ่าน Unit 4 (40 ข้อ • Indicator 3.3)',
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถแกะรอย Reference Words, วิเคราะห์ Connectives และจำแนก Text Organization Patterns ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
@@ -1813,7 +1823,7 @@ class ReadSkillsApp {
         quizData: ReadSkillsData.unit5Quiz,
         state: this.unit5QuizState,
         storageKey: 'bru_unit5_quiz_score',
-        cefrLabel: 'CEFR Target: B1 Level (Level 5)',
+        cefrLabel: '',
         unitTitle: 'Unit 5 Assessment Results (ผลคะแนนแบบทดสอบการตีความและถอดความ 40 ข้อ)',
         unitSub: 'คะแนนแบบทดสอบวัดผลการตีความหมายโดยนัยและการถอดความ Unit 5 (40 ข้อ • Indicator 3.3)',
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถตีความหมายโดยนัยจากคำใบ้ (Making Inferences) และถอดความประโยคด้วยภาษาของตนเอง (Paraphrasing) ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
@@ -1825,7 +1835,7 @@ class ReadSkillsApp {
         quizData: ReadSkillsData.unit6Quiz,
         state: this.unit6QuizState,
         storageKey: 'bru_unit6_quiz_score',
-        cefrLabel: 'CEFR Target: B1 Level (Level 5 — Integrated Units 1–5)',
+        cefrLabel: '',
         unitTitle: 'Unit 6 Cumulative Assessment Results (ผลคะแนนแบบทดสอบรวบยอด 40 ข้อ)',
         unitSub: 'คะแนนแบบทดสอบวัดผลการบูรณาการกลยุทธ์การอ่านทั้ง 5 ด้าน Unit 6 (40 ข้อ • Indicator 3.3)',
         passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถบูรณาการกลยุทธ์การอ่านครบทั้ง 5 บท (Main Idea, Details/Scanning, Context Clues, Text Structure/References และ Inferences/Paraphrasing) ได้ผ่านเกณฑ์ Indicator 3.3 (&ge; 70%)'
@@ -1836,10 +1846,10 @@ class ReadSkillsApp {
       quizData: ReadSkillsData.unit1Quiz,
       state: this.unit1QuizState,
       storageKey: 'bru_unit1_quiz_score',
-      cefrLabel: 'CEFR Target: A1-A2 Level',
+      cefrLabel: '',
       unitTitle: 'Unit 1 Practice Results (ผลคะแนนแบบฝึกหัด 40 ข้อ)',
       unitSub: 'คะแนนแบบฝึกหัดพัฒนาทักษะการอ่าน Unit 1 (ใจความสำคัญ 40 ข้อ)',
-      passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถระบุใจความสำคัญ ประโยคหลัก รายละเอียดสนับสนุน และคำศัพท์ได้ถูกต้องแม่นยำตามเกณฑ์ CEFR A2'
+      passMsg: 'ยอดเยี่ยมมากครับ! คุณสามารถระบุใจความสำคัญ ประโยคหลัก รายละเอียดสนับสนุน และคำศัพท์ได้ถูกต้องแม่นยำผ่านเกณฑ์การประเมิน (&ge; 70%)'
     };
   }
 
@@ -4364,7 +4374,7 @@ class ReadSkillsApp {
     const exps = [
       "ข้อ 1: คำว่า 'that is to say' เป็นสัญญาณบอกคำจำกัดความอย่างเป็นทางการของ Unit 2 (Definition Context Clues)",
       "ข้อ 2: คำเชื่อม 'consequently' บ่งชี้ความสัมพันธ์แบบเหตุและผล (Cause and Effect) ของ Unit 4",
-      "ข้อ 3: ผู้อ่านระดับ B2 ที่เชี่ยวชาญจะผสานรวมหลายกลยุทธ์เข้าด้วยกัน (Orchestrating Multiple Strategies) และสร้างผังความคิดเชื่อมโยงข้อมูล"
+      "ข้อ 3: ผู้อ่านที่เชี่ยวชาญจะผสานรวมหลายกลยุทธ์เข้าด้วยกัน (Orchestrating Multiple Strategies) และสร้างผังความคิดเชื่อมโยงข้อมูล"
     ];
     let score = 0;
     const details = [];
@@ -4561,7 +4571,49 @@ class ReadSkillsApp {
       state.passageSubmitted = [false, false, false];
     }
 
-    const topCards = unitNum === 4 ? `
+    const topCards = unitNum === 6 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="layers" class="w-4 h-4 text-purple-700"></i>
+            <span>Integrated Reading Strategies (Units 1–5)</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Orchestrating All 5 Strategies:</strong> บูรณาการทักษะ Previewing/Main Idea, Supporting Details/Scanning, Context Clues, Reference/Text Structure และ Inference/Paraphrasing
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Unit 6 Assessment & 70% Mastery Goal</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการประยุกต์ใช้กลยุทธ์การอ่านทั้ง 5 ด้านอย่างครบวงจร (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    ` : unitNum === 5 ? `
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
+        <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-purple-950 font-bold">
+            <i data-lucide="search-check" class="w-4 h-4 text-purple-700"></i>
+            <span>Text Interpretation & Paraphrased Meaning</span>
+          </div>
+          <p class="text-purple-900 leading-relaxed">
+            <strong>Reading Between the Lines:</strong> ผสานหลักฐานในบทอ่าน (Text Clues) กับความรู้เดิมเพื่อสรุปความหมายโดยนัย (Inferences) และถอดความด้วยโครงสร้างประโยคใหม่โดยคงความหมายเดิม
+          </p>
+        </div>
+        <div class="p-3.5 bg-emerald-100/70 border border-emerald-200 rounded-2xl space-y-1">
+          <div class="flex items-center space-x-2 text-emerald-950 font-bold">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-700"></i>
+            <span>Strategy Unit 5 Assessment & 70% Mastery Goal</span>
+          </div>
+          <p class="text-emerald-900 leading-relaxed">
+            <strong>Web-Based Strategy Quiz (3 ชุด ชุดละ 10 ข้อ):</strong> ประเมินการอนุมานความหมายแฝงและการเลือกประโยคถอดความที่ถูกต้อง (เกณฑ์ผ่าน 70% = 21/30 ข้อ)
+          </p>
+        </div>
+      </div>
+    ` : unitNum === 4 ? `
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-4">
         <div class="p-3.5 bg-purple-100/70 border border-purple-200 rounded-2xl space-y-1">
           <div class="flex items-center space-x-2 text-purple-950 font-bold">
@@ -4647,7 +4699,49 @@ class ReadSkillsApp {
       </div>
     `;
 
-    const bottomReview = unitNum === 4 ? `
+    const bottomReview = unitNum === 6 ? `
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Unit 6 Review & Common Mistakes (สรุปบทที่ 6 และข้อควรระวังในการบูรณาการ)</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. ใช้กลยุทธ์เดียวกับทุกคำถาม</strong>
+            <p class="leading-relaxed">เลือกกลยุทธ์ให้ตรงกับโจทย์ เช่น ถามตัวเลขใช้ <em>Scanning</em> ถามคำศัพท์ใช้ <em>Context Clues</em> ถามความหมายแฝงใช้ <em>Inferences</em></p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. ข้ามการตรวจสอบคำอ้างอิงและคำเชื่อม</strong>
+            <p class="leading-relaxed">ก่อนสรุปใจความหรือถอดความ ต้องตรวจสอบเสมอว่าสรรพนาม (<em>they, this</em>) แทนคำใด และมีคำเชื่อมแย้ง (<em>however, unlike</em>) หรือไม่</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. เลือกข้อสรุปที่เกินขอบเขตบทอ่าน</strong>
+            <p class="leading-relaxed">คำตอบที่ถูกต้องทั้งในพาร์ท Main Idea, Inference และ Paraphrase ต้องมีหลักฐานในบทอ่านรองรับชัดเจนเสมอ</p>
+          </div>
+        </div>
+      </div>
+    ` : unitNum === 5 ? `
+      <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
+        <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
+          <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
+          <span>Unit 5 Review & Common Mistakes (สรุปบทที่ 5 และข้อควรระวัง)</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-rose-50/80 border border-rose-200 rounded-xl space-y-1 text-rose-950">
+            <strong class="font-bold block text-rose-900">1. คาดเดาโดยไม่มีหลักฐานในบทอ่าน</strong>
+            <p class="leading-relaxed">การอนุมาน (Inference) ต้องอิงจากร่องรอยคำใบ้ในข้อความ (Text Clues) เสมอ ไม่ใช่การคิดเองโดยไม่มีข้อมูลรองรับ</p>
+          </div>
+          <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-xl space-y-1 text-amber-950">
+            <strong class="font-bold block text-amber-900">2. ถอดความแบบเปลี่ยนแค่คำศัพท์ (Patchwriting)</strong>
+            <p class="leading-relaxed">การ Paraphrase ที่ดีต้องใช้ทั้งคำพ้องความหมาย (Synonyms) และปรับโครงสร้างประโยคควบคู่กัน</p>
+          </div>
+          <div class="p-3 bg-purple-50/80 border border-purple-200 rounded-xl space-y-1 text-purple-950">
+            <strong class="font-bold block text-purple-900">3. ถอดความแล้วใจความสำคัญคลาดเคลื่อน</strong>
+            <p class="leading-relaxed">ตรวจสอบเสมอว่าประโยคที่ถอดความยังคงรักษาความหมายและเหตุผลของประโยคต้นฉบับไว้ครบ 100%</p>
+          </div>
+        </div>
+      </div>
+    ` : unitNum === 4 ? `
       <div class="p-4 sm:p-5 bg-white rounded-2xl border border-purple-100 shadow-xs space-y-3 mt-6 text-left">
         <div class="flex items-center space-x-2 border-b border-slate-100 pb-2 text-purple-900 font-bold text-xs sm:text-sm">
           <i data-lucide="alert-triangle" class="w-4 h-4 text-amber-500"></i>
