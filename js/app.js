@@ -1117,9 +1117,9 @@ class ReadSkillsApp {
           </div>
 
           <!-- Unit Selector Tabs -->
-          <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 touch-pan-x">
+          <div class="grid grid-cols-3 sm:flex sm:items-center gap-2 w-full md:w-auto">
             ${ReadSkillsData.units.map(u => `
-              <button onclick="app.selectUnit(${u.id})" class="px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${this.currentUnitId === u.id ? 'bg-purple-700 text-white shadow-md' : 'bg-white/80 text-slate-700 hover:bg-white border border-purple-200'}">
+              <button onclick="app.selectUnit(${u.id})" class="px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer text-center justify-center flex items-center ${this.currentUnitId === u.id ? 'bg-purple-700 text-white shadow-md' : 'bg-white/80 text-slate-700 hover:bg-white border border-purple-200'}">
                 Unit ${u.id}
               </button>
             `).join('')}
@@ -1132,25 +1132,25 @@ class ReadSkillsApp {
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">${unit.code}</span>
             <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">Unit ${unit.id} of 6</span>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} (${unit.thaiTitle})</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title} — ${unit.thaiTitle}</h3>
           <p class="text-xs text-slate-700 leading-relaxed">${unit.description}</p>
         </div>
 
         <!-- 3 Stage Tabs (Pre-Reading | While-Reading | Post-Reading) -->
-        <div class="flex items-center space-x-2 sm:space-x-3 border-b border-purple-200 pb-3 overflow-x-auto no-scrollbar">
-          <button onclick="app.selectStage('preReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'preReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="compass" class="w-4 h-4"></i>
-            <span>Pre-Reading Stage</span>
+        <div class="grid grid-cols-3 sm:flex sm:items-center gap-2 sm:gap-3 border-b border-purple-200 pb-3">
+          <button onclick="app.selectStage('preReading')" class="px-2 sm:px-5 py-2.5 rounded-xl font-semibold text-[11px] sm:text-xs transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 cursor-pointer text-center ${this.currentStage === 'preReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="compass" class="w-4 h-4 shrink-0"></i>
+            <span class="leading-tight">Pre-Reading<span class="hidden sm:inline"> Stage</span></span>
           </button>
           
-          <button onclick="app.selectStage('whileReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'whileReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="book-open-check" class="w-4 h-4"></i>
-            <span>While-Reading Stage</span>
+          <button onclick="app.selectStage('whileReading')" class="px-2 sm:px-5 py-2.5 rounded-xl font-semibold text-[11px] sm:text-xs transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 cursor-pointer text-center ${this.currentStage === 'whileReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="book-open-check" class="w-4 h-4 shrink-0"></i>
+            <span class="leading-tight">While-Reading<span class="hidden sm:inline"> Stage</span></span>
           </button>
           
-          <button onclick="app.selectStage('postReading')" class="px-4 sm:px-5 py-2.5 rounded-xl font-semibold text-xs transition flex items-center space-x-2 cursor-pointer shrink-0 ${this.currentStage === 'postReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
-            <i data-lucide="check-circle-2" class="w-4 h-4"></i>
-            <span>Post-Reading Stage</span>
+          <button onclick="app.selectStage('postReading')" class="px-2 sm:px-5 py-2.5 rounded-xl font-semibold text-[11px] sm:text-xs transition flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 cursor-pointer text-center ${this.currentStage === 'postReading' ? 'stage-tab-active' : 'stage-tab-inactive'}">
+            <i data-lucide="check-circle-2" class="w-4 h-4 shrink-0"></i>
+            <span class="leading-tight">Post-Reading<span class="hidden sm:inline"> Stage</span></span>
           </button>
         </div>
 
@@ -1276,15 +1276,15 @@ class ReadSkillsApp {
     }
 
     return `
-      <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar">
-        <div class="flex items-center justify-center space-x-3 sm:space-x-8 max-w-2xl mx-auto text-xs font-medium">
+      <div class="glass-card p-3 sm:p-4">
+        <div class="flex items-start justify-around sm:justify-center gap-2 sm:gap-6 max-w-2xl mx-auto text-xs font-medium">
           ${steps.map((st, i) => {
             const isActive = this.currentActivityStep === st.key;
             return `
-              ${i > 0 ? '<div class="h-0.5 w-6 sm:w-12 md:w-16 bg-purple-200 shrink-0"></div>' : ''}
-              <button onclick="app.selectActivityStep('${st.key}')" class="flex flex-col items-center space-y-1 cursor-pointer shrink-0 ${isActive ? 'text-purple-900 font-bold' : 'text-slate-500 hover:text-slate-800'}">
+              ${i > 0 ? '<div class="hidden sm:block h-0.5 w-8 md:w-14 bg-purple-200 shrink-0 mt-4"></div>' : ''}
+              <button onclick="app.selectActivityStep('${st.key}')" class="flex flex-col items-center space-y-1 cursor-pointer flex-1 sm:flex-initial max-w-[130px] sm:max-w-none text-center ${isActive ? 'text-purple-900 font-bold' : 'text-slate-500 hover:text-slate-800'}">
                 <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-xs transition ${isActive ? 'bg-purple-700 text-white ring-4 ring-purple-200 shadow-md font-bold' : 'bg-slate-200/80 text-slate-700 font-semibold'}">${st.num}</div>
-                <span class="text-[11px] sm:text-xs font-semibold whitespace-nowrap">${st.label}</span>
+                <span class="text-[11px] sm:text-xs font-semibold leading-tight">${st.label}</span>
                 <span class="text-[9px] text-slate-400 hidden sm:block">${st.sub}</span>
               </button>
             `;
@@ -2808,11 +2808,11 @@ class ReadSkillsApp {
           </div>
 
           <!-- Unit Selector Tabs (Unit 1 to Unit 6) -->
-          <div class="flex items-center space-x-2 overflow-x-auto no-scrollbar pb-2 md:pb-0 touch-pan-x">
+          <div class="grid grid-cols-3 sm:flex sm:items-center gap-2 w-full md:w-auto">
             ${ReadSkillsData.strategies.map(u => `
               <button 
                 onclick="app.selectStrategyUnit(${u.unitNumber})" 
-                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer ${this.currentStrategyUnit === u.unitNumber ? 'bg-purple-700 text-white shadow-md' : 'bg-white/85 text-slate-700 hover:bg-white border border-purple-200'}"
+                class="px-4 py-2 rounded-xl text-xs font-bold whitespace-nowrap transition cursor-pointer text-center justify-center flex items-center ${this.currentStrategyUnit === u.unitNumber ? 'bg-purple-700 text-white shadow-md' : 'bg-white/85 text-slate-700 hover:bg-white border border-purple-200'}"
               >
                 Unit ${u.unitNumber}
               </button>
@@ -2824,22 +2824,22 @@ class ReadSkillsApp {
         <div class="glass-card p-4 sm:p-6 bg-gradient-to-r from-purple-100/80 via-pink-100/60 to-purple-50/80 border border-purple-200">
           <div class="flex items-center justify-between mb-2">
             <span class="bg-purple-700 text-white text-xs font-bold px-2.5 py-0.5 rounded-md">UNIT-0${unit.unitNumber || (ReadSkillsData.strategies.indexOf(unit) + 1)}</span>
-            
+            <span class="text-xs font-semibold text-purple-900 bg-purple-200/80 px-3 py-1 rounded-full">Step ${this.currentStrategyStepIndex + 1} of ${steps.length}</span>
           </div>
-          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title || ''} (${unit.thaiTitle || ''})</h3>
+          <h3 class="text-lg sm:text-xl font-bold text-slate-900 mb-1">${unit.title || ''} — ${unit.thaiTitle || ''}</h3>
           <p class="text-xs text-purple-800 font-semibold mb-1">
             <strong>Scope (ขอบเขตเนื้อหา):</strong> ${(unit.scope && unit.scope !== 'undefined') ? unit.scope : (unit.thaiTitle || 'Strategy Learning Sequence')}
           </p>
         </div>
 
         <!-- 8-Step Learning Sequence Stepper Bar (ลำดับการเรียนรู้ 8 ขั้น) -->
-        <div class="glass-card p-3 sm:p-4 overflow-x-auto no-scrollbar touch-pan-x">
-          <div class="flex items-center justify-between min-w-[700px] max-w-5xl mx-auto text-xs font-medium">
+        <div class="glass-card p-3 sm:p-4">
+          <div class="grid grid-cols-4 gap-y-3 gap-x-1.5 md:flex md:items-center md:justify-between max-w-5xl mx-auto text-xs font-medium">
             ${steps.map((st, idx) => {
               const isActive = this.currentStrategyStepIndex === idx;
               const isPassed = this.currentStrategyStepIndex > idx;
               return `
-                ${idx > 0 ? `<div class="h-0.5 flex-1 mx-1 ${isPassed ? 'bg-purple-600' : 'bg-purple-200'}"></div>` : ''}
+                ${idx > 0 ? `<div class="hidden md:block h-0.5 flex-1 mx-1 ${isPassed ? 'bg-purple-600' : 'bg-purple-200'}"></div>` : ''}
                 <button 
                   onclick="app.selectStrategyStep(${idx})" 
                   class="flex flex-col items-center space-y-1.5 focus:outline-none cursor-pointer group shrink-0"
@@ -2852,7 +2852,7 @@ class ReadSkillsApp {
                     <p class="text-[10px] font-bold ${isActive ? 'text-purple-900' : (isPassed ? 'text-purple-700' : 'text-slate-500')} leading-tight">
                       ${idx + 1}. ${st.title}
                     </p>
-                    <span class="text-[9px] text-slate-400 font-normal">${st.thaiTitle}</span>
+                    <span class="text-[9px] text-slate-400 font-normal hidden sm:inline">${st.thaiTitle}</span>
                   </div>
                 </button>
               `;
