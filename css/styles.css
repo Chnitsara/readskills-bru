@@ -599,15 +599,22 @@ button[class*="border-rose-"] { border-color: #e11d48 !important; border-width: 
 }
 
 /* ---------- Inputs ---------- */
-.input-lavender,
-input[type="text"], input[type="email"], input[type="password"], select, textarea {
+.input-lavender {
   background: #fff !important;
   border: 2px solid var(--nb-ink) !important;
   border-radius: 10px !important;
 }
-.input-lavender:focus, input:focus, select:focus, textarea:focus {
+.input-lavender:focus {
   outline: none !important;
   box-shadow: var(--nb-shadow-sm) !important;
+}
+#admin-search-input,
+#admin-search-input:focus,
+#admin-search-input:focus-visible {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 /* ---------- Login ---------- */
