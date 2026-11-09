@@ -14,7 +14,7 @@ class ReadSkillsApp {
     
     // Initial active user session
     this.user = {
-      name: (localStorage.getItem('bru_user_name') || 'Somsak Jaidee').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim(),
+      name: (localStorage.getItem('bru_user_name') || 'Somsak Jaidee').replace(/[()]/g, '').trim(),
       email: localStorage.getItem('bru_user_email') || 'student@bru.ac.th',
       role: localStorage.getItem('bru_user_role') || 'student',
       onlineSeconds: parseInt(localStorage.getItem('bru_online_seconds')) || 18400
@@ -479,14 +479,32 @@ class ReadSkillsApp {
     return `${hrs} hrs (${Math.floor(seconds/60)} mins)`;
   }
 
+  getActiveUserName() {
+    const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
+    let rawName = (localStorage.getItem('bru_user_name') || this.user.name || '').replace(/[()]/g, '').trim();
+    if (!rawName || rawName === 'Dr.') {
+      const email = localStorage.getItem('bru_user_email') || this.user.email || '';
+      const matched = (this.registeredUsers || []).find(u => u.email && u.email.toLowerCase() === email.toLowerCase());
+      if (matched && matched.name) {
+        rawName = matched.name.replace(/[()]/g, '').trim();
+      } else if (email && email.includes('@')) {
+        rawName = email.split('@')[0];
+      } else {
+        rawName = isTeacher ? 'Dr. Somchai' : 'Somsak Jaidee';
+      }
+    }
+    this.user.name = rawName;
+    return rawName;
+  }
+
   updateUserDisplay() {
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
-    const englishName = (this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim() || (isTeacher ? 'Dr. Somchai' : 'Somsak Jaidee');
-    const initial = englishName.charAt(0).toUpperCase() || (isTeacher ? 'T' : 'S');
+    const accountName = this.getActiveUserName();
+    const initial = accountName.replace(/^(Dr\.|Mr\.|Mrs\.|Ms\.|ดร\.|ผศ\.|รศ\.|ศ\.|อ\.)\s*/i, '').charAt(0).toUpperCase() || accountName.charAt(0).toUpperCase() || (isTeacher ? 'T' : 'S');
 
     const nameElem = document.getElementById('user-display-name');
     if (nameElem) {
-      nameElem.innerHTML = `${englishName} ${isTeacher ? '<span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900 border border-amber-300 ml-1">TEACHER</span>' : ''}`;
+      nameElem.innerHTML = `${accountName} ${isTeacher ? '<span class="text-[9px] font-extrabold px-1.5 py-0.5 rounded bg-amber-200 text-amber-900 border border-amber-300 ml-1">TEACHER</span>' : ''}`;
     }
     const avatarElem = document.getElementById('user-avatar-initial');
     if (avatarElem) {
@@ -494,7 +512,7 @@ class ReadSkillsApp {
     }
     const dropdownName = document.getElementById('dropdown-user-name');
     if (dropdownName) {
-      dropdownName.innerText = englishName;
+      dropdownName.innerText = accountName;
     }
     const dropdownAvatar = document.getElementById('dropdown-avatar-initial');
     if (dropdownAvatar) {
@@ -922,20 +940,31 @@ class ReadSkillsApp {
 
   // 1. Dashboard View
   renderDashboard() {
+    const accountName = this.getActiveUserName();
+    const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
+    const studyHrs = ((this.user.onlineSeconds || 18400) / 3600).toFixed(1);
+
     return `
       <div class="space-y-6 sm:space-y-8">
         <!-- Welcome Hero (Playful Neo-Brutalist Banner) -->
         <div class="nb-hero relative overflow-hidden p-5 sm:p-8">
-          <div class="relative z-10 flex flex-col md:flex-row md:items-end md:justify-between gap-5">
-            <div class="max-w-2xl">
-              <span class="nb-chip nb-chip-yellow mb-3 inline-flex items-center gap-1">
-                <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
-              </span>
-              <h1 class="nb-display text-3xl sm:text-5xl leading-none mb-3 text-slate-900">
-                Hello, <span class="text-[#8B5CF6]">${(this.user.name || '').replace(/[\u0E00-\u0E7F]+/g, '').replace(/[()]/g, '').trim().split(' ')[0] || 'Somsak'}</span> <span class="nb-wave inline-block">👋</span>
+          <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+            <!-- Left Column: Greeting & CTA -->
+            <div class="lg:col-span-7">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                <span class="nb-chip nb-chip-yellow inline-flex items-center gap-1">
+                  <i data-lucide="sparkles" class="w-3 h-3"></i> Course 2031103 &bull; Reading Strategies
+                </span>
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-extrabold border-2 border-[#111] ${isTeacher ? 'bg-amber-200 text-slate-900' : 'bg-white text-purple-800'} shadow-[2px_2px_0_#111]">
+                  <i data-lucide="${isTeacher ? 'graduation-cap' : 'user-check'}" class="w-3 h-3"></i>
+                  ${isTeacher ? 'Instructor Account' : 'Student Account'}
+                </span>
+              </div>
+              <h1 class="nb-display text-3xl sm:text-5xl leading-tight mb-3 text-slate-900">
+                Hello, <span class="text-[#8B5CF6]">${accountName}</span> <span class="nb-wave inline-block">👋</span>
               </h1>
               <p class="text-slate-700 text-xs sm:text-sm leading-relaxed mb-5 max-w-xl">
-                Explore structured reading lessons, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
+                Explore 6 structured reading units, master 8 essential reading strategies, and track your study analytics — one fun step at a time.
               </p>
               <div class="flex flex-col sm:flex-row gap-2.5 sm:gap-3">
                 <button onclick="app.navigate('lessons')" class="nb-btn nb-btn-purple">
@@ -948,12 +977,50 @@ class ReadSkillsApp {
                 </button>
               </div>
             </div>
-            <div class="text-right shrink-0 hidden sm:block">
-              <div class="nb-display text-6xl sm:text-7xl leading-none text-slate-900">6</div>
-              <div class="text-[11px] font-bold text-slate-700">Reading Units</div>
+
+            <!-- Right Column: Balanced Neo-Brutalist Stat Grid -->
+            <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-3.5">
+              <div onclick="app.navigate('lessons')" class="cursor-pointer bg-white border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-purple-100 border-2 border-[#111] flex items-center justify-center text-purple-800 shrink-0">
+                  <i data-lucide="book-open" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">6</div>
+                  <div class="text-[11px] font-bold text-slate-700 mt-0.5">Reading Units</div>
+                </div>
+              </div>
+
+              <div onclick="app.navigate('strategies')" class="cursor-pointer bg-[#FEF3C7] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-amber-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
+                  <i data-lucide="compass" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">8</div>
+                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Strategy Steps</div>
+                </div>
+              </div>
+
+              <div onclick="app.navigate('practice')" class="cursor-pointer bg-[#FCE7F3] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-pink-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
+                  <i data-lucide="check-square" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">20</div>
+                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Quiz Items / Unit</div>
+                </div>
+              </div>
+
+              <div onclick="app.navigate('progress')" class="cursor-pointer bg-[#EDE9FE] border-2 border-[#111] rounded-2xl p-3.5 sm:p-4 shadow-[4px_4px_0_#111] hover:-translate-y-0.5 transition flex items-center gap-3">
+                <div class="w-11 h-11 rounded-xl bg-purple-300 border-2 border-[#111] flex items-center justify-center text-slate-900 shrink-0">
+                  <i data-lucide="clock" class="w-5 h-5"></i>
+                </div>
+                <div>
+                  <div class="nb-display text-2xl sm:text-3xl leading-none text-slate-900">${studyHrs}h</div>
+                  <div class="text-[11px] font-bold text-slate-800 mt-0.5">Active Study</div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="nb-sticker absolute -right-2 -bottom-3 sm:right-24 sm:bottom-auto sm:top-4 text-4xl select-none pointer-events-none">📚</div>
         </div>
 
         <!-- 4 Core Navigation Cards matching Blueprint -->
