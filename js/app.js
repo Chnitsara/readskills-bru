@@ -6921,11 +6921,7 @@ class ReadSkillsApp {
           </div>
 
           <!-- Table Footer Info -->
-          <div class="px-5 py-3 bg-purple-50/60 border-t border-purple-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-600">
-            <span class="flex items-center space-x-1.5">
-              <i data-lucide="info" class="w-3.5 h-3.5 text-purple-700"></i>
-              <span>จำลองข้อมูลนักศึกษา 50 คน (STD6501–STD6550) แสดงเวลาเรียนแยกตามบทที่ 1–6 และแนวโน้มพัฒนาการคะแนน Quiz</span>
-            </span>
+          <div class="px-5 py-3 bg-purple-50/60 border-t border-purple-100 flex items-center justify-end text-xs text-slate-600">
             <span class="font-bold text-purple-900">Total: ${totalStudents} Students Enrolled</span>
           </div>
         </div>
