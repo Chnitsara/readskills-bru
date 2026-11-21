@@ -3154,36 +3154,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6503",
       "name": "Niran Suwannarat",
-      "onlineHours": "10.2 hrs",
-      "onlineSeconds": 36600,
+      "onlineHours": "14.3 hrs",
+      "onlineSeconds": 51600,
       "unitTimes": {
-        "u1": "2h 10m",
-        "u2": "1h 55m",
-        "u3": "1h 45m",
-        "u4": "1h 35m",
-        "u5": "1h 25m",
-        "u6": "1h 20m"
+        "u1": "1h 55m",
+        "u2": "2h 05m",
+        "u3": "2h 20m",
+        "u4": "2h 30m",
+        "u5": "2h 40m",
+        "u6": "2h 50m"
       },
       "unitMinutes": {
-        "u1": 130,
-        "u2": 115,
-        "u3": 105,
-        "u4": 95,
-        "u5": 85,
-        "u6": 80
+        "u1": 115,
+        "u2": 125,
+        "u3": 140,
+        "u4": 150,
+        "u5": 160,
+        "u6": 170
       },
       "unitScores": {
-        "u1": 85,
-        "u2": 80,
+        "u1": 60,
+        "u2": 65,
         "u3": 75,
-        "u4": 70,
-        "u5": 65,
-        "u6": 60
+        "u4": 80,
+        "u5": 85,
+        "u6": 90
       },
-      "trend": "Downward",
-      "scoreDelta": -25,
+      "trend": "Upward",
+      "scoreDelta": 30,
       "completedUnits": "6/6 Units",
-      "quizAvg": "73%",
+      "quizAvg": "76%",
       "lastActive": "2026-11-20 10:14"
     },
     {
@@ -3294,15 +3294,15 @@ window.ReadSkillsData = {
     {
       "id": "STD6507",
       "name": "Kittipong Srisuwan",
-      "onlineHours": "11.7 hrs",
-      "onlineSeconds": 42000,
+      "onlineHours": "11.6 hrs",
+      "onlineSeconds": 41700,
       "unitTimes": {
         "u1": "2h 30m",
         "u2": "2h 20m",
         "u3": "2h 00m",
         "u4": "1h 45m",
         "u5": "1h 35m",
-        "u6": "1h 30m"
+        "u6": "1h 25m"
       },
       "unitMinutes": {
         "u1": 150,
@@ -3310,20 +3310,20 @@ window.ReadSkillsData = {
         "u3": 120,
         "u4": 105,
         "u5": 95,
-        "u6": 90
+        "u6": 85
       },
       "unitScores": {
-        "u1": 90,
-        "u2": 85,
-        "u3": 80,
+        "u1": 85,
+        "u2": 80,
+        "u3": 75,
         "u4": 70,
         "u5": 65,
-        "u6": 65
+        "u6": 60
       },
       "trend": "Downward",
       "scoreDelta": -25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "76%",
+      "quizAvg": "73%",
       "lastActive": "2026-11-20 14:42"
     },
     {
@@ -3364,36 +3364,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6509",
       "name": "Pongsakorn Boonmee",
-      "onlineHours": "13.9 hrs",
-      "onlineSeconds": 50100,
+      "onlineHours": "15.3 hrs",
+      "onlineSeconds": 55200,
       "unitTimes": {
-        "u1": "2h 15m",
-        "u2": "2h 30m",
-        "u3": "2h 00m",
-        "u4": "2h 25m",
-        "u5": "2h 10m",
-        "u6": "2h 35m"
+        "u1": "2h 05m",
+        "u2": "2h 15m",
+        "u3": "2h 30m",
+        "u4": "2h 40m",
+        "u5": "2h 50m",
+        "u6": "3h 00m"
       },
       "unitMinutes": {
-        "u1": 135,
-        "u2": 150,
-        "u3": 120,
-        "u4": 145,
-        "u5": 130,
-        "u6": 155
+        "u1": 125,
+        "u2": 135,
+        "u3": 150,
+        "u4": 160,
+        "u5": 170,
+        "u6": 180
       },
       "unitScores": {
-        "u1": 75,
-        "u2": 85,
-        "u3": 70,
-        "u4": 80,
-        "u5": 75,
-        "u6": 85
+        "u1": 65,
+        "u2": 70,
+        "u3": 80,
+        "u4": 85,
+        "u5": 90,
+        "u6": 95
       },
-      "trend": "Mixed",
-      "scoreDelta": 10,
+      "trend": "Upward",
+      "scoreDelta": 30,
       "completedUnits": "6/6 Units",
-      "quizAvg": "78%",
+      "quizAvg": "81%",
       "lastActive": "2026-11-18 16:56"
     },
     {
@@ -3469,36 +3469,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6512",
       "name": "Siriporn Phanich",
-      "onlineHours": "9.8 hrs",
-      "onlineSeconds": 35100,
+      "onlineHours": "14.7 hrs",
+      "onlineSeconds": 52800,
       "unitTimes": {
-        "u1": "2h 05m",
-        "u2": "1h 50m",
-        "u3": "1h 40m",
-        "u4": "1h 30m",
-        "u5": "1h 25m",
-        "u6": "1h 15m"
+        "u1": "1h 55m",
+        "u2": "2h 10m",
+        "u3": "2h 20m",
+        "u4": "2h 35m",
+        "u5": "2h 45m",
+        "u6": "2h 55m"
       },
       "unitMinutes": {
-        "u1": 125,
-        "u2": 110,
-        "u3": 100,
-        "u4": 90,
-        "u5": 85,
-        "u6": 75
+        "u1": 115,
+        "u2": 130,
+        "u3": 140,
+        "u4": 155,
+        "u5": 165,
+        "u6": 175
       },
       "unitScores": {
-        "u1": 80,
-        "u2": 75,
-        "u3": 70,
-        "u4": 65,
-        "u5": 60,
-        "u6": 55
+        "u1": 60,
+        "u2": 70,
+        "u3": 75,
+        "u4": 80,
+        "u5": 85,
+        "u6": 90
       },
-      "trend": "Downward",
-      "scoreDelta": -25,
+      "trend": "Upward",
+      "scoreDelta": 30,
       "completedUnits": "6/6 Units",
-      "quizAvg": "68%",
+      "quizAvg": "77%",
       "lastActive": "2026-11-21 19:17"
     },
     {
@@ -3574,36 +3574,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6515",
       "name": "Peeraphat Wongchai",
-      "onlineHours": "14.6 hrs",
-      "onlineSeconds": 52500,
+      "onlineHours": "14.3 hrs",
+      "onlineSeconds": 51300,
       "unitTimes": {
         "u1": "2h 25m",
-        "u2": "2h 10m",
-        "u3": "2h 35m",
-        "u4": "2h 15m",
-        "u5": "2h 40m",
-        "u6": "2h 30m"
+        "u2": "2h 15m",
+        "u3": "2h 25m",
+        "u4": "2h 25m",
+        "u5": "2h 20m",
+        "u6": "2h 25m"
       },
       "unitMinutes": {
         "u1": 145,
-        "u2": 130,
-        "u3": 155,
-        "u4": 135,
-        "u5": 160,
-        "u6": 150
+        "u2": 135,
+        "u3": 145,
+        "u4": 145,
+        "u5": 140,
+        "u6": 145
       },
       "unitScores": {
         "u1": 80,
         "u2": 75,
-        "u3": 85,
-        "u4": 75,
-        "u5": 85,
+        "u3": 80,
+        "u4": 80,
+        "u5": 75,
         "u6": 80
       },
       "trend": "Mixed",
       "scoreDelta": 0,
       "completedUnits": "6/6 Units",
-      "quizAvg": "80%",
+      "quizAvg": "78%",
       "lastActive": "2026-11-20 10:38"
     },
     {
@@ -3679,15 +3679,15 @@ window.ReadSkillsData = {
     {
       "id": "STD6518",
       "name": "Kanokwan Phromma",
-      "onlineHours": "10.7 hrs",
-      "onlineSeconds": 38400,
+      "onlineHours": "10.6 hrs",
+      "onlineSeconds": 38100,
       "unitTimes": {
         "u1": "2h 20m",
         "u2": "2h 05m",
         "u3": "1h 50m",
         "u4": "1h 35m",
         "u5": "1h 25m",
-        "u6": "1h 25m"
+        "u6": "1h 20m"
       },
       "unitMinutes": {
         "u1": 140,
@@ -3695,20 +3695,20 @@ window.ReadSkillsData = {
         "u3": 110,
         "u4": 95,
         "u5": 85,
-        "u6": 85
+        "u6": 80
       },
       "unitScores": {
         "u1": 85,
         "u2": 80,
-        "u3": 70,
-        "u4": 65,
-        "u5": 60,
+        "u3": 75,
+        "u4": 70,
+        "u5": 65,
         "u6": 60
       },
       "trend": "Downward",
       "scoreDelta": -25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "70%",
+      "quizAvg": "73%",
       "lastActive": "2026-11-19 13:59"
     },
     {
@@ -3819,36 +3819,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6522",
       "name": "Pimchanok Inthira",
-      "onlineHours": "13.8 hrs",
-      "onlineSeconds": 49500,
+      "onlineHours": "15.3 hrs",
+      "onlineSeconds": 54900,
       "unitTimes": {
-        "u1": "2h 05m",
-        "u2": "2h 25m",
-        "u3": "2h 15m",
-        "u4": "2h 00m",
-        "u5": "2h 35m",
-        "u6": "2h 25m"
+        "u1": "2h 00m",
+        "u2": "2h 15m",
+        "u3": "2h 25m",
+        "u4": "2h 40m",
+        "u5": "2h 50m",
+        "u6": "3h 05m"
       },
       "unitMinutes": {
-        "u1": 125,
-        "u2": 145,
-        "u3": 135,
-        "u4": 120,
-        "u5": 155,
-        "u6": 145
+        "u1": 120,
+        "u2": 135,
+        "u3": 145,
+        "u4": 160,
+        "u5": 170,
+        "u6": 185
       },
       "unitScores": {
-        "u1": 70,
-        "u2": 80,
+        "u1": 65,
+        "u2": 70,
         "u3": 75,
-        "u4": 70,
-        "u5": 85,
-        "u6": 80
+        "u4": 85,
+        "u5": 90,
+        "u6": 95
       },
-      "trend": "Mixed",
-      "scoreDelta": 10,
+      "trend": "Upward",
+      "scoreDelta": 30,
       "completedUnits": "6/6 Units",
-      "quizAvg": "77%",
+      "quizAvg": "80%",
       "lastActive": "2026-11-19 17:27"
     },
     {
@@ -3889,36 +3889,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6524",
       "name": "Lalita Srisuk",
-      "onlineHours": "11.5 hrs",
-      "onlineSeconds": 41400,
+      "onlineHours": "15.8 hrs",
+      "onlineSeconds": 56700,
       "unitTimes": {
-        "u1": "2h 35m",
+        "u1": "2h 10m",
         "u2": "2h 20m",
-        "u3": "2h 00m",
-        "u4": "1h 45m",
-        "u5": "1h 30m",
-        "u6": "1h 20m"
+        "u3": "2h 30m",
+        "u4": "2h 45m",
+        "u5": "2h 55m",
+        "u6": "3h 05m"
       },
       "unitMinutes": {
-        "u1": 155,
+        "u1": 130,
         "u2": 140,
-        "u3": 120,
-        "u4": 105,
-        "u5": 90,
-        "u6": 80
+        "u3": 150,
+        "u4": 165,
+        "u5": 175,
+        "u6": 185
       },
       "unitScores": {
-        "u1": 90,
-        "u2": 85,
-        "u3": 75,
-        "u4": 70,
-        "u5": 65,
-        "u6": 60
+        "u1": 70,
+        "u2": 75,
+        "u3": 80,
+        "u4": 85,
+        "u5": 90,
+        "u6": 95
       },
-      "trend": "Downward",
-      "scoreDelta": -30,
+      "trend": "Upward",
+      "scoreDelta": 25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "74%",
+      "quizAvg": "83%",
       "lastActive": "2026-11-21 19:41"
     },
     {
@@ -4029,36 +4029,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6528",
       "name": "Sutthida Kalasin",
-      "onlineHours": "10.3 hrs",
-      "onlineSeconds": 37200,
+      "onlineHours": "14.8 hrs",
+      "onlineSeconds": 53100,
       "unitTimes": {
-        "u1": "2h 10m",
-        "u2": "2h 05m",
-        "u3": "1h 50m",
-        "u4": "1h 35m",
-        "u5": "1h 25m",
-        "u6": "1h 15m"
+        "u1": "1h 55m",
+        "u2": "2h 10m",
+        "u3": "2h 20m",
+        "u4": "2h 35m",
+        "u5": "2h 45m",
+        "u6": "3h 00m"
       },
       "unitMinutes": {
-        "u1": 130,
-        "u2": 125,
-        "u3": 110,
-        "u4": 95,
-        "u5": 85,
-        "u6": 75
+        "u1": 115,
+        "u2": 130,
+        "u3": 140,
+        "u4": 155,
+        "u5": 165,
+        "u6": 180
       },
       "unitScores": {
-        "u1": 75,
-        "u2": 75,
-        "u3": 70,
-        "u4": 65,
-        "u5": 60,
-        "u6": 55
+        "u1": 60,
+        "u2": 70,
+        "u3": 75,
+        "u4": 80,
+        "u5": 85,
+        "u6": 90
       },
-      "trend": "Downward",
-      "scoreDelta": -20,
+      "trend": "Upward",
+      "scoreDelta": 30,
       "completedUnits": "6/6 Units",
-      "quizAvg": "67%",
+      "quizAvg": "77%",
       "lastActive": "2026-11-21 11:09"
     },
     {
@@ -4134,36 +4134,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6531",
       "name": "Chonlada Roiet",
-      "onlineHours": "14.6 hrs",
-      "onlineSeconds": 52500,
+      "onlineHours": "15.7 hrs",
+      "onlineSeconds": 56400,
       "unitTimes": {
-        "u1": "2h 30m",
-        "u2": "2h 10m",
-        "u3": "2h 25m",
-        "u4": "2h 35m",
-        "u5": "2h 15m",
-        "u6": "2h 40m"
+        "u1": "2h 10m",
+        "u2": "2h 20m",
+        "u3": "2h 30m",
+        "u4": "2h 40m",
+        "u5": "2h 55m",
+        "u6": "3h 05m"
       },
       "unitMinutes": {
-        "u1": 150,
-        "u2": 130,
-        "u3": 145,
-        "u4": 155,
-        "u5": 135,
-        "u6": 160
+        "u1": 130,
+        "u2": 140,
+        "u3": 150,
+        "u4": 160,
+        "u5": 175,
+        "u6": 185
       },
       "unitScores": {
-        "u1": 85,
+        "u1": 70,
         "u2": 75,
         "u3": 80,
         "u4": 85,
-        "u5": 75,
-        "u6": 85
+        "u5": 90,
+        "u6": 95
       },
-      "trend": "Mixed",
-      "scoreDelta": 0,
+      "trend": "Upward",
+      "scoreDelta": 25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "81%",
+      "quizAvg": "83%",
       "lastActive": "2026-11-20 14:30"
     },
     {
@@ -4258,7 +4258,7 @@ window.ReadSkillsData = {
         "u6": 80
       },
       "unitScores": {
-        "u1": 85,
+        "u1": 80,
         "u2": 75,
         "u3": 70,
         "u4": 65,
@@ -4266,7 +4266,7 @@ window.ReadSkillsData = {
         "u6": 55
       },
       "trend": "Downward",
-      "scoreDelta": -30,
+      "scoreDelta": -25,
       "completedUnits": "6/6 Units",
       "quizAvg": "68%",
       "lastActive": "2026-11-19 17:51"
@@ -4344,36 +4344,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6537",
       "name": "Yanisa Ubon",
-      "onlineHours": "14.0 hrs",
-      "onlineSeconds": 50400,
+      "onlineHours": "13.8 hrs",
+      "onlineSeconds": 49800,
       "unitTimes": {
         "u1": "2h 15m",
-        "u2": "2h 05m",
+        "u2": "2h 15m",
         "u3": "2h 25m",
         "u4": "2h 15m",
-        "u5": "2h 30m",
-        "u6": "2h 30m"
+        "u5": "2h 20m",
+        "u6": "2h 20m"
       },
       "unitMinutes": {
         "u1": 135,
-        "u2": 125,
+        "u2": 135,
         "u3": 145,
         "u4": 135,
-        "u5": 150,
-        "u6": 150
+        "u5": 140,
+        "u6": 140
       },
       "unitScores": {
         "u1": 75,
-        "u2": 70,
+        "u2": 75,
         "u3": 80,
         "u4": 75,
-        "u5": 80,
-        "u6": 80
+        "u5": 75,
+        "u6": 75
       },
       "trend": "Mixed",
-      "scoreDelta": 5,
+      "scoreDelta": 0,
       "completedUnits": "6/6 Units",
-      "quizAvg": "77%",
+      "quizAvg": "76%",
       "lastActive": "2026-11-18 08:12"
     },
     {
@@ -4414,36 +4414,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6539",
       "name": "Darika Chaiyaphon",
-      "onlineHours": "11.0 hrs",
-      "onlineSeconds": 39600,
+      "onlineHours": "14.9 hrs",
+      "onlineSeconds": 53700,
       "unitTimes": {
-        "u1": "2h 15m",
+        "u1": "2h 00m",
         "u2": "2h 10m",
-        "u3": "1h 55m",
-        "u4": "1h 40m",
-        "u5": "1h 35m",
-        "u6": "1h 25m"
+        "u3": "2h 25m",
+        "u4": "2h 35m",
+        "u5": "2h 45m",
+        "u6": "3h 00m"
       },
       "unitMinutes": {
-        "u1": 135,
+        "u1": 120,
         "u2": 130,
-        "u3": 115,
-        "u4": 100,
-        "u5": 95,
-        "u6": 85
+        "u3": 145,
+        "u4": 155,
+        "u5": 165,
+        "u6": 180
       },
       "unitScores": {
-        "u1": 80,
-        "u2": 80,
-        "u3": 70,
-        "u4": 65,
-        "u5": 65,
-        "u6": 60
+        "u1": 65,
+        "u2": 70,
+        "u3": 75,
+        "u4": 80,
+        "u5": 85,
+        "u6": 90
       },
-      "trend": "Downward",
-      "scoreDelta": -20,
+      "trend": "Upward",
+      "scoreDelta": 25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "70%",
+      "quizAvg": "78%",
       "lastActive": "2026-11-20 10:26"
     },
     {
@@ -4554,36 +4554,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6543",
       "name": "Benjamas Satuek",
-      "onlineHours": "11.7 hrs",
-      "onlineSeconds": 42000,
+      "onlineHours": "15.9 hrs",
+      "onlineSeconds": 57300,
       "unitTimes": {
-        "u1": "2h 30m",
-        "u2": "2h 15m",
-        "u3": "2h 00m",
-        "u4": "1h 50m",
-        "u5": "1h 35m",
-        "u6": "1h 30m"
+        "u1": "2h 10m",
+        "u2": "2h 20m",
+        "u3": "2h 35m",
+        "u4": "2h 45m",
+        "u5": "2h 55m",
+        "u6": "3h 10m"
       },
       "unitMinutes": {
-        "u1": 150,
-        "u2": 135,
-        "u3": 120,
-        "u4": 110,
-        "u5": 95,
-        "u6": 90
+        "u1": 130,
+        "u2": 140,
+        "u3": 155,
+        "u4": 165,
+        "u5": 175,
+        "u6": 190
       },
       "unitScores": {
-        "u1": 90,
-        "u2": 80,
-        "u3": 75,
-        "u4": 70,
-        "u5": 65,
-        "u6": 65
+        "u1": 70,
+        "u2": 75,
+        "u3": 80,
+        "u4": 85,
+        "u5": 90,
+        "u6": 95
       },
-      "trend": "Downward",
-      "scoreDelta": -25,
+      "trend": "Upward",
+      "scoreDelta": 25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "74%",
+      "quizAvg": "83%",
       "lastActive": "2026-11-20 14:54"
     },
     {
@@ -4624,36 +4624,36 @@ window.ReadSkillsData = {
     {
       "id": "STD6545",
       "name": "Kwanruethai Lahansai",
-      "onlineHours": "13.6 hrs",
-      "onlineSeconds": 48900,
+      "onlineHours": "14.8 hrs",
+      "onlineSeconds": 53400,
       "unitTimes": {
-        "u1": "2h 05m",
-        "u2": "2h 15m",
-        "u3": "2h 05m",
-        "u4": "2h 25m",
-        "u5": "2h 15m",
-        "u6": "2h 30m"
+        "u1": "2h 00m",
+        "u2": "2h 10m",
+        "u3": "2h 25m",
+        "u4": "2h 35m",
+        "u5": "2h 45m",
+        "u6": "2h 55m"
       },
       "unitMinutes": {
-        "u1": 125,
-        "u2": 135,
-        "u3": 125,
-        "u4": 145,
-        "u5": 135,
-        "u6": 150
+        "u1": 120,
+        "u2": 130,
+        "u3": 145,
+        "u4": 155,
+        "u5": 165,
+        "u6": 175
       },
       "unitScores": {
-        "u1": 70,
-        "u2": 75,
-        "u3": 70,
+        "u1": 65,
+        "u2": 70,
+        "u3": 75,
         "u4": 80,
-        "u5": 75,
-        "u6": 80
+        "u5": 85,
+        "u6": 90
       },
-      "trend": "Mixed",
-      "scoreDelta": 10,
+      "trend": "Upward",
+      "scoreDelta": 25,
       "completedUnits": "6/6 Units",
-      "quizAvg": "75%",
+      "quizAvg": "78%",
       "lastActive": "2026-11-18 16:08"
     },
     {
