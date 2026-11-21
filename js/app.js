@@ -6757,7 +6757,7 @@ class ReadSkillsApp {
       }
       return `
         <div class="inline-flex flex-col items-center px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-300 text-amber-900">
-          <span class="text-[10px] font-extrabold flex items-center gap-1"><i data-lucide="activity" class="w-3 h-3"></i> ปนๆ/คงที่</span>
+          <span class="text-[10px] font-extrabold flex items-center gap-1"><i data-lucide="activity" class="w-3 h-3"></i> คงที่</span>
           <span class="text-[9px] font-bold text-amber-700">(${sign} U1&rarr;U6)</span>
         </div>
       `;
@@ -6833,8 +6833,8 @@ class ReadSkillsApp {
           </div>
 
           <div class="glass-card p-4 sm:p-5">
-            <span class="text-[11px] font-semibold text-slate-500 uppercase">Mixed / Declined</span>
-            <div class="text-2xl font-extrabold text-rose-700 mt-1">${declinedCount} ลดลง &bull; ${mixedCount} ปนๆ</div>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase">Steady / Declined</span>
+            <div class="text-2xl font-extrabold text-rose-700 mt-1">${declinedCount} ลดลง &bull; ${mixedCount} คงที่</div>
             <p class="text-[10px] text-slate-500 mt-0.5">ควรติดตามทบทวนเพิ่มเติม</p>
           </div>
         </div>
@@ -6854,7 +6854,7 @@ class ReadSkillsApp {
             <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold">
               <button onclick="app.filterAdminTrend('all')" id="trend-btn-all" class="px-2.5 py-1 rounded-lg bg-purple-700 text-white border border-purple-800 cursor-pointer transition">ทั้งหมด (${totalStudents})</button>
               <button onclick="app.filterAdminTrend('Upward')" id="trend-btn-Upward" class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200 cursor-pointer transition">ดีขึ้น (${improvedCount})</button>
-              <button onclick="app.filterAdminTrend('Mixed')" id="trend-btn-Mixed" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 cursor-pointer transition">ปนๆ/คงที่ (${mixedCount})</button>
+              <button onclick="app.filterAdminTrend('Mixed')" id="trend-btn-Mixed" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 cursor-pointer transition">คงที่ (${mixedCount})</button>
               <button onclick="app.filterAdminTrend('Downward')" id="trend-btn-Downward" class="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 border border-rose-300 hover:bg-rose-200 cursor-pointer transition">ลดลง (${declinedCount})</button>
             </div>
           </div>
@@ -6984,7 +6984,7 @@ class ReadSkillsApp {
       const t = s.unitTimes || { u1: '-', u2: '-', u3: '-', u4: '-', u5: '-', u6: '-' };
       const delta = typeof s.scoreDelta === 'number' ? s.scoreDelta : ((u.u6 || 0) - (u.u1 || 0));
       const deltaStr = (delta > 0 ? '+' : '') + delta + '%';
-      const trendLabel = s.trend === 'Upward' ? 'Improved (ดีขึ้น)' : (s.trend === 'Downward' ? 'Declined (ลดลง)' : 'Mixed/Steady (ปนๆ)');
+      const trendLabel = s.trend === 'Upward' ? 'Improved (ดีขึ้น)' : (s.trend === 'Downward' ? 'Declined (ลดลง)' : 'Steady (คงที่)');
 
       csv += `"${s.id}","${s.name}","${s.onlineHours}","${t.u1}","${u.u1 || 0}%","${t.u2}","${u.u2 || 0}%","${t.u3}","${u.u3 || 0}%","${t.u4}","${u.u4 || 0}%","${t.u5}","${u.u5 || 0}%","${t.u6}","${u.u6 || 0}%","${s.quizAvg}","${deltaStr}","${trendLabel}","${s.lastActive}"\n`;
     });
