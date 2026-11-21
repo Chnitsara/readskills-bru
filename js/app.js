@@ -23,8 +23,26 @@ class ReadSkillsApp {
     // User accounts database stored in localStorage
     this.registeredUsers = JSON.parse(localStorage.getItem('bru_registered_users')) || [
       { name: 'Somsak Jaidee', email: 'student@bru.ac.th', password: '123456', role: 'student' },
-      { name: 'Dr. Somchai', email: 'teacher@bru.ac.th', password: '123456', role: 'instructor' }
+      { name: 'Asst. Prof. Naviya Chutopama', email: 'teacher@bru.ac.th', password: '123456', role: 'instructor' }
     ];
+    // Migrate legacy instructor name if cached in localStorage
+    let updatedReg = false;
+    this.registeredUsers = this.registeredUsers.map(u => {
+      if ((u.email && u.email.toLowerCase() === 'teacher@bru.ac.th') || u.name === 'Dr. Somchai') {
+        if (u.name !== 'Asst. Prof. Naviya Chutopama') {
+          updatedReg = true;
+          return { ...u, name: 'Asst. Prof. Naviya Chutopama' };
+        }
+      }
+      return u;
+    });
+    if (updatedReg) {
+      localStorage.setItem('bru_registered_users', JSON.stringify(this.registeredUsers));
+    }
+    if (this.user.name === 'Dr. Somchai' || ((this.user.role === 'instructor' || this.user.role === 'teacher') && (!this.user.name || this.user.name === 'Dr.'))) {
+      this.user.name = 'Asst. Prof. Naviya Chutopama';
+      localStorage.setItem('bru_user_name', 'Asst. Prof. Naviya Chutopama');
+    }
 
     this.currentUnitId = 1;
     this.currentStage = 'preReading';
@@ -488,7 +506,10 @@ class ReadSkillsApp {
   getActiveUserName() {
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
     let rawName = (localStorage.getItem('bru_user_name') || this.user.name || '').replace(/[()]/g, '').trim();
-    if (!rawName || rawName === 'Dr.') {
+    if (rawName === 'Dr. Somchai' || (isTeacher && (!rawName || rawName === 'Dr.'))) {
+      rawName = 'Asst. Prof. Naviya Chutopama';
+      localStorage.setItem('bru_user_name', rawName);
+    } else if (!rawName) {
       const email = localStorage.getItem('bru_user_email') || this.user.email || '';
       const matched = (this.registeredUsers || []).find(u => u.email && u.email.toLowerCase() === email.toLowerCase());
       if (matched && matched.name) {
@@ -496,7 +517,7 @@ class ReadSkillsApp {
       } else if (email && email.includes('@')) {
         rawName = email.split('@')[0];
       } else {
-        rawName = isTeacher ? 'Dr. Somchai' : 'Somsak Jaidee';
+        rawName = isTeacher ? 'Asst. Prof. Naviya Chutopama' : 'Somsak Jaidee';
       }
     }
     this.user.name = rawName;
@@ -506,7 +527,7 @@ class ReadSkillsApp {
   updateUserDisplay() {
     const isTeacher = this.user.role === 'instructor' || this.user.role === 'teacher';
     const accountName = this.getActiveUserName();
-    const initial = accountName.replace(/^(Dr\.|Mr\.|Mrs\.|Ms\.|ดร\.|ผศ\.|รศ\.|ศ\.|อ\.)\s*/i, '').charAt(0).toUpperCase() || accountName.charAt(0).toUpperCase() || (isTeacher ? 'T' : 'S');
+    const initial = accountName.replace(/^(Asst\.\s*Prof\.|Assoc\.\s*Prof\.|Prof\.|Dr\.|Mr\.|Mrs\.|Ms\.|ดร\.|ผศ\.|รศ\.|ศ\.|อ\.)\s*/i, '').charAt(0).toUpperCase() || accountName.charAt(0).toUpperCase() || (isTeacher ? 'N' : 'S');
 
     const nameElem = document.getElementById('user-display-name');
     if (nameElem) {
