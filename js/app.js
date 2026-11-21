@@ -6678,30 +6678,34 @@ class ReadSkillsApp {
     // Chart removed as requested by user
   }
 
-  // 6. Teacher Admin View (No Email, Unit Comprehension Quizzes Breakdown U1–U6)
+  // 6. Teacher Admin View (50 Simulated Students STD6501-STD6550, Per-Unit Time & Quiz Scores U1–U6 + Trend)
   renderAdminView() {
     const compScores = this.getComprehensionQuizScores();
-    const currUnitScores = {
-      u1: (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : 90,
-      u2: (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : 85,
-      u3: (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : 95,
-      u4: (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : 88,
-      u5: (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : 92,
-      u6: (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : 0
-    };
+    const isStudentUser = this.user && this.user.role !== 'teacher';
 
-    const doneCount = Object.values(currUnitScores).filter(s => s > 0).length;
-    const doneSum = Object.values(currUnitScores).filter(s => s > 0).reduce((a, b) => a + b, 0);
-    const currAvg = doneCount > 0 ? Math.round(doneSum / doneCount) : 0;
-
-    // Build unified student list
+    // Build unified 50-student list
     const students = ReadSkillsData.studentsReport.map(s => {
-      if (s.name.toLowerCase() === this.user.name.toLowerCase() || s.id === 'STD-6501') {
+      if (isStudentUser && s.name.toLowerCase() === this.user.name.toLowerCase()) {
+        const currUnitScores = {
+          u1: (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : s.unitScores.u1,
+          u2: (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : s.unitScores.u2,
+          u3: (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : s.unitScores.u3,
+          u4: (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : s.unitScores.u4,
+          u5: (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : s.unitScores.u5,
+          u6: (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : s.unitScores.u6
+        };
+        const doneCount = Object.values(currUnitScores).filter(sc => sc > 0).length;
+        const doneSum = Object.values(currUnitScores).filter(sc => sc > 0).reduce((a, b) => a + b, 0);
+        const currAvg = doneCount > 0 ? Math.round(doneSum / doneCount) : 0;
+        const delta = (currUnitScores.u6 || currUnitScores.u1) - currUnitScores.u1;
+        const trend = delta > 5 ? 'Upward' : (delta < -5 ? 'Downward' : 'Mixed');
         return {
           ...s,
           name: this.user.name,
           onlineHours: this.formatHoursText(this.user.onlineSeconds),
           unitScores: { ...currUnitScores },
+          scoreDelta: delta,
+          trend,
           completedUnits: `${doneCount}/6 Units`,
           quizAvg: `${currAvg}%`,
           lastActive: 'Active Now (กำลังใช้งาน)',
@@ -6714,16 +6718,49 @@ class ReadSkillsApp {
     const totalStudents = students.length;
     const classAvgSum = students.reduce((acc, s) => acc + parseInt(s.quizAvg || '0', 10), 0);
     const classAvg = Math.round(classAvgSum / totalStudents);
+    const improvedCount = students.filter(s => s.trend === 'Upward').length;
+    const declinedCount = students.filter(s => s.trend === 'Downward').length;
+    const mixedCount = students.filter(s => s.trend === 'Mixed').length;
 
-    // Score pill helper
-    const renderScorePill = (score) => {
+    // Score + Unit Time cell helper
+    const renderUnitScoreAndTime = (score, timeStr) => {
+      const timeBadge = timeStr
+        ? `<span class="text-[10px] font-medium text-slate-500 flex items-center justify-center gap-0.5 mt-1"><i data-lucide="clock" class="w-2.5 h-2.5 text-purple-500"></i>${timeStr}</span>`
+        : '';
       if (typeof score !== 'number' || score === 0) {
-        return `<span class="inline-flex items-center justify-center min-w-[42px] px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-400 border border-slate-200">—</span>`;
+        return `<div class="flex flex-col items-center"><span class="inline-flex items-center justify-center min-w-[44px] px-2 py-0.5 rounded-md text-[11px] font-semibold bg-slate-100 text-slate-400 border border-slate-200">—</span>${timeBadge}</div>`;
       }
       if (score >= 70) {
-        return `<span class="inline-flex items-center justify-center min-w-[42px] px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-300 shadow-xs">${score}%</span>`;
+        return `<div class="flex flex-col items-center"><span class="inline-flex items-center justify-center min-w-[44px] px-2 py-0.5 rounded-md text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-300 shadow-xs">${score}%</span>${timeBadge}</div>`;
       }
-      return `<span class="inline-flex items-center justify-center min-w-[42px] px-2 py-0.5 rounded-md text-[11px] font-bold bg-rose-50 text-rose-800 border border-rose-300 shadow-xs">${score}%</span>`;
+      return `<div class="flex flex-col items-center"><span class="inline-flex items-center justify-center min-w-[44px] px-2 py-0.5 rounded-md text-[11px] font-bold bg-rose-50 text-rose-800 border border-rose-300 shadow-xs">${score}%</span>${timeBadge}</div>`;
+    };
+
+    // Trend badge helper
+    const renderTrendBadge = (trend, delta) => {
+      const sign = delta > 0 ? `+${delta}%` : `${delta}%`;
+      if (trend === 'Upward') {
+        return `
+          <div class="inline-flex flex-col items-center px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-300 text-emerald-800">
+            <span class="text-[10px] font-extrabold flex items-center gap-1"><i data-lucide="trending-up" class="w-3 h-3"></i> ดีขึ้น</span>
+            <span class="text-[9px] font-bold text-emerald-700">(${sign} U1&rarr;U6)</span>
+          </div>
+        `;
+      }
+      if (trend === 'Downward') {
+        return `
+          <div class="inline-flex flex-col items-center px-2.5 py-1 rounded-lg bg-rose-50 border border-rose-300 text-rose-800">
+            <span class="text-[10px] font-extrabold flex items-center gap-1"><i data-lucide="trending-down" class="w-3 h-3"></i> ลดลง</span>
+            <span class="text-[9px] font-bold text-rose-700">(${sign} U1&rarr;U6)</span>
+          </div>
+        `;
+      }
+      return `
+        <div class="inline-flex flex-col items-center px-2.5 py-1 rounded-lg bg-amber-50 border border-amber-300 text-amber-900">
+          <span class="text-[10px] font-extrabold flex items-center gap-1"><i data-lucide="activity" class="w-3 h-3"></i> ปนๆ/คงที่</span>
+          <span class="text-[9px] font-bold text-amber-700">(${sign} U1&rarr;U6)</span>
+        </div>
+      `;
     };
 
     return `
@@ -6734,7 +6771,7 @@ class ReadSkillsApp {
           <div>
             <div class="flex items-center space-x-2">
               <span class="px-2.5 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wider bg-amber-100 text-amber-900 border border-amber-300">Instructor Portal</span>
-              <span class="text-xs text-purple-700 font-semibold">&bull; Section D Integrated Scores</span>
+              <span class="text-xs text-purple-700 font-semibold">&bull; Section D Integrated Scores (STD6501–STD6550)</span>
             </div>
             <div class="mt-1.5 flex items-start space-x-2.5">
               <div class="w-9 h-9 rounded-xl bg-amber-100 border border-amber-300 text-amber-700 flex items-center justify-center shrink-0 mt-0.5 shadow-xs">
@@ -6745,12 +6782,12 @@ class ReadSkillsApp {
                   Teacher Report Dashboard
                 </h2>
                 <p class="text-sm sm:text-base font-bold text-purple-900 mt-0.5">
-                  (รายงานคะแนนและชั่วโมงการเรียน)
+                  (รายงานเวลาเรียนรายบทและพัฒนาการคะแนน Quiz บทที่ 1–6 ของนักศึกษา 50 คน)
                 </p>
               </div>
             </div>
             <p class="text-xs text-slate-600 mt-1">
-              ติดตามเวลาออนไลน์และผลคะแนนแบบทดสอบประจำบทเรียน <strong>Unit Comprehension Quizzes (Units 1–6)</strong> ข้อละ 20 ข้อ
+              แสดงเวลาที่ใช้ในแต่ละบทเรียน (Unit 1–6) พร้อมคะแนน <strong>Unit Comprehension Quizzes</strong> และแนวโน้มพัฒนาการรายบุคคล (ดีขึ้น / ลดลง / คงที่)
             </p>
           </div>
 
@@ -6762,15 +6799,15 @@ class ReadSkillsApp {
                 type="text" 
                 id="admin-search-input" 
                 oninput="app.filterAdminStudents(this.value)" 
-                placeholder="Search student or ID..." 
-                class="text-xs bg-transparent focus:outline-none w-36 sm:w-48 text-slate-800 placeholder-slate-400"
+                placeholder="Search student or STD6501..." 
+                class="text-xs bg-transparent focus:outline-none w-40 sm:w-48 text-slate-800 placeholder-slate-400"
               />
             </div>
 
             <!-- Export CSV Button -->
             <button onclick="app.exportStudentReportCSV()" class="px-4 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md flex items-center space-x-1.5 transition cursor-pointer shrink-0">
               <i data-lucide="download" class="w-4 h-4"></i>
-              <span>Export CSV (ดาวน์โหลดรายงาน)</span>
+              <span>Export CSV (ดาวน์โหลดรายงาน 50 คน)</span>
             </button>
           </div>
         </div>
@@ -6779,45 +6816,46 @@ class ReadSkillsApp {
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           <div class="glass-card p-4 sm:p-5">
             <span class="text-[11px] font-semibold text-slate-500 uppercase">Total Students</span>
-            <div class="text-2xl font-extrabold text-purple-900 mt-1">${totalStudents} Students</div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Active Class Roster</p>
+            <div class="text-2xl font-extrabold text-purple-900 mt-1">${totalStudents} คน</div>
+            <p class="text-[10px] text-slate-500 mt-0.5">รหัส STD6501 – STD6550</p>
           </div>
 
           <div class="glass-card p-4 sm:p-5">
             <span class="text-[11px] font-semibold text-slate-500 uppercase">Class Average</span>
             <div class="text-2xl font-extrabold text-emerald-700 mt-1">${classAvg}%</div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Across all completed units</p>
+            <p class="text-[10px] text-slate-500 mt-0.5">ค่าเฉลี่ยรวมทุกบทเรียน (Units 1–6)</p>
           </div>
 
           <div class="glass-card p-4 sm:p-5">
-            <span class="text-[11px] font-semibold text-slate-500 uppercase">Pass Threshold</span>
-            <div class="text-2xl font-extrabold text-amber-700 mt-1">70% (14/20)</div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Passing benchmark score</p>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase">Score Improved (ดีขึ้น)</span>
+            <div class="text-2xl font-extrabold text-emerald-700 mt-1">${improvedCount} คน (${Math.round((improvedCount / totalStudents) * 100)}%)</div>
+            <p class="text-[10px] text-slate-500 mt-0.5">คะแนนพัฒนาขึ้นตั้งแต่บทที่ 1 ถึงบทที่ 6</p>
           </div>
 
           <div class="glass-card p-4 sm:p-5">
-            <span class="text-[11px] font-semibold text-slate-500 uppercase">Active Status</span>
-            <div class="text-2xl font-extrabold text-pink-700 mt-1">Live Online</div>
-            <p class="text-[10px] text-slate-500 mt-0.5">Real-time attendance tracking</p>
+            <span class="text-[11px] font-semibold text-slate-500 uppercase">Mixed / Declined</span>
+            <div class="text-2xl font-extrabold text-rose-700 mt-1">${declinedCount} ลดลง &bull; ${mixedCount} ปนๆ</div>
+            <p class="text-[10px] text-slate-500 mt-0.5">ควรติดตามทบทวนเพิ่มเติม</p>
           </div>
         </div>
 
-        <!-- Student Report Table (With U1-U6 Breakdown, No Email) -->
+        <!-- Student Report Table (With U1-U6 Score + Time Breakdown & Trend) -->
         <div class="bg-white rounded-2xl border-2 border-slate-900 shadow-[4px_4px_0_#1E1B2E] overflow-hidden">
-          <div class="px-5 py-3.5 bg-gradient-to-r from-purple-100 via-purple-50 to-pink-50 border-b-2 border-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div class="px-5 py-3.5 bg-gradient-to-r from-purple-100 via-purple-50 to-pink-50 border-b-2 border-slate-900 flex flex-col lg:flex-row lg:items-center justify-between gap-3">
             <div>
               <h3 class="font-extrabold text-sm sm:text-base text-purple-950 flex items-center space-x-2">
                 <i data-lucide="table" class="w-4 h-4 text-purple-700"></i>
-                <span>Student Roster & Unit Comprehension Quiz Scores (คะแนนเก็บแบบทดสอบ 6 Units)</span>
+                <span>Student Roster: Time Spent & Quiz Score Progression (Units 1–6)</span>
               </h3>
               <p class="text-[11px] text-purple-800">
-                แต่ละคอลัมน์แสดงคะแนนของแบบทดสอบประจำบท (20 ข้อต่อบท) จาก Unit Comprehension Quizzes
+                แต่ละบทแสดง <strong>คะแนน Quiz (%)</strong> ด้านบน และ <strong>เวลาเรียนในบทนั้น (ชม./นาที)</strong> ด้านล่าง พร้อมสรุปแนวโน้มพัฒนาการ
               </p>
             </div>
-            <div class="flex items-center space-x-2 text-[10px] font-bold">
-              <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">&ge; 70% Pass</span>
-              <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-800 border border-rose-300">&lt; 70% Review</span>
-              <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-500 border border-slate-200">Pending</span>
+            <div class="flex flex-wrap items-center gap-2 text-[10px] font-bold">
+              <button onclick="app.filterAdminTrend('all')" id="trend-btn-all" class="px-2.5 py-1 rounded-lg bg-purple-700 text-white border border-purple-800 cursor-pointer transition">ทั้งหมด (${totalStudents})</button>
+              <button onclick="app.filterAdminTrend('Upward')" id="trend-btn-Upward" class="px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200 cursor-pointer transition">ดีขึ้น (${improvedCount})</button>
+              <button onclick="app.filterAdminTrend('Mixed')" id="trend-btn-Mixed" class="px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 cursor-pointer transition">ปนๆ/คงที่ (${mixedCount})</button>
+              <button onclick="app.filterAdminTrend('Downward')" id="trend-btn-Downward" class="px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 border border-rose-300 hover:bg-rose-200 cursor-pointer transition">ลดลง (${declinedCount})</button>
             </div>
           </div>
 
@@ -6827,22 +6865,23 @@ class ReadSkillsApp {
                 <tr>
                   <th class="py-3 px-3 sm:px-4">ID</th>
                   <th class="py-3 px-3 sm:px-4">Student Name (ชื่อ-นามสกุล)</th>
-                  <th class="py-3 px-3 text-center bg-amber-100/80 text-amber-950 border-x border-purple-200">เวลาออนไลน์ (Online)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 1: Main Ideas + Strategy 1">U1 (Main)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 2: Supporting Details + Strategy 2">U2 (Details)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 3: Vocabulary in Context + Strategy 3">U3 (Vocab)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 4: References & Connectives + Strategy 4">U4 (Struct)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 5: Paraphrase & Meaning + Strategy 5">U5 (Infer)</th>
-                  <th class="py-3 px-2 text-center" title="Unit 6: Integrated Practice + Strategy 6">U6 (Integr)</th>
-                  <th class="py-3 px-3 text-center bg-purple-200/70 text-purple-950 border-x border-purple-200">Average (%)</th>
-                  <th class="py-3 px-3 text-center">Last Active</th>
+                  <th class="py-3 px-3 text-center bg-amber-100/80 text-amber-950 border-x border-purple-200">เวลารวม (Total Time)</th>
+                  <th class="py-3 px-2 text-center" title="Unit 1: Main Ideas (Score & Time)">Unit 1<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-2 text-center" title="Unit 2: Supporting Details (Score & Time)">Unit 2<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-2 text-center" title="Unit 3: Vocabulary in Context (Score & Time)">Unit 3<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-2 text-center" title="Unit 4: References & Connectives (Score & Time)">Unit 4<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-2 text-center" title="Unit 5: Paraphrase & Meaning (Score & Time)">Unit 5<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-2 text-center" title="Unit 6: Integrated Practice (Score & Time)">Unit 6<br/><span class="text-[9px] font-normal text-purple-700">Score / Time</span></th>
+                  <th class="py-3 px-3 text-center bg-purple-200/70 text-purple-950 border-l border-purple-200">Avg (%)</th>
+                  <th class="py-3 px-3 text-center border-r border-purple-200">พัฒนาการ (Trend)</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-purple-100 font-medium" id="admin-roster-tbody">
                 ${students.map((s, idx) => {
                   const u = s.unitScores || {};
+                  const t = s.unitTimes || {};
                   return `
-                    <tr class="student-row hover:bg-purple-50/60 transition ${s.isCurrentUser ? 'bg-amber-50/40 font-semibold' : (idx % 2 === 1 ? 'bg-slate-50/40' : 'bg-white')}" data-student-name="${s.name.toLowerCase()}" data-student-id="${s.id.toLowerCase()}">
+                    <tr class="student-row hover:bg-purple-50/60 transition ${s.isCurrentUser ? 'bg-amber-50/40 font-semibold' : (idx % 2 === 1 ? 'bg-slate-50/40' : 'bg-white')}" data-student-name="${s.name.toLowerCase()}" data-student-id="${s.id.toLowerCase()}" data-student-trend="${s.trend || 'Upward'}">
                       <td class="py-3 px-3 sm:px-4 font-extrabold text-purple-900 whitespace-nowrap">
                         <span class="px-2 py-0.5 rounded bg-purple-100/80 text-purple-900 text-[10px] font-bold border border-purple-200">${s.id}</span>
                       </td>
@@ -6851,24 +6890,28 @@ class ReadSkillsApp {
                           <div class="w-6 h-6 rounded-full bg-gradient-to-tr from-purple-700 to-pink-500 text-white flex items-center justify-center font-bold text-[10px] shrink-0">
                             ${s.name.charAt(0)}
                           </div>
-                          <span>${s.name}</span>
+                          <div>
+                            <div>${s.name}</div>
+                            <div class="text-[10px] text-slate-400 font-normal">Last active: ${s.lastActive}</div>
+                          </div>
                           ${s.isCurrentUser ? '<span class="text-[9px] px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-900 font-extrabold">Active</span>' : ''}
                         </div>
                       </td>
                       <td class="py-3 px-3 text-center font-bold text-amber-900 bg-amber-50/70 border-x border-purple-100 whitespace-nowrap">
-                        ${s.onlineHours}
+                        <div>${s.onlineHours}</div>
+                        <div class="text-[10px] text-amber-700 font-normal">${s.completedUnits}</div>
                       </td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u1)}</td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u2)}</td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u3)}</td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u4)}</td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u5)}</td>
-                      <td class="py-3 px-2 text-center whitespace-nowrap">${renderScorePill(u.u6)}</td>
-                      <td class="py-3 px-3 text-center font-extrabold text-purple-950 bg-purple-50/70 border-x border-purple-100 whitespace-nowrap text-xs">
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u1, t.u1)}</td>
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u2, t.u2)}</td>
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u3, t.u3)}</td>
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u4, t.u4)}</td>
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u5, t.u5)}</td>
+                      <td class="py-2.5 px-2 text-center whitespace-nowrap">${renderUnitScoreAndTime(u.u6, t.u6)}</td>
+                      <td class="py-3 px-3 text-center font-extrabold text-purple-950 bg-purple-50/70 border-l border-purple-100 whitespace-nowrap text-xs">
                         ${s.quizAvg}
                       </td>
-                      <td class="py-3 px-3 text-center text-slate-500 text-[11px] whitespace-nowrap">
-                        ${s.lastActive}
+                      <td class="py-2.5 px-3 text-center whitespace-nowrap border-r border-purple-100">
+                        ${renderTrendBadge(s.trend || 'Upward', typeof s.scoreDelta === 'number' ? s.scoreDelta : ((u.u6 || 0) - (u.u1 || 0)))}
                       </td>
                     </tr>
                   `;
@@ -6881,7 +6924,7 @@ class ReadSkillsApp {
           <div class="px-5 py-3 bg-purple-50/60 border-t border-purple-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs text-slate-600">
             <span class="flex items-center space-x-1.5">
               <i data-lucide="info" class="w-3.5 h-3.5 text-purple-700"></i>
-              <span>ข้อมูลคะแนนในระบบจะถูกอัปเดตแบบเรียลไทม์เมื่อนักเรียนทำแบบทดสอบ Unit Comprehension Quizzes เสร็จสิ้น</span>
+              <span>จำลองข้อมูลนักศึกษา 50 คน (STD6501–STD6550) แสดงเวลาเรียนแยกตามบทที่ 1–6 และแนวโน้มพัฒนาการคะแนน Quiz</span>
             </span>
             <span class="font-bold text-purple-900">Total: ${totalStudents} Students Enrolled</span>
           </div>
@@ -6891,57 +6934,65 @@ class ReadSkillsApp {
     `;
   }
 
-  /* ------------------- Admin Real-time Search Filter ------------------- */
+  /* ------------------- Admin Real-time Search & Trend Filter ------------------- */
   filterAdminStudents(query) {
-    const term = (query || '').toLowerCase().trim();
+    this._adminSearchTerm = (query || '').toLowerCase().trim();
+    this.applyAdminFilters();
+  }
+
+  filterAdminTrend(trend) {
+    this._adminTrendFilter = trend || 'all';
+    ['all', 'Upward', 'Mixed', 'Downward'].forEach(key => {
+      const btn = document.getElementById(`trend-btn-${key}`);
+      if (btn) {
+        if (key === this._adminTrendFilter) {
+          btn.className = 'px-2.5 py-1 rounded-lg bg-purple-700 text-white border border-purple-800 cursor-pointer transition shadow-xs';
+        } else if (key === 'Upward') {
+          btn.className = 'px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800 border border-emerald-300 hover:bg-emerald-200 cursor-pointer transition';
+        } else if (key === 'Mixed') {
+          btn.className = 'px-2.5 py-1 rounded-lg bg-amber-100 text-amber-900 border border-amber-300 hover:bg-amber-200 cursor-pointer transition';
+        } else if (key === 'Downward') {
+          btn.className = 'px-2.5 py-1 rounded-lg bg-rose-100 text-rose-800 border border-rose-300 hover:bg-rose-200 cursor-pointer transition';
+        } else {
+          btn.className = 'px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 border border-slate-300 hover:bg-slate-200 cursor-pointer transition';
+        }
+      }
+    });
+    this.applyAdminFilters();
+  }
+
+  applyAdminFilters() {
+    const term = this._adminSearchTerm || '';
+    const trend = this._adminTrendFilter || 'all';
     const rows = document.querySelectorAll('.student-row');
     rows.forEach(row => {
       const name = row.getAttribute('data-student-name') || '';
       const id = row.getAttribute('data-student-id') || '';
-      if (!term || name.includes(term) || id.includes(term)) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-      }
+      const rowTrend = row.getAttribute('data-student-trend') || '';
+      const matchesTerm = !term || name.includes(term) || id.includes(term);
+      const matchesTrend = trend === 'all' || rowTrend === trend;
+      row.style.display = (matchesTerm && matchesTrend) ? '' : 'none';
     });
   }
 
-  /* ------------------- Export CSV Function (No Email, Unit Scores U1-U6) ------------------- */
+  /* ------------------- Export CSV Function (50 Students, Unit Times & Scores U1-U6 + Trend) ------------------- */
   exportStudentReportCSV() {
-    const compScores = this.getComprehensionQuizScores();
-    const currUnitScores = {
-      u1: (compScores.q1 && compScores.q1.completedAt) ? compScores.q1.score : 90,
-      u2: (compScores.q2 && compScores.q2.completedAt) ? compScores.q2.score : 85,
-      u3: (compScores.q3 && compScores.q3.completedAt) ? compScores.q3.score : 95,
-      u4: (compScores.q4 && compScores.q4.completedAt) ? compScores.q4.score : 88,
-      u5: (compScores.q5 && compScores.q5.completedAt) ? compScores.q5.score : 92,
-      u6: (compScores.q6 && compScores.q6.completedAt) ? compScores.q6.score : 0
-    };
-
-    let csv = "Student ID,Full Name,Online Hours,Unit 1 Score,Unit 2 Score,Unit 3 Score,Unit 4 Score,Unit 5 Score,Unit 6 Score,Quiz Average Score,Last Active\n";
+    let csv = "Student ID,Full Name,Total Online Time,Unit 1 Time,Unit 1 Score,Unit 2 Time,Unit 2 Score,Unit 3 Time,Unit 3 Score,Unit 4 Time,Unit 4 Score,Unit 5 Time,Unit 5 Score,Unit 6 Time,Unit 6 Score,Quiz Average,Score Change (U1 to U6),Progression Trend,Last Active\n";
 
     ReadSkillsData.studentsReport.forEach(s => {
-      let u = s.unitScores || { u1: 0, u2: 0, u3: 0, u4: 0, u5: 0, u6: 0 };
-      let hours = s.onlineHours;
-      let avg = s.quizAvg;
-      let last = s.lastActive;
+      const u = s.unitScores || { u1: 0, u2: 0, u3: 0, u4: 0, u5: 0, u6: 0 };
+      const t = s.unitTimes || { u1: '-', u2: '-', u3: '-', u4: '-', u5: '-', u6: '-' };
+      const delta = typeof s.scoreDelta === 'number' ? s.scoreDelta : ((u.u6 || 0) - (u.u1 || 0));
+      const deltaStr = (delta > 0 ? '+' : '') + delta + '%';
+      const trendLabel = s.trend === 'Upward' ? 'Improved (ดีขึ้น)' : (s.trend === 'Downward' ? 'Declined (ลดลง)' : 'Mixed/Steady (ปนๆ)');
 
-      if (s.name.toLowerCase() === this.user.name.toLowerCase() || s.id === 'STD-6501') {
-        u = currUnitScores;
-        hours = this.formatHoursText(this.user.onlineSeconds);
-        const doneCount = Object.values(u).filter(sc => sc > 0).length;
-        const doneSum = Object.values(u).filter(sc => sc > 0).reduce((a, b) => a + b, 0);
-        avg = (doneCount > 0 ? Math.round(doneSum / doneCount) : 0) + "%";
-        last = "Active Now";
-      }
-
-      csv += `"${s.id}","${s.name}","${hours}","${u.u1 || 0}%","${u.u2 || 0}%","${u.u3 || 0}%","${u.u4 || 0}%","${u.u5 || 0}%","${u.u6 || 0}%","${avg}","${last}"\n`;
+      csv += `"${s.id}","${s.name}","${s.onlineHours}","${t.u1}","${u.u1 || 0}%","${t.u2}","${u.u2 || 0}%","${t.u3}","${u.u3 || 0}%","${t.u4}","${u.u4 || 0}%","${t.u5}","${u.u5 || 0}%","${t.u6}","${u.u6 || 0}%","${s.quizAvg}","${deltaStr}","${trendLabel}","${s.lastActive}"\n`;
     });
 
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
-    link.setAttribute("download", `ReadSkills_BRU_Student_Report_${new Date().toISOString().slice(0,10)}.csv`);
+    link.setAttribute("download", `ReadSkills_BRU_50_Students_Report_${new Date().toISOString().slice(0,10)}.csv`);
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
